@@ -1,0 +1,39 @@
+{
+  "name": "werab-v2",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "astro preview",
+    "check": "astro check",
+    "migration:import": "node scripts/import-legacy-migration.mjs",
+    "migration:audit": "node scripts/migration-parity-report.mjs",
+    "audit:redirects": "node scripts/redirect-audit.mjs",
+    "audit:sitemap": "node scripts/sitemap-audit.mjs",
+    "audit:schema": "node scripts/schema-audit.mjs",
+    "audit:links": "node scripts/internal-link-audit.mjs",
+    "audit:claim": "node scripts/claim-audit.mjs",
+    "audit:index": "node scripts/index-release-audit.mjs",
+    "audit:http": "node scripts/http-status-audit.mjs",
+    "audit:cutover": "node scripts/cutover-audit.mjs",
+    "qa": "node scripts/qa.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/node": "^9.0.2",
+    "@astrojs/sitemap": "^3.2.1",
+    "@fontsource/ibm-plex-sans-thai": "^5.2.8",
+    "@fontsource-variable/noto-sans-thai": "^5.2.8",
+    "astro": "^5.4.2",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4"
+  }
+}
