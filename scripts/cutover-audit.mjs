@@ -66,7 +66,7 @@ let indexCount = 0;
 let holdCount = 0;
 let draftCount = 0;
 
-for (const [path, record] of SEO_MANIFEST_MAP.entries()) {
+for (const path of SEO_MANIFEST_MAP.keys()) {
   const seo = resolveSeo(path);
 
   if (seo.state === 'INDEX') {
