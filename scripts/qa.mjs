@@ -13,6 +13,8 @@ const rootDir = path.resolve(__dirname, '..');
 
 const AUDIT_SCRIPTS = [
   { name: 'Claim & Fact Verification Audit', script: 'scripts/claim-audit.mjs' },
+  { name: 'GONE (HTTP 410) Parity Audit', script: 'scripts/gone-parity-audit.mjs' },
+  { name: 'Survivor Decision Parity Audit', script: 'scripts/survivor-decision-parity-audit.mjs' },
   { name: 'Schema Structured Data Audit', script: 'scripts/schema-audit.mjs' },
   { name: 'Redirect Safety Audit', script: 'scripts/redirect-audit.mjs' },
   { name: 'HTTP Status & Routing Audit', script: 'scripts/http-status-audit.mjs' },

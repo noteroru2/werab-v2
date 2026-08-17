@@ -12,8 +12,8 @@ console.log(`\n=== HTTP STATUS & ROUTING AUDIT ===`);
 const testCases = [
   // 1. Core 200 Routes
   { path: '/', expectedStatus: 200, expectedState: 'INDEX' },
-  { path: '/รับซื้อ/', expectedStatus: 200, expectedState: 'INDEX' },
-  { path: '/รับซื้อโน๊ตบุ๊ค/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อ/', expectedStatus: 200, expectedState: 'HOLD_NOINDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค/', expectedStatus: 200, expectedState: 'HOLD_NOINDEX' },
   { path: '/รับซื้อลำโพง-อุดรธานี/', expectedStatus: 200, expectedState: 'INDEX' },
   { path: '/รับซื้อลำโพง-สารคาม/', expectedStatus: 200, expectedState: 'INDEX' },
 
@@ -26,7 +26,7 @@ const testCases = [
   // 3. 410 Gone Paths
   { path: '/รับซื้อเหล้า/', expectedStatus: 410, expectedState: 'GONE' },
   { path: '/รับซื้อตั๋วจำนำ/', expectedStatus: 410, expectedState: 'GONE' },
-  { path: '/1090/', expectedStatus: 410, expectedState: 'GONE' },
+  { path: '/รับจำนำมือถืออุบล/', expectedStatus: 410, expectedState: 'GONE' },
   { path: '/รับจำนำไอโฟน-อุบล/', expectedStatus: 410, expectedState: 'GONE' },
 
   // 4. 404 Unknown and DRAFT Routes

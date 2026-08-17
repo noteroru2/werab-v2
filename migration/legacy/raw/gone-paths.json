@@ -1,12 +1,4 @@
-/**
- * src/config/seo/gone.ts
- * Authoritative set of exactly 208 GONE (HTTP 410) paths.
- * Matched 1:1 with legacy webuy-thai src/config/gone-paths.ts.
- */
-
-import { normalizePath } from '../../lib/seo/normalize';
-
-export const GONE_PATHS_RAW: string[] = [
+[
   "/ขายโน๊ตบุ๊คอุบล-รับซื้/",
   "/จำนำ-notebook-โน๊ตบุ๊ค-อุบลราชธ/",
   "/จำนำ-ไอโฟน-มือสอง-อุบลรา/",
@@ -215,12 +207,4 @@ export const GONE_PATHS_RAW: string[] = [
   "/ร้านรับจํานําลําโพงบลู/",
   "/อันดับ-1-รับจำนำกล้อง-อุบ/",
   "/อุบล-รับจำนำ-จำนำมือถือ/"
-];
-
-export const GONE_PATHS = new Set<string>(
-  GONE_PATHS_RAW.map(p => normalizePath(p))
-);
-
-export function isGonePath(path: string): boolean {
-  return GONE_PATHS.has(normalizePath(path));
-}
+]
