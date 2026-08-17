@@ -1,0 +1,19 @@
+path,priority,recommended_cluster,recommended_parent,content_status,search_intent,notes
+/รับซื้อไอโฟน-ขอนแก่น/,high,iphone,/รับซื้อไอโฟน/,CONTENT_REQUIRED,local,Survivor candidate waiting unique Khon Kaen iPhone content
+/รับซื้อไอโฟน-ยโสธร/,high,iphone,/รับซื้อไอโฟน/,CONTENT_REQUIRED,local,Survivor candidate waiting unique Yasothon iPhone content
+/รับซื้อไอแพด-ยโสธร-ipad/,high,ipad,/รับซื้อไอแพด/,CONTENT_REQUIRED,local,Survivor candidate waiting unique Yasothon iPad content
+/รับซื้อกล้อง-canon/,high,camera,/รับซื้อกล้อง/,CONTENT_REQUIRED,buyback,Survivor candidate waiting Canon camera guide content
+/รับซื้อกล้อง-sony-a6400/,medium,camera,/รับซื้อกล้อง/,CONTENT_REQUIRED,buyback,Survivor candidate waiting Sony A6400 model content
+/buy-camera-ubon/,high,camera,/รับซื้อกล้อง/,CONTENT_REQUIRED,local,Survivor candidate waiting Ubon camera local content
+/รับซื้อไอโฟนใกล้ฉัน/,high,iphone,/รับซื้อไอโฟน/,CONTENT_REQUIRED,buyback,Survivor candidate waiting non-hyphenated alias content
+/รับซื้อกล้องถ่ายรูป/,medium,camera,/รับซื้อกล้อง/,CONTENT_REQUIRED,buyback,Survivor candidate waiting general camera content
+/รับซื้อกล้อง-nikon-รับซื้อกล/,medium,camera,/รับซื้อกล้อง/,CONTENT_REQUIRED,buyback,Survivor candidate waiting Nikon camera content
+/รับซื้อลำโพง-ยโสธร/,high,audio,/รับซื้อลำโพง/,CONTENT_REQUIRED,local,Survivor candidate waiting Yasothon speaker content
+/รับซื้อแม็คบุ๊ค-macbook/,medium,macbook,/รับซื้อแมคบุ๊ค/,CONTENT_REQUIRED,buyback,Survivor candidate waiting duplicate keyword content
+/รุ่น/,low,general,/,CONTENT_REQUIRED,guide,Planned device model directory
+/สภาพ/,low,general,/,CONTENT_REQUIRED,guide,Planned device condition guide
+/ก่อนขาย/,medium,general,/,CONTENT_REQUIRED,guide,Planned pre-sale checklist hub
+/คู่มือ/,medium,general,/,CONTENT_REQUIRED,guide,Planned comprehensive guides hub
+/ผลงานรับซื้อ/,medium,general,/,CONTENT_REQUIRED,trust,Planned transaction archive
+/รับซื้อแรม/,low,pc,/รับซื้อคอมประกอบ/,CONTENT_REQUIRED,buyback,Planned RAM category hub
+/รับซื้อการ์ดจอ/,low,pc,/รับซื้อคอมประกอบ/,CONTENT_REQUIRED,buyback,Planned GPU category hub
