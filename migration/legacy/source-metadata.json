@@ -1,0 +1,18 @@
+{
+  "legacyRepoPath": "../webuy-thai",
+  "legacyGitSha": "7da9221024b666870a9e0ad67f16f460fa9c63dd",
+  "importTimestamp": "2026-08-17T14:57:32.546Z",
+  "stats": {
+    "goneCount": 208,
+    "redirectCount": 46,
+    "movedFilesCount": 271,
+    "survivorsCount": 63,
+    "legacyRoutesCount": 654,
+    "survivorDecisionsBreakdown": {
+      "REBUILD_INDEX": 13,
+      "NEW_REDIRECT": 10,
+      "EXISTING_REDIRECT": 13,
+      "HOLD_NOINDEX": 27
+    }
+  }
+}

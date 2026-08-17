@@ -1,0 +1,278 @@
+[
+  {
+    "source": "/rab-sue-com/",
+    "target": "/รับซื้อคอม/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/rab-sue-ipad/",
+    "target": "/รับซื้อไอแพด/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/rab-sue-iphone/",
+    "target": "/รับซื้อไอโฟน/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/rab-sue-klong/",
+    "target": "/รับซื้อกล้อง/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/rab-sue-lamphong/",
+    "target": "/รับซื้อลำโพง/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/rab-sue-macbook/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/rab-sue-notebook/",
+    "target": "/รับซื้อโน๊ตบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/rab-sue/",
+    "target": "/รับซื้อ/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อคอม-ใกล้ฉัน/",
+    "target": "/รับซื้อคอม/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อคอมประกอบ-ใกล้ฉัน/",
+    "target": "/รับซื้อคอมประกอบ/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อโน๊ตบุ๊ค-ใกล้ฉัน/",
+    "target": "/รับซื้อโน๊ตบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อแมคบุ๊ค-ใกล้ฉัน/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อไอแพด-ใกล้ฉัน/",
+    "target": "/รับซื้อไอแพด/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อไอโฟน-ใกล้ฉัน/",
+    "target": "/รับซื้อไอโฟน/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-apple-watch-ใกล้ฉัน/",
+    "target": "/รับซื้อ-apple-watch/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อกล้อง-ใกล้ฉัน/",
+    "target": "/รับซื้อกล้อง/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อลำโพง-ใกล้ฉัน/",
+    "target": "/รับซื้อลำโพง/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อสมาร์ทโฟน-android-ใกล้ฉัน/",
+    "target": "/รับซื้อสมาร์ทโฟน-android/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อเครื่องเกม-ใกล้ฉัน/",
+    "target": "/รับซื้อเครื่องเกม/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-ใกล้ฉัน/",
+    "target": "/รับซื้อ/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-macbook/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/ติดต่อเรา/",
+    "target": "/contact/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อโน๊ตบุ๊ค-ศรีสะเก/",
+    "target": "/รับซื้อโน๊ตบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อคอมพิวเตอร์-ภูเก/",
+    "target": "/รับซื้อคอม/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อกล้องมือสอง-บุรี/",
+    "target": "/รับซื้อกล้อง/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-macbook-จังหวัดกาฬสินธ/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/legacy-รับซื้อกล้อง-ยโสธร-815/",
+    "target": "/รับซื้อกล้อง-ยโสธร/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/legacy-รับซื้อไอโฟน-มหาสารคาม-851/",
+    "target": "/รับซื้อไอโฟน-มหาสารคาม/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-macbook-จังหวัดนครราชส/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-macbook-จังหวัดบุรีรัม/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-macbook-จังหวัดสุรินทร/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-macbook-จังหวัดนครพนม/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-macbook-จังหวัดมุกดาหา/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/รับซื้อ-macbook-จังหวัดร้อยเอ็/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "public/_redirects"
+  },
+  {
+    "source": "/buy-camera-surin/",
+    "target": "/รับซื้อกล้อง/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/buy-camera-mahasarakam/",
+    "target": "/รับซื้อกล้อง/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/buy-camera-nongkai/",
+    "target": "/รับซื้อกล้อง/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/รับซื้อ-notebook-ใกล้ฉัน/",
+    "target": "/รับซื้อโน๊ตบุ๊ค/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/รับซื้อ-macbook-แม็คบุ๊ค/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/รับซื้อแมคบุ๊ค-macbook/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/รับซื้อ-macbook-แม็คบุ๊ค-ใกล้ฉั/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/รับซื้อไอโฟน-15-iphone-15/",
+    "target": "/รับซื้อไอโฟน/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/รับซื้อไอโฟน-iphone-อุบล/",
+    "target": "/รับซื้อไอโฟน/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/",
+    "target": "/รับซื้อไอโฟน/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/",
+    "target": "/รับซื้อลำโพง/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  },
+  {
+    "source": "/รับซื้อแมคบุ๊ค-macbook-ยโสธร/",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "status": 301,
+    "origin": "recovery-action-map"
+  }
+]

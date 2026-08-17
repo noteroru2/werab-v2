@@ -1,0 +1,529 @@
+[
+  {
+    "path": "/รับซื้อ-macbook-จังหวัดกาฬสินธ/",
+    "slug": "รับซื้อ-macbook-จังหวัดกาฬสินธ",
+    "file": "1001.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-macbook-จังหวัดนครราชส/",
+    "slug": "รับซื้อ-macbook-จังหวัดนครราชส",
+    "file": "1003.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-macbook-จังหวัดบุรีรัม/",
+    "slug": "รับซื้อ-macbook-จังหวัดบุรีรัม",
+    "file": "1005.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-macbook-จังหวัดสุรินทร/",
+    "slug": "รับซื้อ-macbook-จังหวัดสุรินทร",
+    "file": "1007.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-macbook-จังหวัดนครพนม/",
+    "slug": "รับซื้อ-macbook-จังหวัดนครพนม",
+    "file": "1009.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-macbook-จังหวัดมุกดาหา/",
+    "slug": "รับซื้อ-macbook-จังหวัดมุกดาหา",
+    "file": "1012.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-macbook-จังหวัดร้อยเอ็/",
+    "slug": "รับซื้อ-macbook-จังหวัดร้อยเอ็",
+    "file": "1014.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/ขายโน๊ตบุ๊ค-ขอนแก่น/",
+    "slug": "ขายโน๊ตบุ๊ค-ขอนแก่น",
+    "file": "1211.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/ร้านรับซื้อโน๊ตบุ๊คอุบ-2/",
+    "slug": "ร้านรับซื้อโน๊ตบุ๊คอุบ-2",
+    "file": "1214.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-notebook-ใกล้ฉัน/",
+    "slug": "รับซื้อ-notebook-ใกล้ฉัน",
+    "file": "1220.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อโน๊ตบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-canon-2/",
+    "slug": "รับซื้อกล้อง-canon-2",
+    "file": "1236.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-sony-a6400/",
+    "slug": "รับซื้อกล้อง-sony-a6400",
+    "file": "1240.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-sony-rx100/",
+    "slug": "รับซื้อกล้อง-sony-rx100",
+    "file": "1243.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-sony-a7/",
+    "slug": "รับซื้อกล้อง-sony-a7",
+    "file": "1246.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองอุบล/",
+    "slug": "รับซื้อกล้องมือสองอุบล",
+    "file": "1250.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองขอนแ/",
+    "slug": "รับซื้อกล้องมือสองขอนแ",
+    "file": "1252.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองอุดร/",
+    "slug": "รับซื้อกล้องมือสองอุดร",
+    "file": "1254.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองนครร/",
+    "slug": "รับซื้อกล้องมือสองนครร",
+    "file": "1256.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองบุรี/",
+    "slug": "รับซื้อกล้องมือสองบุรี",
+    "file": "1258.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-รับซื้อกล้/",
+    "slug": "รับซื้อกล้อง-รับซื้อกล้",
+    "file": "1260.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองศรี/",
+    "slug": "รับซื้อกล้องมือสองศรี",
+    "file": "1262.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองสุร/",
+    "slug": "รับซื้อกล้องมือสองสุร",
+    "file": "1264.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองกาฬ/",
+    "slug": "รับซื้อกล้องมือสองกาฬ",
+    "file": "1266.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองมหา/",
+    "slug": "รับซื้อกล้องมือสองมหา",
+    "file": "1268.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองยโสธ/",
+    "slug": "รับซื้อกล้องมือสองยโสธ",
+    "file": "1270.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองมุกด/",
+    "slug": "รับซื้อกล้องมือสองมุกด",
+    "file": "1272.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองบึง/",
+    "slug": "รับซื้อกล้องมือสองบึง",
+    "file": "1274.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองมุก/",
+    "slug": "รับซื้อกล้องมือสองมุก",
+    "file": "1276.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องมือสองหนอ/",
+    "slug": "รับซื้อกล้องมือสองหนอ",
+    "file": "1278.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องนครราชสีมา/",
+    "slug": "รับซื้อกล้องนครราชสีมา",
+    "file": "1280.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-ใกล้ฉัน/",
+    "slug": "รับซื้อกล้อง-ใกล้ฉัน",
+    "file": "1282.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อกล้อง/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องเลนส์/",
+    "slug": "รับซื้อกล้องเลนส์",
+    "file": "1284.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-ให้ราคาสูง/",
+    "slug": "รับซื้อกล้อง-ให้ราคาสูง",
+    "file": "1286.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/ร้านรับซื้อโน๊ตบุ๊คในอ/",
+    "slug": "ร้านรับซื้อโน๊ตบุ๊คในอ",
+    "file": "1338.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-รับซื้อเลน/",
+    "slug": "รับซื้อกล้อง-รับซื้อเลน",
+    "file": "1346.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/buy-camera-ubon/",
+    "slug": "buy-camera-ubon",
+    "file": "1462.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/buy-camera-surin/",
+    "slug": "buy-camera-surin",
+    "file": "1472.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อกล้อง/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/buy-camera-mahasarakam/",
+    "slug": "buy-camera-mahasarakam",
+    "file": "1486.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อกล้อง/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/buy-camera-nongkai/",
+    "slug": "buy-camera-nongkai",
+    "file": "1506.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อกล้อง/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-macbook-แม็คบุ๊ค/",
+    "slug": "รับซื้อ-macbook-แม็คบุ๊ค",
+    "file": "622.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อไอโฟนใกล้ฉัน/",
+    "slug": "รับซื้อไอโฟนใกล้ฉัน",
+    "file": "662.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อไอโฟน-15-iphone-15/",
+    "slug": "รับซื้อไอโฟน-15-iphone-15",
+    "file": "665.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อไอโฟน/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อไอโฟน-iphone-อุบล/",
+    "slug": "รับซื้อไอโฟน-iphone-อุบล",
+    "file": "716.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อไอโฟน/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-server/",
+    "slug": "รับซื้อ-server",
+    "file": "729.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อแม็คบุ๊ค-macbook/",
+    "slug": "รับซื้อแม็คบุ๊ค-macbook",
+    "file": "735.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้องถ่ายรูป/",
+    "slug": "รับซื้อกล้องถ่ายรูป",
+    "file": "770.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-canon/",
+    "slug": "รับซื้อกล้อง-canon",
+    "file": "774.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อกล้อง-nikon-รับซื้อกล/",
+    "slug": "รับซื้อกล้อง-nikon-รับซื้อกล",
+    "file": "780.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อไอโฟน-ยโสธร/",
+    "slug": "รับซื้อไอโฟน-ยโสธร",
+    "file": "810.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อไอแพด-ยโสธร-ipad/",
+    "slug": "รับซื้อไอแพด-ยโสธร-ipad",
+    "file": "812.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/legacy-รับซื้อกล้อง-ยโสธร-815/",
+    "slug": "legacy-รับซื้อกล้อง-ยโสธร-815",
+    "file": "815.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อกล้อง-ยโสธร/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อลำโพง-ยโสธร/",
+    "slug": "รับซื้อลำโพง-ยโสธร",
+    "file": "817.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/",
+    "slug": "รับซื้อไอโฟน-iphone-ร้อยเอ็ด",
+    "file": "831.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อไอโฟน/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/",
+    "slug": "รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall",
+    "file": "838.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อลำโพง/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/legacy-รับซื้อไอโฟน-มหาสารคาม-851/",
+    "slug": "legacy-รับซื้อไอโฟน-มหาสารคาม-851",
+    "file": "851.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อไอโฟน-มหาสารคาม/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อลำโพง-สารคาม/",
+    "slug": "รับซื้อลำโพง-สารคาม",
+    "file": "858.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อไอโฟน-จังหวัดอุด/",
+    "slug": "รับซื้อไอโฟน-จังหวัดอุด",
+    "file": "871.md",
+    "title": "",
+    "decision": "HOLD_NOINDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อลำโพง-อุดรธานี/",
+    "slug": "รับซื้อลำโพง-อุดรธานี",
+    "file": "880.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อไอโฟน-ขอนแก่น/",
+    "slug": "รับซื้อไอโฟน-ขอนแก่น",
+    "file": "891.md",
+    "title": "",
+    "decision": "REBUILD_INDEX",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อแมคบุ๊ค-macbook/",
+    "slug": "รับซื้อแมคบุ๊ค-macbook",
+    "file": "930.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อแมคบุ๊ค-macbook-ยโสธร/",
+    "slug": "รับซื้อแมคบุ๊ค-macbook-ยโสธร",
+    "file": "934.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-macbook/",
+    "slug": "รับซื้อ-macbook",
+    "file": "995.md",
+    "title": "",
+    "decision": "NEW_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  },
+  {
+    "path": "/รับซื้อ-macbook-แม็คบุ๊ค-ใกล้ฉั/",
+    "slug": "รับซื้อ-macbook-แม็คบุ๊ค-ใกล้ฉั",
+    "file": "999.md",
+    "title": "",
+    "decision": "EXISTING_REDIRECT",
+    "target": "/รับซื้อแมคบุ๊ค/",
+    "originalCategory": ""
+  }
+]
