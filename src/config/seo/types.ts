@@ -20,6 +20,7 @@ export type PageType =
   | 'model'
   | 'condition'
   | 'policy'
+  | 'trust'
   | 'static';
 
 export type ContentCluster =
@@ -69,8 +70,8 @@ export interface SeoManifestRecord {
   title?: string;
   description?: string;
   h1?: string;
-  canonical?: string; // 'self' or explicit absolute/relative path
-  redirectTo?: string; // Required when state === 'REDIRECT'
+  canonical?: string;
+  redirectTo?: string;
   parent?: string;
   relatedPages?: string[];
   gscPriority?: 'critical' | 'high' | 'medium' | 'low';

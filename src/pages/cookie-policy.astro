@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { BUSINESS_FACTS } from '../config/business';
+import { resolveSeo } from '../lib/seo/resolve';
+
+const seo = resolveSeo('/cookie-policy/');
+const breadcrumbs = [
+  { name: 'นโยบายคุกกี้', url: '/cookie-policy/' }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem;">
+        <h1 style="font-size: 2rem; margin-bottom: 1.5rem;">{seo.h1}</h1>
+
+        <div style="color: var(--color-text-muted); line-height: 1.7; font-size: 0.95rem;">
+          <p>
+            เว็บไซต์ {BUSINESS_FACTS.VERIFIED.brandName} มีการใช้งานคุกกี้ (Cookies) และเทคโนโลยีที่คล้ายคลึงกันเพื่อพัฒนาประสิทธิภาพการทำงานของเว็บไซต์ และมอบประสบการณ์การใช้งานที่ดีที่สุดแก่ผู้เยี่ยมชม
+          </p>
+
+          <h2 style="font-size: 1.3rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">1. คุกกี้คืออะไร?</h2>
+          <p>
+            คุกกี้คือไฟล์ข้อความขนาดเล็กที่ถูกบันทึกไว้ในอุปกรณ์ของท่านเมื่อท่านเข้าชมเว็บไซต์ เพื่อช่วยให้เว็บไซต์จดจำการตั้งค่าและปรับปรุงการนำเสนอเนื้อหาให้เหมาะสม
+          </p>
+
+          <h2 style="font-size: 1.3rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">2. ประเภทคุกกี้ที่เราใช้</h2>
+          <ul>
+            <li><strong>คุกกี้ที่จำเป็น (Strictly Necessary Cookies)</strong>: จำเป็นต่อการทำงานพื้นฐานของเว็บไซต์</li>
+            <li><strong>คุกกี้เพื่อการวิเคราะห์ (Analytical Cookies)</strong>: ช่วยให้เราเข้าใจพฤติกรรมการใช้งานเพื่อนำมาปรับปรุงโครงสร้างเนื้อหา</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

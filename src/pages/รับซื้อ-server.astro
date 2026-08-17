@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+import { getInternalLinks } from '../lib/seo/internal-links';
+
+const seo = resolveSeo('/รับซื้อ-server/');
+const breadcrumbs = [
+  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'รับซื้อ Server องค์กร', url: '/รับซื้อ-server/' }
+];
+const internalLinks = getInternalLinks(seo);
+
+const faqs = [
+  {
+    question: 'รับซื้อ Server ประเภทใดบ้าง?',
+    answer: 'เรารับซื้อ Rack Server (1U, 2U, 4U), Tower Server, Blade Server, SAN/NAS Storage, Network Switch แบรนด์ Dell PowerEdge, HPE ProLiant, Lenovo ThinkSystem, Cisco, Synology'
+  },
+  {
+    question: 'มีบริการเข้าตรวจประเมินหน้างานและขนย้ายสำหรับองค์กรไหม?',
+    answer: 'เรามีทีมงานพร้อมเข้าประเมินและวางแผนขนย้ายอุปกรณ์จากห้องเซิร์ฟเวอร์หรือ Data Center โดยตรง พร้อมกระบวนการทำลายข้อมูลในฮาร์ดดิสก์อย่างปลอดภัย'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">ENTERPRISE IT & SERVER</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        บริการรับซื้อเซิร์ฟเวอร์ สตอเรจ และอุปกรณ์ห้อง Data Center สำหรับองค์กรและ B2B พร้อมบริการจัดการขนย้าย
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">บริการรับซื้ออุปกรณ์ไอทีระดับองค์กร (B2B Buyback)</h2>
+        <p>เราพร้อมรองรับการปลดระวางอุปกรณ์ไอที (IT Asset Disposition) ประเมินราคายกชุด:</p>
+        <ul>
+          <li><strong>Rack & Tower Servers</strong>: Dell EMC PowerEdge, HPE ProLiant Gen9/Gen10/Gen11, Lenovo ThinkSystem</li>
+          <li><strong>Storage & SAN</strong>: Dell PowerStore / Unity, HPE MSA / 3PAR, Synology, QNAP Enterprise</li>
+          <li><strong>Network Switches & Routers</strong>: Cisco Catalyst, Nexus, HPE Aruba, Ubiquiti UniFi</li>
+          <li><strong>มาตรฐานความปลอดภัยของข้อมูล</strong>: บริการ Data Sanitization สำหรับ HDD / SSD ระดับองค์กร</li>
+        </ul>
+      </div>
+
+      <ProcessSteps />
+
+      <div style="margin-top: 3.5rem;">
+        <FAQ items={faqs} />
+      </div>
+
+      <RelatedLinks
+        clusterLinks={internalLinks.clusterLinks}
+        parentLink={internalLinks.parentLink}
+        guideLinks={internalLinks.guideLinks}
+      />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

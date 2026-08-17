@@ -1,0 +1,111 @@
+---
+import type { FaqItem } from '../lib/seo/schema';
+
+interface Props {
+  items: FaqItem[];
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  items,
+  title = 'คำถามที่พบบ่อย (FAQ)',
+  subtitle = 'ข้อสงสัยเกี่ยวกับการประเมินราคา การนัดรับ และความปลอดภัยในการขายสินค้า'
+} = Astro.props;
+---
+
+<div class="faq-container">
+  {title && (
+    <div class="section-header">
+      <h2>{title}</h2>
+      {subtitle && <p>{subtitle}</p>}
+    </div>
+  )}
+
+  <div class="faq-list">
+    {items.map((item, index) => (
+      <details class="faq-item" open={index === 0}>
+        <summary class="faq-question">
+          <span class="q-icon" aria-hidden="true">Q.</span>
+          <span class="q-text">{item.question}</span>
+          <span class="chevron" aria-hidden="true">▾</span>
+        </summary>
+        <div class="faq-answer">
+          <p>{item.answer}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</div>
+
+<style>
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .faq-item {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color 0.15s ease;
+  }
+
+  .faq-item[open] {
+    border-color: var(--color-accent);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.15rem 1.25rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--color-primary);
+    user-select: none;
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .q-icon {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .q-text {
+    flex-grow: 1;
+  }
+
+  .chevron {
+    color: var(--color-text-subtle);
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+</style>

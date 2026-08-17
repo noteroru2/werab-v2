@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import CTA from '../components/CTA.astro';
+import { BUSINESS_FACTS } from '../config/business';
+import { resolveSeo } from '../lib/seo/resolve';
+
+const seo = resolveSeo('/เกี่ยวกับเรา/');
+const breadcrumbs = [
+  { name: 'เกี่ยวกับเรา', url: '/เกี่ยวกับเรา/' }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">ABOUT US</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        {BUSINESS_FACTS.VERIFIED.brandName} บริการรับซื้อสินค้าไอทีที่เน้นความโปร่งใสและตรงไปตรงมา
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">วิสัยทัศน์และการให้บริการ</h2>
+        <p>
+          {BUSINESS_FACTS.VERIFIED.brandName} ดำเนินงานโดยมุ่งเน้นการเป็นตัวกลางในการรับซื้อและส่งต่ออุปกรณ์ไอทีมือสองที่มีคุณภาพ เราเข้าใจดีว่าผู้ขายต้องการความชัดเจนในเรื่องราคา ความรวดเร็วในการตรวจสอบ และความปลอดภัยของข้อมูลในอุปกรณ์
+        </p>
+        <p>
+          เราจึงยึดมั่นในหลักการ <strong>"ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ"</strong> เพื่อให้ลูกค้าได้รับข้อมูลที่ถูกต้องก่อนการตัดสินใจซื้อขายจริงทุกครั้ง
+        </p>
+
+        <h3 style="font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.75rem;">จุดเด่นบริการของเรา</h3>
+        <ul>
+          {BUSINESS_FACTS.VERIFIED.valueProps.map(prop => (
+            <li>{prop}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

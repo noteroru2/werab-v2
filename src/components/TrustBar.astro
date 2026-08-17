@@ -1,0 +1,98 @@
+---
+// TrustBar.astro - Key customer trust and security assurances
+---
+
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">✓</div>
+        <div class="trust-text">
+          <strong>ประเมินตามสภาพจริง</strong>
+          <span>ให้คำปรึกษาราคาก่อนตัดสินใจ</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">🔒</div>
+        <div class="trust-text">
+          <strong>ปลอดภัยเรื่องข้อมูล</strong>
+          <span>บริการลบข้อมูลส่วนบุคคลมาตรฐาน</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">⚡</div>
+        <div class="trust-text">
+          <strong>ขั้นตอนกระชับ รวดเร็ว</strong>
+          <span>ตรวจสอบและชำระเงินทันที</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">🛡️</div>
+        <div class="trust-text">
+          <strong>ถูกต้องตามกฎหมาย</strong>
+          <span>ไม่รับของโจร ของหลุดจำนำผิดกฎหมาย</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-bar {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .trust-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .trust-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .trust-icon {
+    font-size: 1.25rem;
+    background-color: var(--color-accent-light);
+    color: var(--color-accent-hover);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+
+  .trust-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trust-text strong {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+  }
+
+  .trust-text span {
+    font-size: 0.82rem;
+    color: var(--color-text-subtle);
+  }
+</style>

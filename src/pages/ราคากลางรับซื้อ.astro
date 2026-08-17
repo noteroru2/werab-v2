@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+
+const seo = resolveSeo('/ราคากลางรับซื้อ/');
+const breadcrumbs = [
+  { name: 'ราคากลางรับซื้อ', url: '/ราคากลางรับซื้อ/' }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">MARKET VALUATION</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        แนวทางการกำหนดราคากลางและการประเมินมูลค่าสินค้าไอทีมือสอง เพื่อความโปร่งใสและเป็นธรรม
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">ที่มาของราคากลางรับซื้อ</h2>
+        <p>
+          ราคากลางรับซื้อสินค้าไอทีของ เรารับซื้อ.com ถูกกำหนดขึ้นโดยอ้างอิงจากราคาซื้อขายจริงในตลาดมือสอง ความต้องการของผู้ซื้อ ณ ช่วงเวลานั้น และค่าเสื่อมสภาพตามระยะเวลาการใช้งาน
+        </p>
+        <p>
+          เพื่อให้ผู้ขายได้รับราคาที่สมเหตุสมผลที่สุด เราจึงแนะนำให้ส่งรูปถ่ายและสเปกของเครื่องมาประเมินแบบ Case-by-Case ทาง LINE @webuy เพื่อให้ได้ราคาตรงกับสภาพจริงของอุปกรณ์มากที่สุด
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

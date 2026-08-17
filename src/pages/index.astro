@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+
+const homeFaqs = [
+  {
+    question: 'เรารับซื้อ.com รับซื้อสินค้าไอทีประเภทใดบ้าง?',
+    answer: 'เรารับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ตั้งโต๊ะ คอมประกอบ MacBook iPhone iPad กล้องถ่ายรูป เลนส์ ลำโพงบลูทูธ เครื่องเล่นเกมคอนโซล และอุปกรณ์ไอทีระดับองค์กร'
+  },
+  {
+    question: 'ขั้นตอนการประเมินราคาเบื้องต้นมีค่าใช้จ่ายหรือไม่?',
+    answer: 'ไม่มีค่าใช้จ่ายใดๆ ทั้งสิ้น ท่านสามารถส่งรูปถ่าย สเปก และรายละเอียดของอุปกรณ์มาทาง LINE @webuy เพื่อให้ทีมงานช่วยประเมินราคาได้ทันที'
+  },
+  {
+    question: 'มีบริการนัดรับสินค้าอย่างไร?',
+    answer: 'เรามีบริการนัดรับสินค้าในพื้นที่จุดนัดพบที่สะดวก ปลอดภัย หรือส่งมอบตามขั้นตอนที่ตกลงกัน พร้อมตรวจสอบสภาพและชำระเงินทันที'
+  },
+  {
+    question: 'เรื่องความปลอดภัยของข้อมูลในเครื่อง (Data Privacy) จัดการอย่างไร?',
+    answer: 'เราให้ความสำคัญสูงสุดกับความปลอดภัยของข้อมูลส่วนบุคคล ทีมงานจะช่วยแนะนำและตรวจสอบขั้นตอนการล้างข้อมูล (Factory Reset / Secure Wipe) ก่อนส่งมอบสินค้าทุกครั้ง'
+  }
+];
+---
+
+<BaseLayout
+  title="เรารับซื้อ.com | รับซื้อสินค้าไอทีมือสอง ประเมินราคาจริงใจ"
+  description="ศูนย์บริการรับซื้อสินค้าไอทีมือสองครบวงจร โน๊ตบุ๊ค คอมพิวเตอร์ แมคบุ๊ค ไอโฟน ไอแพด กล้อง ลำโพง เครื่องเกม เช็กราคาก่อนขาย ประเมินสภาพตรงไปตรงมา"
+  faqs={homeFaqs}
+>
+  <Hero
+    title="รับซื้อสินค้าไอทีมือสอง ประเมินราคาเบื้องต้นก่อนขาย"
+    subtitle="ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ รับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ MacBook iPhone iPad กล้อง ลำโพง ตีราคาตามสภาพจริง"
+    badge="ศูนย์บริการรับซื้อสินค้าไอทีมือสอง"
+  />
+
+  <TrustBar />
+
+  <!-- Category Grid Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>หมวดหมู่สินค้าที่เรารับซื้อ</h2>
+        <p>เลือกหมวดหมู่เพื่อดูเกณฑ์การประเมินราคา รายละเอียดรุ่น และสภาพที่เรารับซื้อ</p>
+      </div>
+
+      <ServiceGrid />
+    </div>
+  </section>
+
+  <!-- Process Steps Section -->
+  <section class="section section-muted">
+    <div class="container">
+      <div class="section-header">
+        <h2>4 ขั้นตอนการขายง่ายและปลอดภัย</h2>
+        <p>กระบวนการประเมินราคาและรับซื้อที่ชัดเจน โปร่งใส ไม่ซับซ้อน</p>
+      </div>
+
+      <ProcessSteps />
+    </div>
+  </section>
+
+  <!-- Pre-sale Advice Section -->
+  <section class="section">
+    <div class="container">
+      <div class="card" style="padding: 3rem 2rem; background: #ffffff; border: 1px solid var(--color-border);">
+        <div style="max-width: 750px; margin: 0 auto; text-align: center;">
+          <span class="badge badge-accent" style="margin-bottom: 1rem;">คำแนะนำก่อนตัดสินใจ</span>
+          <h2 style="font-size: 1.85rem; margin-bottom: 1rem; color: var(--color-primary);">
+            "ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ"
+          </h2>
+          <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem;">
+            เราเชื่อว่าการซื้อขายที่ดีเริ่มต้นจากข้อมูลที่โปร่งใส หากคุณยังไม่แน่ใจเรื่องราคาตลาด หรือสภาพเครื่องว่าคุ้มค่าที่จะขายหรือไม่ สามารถสอบถามหรือศึกษาแนวทางการประเมินราคากับทีมงานของเราได้ฟรี
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="/เช็กราคาก่อนขาย/" class="btn btn-primary">อ่านคู่มือเช็กราคาก่อนขาย</a>
+            <a href="/ราคากลางรับซื้อ/" class="btn btn-outline">ดูแนวทางราคากลาง</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-muted">
+    <div class="container">
+      <FAQ items={homeFaqs} />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+import { getInternalLinks } from '../lib/seo/internal-links';
+
+const seo = resolveSeo('/รับซื้อสมาร์ทโฟน-android/');
+const breadcrumbs = [
+  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'รับซื้อสมาร์ทโฟน Android', url: '/รับซื้อสมาร์ทโฟน-android/' }
+];
+const internalLinks = getInternalLinks(seo);
+
+const faqs = [
+  {
+    question: 'รับซื้อมือถือ Android แบรนด์ใดบ้าง?',
+    answer: 'เรารับซื้อ Samsung Galaxy (S Series, Z Fold/Flip, A Series), Xiaomi / Redmi, OPPO, Vivo, Realme, OnePlus, Google Pixel และสมาร์ทโฟนเกมมิ่ง ROG Phone'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">ANDROID SMARTPHONE BUYBACK</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        รับซื้อสมาร์ทโฟน Android ทุกแบรนด์ดัง เช็กสภาพและฟังก์ชัน ตีราคาตรงตามสเปก
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">ข้อควรทราบก่อนส่งมือถือ Android ประเมินราคา</h2>
+        <ul>
+          <li><strong>ล้างบัญชี Google และ Passcode</strong>: ลบบัญชี Google Account / Samsung Account และปลดล็อครหัสผ่านหน้าจอ</li>
+          <li><strong>ตรวจเช็กฟังก์ชันจอภาพและกล้อง</strong>: หน้าจอไม่เบิร์น ไม่มีเส้น กล้องโฟกัสคมชัด</li>
+          <li><strong>อุปกรณ์และกล่อง</strong>: เตรียมสายชาร์จ กล่อง และอุปกรณ์เดิมของเครื่อง (ถ้ามี)</li>
+        </ul>
+      </div>
+
+      <ProcessSteps />
+
+      <div style="margin-top: 3.5rem;">
+        <FAQ items={faqs} />
+      </div>
+
+      <RelatedLinks
+        clusterLinks={internalLinks.clusterLinks}
+        parentLink={internalLinks.parentLink}
+        guideLinks={internalLinks.guideLinks}
+      />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

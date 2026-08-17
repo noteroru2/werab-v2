@@ -1,0 +1,136 @@
+---
+import { BUSINESS_FACTS, getLineUrl } from '../config/business';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
+const navItems = [
+  { name: 'หน้าแรก', path: '/' },
+  { name: 'รับซื้อสินค้า', path: '/รับซื้อ/' },
+  { name: 'เช็กราคาก่อนขาย', path: '/เช็กราคาก่อนขาย/' },
+  { name: 'ราคากลาง', path: '/ราคากลางรับซื้อ/' },
+  { name: 'ความน่าเชื่อถือ', path: '/ความน่าเชื่อถือ/' },
+  { name: 'ติดต่อเรา', path: '/contact/' }
+];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand-logo" aria-label="เรารับซื้อ.com หน้าแรก">
+      <span class="logo-mark">WE BUY</span>
+      <span class="logo-text">{BUSINESS_FACTS.VERIFIED.brandName}</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="เมนูหลัก">
+      <ul class="nav-list">
+        {navItems.map(item => (
+          <li>
+            <a
+              href={item.path}
+              class={`nav-link ${currentPath === item.path ? 'active' : ''}`}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a
+        href={getLineUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-line header-cta"
+        aria-label="แอดไลน์ @webuy เพื่อประเมินราคาฟรี"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+        </svg>
+        <span>ประเมินราคา LINE</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background-color: var(--color-bg-card);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 0.35rem 0.6rem;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.05em;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    color: var(--color-text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-link.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .header-cta {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  @media (max-width: 860px) {
+    .nav-desktop {
+      display: none;
+    }
+  }
+</style>

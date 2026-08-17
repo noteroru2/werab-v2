@@ -1,0 +1,107 @@
+---
+import { resolveSeo } from '../lib/seo/resolve';
+import { generateSchemaGraph, type BreadcrumbItem, type FaqItem } from '../lib/seo/schema';
+import { BUSINESS_FACTS } from '../config/business';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  noindex?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
+  faqs?: FaqItem[];
+  article?: {
+    headline: string;
+    description: string;
+    image?: string;
+    datePublished?: string;
+    dateModified?: string;
+    authorName?: string;
+  };
+}
+
+const {
+  title: propTitle,
+  description: propDescription,
+  canonical: propCanonical,
+  noindex: propNoindex,
+  breadcrumbs,
+  faqs,
+  article
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const seo = resolveSeo(currentPath);
+
+const siteUrl = BUSINESS_FACTS.VERIFIED.siteUrl;
+const pageTitle = propTitle || seo.title || `${BUSINESS_FACTS.VERIFIED.brandName} | ${BUSINESS_FACTS.VERIFIED.tagline}`;
+const pageDescription = propDescription || seo.description || BUSINESS_FACTS.VERIFIED.tagline;
+
+// Canonical calculation: strictly self canonical or explicit canonical
+const canonicalUrl = propCanonical
+  ? (propCanonical.startsWith('http') ? propCanonical : `${siteUrl}${propCanonical}`)
+  : `${siteUrl}${seo.canonical}`;
+
+// Robots calculation: if explicitly noindex prop is set or resolver states non-indexable
+const robotsDirective = propNoindex
+  ? 'noindex,follow'
+  : seo.robots;
+
+// Generate Schema JSON-LD Graph
+const schemaJson = generateSchemaGraph({
+  seo,
+  breadcrumbs,
+  faqs,
+  article
+});
+---
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
+  <meta name="robots" content={robotsDirective} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={article ? 'article' : 'website'} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
+  <meta property="og:site_name" content={BUSINESS_FACTS.VERIFIED.brandName} />
+  <meta property="og:locale" content="th_TH" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
+
+  <!-- Fonts & Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json" is:inline set:html={schemaJson} />
+
+  <slot name="head" />
+</head>
+<body>
+  <Header currentPath={seo.normalizedPath} />
+
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <Footer />
+</body>
+</html>

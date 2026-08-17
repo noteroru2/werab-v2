@@ -1,0 +1,265 @@
+---
+import { BUSINESS_FACTS, getDisplayPhone, getPhoneUrl, getDisplayLine, getLineUrl } from '../config/business';
+
+const currentYear = new Date().getFullYear();
+
+const categories = [
+  { name: 'รับซื้อโน๊ตบุ๊ค', path: '/รับซื้อโน๊ตบุ๊ค/' },
+  { name: 'รับซื้อคอมพิวเตอร์', path: '/รับซื้อคอม/' },
+  { name: 'รับซื้อคอมประกอบ', path: '/รับซื้อคอมประกอบ/' },
+  { name: 'รับซื้อ MacBook', path: '/รับซื้อแมคบุ๊ค/' },
+  { name: 'รับซื้อ iPhone', path: '/รับซื้อไอโฟน/' },
+  { name: 'รับซื้อ iPad', path: '/รับซื้อไอแพด/' },
+  { name: 'รับซื้อกล้องและเลนส์', path: '/รับซื้อกล้อง/' },
+  { name: 'รับซื้อลำโพงบลูทูธ', path: '/รับซื้อลำโพง/' },
+  { name: 'รับซื้อเครื่องเล่นเกม', path: '/รับซื้อเครื่องเกม/' },
+  { name: 'รับซื้อ Server องค์กร', path: '/รับซื้อ-server/' }
+];
+
+const guides = [
+  { name: 'เช็กราคาก่อนขาย', path: '/เช็กราคาก่อนขาย/' },
+  { name: 'ราคากลางรับซื้อ', path: '/ราคากลางรับซื้อ/' },
+  { name: 'ความน่าเชื่อถือ', path: '/ความน่าเชื่อถือ/' },
+  { name: 'เกี่ยวกับเรา', path: '/เกี่ยวกับเรา/' },
+  { name: 'ติดต่อเรา', path: '/contact/' }
+];
+
+const legal = [
+  { name: 'ข้อกำหนดการใช้งาน', path: '/terms/' },
+  { name: 'นโยบายความเป็นส่วนตัว', path: '/privacy-policy/' },
+  { name: 'นโยบายคุกกี้', path: '/cookie-policy/' }
+];
+---
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div class="footer-grid">
+      <!-- Column 1: Brand Info -->
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <span class="logo-mark">WE BUY</span>
+          <span class="brand-title">{BUSINESS_FACTS.VERIFIED.brandName}</span>
+        </div>
+        <p class="footer-tagline">
+          "{BUSINESS_FACTS.VERIFIED.tagline}"
+        </p>
+        <p class="footer-desc">
+          ศูนย์บริการรับซื้อสินค้าไอทีมือสองครบวงจร เน้นการประเมินราคาที่สมเหตุสมผล โปร่งใส และปลอดภัยด้านข้อมูลส่วนบุคคล
+        </p>
+        <div class="footer-contact-cards">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="contact-chip">
+            <span class="chip-label">LINE:</span>
+            <span class="chip-value">{getDisplayLine()}</span>
+          </a>
+          <a href={getPhoneUrl()} class="contact-chip">
+            <span class="chip-label">โทร:</span>
+            <span class="chip-value">{getDisplayPhone()}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Categories -->
+      <div class="footer-col">
+        <h4 class="footer-heading">หมวดหมู่สินค้า</h4>
+        <ul class="footer-links">
+          {categories.map(c => (
+            <li><a href={c.path}>{c.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3: Guides & Trust -->
+      <div class="footer-col">
+        <h4 class="footer-heading">ข้อมูล & คำแนะนำ</h4>
+        <ul class="footer-links">
+          {guides.map(g => (
+            <li><a href={g.path}>{g.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 4: Legal & Policies -->
+      <div class="footer-col">
+        <h4 class="footer-heading">นโยบายและความปลอดภัย</h4>
+        <ul class="footer-links">
+          {legal.map(l => (
+            <li><a href={l.path}>{l.name}</a></li>
+          ))}
+        </ul>
+        <div class="compliance-note">
+          <p>
+            * เรายึดมั่นในมาตรฐานการไม่รับซื้อของผิดกฎหมายหรือของโจรทุกกรณี และดำเนินมาตรการลบข้อมูล (Data Sanitization) ให้ผู้ขายทุกครั้ง
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        © {currentYear} {BUSINESS_FACTS.VERIFIED.brandName} ({BUSINESS_FACTS.VERIFIED.englishBrandName}). All rights reserved.
+      </p>
+      <p class="domain-info">
+        โดเมนหลัก: <a href={BUSINESS_FACTS.VERIFIED.siteUrl}>{BUSINESS_FACTS.VERIFIED.displayDomain}</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-inverse);
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    margin-top: auto;
+    border-top: 1px solid #1e293b;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    }
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .logo-mark {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.3rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .brand-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .footer-tagline {
+    color: var(--color-accent-light);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-desc {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-contact-cards {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: #1e293b;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-sm);
+    color: #f8fafc;
+    font-size: 0.85rem;
+    border: 1px solid #334155;
+  }
+
+  .contact-chip:hover {
+    border-color: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .chip-label {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .footer-heading {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-links a {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent-light);
+  }
+
+  .compliance-note {
+    margin-top: 1.25rem;
+    padding: 0.75rem;
+    background-color: rgba(30, 41, 59, 0.5);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .compliance-note p {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.85rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .domain-info a {
+    color: var(--color-accent-light);
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+
+const seo = resolveSeo('/ความน่าเชื่อถือ/');
+const breadcrumbs = [
+  { name: 'ความน่าเชื่อถือ', url: '/ความน่าเชื่อถือ/' }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">TRUST & STANDARDS</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        มาตรฐานความปลอดภัย นโยบายการลบข้อมูลส่วนบุคคล และความโปร่งใสในทุกขั้นตอนการรับซื้อ
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">3 เสาหลักแห่งความน่าเชื่อถือ</h2>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.3rem;">
+              1. มาตรฐานการล้างข้อมูลส่วนบุคคล (Data Sanitization)
+            </h3>
+            <p>
+              เรารับรองและตรวจสอบว่าอุปกรณ์ทุกเครื่องได้รับการล้างข้อมูล (Factory Reset / Secure Wipe) และลงชื่อออกจากบัญชีส่วนบุคคล เช่น Apple ID, Google Account, Microsoft Account อย่างสมบูรณ์ 100% เพื่อป้องกันข้อมูลส่วนตัวของผู้ขายรั่วไหล
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.3rem;">
+              2. ความโปร่งใสด้านการตรวจสอบสภาพ (Transparent Valuation)
+            </h3>
+            <p>
+              ทุกการประเมินราคาจะมีการชี้แจงเหตุผลตามสภาพจริง เช่น สุขภาพแบตเตอรี่ รอยตำหนิ หรืออุปกรณ์ที่ขาดหาย โดยไม่มีการกดราคาโดยไม่มีหลักเกณฑ์
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.3rem;">
+              3. ปฏิบัติตามกฎหมายอย่างเคร่งครัด (Legal Compliance)
+            </h3>
+            <p>
+              เราไม่รับซื้อของผิดกฎหมาย สินค้าที่ถูกขโมย หรือของหลุดจำนำที่ไม่มีเอกสารแสดงความเป็นเจ้าของที่ถูกต้อง และดำเนินขั้นตอนการชำระเงินที่ปลอดภัยและสามารถตรวจสอบได้
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

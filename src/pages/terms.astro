@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { BUSINESS_FACTS } from '../config/business';
+import { resolveSeo } from '../lib/seo/resolve';
+
+const seo = resolveSeo('/terms/');
+const breadcrumbs = [
+  { name: 'ข้อกำหนดการใช้งาน', url: '/terms/' }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem;">
+        <h1 style="font-size: 2rem; margin-bottom: 1.5rem;">{seo.h1}</h1>
+        
+        <div style="color: var(--color-text-muted); line-height: 1.7; font-size: 0.95rem;">
+          <p>
+            ยินดีต้อนรับสู่ {BUSINESS_FACTS.VERIFIED.brandName} การใช้งานบริการและการตกลงซื้อขายสินค้าไอทีกับเราอยู่ภายใต้ข้อกำหนดและเงื่อนไขดังต่อไปนี้:
+          </p>
+
+          <h2 style="font-size: 1.3rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">1. สิทธิ์และความถูกต้องตามกฎหมายของสินค้า</h2>
+          <p>
+            ผู้ขายต้องเป็นเจ้าของกรรมสิทธิ์ในสินค้าโดยถูกต้องตามกฎหมาย และสินค้าต้องไม่ใช่ทรัพย์สินที่ได้มาจากการกระทำความผิด การโจรกรรม หรือของผิดกฎหมายทุกประเภท เราขอสงวนสิทธิ์ในการปฏิเสธการรับซื้อและส่งต่อข้อมูลให้หน่วยงานที่เกี่ยวข้องหากพบการกระทำผิด
+          </p>
+
+          <h2 style="font-size: 1.3rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">2. การประเมินราคาและการตกลงซื้อขาย</h2>
+          <p>
+            การประเมินราคาผ่านช่องทางออนไลน์ (LINE / โทรศัพท์) เป็นการประเมินเบื้องต้นจากข้อมูลและรูปภาพที่ผู้ขายส่งมา ราคาซื้อขายสุดท้ายจะได้รับการยืนยันหลังจากการตรวจสอบสภาพจริงของอุปกรณ์
+          </p>
+
+          <h2 style="font-size: 1.3rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">3. การลบข้อมูลและบัญชีส่วนบุคคล</h2>
+          <p>
+            ผู้ขายมีหน้าที่สำรองข้อมูลที่สำคัญและออกจากระบบบัญชีส่วนบุคคล (Apple ID, Google, Samsung, Microsoft) ก่อนการส่งมอบสินค้า ทางร้านจะไม่รับผิดชอบต่อข้อมูลที่ตกค้างหลังการตกลงซื้อขายเสร็จสิ้น
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

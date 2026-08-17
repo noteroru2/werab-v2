@@ -1,0 +1,171 @@
+---
+interface ServiceCard {
+  title: string;
+  desc: string;
+  path: string;
+  brands: string;
+  icon: string;
+}
+
+const services: ServiceCard[] = [
+  {
+    title: 'รับซื้อโน๊ตบุ๊ค',
+    desc: 'รับซื้อ Laptop Gaming, ทำงาน, Ultrabook ทุกแบรนด์ สภาพสวยหรือมีตำหนิ',
+    path: '/รับซื้อโน๊ตบุ๊ค/',
+    brands: 'Asus, Acer, Lenovo, Dell, HP, MSI',
+    icon: '💻'
+  },
+  {
+    title: 'รับซื้อคอมพิวเตอร์',
+    desc: 'รับซื้อคอมตั้งโต๊ะ PC สำนักงาน All-in-One ครบชุด ตีราคาตามสเปกจริง',
+    path: '/รับซื้อคอม/',
+    brands: 'Dell, HP, Lenovo, Acer, PC แบรนด์',
+    icon: '🖥️'
+  },
+  {
+    title: 'รับซื้อคอมประกอบ',
+    desc: 'รับซื้อ Gaming PC สเปกแรง เวิร์กสเตชัน ตีราคาแยกตามชิ้นส่วนอย่างละเอียด',
+    path: '/รับซื้อคอมประกอบ/',
+    brands: 'Custom PC, RTX, Core i, Ryzen',
+    icon: '⚙️'
+  },
+  {
+    title: 'รับซื้อ MacBook',
+    desc: 'รับซื้อ MacBook Pro / Air ทุกรุ่น ชิป Apple Silicon M1-M4 และ Intel',
+    path: '/รับซื้อแมคบุ๊ค/',
+    brands: 'MacBook Pro, MacBook Air, iMac, Mac mini',
+    icon: '🍎'
+  },
+  {
+    title: 'รับซื้อ iPhone',
+    desc: 'รับซื้อ iPhone ทุกตระกูล เช็กสุขภาพแบต กล้อง จอ บอดี้อย่างโปร่งใส',
+    path: '/รับซื้อไอโฟน/',
+    brands: 'iPhone 11 - 16 Pro Max ทุกรุ่น',
+    icon: '📱'
+  },
+  {
+    title: 'รับซื้อ iPad',
+    desc: 'รับซื้อ iPad Pro, Air, Mini, Gen พร้อมอุปกรณ์เสริม Pencil, Keyboard',
+    path: '/รับซื้อไอแพด/',
+    brands: 'iPad Pro M4/M2, iPad Air, iPad Mini',
+    icon: '📋'
+  },
+  {
+    title: 'รับซื้อกล้องและเลนส์',
+    desc: 'รับซื้อกล้องดิจิตอล Mirrorless, DSLR, เลนส์ และอุปกรณ์ถ่ายภาพทุกค่าย',
+    path: '/รับซื้อกล้อง/',
+    brands: 'Sony, Canon, Fujifilm, Nikon',
+    icon: '📷'
+  },
+  {
+    title: 'รับซื้อลำโพงบลูทูธ',
+    desc: 'รับซื้อลำโพงพกพา ลำโพงบ้าน เครื่องเสียงแบรนด์แท้ ตรวจสอบระบบเสียงชัดเจน',
+    path: '/รับซื้อลำโพง/',
+    brands: 'Marshall, JBL, Harman Kardon, Bose',
+    icon: '🔊'
+  },
+  {
+    title: 'รับซื้อเครื่องเล่นเกม',
+    desc: 'รับซื้อคอนโซลและเครื่องพกพา PS5, PS4, Nintendo Switch, Steam Deck',
+    path: '/รับซื้อเครื่องเกม/',
+    brands: 'PlayStation, Nintendo, Xbox, Handheld PC',
+    icon: '🎮'
+  }
+];
+---
+
+<div class="service-grid-wrap">
+  <div class="grid-3">
+    {services.map(s => (
+      <div class="card service-card">
+        <div class="service-header">
+          <span class="service-icon" aria-hidden="true">{s.icon}</span>
+          <div>
+            <h3 class="service-title">
+              <a href={s.path}>{s.title}</a>
+            </h3>
+            <span class="service-brands">{s.brands}</span>
+          </div>
+        </div>
+        <p class="service-desc">{s.desc}</p>
+        <div class="service-footer">
+          <a href={s.path} class="service-link">
+            <span>ดูรายละเอียดการรับซื้อ</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .service-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-icon {
+    font-size: 1.8rem;
+    background-color: var(--color-bg-subtle);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .service-title a {
+    color: var(--color-primary);
+  }
+
+  .service-title a:hover {
+    color: var(--color-accent);
+  }
+
+  .service-brands {
+    font-size: 0.8rem;
+    color: var(--color-accent-hover);
+    font-weight: 500;
+  }
+
+  .service-desc {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: 0.85rem;
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+  }
+
+  .service-link:hover {
+    color: var(--color-accent-hover);
+  }
+</style>

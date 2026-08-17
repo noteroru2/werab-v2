@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+import { getInternalLinks } from '../lib/seo/internal-links';
+
+const seo = resolveSeo('/รับซื้อคอม/');
+const breadcrumbs = [
+  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'รับซื้อคอมพิวเตอร์', url: '/รับซื้อคอม/' }
+];
+const internalLinks = getInternalLinks(seo);
+
+const faqs = [
+  {
+    question: 'รับซื้อคอมพิวเตอร์แบบไหนบ้าง?',
+    answer: 'เรารับซื้อคอมพิวเตอร์ตั้งโต๊ะ PC ทุกประเภท คอมพิวเตอร์แบรนด์เนม (Dell, HP, Lenovo, Acer, Asus), คอมพิวเตอร์ All-in-One และคอมพิวเตอร์สำนักงาน'
+  },
+  {
+    question: 'คอมเก่า ใช้งานมาหลายปี รับซื้อไหม?',
+    answer: 'รับซื้อโดยพิจารณาตามสเปกและชิ้นส่วนที่ยังสามารถนำไปใช้งานต่อได้ สามารถส่งรายละเอียดรุ่น CPU และสเปกมาให้ทีมงานช่วยดูราคาได้ครับ'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">PC DESKTOP BUYBACK</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        รับซื้อคอมพิวเตอร์ตั้งโต๊ะ PC Desktop สำนักงาน คอมแบรนด์ ทุกสเปก ตรวจสอบเร็ว จ่ายเงินทันที
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">รายละเอียดการรับซื้อคอมพิวเตอร์ตั้งโต๊ะ</h2>
+        <p>เรารับซื้อทั้งคอมพิวเตอร์รายเครื่องสำหรับบุคคลทั่วไป และการรับซื้อเหมาสำหรับสำนักงาน บริษัท หรือองค์กรที่ต้องการอัปเกรดระบบ:</p>
+        <ul>
+          <li><strong>คอมแบรนด์สำเร็จรูป</strong>: Dell OptiPlex, HP ProDesk/EliteDesk, Lenovo ThinkCentre, Acer Veriton</li>
+          <li><strong>คอมพิวเตอร์ All-in-One (AIO)</strong>: คอมจอในตัว ทุกแบรนด์ สภาพจอคมชัด พร้อมสายไฟแท้</li>
+          <li><strong>จอคอมพิวเตอร์ (Monitor)</strong>: รับซื้อพร้อมเครื่อง หรือรับซื้อแยกตามแบรนด์และสเปก</li>
+        </ul>
+      </div>
+
+      <ProcessSteps />
+
+      <div style="margin-top: 3.5rem;">
+        <FAQ items={faqs} />
+      </div>
+
+      <RelatedLinks
+        clusterLinks={internalLinks.clusterLinks}
+        parentLink={internalLinks.parentLink}
+        guideLinks={internalLinks.guideLinks}
+      />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

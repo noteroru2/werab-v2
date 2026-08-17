@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+import { getInternalLinks } from '../lib/seo/internal-links';
+
+const seo = resolveSeo('/รับซื้อคอมประกอบ/');
+const breadcrumbs = [
+  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'รับซื้อคอมพิวเตอร์', url: '/รับซื้อคอม/' },
+  { name: 'รับซื้อคอมประกอบ', url: '/รับซื้อคอมประกอบ/' }
+];
+const internalLinks = getInternalLinks(seo);
+
+const faqs = [
+  {
+    question: 'รับซื้อแยกชิ้นส่วน หรือรับทั้งเคส?',
+    answer: 'เรารับซื้อทั้งแบบยกเคสพร้อมใช้งาน และรับซื้อแยกชิ้นส่วนหลัก เช่น CPU, การ์ดจอ (GPU), RAM, Mainboard, Power Supply และ SSD'
+  },
+  {
+    question: 'ไม่มีกล่องอุปกรณ์ มีผลกับราคาไหม?',
+    answer: 'หากไม่มีกล่องอุปกรณ์ยังคงรับซื้อตามปกติ แต่อุปกรณ์ที่มีกล่องและใบเสร็จประกันศูนย์ครบถ้วนจะได้ราคาประเมินที่สูงขึ้น'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">CUSTOM GAMING PC</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        รับซื้อคอมประกอบ Gaming PC สเปกแรง เวิร์กสเตชัน ตีราคาตามอุปกรณ์จริงอย่างละเอียด
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">การประเมินราคาคอมประกอบรายชิ้น</h2>
+        <p>ทีมงานจะทำการตรวจสอบสเปกอุปกรณ์แต่ละชิ้นเพื่อตีราคาตามมูลค่าตลาดที่แท้จริง:</p>
+        <ul>
+          <li><strong>CPU</strong>: Intel Core i3 / i5 / i7 / i9 (Gen 10-14) และ AMD Ryzen 3 / 5 / 7 / 9 (Series 3000-7000)</li>
+          <li><strong>การ์ดจอ (GPU)</strong>: Nvidia GeForce RTX 20/30/40 Series และ AMD Radeon RX Series</li>
+          <li><strong>เมนบอร์ดและ RAM</strong>: ชิปเซ็ต B/Z/X Series พร้อมขนาดและบัสของ RAM DDR4 / DDR5</li>
+          <li><strong>Storage & PSU</strong>: NVMe M.2 SSD และพาวเวอร์ซัพพลายมาตรฐาน 80 Plus</li>
+        </ul>
+      </div>
+
+      <ProcessSteps />
+
+      <div style="margin-top: 3.5rem;">
+        <FAQ items={faqs} />
+      </div>
+
+      <RelatedLinks
+        clusterLinks={internalLinks.clusterLinks}
+        parentLink={internalLinks.parentLink}
+        guideLinks={internalLinks.guideLinks}
+      />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

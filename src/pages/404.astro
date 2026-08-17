@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Ensure response status is explicitly set to 404
+Astro.response.status = 404;
+---
+
+<BaseLayout
+  title="404 ไม่พบหน้าที่คุณต้องการ | เรารับซื้อ.com"
+  description="ไม่พบหน้าที่คุณต้องการ ข้อมูลอาจถูกย้ายหรือไม่มีอยู่ในระบบ เรารับซื้อ.com"
+  noindex={true}
+>
+  <div class="section">
+    <div class="container" style="text-align: center; max-width: 600px; padding: 4rem 1.5rem;">
+      <div style="font-size: 5rem; font-weight: 800; color: var(--color-accent); line-height: 1; margin-bottom: 1rem;">
+        404
+      </div>
+      <h1 style="font-size: 1.85rem; margin-bottom: 1rem; color: var(--color-primary);">
+        ไม่พบหน้าที่คุณต้องการ
+      </h1>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 2rem;">
+        หน้าที่คุณกำลังค้นหาอาจถูกเปลี่ยนเส้นทาง หรือไม่มีอยู่บนระบบ เรารับซื้อ.com ท่านสามารถเลือกดูหมวดหมู่สินค้าที่เรารับซื้อได้จากหน้าแรก
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn btn-primary">กลับสู่หน้าแรก</a>
+        <a href="/รับซื้อ/" class="btn btn-outline">ดูหมวดหมู่รับซื้อ</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

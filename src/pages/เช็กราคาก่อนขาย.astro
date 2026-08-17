@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+
+const seo = resolveSeo('/เช็กราคาก่อนขาย/');
+const breadcrumbs = [
+  { name: 'เช็กราคาก่อนขาย', url: '/เช็กราคาก่อนขาย/' }
+];
+
+const faqs = [
+  {
+    question: 'ทำไมควรเช็กราคาก่อนขาย?',
+    answer: 'การเช็กราคาและเข้าใจสภาพของอุปกรณ์ตนเองจะช่วยให้คุณทราบมูลค่าตลาดที่แท้จริง ป้องกันการถูกกดราคาเกินจริง และวางแผนการขายได้อย่างมั่นใจ'
+  },
+  {
+    question: 'ปัจจัยใดส่งผลต่อราคาขายต่อมากที่สุด?',
+    answer: 'ปัจจัยหลักได้แก่ ความนิยมและอายุของรุ่น, สภาพภายนอกและริ้วรอย, ความสมบูรณ์ของฟังก์ชันการใช้งาน, สุขภาพแบตเตอรี่, ประกันศูนย์คงเหลือ และความครบถ้วนของอุปกรณ์เสริมแท้'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">PRE-SALE GUIDE</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        คู่มือทำความเข้าใจสภาพและปัจจัยที่มีผลต่อมูลค่าสินค้าไอทีมือสอง เพื่อให้คุณตัดสินใจได้อย่างรอบคอบ
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">5 ปัจจัยหลักที่กำหนดราคาประเมินสินค้าไอที</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">1. รุ่น สเปก และความต้องการในตลาด</h3>
+            <p>ชิปประมวลผล ความจุ และซีรีส์ของอุปกรณ์ อุปกรณ์ที่เป็นรุ่นยอดนิยมและยังรองรับการอัปเดตระบบปฏิบัติการใหม่ๆ จะมีสภาพคล่องและมูลค่าคงเหลือสูงกว่า</p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">2. สภาพความสมบูรณ์ทางกายภาพ (Cosmetic Condition)</h3>
+            <p>รอยบุบ รอยตกกระแทก รอยขีดข่วนบนหน้าจอหรือบอดี้ การไม่มีตำหนิหนักช่วยรักษาราคาให้อยู่ในเกรด A / เกรดสวยงาม</p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">3. การทำงานของระบบและฟังก์ชันฮาร์ดแวร์</h3>
+            <p>หน้าจอสัมผัส กล้อง ไมค์ ลำโพง แป้นพิมพ์ พอร์ตเชื่อมต่อ และเซนเซอร์ต่างๆ ต้องทำงานได้ 100%</p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">4. ประสิทธิภาพของแบตเตอรี่ (Battery Health)</h3>
+            <p>สำหรับสมาร์ทโฟน โน๊ตบุ๊ค และแท็บเล็ต สุขภาพแบตเตอรี่ที่มากกว่า 80-85% จะช่วยให้ได้ราคาประเมินที่ดีขึ้น</p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">5. อุปกรณ์เสริม กล่อง และหลักฐานการซื้อ</h3>
+            <p>การมีอุปกรณ์ชาร์จแท้ กล่องบรรจุภัณฑ์ และใบเสร็จประกันศูนย์คงเหลือ จะช่วยเพิ่มความน่าเชื่อถือและมูลค่าสินค้า</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <FAQ items={faqs} />
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

@@ -1,0 +1,100 @@
+---
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  badge?: string;
+}
+
+const {
+  title = 'สนใจส่งรูปประเมินราคาเบื้องต้นได้ฟรี',
+  subtitle = 'แจ้งรุ่น สเปก หรือส่งรูปภาพสินค้าเพื่อรับการประเมินราคาที่เป็นธรรมและรวดเร็วทาง LINE',
+  badge = 'ติดต่อประเมินราคา'
+} = Astro.props;
+---
+
+<section class="cta-section">
+  <div class="container cta-box">
+    {badge && <span class="badge badge-accent cta-badge">{badge}</span>}
+    <h2 class="cta-title">{title}</h2>
+    <p class="cta-subtitle">{subtitle}</p>
+
+    <div class="cta-buttons">
+      <a
+        href={getLineUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-line btn-lg"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+        </svg>
+        <span>แอด LINE: {getDisplayLine()}</span>
+      </a>
+      <a href={getPhoneUrl()} class="btn btn-outline btn-lg cta-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>โทร {getDisplayPhone()}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: 3.5rem 0;
+  }
+
+  .cta-box {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 900px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cta-badge {
+    margin-bottom: 1rem;
+  }
+
+  .cta-title {
+    color: #ffffff;
+    font-size: 1.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-subtitle {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    max-width: 620px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-phone {
+    color: #ffffff;
+    border-color: #475569;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .cta-phone:hover {
+    background-color: #ffffff;
+    color: var(--color-primary);
+  }
+
+  .btn-lg {
+    padding: 0.85rem 1.75rem;
+    font-size: 1rem;
+  }
+</style>

@@ -1,0 +1,75 @@
+---
+import type { BreadcrumbItem } from '../lib/seo/schema';
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb-list">
+      <li class="breadcrumb-item">
+        <a href="/">หน้าแรก</a>
+      </li>
+      {items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        return (
+          <li class={`breadcrumb-item ${isLast ? 'active' : ''}`}>
+            <span class="separator" aria-hidden="true">/</span>
+            {isLast ? (
+              <span aria-current="page">{item.name}</span>
+            ) : (
+              <a href={item.url}>{item.name}</a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</nav>
+
+<style>
+  .breadcrumb-nav {
+    background-color: var(--color-bg-subtle);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.6rem 0;
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.4rem;
+  }
+
+  .breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-text-subtle);
+  }
+
+  .breadcrumb-item a {
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumb-item a:hover {
+    color: var(--color-accent);
+  }
+
+  .breadcrumb-item.active span {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .separator {
+    color: var(--color-border-hover);
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { BUSINESS_FACTS } from '../config/business';
+import { resolveSeo } from '../lib/seo/resolve';
+
+const seo = resolveSeo('/privacy-policy/');
+const breadcrumbs = [
+  { name: 'นโยบายความเป็นส่วนตัว', url: '/privacy-policy/' }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem;">
+        <h1 style="font-size: 2rem; margin-bottom: 1.5rem;">{seo.h1}</h1>
+
+        <div style="color: var(--color-text-muted); line-height: 1.7; font-size: 0.95rem;">
+          <p>
+            {BUSINESS_FACTS.VERIFIED.brandName} ให้ความสำคัญอย่างยิ่งกับการคุ้มครองข้อมูลส่วนบุคคล (PDPA) ของผู้ใช้งานและลูกค้าทุกท่าน นโยบายนี้ระบุถึงวิธีการเก็บรวบรวม ใช้ และรักษาความปลอดภัยของข้อมูล:
+          </p>
+
+          <h2 style="font-size: 1.3rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">1. ข้อมูลที่เราเก็บรวบรวม</h2>
+          <p>
+            เราเก็บรวบรวมข้อมูลที่จำเป็นสำหรับการประเมินราคาและยืนยันการทำธุรกรรม เช่น ชื่อ เบอร์โทรศัพท์ บัญชี LINE รูปภาพสินค้า และเอกสารยืนยันตัวตนสำหรับการทำสัญญาซื้อขายตามที่กฎหมายกำหนด
+          </p>
+
+          <h2 style="font-size: 1.3rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">2. การใช้ข้อมูล</h2>
+          <p>
+            ข้อมูลของท่านจะถูกนำไปใช้เพื่อวัตถุประสงค์ในการประเมินราคา ติดต่อประสานงานการรับซื้อ และปฏิบัติตามข้อกำหนดทางกฎหมายเท่านั้น โดยไม่มีการนำไปเผยแพร่หรือจำหน่ายให้แก่บุคคลภายนอก
+          </p>
+
+          <h2 style="font-size: 1.3rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">3. มาตรฐานการล้างข้อมูลในอุปกรณ์</h2>
+          <p>
+            อุปกรณ์ไอทีที่ผ่านการรับซื้อจะได้รับการตรวจสอบและดำเนินการล้างข้อมูล (Data Sanitization) ให้คืนสู่ค่าโรงงานอย่างสมบูรณ์ก่อนดำเนินการในขั้นตอนต่อไป
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

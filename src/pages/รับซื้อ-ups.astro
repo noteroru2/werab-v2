@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+import { getInternalLinks } from '../lib/seo/internal-links';
+
+const seo = resolveSeo('/รับซื้อ-ups/');
+const breadcrumbs = [
+  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'รับซื้อเครื่องสำรองไฟ UPS', url: '/รับซื้อ-ups/' }
+];
+const internalLinks = getInternalLinks(seo);
+
+const faqs = [
+  {
+    question: 'รับซื้อ UPS ประเภทใดบ้าง?',
+    answer: 'เรารับซื้อเครื่องสำรองไฟสำนักงานและเครื่องสำรองไฟตู้แร็คระบบใหญ่ APC, Eaton, Cleanline, Syndome, Emerson/Vertiv ทั้งสภาพพร้อมใช้งานและตัวเครื่องที่แบตเตอรี่เสื่อม'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">UPS BUYBACK</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        รับซื้อเครื่องสำรองไฟ UPS มือสอง ทุกขนาด กำลังวัตต์ และระบบตู้แร็คองค์กร
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">การรับซื้อเครื่องสำรองไฟ UPS</h2>
+        <p>เรารับซื้อทั้งขนาดใช้งานตามบ้านและระบบสำนักงาน:</p>
+        <ul>
+          <li><strong>UPS บ้านและสำนักงาน</strong>: 500VA - 3000VA (Line Interactive / True Online)</li>
+          <li><strong>UPS ระดับตู้แร็ค</strong>: 3kVA - 20kVA+ สำหรับห้องเซิร์ฟเวอร์</li>
+          <li><strong>แบรนด์มาตรฐาน</strong>: APC by Schneider Electric, Eaton, Syndome, Cleanline, Socomec</li>
+        </ul>
+      </div>
+
+      <ProcessSteps />
+
+      <div style="margin-top: 3.5rem;">
+        <FAQ items={faqs} />
+      </div>
+
+      <RelatedLinks
+        clusterLinks={internalLinks.clusterLinks}
+        parentLink={internalLinks.parentLink}
+        guideLinks={internalLinks.guideLinks}
+      />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

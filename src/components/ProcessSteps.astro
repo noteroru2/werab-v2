@@ -1,0 +1,67 @@
+---
+const steps = [
+  {
+    step: '01',
+    title: 'ส่งรูปและสเปกเบื้องต้น',
+    desc: 'ถ่ายภาพตัวเครื่องโดยรอบ ระบุรุ่น สเปก สภาพการใช้งาน อุปกรณ์ที่มี และตำหนิ (ถ้ามี) ส่งให้ทีมงานผ่านทาง LINE'
+  },
+  {
+    step: '02',
+    title: 'ประเมินราคาตามเกณฑ์จริง',
+    desc: 'ทีมงานวิเคราะห์ราคาตลาดและสภาพอุปกรณ์ แจ้งช่วงราคาเบื้องต้นอย่างโปร่งใสโดยไม่มีค่าธรรมเนียม'
+  },
+  {
+    step: '03',
+    title: 'นัดหมายตรวจสอบและส่งมอบ',
+    desc: 'เมื่อตกลงราคาได้ นัดหมายจุดนัดรับที่สะดวก หรือส่งมอบตามขั้นตอนที่ปลอดภัย'
+  },
+  {
+    step: '04',
+    title: 'ตรวจสภาพและรับเงินทันที',
+    desc: 'ตรวจสอบอุปกรณ์ตรงตามที่แจ้ง พร้อมดำเนินขั้นตอนโอนเงินหรือชำระเงินทันที และช่วยแนะนำวิธีล้างข้อมูล'
+  }
+];
+---
+
+<div class="process-steps">
+  <div class="grid-4">
+    {steps.map(s => (
+      <div class="card step-card">
+        <div class="step-badge">{s.step}</div>
+        <h3 class="step-title">{s.title}</h3>
+        <p class="step-desc">{s.desc}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .step-card {
+    position: relative;
+    padding: 1.75rem 1.25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-badge {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .step-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+    color: var(--color-primary);
+  }
+
+  .step-desc {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+</style>

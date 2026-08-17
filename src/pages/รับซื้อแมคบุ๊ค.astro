@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+import { getInternalLinks } from '../lib/seo/internal-links';
+
+const seo = resolveSeo('/รับซื้อแมคบุ๊ค/');
+const breadcrumbs = [
+  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'รับซื้อ MacBook', url: '/รับซื้อแมคบุ๊ค/' }
+];
+const internalLinks = getInternalLinks(seo);
+
+const faqs = [
+  {
+    question: 'รับซื้อ MacBook รุ่นใดบ้าง?',
+    answer: 'เรารับซื้อ MacBook Pro และ MacBook Air ทุกขนาดหน้าจอ (13", 14", 15", 16") ทั้งรุ่นชิป Apple Silicon M1, M2, M3, M4 และรุ่นชิป Intel รวมถึง iMac และ Mac mini'
+  },
+  {
+    question: 'ต้องปลดล็อค iCloud / Apple ID ก่อนขายไหม?',
+    answer: 'จำเป็นต้องออกจากระบบ iCloud / Apple ID และปิด Find My Mac ให้เรียบร้อยเพื่อความปลอดภัยของผู้ขายและความถูกต้องในการส่งมอบ'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">MACBOOK BUYBACK</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        รับซื้อ MacBook Pro, MacBook Air ชิป Apple Silicon และ Intel ทุกรุ่น ตรวจสอบแบตเตอรี่และสภาพบอดี้ ตีราคาโปร่งใส
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">ปัจจัยสำคัญในการประเมินราคา MacBook</h2>
+        <ul>
+          <li><strong>ชิปประมวลผลและความจุ</strong>: รุ่นชิป (M1 / M2 / M3 / M4 Pro / Max) ขนาด Unified Memory และความจุ SSD</li>
+          <li><strong>รอบการชาร์จและสุขภาพแบตเตอรี่</strong>: Battery Cycle Count และ Battery Health %</li>
+          <li><strong>สภาพจอภาพและแป้นพิมพ์</strong>: สารเคลือบหน้าจอ (Anti-reflective coating) ไม่มีรอยลอก คีย์บอร์ดและ Trackpad ทำงานสมบูรณ์</li>
+          <li><strong>กล่องและอุปกรณ์แท้</strong>: สาย MagSafe หรือ USB-C แท้ พร้อมหัวชาร์จตรงกำลังวัตต์</li>
+        </ul>
+      </div>
+
+      <ProcessSteps />
+
+      <div style="margin-top: 3.5rem;">
+        <FAQ items={faqs} />
+      </div>
+
+      <RelatedLinks
+        clusterLinks={internalLinks.clusterLinks}
+        parentLink={internalLinks.parentLink}
+        guideLinks={internalLinks.guideLinks}
+      />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+import { getInternalLinks } from '../lib/seo/internal-links';
+
+const seo = resolveSeo('/รับซื้อโน๊ตบุ๊ค/');
+const breadcrumbs = [
+  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'รับซื้อโน๊ตบุ๊ค', url: '/รับซื้อโน๊ตบุ๊ค/' }
+];
+const internalLinks = getInternalLinks(seo);
+
+const faqs = [
+  {
+    question: 'รับซื้อโน๊ตบุ๊คแบรนด์ใดบ้าง?',
+    answer: 'เรารับซื้อโน๊ตบุ๊คทุกแบรนด์มาตรฐาน เช่น Asus (ROG, TUF, ZenBook), Acer (Nitro, Predator, Swift), Lenovo (Legion, ThinkPad, IdeaPad), Dell (Alienware, XPS, Inspiron), HP (Victus, Omen, Pavilion), MSI และแบรนด์อื่นๆ'
+  },
+  {
+    question: 'โน๊ตบุ๊คแบตเตอรี่เสื่อม หรือมีรอยขีดข่วน รับซื้อหรือไม่?',
+    answer: 'รับซื้อตามสภาพจริง โดยจะหักลบค่าใช้จ่ายตามจุดที่มีตำหนิอย่างสมเหตุสมผล สามารถส่งรูปถ่ายจุดที่มีตำหนิให้ทีมงานประเมินราคาก่อนได้'
+  },
+  {
+    question: 'ข้อมูลในเครื่องจะปลอดภัยไหม?',
+    answer: 'เราให้ความสำคัญกับความปลอดภัยของข้อมูล ทีมงานจะช่วยแนะนำและตรวจสอบการ Factory Reset ล้างข้อมูลและออกจากบัญชีผู้ใช้ทั้งหมดก่อนส่งมอบ'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">NOTEBOOK BUYBACK</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        รับซื้อโน๊ตบุ๊คมือสอง Gaming, ทำงานทั่วไป, Ultrabook ทุกรุ่น ประเมินราคาเร็ว ตีราคาตรงไปตรงมา
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">แนวทางการประเมินราคาโน๊ตบุ๊ค</h2>
+        <p>การประเมินราคาโน๊ตบุ๊คมือสองขึ้นอยู่กับปัจจัยหลักดังต่อไปนี้:</p>
+        <ul style="margin-bottom: 1.5rem;">
+          <li><strong>สเปกหลัก (Hardware)</strong>: รุ่น CPU (Intel Core / AMD Ryzen), การ์ดจอ (Nvidia RTX / GTX / Radeon), ขนาด RAM และความจุ SSD</li>
+          <li><strong>สภาพหน้าจอและตัวเครื่อง</strong>: ความคมชัดของจอภาพ ไม่มี Dead Pixel หรือเส้นบอดี้ไม่มีรอยแตกหัก</li>
+          <li><strong>สุขภาพแบตเตอรี่และคีย์บอร์ด</strong>: ความจุแบตเตอรี่ที่เก็บไฟได้ปกติ ปุ่มกดและ Touchpad ทำงานครบทุกปุ่ม</li>
+          <li><strong>อุปกรณ์เสริม</strong>: สายชาร์จและอะแดปเตอร์แท้ กล่องบรรจุภัณฑ์ และใบเสร็จ/ประกันศูนย์ที่เหลืออยู่</li>
+        </ul>
+      </div>
+
+      <ProcessSteps />
+
+      <div style="margin-top: 3.5rem;">
+        <FAQ items={faqs} />
+      </div>
+
+      <RelatedLinks
+        clusterLinks={internalLinks.clusterLinks}
+        parentLink={internalLinks.parentLink}
+        guideLinks={internalLinks.guideLinks}
+      />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

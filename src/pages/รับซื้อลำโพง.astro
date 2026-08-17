@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+import { getInternalLinks } from '../lib/seo/internal-links';
+
+const seo = resolveSeo('/รับซื้อลำโพง/');
+const breadcrumbs = [
+  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'รับซื้อลำโพงบลูทูธ', url: '/รับซื้อลำโพง/' }
+];
+const internalLinks = getInternalLinks(seo);
+
+const faqs = [
+  {
+    question: 'รับซื้อลำโพงแบรนด์ใดบ้าง?',
+    answer: 'เรารับซื้อลำโพงบลูทูธพกพา ลำโพงบ้าน และเครื่องเสียงแบรนด์มาตรฐาน เช่น Marshall, JBL, Harman Kardon, Bose, B&O, Sony และ Audioengine'
+  },
+  {
+    question: 'ลำโพงไม่มีกล่อง รับซื้อไหม?',
+    answer: 'รับซื้อตามปกติ โดยทีมงานจะตรวจสอบสภาพบอดี้ ระบบเสียง และสายชาร์จ/อะแดปเตอร์แท้'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">SPEAKER BUYBACK</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        รับซื้อลำโพง Marshall, JBL, Harman Kardon, Bose และลำโพงบลูทูธแบรนด์ดัง ตรวจสอบระบบเสียงชัดเจน จ่ายเงินทันที
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">เกณฑ์การตรวจสอบลำโพงบลูทูธมือสอง</h2>
+        <ul>
+          <li><strong>คุณภาพเสียงและดอกลำโพง</strong>: เสียงใสชัดเจน เบสแน่น ดอกลำโพงไม่แตก ไม่มีเสียงแกรก</li>
+          <li><strong>แบตเตอรี่และการเชื่อมต่อ</strong>: การเก็บประจุไฟของแบตเตอรี่ และสัญญาณบลูทูธเสถียร</li>
+          <li><strong>สภาพภายนอก</strong>: หนังหุ้ม ตะแกรงหน้า ปุ่มหมุน และพอร์ตชาร์จไฟ</li>
+          <li><strong>ความถูกต้องของสินค้า</strong>: รับซื้อเฉพาะสินค้าแบรนด์แท้ มี Serial Number ชัดเจน</li>
+        </ul>
+      </div>
+
+      <ProcessSteps />
+
+      <div style="margin-top: 3.5rem;">
+        <FAQ items={faqs} />
+      </div>
+
+      <RelatedLinks
+        clusterLinks={internalLinks.clusterLinks}
+        parentLink={internalLinks.parentLink}
+        guideLinks={internalLinks.guideLinks}
+      />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

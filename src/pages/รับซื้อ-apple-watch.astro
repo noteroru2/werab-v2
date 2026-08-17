@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FAQ from '../components/FAQ.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import CTA from '../components/CTA.astro';
+import { resolveSeo } from '../lib/seo/resolve';
+import { getInternalLinks } from '../lib/seo/internal-links';
+
+const seo = resolveSeo('/รับซื้อ-apple-watch/');
+const breadcrumbs = [
+  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'รับซื้อ Apple Watch', url: '/รับซื้อ-apple-watch/' }
+];
+const internalLinks = getInternalLinks(seo);
+
+const faqs = [
+  {
+    question: 'รับซื้อ Apple Watch ซีรีส์ใดบ้าง?',
+    answer: 'เรารับซื้อ Apple Watch Ultra / Ultra 2, Apple Watch Series 6 - 10 และ Apple Watch SE ทุกขนาดตัวเรือน ทั้งรุ่น GPS และ GPS + Cellular'
+  },
+  {
+    question: 'ต้องเตรียม Apple Watch อย่างไรก่อนขาย?',
+    answer: 'ทำการยกเลิกการจับคู่ (Unpair) ผ่าน iPhone ซึ่งจะทำการล้างข้อมูลและปิดระบบล็อคการเข้าใช้ (Activation Lock) อัตโนมัติ'
+  }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">APPLE WATCH BUYBACK</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        รับซื้อ Apple Watch มือสอง ทุกรุ่น ตรวจสอบสภาพตัวเรือน สุขภาพแบตเตอรี่ ให้ราคายุติธรรม
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">เกณฑ์การประเมินราคา Apple Watch</h2>
+        <ul>
+          <li><strong>วัสดุและโมเดล</strong>: ตัวเรือนอะลูมิเนียม สแตนเลสสตีล หรือไทเทเนียม พร้อมสายแท้</li>
+          <li><strong>สภาพกระจกหน้าจอและเซนเซอร์</strong>: หน้าจอไม่มีรอยแตกลึก เซนเซอร์วัดชีพจรด้านหลังไม่แตกลาย</li>
+          <li><strong>สุขภาพแบตเตอรี่</strong>: Battery Health % และประสิทธิภาพการชาร์จไฟ</li>
+          <li><strong>อุปกรณ์เสริม</strong>: สายชาร์จแม่เหล็กแท้ และกล่องบรรจุภัณฑ์</li>
+        </ul>
+      </div>
+
+      <ProcessSteps />
+
+      <div style="margin-top: 3.5rem;">
+        <FAQ items={faqs} />
+      </div>
+
+      <RelatedLinks
+        clusterLinks={internalLinks.clusterLinks}
+        parentLink={internalLinks.parentLink}
+        guideLinks={internalLinks.guideLinks}
+      />
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

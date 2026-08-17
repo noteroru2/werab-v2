@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TrustBar from '../components/TrustBar.astro';
+import { getDisplayPhone, getPhoneUrl, getDisplayLine, getLineUrl } from '../config/business';
+import { resolveSeo } from '../lib/seo/resolve';
+
+const seo = resolveSeo('/contact/');
+const breadcrumbs = [
+  { name: 'ติดต่อเรา', url: '/contact/' }
+];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  breadcrumbs={breadcrumbs}
+>
+  <Breadcrumb items={breadcrumbs} />
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+    <div class="container container-narrow">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">CONTACT US</span>
+      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
+      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+        ส่งรูปถ่าย สเปก และรายละเอียดสินค้าเพื่อรับการประเมินราคาเบื้องต้นได้ฟรี สะดวกและรวดเร็ว
+      </p>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card" style="padding: 2.5rem 2rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">ช่องทางการติดต่อประเมินราคา</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <!-- LINE Card -->
+          <div class="card" style="background: #f0fdf4; border-color: #bbf7d0; text-align: center; padding: 2rem 1.5rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+            <h3 style="font-size: 1.25rem; color: #166534; margin-bottom: 0.5rem;">LINE Official</h3>
+            <p style="color: #15803d; font-size: 0.95rem; margin-bottom: 1.25rem;">
+              ช่องทางหลัก แนะนำให้ส่งรูปถ่ายและรายละเอียดผ่าน LINE เพื่อความรวดเร็ว
+            </p>
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line" style="width: 100%;">
+              แอด LINE: {getDisplayLine()}
+            </a>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="card" style="background: #f8fafc; border-color: var(--color-border); text-align: center; padding: 2rem 1.5rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📞</div>
+            <h3 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.5rem;">โทรศัพท์ติดต่อ</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+              ติดต่อสอบถามขั้นตอน หรือนัดหมายเวลาส่งมอบสินค้า
+            </p>
+            <a href={getPhoneUrl()} class="btn btn-secondary" style="width: 100%;">
+              โทร: {getDisplayPhone()}
+            </a>
+          </div>
+        </div>
+
+        <div style="background-color: var(--color-bg-subtle); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-accent);">
+          <h4 style="font-size: 1rem; color: var(--color-primary); margin-bottom: 0.3rem;">ข้อมูลที่ควรเตรียมเพื่อความรวดเร็ว:</h4>
+          <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; color: var(--color-text-muted);">
+            <li>รูปถ่ายอุปกรณ์รอบตัวเครื่อง (หน้า, หลัง, มุมขอบ)</li>
+            <li>รุ่น ยี่ห้อ และสเปกความจุ</li>
+            <li>สภาพการใช้งาน ตำหนิ (ถ้ามี)</li>
+            <li>อุปกรณ์เสริม กล่อง หรือใบเสร็จที่มี</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
