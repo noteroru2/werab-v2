@@ -1,78 +1,414 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import TrustBar from '../components/TrustBar.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
 import FAQ from '../components/FAQ.astro';
-import RelatedLinks from '../components/RelatedLinks.astro';
-import CTA from '../components/CTA.astro';
-import { resolveSeo } from '../lib/seo/resolve';
-import { getInternalLinks } from '../lib/seo/internal-links';
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
-const seo = resolveSeo('/รับซื้อแมคบุ๊ค/');
+const pageTitle = "รับซื้อ MacBook มือสอง MacBook Air Pro เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อ MacBook มือสอง MacBook Air และ MacBook Pro ประเมินจากรุ่น ชิป M1 M2 M3 M4 RAM SSD แบตเตอรี่ สภาพจอและอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย";
+
 const breadcrumbs = [
-  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'หน้าแรก', url: '/' },
+  { name: 'รายการรับซื้อสินค้า', url: '/รับซื้อ/' },
   { name: 'รับซื้อ MacBook', url: '/รับซื้อแมคบุ๊ค/' }
 ];
-const internalLinks = getInternalLinks(seo);
 
-const faqs = [
+const macbookFaqs = [
   {
-    question: 'รับซื้อ MacBook รุ่นใดบ้าง?',
-    answer: 'เรารับซื้อ MacBook Pro และ MacBook Air ทุกขนาดหน้าจอ (13", 14", 15", 16") ทั้งรุ่นชิป Apple Silicon M1, M2, M3, M4 และรุ่นชิป Intel รวมถึง iMac และ Mac mini'
+    question: "รับซื้อ MacBook Air และ MacBook Pro มือสองไหม?",
+    answer: "สามารถส่ง MacBook Air และ MacBook Pro หลายรุ่นมาประเมินได้ ทั้งรุ่น Intel และ Apple Silicon โดยควรแจ้งรุ่น ชิป RAM SSD สภาพแบตเตอรี่ ตัวเครื่อง และอุปกรณ์"
   },
   {
-    question: 'ต้องปลดล็อค iCloud / Apple ID ก่อนขายไหม?',
-    answer: 'จำเป็นต้องออกจากระบบ iCloud / Apple ID และปิด Find My Mac ให้เรียบร้อยเพื่อความปลอดภัยของผู้ขายและความถูกต้องในการส่งมอบ'
+    question: "MacBook แบตเสื่อมหรือ Cycle สูงขายได้ไหม?",
+    answer: "สามารถส่งมาประเมินตามสภาพได้ ควรแจ้ง Cycle Count, Battery Condition และอาการใช้งานจริง เพราะจำนวน Cycle เพียงอย่างเดียวไม่ได้บอกสภาพแบตเตอรี่ทั้งหมด"
+  },
+  {
+    question: "MacBook ไม่มีกล่องหรือ Adapter ขายได้ไหม?",
+    answer: "สามารถส่งมาประเมินได้ โดยควรแจ้งอุปกรณ์ที่มีอยู่จริง ราคาอาจพิจารณาความครบของชุดและต้นทุน Adapter ของแต่ละรุ่นร่วมด้วย"
+  },
+  {
+    question: "MacBook เคยซ่อมหรือเปลี่ยนจอยังขายได้ไหม?",
+    answer: "สามารถส่งมาประเมินได้ ควรแจ้งประวัติการซ่อมหากทราบ เช่น เปลี่ยนหน้าจอ Battery Keyboard หรือซ่อม Logic Board เพื่อช่วยตรวจสภาพและความเสี่ยงได้ตรงขึ้น"
+  },
+  {
+    question: "ต้องล้าง MacBook ก่อนส่งรูปเช็กราคาหรือไม่?",
+    answer: "ไม่จำเป็นต้องล้างข้อมูลเพื่อเช็กราคา ควร Backup และจัดการบัญชี Apple รวมถึง Find My เมื่อพร้อมส่งมอบเครื่องจริง"
   }
 ];
 ---
 
 <BaseLayout
-  title={seo.title}
-  description={seo.description}
+  title={pageTitle}
+  description={pageDescription}
   breadcrumbs={breadcrumbs}
-  faqs={faqs}
+  faqs={macbookFaqs}
 >
   <Breadcrumb items={breadcrumbs} />
 
-  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+  <!-- 1. HERO SECTION -->
+  <section class="section mac-hero-section">
     <div class="container container-narrow">
-      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">MACBOOK BUYBACK</span>
-      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
-      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
-        รับซื้อ MacBook Pro, MacBook Air ชิป Apple Silicon และ Intel ทุกรุ่น ตรวจสอบแบตเตอรี่และสภาพบอดี้ ตีราคาโปร่งใส
+      <span class="badge badge-accent mac-badge">MACBOOK BUYBACK</span>
+      <h1 class="mac-title">รับซื้อ MacBook มือสอง เช็กรุ่น ชิป แบตเตอรี่และสภาพก่อนขาย</h1>
+      <p class="mac-subtitle">
+        MacBook แต่ละ Generation มีความต้องการมือสองต่างกัน
       </p>
     </div>
   </section>
 
-  <TrustBar />
-
-  <section class="section">
-    <div class="container container-narrow">
-      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">ปัจจัยสำคัญในการประเมินราคา MacBook</h2>
-        <ul>
-          <li><strong>ชิปประมวลผลและความจุ</strong>: รุ่นชิป (M1 / M2 / M3 / M4 Pro / Max) ขนาด Unified Memory และความจุ SSD</li>
-          <li><strong>รอบการชาร์จและสุขภาพแบตเตอรี่</strong>: Battery Cycle Count และ Battery Health %</li>
-          <li><strong>สภาพจอภาพและแป้นพิมพ์</strong>: สารเคลือบหน้าจอ (Anti-reflective coating) ไม่มีรอยลอก คีย์บอร์ดและ Trackpad ทำงานสมบูรณ์</li>
-          <li><strong>กล่องและอุปกรณ์แท้</strong>: สาย MagSafe หรือ USB-C แท้ พร้อมหัวชาร์จตรงกำลังวัตต์</li>
-        </ul>
+  <!-- 2. PROCESS / VALUATION STEPS (10 STEPS) -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">แนวทางการประเมิน</span>
+        <h2>ขั้นตอนเช็กราคา MacBook ก่อนขาย</h2>
+        <p>ตรวจสอบสเปก สุขภาพแบตเตอรี่ และสภาพเครื่องอย่างละเอียด</p>
       </div>
 
-      <ProcessSteps />
+      <div class="mac-steps-grid">
+        <div class="card mac-step-card">
+          <div class="mac-step-num">1</div>
+          <h3>ส่งรุ่น</h3>
+          <p>หากไม่ทราบ ให้ส่งหน้า About This Mac</p>
+        </div>
 
-      <div style="margin-top: 3.5rem;">
-        <FAQ items={faqs} />
+        <div class="card mac-step-card">
+          <div class="mac-step-num">2</div>
+          <h3>ส่ง Configuration</h3>
+          <p>อย่างน้อย: <strong>Chip + RAM + SSD</strong></p>
+        </div>
+
+        <div class="card mac-step-card">
+          <div class="mac-step-num">3</div>
+          <h3>ส่งข้อมูล Battery</h3>
+          <p>ถ้ามี: <strong>Cycle Count + Condition</strong></p>
+        </div>
+
+        <div class="card mac-step-card">
+          <div class="mac-step-num">4</div>
+          <h3>ส่งรูป</h3>
+          <p>ถ่ายรูปประกอบการประเมิน:</p>
+          <ul class="mac-step-list">
+            <li>ฝาบน</li>
+            <li>หน้าจอ</li>
+            <li>Keyboard</li>
+            <li>Trackpad</li>
+            <li>ใต้เครื่อง</li>
+            <li>มุมทุกด้าน</li>
+            <li>ตำหนิ</li>
+          </ul>
+        </div>
+
+        <div class="card mac-step-card">
+          <div class="mac-step-num">5</div>
+          <h3>แจ้งอุปกรณ์</h3>
+          <p>เช่น Adapter, Cable และ Box</p>
+        </div>
+
+        <div class="card mac-step-card">
+          <div class="mac-step-num">6</div>
+          <h3>แจ้งประวัติและอาการ</h3>
+          <p>ระบุว่าเคยซ่อมหรือมีปัญหาอะไร</p>
+        </div>
+
+        <div class="card mac-step-card">
+          <div class="mac-step-num">7</div>
+          <h3>ประเมินเบื้องต้น</h3>
+          <p>ใช้ข้อมูลรุ่น Configuration และสภาพร่วมกัน</p>
+        </div>
+
+        <div class="card mac-step-card">
+          <div class="mac-step-num">8</div>
+          <h3>ตัดสินใจ</h3>
+          <p>ผู้ขายสามารถพิจารณาก่อนว่าจะขายหรือเก็บเครื่องไว้</p>
+        </div>
+
+        <div class="card mac-step-card">
+          <div class="mac-step-num">9</div>
+          <h3>เตรียมบัญชีและข้อมูล</h3>
+          <p>เมื่อพร้อมขายจึง Backup, Sign out และล้างข้อมูลก่อนส่งมอบ</p>
+        </div>
+
+        <div class="card mac-step-card">
+          <div class="mac-step-num">10</div>
+          <h3>ตรวจเครื่องจริงและซื้อขาย</h3>
+          <p>ตรวจข้อมูลและสภาพให้ตรงกับที่ใช้ประเมินก่อนดำเนินการซื้อขาย</p>
+        </div>
       </div>
-
-      <RelatedLinks
-        clusterLinks={internalLinks.clusterLinks}
-        parentLink={internalLinks.parentLink}
-        guideLinks={internalLinks.guideLinks}
-      />
     </div>
   </section>
 
-  <CTA />
+  <!-- 3. PROVINCIAL / REMOTE VALUATION SECTION -->
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <div class="card provincial-card">
+        <h2>อยู่ต่างจังหวัดสามารถเริ่มเช็กราคาได้อย่างไร</h2>
+        <p>ไม่จำเป็นต้องเดินทางพร้อม MacBook เพียงเพื่อถามราคาเบื้องต้น</p>
+        <p>เริ่มจากส่ง:</p>
+
+        <div class="provincial-formula">
+          <strong>รุ่น + Chip + RAM + SSD + Battery + รูป + สภาพ + อุปกรณ์</strong>
+        </div>
+
+        <p>จากนั้นจึงพิจารณาวิธีส่งมอบหรือนัดหมายตามพื้นที่และความเหมาะสม</p>
+        <p class="provincial-note">
+          หน้า <code>/รับซื้อแมคบุ๊ค/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. INTAKE & CONTACT CTA SECTION -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card intake-card">
+        <h2>เริ่มเช็กราคา MacBook ของคุณ</h2>
+        <p>ข้อมูลที่ควรส่ง:</p>
+
+        <div class="intake-spec-box">
+          <strong>รุ่น + Chip + RAM + SSD + Battery + รูปเครื่อง + สภาพ + Adapter</strong>
+        </div>
+
+        <p class="intake-helper">
+          หากไม่แน่ใจว่ารุ่นอะไร ให้ส่งรูปหน้า About This Mac มาก่อนได้
+        </p>
+
+        <div class="cta-buttons-row">
+          <a
+            href={getLineUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-line btn-lg"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+
+          <a href={getPhoneUrl()} class="btn btn-outline btn-lg intake-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div class="intake-links-footer">
+          <p>
+            ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/">เช็กราคาก่อนขาย</a> และ วิธีขาย
+          </p>
+          <div class="intake-motto">
+            <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FAQ SECTION -->
+  <section class="section section-muted">
+    <div class="container">
+      <FAQ
+        items={macbookFaqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อ MacBook"
+        subtitle="ข้อสงสัยเกี่ยวกับ Apple Silicon, แบตเตอรี่, กล่อง และการออกจากระบบ iCloud"
+      />
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  /* Hero */
+  .mac-hero-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  .mac-badge {
+    margin-bottom: 1rem;
+  }
+
+  .mac-title {
+    font-size: 2.15rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  @media (min-width: 768px) {
+    .mac-title {
+      font-size: 2.65rem;
+    }
+  }
+
+  .mac-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Steps Grid (1-10) */
+  .mac-steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .mac-steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .mac-steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .mac-step-card {
+    padding: 1.75rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mac-step-num {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .mac-step-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .mac-step-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .mac-step-list {
+    margin: 0.5rem 0 0 1.25rem;
+    padding: 0;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .mac-step-list li {
+    margin-bottom: 0.25rem;
+  }
+
+  /* Provincial Card */
+  .provincial-card {
+    padding: 2.5rem 2rem;
+    background-color: #ffffff;
+  }
+
+  .provincial-card h2 {
+    font-size: 1.65rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .provincial-formula {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    background-color: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin: 1rem 0 1.25rem 0;
+    text-align: center;
+  }
+
+  .provincial-note {
+    background-color: var(--color-bg-subtle);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  /* Intake Card */
+  .intake-card {
+    padding: 2.75rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+  }
+
+  .intake-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+  }
+
+  .intake-spec-box {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    background-color: var(--color-accent-light);
+    border: 1px solid #fde68a;
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin: 1rem auto 1.25rem auto;
+    max-width: 680px;
+  }
+
+  .cta-buttons-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .intake-phone {
+    border-color: var(--color-border);
+  }
+
+  .intake-helper {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    max-width: 620px;
+    margin: 0 auto 1.25rem auto;
+    line-height: 1.6;
+  }
+
+  .intake-links-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+
+  .intake-links-footer a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .intake-motto {
+    font-size: 1.15rem;
+    color: var(--color-accent-hover);
+    background-color: var(--color-accent-light);
+    border: 1px solid #fde68a;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    max-width: 480px;
+    margin: 1.25rem auto 0 auto;
+  }
+</style>

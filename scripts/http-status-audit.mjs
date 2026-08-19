@@ -12,8 +12,13 @@ console.log(`\n=== HTTP STATUS & ROUTING AUDIT ===`);
 const testCases = [
   // 1. Core 200 Routes
   { path: '/', expectedStatus: 200, expectedState: 'INDEX' },
-  { path: '/รับซื้อ/', expectedStatus: 200, expectedState: 'HOLD_NOINDEX' },
-  { path: '/รับซื้อโน๊ตบุ๊ค/', expectedStatus: 200, expectedState: 'HOLD_NOINDEX' },
+  { path: '/รับซื้อ/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อคอม/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อแมคบุ๊ค/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อไอโฟน/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อไอแพด/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อกล้อง/', expectedStatus: 200, expectedState: 'HOLD_NOINDEX' },
   { path: '/รับซื้อลำโพง-อุดรธานี/', expectedStatus: 200, expectedState: 'INDEX' },
   { path: '/รับซื้อลำโพง-สารคาม/', expectedStatus: 200, expectedState: 'INDEX' },
 

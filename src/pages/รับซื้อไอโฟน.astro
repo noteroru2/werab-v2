@@ -1,78 +1,410 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import TrustBar from '../components/TrustBar.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
 import FAQ from '../components/FAQ.astro';
-import RelatedLinks from '../components/RelatedLinks.astro';
-import CTA from '../components/CTA.astro';
-import { resolveSeo } from '../lib/seo/resolve';
-import { getInternalLinks } from '../lib/seo/internal-links';
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
-const seo = resolveSeo('/รับซื้อไอโฟน/');
+const pageTitle = "รับซื้อ iPhone มือสอง เช็กรุ่น แบตเตอรี่และสภาพก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อ iPhone มือสองหลายรุ่น ประเมินจากรุ่น ความจุ สุขภาพแบตเตอรี่ หน้าจอ Face ID กล้อง สภาพเครื่อง ประวัติซ่อมและอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย";
+
 const breadcrumbs = [
-  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
+  { name: 'หน้าแรก', url: '/' },
+  { name: 'รายการรับซื้อสินค้า', url: '/รับซื้อ/' },
   { name: 'รับซื้อ iPhone', url: '/รับซื้อไอโฟน/' }
 ];
-const internalLinks = getInternalLinks(seo);
 
-const faqs = [
+const iphoneFaqs = [
   {
-    question: 'รับซื้อ iPhone รุ่นใดบ้าง?',
-    answer: 'เรารับซื้อ iPhone ทุกรุ่น ตั้งแต่ iPhone 11, 12, 13, 14, 15 จนถึง 16 Pro Max ทุกความจุและทุกโมเดลศูนย์ไทย (TH) หรือโมเดลนอก'
+    question: "รับซื้อ iPhone มือสองรุ่นไหนบ้าง?",
+    answer: "สามารถส่ง iPhone หลายรุ่นมาประเมินได้ โดยควรแจ้งรุ่น ความจุ Battery Health สภาพตัวเครื่อง การทำงานของ Face ID หรือ Touch ID กล้อง ประวัติซ่อม และอุปกรณ์ที่มี"
   },
   {
-    question: 'iPhone หน้าจอแตก หรือแบตเตอรี่เสื่อม รับซื้อหรือไม่?',
-    answer: 'รับซื้อตามสภาพจริง สามารถส่งรูปตัวเครื่องเพื่อเช็กการทำงานของระบบสัมผัส Face ID และบอดี้ เพื่อให้ทีมงานช่วยประเมินราคาได้'
+    question: "iPhone แบตเสื่อมหรือ Battery Health ต่ำขายได้ไหม?",
+    answer: "สามารถส่งมาประเมินตามสภาพได้ ไม่จำเป็นต้องเปลี่ยนแบตก่อนทุกกรณี ควรแจ้ง Battery Health และอาการใช้งานจริงเพื่อเปรียบเทียบมูลค่าตามสภาพกับต้นทุนการเปลี่ยนแบต"
+  },
+  {
+    question: "iPhone เคยเปลี่ยนจอหรือเปลี่ยนแบตยังขายได้ไหม?",
+    answer: "สามารถส่งมาประเมินได้ ควรแจ้งประวัติการซ่อมหรืออะไหล่ที่เคยเปลี่ยนหากทราบ เพราะมีผลต่อการตรวจสภาพและความเสี่ยงของเครื่อง"
+  },
+  {
+    question: "iPhone ไม่มีกล่องขายได้ไหม?",
+    answer: "สามารถส่งมาประเมินได้ กล่องและอุปกรณ์เป็นส่วนหนึ่งของความครบชุด แต่ราคาหลักยังต้องพิจารณาจากรุ่น ความจุ สภาพ การทำงาน และประวัติของเครื่อง"
+  },
+  {
+    question: "ต้องล้างข้อมูลและออกจาก Apple ID ก่อนเช็กราคาหรือไม่?",
+    answer: "ไม่จำเป็นต้องล้างข้อมูลหรือ Sign out เพียงเพื่อถามราคา ควร Backup และจัดการ Apple ID, Find My และข้อมูลส่วนตัวเมื่อพร้อมส่งมอบเครื่องจริง"
   }
 ];
 ---
 
 <BaseLayout
-  title={seo.title}
-  description={seo.description}
+  title={pageTitle}
+  description={pageDescription}
   breadcrumbs={breadcrumbs}
-  faqs={faqs}
+  faqs={iphoneFaqs}
 >
   <Breadcrumb items={breadcrumbs} />
 
-  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+  <!-- 1. HERO SECTION -->
+  <section class="section ip-hero-section">
     <div class="container container-narrow">
-      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">IPHONE BUYBACK</span>
-      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
-      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
-        รับซื้อ iPhone มือสอง ทุกรุ่น ทุกสภาพ ตรวจสอบฟังก์ชันครบถ้วน ประเมินราคายุติธรรม
+      <span class="badge badge-accent ip-badge">IPHONE BUYBACK</span>
+      <h1 class="ip-title">รับซื้อ iPhone มือสอง เช็กรุ่น ความจุ แบตเตอรี่และสภาพก่อนขาย</h1>
+      <p class="ip-subtitle">
+        ประเมินราคาตามรุ่น ความจุ สุขภาพแบตเตอรี่ ฟังก์ชัน Face ID กล้อง และประวัติการซ่อมจริง
       </p>
     </div>
   </section>
 
-  <TrustBar />
-
-  <section class="section">
-    <div class="container container-narrow">
-      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">เกณฑ์การประเมินราคา iPhone มือสอง</h2>
-        <ul>
-          <li><strong>โมเดลและความจุ</strong>: รุ่นเครื่อง (Standard / Plus / Pro / Pro Max) และความจุ (128GB - 1TB)</li>
-          <li><strong>สุขภาพแบตเตอรี่ (Battery Health)</strong>: สุขภาพแบต % ดั้งเดิมจากโรงงาน</li>
-          <li><strong>ฟังก์ชันฮาร์ดแวร์</strong>: การสแกนใบหน้า Face ID, กล้องหน้า-หลังทุกระยะ, ลำโพง, ไมโครโฟน และระบบชาร์จ True Tone</li>
-          <li><strong>สถานะเครื่อง</strong>: เครื่องไม่ติดล็อคเครือข่าย ปลดล็อค iCloud / Apple ID เรียบร้อย</li>
-        </ul>
+  <!-- 2. PROCESS / VALUATION STEPS (STEPS 3-10) -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">แนวทางการประเมิน</span>
+        <h2>ขั้นตอนเช็กราคา iPhone ก่อนขาย</h2>
+        <p>ตรวจสอบสภาพตัวเครื่อง ฟังก์ชันการทำงาน และความสมบูรณ์ของระบบ</p>
       </div>
 
-      <ProcessSteps />
+      <div class="ip-steps-grid">
+        <div class="card ip-step-card">
+          <div class="ip-step-num">3</div>
+          <h3>ส่งรูป</h3>
+          <p>ถ่ายรูปประกอบการประเมิน:</p>
+          <ul class="ip-step-list">
+            <li>หน้าจอ</li>
+            <li>ฝาหลัง</li>
+            <li>ขอบ</li>
+            <li>มุม</li>
+            <li>กล้อง</li>
+            <li>ตำหนิ</li>
+          </ul>
+        </div>
 
-      <div style="margin-top: 3.5rem;">
-        <FAQ items={faqs} />
+        <div class="card ip-step-card">
+          <div class="ip-step-num">4</div>
+          <h3>ทดสอบฟังก์ชัน</h3>
+          <p>ตรวจสอบการทำงาน เช่น:</p>
+          <ul class="ip-step-list">
+            <li>Face ID / Touch ID</li>
+            <li>Camera</li>
+            <li>Speaker</li>
+            <li>Microphone</li>
+            <li>Charging</li>
+            <li>Touch</li>
+          </ul>
+        </div>
+
+        <div class="card ip-step-card">
+          <div class="ip-step-num">5</div>
+          <h3>แจ้งประวัติซ่อม</h3>
+          <p>ถ้าทราบว่าเคยเปลี่ยนอะไหล่ ให้แจ้งตามจริง</p>
+        </div>
+
+        <div class="card ip-step-card">
+          <div class="ip-step-num">6</div>
+          <h3>แจ้งอุปกรณ์</h3>
+          <p>เช่น กล่องและสาย</p>
+        </div>
+
+        <div class="card ip-step-card">
+          <div class="ip-step-num">7</div>
+          <h3>ประเมินเบื้องต้น</h3>
+          <p>ใช้ข้อมูลรุ่น Configuration และสภาพร่วมกัน</p>
+        </div>
+
+        <div class="card ip-step-card">
+          <div class="ip-step-num">8</div>
+          <h3>พิจารณาก่อนขาย</h3>
+          <p>สามารถเปรียบเทียบและตัดสินใจได้ก่อนส่งมอบเครื่อง</p>
+        </div>
+
+        <div class="card ip-step-card">
+          <div class="ip-step-num">9</div>
+          <h3>Backup และจัดการบัญชี</h3>
+          <p>เมื่อพร้อมขายแล้วจึง Backup, Sign out และจัดการ Find My</p>
+        </div>
+
+        <div class="card ip-step-card">
+          <div class="ip-step-num">10</div>
+          <h3>ตรวจเครื่องจริงและซื้อขาย</h3>
+          <p>ตรวจข้อมูลและสภาพให้ตรงกับรายละเอียดที่ใช้ประเมินก่อนดำเนินการซื้อขาย</p>
+        </div>
       </div>
-
-      <RelatedLinks
-        clusterLinks={internalLinks.clusterLinks}
-        parentLink={internalLinks.parentLink}
-        guideLinks={internalLinks.guideLinks}
-      />
     </div>
   </section>
 
-  <CTA />
+  <!-- 3. PROVINCIAL / REMOTE VALUATION SECTION -->
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <div class="card provincial-card">
+        <h2>อยู่ต่างจังหวัดเริ่มเช็กราคา iPhone ได้อย่างไร</h2>
+        <p>ไม่จำเป็นต้องเดินทางพร้อมเครื่องเพียงเพื่อถามราคาเบื้องต้น</p>
+        <p>สามารถเริ่มจากส่ง:</p>
+
+        <div class="provincial-formula">
+          <strong>รุ่น + ความจุ + Battery Health + รูป + สภาพ + ประวัติซ่อม + อุปกรณ์</strong>
+        </div>
+
+        <p>จากนั้นจึงค่อยพิจารณาวิธีส่งมอบหรือนัดหมายตามพื้นที่และความเหมาะสม</p>
+        <p class="provincial-note">
+          หน้า <code>/รับซื้อไอโฟน/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด
+          หน้ารับซื้อ iPhone รายพื้นที่ที่มี Historical Search Equity จะเชื่อมเข้ากับหมวดนี้ภายหลังเมื่อผ่าน Content QA และ Index Release ของแต่ละหน้า
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. INTAKE & CONTACT CTA SECTION -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card intake-card">
+        <h2>เริ่มเช็กราคา iPhone ของคุณ</h2>
+        <p>ส่งข้อมูล:</p>
+
+        <div class="intake-spec-box">
+          <strong>รุ่น + ความจุ + Battery Health + รูปเครื่อง + สภาพ + ประวัติซ่อม + อุปกรณ์</strong>
+        </div>
+
+        <p class="intake-helper">
+          หากไม่แน่ใจว่ารุ่นอะไร ให้ส่งรูปหน้า About มาได้
+        </p>
+
+        <div class="cta-buttons-row">
+          <a
+            href={getLineUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-line btn-lg"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+
+          <a href={getPhoneUrl()} class="btn btn-outline btn-lg intake-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div class="intake-links-footer">
+          <p>
+            ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/">เช็กราคาก่อนขาย</a> และ วิธีขาย
+          </p>
+          <div class="intake-motto">
+            <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FAQ SECTION -->
+  <section class="section section-muted">
+    <div class="container">
+      <FAQ
+        items={iphoneFaqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อ iPhone"
+        subtitle="ข้อสงสัยเกี่ยวกับรุ่น แบตเตอรี่ ประวัติซ่อม กล่อง และ Apple ID"
+      />
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  /* Hero */
+  .ip-hero-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  .ip-badge {
+    margin-bottom: 1rem;
+  }
+
+  .ip-title {
+    font-size: 2.15rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  @media (min-width: 768px) {
+    .ip-title {
+      font-size: 2.65rem;
+    }
+  }
+
+  .ip-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Steps Grid (3-10) */
+  .ip-steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .ip-steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .ip-steps-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .ip-step-card {
+    padding: 1.75rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ip-step-num {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .ip-step-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .ip-step-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .ip-step-list {
+    margin: 0.5rem 0 0 1.25rem;
+    padding: 0;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .ip-step-list li {
+    margin-bottom: 0.25rem;
+  }
+
+  /* Provincial Card */
+  .provincial-card {
+    padding: 2.5rem 2rem;
+    background-color: #ffffff;
+  }
+
+  .provincial-card h2 {
+    font-size: 1.65rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .provincial-formula {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    background-color: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin: 1rem 0 1.25rem 0;
+    text-align: center;
+  }
+
+  .provincial-note {
+    background-color: var(--color-bg-subtle);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  /* Intake Card */
+  .intake-card {
+    padding: 2.75rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+  }
+
+  .intake-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+  }
+
+  .intake-spec-box {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    background-color: var(--color-accent-light);
+    border: 1px solid #fde68a;
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin: 1rem auto 1.25rem auto;
+    max-width: 720px;
+  }
+
+  .cta-buttons-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .intake-phone {
+    border-color: var(--color-border);
+  }
+
+  .intake-helper {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    max-width: 620px;
+    margin: 0 auto 1.25rem auto;
+    line-height: 1.6;
+  }
+
+  .intake-links-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+
+  .intake-links-footer a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .intake-motto {
+    font-size: 1.15rem;
+    color: var(--color-accent-hover);
+    background-color: var(--color-accent-light);
+    border: 1px solid #fde68a;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    max-width: 480px;
+    margin: 1.25rem auto 0 auto;
+  }
+</style>

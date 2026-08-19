@@ -6,13 +6,17 @@ interface Props {
   subtitle: string;
   badge?: string;
   showContactButtons?: boolean;
+  priceCheckUrl?: string;
+  priceCheckText?: string;
 }
 
 const {
   title,
   subtitle,
   badge = 'บริการรับซื้อสินค้าไอทีมือสอง',
-  showContactButtons = true
+  showContactButtons = true,
+  priceCheckUrl,
+  priceCheckText = 'เช็กราคาก่อนขาย'
 } = Astro.props;
 ---
 
@@ -38,8 +42,16 @@ const {
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
           </svg>
-          <span>ส่งรูปประเมินราคาผ่าน LINE ({getDisplayLine()})</span>
+          <span>ส่งรูปประเมินราคาทาง LINE ({getDisplayLine()})</span>
         </a>
+
+        {priceCheckUrl && (
+          <a href={priceCheckUrl} class="btn btn-primary btn-lg">
+            <span>{priceCheckText}</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        )}
+
         <a href={getPhoneUrl()} class="btn btn-outline btn-lg">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>

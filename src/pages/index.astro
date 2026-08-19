@@ -1,96 +1,479 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import TrustBar from '../components/TrustBar.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
-import FAQ from '../components/FAQ.astro';
-import CTA from '../components/CTA.astro';
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
-const homeFaqs = [
-  {
-    question: 'เรารับซื้อ.com รับซื้อสินค้าไอทีประเภทใดบ้าง?',
-    answer: 'เรารับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ตั้งโต๊ะ คอมประกอบ MacBook iPhone iPad กล้องถ่ายรูป เลนส์ ลำโพงบลูทูธ เครื่องเล่นเกมคอนโซล และอุปกรณ์ไอทีระดับองค์กร'
-  },
-  {
-    question: 'ขั้นตอนการประเมินราคาเบื้องต้นมีค่าใช้จ่ายหรือไม่?',
-    answer: 'ไม่มีค่าใช้จ่ายใดๆ ทั้งสิ้น ท่านสามารถส่งรูปถ่าย สเปก และรายละเอียดของอุปกรณ์มาทาง LINE @webuy เพื่อให้ทีมงานช่วยประเมินราคาได้ทันที'
-  },
-  {
-    question: 'มีบริการนัดรับสินค้าอย่างไร?',
-    answer: 'เรามีบริการนัดรับสินค้าในพื้นที่จุดนัดพบที่สะดวก ปลอดภัย หรือส่งมอบตามขั้นตอนที่ตกลงกัน พร้อมตรวจสอบสภาพและชำระเงินทันที'
-  },
-  {
-    question: 'เรื่องความปลอดภัยของข้อมูลในเครื่อง (Data Privacy) จัดการอย่างไร?',
-    answer: 'เราให้ความสำคัญสูงสุดกับความปลอดภัยของข้อมูลส่วนบุคคล ทีมงานจะช่วยแนะนำและตรวจสอบขั้นตอนการล้างข้อมูล (Factory Reset / Secure Wipe) ก่อนส่งมอบสินค้าทุกครั้ง'
-  }
-];
+const pageTitle = "รับซื้อสินค้าไอทีมือสอง เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อสินค้าไอทีมือสอง โน๊ตบุ๊ค คอม MacBook iPhone iPad กล้อง ลำโพง และอุปกรณ์ไอที ส่งรุ่น รูป สภาพและอุปกรณ์เพื่อเช็กราคาเบื้องต้นก่อนตัดสินใจขาย";
 ---
 
 <BaseLayout
-  title="เรารับซื้อ.com | รับซื้อสินค้าไอทีมือสอง ประเมินราคาจริงใจ"
-  description="ศูนย์บริการรับซื้อสินค้าไอทีมือสองครบวงจร โน๊ตบุ๊ค คอมพิวเตอร์ แมคบุ๊ค ไอโฟน ไอแพด กล้อง ลำโพง เครื่องเกม เช็กราคาก่อนขาย ประเมินสภาพตรงไปตรงมา"
-  faqs={homeFaqs}
+  title={pageTitle}
+  description={pageDescription}
 >
+  <!-- 1. HERO SECTION -->
   <Hero
-    title="รับซื้อสินค้าไอทีมือสอง ประเมินราคาเบื้องต้นก่อนขาย"
-    subtitle="ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ รับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ MacBook iPhone iPad กล้อง ลำโพง ตีราคาตามสภาพจริง"
+    title="รับซื้อสินค้าไอทีมือสอง เช็กราคาก่อนขายก่อนตัดสินใจ"
+    subtitle="ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ"
     badge="ศูนย์บริการรับซื้อสินค้าไอทีมือสอง"
+    priceCheckUrl="/เช็กราคาก่อนขาย/"
+    priceCheckText="เช็กราคาก่อนขาย"
   />
 
-  <TrustBar />
-
-  <!-- Category Grid Section -->
+  <!-- 2. PRODUCT CATEGORY GRID -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>หมวดหมู่สินค้าที่เรารับซื้อ</h2>
-        <p>เลือกหมวดหมู่เพื่อดูเกณฑ์การประเมินราคา รายละเอียดรุ่น และสภาพที่เรารับซื้อ</p>
+        <h2>เลือกประเภทสินค้าที่ต้องการประเมินราคา</h2>
+        <p>มีสินค้า → เลือกประเภท → เข้าใจปัจจัยราคา → ส่งข้อมูลประเมิน → ตัดสินใจว่าจะขายหรือไม่</p>
       </div>
 
       <ServiceGrid />
     </div>
   </section>
 
-  <!-- Process Steps Section -->
+  <!-- 3. VALUATION INTAKE & 5 REQUIRED INFOS -->
   <section class="section section-muted">
     <div class="container">
       <div class="section-header">
-        <h2>4 ขั้นตอนการขายง่ายและปลอดภัย</h2>
-        <p>กระบวนการประเมินราคาและรับซื้อที่ชัดเจน โปร่งใส ไม่ซับซ้อน</p>
+        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">ข้อมูลสำหรับประเมินราคา</span>
+        <h2>5 ข้อมูลสำคัญที่ใช้เช็กราคาเบื้องต้น</h2>
+        <p>เตรียมข้อมูลให้ครบถ้วนเพื่อการประเมินราคาที่ตรงตามสภาพจริง รวดเร็ว และเป็นธรรม</p>
       </div>
 
-      <ProcessSteps />
-    </div>
-  </section>
+      <div class="intake-grid">
+        <div class="card intake-card">
+          <div class="intake-icon">🏷️</div>
+          <h3>1. รุ่นสินค้า</h3>
+          <p>ชื่อแบรนด์ ซีรีส์ และรหัส Model Number เช่น MacBook Pro M2, Dell XPS 13, iPhone 14 Pro</p>
+        </div>
 
-  <!-- Pre-sale Advice Section -->
-  <section class="section">
-    <div class="container">
-      <div class="card" style="padding: 3rem 2rem; background: #ffffff; border: 1px solid var(--color-border);">
-        <div style="max-width: 750px; margin: 0 auto; text-align: center;">
-          <span class="badge badge-accent" style="margin-bottom: 1rem;">คำแนะนำก่อนตัดสินใจ</span>
-          <h2 style="font-size: 1.85rem; margin-bottom: 1rem; color: var(--color-primary);">
-            "ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ"
-          </h2>
-          <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem;">
-            เราเชื่อว่าการซื้อขายที่ดีเริ่มต้นจากข้อมูลที่โปร่งใส หากคุณยังไม่แน่ใจเรื่องราคาตลาด หรือสภาพเครื่องว่าคุ้มค่าที่จะขายหรือไม่ สามารถสอบถามหรือศึกษาแนวทางการประเมินราคากับทีมงานของเราได้ฟรี
-          </p>
-          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="/เช็กราคาก่อนขาย/" class="btn btn-primary">อ่านคู่มือเช็กราคาก่อนขาย</a>
-            <a href="/ราคากลางรับซื้อ/" class="btn btn-outline">ดูแนวทางราคากลาง</a>
-          </div>
+        <div class="card intake-card">
+          <div class="intake-icon">📷</div>
+          <h3>2. รูปถ่ายตัวเครื่อง</h3>
+          <p>รูปถ่ายรอบตัวเครื่อง หน้าจอ แป้นพิมพ์ พอร์ตเชื่อมต่อ และจุดที่มีรอยตำหนิ (ถ้ามี)</p>
+        </div>
+
+        <div class="card intake-card">
+          <div class="intake-icon">⚙️</div>
+          <h3>3. สภาพการใช้งาน</h3>
+          <p>การเปิด-ปิดเครื่อง การแสดงผลหน้าจอ สุขภาพแบตเตอรี่ กล้อง ลำโพง และระบบชาร์จ</p>
+        </div>
+
+        <div class="card intake-card">
+          <div class="intake-icon">📊</div>
+          <h3>4. สเปกตัวเครื่อง</h3>
+          <p>CPU, RAM, ขนาดความจุ SSD/HDD, การ์ดจอ หรือข้อมูลจากหน้า System Information / About</p>
+        </div>
+
+        <div class="card intake-card">
+          <div class="intake-icon">📦</div>
+          <h3>5. อุปกรณ์ที่มี</h3>
+          <p>หัวชาร์จ สายชาร์จแท้ กล่องเดิม ใบเสร็จ หรืออุปกรณ์เสริมอื่นๆ ที่มีผลต่อมูลค่าประเมิน</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section section-muted">
+  <!-- 4. SELLING PROCESS SECTION -->
+  <section class="section">
     <div class="container">
-      <FAQ items={homeFaqs} />
+      <div class="section-header">
+        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">ขั้นตอนการรับซื้อ</span>
+        <h2>ขั้นตอนการประเมินราคาและซื้อขาย</h2>
+        <p>การส่งข้อมูลมาประเมินไม่ได้หมายความว่าต้องตกลงขายทันที</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="card process-item">
+          <div class="process-number">01</div>
+          <div class="process-content">
+            <h3>ตรวจข้อมูลสินค้า รุ่น สเปก สภาพ และรายละเอียดที่มี</h3>
+            <p>หากข้อมูลไม่พอ อาจต้องขอรูปหรือข้อมูลเพิ่มเติม</p>
+          </div>
+        </div>
+
+        <div class="card process-item">
+          <div class="process-number">02</div>
+          <div class="process-content">
+            <h3>พิจารณาราคาและเงื่อนไข</h3>
+            <p>หลังทราบข้อมูลเบื้องต้น ผู้ขายสามารถพิจารณาได้ว่าต้องการขายหรือเก็บสินค้าไว้ก่อน การส่งข้อมูลมาประเมินไม่ได้หมายความว่าต้องตกลงขายทันที</p>
+          </div>
+        </div>
+
+        <div class="card process-item">
+          <div class="process-number">03</div>
+          <div class="process-content">
+            <h3>ตกลงวิธีส่งหรือนัดหมาย</h3>
+            <p>เมื่อตัดสินใจขายแล้วจึงตกลงวิธีนำส่งสินค้า หรือนัดหมายตามประเภทสินค้า พื้นที่ และคิวงาน</p>
+          </div>
+        </div>
+
+        <div class="card process-item">
+          <div class="process-number">04</div>
+          <div class="process-content">
+            <h3>ตรวจสินค้าจริง</h3>
+            <p>ตรวจรุ่น สเปก สภาพ การทำงาน และอุปกรณ์ว่าตรงกับข้อมูลที่ใช้ประเมินหรือไม่</p>
+          </div>
+        </div>
+
+        <div class="card process-item">
+          <div class="process-number">05</div>
+          <div class="process-content">
+            <h3>ซื้อขายและชำระเงิน</h3>
+            <p>เมื่อรายละเอียดตรงตามที่ตกลง จึงดำเนินการซื้อขายตามเงื่อนไขที่ตกลงกัน</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-footer">
+        <a href="/วิธีขาย/" class="btn btn-outline btn-lg">ดูขั้นตอนการขาย →</a>
+      </div>
     </div>
   </section>
 
-  <CTA />
+  <!-- 5. REPAIR VS SELL DECISION SECTION -->
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <div class="card decision-card">
+        <h2>ทำไมควรเช็กราคาก่อนซ่อมหรือซื้ออุปกรณ์เพิ่ม</h2>
+        <p>หลายคนเตรียมขายสินค้าด้วยการซื้อกล่อง ที่ชาร์จ เปลี่ยนแบตเตอรี่ หรือส่งซ่อมก่อน</p>
+        <p>แต่ค่าใช้จ่ายที่เพิ่มขึ้นไม่ได้หมายความว่าราคาขายจะเพิ่มขึ้นเท่ากันทุกกรณี</p>
+        <p>ก่อนจ่ายค่าซ่อมหรือซื้ออุปกรณ์เพิ่ม ควรเปรียบเทียบก่อนว่า</p>
+
+        <ul class="decision-list">
+          <li>ราคาตามสภาพปัจจุบันประมาณไหน</li>
+          <li>ค่าซ่อมเท่าไร</li>
+          <li>หลังซ่อมมูลค่าเพิ่มประมาณไหน</li>
+          <li>ความเสี่ยงของการซ่อมมีอะไร</li>
+          <li>ต้องใช้เวลาเพิ่มหรือไม่</li>
+        </ul>
+
+        <p class="decision-summary">
+          การรู้ข้อมูลเหล่านี้ช่วยให้ตัดสินใจได้ว่าควรซ่อมก่อนขาย หรือขายตามสภาพเดิม
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. MODEL IDENTIFICATION SECTION -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card model-card">
+        <h2>ถ้าไม่รู้รุ่นหรือสเปก ทำอย่างไร</h2>
+        <p class="model-intro">ไม่เป็นไร</p>
+        <p>สามารถเริ่มจากส่งรูปตัวเครื่องและป้ายรุ่นมาได้</p>
+        <p>สำหรับ Notebook หรือคอมพิวเตอร์อาจส่งรูปหน้า System Information, Task Manager หรือข้อมูลสเปกที่มี</p>
+        <p>สำหรับ iPhone และ iPad สามารถส่งข้อมูลจากหน้า About</p>
+        <p>สำหรับกล้องและลำโพงมักมี Model Number อยู่ใต้เครื่อง ด้านหลัง หรือบริเวณช่องแบตเตอรี่</p>
+        <p class="model-target">เป้าหมายคือให้ระบุสินค้าได้ถูกต้องก่อนเริ่มประเมิน</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. POSITIONING / TRUST SECTION -->
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <div class="card trust-card">
+        <h2>ไม่จำเป็นต้องรีบขาย</h2>
+        <p>เรารับซื้อ.com วางแนวทางไว้ว่า</p>
+        <div class="trust-quote">
+          <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
+        </div>
+        <p>หากราคาหรือเงื่อนไขยังไม่เหมาะ คุณสามารถเก็บสินค้าไว้ เปรียบเทียบ หรือตัดสินใจภายหลังได้</p>
+        <p>การเช็กราคาก่อนมีประโยชน์เพราะช่วยให้รู้ว่าสินค้าที่มีอยู่ควรจัดการอย่างไรต่อ ไม่ว่าจะเป็นขายตามสภาพ ซ่อมก่อนขาย หรือเก็บไว้ใช้งานต่อ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FINAL CTA SECTION -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card final-cta-card">
+        <h2>เริ่มเช็กราคาสินค้าของคุณ</h2>
+        <p class="cta-prep-label">เตรียมเพียง:</p>
+        <div class="cta-formula">
+          <strong>รุ่น + รูป + สภาพ + สเปก + อุปกรณ์</strong>
+        </div>
+
+        <p class="cta-send-label">แล้วส่งมาทาง</p>
+        
+        <div class="cta-contact-buttons">
+          <a
+            href={getLineUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-line btn-lg"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+
+          <a href={getPhoneUrl()} class="btn btn-outline btn-lg final-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div class="cta-fallback-links">
+          <p>
+            หากยังไม่แน่ใจว่าจะเริ่มจากตรงไหน ให้เริ่มที่ <a href="/เช็กราคาก่อนขาย/">เช็กราคาก่อนขาย</a> หรือเลือกประเภทสินค้าจาก <a href="/รับซื้อ/">รายการรับซื้อสินค้า</a> ก่อน
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  /* Intake Grid */
+  .intake-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .intake-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .intake-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .intake-grid .intake-card:last-child {
+      grid-column: span 2;
+    }
+  }
+
+  .intake-card {
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .intake-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .intake-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .intake-card p {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Process Timeline */
+  .process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .process-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .process-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .process-content h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+    color: var(--color-primary);
+  }
+
+  .process-content p {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .process-footer {
+    text-align: center;
+  }
+
+  /* Decision Card */
+  .decision-card {
+    padding: 2.5rem 2rem;
+    background-color: #ffffff;
+  }
+
+  .decision-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+    color: var(--color-primary);
+  }
+
+  .decision-list {
+    margin: 1.25rem 0 1.5rem 1.5rem;
+  }
+
+  .decision-list li {
+    font-size: 1rem;
+    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+  }
+
+  .decision-summary {
+    font-weight: 600;
+    color: var(--color-primary);
+    border-left: 4px solid var(--color-accent);
+    padding-left: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  /* Model Card */
+  .model-card {
+    padding: 2.5rem 2rem;
+    background-color: #ffffff;
+  }
+
+  .model-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .model-intro {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .model-target {
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: var(--color-bg-subtle);
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  /* Trust Card */
+  .trust-card {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+  }
+
+  .trust-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .trust-quote {
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    background-color: var(--color-accent-light);
+    border: 1px solid #fde68a;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    margin: 1.25rem auto 1.5rem auto;
+    max-width: 600px;
+  }
+
+  /* Final CTA Card */
+  .final-cta-card {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-radius: var(--radius-lg);
+  }
+
+  .final-cta-card h2 {
+    color: #ffffff;
+    font-size: 1.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-prep-label {
+    color: #94a3b8;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-formula {
+    font-size: 1.35rem;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin: 0.5rem auto 1.5rem auto;
+    max-width: 500px;
+  }
+
+  .cta-send-label {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .final-phone {
+    color: #ffffff;
+    border-color: #475569;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .final-phone:hover {
+    background-color: #ffffff;
+    color: var(--color-primary);
+  }
+
+  .cta-fallback-links {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #94a3b8;
+  }
+
+  .cta-fallback-links a {
+    color: #fde047;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .cta-fallback-links a:hover {
+    color: #ffffff;
+  }
+</style>

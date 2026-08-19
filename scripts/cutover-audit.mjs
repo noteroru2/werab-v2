@@ -7,7 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SEO_MANIFEST_MAP } from '../src/config/seo/manifest.ts';
+import { SEO_MANIFEST_MAP, APPROVED_INDEX_PAGES } from '../src/config/seo/manifest.ts';
 import { resolveSeo } from '../src/lib/seo/resolve.ts';
 import { GONE_PATHS, GONE_PATHS_RAW } from '../src/config/seo/gone.ts';
 import { REDIRECT_MAP } from '../src/config/seo/redirects.ts';
@@ -199,8 +199,9 @@ for (const [pathUrl, record] of SEO_MANIFEST_MAP.entries()) {
   }
 }
 
-if (indexCount !== 3) {
-  blockers.push(`Active INDEX page count is ${indexCount}, expected exactly 3!`);
+const expectedApprovedIndexCount = APPROVED_INDEX_PAGES.length;
+if (indexCount !== expectedApprovedIndexCount) {
+  blockers.push(`Active INDEX page count is ${indexCount}, expected exactly ${expectedApprovedIndexCount} from APPROVED_INDEX_PAGES!`);
 }
 
 console.log(`Audited Routes Summary:`);

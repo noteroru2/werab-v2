@@ -17,6 +17,7 @@
     "audit:links": "tsx scripts/internal-link-audit.mjs",
     "audit:release": "tsx scripts/index-release-audit.mjs",
     "audit:cutover": "tsx scripts/cutover-audit.mjs",
+    "audit:content-copy": "tsx scripts/content-copy-audit.mjs",
     "report:parity": "node scripts/generate-parity-report.mjs"
   },
   "dependencies": {

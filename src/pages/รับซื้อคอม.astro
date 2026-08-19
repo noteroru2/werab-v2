@@ -1,78 +1,409 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import TrustBar from '../components/TrustBar.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
 import FAQ from '../components/FAQ.astro';
-import RelatedLinks from '../components/RelatedLinks.astro';
-import CTA from '../components/CTA.astro';
-import { resolveSeo } from '../lib/seo/resolve';
-import { getInternalLinks } from '../lib/seo/internal-links';
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
-const seo = resolveSeo('/รับซื้อคอม/');
+const pageTitle = "รับซื้อคอมมือสอง Gaming PC และคอมประกอบ เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อคอมพิวเตอร์มือสอง Gaming PC และคอมประกอบ ประเมินจาก CPU การ์ดจอ RAM SSD เมนบอร์ด PSU และสภาพเครื่อง ส่งสเปกและรูปเช็กราคาก่อนขาย";
+
 const breadcrumbs = [
-  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
-  { name: 'รับซื้อคอมพิวเตอร์', url: '/รับซื้อคอม/' }
+  { name: 'หน้าแรก', url: '/' },
+  { name: 'รายการรับซื้อสินค้า', url: '/รับซื้อ/' },
+  { name: 'รับซื้อคอม', url: '/รับซื้อคอม/' }
 ];
-const internalLinks = getInternalLinks(seo);
 
-const faqs = [
+const pcFaqs = [
   {
-    question: 'รับซื้อคอมพิวเตอร์แบบไหนบ้าง?',
-    answer: 'เรารับซื้อคอมพิวเตอร์ตั้งโต๊ะ PC ทุกประเภท คอมพิวเตอร์แบรนด์เนม (Dell, HP, Lenovo, Acer, Asus), คอมพิวเตอร์ All-in-One และคอมพิวเตอร์สำนักงาน'
+    question: "รับซื้อคอมประกอบและ Gaming PC ไหม?",
+    answer: "สามารถส่งคอมประกอบ Desktop PC และ Gaming PC มาประเมินได้ โดยควรแจ้ง CPU, GPU, RAM, SSD, Mainboard, PSU และสภาพเครื่อง เพื่อพิจารณามูลค่าจากชิ้นส่วนที่ติดตั้งจริง"
   },
   {
-    question: 'คอมเก่า ใช้งานมาหลายปี รับซื้อไหม?',
-    answer: 'รับซื้อโดยพิจารณาตามสเปกและชิ้นส่วนที่ยังสามารถนำไปใช้งานต่อได้ สามารถส่งรายละเอียดรุ่น CPU และสเปกมาให้ทีมงานช่วยดูราคาได้ครับ'
+    question: "ขายคอมยกชุดหรือแยกชิ้นดีกว่ากัน?",
+    answer: "ขึ้นอยู่กับสเปกและมูลค่าของชิ้นส่วนแต่ละตัว การขายยกชุดสะดวกกว่า ส่วนการแยกชิ้นอาจเหมาะกับบางเครื่องที่มีอุปกรณ์มูลค่าสูง ควรเปรียบเทียบมูลค่าทั้งสองแบบก่อนถอดเครื่อง"
+  },
+  {
+    question: "คอมมีปัญหาหรือเปิดไม่ติดขายได้ไหม?",
+    answer: "สามารถส่งข้อมูลมาประเมินตามสภาพได้ ควรแจ้งสเปกที่ทราบ อาการที่พบ และประวัติการซ่อมหากมี เครื่องที่เสียหนักอาจต้องประเมินจากมูลค่าชิ้นส่วนที่ยังเหลืออยู่"
+  },
+  {
+    question: "ขายคอมโดยไม่รวม SSD หรือ HDD ได้ไหม?",
+    answer: "สามารถแจ้งตั้งแต่ตอนประเมินว่าไม่รวม Storage ได้ โดยราคาจะพิจารณาจากอุปกรณ์ที่ขายจริง และช่วยให้เจ้าของสามารถเก็บ Drive ที่มีข้อมูลส่วนตัวไว้ได้"
+  },
+  {
+    question: "ต้องส่งสเปกอะไรเพื่อเช็กราคาคอม?",
+    answer: "อย่างน้อยควรมี CPU, GPU, RAM และ SSD หากทราบควรเพิ่ม Mainboard, PSU พร้อมรูปภายใน Case สภาพเครื่อง และรายการอุปกรณ์ที่ขายรวม"
   }
 ];
 ---
 
 <BaseLayout
-  title={seo.title}
-  description={seo.description}
+  title={pageTitle}
+  description={pageDescription}
   breadcrumbs={breadcrumbs}
-  faqs={faqs}
+  faqs={pcFaqs}
 >
   <Breadcrumb items={breadcrumbs} />
 
-  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+  <!-- 1. HERO SECTION -->
+  <section class="section pc-hero-section">
     <div class="container container-narrow">
-      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">PC DESKTOP BUYBACK</span>
-      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
-      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
-        รับซื้อคอมพิวเตอร์ตั้งโต๊ะ PC Desktop สำนักงาน คอมแบรนด์ ทุกสเปก ตรวจสอบเร็ว จ่ายเงินทันที
+      <span class="badge badge-accent pc-badge">DESKTOP & GAMING PC BUYBACK</span>
+      <h1 class="pc-title">รับซื้อคอมมือสอง Gaming PC เช็กสเปกและราคาก่อนขาย</h1>
+      <p class="pc-subtitle">
+        รับซื้อคอมพิวเตอร์ตั้งโต๊ะ PC Desktop, Gaming PC และคอมประกอบทุกสเปก ตรวจสอบฮาร์ดแวร์รายชิ้นและประเมินราคาก่อนขาย
       </p>
     </div>
   </section>
 
-  <TrustBar />
-
-  <section class="section">
-    <div class="container container-narrow">
-      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">รายละเอียดการรับซื้อคอมพิวเตอร์ตั้งโต๊ะ</h2>
-        <p>เรารับซื้อทั้งคอมพิวเตอร์รายเครื่องสำหรับบุคคลทั่วไป และการรับซื้อเหมาสำหรับสำนักงาน บริษัท หรือองค์กรที่ต้องการอัปเกรดระบบ:</p>
-        <ul>
-          <li><strong>คอมแบรนด์สำเร็จรูป</strong>: Dell OptiPlex, HP ProDesk/EliteDesk, Lenovo ThinkCentre, Acer Veriton</li>
-          <li><strong>คอมพิวเตอร์ All-in-One (AIO)</strong>: คอมจอในตัว ทุกแบรนด์ สภาพจอคมชัด พร้อมสายไฟแท้</li>
-          <li><strong>จอคอมพิวเตอร์ (Monitor)</strong>: รับซื้อพร้อมเครื่อง หรือรับซื้อแยกตามแบรนด์และสเปก</li>
-        </ul>
+  <!-- 2. PROCESS / VALUATION STEPS (7 STEPS) -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">แนวทางการประเมิน</span>
+        <h2>ขั้นตอนเตรียมข้อมูลและเช็กราคาคอมพิวเตอร์</h2>
+        <p>ส่งข้อมูล ตรวจสอบฮาร์ดแวร์ และประเมินมูลค่าตามชิ้นส่วนจริง</p>
       </div>
 
-      <ProcessSteps />
+      <div class="pc-steps-grid">
+        <div class="card pc-step-card">
+          <div class="pc-step-num">1</div>
+          <h3>สเปก</h3>
+          <p>ส่งรายการสเปกหลัก หากทราบให้เพิ่ม: <strong>Mainboard + PSU</strong></p>
+        </div>
 
-      <div style="margin-top: 3.5rem;">
-        <FAQ items={faqs} />
+        <div class="card pc-step-card">
+          <div class="pc-step-num">2</div>
+          <h3>ส่งรูป</h3>
+          <p>ถ่ายรูปประกอบการประเมิน:</p>
+          <ul class="pc-step-list">
+            <li>ด้านหน้า</li>
+            <li>ด้านข้าง</li>
+            <li>ภายใน Case</li>
+            <li>ด้านหลัง</li>
+            <li>จุดตำหนิ</li>
+          </ul>
+        </div>
+
+        <div class="card pc-step-card">
+          <div class="pc-step-num">3</div>
+          <h3>แจ้งสภาพ</h3>
+          <p>ระบุรายละเอียดการใช้งาน:</p>
+          <ul class="pc-step-list">
+            <li>เปิดติดหรือไม่</li>
+            <li>เข้า Windows ได้ไหม</li>
+            <li>มีอาการอะไร</li>
+            <li>เคยซ่อมหรือไม่</li>
+            <li>มีประกันเหลือไหม</li>
+          </ul>
+        </div>
+
+        <div class="card pc-step-card">
+          <div class="pc-step-num">4</div>
+          <h3>แจ้งของที่ขายรวม</h3>
+          <p>ระบุอุปกรณ์เสริม เช่น:</p>
+          <ul class="pc-step-list">
+            <li>จอ</li>
+            <li>Keyboard</li>
+            <li>Mouse</li>
+            <li>Wi-Fi</li>
+            <li>อุปกรณ์อื่น</li>
+          </ul>
+        </div>
+
+        <div class="card pc-step-card">
+          <div class="pc-step-num">5</div>
+          <h3>ประเมินเบื้องต้น</h3>
+          <p>ดูสเปกและสภาพร่วมกันอย่างตรงไปตรงมา</p>
+        </div>
+
+        <div class="card pc-step-card">
+          <div class="pc-step-num">6</div>
+          <h3>พิจารณา</h3>
+          <p>ผู้ขายสามารถเปรียบเทียบและตัดสินใจก่อนขายได้</p>
+        </div>
+
+        <div class="card pc-step-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+          <div class="pc-step-num">7</div>
+          <h3>ตรวจเครื่องจริง</h3>
+          <p>เมื่อเลือกขาย จึงตรวจ Hardware และสภาพจริงก่อนดำเนินการซื้อขาย</p>
+        </div>
       </div>
-
-      <RelatedLinks
-        clusterLinks={internalLinks.clusterLinks}
-        parentLink={internalLinks.parentLink}
-        guideLinks={internalLinks.guideLinks}
-      />
     </div>
   </section>
 
-  <CTA />
+  <!-- 3. PROVINCIAL / REMOTE VALUATION SECTION -->
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <div class="card provincial-card">
+        <h2>อยู่ต่างจังหวัดเริ่มเช็กราคาได้อย่างไร</h2>
+        <p>ไม่จำเป็นต้องยกคอมเดินทางเพื่อถามราคาเบื้องต้นก่อน</p>
+        <p>สามารถส่ง:</p>
+
+        <div class="provincial-formula">
+          <strong>สเปก + รูป + สภาพ + รายการอุปกรณ์</strong>
+        </div>
+
+        <p>เพื่อเริ่มประเมินได้</p>
+        <p>จากนั้นจึงค่อยตกลงวิธีส่งมอบหรือนัดหมายตามประเภทสินค้า พื้นที่ และความเหมาะสม</p>
+        <p class="provincial-note">
+          หน้า <code>/รับซื้อคอม/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. INTAKE & CONTACT CTA SECTION -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="card intake-card">
+        <h2>เริ่มเช็กราคาคอมของคุณ</h2>
+        <p>ส่งข้อมูล:</p>
+
+        <div class="intake-spec-box">
+          <strong>CPU + GPU + RAM + SSD + Mainboard + PSU + รูปเครื่อง + สภาพ</strong>
+        </div>
+
+        <p class="intake-helper">
+          หากไม่ทราบทั้งหมด ให้เริ่มจากรูปหน้า Task Manager และรูปภายใน Case
+        </p>
+
+        <div class="cta-buttons-row">
+          <a
+            href={getLineUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-line btn-lg"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+
+          <a href={getPhoneUrl()} class="btn btn-outline btn-lg intake-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div class="intake-links-footer">
+          <p>
+            ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/">เช็กราคาก่อนขาย</a> และ วิธีขาย
+          </p>
+          <div class="intake-motto">
+            <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FAQ SECTION -->
+  <section class="section section-muted">
+    <div class="container">
+      <FAQ
+        items={pcFaqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อคอมพิวเตอร์และ Gaming PC"
+        subtitle="ข้อสงสัยเกี่ยวกับการขายยกชุด แยกชิ้น การถอดดิสก์ และเครื่องเสีย"
+      />
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  /* Hero */
+  .pc-hero-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  .pc-badge {
+    margin-bottom: 1rem;
+  }
+
+  .pc-title {
+    font-size: 2.15rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  @media (min-width: 768px) {
+    .pc-title {
+      font-size: 2.65rem;
+    }
+  }
+
+  .pc-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Steps Grid (1-6 + 7) */
+  .pc-steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .pc-steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pc-steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .pc-step-card {
+    padding: 1.75rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pc-step-num {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .pc-step-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .pc-step-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .pc-step-list {
+    margin: 0.5rem 0 0 1.25rem;
+    padding: 0;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .pc-step-list li {
+    margin-bottom: 0.25rem;
+  }
+
+  /* Provincial Card */
+  .provincial-card {
+    padding: 2.5rem 2rem;
+    background-color: #ffffff;
+  }
+
+  .provincial-card h2 {
+    font-size: 1.65rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .provincial-formula {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    background-color: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin: 1rem 0 1.25rem 0;
+    text-align: center;
+  }
+
+  .provincial-note {
+    background-color: var(--color-bg-subtle);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  /* Intake Card */
+  .intake-card {
+    padding: 2.75rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+  }
+
+  .intake-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+  }
+
+  .intake-spec-box {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    background-color: var(--color-accent-light);
+    border: 1px solid #fde68a;
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin: 1rem auto 1.25rem auto;
+    max-width: 680px;
+  }
+
+  .cta-buttons-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .intake-phone {
+    border-color: var(--color-border);
+  }
+
+  .intake-helper {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    max-width: 620px;
+    margin: 0 auto 1.25rem auto;
+    line-height: 1.6;
+  }
+
+  .intake-links-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+
+  .intake-links-footer a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .intake-motto {
+    font-size: 1.15rem;
+    color: var(--color-accent-hover);
+    background-color: var(--color-accent-light);
+    border: 1px solid #fde68a;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    max-width: 480px;
+    margin: 1.25rem auto 0 auto;
+  }
+</style>

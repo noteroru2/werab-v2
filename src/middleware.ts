@@ -2,45 +2,62 @@ import { defineMiddleware } from 'astro:middleware';
 import { resolveSeo } from './lib/seo/resolve';
 import { normalizePath } from './lib/seo/normalize';
 
+/**
+ * Serializes any redirect target into a safe, percent-encoded HTTP URL
+ * to prevent ByteString conversion errors on Unicode/Thai pathnames.
+ */
+function safeRedirectUrl(target: string, base: URL): string {
+  return new URL(target, base).href;
+}
+
 export const onRequest = defineMiddleware(async (context, next) => {
-  const pathname = context.url.pathname;
+  const url = context.url;
+  const rawPathname = url.pathname;
 
   // Skip static assets and special system endpoints
   if (
-    pathname.startsWith('/_astro/') ||
-    pathname.startsWith('/@') ||
-    pathname.startsWith('/_image') ||
-    pathname === '/favicon.ico' ||
-    pathname.endsWith('.css') ||
-    pathname.endsWith('.js') ||
-    pathname.endsWith('.png') ||
-    pathname.endsWith('.jpg') ||
-    pathname.endsWith('.jpeg') ||
-    pathname.endsWith('.svg') ||
-    pathname.endsWith('.webp') ||
-    pathname.endsWith('.woff2') ||
-    pathname.endsWith('.xml') ||
-    pathname.endsWith('.txt')
+    rawPathname.startsWith('/_astro/') ||
+    rawPathname.startsWith('/@') ||
+    rawPathname.startsWith('/_image') ||
+    rawPathname === '/favicon.ico' ||
+    rawPathname.endsWith('.css') ||
+    rawPathname.endsWith('.js') ||
+    rawPathname.endsWith('.png') ||
+    rawPathname.endsWith('.jpg') ||
+    rawPathname.endsWith('.jpeg') ||
+    rawPathname.endsWith('.svg') ||
+    rawPathname.endsWith('.webp') ||
+    rawPathname.endsWith('.woff2') ||
+    rawPathname.endsWith('.xml') ||
+    rawPathname.endsWith('.txt')
   ) {
     return next();
   }
 
-  const normalized = normalizePath(pathname);
+  // 1. Path Normalization: Decode raw incoming pathname to compare with decoded normalized format
+  let decodedPath = rawPathname;
+  try {
+    decodedPath = decodeURI(rawPathname);
+  } catch {
+    // If decode fails, fallback to rawPathname
+  }
 
-  // 1. Path Normalization: Redirect to trailing-slash format if not matching
-  if (pathname !== normalized) {
-    return context.redirect(normalized, 301);
+  const normalized = normalizePath(decodedPath);
+
+  // If path is not normalized (e.g. missing trailing slash, redundant slashes), redirect safely
+  if (decodedPath !== normalized) {
+    return context.redirect(safeRedirectUrl(normalized, url), 301);
   }
 
   // 2. SEO Resolver Evaluation
-  const seo = resolveSeo(pathname);
+  const seo = resolveSeo(normalized);
 
   // 3. HTTP 301 Permanent Redirect
   if (seo.httpStatus === 301 && seo.redirectTo) {
     return new Response(null, {
       status: 301,
       headers: {
-        Location: encodeURI(seo.redirectTo),
+        Location: safeRedirectUrl(seo.redirectTo, url),
         'Cache-Control': 'public, max-age=86400',
         'X-Robots-Tag': 'noindex, nofollow'
       }
