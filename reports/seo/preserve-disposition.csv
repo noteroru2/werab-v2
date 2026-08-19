@@ -1,0 +1,60 @@
+path,equityClass,equityScore,selectedForFinalIA,iaNode,finalPlanningDisposition,reason
+/,B_PRESERVE_IMPROVE,95,TRUE,CORE_HOME,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/,A_PRESERVE_REWRITE,60,TRUE,LOCAL_NOTEBOOK_CHUMPHAE,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/,A_PRESERVE_REWRITE,70,TRUE,LOCAL_NOTEBOOK_PHON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อ-server/,A_PRESERVE_REWRITE,40,TRUE,MONEY_SERVER,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อ/,B_PRESERVE_IMPROVE,20,TRUE,CORE_BUY_HUB,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อmacbook-อุดรธานี/,A_PRESERVE_REWRITE,50,TRUE,LOCAL_MACBOOK_UDON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อกล้อง-fujifilm-ฟูจิฟิล์ม/,A_PRESERVE_REWRITE,50,TRUE,MODEL_CAMERA_FUJI,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อกล้อง-ยโสธร/,A_PRESERVE_REWRITE,60,TRUE,LOCAL_CAMERA_YASOTHON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อกล้อง/,B_PRESERVE_IMPROVE,50,TRUE,MONEY_CAMERA,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อกล้องถ่ายรูป-ศรี/,A_PRESERVE_REWRITE,60,TRUE,LOCAL_CAMERA_SISAKET,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อกล้องถ่ายรูปจัง/,A_PRESERVE_REWRITE,60,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อกล้องมือสอง-บริก/,A_PRESERVE_REWRITE,60,FALSE,CLUSTER_PARENT,CONSOLIDATE,Consolidated into primary province/category hub to eliminate internal cannibalization
+/รับซื้อกล้องมือสองมุก/,A_PRESERVE_REWRITE,60,TRUE,LOCAL_CAMERA_MUKDAHAN,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อกล้องมือสองสุร/,A_PRESERVE_REWRITE,45,TRUE,LOCAL_CAMERA_SURIN,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อกล้องอุบล-กล้องcanon-niko/,A_PRESERVE_REWRITE,50,TRUE,LOCAL_CAMERA_UBON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อคอม-ขอนแก่น/,A_PRESERVE_REWRITE,80,TRUE,LOCAL_COMPUTER_KHONKAEN,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อคอม-ศรีสะเกษ/,A_PRESERVE_REWRITE,70,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อคอม-สายไหม/,A_PRESERVE_REWRITE,60,FALSE,CLUSTER_PARENT,CONSOLIDATE,Consolidated into primary province/category hub to eliminate internal cannibalization
+/รับซื้อคอม-สารคาม/,A_PRESERVE_REWRITE,50,TRUE,LOCAL_COMPUTER_SARAKHAM,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อคอม-อุดรธานี/,A_PRESERVE_REWRITE,90,TRUE,LOCAL_COMPUTER_UDON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อคอม/,B_PRESERVE_IMPROVE,50,TRUE,MONEY_COMPUTER,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อซากคอมพิวเตอร์/,A_PRESERVE_REWRITE,70,TRUE,MONEY_SCRAP,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อมือถือ-อุบล/,A_PRESERVE_REWRITE,70,TRUE,LOCAL_PHONE_UBON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อลำโพง-ยโสธร/,A_PRESERVE_REWRITE,60,TRUE,LOCAL_SPEAKER_YASOTHON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/,A_PRESERVE_REWRITE,70,TRUE,LOCAL_SPEAKER_ROIET,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อลำโพง-สารคาม/,B_PRESERVE_IMPROVE,95,TRUE,LOCAL_SPEAKER_SARAKHAM,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อลำโพง-อุดรธานี/,B_PRESERVE_IMPROVE,95,TRUE,LOCAL_SPEAKER_UDON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อเมืองขอนแก่น/,A_PRESERVE_REWRITE,70,TRUE,LOCAL_MACBOOK_KHONKAEN,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อเมืองศรีสะเกษ/,A_PRESERVE_REWRITE,70,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อเมืองอุดรธานี/,A_PRESERVE_REWRITE,70,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อโทรศัพท์-มือถือ-ย/,A_PRESERVE_REWRITE,60,TRUE,LOCAL_PHONE_YASOTHON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโทรศัพท์-อุบล/,A_PRESERVE_REWRITE,60,FALSE,CLUSTER_PARENT,CONSOLIDATE,Consolidated into primary province/category hub to eliminate internal cannibalization
+/รับซื้อโทรศัพท์มือถือ-จ/,A_PRESERVE_REWRITE,90,TRUE,LOCAL_PHONE_REGIONAL,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/,A_PRESERVE_REWRITE,80,TRUE,LOCAL_NOTEBOOK_YASOTHON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-notebook/,A_PRESERVE_REWRITE,50,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/,A_PRESERVE_REWRITE,70,TRUE,LOCAL_NOTEBOOK_KALASIN,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/,A_PRESERVE_REWRITE,60,TRUE,LOCAL_NOTEBOOK_KHONKAEN,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-จังหวัด/,A_PRESERVE_REWRITE,70,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/,A_PRESERVE_REWRITE,80,TRUE,LOCAL_NOTEBOOK_CHAIYAPHUM,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-นครพนม/,A_PRESERVE_REWRITE,80,TRUE,LOCAL_NOTEBOOK_NAKHON_PHANOM,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-นครราชส/,A_PRESERVE_REWRITE,80,TRUE,LOCAL_NOTEBOOK_KORAT,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-บึงกาฬ/,A_PRESERVE_REWRITE,70,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อโน๊ตบุ๊ค-บุรีรัม/,A_PRESERVE_REWRITE,90,TRUE,LOCAL_NOTEBOOK_BURIRAM,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/,A_PRESERVE_REWRITE,70,TRUE,LOCAL_NOTEBOOK_ROIET,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-ศรีสะเ-2/,A_PRESERVE_REWRITE,60,FALSE,CLUSTER_PARENT,CONSOLIDATE,Near-me or duplicate suffix consolidated into primary parent hub
+/รับซื้อโน๊ตบุ๊ค-สกลนคร/,A_PRESERVE_REWRITE,80,TRUE,LOCAL_NOTEBOOK_SAKON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-หนองบัว/,A_PRESERVE_REWRITE,70,TRUE,LOCAL_NOTEBOOK_NONGBUA,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-อุดรธาน/,A_PRESERVE_REWRITE,70,TRUE,LOCAL_NOTEBOOK_UDON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค-เลย/,A_PRESERVE_REWRITE,90,TRUE,LOCAL_NOTEBOOK_LOEI,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊ค/,B_PRESERVE_IMPROVE,50,TRUE,MONEY_NOTEBOOK,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/,A_PRESERVE_REWRITE,100,TRUE,LOCAL_NOTEBOOK_UBON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อไอแพด-ขอนแก่น-ipad/,A_PRESERVE_REWRITE,10,TRUE,LOCAL_IPAD_KHONKAEN,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อไอแพด-ยโสธร-ipad/,A_PRESERVE_REWRITE,50,TRUE,LOCAL_IPAD_YASOTHON,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อไอแพด-อุบล/,A_PRESERVE_REWRITE,60,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/,A_PRESERVE_REWRITE,60,TRUE,LOCAL_IPHONE_ROIET,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อไอโฟน-ขอนแก่น/,A_PRESERVE_REWRITE,50,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อไอโฟน-จังหวัดอุด/,A_PRESERVE_REWRITE,50,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
+/รับซื้อไอโฟน-มหาสารคาม/,A_PRESERVE_REWRITE,80,TRUE,LOCAL_IPHONE_SARAKHAM,KEEP_HISTORICAL_URL,Selected directly as canonical V2 public URL in IA
+/รับซื้อไอโฟน-ยโสธร/,A_PRESERVE_REWRITE,40,FALSE,NONE,PRESERVE_DEFER,Secondary candidate held in reserve for future Phase E evaluation
