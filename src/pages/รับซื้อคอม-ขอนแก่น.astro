@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อคอมขอนแก่น Gaming PC คอมประกอบ เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อคอมมือสองในขอนแก่น Desktop Gaming PC Workstation และคอมประกอบ ประเมินจาก CPU GPU RAM SSD เมนบอร์ด PSU สภาพและอุปกรณ์ ส่งสเปกกับรูปเช็กราคาก่อนขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อคอม",
+    "url": "/รับซื้อคอม/"
+  },
+  {
+    "name": "รับซื้อคอมขอนแก่น เช็กสเปกและมูลค่า Hardware ก่อนขาย",
+    "url": "/รับซื้อคอม-ขอนแก่น/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "คอมประกอบในขอนแก่นต้องแจ้งอะไรเพื่อเช็กราคา?",
+    "answer": "ควรแจ้ง CPU, GPU, RAM, SSD, Mainboard, PSU และรูปภายใน Case เพราะคอมประกอบรุ่นเดียวกันภายนอกอาจมี Hardware ภายในต่างกันมาก"
+  },
+  {
+    "question": "ถอดการ์ดจอเก็บไว้แล้วขายเครื่องที่เหลือได้ไหม?",
+    "answer": "สามารถแจ้งว่าไม่รวม GPU ได้ ราคาจะประเมินจาก Configuration ที่ขายจริง และควรแจ้งตั้งแต่ต้นว่า GPU ถูกถอดออกแล้ว"
+  },
+  {
+    "question": "Workstation ขายเหมือน Gaming PC ไหม?",
+    "answer": "ควรแจ้งสเปกเต็มของ Workstation เพราะ CPU, RAM, GPU และ Expansion อาจต่างจาก Gaming PC ทั่วไป จึงไม่ควรใช้เพียงรูปลักษณ์ Case เป็นฐานประเมิน"
+  },
+  {
+    "question": "คอมเปิดไม่ติดยังส่งข้อมูลได้ไหม?",
+    "answer": "สามารถส่งข้อมูลเบื้องต้นได้ แต่ถ้าเสียหนักหรือไม่สามารถทดสอบ Hardware หลายส่วน Intent อาจเข้ากับการประเมินซากคอมพิวเตอร์มากกว่า"
+  },
+  {
+    "question": "มีคอมหลายเครื่องในขอนแก่นควรส่งรูปทุกเครื่องไหม?",
+    "answer": "ควรเริ่มจากแยก Model หรือ Configuration เป็นกลุ่ม พร้อมจำนวนและสภาพ หากเครื่องในกลุ่มเดียวกันเหมือนกันสามารถจัดข้อมูลร่วมกันได้และค่อยส่งรูปตัวอย่างกับจุดที่ต่างกัน"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อคอมขอนแก่น เช็กสเปกและมูลค่า Hardware ก่อนขาย</h1>
+        <p>คอมพิวเตอร์มือสองในขอนแก่นหนึ่งเครื่องอาจมีมูลค่าต่างกันมาก แม้ใช้ Case รุ่นเดียวกัน เพราะ Hardware ภายในสามารถถูกอัปเกรดหรือถอดเปลี่ยนได้ตลอดอายุการใช้งาน</p>
+        <p>หน้า <code>/รับซื้อคอม-ขอนแก่น/</code> จึงเน้นการประเมิน <strong>Desktop, Gaming PC, Workstation และคอมประกอบในพื้นที่ขอนแก่นจาก Configuration ปัจจุบัน</strong></p>
+        <p>เริ่มจาก:</p>
+        <p><strong>CPU + GPU + RAM + SSD + Mainboard + PSU + รูปภายใน Case</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>ผู้ขายในขอนแก่นเริ่มประเมินจากรูปและสเปกก่อนได้</h2>
+        <p>หากอยู่ใน:</p>
+        <ul>
+        <li>อำเภอเมืองขอนแก่น</li>
+        <li>ชุมแพ</li>
+        <li>บ้านไผ่</li>
+        <li>พล</li>
+        <li>น้ำพอง</li>
+        <li>กระนวน</li>
+        <li>หรือพื้นที่อื่นในจังหวัดขอนแก่น</li>
+        </ul>
+        <p>สามารถเริ่มจากข้อมูลเครื่องก่อนโดยไม่จำเป็นต้องขน Case หรือชุดคอมเพื่อถามราคา</p>
+        <p>หลังประเมินเบื้องต้นจึงค่อยพิจารณาวิธีตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>ไม่ได้หมายความว่ามีหน้าร้านหรือจุดรับซื้ออยู่ทุกอำเภอ</p>
+        <hr class="section-divider" />
+        <h2>อย่าประเมินคอมประกอบจากราคาตอนซื้อเพียงอย่างเดียว</h2>
+        <p>ราคาตอนประกอบใหม่อาจประกอบด้วย:</p>
+        <ul>
+        <li>Hardware ที่ปัจจุบันถูกเปลี่ยนออกแล้ว</li>
+        <li>ค่า Case</li>
+        <li>ค่าไฟ RGB</li>
+        <li>ค่าอุปกรณ์ตกแต่ง</li>
+        <li>ค่า Windows หรือ Software</li>
+        <li>ค่าแรงประกอบ</li>
+        </ul>
+        <p>แต่ราคามือสองต้องดูชิ้นส่วนที่อยู่ในเครื่องจริงในปัจจุบัน</p>
+        <p>ดังนั้นใบเสร็จเดิมใช้ช่วยตรวจข้อมูลได้ แต่ไม่ใช่ตัวกำหนดราคาปัจจุบันเพียงอย่างเดียว</p>
+        <hr class="section-divider" />
+        <h2>การ์ดจอและ CPU ควรระบุให้ครบก่อน</h2>
+        <p>สำหรับ Gaming PC ควรเริ่มจากสองรายการนี้</p>
+        <p>ตัวอย่าง:</p>
+        <p><strong>CPU: Intel Core i5-13400F</strong></p>
+        <p><strong>GPU: RTX 4060 8GB</strong></p>
+        <p>หรือ</p>
+        <p><strong>CPU: Ryzen 7 5700X</strong></p>
+        <p><strong>GPU: RX 6700 XT</strong></p>
+        <p>ไม่ควรใช้คำว่า “i5 + RTX” เพราะยังไม่สามารถแยก Generation และระดับ Hardware ได้ชัดเจน</p>
+        <hr class="section-divider" />
+        <h2>Mainboard สำคัญเมื่อเครื่องมีการอัปเกรด</h2>
+        <p>ผู้ขายบางรายทราบ CPU และ GPU แต่ไม่ทราบ Board</p>
+        <p>หากทำได้ควรแจ้ง:</p>
+        <ul>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>Chipset</li>
+        </ul>
+        <p>เพราะ Board สามารถมีผลต่อ:</p>
+        <ul>
+        <li>Platform</li>
+        <li>RAM Generation</li>
+        <li>Expansion</li>
+        <li>Storage</li>
+        <li>Upgrade Path</li>
+        </ul>
+        <p>หากไม่ทราบสามารถถ่ายรูปภายใน Case ให้เห็นชื่อรุ่นบน Board ได้</p>
+        <hr class="section-divider" />
+        <h2>RAM ต้องดูทั้งความจุและ Generation</h2>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>DDR4 หรือ DDR5</li>
+        <li>ความจุรวม</li>
+        <li>จำนวนแถว</li>
+        <li>ความเร็วถ้าทราบ</li>
+        </ul>
+        <p>เช่น</p>
+        <p><strong>DDR5 16GB × 2 = 32GB</strong></p>
+        <p>เครื่องที่ระบุเพียงว่า “RAM เยอะ” ยังไม่เพียงพอต่อการแยก Configuration</p>
+        <hr class="section-divider" />
+        <h2>SSD หลายลูกต้องแจ้งสิ่งที่ขายจริง</h2>
+        <p>ตัวอย่าง:</p>
+        <p>เครื่องมี:</p>
+        <ul>
+        <li>NVMe 1TB</li>
+        <li>SATA SSD 500GB</li>
+        <li>HDD 2TB</li>
+        </ul>
+        <p>แต่ผู้ขายต้องการเก็บ NVMe 1TB ไว้</p>
+        <p>ควรแจ้งตั้งแต่ตอนประเมินว่า Storage ใดรวมขายจริง</p>
+        <p>ไม่ควรใช้สเปกเต็มของเครื่องแล้วถอด Drive ออกภายหลังโดยไม่แจ้ง</p>
+        <hr class="section-divider" />
+        <h2>Workstation ควรแยกจาก Gaming PC อย่างไร</h2>
+        <p>Workstation บางเครื่องใช้ Hardware ที่ต่างจาก Gaming PC เช่น</p>
+        <ul>
+        <li>CPU รุ่นที่มี Core สูง</li>
+        <li>RAM ปริมาณมาก</li>
+        <li>Professional GPU</li>
+        <li>Storage หลายลูก</li>
+        <li>Expansion Card</li>
+        <li>Hardware เฉพาะงาน</li>
+        </ul>
+        <p>หากเป็น Workstation ควรแจ้ง Configuration เต็มเท่าที่ทราบ ไม่ควรประเมินจากรูปลักษณ์ Case หรือ GPU เพียงชิ้นเดียว</p>
+        <hr class="section-divider" />
+        <h2>เครื่องขายพร้อม Monitor ควรแยกรายการ</h2>
+        <p>Monitor มีมูลค่าของตัวเอง</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>Size</li>
+        <li>Resolution</li>
+        <li>Refresh Rate</li>
+        <li>Panel condition</li>
+        </ul>
+        <p>แล้วระบุว่า:</p>
+        <p><strong>ขายพร้อมคอม</strong></p>
+        <p>หรือ</p>
+        <p><strong>จอไม่รวมขาย</strong></p>
+        <p>ช่วยป้องกันความคลาดเคลื่อนเมื่อตรวจสินค้าจริง</p>
+        <hr class="section-divider" />
+        <h2>เครื่องไม่มีการ์ดจอยังประเมินได้ไหม</h2>
+        <p>ได้</p>
+        <p>บางเครื่องใช้ Integrated Graphics หรือขายหลังจากถอด GPU ออกแล้ว</p>
+        <p>ควรแจ้งว่า:</p>
+        <p><strong>ไม่รวมการ์ดจอ</strong></p>
+        <p>และแจ้ง CPU ให้ชัด เพราะ CPU บางรุ่นมี iGPU และบางรุ่นไม่มี</p>
+        <p>ไม่ควรสมมติว่าเครื่องเปิดใช้งานได้โดยไม่ตรวจว่า Configuration ปัจจุบันรองรับภาพออกหรือไม่</p>
+        <hr class="section-divider" />
+        <h2>PSU ไม่ควรถูกมองข้าม</h2>
+        <p>ควรถ่าย Label ของ PSU หากอ่านรุ่นได้</p>
+        <p>ข้อมูลสำคัญ:</p>
+        <ul>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>Watt</li>
+        <li>Rating</li>
+        <li>Modular หรือไม่ถ้าทราบ</li>
+        <li>สภาพสาย</li>
+        <li>อาการ</li>
+        </ul>
+        <p>PSU ที่ไม่มีข้อมูลชัดกับ PSU รุ่นที่ตรวจสอบได้ไม่ควรถูกประเมินเหมือนกันโดยอัตโนมัติ</p>
+        <hr class="section-divider" />
+        <h2>คอมมีอาการแต่ยังเปิดได้ต้องแจ้งตามจริง</h2>
+        <p>ตัวอย่าง:</p>
+        <ul>
+        <li>Boot ช้า</li>
+        <li>Windows ค้าง</li>
+        <li>จอฟ้า</li>
+        <li>Restart</li>
+        <li>ดับระหว่างเล่นเกม</li>
+        <li>GPU มี Artifact</li>
+        <li>SSD มี Error</li>
+        <li>พัดลมดัง</li>
+        <li>Temperature สูง</li>
+        <li>USB บาง Port เสีย</li>
+        </ul>
+        <p>อาการเหล่านี้มีผลต่อความเสี่ยงในการตรวจ</p>
+        <p>ไม่ควรซ่อนอาการเพื่อให้เครื่องดูเหมือนปกติ</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดไม่ติดควรใช้หน้าคอมนี้หรือซากคอม</h2>
+        <p>หากเครื่องเปิดไม่ติดแต่ยังมี Configuration ชัด สามารถส่งข้อมูลเบื้องต้นได้</p>
+        <p>แต่หาก:</p>
+        <ul>
+        <li>เสียหนัก</li>
+        <li>ถอดชิ้นส่วนหลายรายการ</li>
+        <li>ไม่สามารถทดสอบ Hardware</li>
+        <li>เหลือเป็นอะไหล่</li>
+        </ul>
+        <p>Intent จะใกล้กับ <strong>รับซื้อซากคอมพิวเตอร์</strong> มากกว่า</p>
+        <p>หน้า <code>/รับซื้อคอม-ขอนแก่น/</code> จึงรักษา Local Intent ของเครื่อง Desktop/PC เป็นหลัก ไม่ใช่หน้าซากคอมประจำจังหวัด</p>
+        <hr class="section-divider" />
+        <h2>บริษัทหรือสำนักงานในขอนแก่นมีหลายเครื่องควรจัดกลุ่ม</h2>
+        <p>ควรแยกตาม Configuration เช่น</p>
+        <table class="table table-bordered">
+          <thead><tr><th>กลุ่ม</th><th>CPU</th><th>RAM</th><th>Storage</th><th>จำนวน</th><th>สถานะ</th></tr></thead>
+          <tbody>
+          <tr><td>A</td><td>i5-...</td><td>16GB</td><td>512GB</td><td>6</td><td>ใช้งานได้</td></tr>
+          <tr><td>B</td><td>i5-...</td><td>8GB</td><td>256GB</td><td>10</td><td>มีรอย</td></tr>
+          <tr><td>C</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>ไม่มี</td><td>3</td><td>ยังไม่ได้ทดสอบ</td></tr>
+          </tbody></table>
+        <p>หากมี Asset Tag สามารถใช้จัดรายการภายในได้ แต่ไม่จำเป็นต้องส่งข้อมูลบริษัทอื่นที่ไม่เกี่ยวกับ Hardware</p>
+        <hr class="section-divider" />
+        <h2>หน้า Local ขอนแก่นต้องไม่แทนหน้ารับซื้อคอมหลัก</h2>
+        <p>หน้า <a href="/รับซื้อคอม/"><code>/รับซื้อคอม/</code></a> เป็นเจ้าของ Broad Intent:</p>
+        <p><strong>รับซื้อคอม / Gaming PC / Desktop / คอมประกอบ</strong></p>
+        <p>ส่วนหน้านี้เป็น:</p>
+        <p><strong>Computer + Khon Kaen</strong></p>
+        <p>จึงไม่ควรเพิ่มข้อความทั่วประเทศหรือขยายไปเป็นหน้า Broad Computer อีกหน้า</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคาคอมในขอนแก่น</h2>
+        <h3>1. แจ้ง CPU</h3>
+        <p>ใช้รุ่นเต็ม</p>
+        <h3>2. แจ้ง GPU</h3>
+        <p>หากไม่มีให้ระบุว่าไม่มี</p>
+        <h3>3. แจ้ง RAM และ Storage</h3>
+        <p>ใช้ Configuration ปัจจุบัน</p>
+        <h3>4. แจ้ง Mainboard และ PSU</h3>
+        <p>ถ้าทราบ</p>
+        <h3>5. ส่งรูป</h3>
+        <p>ภายนอกและภายใน Case</p>
+        <h3>6. แจ้งอาการ</h3>
+        <p>รวมถึง Hardware ที่ยังไม่ได้ทดสอบ</p>
+        <h3>7. แจ้งสิ่งที่รวมขาย</h3>
+        <p>เช่น Monitor, Keyboard หรืออุปกรณ์อื่น</p>
+        <h3>8. ประเมินเบื้องต้น</h3>
+        <p>พิจารณา Hardware และสภาพจริง</p>
+        <h3>9. ตัดสินใจ</h3>
+        <p>ขายทั้งเครื่องหรือแยกอุปกรณ์</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ตรวจ Configuration ให้ตรงกับข้อมูลก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคาคอมในขอนแก่น</h2>
+        <p>ส่ง:</p>
+        <p><strong>CPU + GPU + RAM + SSD + Mainboard + PSU</strong></p>
+        <p>พร้อมรูปภายใน Case และตำหนิ</p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+        <hr class="section-divider" />
+        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายคอมมือสองในขอนแก่น" />
+      </article>
+    </div>
+  </main>
+</BaseLayout>

@@ -38,17 +38,20 @@ const csvRows = [
   'path,legacyGone,v2Gone,v2State,survivorDecision,redirectTarget,legacySource,v2Source,parity,reason'
 ];
 
-// Add all 208 Authoritative GONE paths
+// Add all Authoritative Legacy GONE paths
 for (const p of Array.from(setA).sort()) {
   const inA = 'YES';
   const inB = setB.has(p) ? 'YES' : 'NO';
-  const v2State = 'GONE';
-  const survivorDecision = 'NONE';
+  const isRemediated = !setB.has(p);
+  const v2State = isRemediated ? 'HOLD_NOINDEX' : 'GONE';
+  const survivorDecision = isRemediated ? 'PRESERVE_REWRITE' : 'NONE';
   const redirectTarget = '';
   const legacySource = 'src/config/gone-paths.ts';
-  const v2Source = 'src/config/seo/gone.ts';
-  const parity = 'MATCH';
-  const reason = 'Authoritative legacy 410 quarantined spam/off-topic URL';
+  const v2Source = isRemediated ? 'src/config/seo/manifest.ts (HOLD_NOINDEX)' : 'src/config/seo/gone.ts';
+  const parity = isRemediated ? 'RECONCILED_LOCAL_PRESERVED' : 'MATCH';
+  const reason = isRemediated 
+    ? 'Master Map approved local winner restored from legacy GONE in Phase E2.1'
+    : 'Authoritative legacy 410 quarantined spam/off-topic URL';
 
   csvRows.push(`"${p}","${inA}","${inB}","${v2State}","${survivorDecision}","${redirectTarget}","${legacySource}","${v2Source}","${parity}","${reason}"`);
 }

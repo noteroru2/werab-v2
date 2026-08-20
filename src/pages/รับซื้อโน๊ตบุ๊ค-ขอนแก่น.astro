@@ -1,0 +1,281 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อโน๊ตบุ๊คขอนแก่น Notebook Gaming เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อโน๊ตบุ๊คมือสองในขอนแก่น Notebook Laptop และ Gaming Notebook ประเมินจากรุ่น CPU GPU RAM SSD Battery จอ สภาพและอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊ค",
+    "url": "/รับซื้อโน๊ตบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คขอนแก่น เช็กรุ่น สเปก และสภาพก่อนขาย",
+    "url": "/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "หน้า Notebook ขอนแก่นต่างจากหน้าระดับอำเภออย่างไร?",
+    "answer": "หน้านี้รักษา Intent ระดับจังหวัดขอนแก่น ส่วน Historical URL ที่ระบุอำเภอเฉพาะจะรักษา Search Intent ของพื้นที่ย่อยนั้นหากได้รับการอนุมัติแยก"
+  },
+  {
+    "question": "Gaming Notebook ต้องแจ้ง GPU ไหม?",
+    "answer": "ควรแจ้งรุ่น GPU เต็ม รวมถึง CPU, RAM และ SSD เพราะชื่อ Series เดียวกันอาจมีหลาย Configuration"
+  },
+  {
+    "question": "Battery เสื่อมยังประเมินได้ไหม?",
+    "answer": "สามารถส่งมาประเมินตามสภาพได้ ควรแจ้ง Health หรืออาการและไม่จำเป็นต้องเปลี่ยนก่อนเช็กราคา"
+  },
+  {
+    "question": "เครื่องเปิดไม่ติดยังส่งข้อมูลได้หรือไม่?",
+    "answer": "ได้ ควรส่ง Model สเปกที่ทราบ รูป Adapter และอาการ แต่ไม่ควรเปิดซ้ำหลายครั้งหากมีอาการผิดปกติด้านไฟหรือ Battery"
+  },
+  {
+    "question": "ขายโดยไม่รวม SSD ได้ไหม?",
+    "answer": "สามารถแจ้งว่าไม่รวม SSD ได้ ราคาจะพิจารณาจาก Configuration ที่รวมขายจริง"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อโน๊ตบุ๊คขอนแก่น เช็กรุ่น สเปก และสภาพก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/</code> เป็น Historical Local URL ระดับจังหวัดสำหรับ:</p>
+        <p><strong>Notebook + Khon Kaen</strong></p>
+        <p>และเป็น Local Intent ระดับจังหวัดที่แยกออกจาก Historical URL ระดับอำเภอที่อาจมี Search Equity ของตนเอง</p>
+        <p>จุดเริ่มต้นคือ:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>หน้าขอนแก่นนี้เป็น Intent ระดับจังหวัด</h2>
+        <p>หน้า Local นี้ครอบคลุมคำค้นที่ระบุขอนแก่นในระดับจังหวัด</p>
+        <p>หาก Historical URL อื่นระบุพื้นที่ย่อยเฉพาะ เช่น อำเภอหนึ่งภายในขอนแก่น URL นั้นอาจมี Intent ของตัวเองและไม่ควรถูกรวมโดยอัตโนมัติ</p>
+        <p>ดังนั้นหน้านี้จะไม่ใส่รายชื่ออำเภอจำนวนมากเพียงเพื่อขยาย Keyword</p>
+        <hr class="section-divider" />
+        <h2>Model และ Generation เป็นข้อมูลแรกที่ควรตรวจ</h2>
+        <p>ควรส่งชื่อรุ่นเต็มจาก:</p>
+        <ul>
+        <li>ใต้เครื่อง</li>
+        <li>BIOS</li>
+        <li>System Information</li>
+        <li>About</li>
+        <li>กล่องเดิม</li>
+        </ul>
+        <p>เพราะ Series เดียวกันอาจมีหลาย Generation</p>
+        <hr class="section-divider" />
+        <h2>Notebook ทั่วไปกับ Gaming Notebook ต้องดูข้อมูลต่างกันบางส่วน</h2>
+        <p>Notebook ทั่วไปควรแจ้งอย่างน้อย:</p>
+        <ul>
+        <li>CPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>Battery</li>
+        </ul>
+        <p>Gaming Notebook ควรเพิ่ม:</p>
+        <ul>
+        <li>GPU</li>
+        <li>Adapter</li>
+        <li>หน้าจอถ้าทราบ</li>
+        </ul>
+        <p>เพื่อแยก Configuration ให้ถูกต้อง</p>
+        <hr class="section-divider" />
+        <h2>CPU ต้องแจ้งรหัสเต็ม</h2>
+        <p>เช่น:</p>
+        <p><strong>Intel Core i5-12450H</strong></p>
+        <p>หรือ</p>
+        <p><strong>AMD Ryzen 7 7735HS</strong></p>
+        <p>ไม่ควรแจ้งเพียง Core i5 หรือ Ryzen 7</p>
+        <p>Generation มีผลต่ออายุ Platform และความสามารถของเครื่อง</p>
+        <hr class="section-divider" />
+        <h2>RAM และ SSD ควรใช้ Configuration ปัจจุบัน</h2>
+        <p>หากอัปเกรดแล้วให้แจ้งของที่อยู่ในเครื่องจริง</p>
+        <p>เช่น:</p>
+        <p><strong>RAM 16GB / SSD 512GB</strong></p>
+        <p>หากจะถอด SSD หรือ RAM บางส่วนออกก่อนขายต้องแจ้งตั้งแต่ก่อนประเมิน</p>
+        <hr class="section-divider" />
+        <h2>Battery ควรดูทั้ง Health และอาการ</h2>
+        <p>หากระบบแสดง Health สามารถส่งได้</p>
+        <p>หากไม่แสดง ให้แจ้งว่า:</p>
+        <ul>
+        <li>ใช้งานได้ปกติ</li>
+        <li>หมดเร็ว</li>
+        <li>ไม่เก็บไฟ</li>
+        <li>ต้องเสียบ Adapter</li>
+        <li>เคยเปลี่ยน</li>
+        <li>บวม</li>
+        </ul>
+        <p>ถ้า Battery บวมควรหลีกเลี่ยงการใช้งานหนัก</p>
+        <hr class="section-divider" />
+        <h2>จอและตัวเครื่องควรส่งรูปหลายด้าน</h2>
+        <p>ควรถ่าย:</p>
+        <ul>
+        <li>หน้าจอ</li>
+        <li>Keyboard</li>
+        <li>ฝาหลัง</li>
+        <li>ด้านล่าง</li>
+        <li>บานพับ</li>
+        <li>Port</li>
+        <li>Adapter</li>
+        </ul>
+        <p>และถ่ายตำหนิแยกหากมี</p>
+        <hr class="section-divider" />
+        <h2>Notebook ที่ไม่มี Adapter ยังเช็กราคาได้</h2>
+        <p>ควรแจ้งว่า:</p>
+        <p><strong>ไม่มี Adapter</strong></p>
+        <p>ตั้งแต่ต้น</p>
+        <p>ไม่จำเป็นต้องซื้อ Adapter ใหม่ก่อนทราบว่ามูลค่าที่เพิ่มขึ้นคุ้มกับต้นทุนหรือไม่</p>
+        <hr class="section-divider" />
+        <h2>เครื่องมีอาการหรือเปิดไม่ติด</h2>
+        <p>สามารถเริ่มจากส่งข้อมูลตามที่ทราบ</p>
+        <p>เช่น:</p>
+        <ul>
+        <li>ไฟเข้าแต่ไม่เปิด</li>
+        <li>เปิดแล้วดับ</li>
+        <li>ไม่มีภาพ</li>
+        <li>จอฟ้า</li>
+        <li>จอกระพริบ</li>
+        <li>Keyboard มีปัญหา</li>
+        </ul>
+        <p>ไม่ควรวินิจฉัยสาเหตุเองหากยังไม่ได้ตรวจ</p>
+        <p>และหากมี Battery บวม กลิ่นไหม้ หรือความร้อนผิดปกติ ไม่ควรทดลองเปิดซ้ำหลายครั้ง</p>
+        <hr class="section-divider" />
+        <h2>ประวัติซ่อมและการอัปเกรดมีผล</h2>
+        <p>ควรแจ้งหากทราบว่าเคย:</p>
+        <ul>
+        <li>เพิ่ม RAM</li>
+        <li>เปลี่ยน SSD</li>
+        <li>เปลี่ยน Battery</li>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Keyboard</li>
+        <li>ซ่อม Mainboard</li>
+        <li>ซ่อมบานพับ</li>
+        <li>โดนน้ำ</li>
+        </ul>
+        <p>ช่วยให้ Configuration และสภาพปัจจุบันชัดขึ้น</p>
+        <hr class="section-divider" />
+        <h2>Notebook จากสำนักงานหรือองค์กรในขอนแก่น</h2>
+        <p>หากมีหลายเครื่องควรแบ่งเป็นกลุ่ม:</p>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>รุ่น</th>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>SSD</th>
+                <th>จำนวน</th>
+                <th>สภาพ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>รุ่น...</td>
+                <td>i5-...</td>
+                <td>8GB</td>
+                <td>256GB</td>
+                <td>8</td>
+                <td>ปกติ</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>i5-...</td>
+                <td>16GB</td>
+                <td>512GB</td>
+                <td>5</td>
+                <td>Battery เสื่อม</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>2</td>
+                <td>ไม่ได้ทดสอบ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>ไม่จำเป็นต้องส่งข้อมูลภายในองค์กรที่ไม่เกี่ยวข้องกับ Hardware</p>
+        <hr class="section-divider" />
+        <h2>ข้อมูลส่วนตัวควรจัดการก่อนส่งมอบ</h2>
+        <p>เพื่อประเมินเบื้องต้นไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>Email Password</li>
+        </ul>
+        <p>หากต้องการเก็บ Storage สามารถแจ้งว่าไม่รวม SSD ได้</p>
+        <hr class="section-divider" />
+        <h2>ความสัมพันธ์กับหน้ารับซื้อ Notebook หลัก</h2>
+        <p>หน้า:</p>
+        <p><code>/รับซื้อโน๊ตบุ๊ค/</code></p>
+        <p>เป็น Broad Notebook Money Hub</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/</code></p>
+        <p>เป็น:</p>
+        <p><strong>Notebook + Khon Kaen province intent</strong></p>
+        <p>จึงไม่ควรขยายเป็นหน้า Notebook ทั่วประเทศ</p>
+        <p>และไม่ควรแย่ง Intent เฉพาะอำเภอจาก Historical URL ที่ถูกอนุมัติแยกต่างหาก</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา Notebook ในขอนแก่น</h2>
+        <h3>1. ส่ง Model</h3>
+        <p>ชื่อเต็ม</p>
+        <h3>2. ส่ง CPU</h3>
+        <p>รหัสรุ่นเต็ม</p>
+        <h3>3. ส่ง RAM และ SSD</h3>
+        <p>Configuration ปัจจุบัน</p>
+        <h3>4. ส่ง GPU</h3>
+        <p>หากมี</p>
+        <h3>5. แจ้ง Battery</h3>
+        <p>Health หรืออาการ</p>
+        <h3>6. ส่งรูป</h3>
+        <p>ทุกด้านและตำหนิ</p>
+        <h3>7. แจ้ง Adapter</h3>
+        <p>เดิม เทียบ หรือไม่มี</p>
+        <h3>8. แจ้งประวัติ</h3>
+        <p>ซ่อมหรืออัปเกรดถ้าทราบ</p>
+        <h3>9. ประเมินเบื้องต้น</h3>
+        <p>ก่อนตัดสินใจเดินทางหรือซ่อม</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยันรุ่น สเปกและสภาพก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคาโน๊ตบุ๊คในขอนแก่น</h2>
+        <p>ส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+
+        <hr class="section-divider" />
+        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในขอนแก่น" />
+      </article>
+    </div>
+  </main>
+</BaseLayout>

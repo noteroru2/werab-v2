@@ -28,28 +28,35 @@ if (BUSINESS_FACTS.VERIFIED.phone !== '064-257-9353' || BUSINESS_FACTS.VERIFIED.
   blockers.push('Verified business contact facts altered or incorrect!');
 }
 
-// 2. Check Authoritative 208 GONE Parity
+// 2. Check Authoritative 206 GONE Parity (208 legacy minus 2 E2.1 remediated local winners)
 const rawLegacyGone = JSON.parse(
   fs.readFileSync(path.join(rootDir, 'migration/legacy/raw/gone-paths.json'), 'utf8')
 );
 const legacyGoneSet = new Set(rawLegacyGone.map(p => normalizePath(p)));
 const v2GoneSet = new Set(GONE_PATHS_RAW.map(p => normalizePath(p)));
+const RECONCILED_LOCAL_PRESERVED = new Set([
+  normalizePath('/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/'),
+  normalizePath('/รับซื้อโทรศัพท์-มือถือ-ย/')
+]);
 
 if (legacyGoneSet.size !== 208) {
   blockers.push(`Legacy raw GONE count is ${legacyGoneSet.size}, expected exactly 208!`);
 }
-if (v2GoneSet.size !== 208) {
-  blockers.push(`Active V2 GONE count is ${v2GoneSet.size}, expected exactly 208!`);
+if (v2GoneSet.size !== 206) {
+  blockers.push(`Active V2 GONE count is ${v2GoneSet.size}, expected exactly 206!`);
 }
 
 for (const p of legacyGoneSet) {
-  if (!v2GoneSet.has(p)) {
+  if (!RECONCILED_LOCAL_PRESERVED.has(p) && !v2GoneSet.has(p)) {
     blockers.push(`Missing legacy GONE path in V2: ${p}`);
   }
 }
 for (const p of v2GoneSet) {
   if (!legacyGoneSet.has(p)) {
     blockers.push(`Unexpected unapproved GONE path in V2: ${p}`);
+  }
+  if (RECONCILED_LOCAL_PRESERVED.has(p)) {
+    blockers.push(`Remediated local winner ${p} unexpectedly remains in active V2 GONE!`);
   }
 }
 
@@ -138,8 +145,26 @@ for (const [src, rule] of REDIRECT_MAP.entries()) {
   }
 }
 
-// 6. Check Approved Historical Survivors
-const REQUIRED_READY_SURVIVORS = ['/รับซื้อลำโพง-อุดรธานี/', '/รับซื้อลำโพง-สารคาม/'];
+// 6. Check Approved Historical Survivors & Released Winners
+const REQUIRED_READY_SURVIVORS = [
+  '/รับซื้อลำโพง-อุดรธานี/',
+  '/รับซื้อลำโพง-สารคาม/',
+  '/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/',
+  '/รับซื้อคอม-อุดรธานี/',
+  '/รับซื้อคอม-ขอนแก่น/',
+  '/รับซื้อโน๊ตบุ๊ค-บุรีรัม/',
+  '/รับซื้อโน๊ตบุ๊ค-เลย/',
+  '/รับซื้อโทรศัพท์มือถือ-จ/',
+  '/รับซื้อมือถือ-อุบล/',
+  '/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/',
+  '/รับซื้อไอโฟน-มหาสารคาม/',
+  '/รับซื้อโน๊ตบุ๊ค-สกลนคร/',
+  '/รับซื้อโน๊ตบุ๊ค-นครพนม/',
+  '/รับซื้อโน๊ตบุ๊ค-นครราชส/',
+  '/รับซื้อเมืองขอนแก่น/',
+  '/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/',
+  '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/'
+];
 for (const s of REQUIRED_READY_SURVIVORS) {
   const seo = resolveSeo(s);
   if (seo.state !== 'INDEX' || seo.httpStatus !== 200 || !seo.sitemapEligible || seo.contentStatus !== 'READY') {

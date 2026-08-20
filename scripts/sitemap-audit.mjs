@@ -50,7 +50,25 @@ for (const path of SEO_MANIFEST_MAP.keys()) {
 console.log(`Total eligible sitemap URLs: ${sitemapEligiblePaths.length}`);
 
 // Verify required historical pages are present
-const REQUIRED_HISTORICAL = ['/รับซื้อลำโพง-อุดรธานี/', '/รับซื้อลำโพง-สารคาม/'];
+const REQUIRED_HISTORICAL = [
+  '/รับซื้อลำโพง-อุดรธานี/',
+  '/รับซื้อลำโพง-สารคาม/',
+  '/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/',
+  '/รับซื้อคอม-อุดรธานี/',
+  '/รับซื้อคอม-ขอนแก่น/',
+  '/รับซื้อโน๊ตบุ๊ค-บุรีรัม/',
+  '/รับซื้อโน๊ตบุ๊ค-เลย/',
+  '/รับซื้อโทรศัพท์มือถือ-จ/',
+  '/รับซื้อมือถือ-อุบล/',
+  '/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/',
+  '/รับซื้อไอโฟน-มหาสารคาม/',
+  '/รับซื้อโน๊ตบุ๊ค-สกลนคร/',
+  '/รับซื้อโน๊ตบุ๊ค-นครพนม/',
+  '/รับซื้อโน๊ตบุ๊ค-นครราชส/',
+  '/รับซื้อเมืองขอนแก่น/',
+  '/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/',
+  '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/'
+];
 for (const req of REQUIRED_HISTORICAL) {
   if (!sitemapEligiblePaths.includes(req)) {
     violations.push(`Required historical URL ${req} missing from sitemap!`);

@@ -1,7 +1,7 @@
 /**
  * src/config/seo/gone.ts
- * Authoritative set of exactly 208 GONE (HTTP 410) paths.
- * Matched 1:1 with legacy webuy-thai src/config/gone-paths.ts.
+ * Authoritative set of exactly 206 GONE (HTTP 410) paths.
+ * Reconciled in Phase E2.1: 208 legacy paths minus 2 approved Master Map local search winners.
  */
 
 import { normalizePath } from '../../lib/seo/normalize';
@@ -205,9 +205,7 @@ export const GONE_PATHS_RAW: string[] = [
   "/รับซื้อเหล้าเก่า-รับซื้/",
   "/รับซื้อเหล้าเรด-เลเบิ้ล/",
   "/รับซื้อเหล้าเฮนเนสซี่-hennessy/",
-  "/รับซื้อโทรศัพท์-มือถือ-ย/",
   "/รับซื้อโน๊ตบุ๊คมือสอง-อ/",
-  "/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/",
   "/รับซื้อโมเดล-อุบล-รับซื้/",
   "/ร้านจำนำในอุบล/",
   "/ร้านรับจำนำมือถือใกล้ฉ/",

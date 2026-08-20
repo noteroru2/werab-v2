@@ -22,7 +22,10 @@ const FORBIDDEN_PATTERNS = [
   { pattern: /รับประกันล้างเซนเซอร์|รับประกันล้างฝ้า|รับประกันกำจัดรา/i, name: 'Unapproved guaranteed camera repair/cleaning claim' },
   { pattern: /รับประกันกันน้ำ|รับประกันสภาพกันน้ำ/i, name: 'Unapproved guaranteed waterproof claim' },
   { pattern: /รับประกันกู้ข้อมูล|รับประกันลบข้อมูล/i, name: 'Unapproved data recovery or destruction guarantee claim' },
-  { pattern: /รับซื้อซากทุกชนิด|รับซื้อทุกชิ้น|รับซื้อ\s*Server\s*ทุก(รุ่น|สภาพ|แบรนด์|องค์กร)/i, name: 'Unapproved universal buyback guarantee claim' }
+  { pattern: /รับซื้อซากทุกชนิด|รับซื้อทุกชิ้น|รับซื้อ\s*Server\s*ทุก(รุ่น|สภาพ|แบรนด์|องค์กร)/i, name: 'Unapproved universal buyback guarantee claim' },
+  { pattern: /มีสาขาในจังหวัด|มีสาขาทั่วภาคอีสาน|มีพนักงานประจำ(จังหวัด|ทุกพื้นที่)|มีจุดรับซื้อทุกอำเภอ/i, name: 'Unsupported local branch / staff claims' },
+  { pattern: /รับถึงที่ทุกกรณี|รับประกันเดินทางไปรับ|รับซื้อทุกเครื่อง|ราคาสูงที่สุด|ให้ราคาดีที่สุด|อันดับ\s*1\b/i, name: 'Unsupported superlative or guarantee claims' },
+  { pattern: /ขอ(รหัสผ่าน|password|pin|otp|apple\s*id\s*password|google\s*password|recovery\s*code|recovery\s*key)/i, name: 'Sensitive credential request violation' }
 ];
 
 const SCAN_DIRS = ['src', 'public'];
@@ -45,12 +48,22 @@ function scanDir(dir) {
       // Skip test script itself and config definitions
       if (entryPath.includes('claim-audit.mjs') || entryPath.includes('business.ts')) continue;
 
-      for (const rule of FORBIDDEN_PATTERNS) {
-        if (rule.pattern.test(content)) {
-          violations.push({
-            file: entryPath,
-            rule: rule.name
-          });
+      // Strip negative disclaimer blocks before scanning
+      const cleaned = content
+        .replace(/<p>[^<]*ไม่ได้(หมายความว่า|ใช้เพื่ออ้าง)[^<]*<\/p>\s*<ul[\s\S]*?<\/ul>/gi, ' ')
+        .replace(/หน้านี้ไม่ได้หมายความว่า:[\s\S]*?(?=\n\n|---|$)/gi, ' ');
+
+      const lines = cleaned.split('\n');
+      for (const line of lines) {
+        // Skip approved disclaimer lines
+        if (/ไม่ได้(หมายความว่า|ใช้เพื่ออ้าง|แปลว่า)|ไม่(ต้อง|ควร|จำเป็น)/.test(line)) continue;
+        for (const rule of FORBIDDEN_PATTERNS) {
+          if (rule.pattern.test(line)) {
+            violations.push({
+              file: entryPath,
+              rule: rule.name
+            });
+          }
         }
       }
     }

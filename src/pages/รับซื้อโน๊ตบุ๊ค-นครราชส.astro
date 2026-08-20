@@ -1,0 +1,288 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อโน๊ตบุ๊คโคราช นครราชสีมา Gaming Notebook เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อโน๊ตบุ๊คมือสองในโคราช นครราชสีมา ทั้ง Notebook Laptop และ Gaming Notebook ประเมินจากรุ่น CPU GPU RAM SSD แบตเตอรี่ จอ สภาพและอุปกรณ์ก่อนขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊ค",
+    "url": "/รับซื้อโน๊ตบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คโคราช นครราชสีมา เช็กสเปกและสภาพก่อนขาย",
+    "url": "/รับซื้อโน๊ตบุ๊ค-นครราชส/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "Gaming Notebook ต้องส่งสเปกอะไรบ้าง?",
+    "answer": "ควรส่ง Model, CPU, GPU, RAM, SSD, Battery และ Adapter เพราะ Gaming Series เดียวกันอาจมีหลาย Configuration"
+  },
+  {
+    "question": "ไม่มี Adapter ยังเช็กราคาได้ไหม?",
+    "answer": "ได้ ควรแจ้งว่าไม่มี Adapter ตั้งแต่ต้น ไม่จำเป็นต้องซื้อใหม่ก่อนทราบว่าคุ้มกับมูลค่าที่เพิ่มหรือไม่"
+  },
+  {
+    "question": "Notebook ดับเวลาเล่นเกมยังประเมินได้หรือไม่?",
+    "answer": "สามารถส่งข้อมูลตามสภาพได้ ควรแจ้งอาการและประวัติซ่อม ไม่จำเป็นต้อง Stress Test หนักซ้ำเพื่อขอราคา"
+  },
+  {
+    "question": "เครื่องเคยเพิ่ม RAM และ SSD ต้องแจ้งสเปกเดิมหรือปัจจุบัน?",
+    "answer": "ควรแจ้ง Configuration ปัจจุบันและระบุสิ่งที่รวมขายจริง"
+  },
+  {
+    "question": "ขายเครื่องโดยเก็บ SSD ไว้ได้ไหม?",
+    "answer": "สามารถแจ้งว่าไม่รวม SSD ได้ โดยราคาต้องประเมินจาก Hardware ที่ขายจริง"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อโน๊ตบุ๊คโคราช นครราชสีมา เช็กสเปกและสภาพก่อนขาย</h1>
+        <p>Notebook ในโคราชที่ชื่อรุ่นใกล้กันอาจมีมูลค่าต่างกันจาก CPU, GPU, RAM, SSD และหน้าจอ โดยเฉพาะ Gaming Notebook ที่แต่ละ Configuration แตกต่างกันมาก</p>
+        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-นครราชส/</code> รักษา Historical Search Intent:</p>
+        <p><strong>Notebook + Nakhon Ratchasima / Korat</strong></p>
+        <p>เริ่มจาก:</p>
+        <p><strong>Model + CPU + GPU ถ้ามี + RAM + SSD + Battery + รูป + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>อยู่โคราชสามารถส่งสเปกและรูปเพื่อเช็กราคาก่อนได้</h2>
+        <p>ก่อนตัดสินใจเดินทางหรือส่งมอบ สามารถส่งข้อมูลเครื่องมาก่อนได้</p>
+        <p>ควรเตรียม:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>CPU</li>
+        <li>GPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>Battery</li>
+        <li>รูป</li>
+        <li>Adapter</li>
+        <li>อาการ</li>
+        </ul>
+        <p>จากนั้นจึงค่อยพิจารณาขั้นตอนถัดไปตามพื้นที่และความเหมาะสม</p>
+        <p>ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ทุกพื้นที่ของนครราชสีมา</p>
+        <hr class="section-divider" />
+        <h2>Gaming Notebook ควรเริ่มจาก CPU และ GPU</h2>
+        <p>เครื่อง Gaming Series เดียวกันสามารถมีหลายสเปก</p>
+        <p>ตัวอย่างข้อมูลที่ควรแจ้ง:</p>
+        <p><strong>CPU: Ryzen 7 7840HS</strong></p>
+        <p><strong>GPU: RTX 4060 Laptop GPU</strong></p>
+        <p><strong>RAM: 16GB</strong></p>
+        <p><strong>SSD: 1TB</strong></p>
+        <p>ดีกว่าการแจ้งเพียงชื่อ Series</p>
+        <hr class="section-divider" />
+        <h2>หน้าจอ Gaming มีรายละเอียดมากกว่าแค่ขนาด</h2>
+        <p>หากทราบสามารถแจ้ง:</p>
+        <ul>
+        <li>Resolution</li>
+        <li>Refresh Rate</li>
+        <li>ขนาดจอ</li>
+        </ul>
+        <p>พร้อมสภาพ:</p>
+        <ul>
+        <li>จุด</li>
+        <li>เส้น</li>
+        <li>กระพริบ</li>
+        <li>Dead Pixel</li>
+        <li>รอย</li>
+        <li>Panel แตก</li>
+        </ul>
+        <p>ไม่ควรคาดเดาสเปกจอหากยังไม่ได้ตรวจรุ่นเต็ม</p>
+        <hr class="section-divider" />
+        <h2>Adapter ของ Gaming Notebook ควรแจ้งด้วย</h2>
+        <p>Adapter อาจมีกำลังไฟต่างกันตาม Configuration</p>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>Adapter เดิม</li>
+        <li>Adapter เทียบ</li>
+        <li>ไม่มี Adapter</li>
+        <li>สายมีตำหนิ</li>
+        <li>ชาร์จไม่ปกติ</li>
+        </ul>
+        <p>ไม่จำเป็นต้องซื้อ Adapter ใหม่ก่อนเช็กราคา</p>
+        <hr class="section-divider" />
+        <h2>เครื่องทำงานและ Mobile Workstation ประเมินต่างจาก Gaming บางกรณี</h2>
+        <p>หากเป็นเครื่องสำหรับงาน:</p>
+        <ul>
+        <li>CAD</li>
+        <li>3D</li>
+        <li>Video</li>
+        <li>Engineering</li>
+        <li>Workstation</li>
+        </ul>
+        <p>ควรแจ้ง Configuration เต็มโดยเฉพาะ CPU, GPU, RAM และ Storage</p>
+        <p>ไม่ควรใช้เพียงรูปลักษณ์หรือขนาดตัวเครื่องเป็นฐานประเมิน</p>
+        <hr class="section-divider" />
+        <h2>RAM และ SSD ที่เพิ่มภายหลังควรแจ้งปัจจุบัน</h2>
+        <p>หากเครื่องเดิมมี RAM 16GB แต่เพิ่มเป็น 32GB ให้แจ้ง 32GB</p>
+        <p>ถ้า SSD เดิมถูกเปลี่ยน ให้แจ้ง Drive ที่รวมขายจริง</p>
+        <p>หากจะเก็บ SSD ไว้ควรแจ้งก่อนประเมิน</p>
+        <hr class="section-divider" />
+        <h2>Battery และระบบชาร์จต้องแยกอาการ</h2>
+        <p>Battery หมดเร็วไม่เหมือนกับชาร์จไม่เข้า</p>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>Battery Health</li>
+        <li>ใช้งานได้กี่นาทีหรือชั่วโมงโดยประมาณ</li>
+        <li>ชาร์จเข้าไหม</li>
+        <li>Port หลวมหรือไม่</li>
+        <li>Adapter มีอาการหรือไม่</li>
+        </ul>
+        <p>ไม่ควรวินิจฉัยว่าเป็น Mainboard หรือ Battery หากยังไม่ได้ตรวจ</p>
+        <hr class="section-divider" />
+        <h2>เครื่องมีอาการตอนเล่นเกมควรแจ้ง</h2>
+        <p>เช่น</p>
+        <ul>
+        <li>ดับ</li>
+        <li>Restart</li>
+        <li>GPU Error</li>
+        <li>ภาพแตก</li>
+        <li>จอฟ้า</li>
+        <li>พัดลมดัง</li>
+        <li>ร้อนผิดปกติ</li>
+        </ul>
+        <p>ไม่จำเป็นต้อง Stress Test หนักซ้ำเพื่อถามราคา หากเครื่องแสดงอาการไม่เสถียรอยู่แล้ว</p>
+        <hr class="section-divider" />
+        <h2>Notebook เคยซ่อมควรแจ้ง</h2>
+        <p>เช่น</p>
+        <ul>
+        <li>ซ่อม Mainboard</li>
+        <li>เปลี่ยน GPU Board ในรุ่นที่เกี่ยวข้อง</li>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Keyboard</li>
+        <li>เปลี่ยน Battery</li>
+        <li>เปลี่ยนพัดลม</li>
+        <li>ซ่อมระบบชาร์จ</li>
+        <li>เคยโดนน้ำ</li>
+        </ul>
+        <p>ช่วยให้ประเมินสภาพได้ตรงขึ้น</p>
+        <hr class="section-divider" />
+        <h2>ข้อมูลใน SSD ควรจัดการก่อนส่งมอบจริง</h2>
+        <p>เพื่อสอบถามราคาไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>ข้อมูลบริษัท</li>
+        </ul>
+        <p>หากต้องการเก็บ SSD สามารถแจ้งตั้งแต่ตอนประเมิน</p>
+        <hr class="section-divider" />
+        <h2>มี Notebook หลายเครื่องจากบริษัทในโคราช</h2>
+        <p>ควรจัดเป็นกลุ่ม:</p>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>รุ่น</th>
+                <th>CPU</th>
+                <th>GPU</th>
+                <th>RAM</th>
+                <th>SSD</th>
+                <th>จำนวน</th>
+                <th>สภาพ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>รุ่น...</td>
+                <td>i5-...</td>
+                <td>Integrated</td>
+                <td>8GB</td>
+                <td>256GB</td>
+                <td>5</td>
+                <td>ปกติ</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>i7-...</td>
+                <td>RTX...</td>
+                <td>16GB</td>
+                <td>512GB</td>
+                <td>3</td>
+                <td>มีรอย</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>2</td>
+                <td>ไม่ได้ทดสอบ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Configuration ที่ต่างกันควรแยกออกจากกัน</p>
+        <hr class="section-divider" />
+        <h2>หน้าโคราชต่างจาก Notebook Money Hub</h2>
+        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค/</code> รับผิดชอบ Broad Notebook Intent</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อโน๊ตบุ๊ค-นครราชส/</code></p>
+        <p>รักษา:</p>
+        <p><strong>Notebook + Nakhon Ratchasima / Korat</strong></p>
+        <p>จึงไม่ควรเปลี่ยนเป็นหน้า Notebook ระดับประเทศอีกหน้า</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา Notebook ในโคราช</h2>
+        <h3>1. ส่ง Model</h3>
+        <p>ชื่อรุ่นเต็ม</p>
+        <h3>2. ส่ง CPU และ GPU</h3>
+        <p>โดยเฉพาะ Gaming Notebook</p>
+        <h3>3. ส่ง RAM และ SSD</h3>
+        <p>Configuration ปัจจุบัน</p>
+        <h3>4. แจ้งหน้าจอ</h3>
+        <p>ถ้าทราบ Resolution และ Refresh Rate</p>
+        <h3>5. แจ้ง Battery</h3>
+        <p>Health หรืออาการ</p>
+        <h3>6. แจ้ง Adapter</h3>
+        <p>เดิม เทียบ หรือไม่มี</p>
+        <h3>7. ส่งรูปและตำหนิ</h3>
+        <p>รวมจอ บานพับและตัวเครื่อง</p>
+        <h3>8. แจ้งประวัติซ่อม</h3>
+        <p>หากทราบ</p>
+        <h3>9. ประเมินก่อนตัดสินใจ</h3>
+        <p>ไม่จำเป็นต้องซ่อมทุกกรณีก่อนขาย</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยัน Configuration และสภาพก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคา Notebook ในโคราช</h2>
+        <p>ส่ง:</p>
+        <p><strong>Model + CPU + GPU + RAM + SSD + Battery + รูป + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+
+        <hr class="section-divider" />
+        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในโคราช" />
+      </article>
+    </div>
+  </main>
+</BaseLayout>

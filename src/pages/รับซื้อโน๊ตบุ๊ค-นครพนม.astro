@@ -1,0 +1,305 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อโน๊ตบุ๊คนครพนม Notebook Laptop เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อโน๊ตบุ๊คมือสองในนครพนม Notebook Laptop และ Gaming Notebook ประเมินจากรุ่น CPU RAM SSD GPU แบตเตอรี่ จอ สภาพและอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊ค",
+    "url": "/รับซื้อโน๊ตบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คนครพนม เช็กรุ่น สเปก และสภาพก่อนขาย",
+    "url": "/รับซื้อโน๊ตบุ๊ค-นครพนม/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "Notebook รุ่นเก่ายังเช็กราคาได้ไหม?",
+    "answer": "ได้ ควรแจ้ง Model, CPU, RAM, SSD, Battery และสภาพเพื่อประเมินจาก Configuration จริงก่อนตัดสินใจซ่อมหรือขาย"
+  },
+  {
+    "question": "Gaming Notebook ต้องแจ้ง GPU หรือไม่?",
+    "answer": "ควรแจ้งรุ่น GPU เต็ม เพราะเครื่องชื่อ Series เดียวกันอาจมีหลาย GPU Configuration"
+  },
+  {
+    "question": "Battery เสื่อมต้องเปลี่ยนก่อนขายไหม?",
+    "answer": "ไม่จำเป็นทุกกรณี ควรเช็กราคาตามสภาพแล้วเปรียบเทียบค่าเปลี่ยน Battery กับมูลค่าที่เพิ่มขึ้น"
+  },
+  {
+    "question": "เครื่องเปิดไม่ติดสามารถประเมินก่อนได้หรือไม่?",
+    "answer": "สามารถส่ง Model สเปกที่ทราบ รูป Adapter และอาการก่อน เพื่อประเมินความเป็นไปได้เบื้องต้น"
+  },
+  {
+    "question": "ขาย Notebook โดยไม่รวม SSD ได้ไหม?",
+    "answer": "สามารถแจ้งว่าไม่รวม SSD ได้ โดยราคาต้องอิง Configuration ที่ขายจริง"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อโน๊ตบุ๊คนครพนม เช็กรุ่น สเปก และสภาพก่อนขาย</h1>
+        <p>หากมี Notebook มือสองอยู่ในนครพนมและยังไม่แน่ใจว่าจะขายตามสภาพ ซ่อมก่อน หรือเก็บไว้ใช้งานต่อ สามารถเริ่มจากตรวจรุ่นและ Configuration ของเครื่องก่อน</p>
+        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-นครพนม/</code> รักษา Historical Search Intent:</p>
+        <p><strong>Notebook + Nakhon Phanom</strong></p>
+        <p>ข้อมูลเริ่มต้นที่ควรส่งคือ:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>อยู่ในนครพนมสามารถส่งข้อมูลเช็กราคาก่อนได้</h2>
+        <p>ไม่จำเป็นต้องเดินทางพร้อมเครื่องเพียงเพื่อสอบถามราคาเบื้องต้น</p>
+        <p>สามารถเริ่มจาก:</p>
+        <ul>
+        <li>รูปเครื่อง</li>
+        <li>Model</li>
+        <li>สเปก</li>
+        <li>Battery</li>
+        <li>อาการ</li>
+        <li>Adapter</li>
+        <li>จุดตำหนิ</li>
+        </ul>
+        <p>แล้วจึงค่อยพิจารณาขั้นตอนตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ทุกพื้นที่ของจังหวัดนครพนม</p>
+        <hr class="section-divider" />
+        <h2>Notebook รุ่นเก่าต้องรู้ Generation</h2>
+        <p>คำว่า Core i5 หรือ Core i7 อย่างเดียวอาจยังไม่พอ</p>
+        <p>ตัวอย่างเช่น:</p>
+        <ul>
+        <li>Core i5-8250U</li>
+        <li>Core i5-1135G7</li>
+        <li>Core i5-12450H</li>
+        <li>Ryzen 5 5500U</li>
+        <li>Ryzen 5 7530U</li>
+        </ul>
+        <p>เป็น CPU คนละ Generation และ Platform</p>
+        <p>ควรแจ้งรหัสเต็มเท่าที่ตรวจได้</p>
+        <hr class="section-divider" />
+        <h2>เครื่องธุรกิจและ Notebook สำนักงานควรดูอะไร</h2>
+        <p>Notebook กลุ่ม Business มักต้องพิจารณา:</p>
+        <ul>
+        <li>Model</li>
+        <li>CPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>หน้าจอ</li>
+        <li>Keyboard</li>
+        <li>Battery</li>
+        <li>Port</li>
+        <li>Adapter</li>
+        <li>สภาพตัวเครื่อง</li>
+        </ul>
+        <p>หากเป็นเครื่องจากบริษัทหลายเครื่อง ควรแยก Configuration ให้ถูกต้อง ไม่ควรใช้ข้อมูลเครื่องเดียวแทนทั้งหมด</p>
+        <hr class="section-divider" />
+        <h2>Gaming Notebook ต้องแจ้ง GPU</h2>
+        <p>หากเป็น Gaming Notebook ควรระบุ:</p>
+        <ul>
+        <li>CPU</li>
+        <li>GPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>Adapter</li>
+        <li>หน้าจอถ้าทราบ</li>
+        </ul>
+        <p>เช่น:</p>
+        <p><strong>RTX 3060 Laptop GPU</strong></p>
+        <p>หรือ</p>
+        <p><strong>RTX 4060 Laptop GPU</strong></p>
+        <p>ชื่อ Gaming Series อย่างเดียวอาจมีหลาย Configuration</p>
+        <hr class="section-divider" />
+        <h2>RAM และ SSD ควรแจ้งของที่ติดตั้งอยู่จริง</h2>
+        <p>หากเคยอัปเกรดควรใช้ข้อมูลปัจจุบัน</p>
+        <p>ตัวอย่าง:</p>
+        <p><strong>RAM 16GB / SSD 1TB</strong></p>
+        <p>ถ้าต้องการเก็บ SSD ไว้ ควรแจ้งตั้งแต่ก่อนประเมินว่า:</p>
+        <p><strong>ไม่รวม SSD</strong></p>
+        <p>เพื่อให้ราคาพิจารณาจากของที่ขายจริง</p>
+        <hr class="section-divider" />
+        <h2>Battery เสื่อมยังประเมินได้ไหม</h2>
+        <p>ได้</p>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>Battery ใช้งานได้</li>
+        <li>หมดเร็ว</li>
+        <li>ไม่เก็บไฟ</li>
+        <li>ต้องเสียบ Adapter</li>
+        <li>Health ต่ำ</li>
+        <li>เคยเปลี่ยน</li>
+        <li>Battery บวม</li>
+        </ul>
+        <p>หาก Battery บวมควรหลีกเลี่ยงการกดหรือใช้งานเครื่องหนักโดยไม่จำเป็น</p>
+        <hr class="section-divider" />
+        <h2>จอและบานพับควรถ่ายให้เห็นชัด</h2>
+        <p>ควรถ่าย:</p>
+        <ul>
+        <li>จอขณะเปิด</li>
+        <li>ฝาหลัง</li>
+        <li>บานพับ</li>
+        <li>Keyboard</li>
+        <li>Palmrest</li>
+        <li>ด้านล่าง</li>
+        </ul>
+        <p>หากมี:</p>
+        <ul>
+        <li>จอเป็นเส้น</li>
+        <li>จอกระพริบ</li>
+        <li>จุดดำ</li>
+        <li>จอแตก</li>
+        <li>บานพับแตก</li>
+        <li>ฝาแยก</li>
+        </ul>
+        <p>ควรแจ้งตามสภาพจริง</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดไม่ติดต้องซ่อมก่อนหรือไม่</h2>
+        <p>ไม่จำเป็นทุกกรณี</p>
+        <p>สามารถเริ่มจากส่ง:</p>
+        <ul>
+        <li>Model</li>
+        <li>สเปกที่ทราบ</li>
+        <li>รูป</li>
+        <li>Adapter</li>
+        <li>ไฟสถานะ</li>
+        <li>อาการก่อนเสีย</li>
+        <li>ประวัติซ่อม</li>
+        </ul>
+        <p>แล้วประเมินตามสภาพก่อนตัดสินใจลงทุนซ่อม</p>
+        <p>หากมีกลิ่นไหม้ ความร้อนผิดปกติ หรือ Battery บวม ไม่ควรทดลองเปิดซ้ำหลายครั้ง</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเคยซ่อมควรแจ้งหรือไม่</h2>
+        <p>ควรแจ้งเท่าที่ทราบ เช่น</p>
+        <ul>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Battery</li>
+        <li>เปลี่ยน Keyboard</li>
+        <li>ซ่อม Mainboard</li>
+        <li>เปลี่ยน SSD</li>
+        <li>เพิ่ม RAM</li>
+        <li>ซ่อมบานพับ</li>
+        <li>เคยโดนน้ำ</li>
+        </ul>
+        <p>ประวัติซ่อมเป็นข้อมูลประกอบการประเมิน ไม่ได้หมายความว่าเครื่องจะไม่มีมูลค่า</p>
+        <hr class="section-divider" />
+        <h2>ข้อมูลส่วนตัวไม่จำเป็นสำหรับการประเมิน Hardware</h2>
+        <p>ไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>Email Password</li>
+        </ul>
+        <p>เพียงเพื่อสอบถามราคา</p>
+        <p>ก่อนส่งมอบจริงเจ้าของควรสำรองข้อมูลและจัดการบัญชีของตนเองให้เรียบร้อย</p>
+        <hr class="section-divider" />
+        <h2>มี Notebook หลายเครื่องในนครพนม</h2>
+        <p>สามารถจัดข้อมูลเป็นตาราง:</p>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>รุ่น</th>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>SSD</th>
+                <th>จำนวน</th>
+                <th>สภาพ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>รุ่น...</td>
+                <td>i5-...</td>
+                <td>8GB</td>
+                <td>256GB</td>
+                <td>5</td>
+                <td>ใช้งานได้</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>i5-...</td>
+                <td>16GB</td>
+                <td>512GB</td>
+                <td>3</td>
+                <td>Battery เสื่อม</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>2</td>
+                <td>ยังไม่ได้ทดสอบ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>ช่วยให้แยก Configuration ได้ชัดกว่าการแจ้งเพียงจำนวนเครื่องทั้งหมด</p>
+        <hr class="section-divider" />
+        <h2>หน้านครพนมต่างจากหน้ารับซื้อโน๊ตบุ๊คหลักอย่างไร</h2>
+        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค/</code> เป็นเจ้าของ Broad Notebook Intent</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อโน๊ตบุ๊ค-นครพนม/</code></p>
+        <p>เป็นเจ้าของ:</p>
+        <p><strong>Notebook + Nakhon Phanom</strong></p>
+        <p>จึงไม่ควรขยายหน้านี้ให้แข่งขันกับ Parent สำหรับคำรับซื้อ Notebook ระดับประเทศ</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา Notebook ในนครพนม</h2>
+        <h3>1. ส่ง Model</h3>
+        <p>ใช้รุ่นเต็ม</p>
+        <h3>2. ส่ง CPU</h3>
+        <p>แจ้งรหัสเต็ม</p>
+        <h3>3. ส่ง RAM และ SSD</h3>
+        <p>ใช้ Configuration ปัจจุบัน</p>
+        <h3>4. ส่ง GPU ถ้ามี</h3>
+        <p>โดยเฉพาะ Gaming Notebook</p>
+        <h3>5. แจ้ง Battery</h3>
+        <p>Health หรืออาการ</p>
+        <h3>6. ส่งรูป</h3>
+        <p>รวมหน้าจอ บานพับและตำหนิ</p>
+        <h3>7. แจ้ง Adapter</h3>
+        <p>เดิม เทียบ หรือไม่มี</p>
+        <h3>8. แจ้งประวัติ</h3>
+        <p>ซ่อม ตก หรือโดนน้ำถ้าทราบ</p>
+        <h3>9. ประเมินก่อนตัดสินใจ</h3>
+        <p>เปรียบเทียบการขายกับค่าใช้จ่ายในการซ่อม</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยันรุ่น สเปกและสภาพก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคาโน๊ตบุ๊คในนครพนม</h2>
+        <p>ส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+
+        <hr class="section-divider" />
+        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในนครพนม" />
+      </article>
+    </div>
+  </main>
+</BaseLayout>

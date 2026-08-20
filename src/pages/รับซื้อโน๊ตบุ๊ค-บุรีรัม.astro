@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อโน๊ตบุ๊คบุรีรัมย์ Notebook Gaming เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อโน๊ตบุ๊คมือสองในบุรีรัมย์ Notebook Laptop และ Gaming Notebook ประเมินจากรุ่น CPU GPU RAM SSD แบตเตอรี่ จอ สภาพและอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊ค",
+    "url": "/รับซื้อโน๊ตบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คบุรีรัมย์ เช็กรุ่น สเปก แบตเตอรี่และสภาพก่อนขาย",
+    "url": "/รับซื้อโน๊ตบุ๊ค-บุรีรัม/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "อยู่ต่างอำเภอในบุรีรัมย์เช็กราคาก่อนได้ไหม?",
+    "answer": "สามารถเริ่มจากส่ง Model สเปก รูป Battery และสภาพก่อน แล้วจึงค่อยพิจารณาวิธีตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม"
+  },
+  {
+    "question": "Gaming Notebook ต้องแจ้ง GPU ไหม?",
+    "answer": "ควรแจ้งรุ่น GPU เต็ม เพราะ Notebook Series เดียวกันอาจมีหลาย Configuration และ GPU มีผลต่อการแยกรุ่นและมูลค่าของเครื่อง"
+  },
+  {
+    "question": "จอแตกหรือบานพับเสียยังประเมินได้ไหม?",
+    "answer": "สามารถส่งข้อมูลมาประเมินตามสภาพได้ ควรถ่ายตำหนิให้เห็นชัดและแจ้งว่าเครื่องยังเปิดใช้งานหรือสามารถต่อจอนอกได้หรือไม่"
+  },
+  {
+    "question": "Battery เสื่อมควรเปลี่ยนก่อนขายไหม?",
+    "answer": "ไม่จำเป็นทุกกรณี ควรเช็กราคาตามสภาพก่อน แล้วเปรียบเทียบค่า Battery กับมูลค่าที่คาดว่าจะเพิ่มหลังเปลี่ยน"
+  },
+  {
+    "question": "ไม่มี Adapter ขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินได้ โดยควรแจ้งว่าไม่มี Adapter ตั้งแต่ต้น ไม่จำเป็นต้องรีบซื้อใหม่ก่อนรู้ว่าคุ้มกับมูลค่าที่เพิ่มหรือไม่"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อโน๊ตบุ๊คบุรีรัมย์ เช็กรุ่น สเปก แบตเตอรี่และสภาพก่อนขาย</h1>
+        <p>ก่อนขาย Notebook ในบุรีรัมย์ ควรตรวจให้รู้ก่อนว่าเครื่องเป็นรุ่นอะไร ใช้ CPU และ GPU รุ่นไหน รวมถึง Battery จอ บานพับและ Adapter อยู่ในสภาพแบบใด</p>
+        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-บุรีรัม/</code> รักษา Historical Intent สำหรับผู้ขาย Notebook ที่ระบุพื้นที่บุรีรัมย์ โดยไม่แทนหน้ารับซื้อโน๊ตบุ๊คหลัก</p>
+        <p>เริ่มจากส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>อยู่จังหวัดบุรีรัมย์เริ่มจากส่งข้อมูลก่อน</h2>
+        <p>ผู้ขายที่อยู่ในพื้นที่ เช่น</p>
+        <ul>
+        <li>อำเภอเมืองบุรีรัมย์</li>
+        <li>นางรอง</li>
+        <li>ประโคนชัย</li>
+        <li>สตึก</li>
+        <li>ลำปลายมาศ</li>
+        <li>และพื้นที่อื่นในบุรีรัมย์</li>
+        </ul>
+        <p>สามารถเริ่มจากส่งรายละเอียดเพื่อประเมินก่อน</p>
+        <p>ไม่จำเป็นต้องเดินทางพร้อมเครื่องเพียงเพื่อถามราคาเบื้องต้น</p>
+        <p>และไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำในทุกพื้นที่ข้างต้น</p>
+        <hr class="section-divider" />
+        <h2>Model เต็มสำคัญกว่าชื่อ Series</h2>
+        <p>Notebook ชื่อใกล้กันอาจใช้:</p>
+        <ul>
+        <li>CPU คนละ Generation</li>
+        <li>GPU คนละรุ่น</li>
+        <li>RAM ต่างกัน</li>
+        <li>SSD ต่างกัน</li>
+        <li>Panel ต่างกัน</li>
+        </ul>
+        <p>ดังนั้นควรหา Model เต็มจากใต้เครื่อง BIOS หรือข้อมูลระบบ</p>
+        <p>หากอ่านไม่ออกสามารถส่งรูปป้าย Model ได้</p>
+        <hr class="section-divider" />
+        <h2>Gaming Notebook ควรแจ้ง GPU ให้ชัด</h2>
+        <p>Gaming Notebook ใน Series เดียวกันอาจมีตั้งแต่ GPU ระดับเริ่มต้นจนถึงรุ่นสูง</p>
+        <p>ควรแจ้งเช่น:</p>
+        <p><strong>RTX 3050</strong></p>
+        <p><strong>RTX 3060</strong></p>
+        <p><strong>RTX 4060</strong></p>
+        <p>หรือรุ่นที่ติดตั้งจริง</p>
+        <p>ไม่ควรใช้คำว่า “Notebook Gaming” เพียงอย่างเดียวในการประเมิน</p>
+        <hr class="section-divider" />
+        <h2>Battery ควรดูจากการใช้งานจริง</h2>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>Battery ยังใช้งานได้</li>
+        <li>หมดเร็ว</li>
+        <li>ต้องเสียบ Adapter</li>
+        <li>Health ต่ำ</li>
+        <li>บวม</li>
+        <li>เคยเปลี่ยน</li>
+        </ul>
+        <p>หาก Battery บวมไม่ควรกดฝาหรือใช้งานหนักโดยไม่จำเป็น</p>
+        <p>สามารถส่งข้อมูลมาประเมินตามสภาพได้</p>
+        <hr class="section-divider" />
+        <h2>บานพับและตัวเครื่องต้องถ่ายให้เห็น</h2>
+        <p>Notebook ที่เปิดใช้งานได้ปกติแต่บานพับแตกอาจมีความเสี่ยงต่อ:</p>
+        <ul>
+        <li>ฝาจอ</li>
+        <li>Back Cover</li>
+        <li>Palmrest</li>
+        <li>สายจอ</li>
+        </ul>
+        <p>ควรถ่าย:</p>
+        <ul>
+        <li>บานพับซ้าย</li>
+        <li>บานพับขวา</li>
+        <li>มุมเครื่อง</li>
+        <li>ฝาหลัง</li>
+        <li>Bottom Case</li>
+        </ul>
+        <p>เพื่อให้เห็นสภาพจริง</p>
+        <hr class="section-divider" />
+        <h2>หน้าจอมีเส้นหรือแตกยังส่งมาประเมินได้</h2>
+        <p>ได้</p>
+        <p>ควรถ่ายหน้าจอขณะเปิดเครื่อง และแจ้งว่า:</p>
+        <ul>
+        <li>แตก</li>
+        <li>เป็นเส้น</li>
+        <li>กระพริบ</li>
+        <li>มีจุด</li>
+        <li>สีผิดปกติ</li>
+        <li>จอไม่ขึ้น</li>
+        </ul>
+        <p>ถ้าต่อจอนอกแล้วใช้งานได้ควรแจ้งด้วย</p>
+        <p>ไม่ควรระบุสาเหตุแน่นอนหากยังไม่ได้ตรวจ Hardware</p>
+        <hr class="section-divider" />
+        <h2>ไม่มี Adapter ไม่จำเป็นต้องซื้อใหม่ทันที</h2>
+        <p>สามารถแจ้งว่าไม่มี Adapter ได้</p>
+        <p>ควรเปรียบเทียบ:</p>
+        <ul>
+        <li>ราคาตามสภาพปัจจุบัน</li>
+        <li>ราคา Adapter</li>
+        <li>มูลค่าที่คาดว่าจะเพิ่ม</li>
+        </ul>
+        <p>ก่อนซื้ออุปกรณ์เพิ่มเพื่อขาย</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเคยเพิ่ม RAM หรือ SSD ควรใช้สเปกปัจจุบัน</h2>
+        <p>หากเดิมเครื่องมี RAM 8GB แต่ปัจจุบันเป็น 16GB ให้แจ้ง 16GB</p>
+        <p>หาก SSD เดิมถูกเปลี่ยนเป็นรุ่นอื่นให้แจ้งของที่อยู่ในเครื่องจริง</p>
+        <p>ราคาต้องพิจารณาจาก Configuration ที่ขาย</p>
+        <hr class="section-divider" />
+        <h2>เครื่องมีข้อมูลส่วนตัวควรจัดการก่อนส่งมอบ</h2>
+        <p>เพื่อขอราคาประเมินไม่จำเป็นต้องให้:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Email Password</li>
+        <li>Recovery Key</li>
+        </ul>
+        <p>ผู้ขายควรสำรองข้อมูลและจัดการบัญชีของตนเองก่อนส่งมอบจริง</p>
+        <p>หากต้องการเก็บ SSD สามารถแจ้งว่าไม่รวม Storage ตั้งแต่ตอนประเมิน</p>
+        <hr class="section-divider" />
+        <h2>Notebook หลายเครื่องจากสำนักงานในบุรีรัมย์</h2>
+        <p>สามารถจัดข้อมูลเป็นกลุ่ม:</p>
+        <table class="table table-bordered">
+          <thead><tr><th>รุ่น</th><th>CPU</th><th>RAM</th><th>SSD</th><th>จำนวน</th><th>สภาพ</th></tr></thead>
+          <tbody>
+          <tr><td>รุ่น...</td><td>i5-...</td><td>8GB</td><td>256GB</td><td>6</td><td>ปกติ</td></tr>
+          <tr><td>รุ่น...</td><td>i5-...</td><td>16GB</td><td>512GB</td><td>4</td><td>Battery เสื่อม</td></tr>
+          <tr><td>รุ่น...</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>2</td><td>มีอาการ</td></tr>
+          </tbody></table>
+        <p>ไม่ควรใช้สภาพของเครื่องตัวอย่างเพียงหนึ่งเครื่องแทนทั้งล็อตหากสภาพแตกต่างกัน</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดไม่ติดควรแจ้งอาการก่อน</h2>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>Model</li>
+        <li>สเปก</li>
+        <li>มีไฟชาร์จหรือไม่</li>
+        <li>กด Power แล้วเกิดอะไร</li>
+        <li>Fan หมุนหรือไม่</li>
+        <li>Adapter ที่ใช้</li>
+        <li>เคยตกหรือโดนน้ำหรือไม่</li>
+        </ul>
+        <p>หากมีกลิ่นไหม้หรือ Battery บวมไม่ควรทดลองเปิดซ้ำหลายครั้งโดยไม่จำเป็น</p>
+        <hr class="section-divider" />
+        <h2>หน้า Local บุรีรัมย์ต่างจากหน้า Notebook หลัก</h2>
+        <p>หน้า <a href="/รับซื้อโน๊ตบุ๊ค/"><code>/รับซื้อโน๊ตบุ๊ค/</code></a> เป็น Broad Money Hub</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อโน๊ตบุ๊ค-บุรีรัม/</code></p>
+        <p>เป็นเจ้าของ:</p>
+        <p><strong>Notebook + Buriram local intent</strong></p>
+        <p>จึงไม่ควรขยายข้อความไปเป็นหน้ารับซื้อ Notebook ทั่วประเทศอีกหน้า</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา Notebook ในบุรีรัมย์</h2>
+        <h3>1. ส่ง Model</h3>
+        <p>ใช้ชื่อรุ่นเต็ม</p>
+        <h3>2. ส่ง CPU, RAM และ SSD</h3>
+        <p>ใช้สเปกปัจจุบัน</p>
+        <h3>3. ส่ง GPU ถ้ามี</h3>
+        <p>สำคัญสำหรับ Gaming Notebook</p>
+        <h3>4. ส่งรูป</h3>
+        <p>ทุกด้านและจุดตำหนิ</p>
+        <h3>5. แจ้ง Battery</h3>
+        <p>Health หรืออาการใช้งาน</p>
+        <h3>6. แจ้งจอและบานพับ</h3>
+        <p>หากมีตำหนิ</p>
+        <h3>7. แจ้ง Adapter</h3>
+        <p>เดิม เทียบ หรือไม่มี</p>
+        <h3>8. แจ้งประวัติซ่อม</h3>
+        <p>เท่าที่ทราบ</p>
+        <h3>9. ประเมินก่อนตัดสินใจ</h3>
+        <p>ไม่จำเป็นต้องซ่อมก่อนทุกกรณี</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ตรวจ Model สเปกและสภาพจริงก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคาโน๊ตบุ๊คในบุรีรัมย์</h2>
+        <p>ส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU + Battery</strong></p>
+        <p>พร้อมรูปและ Adapter</p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+        <hr class="section-divider" />
+        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในบุรีรัมย์" />
+      </article>
+    </div>
+  </main>
+</BaseLayout>

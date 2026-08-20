@@ -24,6 +24,25 @@ const testCases = [
   { path: '/รับซื้อ-server/', expectedStatus: 200, expectedState: 'INDEX' },
   { path: '/รับซื้อลำโพง-อุดรธานี/', expectedStatus: 200, expectedState: 'INDEX' },
   { path: '/รับซื้อลำโพง-สารคาม/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อคอม-อุดรธานี/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อคอม-ขอนแก่น/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-บุรีรัม/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-เลย/', expectedStatus: 200, expectedState: 'INDEX' },
+
+  // 1.1 Batch 2 Released 200 Routes (INDEX)
+  { path: '/รับซื้อโทรศัพท์มือถือ-จ/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อมือถือ-อุบล/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อไอโฟน-มหาสารคาม/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-สกลนคร/', expectedStatus: 200, expectedState: 'INDEX' },
+
+  // 1.2 Batch 3 Released 200 Routes (INDEX)
+  { path: '/รับซื้อโน๊ตบุ๊ค-นครพนม/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-นครราชส/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อเมืองขอนแก่น/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/', expectedStatus: 200, expectedState: 'INDEX' },
 
   // 2. 301 Permanent Redirects
   { path: '/rab-sue-com/', expectedStatus: 301, expectedRedirect: '/รับซื้อคอม/' },

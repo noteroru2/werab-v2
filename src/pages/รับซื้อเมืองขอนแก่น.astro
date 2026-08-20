@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อ MacBook ขอนแก่น MacBook Air Pro เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อ MacBook มือสองในขอนแก่น ทั้ง MacBook Air และ MacBook Pro ประเมินจากรุ่น ชิป RAM Storage Battery Cycle หน้าจอ สภาพ อุปกรณ์และประวัติซ่อม";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อแมคบุ๊ค",
+    "url": "/รับซื้อแมคบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อ MacBook ขอนแก่น เช็กรุ่น ชิป Battery และสภาพก่อนขาย",
+    "url": "/รับซื้อเมืองขอนแก่น/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "MacBook ต้องแจ้งชิป M1 M2 M3 หรือไม่?",
+    "answer": "ควรแจ้ง เพราะ MacBook Air หรือ Pro ชื่อเดียวกันสามารถมีหลาย Generation และหลาย Configuration"
+  },
+  {
+    "question": "Battery Cycle มีผลต่อการประเมินไหม?",
+    "answer": "เป็นข้อมูลประกอบหนึ่งของสภาพ Battery ควรแจ้ง Cycle Count และ Maximum Capacity ถ้าตรวจได้"
+  },
+  {
+    "question": "MacBook เคยเปลี่ยนจอยังขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินตามสภาพได้ ควรแจ้งประวัติที่ทราบและสภาพหน้าจอปัจจุบัน"
+  },
+  {
+    "question": "ไม่มี Charger ยังเช็กราคาได้ไหม?",
+    "answer": "ได้ ควรแจ้งว่าไม่มี Charger ไม่จำเป็นต้องซื้อใหม่ก่อนทราบว่าคุ้มกับมูลค่าที่เพิ่มหรือไม่"
+  },
+  {
+    "question": "ต้องส่ง Apple ID Password เพื่อเช็กราคาไหม?",
+    "answer": "ไม่ต้อง และไม่ควรส่ง Apple ID Password, Login Password, OTP หรือ Recovery Key เพื่อขอราคาประเมิน"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อ MacBook ขอนแก่น เช็กรุ่น ชิป Battery และสภาพก่อนขาย</h1>
+        <p>Historical URL <code>/รับซื้อเมืองขอนแก่น/</code> เคยมีเนื้อหาเกี่ยวกับอุปกรณ์ Apple หลายประเภท แต่ในโครงสร้าง V2 หน้านี้ได้รับมอบหมายให้รักษา Intent หลัก:</p>
+        <p><strong>MacBook + Khon Kaen</strong></p>
+        <p>จึงเน้น MacBook Air และ MacBook Pro โดยไม่ใช้หน้านี้แข่งขันกับหน้า iPhone หรือ iPad</p>
+        <p>ก่อนประเมินควรส่ง:</p>
+        <p><strong>รุ่น + ปีหรือชิป + RAM + Storage + Battery + รูป + Charger</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>ผู้ขาย MacBook ในขอนแก่นส่งข้อมูลมาก่อนได้</h2>
+        <p>สามารถเริ่มจากข้อมูลเครื่องก่อนเพื่อเช็กราคาเบื้องต้น</p>
+        <p>ไม่จำเป็นต้องเดินทางพร้อม MacBook เพียงเพื่อสอบถามราคา</p>
+        <p>หลังทราบข้อมูลแล้วจึงค่อยพิจารณาวิธีตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ทุกพื้นที่ในขอนแก่น</p>
+        <hr class="section-divider" />
+        <h2>Apple Silicon และ Intel MacBook ต้องแยกให้ถูก</h2>
+        <p>ควรแจ้งว่าเป็น:</p>
+        <ul>
+        <li>Intel MacBook</li>
+        <li>Apple M1</li>
+        <li>M2</li>
+        <li>M3</li>
+        <li>M4</li>
+        <li>หรือรุ่นอื่น</li>
+        </ul>
+        <p>MacBook ชื่อ Air หรือ Pro เหมือนกันแต่คนละ Generation อาจมี Hardware และตลาดแตกต่างกัน</p>
+        <p>หากไม่ทราบ สามารถส่งรูปหน้า About This Mac หรือข้อมูล Model ได้โดยไม่ต้องส่งรหัสผ่าน</p>
+        <hr class="section-divider" />
+        <h2>RAM และ Storage สำคัญกับ MacBook</h2>
+        <p>ตัวอย่าง:</p>
+        <p><strong>MacBook Air M2 / RAM 16GB / SSD 512GB</strong></p>
+        <p>ช่วยแยก Configuration ได้ชัดกว่า:</p>
+        <p><strong>MacBook Air M2</strong></p>
+        <p>อย่างเดียว</p>
+        <p>บาง Generation มีตัวเลือก RAM และ Storage หลายระดับ</p>
+        <hr class="section-divider" />
+        <h2>Battery ควรแจ้ง Health และ Cycle ถ้าตรวจได้</h2>
+        <p>ข้อมูลที่มีประโยชน์ เช่น:</p>
+        <ul>
+        <li>Maximum Capacity</li>
+        <li>Cycle Count</li>
+        <li>Battery Service Message</li>
+        <li>อาการใช้งานจริง</li>
+        </ul>
+        <p>หาก Battery บวมควรหลีกเลี่ยงการกด Trackpad หรือฝาเครื่องและไม่ควรใช้งานหนักโดยไม่จำเป็น</p>
+        <hr class="section-divider" />
+        <h2>หน้าจอ MacBook ควรถ่ายขณะเปิด</h2>
+        <p>ควรแจ้งหากมี:</p>
+        <ul>
+        <li>เส้น</li>
+        <li>จุด</li>
+        <li>สีผิดปกติ</li>
+        <li>Backlight มีปัญหา</li>
+        <li>จอแตก</li>
+        <li>กระจกเสียหาย</li>
+        <li>จอกระพริบ</li>
+        </ul>
+        <p>หากต่อจอนอกได้แต่จอในมีอาการ ควรแจ้งตามที่ตรวจพบ</p>
+        <hr class="section-divider" />
+        <h2>Keyboard, Trackpad และ Port ควรตรวจ</h2>
+        <p>ควรแจ้งหาก:</p>
+        <ul>
+        <li>Keyboard บางปุ่มเสีย</li>
+        <li>Trackpad กดไม่ได้</li>
+        <li>USB-C มีปัญหา</li>
+        <li>MagSafe มีอาการ</li>
+        <li>Speaker มีปัญหา</li>
+        <li>Camera ไม่ทำงาน</li>
+        </ul>
+        <p>อาการแต่ละส่วนมีผลต่อความพร้อมใช้งานของเครื่อง</p>
+        <hr class="section-divider" />
+        <h2>Charger มีหรือไม่มีควรแจ้ง</h2>
+        <p>ควรระบุว่า:</p>
+        <ul>
+        <li>Charger เดิม</li>
+        <li>Charger เทียบ</li>
+        <li>มีเฉพาะสาย</li>
+        <li>ไม่มี Charger</li>
+        </ul>
+        <p>ไม่จำเป็นต้องซื้อ Charger ใหม่เพียงเพื่อเช็กราคา</p>
+        <hr class="section-divider" />
+        <h2>MacBook เคยซ่อมต้องแจ้งไหม</h2>
+        <p>ควรแจ้งถ้าทราบ เช่น:</p>
+        <ul>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Battery</li>
+        <li>ซ่อม Logic Board</li>
+        <li>เปลี่ยน Keyboard</li>
+        <li>เปลี่ยน Top Case</li>
+        <li>เคยโดนน้ำ</li>
+        <li>เคยตก</li>
+        </ul>
+        <p>ประวัติซ่อมช่วยอธิบายสภาพของเครื่องได้ตรงขึ้น</p>
+        <hr class="section-divider" />
+        <h2>Find My และบัญชี Apple ควรจัดการก่อนส่งมอบ</h2>
+        <p>ก่อนซื้อขายจริง เจ้าของต้องสามารถจัดการบัญชีของตนเองและสถานะเครื่องได้</p>
+        <p>แต่ในการสอบถามราคาเบื้องต้น ไม่ควรส่ง:</p>
+        <ul>
+        <li>Apple ID Password</li>
+        <li>Mac Login Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        </ul>
+        <p>ไม่จำเป็นต้องให้ข้อมูลลับเหล่านี้เพื่อประเมิน Hardware</p>
+        <hr class="section-divider" />
+        <h2>Serial Number ควรส่งอย่างไร</h2>
+        <p>การประเมินเบื้องต้นสามารถเริ่มจากรุ่น ชิป RAM Storage Battery และรูปก่อน</p>
+        <p>หากต้องใช้ Serial Number ในขั้นตอนตรวจสอบเพิ่มเติม ควรส่งผ่านช่องทางที่เหมาะสม และไม่จำเป็นต้องเผยแพร่สาธารณะ</p>
+        <hr class="section-divider" />
+        <h2>MacBook เปิดไม่ติดยังส่งข้อมูลได้ไหม</h2>
+        <p>สามารถส่ง:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>ชิปหรือ CPU</li>
+        <li>RAM</li>
+        <li>Storage ถ้าทราบ</li>
+        <li>Charger</li>
+        <li>รูป</li>
+        <li>อาการ</li>
+        <li>ประวัติซ่อม</li>
+        </ul>
+        <p>เครื่องที่เปิดไม่ได้มีความไม่แน่นอนมากกว่าเครื่องที่ตรวจสเปกได้</p>
+        <p>หากมีกลิ่นไหม้ Battery บวม หรือความร้อนผิดปกติ ไม่ควรทดลองเปิดหรือชาร์จซ้ำหลายครั้ง</p>
+        <hr class="section-divider" />
+        <h2>หน้าเมืองขอนแก่นนี้ไม่ใช่หน้ารวมสินค้า Apple</h2>
+        <p>แม้ Historical URL จะมีชื่อกว้าง แต่ Final Master Map กำหนดบทบาทของหน้านี้เป็น:</p>
+        <p><strong>MacBook + Khon Kaen</strong></p>
+        <p>หน้า:</p>
+        <p><code>/รับซื้อแมคบุ๊ค/</code></p>
+        <p>ยังเป็นเจ้าของ Broad MacBook Intent</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อเมืองขอนแก่น/</code></p>
+        <p>ดูแล Geographic Intent ของ MacBook ในขอนแก่น</p>
+        <p>iPhone และ iPad มี Money Hub และ Local Intent ของตนเอง ไม่ควรนำมารวมเพื่อขยาย Keyword หน้านี้</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา MacBook ในขอนแก่น</h2>
+        <h3>1. แจ้งรุ่น</h3>
+        <p>Air หรือ Pro พร้อม Generation</p>
+        <h3>2. แจ้งชิปหรือ CPU</h3>
+        <p>Intel หรือ Apple Silicon</p>
+        <h3>3. แจ้ง RAM และ Storage</h3>
+        <p>ตาม Configuration จริง</p>
+        <h3>4. แจ้ง Battery</h3>
+        <p>Health และ Cycle ถ้าตรวจได้</p>
+        <h3>5. ส่งรูป</h3>
+        <p>หน้าจอ ฝา Keyboard และด้านล่าง</p>
+        <h3>6. แจ้ง Charger</h3>
+        <p>ของเดิม เทียบ หรือไม่มี</p>
+        <h3>7. แจ้งอาการ</h3>
+        <p>จอ Keyboard Trackpad Port หรืออื่น ๆ</p>
+        <h3>8. แจ้งประวัติซ่อม</h3>
+        <p>ถ้าทราบ</p>
+        <h3>9. จัดการข้อมูลก่อนส่งมอบ</h3>
+        <p>ไม่ต้องส่ง Password เพื่อสอบถามราคา</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยันรุ่น Configuration และสภาพก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคา MacBook ในขอนแก่น</h2>
+        <p>ส่ง:</p>
+        <p><strong>รุ่น + ชิป + RAM + Storage + Battery + รูป + Charger</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+
+        <hr class="section-divider" />
+        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขาย MacBook มือสองในขอนแก่น" />
+      </article>
+    </div>
+  </main>
+</BaseLayout>

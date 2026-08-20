@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { resolveSeo } from '../src/lib/seo/resolve.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -171,6 +172,81 @@ export const PAGES_CONFIG = [
     path: '/',
     approvedFile: 'docs/content-approved/homepage.md',
     astroFile: 'src/pages/index.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/',
+    approvedFile: 'docs/content-approved/local-notebook-ubon.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ.astro'
+  },
+  {
+    path: '/รับซื้อคอม-อุดรธานี/',
+    approvedFile: 'docs/content-approved/local-computer-udon.md',
+    astroFile: 'src/pages/รับซื้อคอม-อุดรธานี.astro'
+  },
+  {
+    path: '/รับซื้อคอม-ขอนแก่น/',
+    approvedFile: 'docs/content-approved/local-computer-khonkaen.md',
+    astroFile: 'src/pages/รับซื้อคอม-ขอนแก่น.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-บุรีรัม/',
+    approvedFile: 'docs/content-approved/local-notebook-buriram.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-บุรีรัม.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-เลย/',
+    approvedFile: 'docs/content-approved/local-notebook-loei.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-เลย.astro'
+  },
+  {
+    path: '/รับซื้อโทรศัพท์มือถือ-จ/',
+    approvedFile: 'docs/content-approved/local-phone-regional-isan.md',
+    astroFile: 'src/pages/รับซื้อโทรศัพท์มือถือ-จ.astro'
+  },
+  {
+    path: '/รับซื้อมือถือ-อุบล/',
+    approvedFile: 'docs/content-approved/local-mobile-ubon.md',
+    astroFile: 'src/pages/รับซื้อมือถือ-อุบล.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/',
+    approvedFile: 'docs/content-approved/local-notebook-chaiyaphum.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ.astro'
+  },
+  {
+    path: '/รับซื้อไอโฟน-มหาสารคาม/',
+    approvedFile: 'docs/content-approved/local-iphone-mahasarakham.md',
+    astroFile: 'src/pages/รับซื้อไอโฟน-มหาสารคาม.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-สกลนคร/',
+    approvedFile: 'docs/content-approved/local-notebook-sakonnakhon.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-สกลนคร.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-นครพนม/',
+    approvedFile: 'docs/content-approved/local-notebook-nakhonphanom.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-นครพนม.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-นครราชส/',
+    approvedFile: 'docs/content-approved/local-notebook-korat.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-นครราชส.astro'
+  },
+  {
+    path: '/รับซื้อเมืองขอนแก่น/',
+    approvedFile: 'docs/content-approved/local-macbook-khonkaen.md',
+    astroFile: 'src/pages/รับซื้อเมืองขอนแก่น.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/',
+    approvedFile: 'docs/content-approved/local-notebook-yasothon.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/',
+    approvedFile: 'docs/content-approved/local-notebook-khonkaen.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-ขอนแก่น.astro'
   }
 ];
 
@@ -260,9 +336,10 @@ export function runContentCopyAudit() {
     const h1Match = (approvedH1 === astroH1 && h1Count === 1) ? 'PASS' : 'FAIL';
 
     // Lifecycle / SEO State
-    let lifecycle = 'INDEX';
-    let robots = 'index,follow';
-    let sitemap = 'YES';
+    const seo = resolveSeo(page.path);
+    const lifecycle = seo.state;
+    const robots = seo.robots;
+    const sitemap = seo.sitemapEligible ? 'YES' : 'NO';
 
     // Extract FAQs
     const approvedFaqs = [];

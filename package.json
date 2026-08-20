@@ -20,6 +20,8 @@
     "audit:content-copy": "tsx scripts/content-copy-audit.mjs",
     "audit:global-ui": "tsx scripts/global-ui-audit.mjs",
     "audit:survivors": "tsx scripts/survivor-decision-parity-audit.mjs",
+    "audit:e2-parity": "tsx scripts/e2-parity-audit.mjs",
+    "audit:differentiation": "tsx scripts/local-differentiation-audit.mjs",
     "report:parity": "node scripts/generate-parity-report.mjs"
   },
   "dependencies": {

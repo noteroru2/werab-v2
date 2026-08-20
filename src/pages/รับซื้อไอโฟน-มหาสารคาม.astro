@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อไอโฟนมหาสารคาม iPhone มือสอง เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อ iPhone มือสองในมหาสารคาม ประเมินจากรุ่น ความจุ Battery Health หน้าจอ Face ID กล้อง สภาพ อุปกรณ์และประวัติซ่อม ส่งรูปเช็กราคาก่อนขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อไอโฟน",
+    "url": "/รับซื้อไอโฟน/"
+  },
+  {
+    "name": "รับซื้อไอโฟนมหาสารคาม เช็กรุ่น Battery Health และสภาพก่อนขาย",
+    "url": "/รับซื้อไอโฟน-มหาสารคาม/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "Battery Health ต่ำยังขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินตามสภาพได้ ควรแจ้งเปอร์เซ็นต์ตามที่เครื่องแสดงและประวัติเปลี่ยน Battery ถ้าทราบ"
+  },
+  {
+    "question": "Face ID ใช้ไม่ได้ยังเช็กราคาได้หรือไม่?",
+    "answer": "ได้ ควรแจ้งอาการตามจริง เพราะเป็นส่วนหนึ่งของสภาพและความพร้อมใช้งานของเครื่อง"
+  },
+  {
+    "question": "iPhone เปลี่ยนจอมาแล้วขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินได้ ควรแจ้งประวัติที่ทราบและสภาพหน้าจอปัจจุบัน"
+  },
+  {
+    "question": "ไม่มีกล่องหรือสายชาร์จยังขายได้ไหม?",
+    "answer": "สามารถเช็กราคาได้ โดยแจ้งอุปกรณ์ที่รวมขายจริง ไม่จำเป็นต้องซื้ออุปกรณ์ใหม่ก่อนประเมิน"
+  },
+  {
+    "question": "ต้องส่ง Apple ID Password เพื่อเช็กราคาไหม?",
+    "answer": "ไม่ต้อง และไม่ควรส่ง Password, Passcode, OTP หรือ Recovery Key เพื่อขอราคาประเมิน"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อไอโฟนมหาสารคาม เช็กรุ่น Battery Health และสภาพก่อนขาย</h1>
+        <p>หากมี iPhone มือสองอยู่ในมหาสารคาม สิ่งที่ช่วยให้ประเมินได้เร็วขึ้นคือรุ่น ความจุ Battery Health สภาพหน้าจอ ตัวเครื่อง และประวัติซ่อม</p>
+        <p>หน้า <code>/รับซื้อไอโฟน-มหาสารคาม/</code> รักษา Historical Search Intent:</p>
+        <p><strong>iPhone + Maha Sarakham</strong></p>
+        <p>เริ่มจาก:</p>
+        <p><strong>รุ่น + ความจุ + สี + Battery Health + รูป + ตำหนิ</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>ผู้ขายในมหาสารคามเริ่มจากส่งข้อมูลก่อน</h2>
+        <p>สามารถส่งรายละเอียดเพื่อเช็กราคาเบื้องต้นก่อนได้โดยไม่จำเป็นต้องเดินทางพร้อมเครื่องทันที</p>
+        <p>หลังทราบข้อมูลเบื้องต้นจึงค่อยพิจารณาการตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>หน้า Local นี้ไม่ได้หมายความว่ามีสาขาหรือพนักงานประจำอยู่ในทุกพื้นที่ของจังหวัด</p>
+        <hr class="section-divider" />
+        <h2>ควรแจ้งรุ่น iPhone ให้เต็ม</h2>
+        <p>เช่น:</p>
+        <ul>
+        <li>iPhone 13 128GB</li>
+        <li>iPhone 14 Pro 256GB</li>
+        <li>iPhone 15 Pro Max 512GB</li>
+        <li>หรือรุ่นอื่น</li>
+        </ul>
+        <p>คำว่า:</p>
+        <p><strong>iPhone Pro</strong></p>
+        <p>อย่างเดียวไม่เพียงพอ เพราะ Generation และความจุมีผลต่อการแยกเครื่อง</p>
+        <hr class="section-divider" />
+        <h2>Battery Health มีผลอย่างไร</h2>
+        <p>Battery Health เป็นข้อมูลประกอบสำคัญสำหรับ iPhone ที่ระบบยังแสดงค่าได้</p>
+        <p>ควรส่งเปอร์เซ็นต์ที่เห็นในเครื่องตามจริง</p>
+        <p>หาก Battery เคยเปลี่ยนหรือระบบมีข้อความเกี่ยวกับชิ้นส่วน ควรแจ้งด้วย</p>
+        <p>ไม่ควรพยายามเปลี่ยน Battery ก่อนขายโดยอัตโนมัติ ควรเช็กราคาตามสภาพก่อน</p>
+        <hr class="section-divider" />
+        <h2>หน้าจอควรตรวจทั้งภาพและ Touch</h2>
+        <p>ควรแจ้งหากมี:</p>
+        <ul>
+        <li>รอย</li>
+        <li>กระจกแตก</li>
+        <li>จุด</li>
+        <li>เส้น</li>
+        <li>Touch ไม่ครบ</li>
+        <li>สีผิดปกติ</li>
+        <li>จอกระพริบ</li>
+        </ul>
+        <p>หากเคยเปลี่ยนจอควรแจ้งเท่าที่ทราบ</p>
+        <hr class="section-divider" />
+        <h2>Face ID มีผลต่อสภาพการใช้งาน</h2>
+        <p>ถ้า Face ID:</p>
+        <ul>
+        <li>ใช้ได้</li>
+        <li>ใช้ไม่ได้</li>
+        <li>ทำงานเป็นบางครั้ง</li>
+        <li>มีข้อความผิดปกติ</li>
+        </ul>
+        <p>ควรแจ้งตามจริง</p>
+        <p>ไม่ควรวินิจฉัยสาเหตุเองหากยังไม่ได้ตรวจ</p>
+        <hr class="section-divider" />
+        <h2>กล้องและระบบเสียงควรแจ้งเมื่อมีอาการ</h2>
+        <p>ตัวอย่าง:</p>
+        <ul>
+        <li>กล้องสั่น</li>
+        <li>ไม่โฟกัส</li>
+        <li>Lens มีรอย</li>
+        <li>Speaker แตก</li>
+        <li>Microphone เบา</li>
+        <li>Vibration มีปัญหา</li>
+        </ul>
+        <p>อาการเล็กน้อยก็สามารถแจ้งประกอบการประเมินได้</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเคยซ่อมหรือโดนน้ำ</h2>
+        <p>ควรแจ้งหากทราบว่าเคย:</p>
+        <ul>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Battery</li>
+        <li>เปลี่ยนฝาหลัง</li>
+        <li>ซ่อม Board</li>
+        <li>ซ่อมกล้อง</li>
+        <li>ซ่อมระบบชาร์จ</li>
+        <li>โดนน้ำ</li>
+        </ul>
+        <p>ข้อมูลเหล่านี้ช่วยให้ประเมินสภาพได้ตรงกับเครื่องจริง</p>
+        <hr class="section-divider" />
+        <h2>Apple ID ต้องจัดการอย่างไร</h2>
+        <p>ก่อนส่งมอบจริง เจ้าของควรจัดการบัญชีของตนเองและขั้นตอนที่เกี่ยวข้องกับเครื่องให้เรียบร้อย</p>
+        <p>แต่ในการขอราคาประเมินไม่ควรส่ง:</p>
+        <ul>
+        <li>Apple ID Password</li>
+        <li>Passcode</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>Email Password</li>
+        </ul>
+        <p>ไม่จำเป็นต้องให้รหัสลับเพื่อขอราคาเบื้องต้น</p>
+        <hr class="section-divider" />
+        <h2>ไม่มีกล่องยังขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>ควรแจ้งสิ่งที่มีจริง เช่น</p>
+        <ul>
+        <li>กล่อง</li>
+        <li>สาย</li>
+        <li>Adapter</li>
+        <li>ใบเสร็จ</li>
+        <li>เคส</li>
+        </ul>
+        <p>ไม่จำเป็นต้องหาอุปกรณ์ใหม่มาเติมชุดก่อนเช็กราคา</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดไม่ติดยังประเมินได้หรือไม่</h2>
+        <p>สามารถเริ่มจาก:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>ความจุ</li>
+        <li>สี</li>
+        <li>รูป</li>
+        <li>อาการ</li>
+        <li>ประวัติซ่อม</li>
+        <li>เคยตกหรือโดนน้ำหรือไม่</li>
+        </ul>
+        <p>เครื่องที่ไม่สามารถทดสอบได้มีความไม่แน่นอนสูงกว่าเครื่องปกติ</p>
+        <p>หากเครื่องร้อนผิดปกติหรือ Battery บวมไม่ควรทดลองเปิดหรือชาร์จซ้ำมากเกินไป</p>
+        <hr class="section-divider" />
+        <h2>มี iPhone หลายเครื่องควรส่งอย่างไร</h2>
+        <p>สามารถจัดตาราง เช่น</p>
+        <table class="table table-bordered">
+          <thead><tr><th>รุ่น</th><th>ความจุ</th><th>จำนวน</th><th>Battery</th><th>สภาพ</th></tr></thead>
+          <tbody>
+          <tr><td>iPhone ...</td><td>128GB</td><td>3</td><td>...%</td><td>ปกติ</td></tr>
+          <tr><td>iPhone ...</td><td>256GB</td><td>2</td><td>...%</td><td>มีรอย</td></tr>
+          <tr><td>iPhone ...</td><td>128GB</td><td>1</td><td>ไม่ทราบ</td><td>เปิดไม่ติด</td></tr>
+          </tbody></table>
+        <p>ช่วยลดความสับสนเมื่อแต่ละเครื่องมี Configuration หรือสภาพต่างกัน</p>
+        <hr class="section-divider" />
+        <h2>หน้ามหาสารคามต่างจากหน้ารับซื้อ iPhone หลัก</h2>
+        <p>หน้า <a href="/รับซื้อไอโฟน/"><code>/รับซื้อไอโฟน/</code></a> เป็นเจ้าของ Broad iPhone Intent</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อไอโฟน-มหาสารคาม/</code></p>
+        <p>มีหน้าที่รักษา:</p>
+        <p><strong>iPhone + Maha Sarakham</strong></p>
+        <p>จึงไม่ควรใช้เป็นอีกหน้าเพื่อแข่งขันกับ Parent สำหรับคำกว้างระดับประเทศ</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา iPhone ในมหาสารคาม</h2>
+        <h3>1. แจ้งรุ่น</h3>
+        <p>ระบุ Generation และรุ่นย่อย</p>
+        <h3>2. แจ้งความจุ</h3>
+        <p>ตามเครื่องจริง</p>
+        <h3>3. แจ้ง Battery Health</h3>
+        <p>ถ้าระบบแสดง</p>
+        <h3>4. ส่งรูป</h3>
+        <p>หน้า หลัง กรอบและกล้อง</p>
+        <h3>5. ตรวจหน้าจอและ Face ID</h3>
+        <p>แจ้งอาการหากมี</p>
+        <h3>6. แจ้งประวัติซ่อม</h3>
+        <p>เท่าที่ทราบ</p>
+        <h3>7. แจ้งอุปกรณ์</h3>
+        <p>ตามสิ่งที่รวมขาย</p>
+        <h3>8. ประเมินเบื้องต้น</h3>
+        <p>จากรุ่นและสภาพ</p>
+        <h3>9. ตัดสินใจก่อนขาย</h3>
+        <p>ผู้ขายสามารถพิจารณาก่อน</p>
+        <h3>10. ตรวจเครื่อง</h3>
+        <p>ยืนยันข้อมูลและสภาพก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคา iPhone ในมหาสารคาม</h2>
+        <p>ส่ง:</p>
+        <p><strong>รุ่น + ความจุ + Battery Health + รูป + ตำหนิ</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+        <hr class="section-divider" />
+        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขาย iPhone มือสองในมหาสารคาม" />
+      </article>
+    </div>
+  </main>
+</BaseLayout>
