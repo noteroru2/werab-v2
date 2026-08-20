@@ -18,7 +18,10 @@ const testCases = [
   { path: '/รับซื้อแมคบุ๊ค/', expectedStatus: 200, expectedState: 'INDEX' },
   { path: '/รับซื้อไอโฟน/', expectedStatus: 200, expectedState: 'INDEX' },
   { path: '/รับซื้อไอแพด/', expectedStatus: 200, expectedState: 'INDEX' },
-  { path: '/รับซื้อกล้อง/', expectedStatus: 200, expectedState: 'HOLD_NOINDEX' },
+  { path: '/รับซื้อกล้อง/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อลำโพง/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อซากคอมพิวเตอร์/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อ-server/', expectedStatus: 200, expectedState: 'INDEX' },
   { path: '/รับซื้อลำโพง-อุดรธานี/', expectedStatus: 200, expectedState: 'INDEX' },
   { path: '/รับซื้อลำโพง-สารคาม/', expectedStatus: 200, expectedState: 'INDEX' },
 

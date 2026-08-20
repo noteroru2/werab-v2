@@ -2,37 +2,45 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
-import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อกล้องมือสอง กล้อง Mirrorless DSLR และเลนส์ | เรารับซื้อ.com";
 const pageDescription = "รับซื้อกล้องมือสอง Mirrorless DSLR และเลนส์ ประเมินจากรุ่น Body เลนส์ สภาพ Sensor Shutter หน้าจอ แบตเตอรี่ เชื้อรา ฝ้า และอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย";
 
 const breadcrumbs = [
-  { name: 'หน้าแรก', url: '/' },
-  { name: 'รายการรับซื้อสินค้า', url: '/รับซื้อ/' },
-  { name: 'รับซื้อกล้อง', url: '/รับซื้อกล้อง/' }
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อกล้อง",
+    "url": "/รับซื้อกล้อง/"
+  }
 ];
 
-const cameraFaqs = [
+const faqs = [
   {
-    question: "รับซื้อกล้องและเลนส์มือสองยี่ห้ออะไรบ้าง?",
-    answer: "สามารถส่งกล้องและเลนส์หลายแบรนด์มาประเมินได้ เช่น Canon, Sony, Fujifilm, Nikon, Panasonic, Olympus หรือ OM System และแบรนด์อื่น โดยควรแจ้งรุ่น Body รุ่นเลนส์ สภาพ และอุปกรณ์"
+    "question": "รับซื้อกล้องและเลนส์มือสองยี่ห้ออะไรบ้าง?",
+    "answer": "สามารถส่งกล้องและเลนส์หลายแบรนด์มาประเมินได้ เช่น Canon, Sony, Fujifilm, Nikon, Panasonic, Olympus หรือ OM System และแบรนด์อื่น โดยควรแจ้งรุ่น Body รุ่นเลนส์ สภาพ และอุปกรณ์"
   },
   {
-    question: "กล้องมีฝุ่นที่ Sensor หรือเลนส์มีเชื้อราขายได้ไหม?",
-    answer: "สามารถส่งมาประเมินตามสภาพได้ ควรถ่ายรูปหรือแจ้งระดับปัญหาที่พบ ไม่จำเป็นต้องรีบส่งทำความสะอาดก่อนทุกกรณี เพราะควรเปรียบเทียบต้นทุนกับมูลค่าที่อาจเพิ่มขึ้นก่อน"
+    "question": "กล้องมีฝุ่นที่ Sensor หรือเลนส์มีเชื้อราขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินตามสภาพได้ ควรถ่ายรูปหรือแจ้งระดับปัญหาที่พบ ไม่จำเป็นต้องรีบส่งทำความสะอาดก่อนทุกกรณี เพราะควรเปรียบเทียบต้นทุนกับมูลค่าที่อาจเพิ่มขึ้นก่อน"
   },
   {
-    question: "ขายเฉพาะ Body หรือเฉพาะเลนส์ได้ไหม?",
-    answer: "สามารถส่ง Body หรือ Lens แยกมาประเมินได้ ควรแจ้งรุ่นเต็มและสภาพของแต่ละชิ้น เพราะกล้องและเลนส์มีมูลค่าแยกจากกัน"
+    "question": "ขายเฉพาะ Body หรือเฉพาะเลนส์ได้ไหม?",
+    "answer": "สามารถส่ง Body หรือ Lens แยกมาประเมินได้ ควรแจ้งรุ่นเต็มและสภาพของแต่ละชิ้น เพราะกล้องและเลนส์มีมูลค่าแยกจากกัน"
   },
   {
-    question: "กล้องเปิดไม่ติดหรือเคยซ่อมยังขายได้ไหม?",
-    answer: "บางกรณีสามารถประเมินตามสภาพได้ ควรแจ้งรุ่น อาการก่อนเสีย Battery, Charger และประวัติการซ่อมหากทราบ เพื่อพิจารณาความเสี่ยงและมูลค่าคงเหลือ"
+    "question": "กล้องเปิดไม่ติดหรือเคยซ่อมยังขายได้ไหม?",
+    "answer": "บางกรณีสามารถประเมินตามสภาพได้ ควรแจ้งรุ่น อาการก่อนเสีย Battery, Charger และประวัติการซ่อมหากทราบ เพื่อพิจารณาความเสี่ยงและมูลค่าคงเหลือ"
   },
   {
-    question: "ต้องส่ง Shutter Count เพื่อเช็กราคากล้องไหม?",
-    answer: "หากสามารถตรวจได้สามารถส่งประกอบการประเมินได้ แต่ Shutter Count ไม่ใช่ปัจจัยเดียว ต้องดูรุ่น สภาพ Sensor การทำงาน หน้าจอ EVF เลนส์ และประวัติของกล้องร่วมด้วย"
+    "question": "ต้องส่ง Shutter Count เพื่อเช็กราคากล้องไหม?",
+    "answer": "หากสามารถตรวจได้สามารถส่งประกอบการประเมินได้ แต่ Shutter Count ไม่ใช่ปัจจัยเดียว ต้องดูรุ่น สภาพ Sensor การทำงาน หน้าจอ EVF เลนส์ และประวัติของกล้องร่วมด้วย"
   }
 ];
 ---
@@ -41,371 +49,544 @@ const cameraFaqs = [
   title={pageTitle}
   description={pageDescription}
   breadcrumbs={breadcrumbs}
-  faqs={cameraFaqs}
+  faqs={faqs}
 >
-  <Breadcrumb items={breadcrumbs} />
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
 
-  <!-- 1. HERO SECTION -->
-  <section class="section cam-hero-section">
+  <main class="content-container">
     <div class="container container-narrow">
-      <span class="badge badge-accent cam-badge">CAMERA BUYBACK</span>
-      <h1 class="cam-title">รับซื้อกล้องมือสอง เช็กรุ่น Body เลนส์ และสภาพก่อนขาย</h1>
-      <p class="cam-subtitle">
-        ประเมินราคาตามรุ่น Body เลนส์ สภาพเซนเซอร์ ชัตเตอร์ อาการฝ้า รา และอุปกรณ์เสริม
-      </p>
-    </div>
-  </section>
-
-  <!-- 2. PROCESS / VALUATION STEPS (STEPS 4-10) -->
-  <section class="section" style="padding-top: 1rem;">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">แนวทางการประเมิน</span>
+      <article class="prose-content">
+        <h1>รับซื้อกล้องมือสอง เช็กรุ่น Body เลนส์ และสภาพก่อนขาย</h1>
+        <p>ต้องการขายกล้องมือสอง แต่ไม่แน่ใจว่าควรประเมิน Body และเลนส์อย่างไร?</p>
+        <p>กล้องถ่ายรูปต่างจากอุปกรณ์ไอทีหลายประเภท เพราะมูลค่าของชุดอาจอยู่ทั้งใน <strong>ตัวกล้อง เลนส์ แบตเตอรี่ อุปกรณ์ และสภาพของชิ้นส่วนระบบภาพ</strong></p>
+        <p>กล้องรุ่นเดียวกัน แต่สภาพ Sensor, Shutter, ช่องมองภาพ หน้าจอ หรือเลนส์ต่างกัน สามารถมีราคามือสองต่างกันได้มาก</p>
+        <p>ก่อนขายควรเริ่มจากส่ง:</p>
+        <p><strong>รุ่น Body + รุ่นเลนส์ + รูป + สภาพ + อาการ + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>กล้องแบบไหนส่งมาประเมินได้</h2>
+        <p>สามารถส่งรายละเอียดกล้องหลายประเภทมาสอบถามได้ เช่น</p>
+        <ul>
+        <li>Mirrorless</li>
+        <li>DSLR</li>
+        <li>Compact Camera</li>
+        <li>กล้อง Full Frame</li>
+        <li>กล้อง APS-C</li>
+        <li>กล้อง Micro Four Thirds</li>
+        <li>กล้อง Medium Format บางรุ่น</li>
+        <li>กล้องพร้อม Kit Lens</li>
+        <li>Body อย่างเดียว</li>
+        <li>เลนส์แยก</li>
+        <li>กล้องมีตำหนิ</li>
+        <li>กล้องเคยซ่อม</li>
+        <li>กล้องมีรอย</li>
+        <li>กล้องเปิดไม่ติดบางกรณี</li>
+        <li>เลนส์มีฝ้าหรือเชื้อราบางกรณี</li>
+        </ul>
+        <p>แบรนด์ที่พบในตลาดมือสอง เช่น</p>
+        <ul>
+        <li>Canon</li>
+        <li>Sony</li>
+        <li>Fujifilm</li>
+        <li>Nikon</li>
+        <li>Panasonic</li>
+        <li>Olympus / OM System</li>
+        <li>Leica</li>
+        <li>Sigma</li>
+        <li>และแบรนด์อื่น</li>
+        </ul>
+        <p>การประเมินต้องดูรุ่นและสภาพของสินค้าจริง</p>
+        <hr class="section-divider" />
+        <h2>ก่อนขายต้องรู้รุ่น Body ให้ชัด</h2>
+        <p>ควรแจ้งชื่อรุ่นเต็ม</p>
+        <p>การบอกเพียงว่า “กล้อง Canon” หรือ “กล้อง Fuji” ยังไม่พอ</p>
+        <p>เพราะ Body แต่ละรุ่นมี Sensor ขนาด ความละเอียด ระบบโฟกัส อายุ และตลาดมือสองต่างกัน</p>
+        <p>หากไม่แน่ใจ สามารถถ่ายรูป:</p>
+        <ul>
+        <li>ด้านหน้า</li>
+        <li>ด้านหลัง</li>
+        <li>ด้านบน</li>
+        <li>ใต้กล้อง</li>
+        <li>ป้าย Model</li>
+        <li>หน้าจอเมนู</li>
+        </ul>
+        <p>เพื่อช่วยตรวจรุ่นได้</p>
+        <hr class="section-divider" />
+        <h2>Body กับ Lens ควรแยกประเมินก่อน</h2>
+        <p>หากมีกล้องพร้อมเลนส์ ควรแจ้งข้อมูลของทั้งสองส่วนแยกกัน</p>
+        <p>เพราะเลนส์บางตัวมีมูลค่ามือสองสูงและสามารถขายแยกได้</p>
+        <p>ไม่ควรแจ้งเพียงว่า “กล้องพร้อมเลนส์” หากสามารถดูรุ่น Lens ได้</p>
+        <hr class="section-divider" />
+        <h2>วิธีดูรุ่นเลนส์</h2>
+        <p>ข้อมูลรุ่นเลนส์มักอยู่บริเวณ:</p>
+        <ul>
+        <li>ด้านหน้ากระบอก</li>
+        <li>รอบขอบหน้าเลนส์</li>
+        <li>ด้านข้าง</li>
+        <li>ใกล้ Mount</li>
+        <li>Sticker หรือข้อความบนตัว Lens</li>
+        </ul>
+        <p>ควรส่งชื่อรุ่นเต็ม พร้อมชื่อแบรนด์และ Series</p>
+        <p>เพราะเลนส์ระยะใกล้กันอาจมีมูลค่าต่างกันมากจาก Aperture, Mount และ Generation</p>
+        <hr class="section-divider" />
+        <h2>Sensor ต้องตรวจอะไรบ้าง</h2>
+        <p>Sensor เป็นส่วนสำคัญของกล้องดิจิทัล</p>
+        <p>หากสามารถถอดเลนส์ได้ ควรตรวจอย่างระมัดระวังโดยไม่สัมผัส Sensor โดยตรง</p>
+        <p>สิ่งที่อาจพบ เช่น</p>
+        <ul>
+        <li>ฝุ่น</li>
+        <li>คราบ</li>
+        <li>รอย</li>
+        <li>จุดผิดปกติ</li>
+        <li>ความเสียหายจากการทำความสะอาด</li>
+        </ul>
+        <p>ฝุ่นเล็กน้อยบางกรณีสามารถทำความสะอาดได้ แต่รอยหรือความเสียหายต่อ Sensor มีความสำคัญมากกว่า</p>
+        <p>ไม่ควรใช้ของแข็งหรือวัสดุที่ไม่เหมาะสมเช็ด Sensor เพื่อเตรียมขาย</p>
+        <p>หากไม่แน่ใจ ให้ถ่ายรูปหรือแจ้งอาการก่อน</p>
+        <hr class="section-divider" />
+        <h2>วิธีตรวจฝุ่นบน Sensor เบื้องต้น</h2>
+        <p>ถ้ากล้องและเลนส์ใช้งานได้ สามารถทดลองถ่ายพื้นสว่าง เช่น ผนังหรือท้องฟ้า ด้วย Aperture แคบ</p>
+        <p>จากนั้นดูภาพว่ามีจุดดำซ้ำในตำแหน่งเดิมหรือไม่</p>
+        <p>การทดสอบนี้ช่วยสังเกตฝุ่นหรือคราบบางประเภทได้ แต่ไม่ได้ใช้ตัดสินความเสียหายทั้งหมดของ Sensor</p>
+        <p>หากพบจุดผิดปกติควรแจ้งประกอบการประเมิน</p>
+        <hr class="section-divider" />
+        <h2>Shutter Count มีผลไหม</h2>
+        <p>มีผลกับกล้องบางประเภท โดยเฉพาะกล้องที่ใช้ Mechanical Shutter</p>
+        <p>Shutter Count เป็นข้อมูลหนึ่งที่ช่วยดูปริมาณการใช้งาน</p>
+        <p>แต่ไม่ควรใช้เพียงจำนวน Shutter เป็นตัวกำหนดราคาทั้งเครื่อง</p>
+        <p>ต้องดูร่วมกับ:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>อายุ</li>
+        <li>สภาพ</li>
+        <li>การทำงาน</li>
+        <li>Sensor</li>
+        <li>ปุ่ม</li>
+        <li>จอ</li>
+        <li>EVF</li>
+        <li>ประวัติซ่อม</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>หน้าจอและช่องมองภาพควรตรวจ</h2>
+        <h3>หน้าจอ</h3>
+        <ul>
+        <li>ภาพขึ้น</li>
+        <li>Touch ถ้ารองรับ</li>
+        <li>พับหรือหมุนได้ตามรุ่น</li>
+        <li>ไม่มีเส้น</li>
+        <li>ไม่มีจุดผิดปกติชัดเจน</li>
+        <li>ไม่มีรอยแตก</li>
+        </ul>
+        <h3>EVF</h3>
+        <p>ถ้ารุ่นมี Electronic Viewfinder ควรตรวจ:</p>
+        <ul>
+        <li>ภาพขึ้น</li>
+        <li>สีปกติ</li>
+        <li>ไม่มีอาการกะพริบ</li>
+        <li>Sensor สลับจอ/EVF ทำงานถ้ารุ่นรองรับ</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>Autofocus ควรทดสอบอย่างไร</h2>
+        <p>ถ้ามีเลนส์ที่ใช้งานได้ ลอง Focus วัตถุหลายระยะ</p>
+        <p>สังเกตว่า:</p>
+        <ul>
+        <li>Focus เข้า</li>
+        <li>ไม่มีเสียงผิดปกติ</li>
+        <li>ไม่ค้าง</li>
+        <li>เปลี่ยนจุด Focus ได้</li>
+        </ul>
+        <p>ไม่จำเป็นต้องทดสอบเชิงห้องแล็บเพื่อถามราคาเบื้องต้น</p>
+        <hr class="section-divider" />
+        <h2>กล้องถ่ายภาพได้แต่ Video มีปัญหาต้องแจ้งไหม</h2>
+        <p>ควรแจ้ง</p>
+        <p>ถ้าสะดวกควรลอง:</p>
+        <ul>
+        <li>Record Video</li>
+        <li>Microphone</li>
+        <li>Playback</li>
+        <li>HDMI หากใช้งาน</li>
+        <li>ช่อง Mic</li>
+        <li>ช่อง Headphone ถ้ามี</li>
+        </ul>
+        <p>หากฟังก์ชันบางอย่างยังไม่ได้ทดสอบ สามารถระบุว่า “ยังไม่ได้ทดสอบ” ได้</p>
+        <hr class="section-divider" />
+        <h2>ปุ่ม Dial และพอร์ตต่าง ๆ</h2>
+        <p>ควรตรวจ:</p>
+        <ul>
+        <li>Shutter Button</li>
+        <li>Mode Dial</li>
+        <li>Command Dial</li>
+        <li>Menu</li>
+        <li>Playback</li>
+        <li>Joystick</li>
+        <li>ปุ่ม Function</li>
+        <li>USB</li>
+        <li>HDMI</li>
+        <li>Mic</li>
+        <li>SD Card Slot</li>
+        <li>Battery Door</li>
+        </ul>
+        <p>ปุ่มบางปุ่มกดยากหรือ Dial หมุนแล้วข้ามค่าควรแจ้งตามจริง</p>
+        <hr class="section-divider" />
+        <h2>แบตเตอรี่และ Charger มีผลหรือไม่</h2>
+        <p>มีผลต่อความพร้อมใช้งานของชุด</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>มี Battery กี่ก้อน</li>
+        <li>Battery ใช้งานได้หรือไม่</li>
+        <li>มี Charger หรือไม่</li>
+        <li>ชาร์จผ่านกล้องได้หรือไม่ หากรุ่นรองรับ</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>เลนส์ต้องตรวจเชื้อรา ฝ้า และรอยอย่างไร</h2>
+        <p>เลนส์ควรตรวจทั้งด้านหน้าและด้านหลัง</p>
+        <p>สิ่งที่ควรสังเกต:</p>
+        <ul>
+        <li>รอยหน้าเลนส์</li>
+        <li>ฝุ่นภายใน</li>
+        <li>ฝ้า</li>
+        <li>เชื้อรา</li>
+        <li>รอยแยกของชิ้นเลนส์</li>
+        <li>คราบ</li>
+        <li>Mount</li>
+        <li>Filter Thread</li>
+        </ul>
+        <p>ฝุ่นเล็กน้อยกับเชื้อราหรือฝ้าไม่ควรประเมินเหมือนกัน</p>
+        <hr class="section-divider" />
+        <h2>เชื้อราในเลนส์ควรล้างก่อนขายไหม</h2>
+        <p>ไม่จำเป็นต้องส่งล้างก่อนทุกกรณี</p>
+        <p>ควรเปรียบเทียบ:</p>
+        <ol>
+        <li>มูลค่าปัจจุบันของเลนส์</li>
+        <li>ระดับเชื้อราหรือฝ้า</li>
+        <li>ค่าใช้จ่ายในการล้าง</li>
+        <li>ความเสี่ยงของการเปิดเลนส์</li>
+        <li>มูลค่าที่คาดว่าจะเพิ่มหลังทำความสะอาด</li>
+        </ol>
+        <p>จึงควรเช็กราคาตามสภาพก่อน</p>
+        <hr class="section-divider" />
+        <h2>Focus Ring และ Zoom Ring ต้องตรวจด้วย</h2>
+        <p>สำหรับเลนส์ควรลอง:</p>
+        <ul>
+        <li>หมุน Focus Ring</li>
+        <li>หมุน Zoom Ring</li>
+        <li>ปรับ Aperture Ring ถ้ามี</li>
+        <li>ตรวจ Switch</li>
+        <li>ตรวจ Stabilization ถ้ามี</li>
+        </ul>
+        <p>สังเกตว่าหมุนและทำงานได้ตามสภาพที่แจ้ง</p>
+        <hr class="section-divider" />
+        <h2>Mount ของเลนส์สำคัญอย่างไร</h2>
+        <p>ควรแจ้ง Mount ให้ถูกต้อง</p>
+        <p>เลนส์ชื่อใกล้กันอาจมีหลาย Mount สำหรับระบบกล้องต่างกัน</p>
+        <p>ควรถ่ายด้านท้ายเลนส์และข้อมูลรุ่นเต็มประกอบ</p>
+        <hr class="section-divider" />
+        <h2>กล้องมีรอยหรือเคยตกยังขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>ควรถ่ายให้เห็น:</p>
+        <ul>
+        <li>ด้านหน้า</li>
+        <li>ด้านหลัง</li>
+        <li>ด้านบน</li>
+        <li>ด้านล่าง</li>
+        <li>มุม</li>
+        <li>Grip</li>
+        <li>Mount</li>
+        <li>หน้าจอ</li>
+        <li>จุดตกกระแทก</li>
+        </ul>
+        <p>หากเคยตกและเริ่มมีอาการหลังจากนั้นควรแจ้งด้วย</p>
+        <hr class="section-divider" />
+        <h2>กล้องเคยซ่อมยังขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>ควรแจ้งหากทราบว่าเคย:</p>
+        <ul>
+        <li>เปลี่ยน Shutter</li>
+        <li>เปลี่ยนจอ</li>
+        <li>ซ่อม Mainboard</li>
+        <li>ซ่อม Sensor</li>
+        <li>ซ่อมพอร์ต</li>
+        <li>ซ่อมปุ่ม</li>
+        <li>ซ่อมระบบ Focus</li>
+        <li>โดนน้ำ</li>
+        <li>ตกกระแทก</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>กล้องเปิดไม่ติดยังประเมินได้ไหม</h2>
+        <p>บางกรณีสามารถส่งมาประเมินตามสภาพได้</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>เลนส์ที่มี</li>
+        <li>อาการก่อนเสีย</li>
+        <li>Battery</li>
+        <li>Charger</li>
+        <li>เคยตกหรือโดนน้ำหรือไม่</li>
+        <li>เคยซ่อมหรือไม่</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>Compact Camera ควรตรวจอะไร</h2>
+        <p>สำหรับกล้อง Compact ควรลอง:</p>
+        <ul>
+        <li>เปิดเครื่อง</li>
+        <li>Lens ยืด/หด</li>
+        <li>Zoom</li>
+        <li>Focus</li>
+        <li>Flash</li>
+        <li>Screen</li>
+        <li>Battery</li>
+        <li>Memory Card</li>
+        <li>Shutter</li>
+        <li>Video</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>มีเลนส์หลายตัวควรส่งข้อมูลอย่างไร</h2>
+        <p>ถ้ามีหลาย Lens ให้แยกรายการ</p>
+        <ol>
+        <li>Body</li>
+        <li>Lens แต่ละตัว</li>
+        <li>Flash</li>
+        <li>Battery</li>
+        <li>Charger</li>
+        <li>อุปกรณ์อื่น</li>
+        </ol>
+        <p>ไม่ควรเขียนเพียงว่า “กล้องพร้อมเลนส์หลายตัว”</p>
+        <hr class="section-divider" />
+        <h2>Flash และอุปกรณ์กล้องอื่นขายรวมได้ไหม</h2>
+        <p>สามารถแจ้งอุปกรณ์ร่วมได้ เช่น</p>
+        <ul>
+        <li>Flash</li>
+        <li>Battery Grip</li>
+        <li>Cage</li>
+        <li>Microphone</li>
+        <li>Tripod</li>
+        <li>Filter</li>
+        <li>Remote</li>
+        <li>Charger</li>
+        <li>Battery</li>
+        <li>Strap</li>
+        <li>Bag</li>
+        </ul>
+        <p>ควรแยกรุ่นและสภาพเท่าที่ทราบ</p>
+        <hr class="section-divider" />
+        <h2>ประกันเหลือควรแจ้งไหม</h2>
+        <p>ควรแจ้งหากตรวจสอบได้</p>
+        <p>ข้อมูลที่เป็นประโยชน์:</p>
+        <ul>
+        <li>วันที่ซื้อ</li>
+        <li>ใบเสร็จ</li>
+        <li>ประกันที่ตรวจสอบได้</li>
+        <li>ระยะเวลาที่เหลือ</li>
+        </ul>
+        <p>ไม่ควรอ้างว่ามีประกันหากไม่สามารถตรวจสอบได้</p>
+        <hr class="section-divider" />
+        <h2>กล้องหลายตัวหรืออุปกรณ์จากสตูดิโอ</h2>
+        <p>หากมีหลายรายการ แนะนำจัดข้อมูลเป็นตาราง</p>
+        <div class="table-responsive">
+        <table class="data-table">
+        <thead><tr><th>รายการ</th><th>รุ่น</th><th>จำนวน</th><th>สภาพ</th></tr></thead>
+        <tbody>
+        <tr><td>Body</td><td>รุ่น...</td><td>3</td><td>ใช้งานได้</td></tr>
+        <tr><td>Lens</td><td>รุ่น...</td><td>5</td><td>มีรอยบางตัว</td></tr>
+        <tr><td>Flash</td><td>รุ่น...</td><td>2</td><td>ใช้งานได้</td></tr>
+        </tbody></table></div>
+        <p>ถ้าสภาพแตกต่างกันมากควรแยกแต่ละชิ้นหรือแต่ละกลุ่ม</p>
+        <hr class="section-divider" />
+        <h2>ปัจจัยหลักที่ใช้ประเมินราคากล้อง</h2>
+        <h3>รุ่น Body</h3>
+        <p>เป็นจุดเริ่มต้นในการประเมิน</p>
+        <h3>Sensor</h3>
+        <p>ดูสภาพและความผิดปกติ</p>
+        <h3>Shutter</h3>
+        <p>ดูการใช้งานและสภาพตามประเภทกล้อง</p>
+        <h3>หน้าจอ / EVF</h3>
+        <p>ต้องตรวจการทำงาน</p>
+        <h3>Autofocus</h3>
+        <p>ตรวจการทำงานร่วมกับ Lens</p>
+        <h3>ปุ่มและพอร์ต</h3>
+        <p>ดูความสมบูรณ์ของการควบคุม</p>
+        <h3>Battery</h3>
+        <p>มีผลต่อความพร้อมใช้งาน</p>
+        <h3>Lens</h3>
+        <p>แยกประเมินตามรุ่นและสภาพ</p>
+        <h3>เชื้อรา / ฝ้า / รอย</h3>
+        <p>มีผลต่อเลนส์และระบบภาพ</p>
+        <h3>สภาพตัวเครื่อง</h3>
+        <p>รอย ตก แตก และ Mount ต้องพิจารณา</p>
+        <h3>ประวัติซ่อม</h3>
+        <p>ช่วยประเมินความเสี่ยง</p>
+        <h3>อุปกรณ์และประกัน</h3>
+        <p>ช่วยเพิ่มความสมบูรณ์ของชุด</p>
+        <h3>ตลาดของรุ่น</h3>
+        <p>กล้องและ Lens แต่ละระบบมีความต้องการมือสองแตกต่างกัน</p>
+        <hr class="section-divider" />
         <h2>ขั้นตอนเช็กราคากล้องก่อนขาย</h2>
-        <p>ตรวจสอบความสมบูรณ์ของตัวกล้อง ชิ้นเลนส์ และอุปกรณ์ส่วนควบ</p>
-      </div>
-
-      <div class="cam-steps-grid">
-        <div class="card cam-step-card">
-          <div class="cam-step-num">4</div>
-          <h3>แจ้งการทำงานของ Body</h3>
-          <p>ตรวจสอบการทำงาน เช่น:</p>
-          <ul class="cam-step-list">
-            <li>เปิดติด</li>
-            <li>ถ่ายได้</li>
-            <li>Focus ได้</li>
-            <li>EVF ปกติ</li>
-            <li>Video ปกติ</li>
-            <li>มีอาการอะไร</li>
-          </ul>
-        </div>
-
-        <div class="card cam-step-card">
-          <div class="cam-step-num">5</div>
-          <h3>แจ้งสภาพ Lens</h3>
-          <p>ตรวจชิ้นเลนส์ เช่น:</p>
-          <ul class="cam-step-list">
-            <li>ใส</li>
-            <li>มีฝุ่น</li>
-            <li>มีฝ้า</li>
-            <li>มีเชื้อรา</li>
-            <li>มีรอย</li>
-          </ul>
-        </div>
-
-        <div class="card cam-step-card">
-          <div class="cam-step-num">6</div>
-          <h3>แจ้งอุปกรณ์</h3>
-          <p>อุปกรณ์ร่วม เช่น:</p>
-          <ul class="cam-step-list">
-            <li>Battery</li>
-            <li>Charger</li>
-            <li>Box</li>
-            <li>Strap</li>
-            <li>Flash</li>
-            <li>อุปกรณ์อื่น</li>
-          </ul>
-        </div>
-
-        <div class="card cam-step-card">
-          <div class="cam-step-num">7</div>
-          <h3>แจ้งประวัติ</h3>
-          <p>เคยซ่อม ตก หรือโดนน้ำหรือไม่</p>
-        </div>
-
-        <div class="card cam-step-card">
-          <div class="cam-step-num">8</div>
-          <h3>ประเมินเบื้องต้น</h3>
-          <p>พิจารณา Body, Lens, สภาพ และอุปกรณ์ร่วมกัน</p>
-        </div>
-
-        <div class="card cam-step-card">
-          <div class="cam-step-num">9</div>
-          <h3>ตัดสินใจ</h3>
-          <p>สามารถพิจารณาก่อนว่าจะขายเป็นชุดหรือแยกบางรายการ</p>
-        </div>
-
-        <div class="card cam-step-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
-          <div class="cam-step-num">10</div>
-          <h3>ตรวจสินค้าจริงและซื้อขาย</h3>
-          <p>ตรวจรุ่น สภาพ และการทำงานให้ตรงกับรายละเอียดที่ใช้ประเมินก่อนดำเนินการซื้อขาย</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. PROVINCIAL / REMOTE VALUATION SECTION -->
-  <section class="section section-muted">
-    <div class="container container-narrow">
-      <div class="card provincial-card">
+        <h3>1. ส่งรุ่น Body</h3>
+        <p>แจ้งชื่อรุ่นเต็ม</p>
+        <h3>2. ส่งรุ่น Lens</h3>
+        <p>แยกทุกเลนส์ที่ต้องการขาย</p>
+        <h3>3. ส่งรูป</h3>
+        <p>ถ่าย Body, Lens และตำหนิให้เห็นชัด</p>
+        <h3>4. แจ้งการทำงาน</h3>
+        <p>เช่น เปิดติด ถ่ายได้ Focus ได้ EVF หรือ Video มีอาการหรือไม่</p>
+        <h3>5. แจ้งสภาพ Lens</h3>
+        <p>เช่น ใส มีฝุ่น มีฝ้า มีเชื้อรา หรือมีรอย</p>
+        <h3>6. แจ้งอุปกรณ์</h3>
+        <p>Battery, Charger, Box, Strap, Flash และอุปกรณ์อื่น</p>
+        <h3>7. แจ้งประวัติ</h3>
+        <p>เคยซ่อม ตก หรือโดนน้ำหรือไม่</p>
+        <h3>8. ประเมินเบื้องต้น</h3>
+        <p>พิจารณา Body, Lens, สภาพ และอุปกรณ์ร่วมกัน</p>
+        <h3>9. ตัดสินใจ</h3>
+        <p>พิจารณาก่อนว่าจะขายเป็นชุดหรือแยกบางรายการ</p>
+        <h3>10. ตรวจสินค้าจริงและซื้อขาย</h3>
+        <p>ตรวจรุ่น สภาพ และการทำงานให้ตรงกับรายละเอียดที่ใช้ประเมิน</p>
+        <hr class="section-divider" />
         <h2>อยู่ต่างจังหวัดเริ่มเช็กราคากล้องได้อย่างไร</h2>
-        <p>ไม่จำเป็นต้องเดินทางพร้อมกล้องเพียงเพื่อถามราคาเบื้องต้น</p>
         <p>เริ่มจากส่ง:</p>
-
-        <div class="provincial-formula">
-          <strong>รุ่น Body + รุ่น Lens + รูป + สภาพ + อาการ + อุปกรณ์</strong>
-        </div>
-
+        <p><strong>รุ่น Body + รุ่น Lens + รูป + สภาพ + อาการ + อุปกรณ์</strong></p>
         <p>จากนั้นจึงค่อยตกลงวิธีส่งมอบหรือนัดหมายตามพื้นที่ ประเภทสินค้า และความเหมาะสม</p>
-        <p class="provincial-note">
-          หน้า <code>/รับซื้อกล้อง/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด
-          หน้ารับซื้อกล้องรายพื้นที่ที่มี Historical Search Equity จะเชื่อมเข้ากับหมวดนี้ในภายหลัง เมื่อผ่าน Content QA และ Index Release ของแต่ละหน้า
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. INTAKE & CONTACT CTA SECTION -->
-  <section class="section">
-    <div class="container container-narrow">
-      <div class="card intake-card">
+        <p>หน้า <code>/รับซื้อกล้อง/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        <hr class="section-divider" />
         <h2>เริ่มเช็กราคากล้องของคุณ</h2>
         <p>ส่งข้อมูล:</p>
-
-        <div class="intake-spec-box">
-          <strong>รุ่น Body + รุ่น Lens + รูปกล้อง + รูปเลนส์ + สภาพ + อาการ + อุปกรณ์</strong>
-        </div>
-
-        <p class="intake-helper">
-          หากมีกล้องหรือเลนส์หลายชิ้น สามารถจัดเป็นรายการแล้วส่งพร้อมรูปได้
-        </p>
-
-        <div class="cta-buttons-row">
-          <a
-            href={getLineUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-line btn-lg"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M24 10.3c0-4.6-4.9-8.3-109-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
-            </svg>
-            <span>LINE: <strong>{getDisplayLine()}</strong></span>
-          </a>
-
-          <a href={getPhoneUrl()} class="btn btn-outline btn-lg intake-phone">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
-          </a>
-        </div>
-
-        <div class="intake-links-footer">
-          <p>
-            ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/">เช็กราคาก่อนขาย</a> และ วิธีขาย
-          </p>
-          <div class="intake-motto">
-            <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
-          </div>
-        </div>
-      </div>
+        <p><strong>รุ่น Body + รุ่น Lens + รูปกล้อง + รูปเลนส์ + สภาพ + อาการ + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
     </div>
-  </section>
+  </main>
 
-  <!-- 5. FAQ SECTION -->
   <section class="section section-muted">
-    <div class="container">
+    <div class="container container-narrow">
       <FAQ
-        items={cameraFaqs}
-        title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อกล้องและเลนส์"
-        subtitle="ข้อสงสัยเกี่ยวกับแบรนด์ ฝุ่น/รา การแยกขายบอดี้หรือเลนส์ และชัตเตอร์"
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อกล้อง"
       />
     </div>
   </section>
+
 </BaseLayout>
 
 <style>
-  /* Hero */
-  .cam-hero-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2rem;
-    text-align: center;
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
   }
 
-  .cam-badge {
-    margin-bottom: 1rem;
-  }
-
-  .cam-title {
-    font-size: 2.15rem;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
-
-  @media (min-width: 768px) {
-    .cam-title {
-      font-size: 2.65rem;
-    }
-  }
-
-  .cam-subtitle {
-    font-size: 1.15rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin-bottom: 0;
-  }
-
-  /* Steps Grid (4-10) */
-  .cam-steps-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .cam-steps-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .cam-steps-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .cam-step-card {
-    padding: 1.75rem 1.5rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cam-step-num {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--color-accent);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-
-  .cam-step-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
-  }
-
-  .cam-step-card p {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    line-height: 1.55;
-    margin: 0;
-  }
-
-  .cam-step-list {
-    margin: 0.5rem 0 0 1.25rem;
-    padding: 0;
-    font-size: 0.92rem;
-    color: var(--color-text-muted);
-    line-height: 1.5;
-  }
-
-  .cam-step-list li {
-    margin-bottom: 0.25rem;
-  }
-
-  /* Provincial Card */
-  .provincial-card {
-    padding: 2.5rem 2rem;
+  .prose-content {
     background-color: #ffffff;
-  }
-
-  .provincial-card h2 {
-    font-size: 1.65rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
-
-  .provincial-formula {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    background-color: var(--color-bg-subtle);
     border: 1px solid var(--color-border);
-    padding: 0.85rem 1.25rem;
-    border-radius: var(--radius-md);
-    margin: 1rem 0 1.25rem 0;
-    text-align: center;
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
   }
 
-  .provincial-note {
-    background-color: var(--color-bg-subtle);
-    padding: 1rem 1.25rem;
-    border-radius: var(--radius-md);
-    color: var(--color-text-muted);
-    font-size: 0.92rem;
-    line-height: 1.6;
-    margin-top: 1.25rem;
-    margin-bottom: 0;
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
   }
 
-  /* Intake Card */
-  .intake-card {
-    padding: 2.75rem 2rem;
-    text-align: center;
-    background-color: #ffffff;
-  }
-
-  .intake-card h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.75rem;
+  .prose-content h1 {
+    font-size: 2.15rem;
     color: var(--color-primary);
-  }
-
-  .intake-spec-box {
-    font-size: 1.15rem;
-    color: var(--color-primary);
-    background-color: var(--color-accent-light);
-    border: 1px solid #fde68a;
-    padding: 0.85rem 1.25rem;
-    border-radius: var(--radius-md);
-    margin: 1rem auto 1.25rem auto;
-    max-width: 720px;
-  }
-
-  .cta-buttons-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    line-height: 1.3;
+    margin-top: 0;
     margin-bottom: 1.5rem;
   }
 
-  .intake-phone {
-    border-color: var(--color-border);
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .intake-helper {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    max-width: 620px;
-    margin: 0 auto 1.25rem auto;
-    line-height: 1.6;
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
   }
 
-  .intake-links-footer {
-    border-top: 1px solid var(--color-border);
-    padding-top: 1.25rem;
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
-  .intake-links-footer a {
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
     color: var(--color-accent);
     font-weight: 600;
     text-decoration: underline;
   }
 
-  .intake-motto {
-    font-size: 1.15rem;
+  .prose-content a:hover {
     color: var(--color-accent-hover);
-    background-color: var(--color-accent-light);
-    border: 1px solid #fde68a;
-    padding: 0.75rem 1.25rem;
-    border-radius: var(--radius-md);
-    max-width: 480px;
-    margin: 1.25rem auto 0 auto;
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .data-table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .data-table tr:nth-child(even) {
+    background-color: #fafbfc;
   }
 </style>

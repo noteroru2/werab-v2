@@ -2,37 +2,45 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
-import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อ iPad มือสอง เช็กรุ่น ความจุ แบตเตอรี่และสภาพ | เรารับซื้อ.com";
 const pageDescription = "รับซื้อ iPad มือสอง iPad Air Pro mini ประเมินจากรุ่น ความจุ Wi-Fi หรือ Cellular หน้าจอ แบตเตอรี่ สภาพ ประวัติซ่อมและอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย";
 
 const breadcrumbs = [
-  { name: 'หน้าแรก', url: '/' },
-  { name: 'รายการรับซื้อสินค้า', url: '/รับซื้อ/' },
-  { name: 'รับซื้อ iPad', url: '/รับซื้อไอแพด/' }
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อ iPad",
+    "url": "/รับซื้อไอแพด/"
+  }
 ];
 
-const ipadFaqs = [
+const faqs = [
   {
-    question: "รับซื้อ iPad มือสองรุ่นอะไรบ้าง?",
-    answer: "สามารถส่ง iPad, iPad Air, iPad Pro และ iPad mini หลายรุ่นมาประเมินได้ โดยควรแจ้งรุ่น ความจุ Wi-Fi หรือ Cellular สภาพหน้าจอ แบตเตอรี่ ประวัติซ่อม และอุปกรณ์ที่มี"
+    "question": "รับซื้อ iPad มือสองรุ่นอะไรบ้าง?",
+    "answer": "สามารถส่ง iPad, iPad Air, iPad Pro และ iPad mini หลายรุ่นมาประเมินได้ โดยควรแจ้ง Generation ความจุ Wi-Fi หรือ Cellular สภาพ และอุปกรณ์"
   },
   {
-    question: "iPad แบตเสื่อมหรือเครื่องมีรอยขายได้ไหม?",
-    answer: "สามารถส่งมาประเมินตามสภาพได้ ควรแจ้งอาการแบตเตอรี่ รอย ตัวเครื่องงอ หรือความเสียหายที่มี ไม่จำเป็นต้องซ่อมหรือเปลี่ยนแบตก่อนทุกกรณี"
+    "question": "iPad แบตเสื่อมหรือเครื่องมีรอยขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินตามสภาพได้ ควรแจ้งอาการ Battery รอยแตก รอยบุบ หน้าจอและ Touch เพื่อพิจารณาจากสภาพจริง"
   },
   {
-    question: "iPad ไม่มีกล่องหรือ Adapter ขายได้ไหม?",
-    answer: "สามารถส่งมาประเมินได้ โดยควรแจ้งอุปกรณ์ที่มีจริง เช่น Adapter, Cable, Apple Pencil หรือ Keyboard เพราะอุปกรณ์บางรายการมีมูลค่าแยกจากตัวเครื่อง"
+    "question": "iPad ไม่มีกล่องหรือ Adapter ขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินได้ ควรแจ้งอุปกรณ์ที่มีจริง โดยราคาจะพิจารณาร่วมกับรุ่น สเปกและสภาพของเครื่อง"
   },
   {
-    question: "ขาย iPad พร้อม Apple Pencil ได้ไหม?",
-    answer: "สามารถแจ้ง Apple Pencil เป็นอุปกรณ์ร่วมได้ ควรระบุรุ่นและสภาพของ Pencil แยกจาก iPad เนื่องจากความเข้ากันได้และมูลค่าขึ้นอยู่กับรุ่นของอุปกรณ์"
+    "question": "ขาย iPad พร้อม Apple Pencil ได้ไหม?",
+    "answer": "สามารถแจ้ง Pencil พร้อมเครื่องได้ ควรระบุรุ่น สภาพ และการทำงานของ Pencil เพื่อประเมินเป็นอุปกรณ์แยกก่อนรวมกับชุด"
   },
   {
-    question: "ต้อง Reset และออกจาก Apple ID ก่อนเช็กราคาไหม?",
-    answer: "ไม่จำเป็นต้อง Reset หรือ Sign out เพียงเพื่อขอประเมินราคา ควร Backup และจัดการ Apple ID, Find My และข้อมูลส่วนตัวเมื่อพร้อมส่งมอบเครื่องจริง"
+    "question": "ต้อง Reset และออกจาก Apple ID ก่อนเช็กราคาไหม?",
+    "answer": "ไม่จำเป็นต้อง Reset หรือออกจากบัญชีเพียงเพื่อเช็กราคา และไม่ควรส่งข้อมูลบัญชีหรือรหัสผ่านให้ผู้อื่น เมื่อพร้อมส่งมอบจริงจึงค่อย Backup จัดการ Find My และล้างข้อมูลด้วยตนเอง"
   }
 ];
 ---
@@ -41,372 +49,443 @@ const ipadFaqs = [
   title={pageTitle}
   description={pageDescription}
   breadcrumbs={breadcrumbs}
-  faqs={ipadFaqs}
+  faqs={faqs}
 >
-  <Breadcrumb items={breadcrumbs} />
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
 
-  <!-- 1. HERO SECTION -->
-  <section class="section pad-hero-section">
+  <main class="content-container">
     <div class="container container-narrow">
-      <span class="badge badge-accent pad-badge">IPAD BUYBACK</span>
-      <h1 class="pad-title">รับซื้อ iPad มือสอง เช็กรุ่น ความจุ และสภาพก่อนขาย</h1>
-      <p class="pad-subtitle">
-        ประเมินราคาตามรุ่น ความจุ Wi-Fi/Cellular สุขภาพแบตเตอรี่ สภาพตัวเครื่อง และอุปกรณ์เสริมแท้
-      </p>
-    </div>
-  </section>
-
-  <!-- 2. PROCESS / VALUATION STEPS (STEPS 3-9) -->
-  <section class="section" style="padding-top: 1rem;">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">แนวทางการประเมิน</span>
+      <article class="prose-content">
+        <h1>รับซื้อ iPad มือสอง เช็กรุ่น ความจุ และสภาพก่อนขาย</h1>
+        <p>ต้องการขาย iPad มือสอง แต่ยังไม่แน่ใจว่าเป็นรุ่นอะไรหรือควรแจ้งข้อมูลอะไรเพื่อเช็กราคา?</p>
+        <p>iPad ชื่อใกล้กันอาจต่างกันทั้ง <strong>Generation, ชิป, ความจุ, ขนาดหน้าจอ, Wi-Fi หรือ Cellular, สภาพ Battery, หน้าจอ และอุปกรณ์</strong></p>
+        <p>ดังนั้นควรเริ่มจากระบุรุ่นและสเปกให้ชัดก่อนประเมิน</p>
+        <p>ส่งข้อมูล:</p>
+        <p><strong>รุ่น + ความจุ + Wi-Fi/Cellular + รูป + สภาพ + Battery + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>iPad แบบไหนส่งมาประเมินได้</h2>
+        <p>สามารถส่งรายละเอียด iPad หลายกลุ่มมาสอบถามได้ เช่น</p>
+        <ul>
+        <li>iPad</li>
+        <li>iPad Air</li>
+        <li>iPad Pro</li>
+        <li>iPad mini</li>
+        <li>Wi-Fi</li>
+        <li>Wi-Fi + Cellular</li>
+        <li>เครื่องมีรอย</li>
+        <li>Battery เสื่อม</li>
+        <li>จอมีตำหนิ</li>
+        <li>Touch มีปัญหา</li>
+        <li>ไม่มี Box</li>
+        <li>ไม่มี Adapter</li>
+        <li>ไม่มีสาย</li>
+        <li>เครื่องเคยซ่อม</li>
+        <li>เครื่องเปิดไม่ติดบางกรณี</li>
+        </ul>
+        <p>การประเมินต้องดูรุ่นและสภาพจริงของเครื่อง</p>
+        <hr class="section-divider" />
+        <h2>ก่อนขายต้องรู้รุ่นและ Generation</h2>
+        <p>คำว่า iPad Air หรือ iPad Pro เพียงอย่างเดียวยังไม่เพียงพอ</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>Generation หรือปีหากทราบ</li>
+        <li>ขนาดหน้าจอ</li>
+        <li>ความจุ</li>
+        <li>Wi-Fi หรือ Cellular</li>
+        <li>ชิปหากทราบ</li>
+        </ul>
+        <p>หากเครื่องเปิดได้ สามารถดูข้อมูลจาก:</p>
+        <p><strong>Settings → General → About</strong></p>
+        <p>ไม่จำเป็นต้องส่งข้อมูลบัญชีส่วนตัวเพื่อเช็กราคา</p>
+        <hr class="section-divider" />
+        <h2>ความจุมีผลต่อราคา</h2>
+        <p>iPad รุ่นเดียวกันอาจมี Storage แตกต่างกัน เช่น</p>
+        <ul>
+        <li>64GB</li>
+        <li>128GB</li>
+        <li>256GB</li>
+        <li>512GB</li>
+        <li>1TB</li>
+        <li>หรือความจุอื่นตามรุ่น</li>
+        </ul>
+        <p>ความจุเป็นหนึ่งในข้อมูลสำคัญ แต่ต้องดูร่วมกับรุ่น สภาพ หน้าจอ Battery และอุปกรณ์</p>
+        <hr class="section-divider" />
+        <h2>Wi-Fi กับ Cellular ต้องแยกให้ชัด</h2>
+        <p>iPad บางรุ่นมีทั้ง:</p>
+        <ul>
+        <li>Wi-Fi</li>
+        <li>Wi-Fi + Cellular</li>
+        </ul>
+        <p>ควรแจ้งประเภทให้ถูกต้อง เพราะสเปกและตลาดมือสองต่างกัน</p>
+        <p>หากไม่แน่ใจ สามารถส่งข้อมูลจาก Settings หรือรูปบริเวณตัวเครื่องมาช่วยตรวจได้</p>
+        <p>ไม่ควรส่งข้อมูลบัญชีเครือข่าย รหัสผ่าน หรือข้อมูลส่วนตัวที่ไม่จำเป็น</p>
+        <hr class="section-divider" />
+        <h2>หน้าจอและ Touch ต้องตรวจ</h2>
+        <p>ควรตรวจ:</p>
+        <ul>
+        <li>ภาพขึ้น</li>
+        <li>Touch ใช้งานได้ทั่วจอ</li>
+        <li>ไม่มีเส้น</li>
+        <li>ไม่มีจุดผิดปกติชัดเจน</li>
+        <li>ไม่กะพริบ</li>
+        <li>กระจกไม่แตก</li>
+        <li>ไม่มีรอยกดหนัก</li>
+        <li>ความสว่างปกติ</li>
+        </ul>
+        <p>หากมีบางพื้นที่ Touch ไม่ตอบสนองหรือหน้าจอมีตำหนิควรแจ้ง</p>
+        <hr class="section-divider" />
+        <h2>Battery มีผลไหม</h2>
+        <p>มีผลต่อความพร้อมใช้งาน</p>
+        <p>iPad บางรุ่นหรือบางเวอร์ชันระบบอาจไม่ได้แสดงข้อมูล Battery แบบเดียวกับ iPhone จึงไม่จำเป็นต้องมีตัวเลข Battery Health ทุกเครื่องเพื่อขอราคาประเมิน</p>
+        <p>สามารถแจ้งอาการใช้งานจริง เช่น</p>
+        <ul>
+        <li>แบตหมดเร็ว</li>
+        <li>ชาร์จไม่เข้า</li>
+        <li>ใช้งานได้ไม่นาน</li>
+        <li>เครื่องดับ</li>
+        <li>Battery เคยเปลี่ยน</li>
+        <li>เครื่องร้อนผิดปกติ</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>ปุ่มและพอร์ตควรตรวจ</h2>
+        <p>ควรตรวจตามรุ่น เช่น</p>
+        <ul>
+        <li>Power</li>
+        <li>Volume</li>
+        <li>Home Button ถ้ามี</li>
+        <li>Touch ID ถ้ามี</li>
+        <li>USB-C</li>
+        <li>Lightning</li>
+        <li>Smart Connector</li>
+        </ul>
+        <p>หากปุ่มหรือพอร์ตใดมีปัญหาควรแจ้งตามจริง</p>
+        <hr class="section-divider" />
+        <h2>กล้อง ลำโพง และไมโครโฟน</h2>
+        <p>ควรทดลอง:</p>
+        <ul>
+        <li>กล้องหน้า</li>
+        <li>กล้องหลัง</li>
+        <li>Video</li>
+        <li>Speaker</li>
+        <li>Microphone</li>
+        </ul>
+        <p>โดยเฉพาะเครื่องที่ใช้ประชุม เรียน หรือทำงาน</p>
+        <p>หากฟังก์ชันใดผิดปกติให้แจ้งประกอบการประเมิน</p>
+        <hr class="section-divider" />
+        <h2>Apple Pencil ขายพร้อม iPad ได้ไหม</h2>
+        <p>สามารถแจ้ง Apple Pencil หรือ Stylus ที่มีพร้อมเครื่องได้</p>
+        <p>ควรระบุ:</p>
+        <ul>
+        <li>รุ่นของ Pencil หากทราบ</li>
+        <li>ใช้งานได้หรือไม่</li>
+        <li>ชาร์จได้หรือไม่</li>
+        <li>มีรอยหรือความเสียหายหรือไม่</li>
+        <li>มีหัวสำรองหรืออุปกรณ์อื่นหรือไม่</li>
+        </ul>
+        <p>อุปกรณ์ควรประเมินแยกจากตัว iPad ก่อนรวมเป็นชุด</p>
+        <hr class="section-divider" />
+        <h2>Keyboard และอุปกรณ์เสริม</h2>
+        <p>หากมี:</p>
+        <ul>
+        <li>Keyboard</li>
+        <li>Keyboard Case</li>
+        <li>Smart Keyboard</li>
+        <li>Trackpad Keyboard</li>
+        <li>Case</li>
+        <li>Adapter</li>
+        <li>Cable</li>
+        </ul>
+        <p>ควรแจ้งรุ่นและสภาพเท่าที่ทราบ</p>
+        <p>ไม่ควรแจ้งเพียงว่า “ครบชุด” เพราะอุปกรณ์แต่ละชิ้นมีมูลค่าแตกต่างกัน</p>
+        <hr class="section-divider" />
+        <h2>iPad เคยซ่อมยังขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>ควรแจ้งหากทราบว่าเคย:</p>
+        <ul>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Battery</li>
+        <li>ซ่อมพอร์ต</li>
+        <li>ซ่อม Mainboard</li>
+        <li>เปลี่ยนกล้อง</li>
+        <li>เปลี่ยนปุ่ม</li>
+        <li>โดนน้ำ</li>
+        <li>ตกกระแทก</li>
+        </ul>
+        <p>ประวัติซ่อมช่วยให้พิจารณาความเสี่ยงได้ตรงขึ้น</p>
+        <hr class="section-divider" />
+        <h2>iPad เปิดไม่ติดยังประเมินได้ไหม</h2>
+        <p>บางกรณีสามารถประเมินตามสภาพได้</p>
+        <p>ควรส่ง:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>ความจุ</li>
+        <li>Wi-Fi หรือ Cellular</li>
+        <li>อาการก่อนเสีย</li>
+        <li>ชาร์จเข้าหรือไม่</li>
+        <li>เคยตกหรือโดนน้ำหรือไม่</li>
+        <li>เคยซ่อมหรือไม่</li>
+        <li>อุปกรณ์ที่มี</li>
+        </ul>
+        <p>เครื่องที่ทดสอบไม่ได้จะมีความไม่แน่นอนสูงกว่าเครื่องปกติ</p>
+        <hr class="section-divider" />
+        <h2>Activation Lock และ Find My</h2>
+        <p>ไม่จำเป็นต้องจัดการบัญชีเพียงเพื่อส่งข้อมูลเช็กราคา</p>
+        <p>เมื่อพร้อมส่งมอบจริง เจ้าของควรจัดการบัญชีด้วยตนเอง</p>
+        <p>ไม่ควรส่ง:</p>
+        <ul>
+        <li>Apple ID Password</li>
+        <li>รหัสผ่าน</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>ข้อมูลบัญชีส่วนตัว</li>
+        </ul>
+        <p>ให้ผู้อื่นผ่านข้อความ</p>
+        <p>ก่อนซื้อขายจริงควรสามารถส่งมอบเครื่องโดยไม่มีข้อจำกัดจากบัญชีเจ้าของเดิม</p>
+        <hr class="section-divider" />
+        <h2>ต้อง Reset ก่อนเช็กราคาไหม</h2>
+        <p>ไม่จำเป็น</p>
+        <p>หากยังอยู่ในขั้นตอนสอบถามราคา ให้ส่งรุ่น สเปก รูปและสภาพก่อนได้</p>
+        <p>ก่อน Reset ควร Backup ข้อมูลสำคัญและตรวจให้แน่ใจว่าข้อมูลที่ต้องการเก็บมีสำเนาแล้ว</p>
+        <hr class="section-divider" />
+        <h2>iPad Cellular และ SIM/eSIM</h2>
+        <p>หากเป็น Cellular ควรถอด SIM แบบถอดได้ก่อนส่งมอบ</p>
+        <p>หากใช้งาน eSIM ให้ตรวจการตั้งค่าของผู้ให้บริการก่อนส่งมอบ</p>
+        <p>ไม่ควรส่งรหัสผ่านหรือข้อมูลบัญชีเครือข่ายที่ไม่จำเป็น</p>
+        <hr class="section-divider" />
+        <h2>ไม่มีกล่องหรือ Adapter ขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>ควรแจ้งของที่มีจริง เช่น</p>
+        <ul>
+        <li>ตัวเครื่อง</li>
+        <li>Box</li>
+        <li>Adapter</li>
+        <li>Cable</li>
+        <li>Case</li>
+        <li>Pencil</li>
+        <li>Keyboard</li>
+        <li>ใบเสร็จ</li>
+        </ul>
+        <p>อุปกรณ์มีผลต่อความครบ แต่รุ่นและสภาพเครื่องยังเป็นปัจจัยหลัก</p>
+        <hr class="section-divider" />
+        <h2>ประกันเหลือควรแจ้งไหม</h2>
+        <p>ควรแจ้งหากตรวจสอบได้จากหลักฐานที่มี</p>
+        <p>เช่น:</p>
+        <ul>
+        <li>วันที่ซื้อ</li>
+        <li>ใบเสร็จ</li>
+        <li>หลักฐานประกันที่ตรวจสอบได้</li>
+        </ul>
+        <p>ไม่ควรคาดเดาระยะเวลาประกัน</p>
+        <hr class="section-divider" />
+        <h2>iPad หลายเครื่องหรือเครื่ององค์กร</h2>
+        <p>หากมีหลายเครื่อง สามารถจัดข้อมูลเป็นตาราง</p>
+        <div class="table-responsive">
+        <table class="data-table">
+        <thead><tr><th>รุ่น</th><th>ความจุ</th><th>การเชื่อมต่อ</th><th>จำนวน</th><th>สภาพ</th></tr></thead>
+        <tbody>
+        <tr><td>iPad รุ่น...</td><td>64GB</td><td>Wi-Fi</td><td>10</td><td>ใช้งานได้</td></tr>
+        <tr><td>iPad รุ่น...</td><td>256GB</td><td>Cellular</td><td>5</td><td>มีตำหนิ</td></tr>
+        </tbody></table></div>
+        <p>แยกเครื่องที่มีจอเสีย Battery ผิดปกติ เปิดไม่ติด หรือเคยซ่อมออกจากกลุ่มปกติ</p>
+        <hr class="section-divider" />
+        <h2>ปัจจัยหลักที่ใช้ประเมินราคา iPad</h2>
+        <h3>รุ่นและ Generation</h3>
+        <p>ใช้แยกตำแหน่งของสินค้า</p>
+        <h3>ความจุ</h3>
+        <p>Storage เป็นส่วนหนึ่งของสเปก</p>
+        <h3>Wi-Fi หรือ Cellular</h3>
+        <p>มีผลต่อรุ่นและตลาด</p>
+        <h3>หน้าจอ</h3>
+        <p>ดู Panel กระจกและ Touch</p>
+        <h3>Battery</h3>
+        <p>ดูจากอาการใช้งานและข้อมูลที่ตรวจสอบได้</p>
+        <h3>ปุ่มและพอร์ต</h3>
+        <p>มีผลต่อความพร้อมใช้งาน</p>
+        <h3>กล้องและเสียง</h3>
+        <p>ควรใช้งานได้ตามสภาพที่แจ้ง</p>
+        <h3>สภาพตัวเครื่อง</h3>
+        <p>รอย แตก บุบ และการงอมีผล</p>
+        <h3>ประวัติซ่อม</h3>
+        <p>ใช้ประเมินความเสี่ยง</p>
+        <h3>อุปกรณ์</h3>
+        <p>Pencil, Keyboard, Adapter และ Box ควรแยกพิจารณา</p>
+        <h3>Activation Lock</h3>
+        <p>ก่อนส่งมอบต้องไม่มีข้อจำกัดจากบัญชีเจ้าของเดิม</p>
+        <h3>ประกัน</h3>
+        <p>สถานะที่ตรวจสอบได้ใช้ประกอบการประเมิน</p>
+        <h3>ตลาดของรุ่น</h3>
+        <p>ความต้องการแต่ละ Generation แตกต่างกันตามเวลา</p>
+        <hr class="section-divider" />
         <h2>ขั้นตอนเช็กราคา iPad ก่อนขาย</h2>
-        <p>ตรวจสอบสเปก สภาพหน้าจอ ตัวเครื่อง และความพร้อมของอุปกรณ์เสริม</p>
-      </div>
-
-      <div class="pad-steps-grid">
-        <div class="card pad-step-card">
-          <div class="pad-step-num">3</div>
-          <h3>ส่งรูป</h3>
-          <p>ถ่ายรูปประกอบการประเมิน:</p>
-          <ul class="pad-step-list">
-            <li>หน้าจอ</li>
-            <li>ฝาหลัง</li>
-            <li>ขอบ</li>
-            <li>มุม</li>
-            <li>กล้อง</li>
-            <li>พอร์ต</li>
-            <li>ตำหนิ</li>
-          </ul>
-        </div>
-
-        <div class="card pad-step-card">
-          <div class="pad-step-num">4</div>
-          <h3>แจ้งสภาพ</h3>
-          <p>ระบุการใช้งาน เช่น:</p>
-          <ul class="pad-step-list">
-            <li>Touch ปกติ</li>
-            <li>Battery เสื่อม</li>
-            <li>มีรอย</li>
-            <li>ตัวเครื่องงอ</li>
-            <li>กล้องมีปัญหา</li>
-            <li>เคยซ่อม</li>
-          </ul>
-        </div>
-
-        <div class="card pad-step-card">
-          <div class="pad-step-num">5</div>
-          <h3>แจ้งอุปกรณ์</h3>
-          <p>อุปกรณ์ร่วม เช่น:</p>
-          <ul class="pad-step-list">
-            <li>Apple Pencil</li>
-            <li>Keyboard</li>
-            <li>Adapter</li>
-            <li>Cable</li>
-            <li>Box</li>
-          </ul>
-        </div>
-
-        <div class="card pad-step-card">
-          <div class="pad-step-num">6</div>
-          <h3>ประเมินเบื้องต้น</h3>
-          <p>พิจารณารุ่น Configuration สภาพ และอุปกรณ์ร่วมกัน</p>
-        </div>
-
-        <div class="card pad-step-card">
-          <div class="pad-step-num">7</div>
-          <h3>ตัดสินใจ</h3>
-          <p>ผู้ขายสามารถเปรียบเทียบก่อนว่าจะขายหรือเก็บเครื่องไว้</p>
-        </div>
-
-        <div class="card pad-step-card">
-          <div class="pad-step-num">8</div>
-          <h3>Backup และจัดการบัญชี</h3>
-          <p>เมื่อพร้อมขายจึงจัดการข้อมูล Apple ID และ Find My</p>
-        </div>
-
-        <div class="card pad-step-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
-          <div class="pad-step-num">9</div>
-          <h3>ตรวจเครื่องจริงและซื้อขาย</h3>
-          <p>ตรวจข้อมูลและสภาพให้ตรงกับรายละเอียดที่ใช้ประเมินก่อนดำเนินการซื้อขาย</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. PROVINCIAL / REMOTE VALUATION SECTION -->
-  <section class="section section-muted">
-    <div class="container container-narrow">
-      <div class="card provincial-card">
+        <h3>1. ส่งรุ่น</h3>
+        <p>แจ้ง iPad, Air, Pro หรือ mini พร้อม Generation หากทราบ</p>
+        <h3>2. ส่งความจุและการเชื่อมต่อ</h3>
+        <p>ระบุ Wi-Fi หรือ Cellular</p>
+        <h3>3. ส่งรูป</h3>
+        <p>ทุกด้านและจุดตำหนิ</p>
+        <h3>4. แจ้งสภาพหน้าจอและ Touch</h3>
+        <p>ระบุอาการตามจริง</p>
+        <h3>5. แจ้ง Battery</h3>
+        <p>แจ้งอาการใช้งานหรือข้อมูลที่ตรวจได้</p>
+        <h3>6. แจ้งประวัติ</h3>
+        <p>เคยซ่อม ตก หรือโดนน้ำหรือไม่</p>
+        <h3>7. แจ้งอุปกรณ์</h3>
+        <p>Adapter, Cable, Pencil, Keyboard, Box</p>
+        <h3>8. ประเมินเบื้องต้น</h3>
+        <p>พิจารณารุ่น สเปก สภาพ และอุปกรณ์</p>
+        <h3>9. ตัดสินใจ</h3>
+        <p>ผู้ขายสามารถพิจารณาก่อนขาย</p>
+        <h3>10. Backup จัดการบัญชี และตรวจเครื่องจริง</h3>
+        <p>ดำเนินการเมื่อพร้อมส่งมอบและตรวจสภาพก่อนซื้อขาย</p>
+        <hr class="section-divider" />
         <h2>อยู่ต่างจังหวัดเริ่มเช็กราคา iPad ได้อย่างไร</h2>
-        <p>ไม่จำเป็นต้องเดินทางพร้อมเครื่องเพียงเพื่อถามราคาเบื้องต้น</p>
         <p>เริ่มจากส่ง:</p>
-
-        <div class="provincial-formula">
-          <strong>รุ่น + ความจุ + Wi-Fi/Cellular + รูป + สภาพ + อุปกรณ์</strong>
-        </div>
-
-        <p>จากนั้นจึงค่อยพิจารณาวิธีส่งมอบหรือนัดหมายตามพื้นที่และความเหมาะสม</p>
-        <p class="provincial-note">
-          หน้า <code>/รับซื้อไอแพด/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด
-          หน้ารับซื้อ iPad รายพื้นที่ที่มี Historical Search Equity จะเชื่อมเข้ากับหมวดนี้ภายหลังเมื่อผ่าน Content QA และ Index Release ของแต่ละหน้า
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. INTAKE & CONTACT CTA SECTION -->
-  <section class="section">
-    <div class="container container-narrow">
-      <div class="card intake-card">
+        <p><strong>รุ่น + ความจุ + Wi-Fi/Cellular + รูป + สภาพ + Battery + อุปกรณ์</strong></p>
+        <p>ไม่จำเป็นต้องเดินทางพร้อมเครื่องเพื่อสอบถามราคาเบื้องต้นก่อน</p>
+        <p>หน้า <code>/รับซื้อไอแพด/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        <hr class="section-divider" />
         <h2>เริ่มเช็กราคา iPad ของคุณ</h2>
         <p>ส่งข้อมูล:</p>
-
-        <div class="intake-spec-box">
-          <strong>รุ่น + ความจุ + Wi-Fi/Cellular + รูปเครื่อง + สภาพ + อุปกรณ์</strong>
-        </div>
-
-        <p class="intake-helper">
-          หากไม่แน่ใจว่ารุ่นอะไร ให้ส่งรูปหน้า About หรือ Model Number มาได้
-        </p>
-
-        <div class="cta-buttons-row">
-          <a
-            href={getLineUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-line btn-lg"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
-            </svg>
-            <span>LINE: <strong>{getDisplayLine()}</strong></span>
-          </a>
-
-          <a href={getPhoneUrl()} class="btn btn-outline btn-lg intake-phone">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
-          </a>
-        </div>
-
-        <div class="intake-links-footer">
-          <p>
-            ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/">เช็กราคาก่อนขาย</a> และ วิธีขาย
-          </p>
-          <div class="intake-motto">
-            <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
-          </div>
-        </div>
-      </div>
+        <p><strong>รุ่น + ความจุ + Wi-Fi/Cellular + รูปทุกด้าน + สภาพ + อาการ + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p>ดูขั้นตอนภาพรวมได้ที่ <strong>เช็กราคาก่อนขาย</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
     </div>
-  </section>
+  </main>
 
-  <!-- 5. FAQ SECTION -->
   <section class="section section-muted">
-    <div class="container">
+    <div class="container container-narrow">
       <FAQ
-        items={ipadFaqs}
+        items={faqs}
         title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อ iPad"
-        subtitle="ข้อสงสัยเกี่ยวกับรุ่น หน้าจอ อาการงอ Apple Pencil และ Apple ID"
       />
     </div>
   </section>
+
 </BaseLayout>
 
 <style>
-  /* Hero */
-  .pad-hero-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2rem;
-    text-align: center;
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
   }
 
-  .pad-badge {
-    margin-bottom: 1rem;
-  }
-
-  .pad-title {
-    font-size: 2.15rem;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
-
-  @media (min-width: 768px) {
-    .pad-title {
-      font-size: 2.65rem;
-    }
-  }
-
-  .pad-subtitle {
-    font-size: 1.15rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin-bottom: 0;
-  }
-
-  /* Steps Grid (3-9) */
-  .pad-steps-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .pad-steps-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .pad-steps-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .pad-step-card {
-    padding: 1.75rem 1.5rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .pad-step-num {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--color-accent);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-
-  .pad-step-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
-  }
-
-  .pad-step-card p {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    line-height: 1.55;
-    margin: 0;
-  }
-
-  .pad-step-list {
-    margin: 0.5rem 0 0 1.25rem;
-    padding: 0;
-    font-size: 0.92rem;
-    color: var(--color-text-muted);
-    line-height: 1.5;
-  }
-
-  .pad-step-list li {
-    margin-bottom: 0.25rem;
-  }
-
-  /* Provincial Card */
-  .provincial-card {
-    padding: 2.5rem 2rem;
+  .prose-content {
     background-color: #ffffff;
-  }
-
-  .provincial-card h2 {
-    font-size: 1.65rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
-
-  .provincial-formula {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    background-color: var(--color-bg-subtle);
     border: 1px solid var(--color-border);
-    padding: 0.85rem 1.25rem;
-    border-radius: var(--radius-md);
-    margin: 1rem 0 1.25rem 0;
-    text-align: center;
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
   }
 
-  .provincial-note {
-    background-color: var(--color-bg-subtle);
-    padding: 1rem 1.25rem;
-    border-radius: var(--radius-md);
-    color: var(--color-text-muted);
-    font-size: 0.92rem;
-    line-height: 1.6;
-    margin-top: 1.25rem;
-    margin-bottom: 0;
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
   }
 
-  /* Intake Card */
-  .intake-card {
-    padding: 2.75rem 2rem;
-    text-align: center;
-    background-color: #ffffff;
-  }
-
-  .intake-card h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.75rem;
+  .prose-content h1 {
+    font-size: 2.15rem;
     color: var(--color-primary);
-  }
-
-  .intake-spec-box {
-    font-size: 1.15rem;
-    color: var(--color-primary);
-    background-color: var(--color-accent-light);
-    border: 1px solid #fde68a;
-    padding: 0.85rem 1.25rem;
-    border-radius: var(--radius-md);
-    margin: 1rem auto 1.25rem auto;
-    max-width: 680px;
-  }
-
-  .cta-buttons-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    line-height: 1.3;
+    margin-top: 0;
     margin-bottom: 1.5rem;
   }
 
-  .intake-phone {
-    border-color: var(--color-border);
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .intake-helper {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    max-width: 620px;
-    margin: 0 auto 1.25rem auto;
-    line-height: 1.6;
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
   }
 
-  .intake-links-footer {
-    border-top: 1px solid var(--color-border);
-    padding-top: 1.25rem;
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
-  .intake-links-footer a {
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
     color: var(--color-accent);
     font-weight: 600;
     text-decoration: underline;
   }
 
-  .intake-motto {
-    font-size: 1.15rem;
+  .prose-content a:hover {
     color: var(--color-accent-hover);
-    background-color: var(--color-accent-light);
-    border: 1px solid #fde68a;
-    padding: 0.75rem 1.25rem;
-    border-radius: var(--radius-md);
-    max-width: 480px;
-    margin: 1.25rem auto 0 auto;
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .data-table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .data-table tr:nth-child(even) {
+    background-color: #fafbfc;
   }
 </style>

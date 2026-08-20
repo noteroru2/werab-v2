@@ -148,6 +148,66 @@ export const APPROVED_INDEX_PAGES: SeoManifestRecord[] = [
     gscPriority: 'critical',
     migrationStatus: 'preserved',
     contentStatus: 'READY'
+  },
+  {
+    path: '/รับซื้อกล้อง/',
+    state: 'INDEX',
+    pageType: 'category',
+    contentCluster: 'camera',
+    primaryIntent: 'buyback',
+    canonical: 'self',
+    parent: '/รับซื้อ/',
+    title: 'รับซื้อกล้องมือสอง กล้อง Mirrorless DSLR และเลนส์ | เรารับซื้อ.com',
+    description: 'รับซื้อกล้องมือสอง Mirrorless DSLR และเลนส์ ประเมินจากรุ่น Body เลนส์ สภาพ Sensor Shutter หน้าจอ แบตเตอรี่ เชื้อรา ฝ้า และอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย',
+    h1: 'รับซื้อกล้องมือสอง เช็กรุ่น Body เลนส์ และสภาพก่อนขาย',
+    gscPriority: 'critical',
+    migrationStatus: 'preserved',
+    contentStatus: 'READY'
+  },
+  {
+    path: '/รับซื้อลำโพง/',
+    state: 'INDEX',
+    pageType: 'category',
+    contentCluster: 'audio',
+    primaryIntent: 'buyback',
+    canonical: 'self',
+    parent: '/รับซื้อ/',
+    title: 'รับซื้อลำโพงมือสอง Bluetooth JBL Marshall เช็กราคาก่อนขาย | เรารับซื้อ.com',
+    description: 'รับซื้อลำโพงมือสอง Bluetooth และลำโพงพกพา ประเมินจากรุ่น แบตเตอรี่ เสียง ดอกลำโพง การเชื่อมต่อ สภาพ อุปกรณ์และประวัติซ่อม ส่งข้อมูลเช็กราคาก่อนขาย',
+    h1: 'รับซื้อลำโพงมือสอง เช็กรุ่น เสียง แบตเตอรี่และสภาพก่อนขาย',
+    gscPriority: 'critical',
+    migrationStatus: 'preserved',
+    contentStatus: 'READY'
+  },
+  {
+    path: '/รับซื้อซากคอมพิวเตอร์/',
+    state: 'INDEX',
+    pageType: 'category',
+    contentCluster: 'pc',
+    primaryIntent: 'buyback',
+    canonical: 'self',
+    parent: '/รับซื้อคอม/',
+    title: 'รับซื้อซากคอมพิวเตอร์ คอมเสีย เปิดไม่ติด และอะไหล่ | เรารับซื้อ.com',
+    description: 'รับซื้อซากคอมพิวเตอร์ คอมเสีย เปิดไม่ติด และชิ้นส่วนคอม ประเมินจาก CPU การ์ดจอ RAM SSD เมนบอร์ด PSU อาการและสภาพ ส่งสเปกกับรูปเช็กราคาก่อนขาย',
+    h1: 'รับซื้อซากคอมพิวเตอร์ คอมเสีย เปิดไม่ติด เช็กมูลค่าชิ้นส่วนก่อนขาย',
+    gscPriority: 'high',
+    migrationStatus: 'preserved',
+    contentStatus: 'READY'
+  },
+  {
+    path: '/รับซื้อ-server/',
+    state: 'INDEX',
+    pageType: 'category',
+    contentCluster: 'b2b',
+    primaryIntent: 'buyback',
+    canonical: 'self',
+    parent: '/รับซื้อ/',
+    title: 'รับซื้อ Server มือสอง เซิร์ฟเวอร์องค์กร เช็กราคาก่อนขาย | เรารับซื้อ.com',
+    description: 'รับซื้อ Server มือสองและเซิร์ฟเวอร์องค์กร ประเมินจากรุ่น CPU RAM ECC Storage RAID Controller Network PSU สภาพและอุปกรณ์ ส่งสเปกกับรูปเช็กราคาก่อนขาย',
+    h1: 'รับซื้อ Server มือสอง เช็กสเปก อุปกรณ์ และสภาพก่อนขาย',
+    gscPriority: 'high',
+    migrationStatus: 'preserved',
+    contentStatus: 'READY'
   }
 ];
 
@@ -167,36 +227,6 @@ export const CORE_HOLD_NOINDEX_PAGES: SeoManifestRecord[] = [
     description: 'รับซื้อคอมประกอบ Gaming PC เวิร์กสเตชัน ตีราคาแยกชิ้นส่วนตามอุปกรณ์จริง CPU, GPU, RAM, Mainboard, SSD',
     h1: 'รับซื้อคอมประกอบและชิ้นส่วนคอมพิวเตอร์',
     gscPriority: 'high',
-    migrationStatus: 'preserved',
-    contentStatus: 'PENDING_REVIEW'
-  },
-  {
-    path: '/รับซื้อกล้อง/',
-    state: 'HOLD_NOINDEX',
-    pageType: 'category',
-    contentCluster: 'camera',
-    primaryIntent: 'buyback',
-    canonical: 'self',
-    parent: '/รับซื้อ/',
-    title: 'รับซื้อกล้องมือสอง กล้อง Mirrorless DSLR และเลนส์ | เรารับซื้อ.com',
-    description: 'รับซื้อกล้องมือสอง Mirrorless DSLR และเลนส์ ประเมินจากรุ่น Body เลนส์ สภาพ Sensor Shutter หน้าจอ แบตเตอรี่ เชื้อรา ฝ้า และอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย',
-    h1: 'รับซื้อกล้องมือสอง เช็กรุ่น Body เลนส์ และสภาพก่อนขาย',
-    gscPriority: 'critical',
-    migrationStatus: 'preserved',
-    contentStatus: 'READY'
-  },
-  {
-    path: '/รับซื้อลำโพง/',
-    state: 'HOLD_NOINDEX',
-    pageType: 'category',
-    contentCluster: 'audio',
-    primaryIntent: 'buyback',
-    canonical: 'self',
-    parent: '/รับซื้อ/',
-    title: 'รับซื้อลำโพง Marshall, JBL, Harman Kardon, Bose มือสอง | เรารับซื้อ.com',
-    description: 'รับซื้อลำโพงบลูทูธ ลำโพงพกพา ลำโพงบ้านแบรนด์ดัง Marshall, JBL, Bose, Harman Kardon เช็กระบบเสียง แบตเตอรี่ ประเมินราคาเร็ว',
-    h1: 'รับซื้อลำโพงบลูทูธและเครื่องเสียงมือสอง',
-    gscPriority: 'critical',
     migrationStatus: 'preserved',
     contentStatus: 'PENDING_REVIEW'
   },
@@ -417,19 +447,7 @@ export const REBUILD_INDEX_CANDIDATES: SeoManifestRecord[] = [
     migrationStatus: 'hold',
     notes: 'REBUILD_INDEX survivor candidate - awaiting unique local iPad content.'
   },
-  {
-    path: '/รับซื้อ-server/',
-    state: 'HOLD_NOINDEX',
-    pageType: 'category',
-    contentCluster: 'b2b',
-    primaryIntent: 'buyback',
-    canonical: 'self',
-    parent: '/รับซื้อ/',
-    title: 'รับซื้อ Server และอุปกรณ์ Enterprise IT องค์กร | เรารับซื้อ.com',
-    contentStatus: 'CONTENT_REQUIRED',
-    migrationStatus: 'hold',
-    notes: 'REBUILD_INDEX survivor candidate - awaiting B2B server content.'
-  },
+
   {
     path: '/รับซื้อไอโฟน-ขอนแก่น/',
     state: 'HOLD_NOINDEX',

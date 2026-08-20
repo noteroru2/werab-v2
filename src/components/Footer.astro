@@ -1,50 +1,33 @@
 ---
 import { BUSINESS_FACTS, getDisplayPhone, getPhoneUrl, getDisplayLine, getLineUrl } from '../config/business';
 
-const currentYear = new Date().getFullYear();
-
 const categories = [
+  { name: 'รับซื้อสินค้าไอที', path: '/รับซื้อ/' },
   { name: 'รับซื้อโน๊ตบุ๊ค', path: '/รับซื้อโน๊ตบุ๊ค/' },
-  { name: 'รับซื้อคอมพิวเตอร์', path: '/รับซื้อคอม/' },
-  { name: 'รับซื้อคอมประกอบ', path: '/รับซื้อคอมประกอบ/' },
+  { name: 'รับซื้อคอม', path: '/รับซื้อคอม/' },
   { name: 'รับซื้อ MacBook', path: '/รับซื้อแมคบุ๊ค/' },
   { name: 'รับซื้อ iPhone', path: '/รับซื้อไอโฟน/' },
   { name: 'รับซื้อ iPad', path: '/รับซื้อไอแพด/' },
-  { name: 'รับซื้อกล้องและเลนส์', path: '/รับซื้อกล้อง/' },
-  { name: 'รับซื้อลำโพงบลูทูธ', path: '/รับซื้อลำโพง/' },
-  { name: 'รับซื้อเครื่องเล่นเกม', path: '/รับซื้อเครื่องเกม/' },
-  { name: 'รับซื้อ Server องค์กร', path: '/รับซื้อ-server/' }
+  { name: 'รับซื้อกล้อง', path: '/รับซื้อกล้อง/' }
 ];
 
-const guides = [
-  { name: 'เช็กราคาก่อนขาย', path: '/เช็กราคาก่อนขาย/' },
-  { name: 'ราคากลางรับซื้อ', path: '/ราคากลางรับซื้อ/' },
-  { name: 'ความน่าเชื่อถือ', path: '/ความน่าเชื่อถือ/' },
-  { name: 'เกี่ยวกับเรา', path: '/เกี่ยวกับเรา/' },
-  { name: 'ติดต่อเรา', path: '/contact/' }
-];
-
-const legal = [
-  { name: 'ข้อกำหนดการใช้งาน', path: '/terms/' },
-  { name: 'นโยบายความเป็นส่วนตัว', path: '/privacy-policy/' },
-  { name: 'นโยบายคุกกี้', path: '/cookie-policy/' }
-];
+const guides: { name: string; path: string }[] = [];
 ---
 
 <footer class="site-footer">
   <div class="container footer-content">
     <div class="footer-grid">
-      <!-- Column 1: Brand Info -->
+      <!-- Column 1: Brand Info & Positioning -->
       <div class="footer-col brand-col">
         <div class="footer-brand">
           <span class="logo-mark">WE BUY</span>
           <span class="brand-title">{BUSINESS_FACTS.VERIFIED.brandName}</span>
         </div>
-        <p class="footer-tagline">
-          "{BUSINESS_FACTS.VERIFIED.tagline}"
+        <p class="footer-positioning">
+          <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
         </p>
         <p class="footer-desc">
-          ศูนย์บริการรับซื้อสินค้าไอทีมือสองครบวงจร เน้นการประเมินราคาที่สมเหตุสมผล โปร่งใส และปลอดภัยด้านข้อมูลส่วนบุคคล
+          ข้อมูลและบริการรับประเมินสินค้าไอทีมือสองตามรุ่น สเปก สภาพ และอุปกรณ์ เพื่อให้ผู้ขายเช็กราคาเบื้องต้นก่อนตัดสินใจ
         </p>
         <div class="footer-contact-cards">
           <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="contact-chip">
@@ -60,7 +43,7 @@ const legal = [
 
       <!-- Column 2: Categories -->
       <div class="footer-col">
-        <h4 class="footer-heading">หมวดหมู่สินค้า</h4>
+        <h4 class="footer-heading">หมวดสินค้าหลัก</h4>
         <ul class="footer-links">
           {categories.map(c => (
             <li><a href={c.path}>{c.name}</a></li>
@@ -68,9 +51,9 @@ const legal = [
         </ul>
       </div>
 
-      <!-- Column 3: Guides & Trust -->
+      <!-- Column 3: Seller Guides -->
       <div class="footer-col">
-        <h4 class="footer-heading">ข้อมูล & คำแนะนำ</h4>
+        <h4 class="footer-heading">ข้อมูลสำหรับผู้ขาย</h4>
         <ul class="footer-links">
           {guides.map(g => (
             <li><a href={g.path}>{g.name}</a></li>
@@ -78,17 +61,15 @@ const legal = [
         </ul>
       </div>
 
-      <!-- Column 4: Legal & Policies -->
+      <!-- Column 4: Privacy & Notice -->
       <div class="footer-col">
-        <h4 class="footer-heading">นโยบายและความปลอดภัย</h4>
-        <ul class="footer-links">
-          {legal.map(l => (
-            <li><a href={l.path}>{l.name}</a></li>
-          ))}
-        </ul>
-        <div class="compliance-note">
+        <h4 class="footer-heading">คำแนะนำและความเป็นส่วนตัว</h4>
+        <div class="privacy-notice-box">
           <p>
-            * เรายึดมั่นในมาตรฐานการไม่รับซื้อของผิดกฎหมายหรือของโจรทุกกรณี และดำเนินมาตรการลบข้อมูล (Data Sanitization) ให้ผู้ขายทุกครั้ง
+            ไม่ควรส่ง Password, OTP หรือข้อมูลบัญชีส่วนตัวที่ไม่จำเป็นเพื่อขอราคาประเมินเบื้องต้น
+          </p>
+          <p style="margin-top: 0.75rem;">
+            ก่อนส่งมอบสินค้า เจ้าของควรสำรองข้อมูลและจัดการบัญชีของตนเองให้เรียบร้อย
           </p>
         </div>
       </div>
@@ -96,7 +77,7 @@ const legal = [
 
     <div class="footer-bottom">
       <p class="copyright">
-        © {currentYear} {BUSINESS_FACTS.VERIFIED.brandName} ({BUSINESS_FACTS.VERIFIED.englishBrandName}). All rights reserved.
+        © 2026 {BUSINESS_FACTS.VERIFIED.brandName}
       </p>
       <p class="domain-info">
         โดเมนหลัก: <a href={BUSINESS_FACTS.VERIFIED.siteUrl}>{BUSINESS_FACTS.VERIFIED.displayDomain}</a>
@@ -130,7 +111,7 @@ const legal = [
 
   @media (min-width: 1024px) {
     .footer-grid {
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
     }
   }
 
@@ -156,11 +137,11 @@ const legal = [
     color: #ffffff;
   }
 
-  .footer-tagline {
+  .footer-positioning {
     color: var(--color-accent-light);
-    font-style: italic;
     font-size: 0.95rem;
     margin-bottom: 0.75rem;
+    line-height: 1.5;
   }
 
   .footer-desc {
@@ -225,18 +206,17 @@ const legal = [
     color: var(--color-accent-light);
   }
 
-  .compliance-note {
-    margin-top: 1.25rem;
-    padding: 0.75rem;
+  .privacy-notice-box {
+    padding: 0.85rem 1rem;
     background-color: rgba(30, 41, 59, 0.5);
     border-radius: var(--radius-sm);
     border-left: 3px solid var(--color-accent);
   }
 
-  .compliance-note p {
+  .privacy-notice-box p {
     color: #94a3b8;
-    font-size: 0.8rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.55;
     margin: 0;
   }
 

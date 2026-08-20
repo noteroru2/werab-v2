@@ -13,7 +13,7 @@ const breadcrumbs = [
   { name: 'รับซื้อคอม', url: '/รับซื้อคอม/' }
 ];
 
-const pcFaqs = [
+const faqs = [
   {
     question: "รับซื้อคอมประกอบและ Gaming PC ไหม?",
     answer: "สามารถส่งคอมประกอบ Desktop PC และ Gaming PC มาประเมินได้ โดยควรแจ้ง CPU, GPU, RAM, SSD, Mainboard, PSU และสภาพเครื่อง เพื่อพิจารณามูลค่าจากชิ้นส่วนที่ติดตั้งจริง"
@@ -41,369 +41,654 @@ const pcFaqs = [
   title={pageTitle}
   description={pageDescription}
   breadcrumbs={breadcrumbs}
-  faqs={pcFaqs}
+  faqs={faqs}
 >
-  <Breadcrumb items={breadcrumbs} />
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
 
-  <!-- 1. HERO SECTION -->
-  <section class="section pc-hero-section">
-    <div class="container container-narrow">
-      <span class="badge badge-accent pc-badge">DESKTOP & GAMING PC BUYBACK</span>
-      <h1 class="pc-title">รับซื้อคอมมือสอง Gaming PC เช็กสเปกและราคาก่อนขาย</h1>
-      <p class="pc-subtitle">
-        รับซื้อคอมพิวเตอร์ตั้งโต๊ะ PC Desktop, Gaming PC และคอมประกอบทุกสเปก ตรวจสอบฮาร์ดแวร์รายชิ้นและประเมินราคาก่อนขาย
-      </p>
-    </div>
-  </section>
-
-  <!-- 2. PROCESS / VALUATION STEPS (7 STEPS) -->
-  <section class="section" style="padding-top: 1rem;">
+  <!-- HERO SECTION -->
+  <section class="section hero-hub">
     <div class="container">
-      <div class="section-header">
-        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">แนวทางการประเมิน</span>
-        <h2>ขั้นตอนเตรียมข้อมูลและเช็กราคาคอมพิวเตอร์</h2>
-        <p>ส่งข้อมูล ตรวจสอบฮาร์ดแวร์ และประเมินมูลค่าตามชิ้นส่วนจริง</p>
-      </div>
-
-      <div class="pc-steps-grid">
-        <div class="card pc-step-card">
-          <div class="pc-step-num">1</div>
-          <h3>สเปก</h3>
-          <p>ส่งรายการสเปกหลัก หากทราบให้เพิ่ม: <strong>Mainboard + PSU</strong></p>
-        </div>
-
-        <div class="card pc-step-card">
-          <div class="pc-step-num">2</div>
-          <h3>ส่งรูป</h3>
-          <p>ถ่ายรูปประกอบการประเมิน:</p>
-          <ul class="pc-step-list">
-            <li>ด้านหน้า</li>
-            <li>ด้านข้าง</li>
-            <li>ภายใน Case</li>
-            <li>ด้านหลัง</li>
-            <li>จุดตำหนิ</li>
-          </ul>
-        </div>
-
-        <div class="card pc-step-card">
-          <div class="pc-step-num">3</div>
-          <h3>แจ้งสภาพ</h3>
-          <p>ระบุรายละเอียดการใช้งาน:</p>
-          <ul class="pc-step-list">
-            <li>เปิดติดหรือไม่</li>
-            <li>เข้า Windows ได้ไหม</li>
-            <li>มีอาการอะไร</li>
-            <li>เคยซ่อมหรือไม่</li>
-            <li>มีประกันเหลือไหม</li>
-          </ul>
-        </div>
-
-        <div class="card pc-step-card">
-          <div class="pc-step-num">4</div>
-          <h3>แจ้งของที่ขายรวม</h3>
-          <p>ระบุอุปกรณ์เสริม เช่น:</p>
-          <ul class="pc-step-list">
-            <li>จอ</li>
-            <li>Keyboard</li>
-            <li>Mouse</li>
-            <li>Wi-Fi</li>
-            <li>อุปกรณ์อื่น</li>
-          </ul>
-        </div>
-
-        <div class="card pc-step-card">
-          <div class="pc-step-num">5</div>
-          <h3>ประเมินเบื้องต้น</h3>
-          <p>ดูสเปกและสภาพร่วมกันอย่างตรงไปตรงมา</p>
-        </div>
-
-        <div class="card pc-step-card">
-          <div class="pc-step-num">6</div>
-          <h3>พิจารณา</h3>
-          <p>ผู้ขายสามารถเปรียบเทียบและตัดสินใจก่อนขายได้</p>
-        </div>
-
-        <div class="card pc-step-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
-          <div class="pc-step-num">7</div>
-          <h3>ตรวจเครื่องจริง</h3>
-          <p>เมื่อเลือกขาย จึงตรวจ Hardware และสภาพจริงก่อนดำเนินการซื้อขาย</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. PROVINCIAL / REMOTE VALUATION SECTION -->
-  <section class="section section-muted">
-    <div class="container container-narrow">
-      <div class="card provincial-card">
-        <h2>อยู่ต่างจังหวัดเริ่มเช็กราคาได้อย่างไร</h2>
-        <p>ไม่จำเป็นต้องยกคอมเดินทางเพื่อถามราคาเบื้องต้นก่อน</p>
-        <p>สามารถส่ง:</p>
-
-        <div class="provincial-formula">
-          <strong>สเปก + รูป + สภาพ + รายการอุปกรณ์</strong>
-        </div>
-
-        <p>เพื่อเริ่มประเมินได้</p>
-        <p>จากนั้นจึงค่อยตกลงวิธีส่งมอบหรือนัดหมายตามประเภทสินค้า พื้นที่ และความเหมาะสม</p>
-        <p class="provincial-note">
-          หน้า <code>/รับซื้อคอม/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด
+      <div class="hero-content text-center">
+        <h1>รับซื้อคอมมือสอง Gaming PC เช็กสเปกและราคาก่อนขาย</h1>
+        <p class="hero-lead">ต้องการขายคอมพิวเตอร์มือสอง Gaming PC หรือคอมประกอบ แต่ไม่แน่ใจว่าเครื่องของคุณมีมูลค่าประมาณไหน?</p>
+        <p class="hero-subtext">
+          คอมพิวเตอร์ประกอบต่างจากอุปกรณ์ที่มีรุ่นสำเร็จเพียงรุ่นเดียว เพราะราคาของเครื่องขึ้นอยู่กับ <strong>CPU, การ์ดจอ, RAM, SSD, เมนบอร์ด, Power Supply และชิ้นส่วนอื่นภายในเครื่อง</strong>
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. INTAKE & CONTACT CTA SECTION -->
-  <section class="section">
-    <div class="container container-narrow">
-      <div class="card intake-card">
-        <h2>เริ่มเช็กราคาคอมของคุณ</h2>
-        <p>ส่งข้อมูล:</p>
-
-        <div class="intake-spec-box">
-          <strong>CPU + GPU + RAM + SSD + Mainboard + PSU + รูปเครื่อง + สภาพ</strong>
-        </div>
-
-        <p class="intake-helper">
-          หากไม่ทราบทั้งหมด ให้เริ่มจากรูปหน้า Task Manager และรูปภายใน Case
+        <p class="hero-subtext">
+          ดังนั้นก่อนประเมินควรแยกดูสเปกแต่ละชิ้น ไม่ควรดูเพียงว่าเครื่องซื้อมาเมื่อไรหรือเคยประกอบมาราคาเท่าไร
         </p>
 
-        <div class="cta-buttons-row">
-          <a
-            href={getLineUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-line btn-lg"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
-            </svg>
-            <span>LINE: <strong>{getDisplayLine()}</strong></span>
-          </a>
-
-          <a href={getPhoneUrl()} class="btn btn-outline btn-lg intake-phone">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
-          </a>
-        </div>
-
-        <div class="intake-links-footer">
-          <p>
-            ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/">เช็กราคาก่อนขาย</a> และ วิธีขาย
+        <div class="intake-hero-box card" style="max-width: 680px; margin: 1.5rem auto; text-align: left; background-color: #1e293b; border: 1px solid #334155;">
+          <p style="font-weight: 600; color: #f8fafc; margin-bottom: 0.5rem;">เริ่มจากส่ง:</p>
+          <p style="font-size: 1.15rem; color: #fbbf24; font-weight: 700; margin-bottom: 1rem;">
+            CPU + GPU + RAM + SSD + Mainboard + PSU + รูปเครื่อง + สภาพ
           </p>
-          <div class="intake-motto">
-            <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-accent">
+              LINE: <strong>{getDisplayLine()}</strong>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-primary" style="background-color: #334155; color: #f8fafc;">
+              โทร: <strong>{getDisplayPhone()}</strong>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. FAQ SECTION -->
+  <!-- SECTION 1: TYPES -->
   <section class="section section-muted">
-    <div class="container">
-      <FAQ
-        items={pcFaqs}
-        title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อคอมพิวเตอร์และ Gaming PC"
-        subtitle="ข้อสงสัยเกี่ยวกับการขายยกชุด แยกชิ้น การถอดดิสก์ และเครื่องเสีย"
-      />
+    <div class="container" style="max-width: 900px;">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>คอมแบบไหนส่งมาประเมินได้</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">สามารถส่งรายละเอียดคอมพิวเตอร์หลายกลุ่มมาสอบถามได้ เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1.5rem;">
+          <li>Desktop PC</li>
+          <li>Gaming PC</li>
+          <li>คอมประกอบ</li>
+          <li>คอมทำงาน</li>
+          <li>Workstation</li>
+          <li>Mini PC บางประเภท</li>
+          <li>ชุดคอมพร้อมจอ</li>
+          <li>เครื่องที่มีการอัปเกรดภายหลัง</li>
+          <li>เครื่องมีตำหนิ</li>
+          <li>เครื่องที่บางชิ้นมีปัญหา</li>
+        </ul>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">แต่ละเครื่องควรดูจากชิ้นส่วนจริงที่ติดตั้งอยู่</p>
+        <p style="color: #94a3b8;">
+          คอมที่ใช้ Case เหมือนกันไม่ได้หมายความว่าจะมีมูลค่าใกล้เคียงกัน เพราะสเปกภายในอาจต่างกันมาก
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: BASIC SPECS / CPU -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>ก่อนขายคอมต้องรู้สเปกอะไรบ้าง</h2>
+        <p style="margin-bottom: 1rem; color: #cbd5e1;">ข้อมูลพื้นฐานที่ช่วยประเมินได้มากที่สุดคือ</p>
+
+        <h3 style="font-size: 1.15rem; color: #38bdf8; margin-bottom: 0.5rem;">CPU</h3>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>Intel Core i3</li>
+          <li>Core i5</li>
+          <li>Core i7</li>
+          <li>Core i9</li>
+          <li>AMD Ryzen 3</li>
+          <li>Ryzen 5</li>
+          <li>Ryzen 7</li>
+          <li>Ryzen 9</li>
+        </ul>
+
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ควรแจ้งรหัสรุ่นเต็ม เช่น</p>
+        <p style="margin-bottom: 0.5rem;"><code style="background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #fbbf24;">Intel Core i5-12400F</code></p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">หรือ</p>
+        <p style="margin-bottom: 0.5rem;"><code style="background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #fbbf24;">AMD Ryzen 5 5600</code></p>
+        <p style="margin-bottom: 0.5rem; color: #f87171;">ไม่ควรแจ้งเพียงว่า “i5” หรือ “Ryzen 5”</p>
+        <p style="color: #94a3b8;">เพราะ CPU ต่าง Generation มีมูลค่าและประสิทธิภาพต่างกันมาก</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: GPU, RAM, SSD, MAINBOARD, PSU, CASE/COOLING -->
+  <section class="section section-muted">
+    <div class="container" style="max-width: 900px;">
+      <!-- GPU -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>การ์ดจอเป็นหนึ่งในชิ้นส่วนสำคัญของ Gaming PC</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">สำหรับ Gaming PC การ์ดจออาจเป็นชิ้นส่วนที่มีมูลค่าสูงที่สุดตัวหนึ่งในเครื่อง</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ควรแจ้งรุ่นเต็ม เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>GTX 1660 Super</li>
+          <li>RTX 2060</li>
+          <li>RTX 3060</li>
+          <li>RTX 3070</li>
+          <li>RTX 4060</li>
+          <li>RTX 4070</li>
+          <li>RX 6600</li>
+          <li>RX 6700 XT</li>
+          <li>RX 7600</li>
+          <li>หรือรุ่นอื่น</li>
+        </ul>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">ถ้าทราบยี่ห้อและรุ่นย่อยของการ์ด เช่น ASUS, MSI, Gigabyte, GALAX หรือ Sapphire สามารถแจ้งเพิ่มได้</p>
+        <p style="color: #f87171;">การบอกเพียงว่า “RTX” หรือ “การ์ดจอ 8GB” ยังไม่เพียงพอสำหรับการประเมิน</p>
+      </div>
+
+      <!-- RAM -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>RAM ต้องดูทั้งความจุและประเภท</h2>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ข้อมูลที่ควรแจ้ง เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>RAM 8GB</li>
+          <li>RAM 16GB</li>
+          <li>RAM 32GB</li>
+          <li>RAM 64GB</li>
+          <li>DDR4</li>
+          <li>DDR5</li>
+          <li>Bus หรือความเร็วถ้าทราบ</li>
+          <li>จำนวนแถว</li>
+        </ul>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ตัวอย่าง:</p>
+        <p style="margin-bottom: 0.5rem;"><code style="background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #fbbf24;">DDR4 16GB (8GB × 2) 3200MHz</code></p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">หรือ</p>
+        <p style="margin-bottom: 0.5rem;"><code style="background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #fbbf24;">DDR5 32GB (16GB × 2)</code></p>
+        <p style="color: #94a3b8;">การเพิ่ม RAM มีผลต่อความพร้อมใช้งานของเครื่อง แต่ราคามือสองที่เพิ่มขึ้นไม่ได้จำเป็นต้องเท่ากับราคาที่ซื้อ RAM ใหม่มา</p>
+      </div>
+
+      <!-- SSD -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>SSD และพื้นที่เก็บข้อมูล</h2>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ควรแจ้งทั้งประเภทและความจุ เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>NVMe 500GB</li>
+          <li>NVMe 1TB</li>
+          <li>SATA SSD 512GB</li>
+          <li>HDD 1TB</li>
+          <li>SSD + HDD</li>
+        </ul>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">หากมี Storage หลายลูกควรแจ้งแยก</p>
+        <p style="margin-bottom: 0.75rem; color: #94a3b8;">สำหรับ SSD ที่ใช้งานมานาน หากมีข้อมูลสุขภาพของ Drive ก็สามารถส่งประกอบได้ แต่ไม่จำเป็นสำหรับการถามราคาเบื้องต้นทุกกรณี</p>
+        <p style="color: #cbd5e1;">ก่อนส่งมอบเครื่องจริงควรสำรองและล้างข้อมูลส่วนตัวออกจาก Storage ที่ขายไปพร้อมเครื่อง</p>
+      </div>
+
+      <!-- MAINBOARD -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>เมนบอร์ดมีผลต่อราคาไหม</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">มีผล โดยเฉพาะเครื่องประกอบ</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ควรแจ้งรุ่น Mainboard เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>A520</li>
+          <li>B450</li>
+          <li>B550</li>
+          <li>B650</li>
+          <li>H610</li>
+          <li>B660</li>
+          <li>B760</li>
+          <li>Z690</li>
+          <li>Z790</li>
+        </ul>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">แต่ควรมีชื่อผู้ผลิตและรุ่นเต็มถ้าทราบ เช่น</p>
+        <p style="margin-bottom: 0.5rem;"><code style="background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #fbbf24;">ASUS PRIME B660M-A D4</code></p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">หรือ</p>
+        <p style="margin-bottom: 0.5rem;"><code style="background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #fbbf24;">MSI B550M PRO-VDH</code></p>
+        <p style="color: #94a3b8;">เพราะเมนบอร์ด Chipset เดียวกันยังมีระดับสินค้าและฟังก์ชันต่างกัน</p>
+      </div>
+
+      <!-- PSU -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>Power Supply ไม่ควรมองข้าม</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">PSU เป็นชิ้นส่วนที่มีผลต่อความสมบูรณ์และความน่าเชื่อถือของเครื่อง</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ควรแจ้ง:</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>Brand</li>
+          <li>Model</li>
+          <li>Watt</li>
+          <li>80 PLUS Rating ถ้ามี</li>
+          <li>อายุโดยประมาณ</li>
+          <li>ประกันถ้ายังเหลือ</li>
+        </ul>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ตัวอย่าง:</p>
+        <p style="margin-bottom: 0.5rem;"><code style="background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #fbbf24;">750W 80+ Bronze</code></p>
+        <p style="color: #94a3b8;">ข้อมูลเพียง “750W” อาจยังไม่พอ เพราะ Power Supply ต่างแบรนด์และต่างระดับมีต้นทุนไม่เท่ากัน</p>
+      </div>
+
+      <!-- CASE & COOLING -->
+      <div class="card">
+        <h2>Case และระบบระบายความร้อนมีผลแค่ไหน</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">Case และชุดระบายความร้อนมีผลต่อความครบของชุด แต่โดยทั่วไปควรประเมินหลังชิ้นส่วนหลักอย่าง CPU และ GPU</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ข้อมูลที่แจ้งเพิ่มได้ เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>Case รุ่นอะไร</li>
+          <li>พัดลมกี่ตัว</li>
+          <li>Air Cooler</li>
+          <li>Liquid Cooler</li>
+          <li>ขนาดหม้อน้ำ</li>
+          <li>RGB Controller</li>
+          <li>Tempered Glass</li>
+          <li>สภาพกระจกและตัว Case</li>
+        </ul>
+        <p style="color: #94a3b8;">Case ที่มีรอยใช้งานกับ Case ที่กระจกแตกหรือโครงสร้างเสียหายควรแจ้งต่างกัน</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: MARKET DYNAMICS & WHOLE VS PARTS -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <!-- Depreciation / Valuation -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>คอมซื้อมาแพง ทำไมราคามือสองไม่เท่าราคาที่เคยจ่าย</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">ราคาที่ซื้อใหม่ในอดีตเป็นข้อมูลหนึ่ง แต่ไม่ใช่ตัวกำหนดราคามือสองปัจจุบัน</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ต้องดูร่วมกับ:</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>อายุของชิ้นส่วน</li>
+          <li>รุ่นใหม่ที่ออกมาทดแทน</li>
+          <li>ประสิทธิภาพ</li>
+          <li>ราคาตลาดมือสอง</li>
+          <li>ประกันที่เหลือ</li>
+          <li>สภาพ</li>
+          <li>ความต้องการของผู้ซื้อ</li>
+          <li>ความเสี่ยงของอุปกรณ์</li>
+        </ul>
+        <p style="margin-bottom: 0.75rem; color: #94a3b8;">ตัวอย่างเช่น การ์ดจอที่เคยมีราคาใหม่สูงในช่วงหนึ่ง อาจมีราคามือสองลดลงมากเมื่อมี Generation ใหม่หรือราคาตลาดเปลี่ยน</p>
+        <p style="color: #cbd5e1;">ดังนั้นควรประเมินจากมูลค่าปัจจุบันของชิ้นส่วน ไม่ใช่รวมราคาซื้อเดิมทั้งหมด</p>
+      </div>
+
+      <!-- Whole vs Parts -->
+      <div class="card">
+        <h2>ควรขายยกเครื่องหรือแยกชิ้น</h2>
+        <p style="margin-bottom: 1rem; color: #cbd5e1;">ไม่มีคำตอบเดียวสำหรับทุกเครื่อง</p>
+
+        <h3 style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.35rem;">ขายยกเครื่อง</h3>
+        <p style="margin-bottom: 0.35rem; color: #cbd5e1;">ข้อดีคือ</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>สะดวก</li>
+          <li>จัดการครั้งเดียว</li>
+          <li>ไม่ต้องถอดอุปกรณ์</li>
+          <li>ไม่เหลือชิ้นส่วนที่ขายยาก</li>
+        </ul>
+
+        <h3 style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.35rem;">แยกชิ้น</h3>
+        <p style="margin-bottom: 0.35rem; color: #cbd5e1;">บางเครื่องอาจมีชิ้นส่วนบางตัวที่มีตลาดแยกชัด เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>GPU</li>
+          <li>CPU</li>
+          <li>RAM</li>
+          <li>SSD</li>
+        </ul>
+
+        <p style="margin-bottom: 0.75rem; color: #94a3b8;">แต่ต้องพิจารณาด้วยว่าชิ้นส่วนที่เหลือหลังจากแยกของมูลค่าสูงออกแล้วขายต่อได้ง่ายหรือไม่</p>
+        <p style="color: #cbd5e1;">ก่อนถอดเครื่อง แนะนำให้เช็กราคาทั้งแบบ <strong>ยกชุด</strong> และดูมูลค่าชิ้นส่วนสำคัญประกอบกันก่อน</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: TESTING, DEFECTS, NO GPU, MONITORS, ACCESSORIES, WARRANTY -->
+  <section class="section section-muted">
+    <div class="container" style="max-width: 900px;">
+      <!-- Testing -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>Gaming PC ก่อนขายควรทดสอบอะไร</h2>
+        <p style="margin-bottom: 1rem; color: #cbd5e1;">ถ้าเครื่องยังเปิดได้ ควรตรวจพื้นฐานก่อนส่งข้อมูล</p>
+
+        <h3 style="font-size: 1.05rem; color: #fbbf24; margin-bottom: 0.25rem;">เปิดเครื่องและ Boot</h3>
+        <p style="color: #94a3b8; margin-bottom: 0.75rem;">ตรวจว่าเปิดติดและเข้า Windows ได้ปกติหรือไม่</p>
+
+        <h3 style="font-size: 1.05rem; color: #fbbf24; margin-bottom: 0.25rem;">CPU</h3>
+        <p style="color: #94a3b8; margin-bottom: 0.75rem;">สังเกตอุณหภูมิและอาการผิดปกติ</p>
+
+        <h3 style="font-size: 1.05rem; color: #fbbf24; margin-bottom: 0.25rem;">GPU</h3>
+        <p style="color: #94a3b8; margin-bottom: 0.75rem;">ตรวจว่า Windows มองเห็นการ์ดจอและสามารถใช้งานได้</p>
+
+        <h3 style="font-size: 1.05rem; color: #fbbf24; margin-bottom: 0.25rem;">RAM</h3>
+        <p style="color: #94a3b8; margin-bottom: 0.75rem;">ดูว่าระบบมองเห็นความจุครบ</p>
+
+        <h3 style="font-size: 1.05rem; color: #fbbf24; margin-bottom: 0.25rem;">Storage</h3>
+        <p style="color: #94a3b8; margin-bottom: 0.75rem;">ตรวจว่า SSD หรือ HDD ที่แจ้งไว้แสดงครบ</p>
+
+        <h3 style="font-size: 1.05rem; color: #fbbf24; margin-bottom: 0.25rem;">พอร์ต</h3>
+        <p style="color: #94a3b8; margin-bottom: 0.75rem;">ลอง USB, LAN, Audio และพอร์ตสำคัญที่ใช้งานอยู่</p>
+
+        <h3 style="font-size: 1.05rem; color: #fbbf24; margin-bottom: 0.25rem;">พัดลมและระบบระบายความร้อน</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">ตรวจว่าพัดลมหมุนและไม่มีเสียงผิดปกติชัดเจน</p>
+
+        <p style="color: #cbd5e1;">ไม่จำเป็นต้องรัน Stress Test หนักเพื่อถามราคาเบื้องต้น หากเครื่องมีอาการผิดปกติควรแจ้งตามจริง</p>
+      </div>
+
+      <!-- Defects / Salvage -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>เครื่องเปิดติดแต่มีอาการผิดปกติยังประเมินได้ไหม</h2>
+        <p style="font-weight: 700; color: #10b981; margin-bottom: 0.5rem;">ได้</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ตัวอย่างเช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>จอฟ้า</li>
+          <li>Restart เอง</li>
+          <li>เครื่องดับเมื่อเล่นเกม</li>
+          <li>GPU มีอาการ</li>
+          <li>พอร์ตบางช่องเสีย</li>
+          <li>พัดลมเสียงดัง</li>
+          <li>SSD มีปัญหา</li>
+          <li>Mainboard มีตำหนิ</li>
+          <li>Case แตก</li>
+          <li>RGB ไม่ทำงาน</li>
+          <li>เครื่องร้อนผิดปกติ</li>
+        </ul>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">ควรแจ้งอาการที่พบตามจริง</p>
+        <p style="margin-bottom: 0.75rem; color: #94a3b8;">การรู้ปัญหาก่อนช่วยให้แยกได้ว่าเครื่องควรประเมินเป็น PC ที่มีตำหนิ หรือควรไปในกลุ่มซาก/อะไหล่มากกว่า</p>
+        <p style="color: #94a3b8;">หากเป็นเครื่องเสียหนักหรือมีหลายชิ้นไม่ทำงาน สามารถดูข้อมูลเพิ่มเติมที่ รับซื้อซากคอมพิวเตอร์ เมื่อหน้านั้นพร้อมเผยแพร่</p>
+      </div>
+
+      <!-- Integrated Graphics -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>คอมไม่มีการ์ดจอแยกยังขายได้ไหม</h2>
+        <p style="font-weight: 700; color: #10b981; margin-bottom: 0.5rem;">ได้</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">คอมบางชุดใช้ Integrated Graphics จาก CPU</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ตัวอย่างเช่นเครื่องสำนักงาน เครื่องใช้งานทั่วไป หรือ Mini PC บางประเภท</p>
+        <p style="color: #94a3b8;">ควรแจ้ง CPU และ Mainboard ให้ชัด เพราะความสามารถของเครื่องจะขึ้นอยู่กับ Platform ที่ใช้</p>
+      </div>
+
+      <!-- Monitor -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>จอคอมขายพร้อมเครื่องได้ไหม</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">ถ้าต้องการขายพร้อมชุด สามารถแจ้งรายละเอียดจอแยกจากตัว PC</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ข้อมูลที่ควรส่ง เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>Brand</li>
+          <li>Model</li>
+          <li>ขนาด</li>
+          <li>Resolution</li>
+          <li>Refresh Rate</li>
+          <li>Panel ถ้าทราบ</li>
+          <li>สภาพจอ</li>
+          <li>Dead Pixel</li>
+          <li>เส้น</li>
+          <li>Adapter หรือสายไฟ</li>
+          <li>ขาตั้ง</li>
+        </ul>
+        <p style="color: #94a3b8;">ไม่ควรบอกเพียงว่า “จอ 24 นิ้ว” หากสามารถดูรุ่นได้ เพราะจอขนาดเดียวกันอาจมีราคาแตกต่างกันมาก</p>
+      </div>
+
+      <!-- Accessories -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>อุปกรณ์เสริมในชุดคอม</h2>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">หากขายพร้อม:</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>Monitor</li>
+          <li>Keyboard</li>
+          <li>Mouse</li>
+          <li>Wi-Fi Adapter</li>
+          <li>Speaker</li>
+          <li>Headset</li>
+          <li>UPS</li>
+          <li>Controller</li>
+        </ul>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">ควรแยกรายการและรุ่นเท่าที่ทราบ</p>
+        <p style="margin-bottom: 0.75rem; color: #94a3b8;">อุปกรณ์บางชิ้นเพิ่มมูลค่าชุดได้ แต่บางชิ้นมีมูลค่ามือสองไม่สูงมาก</p>
+        <p style="color: #cbd5e1;">การแยกรายการช่วยให้ประเมินได้ชัดเจนกว่าเขียนว่า “ครบเซ็ต”</p>
+      </div>
+
+      <!-- Warranty -->
+      <div class="card">
+        <h2>ประกันเหลือมีผลหรือไม่</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">ประกันที่ตรวจสอบได้สามารถเป็นข้อมูลประกอบการประเมินได้</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">โดยเฉพาะชิ้นส่วน เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>GPU</li>
+          <li>PSU</li>
+          <li>SSD</li>
+          <li>Mainboard</li>
+          <li>CPU บางกรณี</li>
+        </ul>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ถ้ามี:</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>ใบเสร็จ</li>
+          <li>Serial</li>
+          <li>วันที่ซื้อ</li>
+          <li>ร้านที่ซื้อ</li>
+          <li>หลักฐานประกัน</li>
+        </ul>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">สามารถแจ้งเพิ่มได้</p>
+        <p style="color: #f87171;">ไม่ควรอ้างระยะประกันหากไม่สามารถตรวจสอบได้</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: HOW TO CHECK SPECS, BULK/COMPANY, DATA WIPE -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <!-- Task Manager Spec Check -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>วิธีดูสเปกคอมใน Windows</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">ถ้าเครื่องเปิด Windows ได้ สามารถเริ่มจาก Task Manager</p>
+        <p style="margin-bottom: 0.35rem; color: #cbd5e1;">กด:</p>
+        <p style="margin-bottom: 0.5rem;"><code style="background: #0f172a; padding: 0.2rem 0.5rem; border-radius: 4px; color: #fbbf24;">Ctrl + Shift + Esc</code></p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">จากนั้นเลือก Performance</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">จะเห็นข้อมูล เช่น</p>
+        <ul class="custom-list" style="margin-bottom: 1rem;">
+          <li>CPU</li>
+          <li>Memory</li>
+          <li>Disk</li>
+          <li>GPU</li>
+        </ul>
+        <p style="margin-bottom: 0.5rem; color: #94a3b8;">แต่ Task Manager อาจไม่ได้แสดง Mainboard และ PSU</p>
+        <p style="margin-bottom: 0.5rem; color: #94a3b8;">Mainboard สามารถตรวจจาก System Information หรือโปรแกรมตรวจ Hardware</p>
+        <p style="margin-bottom: 0.75rem; color: #94a3b8;">ส่วน PSU มักต้องดูป้ายที่ตัว Power Supply ภายใน Case</p>
+        <p style="color: #cbd5e1;">ถ้าไม่มั่นใจ สามารถส่งรูปภายในเครื่องมาเพื่อช่วยระบุชิ้นส่วนเบื้องต้นได้</p>
+      </div>
+
+      <!-- Bulk / Company PCs -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2>คอมหลายเครื่องหรือคอมบริษัท</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">หากมี Desktop หลายเครื่อง ไม่จำเป็นต้องส่งข้อมูลซ้ำทีละเครื่องหากสเปกเหมือนกัน</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">สามารถจัดเป็นรายการ:</p>
+
+        <div style="overflow-x: auto; margin-bottom: 1rem;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid #334155; color: #fbbf24;">
+                <th style="padding: 0.5rem;">รุ่น/ชุด</th>
+                <th style="padding: 0.5rem;">CPU</th>
+                <th style="padding: 0.5rem;">RAM</th>
+                <th style="padding: 0.5rem;">SSD</th>
+                <th style="padding: 0.5rem;">GPU</th>
+                <th style="padding: 0.5rem;">จำนวน</th>
+                <th style="padding: 0.5rem;">สภาพ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #1e293b;">
+                <td style="padding: 0.5rem;">ชุด A</td>
+                <td style="padding: 0.5rem;">i5-...</td>
+                <td style="padding: 0.5rem;">16GB</td>
+                <td style="padding: 0.5rem;">512GB</td>
+                <td style="padding: 0.5rem;">Intel</td>
+                <td style="padding: 0.5rem;">10</td>
+                <td style="padding: 0.5rem;">ใช้งานได้</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #1e293b;">
+                <td style="padding: 0.5rem;">ชุด B</td>
+                <td style="padding: 0.5rem;">Ryzen...</td>
+                <td style="padding: 0.5rem;">8GB</td>
+                <td style="padding: 0.5rem;">256GB</td>
+                <td style="padding: 0.5rem;">ไม่มี</td>
+                <td style="padding: 0.5rem;">5</td>
+                <td style="padding: 0.5rem;">มีตำหนิ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="color: #cbd5e1;">หากเครื่องแต่ละกลุ่มมีสภาพต่างกัน ควรแยกจำนวนเครื่องที่ใช้งานได้และเครื่องที่มีปัญหา</p>
+      </div>
+
+      <!-- Data Wiping -->
+      <div class="card">
+        <h2>ก่อนขายคอมควรล้างข้อมูลอย่างไร</h2>
+        <p style="margin-bottom: 0.75rem; color: #cbd5e1;">ข้อมูลส่วนตัวมักอยู่ใน SSD หรือ HDD</p>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">ก่อนส่งมอบควร:</p>
+        <ol style="margin-left: 1.25rem; color: #cbd5e1; margin-bottom: 0.75rem; line-height: 1.6;">
+          <li>Backup ข้อมูลสำคัญ</li>
+          <li>ตรวจ Desktop</li>
+          <li>ตรวจ Documents</li>
+          <li>ตรวจ Downloads</li>
+          <li>ตรวจรูปและไฟล์งาน</li>
+          <li>ออกจากบัญชีสำคัญ</li>
+          <li>ตรวจ Browser</li>
+          <li>Reset หรือล้าง Storage เมื่อพร้อม</li>
+        </ol>
+        <p style="margin-bottom: 0.5rem; color: #cbd5e1;">หากมี Drive ที่ไม่ต้องการขาย สามารถแจ้งตั้งแต่ตอนประเมินว่า <strong>ขายเครื่องโดยไม่รวม Storage</strong></p>
+        <p style="color: #f87171; font-weight: 600;">อย่าลบข้อมูลก่อน Backup เสร็จ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: 10 VALUATION FACTORS -->
+  <section class="section section-muted">
+    <div class="container" style="max-width: 900px;">
+      <div class="card">
+        <h2>ปัจจัยหลักที่ใช้ประเมินราคาคอมมือสอง</h2>
+        <p style="margin-bottom: 1rem; color: #cbd5e1;">โดยสรุปประกอบด้วย</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">CPU</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">ดูรุ่น Generation และประสิทธิภาพ</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">GPU</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">สำคัญมากสำหรับ Gaming PC</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">RAM</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">ดูความจุ ประเภท และจำนวน</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">Storage</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">ดูชนิด ความจุ และจำนวน Drive</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">Mainboard</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">ดู Platform และระดับของบอร์ด</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">PSU</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">ดู Brand, Model, Watt และสภาพ</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">Case / Cooling</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">ดูความสมบูรณ์และอุปกรณ์ภายใน</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">อายุและประกัน</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">ประกันที่เหลืออาจเป็นข้อมูลประกอบ</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">สภาพการทำงาน</h3>
+        <p style="color: #94a3b8; margin-bottom: 1rem;">เครื่องสมบูรณ์กับเครื่องที่มีอาการต้องประเมินต่างกัน</p>
+
+        <h3 style="font-size: 1.1rem; color: #fbbf24; margin-bottom: 0.25rem;">ตลาดปัจจุบัน</h3>
+        <p style="color: #94a3b8;">ราคาชิ้นส่วนมือสองเปลี่ยนได้ตาม Generation และความต้องการ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: 7-STEP VALUATION PROCESS -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="card">
+        <h2>ขั้นตอนเช็กราคาคอมก่อนขาย</h2>
+
+        <div style="margin-top: 1rem;">
+          <h3 style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.25rem;">1. ส่งสเปกหลัก</h3>
+          <p style="color: #94a3b8; margin-bottom: 0.25rem;">อย่างน้อย:</p>
+          <p style="color: #fbbf24; font-weight: 700; margin-bottom: 0.5rem;">CPU + GPU + RAM + SSD</p>
+          <p style="color: #94a3b8; margin-bottom: 0.25rem;">ถ้าทราบให้เพิ่ม:</p>
+          <p style="color: #fbbf24; font-weight: 700; margin-bottom: 1rem;">Mainboard + PSU</p>
+
+          <h3 style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.25rem;">2. ส่งรูป</h3>
+          <p style="color: #94a3b8; margin-bottom: 0.25rem;">ถ่าย:</p>
+          <ul class="custom-list" style="margin-bottom: 1rem;">
+            <li>ด้านหน้า</li>
+            <li>ด้านข้าง</li>
+            <li>ภายใน Case</li>
+            <li>ด้านหลัง</li>
+            <li>จุดตำหนิ</li>
+          </ul>
+
+          <h3 style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.25rem;">3. แจ้งสภาพ</h3>
+          <p style="color: #94a3b8; margin-bottom: 0.25rem;">ระบุว่า:</p>
+          <ul class="custom-list" style="margin-bottom: 1rem;">
+            <li>เปิดติดหรือไม่</li>
+            <li>เข้า Windows ได้ไหม</li>
+            <li>มีอาการอะไร</li>
+            <li>เคยซ่อมหรือไม่</li>
+            <li>มีประกันเหลือไหม</li>
+          </ul>
+
+          <h3 style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.25rem;">4. แจ้งของที่ขายรวม</h3>
+          <p style="color: #94a3b8; margin-bottom: 0.25rem;">เช่น:</p>
+          <ul class="custom-list" style="margin-bottom: 1rem;">
+            <li>จอ</li>
+            <li>Keyboard</li>
+            <li>Mouse</li>
+            <li>Wi-Fi</li>
+            <li>อุปกรณ์อื่น</li>
+          </ul>
+
+          <h3 style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.25rem;">5. ประเมินเบื้องต้น</h3>
+          <p style="color: #94a3b8; margin-bottom: 1rem;">ดูสเปกและสภาพร่วมกัน</p>
+
+          <h3 style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.25rem;">6. พิจารณา</h3>
+          <p style="color: #94a3b8; margin-bottom: 1rem;">ผู้ขายสามารถเปรียบเทียบและตัดสินใจก่อนขายได้</p>
+
+          <h3 style="font-size: 1.1rem; color: #38bdf8; margin-bottom: 0.25rem;">7. ตรวจเครื่องจริง</h3>
+          <p style="color: #94a3b8;">เมื่อเลือกขาย จึงตรวจ Hardware และสภาพจริงก่อนดำเนินการซื้อขาย</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: PROVINCIAL REMOTE FORMULA -->
+  <section class="section section-muted">
+    <div class="container" style="max-width: 900px;">
+      <div class="card" style="border: 1px solid #334155;">
+        <h2>อยู่ต่างจังหวัดเริ่มเช็กราคาได้อย่างไร</h2>
+        <p style="color: #94a3b8; margin-bottom: 0.75rem;">ไม่จำเป็นต้องยกคอมเดินทางเพื่อถามราคาเบื้องต้นก่อน</p>
+        <p style="font-weight: 600; margin-bottom: 0.5rem;">สามารถส่ง:</p>
+        <p style="font-size: 1.1rem; color: #fbbf24; font-weight: 700; margin-bottom: 0.75rem;">
+          สเปก + รูป + สภาพ + รายการอุปกรณ์
+        </p>
+        <p style="color: #94a3b8; margin-bottom: 0.75rem;">เพื่อเริ่มประเมินได้</p>
+        <p style="color: #94a3b8; margin-bottom: 0.75rem;">จากนั้นจึงค่อยตกลงวิธีส่งมอบหรือนัดหมายตามประเภทสินค้า พื้นที่ และความเหมาะสม</p>
+        <p style="color: #94a3b8; font-size: 0.9rem;">
+          หน้า <code>/รับซื้อคอม/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: FINAL INTAKE CTA -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="card" style="background-color: #1e293b; border: 1px solid #334155; text-align: center; padding: 2.5rem 1.5rem;">
+        <h2>เริ่มเช็กราคาคอมของคุณ</h2>
+        <p style="color: #94a3b8; margin-bottom: 0.5rem;">ส่งข้อมูล:</p>
+        <p style="font-size: 1.2rem; color: #fbbf24; font-weight: 700; margin-bottom: 1.5rem;">
+          CPU + GPU + RAM + SSD + Mainboard + PSU + รูปเครื่อง + สภาพ
+        </p>
+        <p style="color: #94a3b8; margin-bottom: 1.5rem;">
+          หากไม่ทราบทั้งหมด ให้เริ่มจากรูปหน้า Task Manager และรูปภายใน Case
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-accent">
+            LINE: <strong>{getDisplayLine()}</strong>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-primary" style="background-color: #334155; color: #f8fafc;">
+            โทร: <strong>{getDisplayPhone()}</strong>
+          </a>
+        </div>
+
+        <p style="color: #94a3b8; font-size: 0.95rem;">
+          ดูขั้นตอนภาพรวมได้ที่ เช็กราคาก่อนขาย และ วิธีขาย
+        </p>
+        <div style="font-size: 1.1rem; color: #fbbf24; font-weight: 700;">
+          ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: FAQ -->
+  <section class="section section-muted">
+    <div class="container" style="max-width: 900px;">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อคอม" subtitle="" />
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  /* Hero */
-  .pc-hero-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2rem;
-    text-align: center;
-  }
-
-  .pc-badge {
-    margin-bottom: 1rem;
-  }
-
-  .pc-title {
-    font-size: 2.15rem;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
-
-  @media (min-width: 768px) {
-    .pc-title {
-      font-size: 2.65rem;
-    }
-  }
-
-  .pc-subtitle {
-    font-size: 1.15rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin-bottom: 0;
-  }
-
-  /* Steps Grid (1-6 + 7) */
-  .pc-steps-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .pc-steps-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .pc-steps-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .pc-step-card {
-    padding: 1.75rem 1.5rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .pc-step-num {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--color-accent);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-
-  .pc-step-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
-  }
-
-  .pc-step-card p {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    line-height: 1.55;
-    margin: 0;
-  }
-
-  .pc-step-list {
-    margin: 0.5rem 0 0 1.25rem;
-    padding: 0;
-    font-size: 0.92rem;
-    color: var(--color-text-muted);
-    line-height: 1.5;
-  }
-
-  .pc-step-list li {
-    margin-bottom: 0.25rem;
-  }
-
-  /* Provincial Card */
-  .provincial-card {
-    padding: 2.5rem 2rem;
-    background-color: #ffffff;
-  }
-
-  .provincial-card h2 {
-    font-size: 1.65rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
-
-  .provincial-formula {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    background-color: var(--color-bg-subtle);
-    border: 1px solid var(--color-border);
-    padding: 0.85rem 1.25rem;
-    border-radius: var(--radius-md);
-    margin: 1rem 0 1.25rem 0;
-    text-align: center;
-  }
-
-  .provincial-note {
-    background-color: var(--color-bg-subtle);
-    padding: 1rem 1.25rem;
-    border-radius: var(--radius-md);
-    color: var(--color-text-muted);
-    font-size: 0.92rem;
-    line-height: 1.6;
-    margin-top: 1.25rem;
-    margin-bottom: 0;
-  }
-
-  /* Intake Card */
-  .intake-card {
-    padding: 2.75rem 2rem;
-    text-align: center;
-    background-color: #ffffff;
-  }
-
-  .intake-card h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.75rem;
-    color: var(--color-primary);
-  }
-
-  .intake-spec-box {
-    font-size: 1.15rem;
-    color: var(--color-primary);
-    background-color: var(--color-accent-light);
-    border: 1px solid #fde68a;
-    padding: 0.85rem 1.25rem;
-    border-radius: var(--radius-md);
-    margin: 1rem auto 1.25rem auto;
-    max-width: 680px;
-  }
-
-  .cta-buttons-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-  }
-
-  .intake-phone {
-    border-color: var(--color-border);
-  }
-
-  .intake-helper {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    max-width: 620px;
-    margin: 0 auto 1.25rem auto;
+  .custom-list {
+    list-style: disc;
+    margin-left: 1.25rem;
+    color: #cbd5e1;
     line-height: 1.6;
   }
-
-  .intake-links-footer {
-    border-top: 1px solid var(--color-border);
-    padding-top: 1.25rem;
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-  }
-
-  .intake-links-footer a {
-    color: var(--color-accent);
-    font-weight: 600;
-    text-decoration: underline;
-  }
-
-  .intake-motto {
-    font-size: 1.15rem;
-    color: var(--color-accent-hover);
-    background-color: var(--color-accent-light);
-    border: 1px solid #fde68a;
-    padding: 0.75rem 1.25rem;
-    border-radius: var(--radius-md);
-    max-width: 480px;
-    margin: 1.25rem auto 0 auto;
+  .custom-list li {
+    margin-bottom: 0.35rem;
   }
 </style>

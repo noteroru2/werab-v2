@@ -1,5 +1,5 @@
 ---
-import { BUSINESS_FACTS, getLineUrl } from '../config/business';
+import { BUSINESS_FACTS, getDisplayLine, getLineUrl, getDisplayPhone, getPhoneUrl } from '../config/business';
 
 interface Props {
   currentPath?: string;
@@ -9,11 +9,13 @@ const { currentPath = '/' } = Astro.props;
 
 const navItems = [
   { name: 'หน้าแรก', path: '/' },
-  { name: 'รับซื้อสินค้า', path: '/รับซื้อ/' },
-  { name: 'เช็กราคาก่อนขาย', path: '/เช็กราคาก่อนขาย/' },
-  { name: 'ราคากลาง', path: '/ราคากลางรับซื้อ/' },
-  { name: 'ความน่าเชื่อถือ', path: '/ความน่าเชื่อถือ/' },
-  { name: 'ติดต่อเรา', path: '/contact/' }
+  { name: 'รายการรับซื้อสินค้า', path: '/รับซื้อ/' },
+  { name: 'รับซื้อโน๊ตบุ๊ค', path: '/รับซื้อโน๊ตบุ๊ค/' },
+  { name: 'รับซื้อคอม', path: '/รับซื้อคอม/' },
+  { name: 'รับซื้อ MacBook', path: '/รับซื้อแมคบุ๊ค/' },
+  { name: 'รับซื้อ iPhone', path: '/รับซื้อไอโฟน/' },
+  { name: 'รับซื้อ iPad', path: '/รับซื้อไอแพด/' },
+  { name: 'รับซื้อกล้อง', path: '/รับซื้อกล้อง/' }
 ];
 ---
 
@@ -41,6 +43,13 @@ const navItems = [
 
     <div class="header-actions">
       <a
+        href={getPhoneUrl()}
+        class="header-phone-link"
+        aria-label="โทรสอบถามราคาประเมินเบื้องต้น"
+      >
+        <span>โทร {getDisplayPhone()}</span>
+      </a>
+      <a
         href={getLineUrl()}
         target="_blank"
         rel="noopener noreferrer"
@@ -50,7 +59,7 @@ const navItems = [
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
         </svg>
-        <span>ประเมินราคา LINE</span>
+        <span>LINE {getDisplayLine()}</span>
       </a>
     </div>
   </div>
@@ -101,16 +110,17 @@ const navItems = [
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .nav-link {
     color: var(--color-text-muted);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     padding: 0.5rem 0;
     border-bottom: 2px solid transparent;
     transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
   }
 
   .nav-link:hover {
@@ -123,12 +133,31 @@ const navItems = [
     font-weight: 600;
   }
 
-  .header-cta {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 
-  @media (max-width: 860px) {
+  .header-phone-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .header-phone-link:hover {
+    color: var(--color-accent);
+  }
+
+  .header-cta {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.85rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1024px) {
     .nav-desktop {
       display: none;
     }

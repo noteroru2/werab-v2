@@ -2,37 +2,45 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
-import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อ iPhone มือสอง เช็กรุ่น แบตเตอรี่และสภาพก่อนขาย | เรารับซื้อ.com";
 const pageDescription = "รับซื้อ iPhone มือสองหลายรุ่น ประเมินจากรุ่น ความจุ สุขภาพแบตเตอรี่ หน้าจอ Face ID กล้อง สภาพเครื่อง ประวัติซ่อมและอุปกรณ์ ส่งข้อมูลเช็กราคาก่อนขาย";
 
 const breadcrumbs = [
-  { name: 'หน้าแรก', url: '/' },
-  { name: 'รายการรับซื้อสินค้า', url: '/รับซื้อ/' },
-  { name: 'รับซื้อ iPhone', url: '/รับซื้อไอโฟน/' }
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อ iPhone",
+    "url": "/รับซื้อไอโฟน/"
+  }
 ];
 
-const iphoneFaqs = [
+const faqs = [
   {
-    question: "รับซื้อ iPhone มือสองรุ่นไหนบ้าง?",
-    answer: "สามารถส่ง iPhone หลายรุ่นมาประเมินได้ โดยควรแจ้งรุ่น ความจุ Battery Health สภาพตัวเครื่อง การทำงานของ Face ID หรือ Touch ID กล้อง ประวัติซ่อม และอุปกรณ์ที่มี"
+    "question": "รับซื้อ iPhone มือสองรุ่นอะไรบ้าง?",
+    "answer": "สามารถส่ง iPhone หลายรุ่นมาประเมินได้ โดยควรแจ้งรุ่น ความจุ Battery Health สภาพเครื่อง การทำงาน และอุปกรณ์ที่มี เพื่อพิจารณาจากเครื่องจริง"
   },
   {
-    question: "iPhone แบตเสื่อมหรือ Battery Health ต่ำขายได้ไหม?",
-    answer: "สามารถส่งมาประเมินตามสภาพได้ ไม่จำเป็นต้องเปลี่ยนแบตก่อนทุกกรณี ควรแจ้ง Battery Health และอาการใช้งานจริงเพื่อเปรียบเทียบมูลค่าตามสภาพกับต้นทุนการเปลี่ยนแบต"
+    "question": "iPhone แบตเสื่อมหรือหน้าจอมีตำหนิขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินตามสภาพได้ ควรแจ้ง Battery Health อาการแบตเตอรี่และตำหนิของหน้าจอให้ชัด เพื่อพิจารณาต้นทุนและสภาพการใช้งานจริง"
   },
   {
-    question: "iPhone เคยเปลี่ยนจอหรือเปลี่ยนแบตยังขายได้ไหม?",
-    answer: "สามารถส่งมาประเมินได้ ควรแจ้งประวัติการซ่อมหรืออะไหล่ที่เคยเปลี่ยนหากทราบ เพราะมีผลต่อการตรวจสภาพและความเสี่ยงของเครื่อง"
+    "question": "Face ID เสียหรือเครื่องเคยซ่อมยังขายได้ไหม?",
+    "answer": "สามารถส่งข้อมูลมาประเมินได้ ควรแจ้งฟังก์ชันที่มีปัญหาและประวัติซ่อมที่ทราบ เพราะมีผลต่อความเสี่ยงและมูลค่าของเครื่อง"
   },
   {
-    question: "iPhone ไม่มีกล่องขายได้ไหม?",
-    answer: "สามารถส่งมาประเมินได้ กล่องและอุปกรณ์เป็นส่วนหนึ่งของความครบชุด แต่ราคาหลักยังต้องพิจารณาจากรุ่น ความจุ สภาพ การทำงาน และประวัติของเครื่อง"
+    "question": "ต้องออกจาก Apple ID ก่อนส่งรูปเช็กราคาไหม?",
+    "answer": "ไม่จำเป็นต้องออกจากบัญชีเพื่อสอบถามราคา และไม่ควรส่ง Apple ID Password หรือรหัสยืนยันให้ผู้อื่น เมื่อพร้อมส่งมอบจริงเจ้าของจึงค่อยจัดการ Find My และบัญชีของตนเอง"
   },
   {
-    question: "ต้องล้างข้อมูลและออกจาก Apple ID ก่อนเช็กราคาหรือไม่?",
-    answer: "ไม่จำเป็นต้องล้างข้อมูลหรือ Sign out เพียงเพื่อถามราคา ควร Backup และจัดการ Apple ID, Find My และข้อมูลส่วนตัวเมื่อพร้อมส่งมอบเครื่องจริง"
+    "question": "ไม่มีกล่องหรือสายชาร์จขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินได้ ควรแจ้งอุปกรณ์ที่มีจริง โดยราคาจะพิจารณาร่วมกับรุ่น ความจุ สภาพและการทำงานของเครื่อง"
   }
 ];
 ---
@@ -41,370 +49,532 @@ const iphoneFaqs = [
   title={pageTitle}
   description={pageDescription}
   breadcrumbs={breadcrumbs}
-  faqs={iphoneFaqs}
+  faqs={faqs}
 >
-  <Breadcrumb items={breadcrumbs} />
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
 
-  <!-- 1. HERO SECTION -->
-  <section class="section ip-hero-section">
+  <main class="content-container">
     <div class="container container-narrow">
-      <span class="badge badge-accent ip-badge">IPHONE BUYBACK</span>
-      <h1 class="ip-title">รับซื้อ iPhone มือสอง เช็กรุ่น ความจุ แบตเตอรี่และสภาพก่อนขาย</h1>
-      <p class="ip-subtitle">
-        ประเมินราคาตามรุ่น ความจุ สุขภาพแบตเตอรี่ ฟังก์ชัน Face ID กล้อง และประวัติการซ่อมจริง
-      </p>
-    </div>
-  </section>
-
-  <!-- 2. PROCESS / VALUATION STEPS (STEPS 3-10) -->
-  <section class="section" style="padding-top: 1rem;">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">แนวทางการประเมิน</span>
+      <article class="prose-content">
+        <h1>รับซื้อ iPhone มือสอง เช็กรุ่น ความจุ แบตเตอรี่และสภาพก่อนขาย</h1>
+        <p>ต้องการขาย iPhone มือสอง แต่ยังไม่แน่ใจว่าเครื่องของคุณควรดูข้อมูลอะไรบ้างก่อนเช็กราคา?</p>
+        <p>iPhone รุ่นเดียวกันอาจมีมูลค่าต่างกันจาก <strong>ความจุ สุขภาพแบตเตอรี่ หน้าจอ Face ID หรือ Touch ID กล้อง สภาพตัวเครื่อง ประวัติการซ่อม และอุปกรณ์ที่มี</strong></p>
+        <p>ดังนั้นการแจ้งเพียงว่า “iPhone รุ่น...” ยังไม่เพียงพอสำหรับการประเมินเบื้องต้น</p>
+        <p>เริ่มจากส่ง:</p>
+        <p><strong>รุ่น + ความจุ + Battery Health + รูป + สภาพ + อาการ + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>iPhone แบบไหนส่งมาประเมินได้</h2>
+        <p>สามารถส่งรายละเอียด iPhone มือสองหลายสภาพมาสอบถามได้ เช่น</p>
+        <ul>
+        <li>เครื่องใช้งานปกติ</li>
+        <li>เครื่องมีรอย</li>
+        <li>แบตเตอรี่เสื่อม</li>
+        <li>หน้าจอมีตำหนิ</li>
+        <li>Face ID หรือ Touch ID มีปัญหา</li>
+        <li>กล้องมีอาการ</li>
+        <li>ลำโพงหรือไมโครโฟนผิดปกติ</li>
+        <li>พอร์ตชาร์จมีปัญหา</li>
+        <li>ไม่มี Box</li>
+        <li>ไม่มีสายหรือ Adapter</li>
+        <li>เครื่องเคยซ่อม</li>
+        <li>เครื่องเคยเปลี่ยนอะไหล่</li>
+        <li>เครื่องเปิดไม่ติดบางกรณี</li>
+        </ul>
+        <p>การประเมินต้องดูรุ่นและสภาพของเครื่องจริง</p>
+        <p>ไม่ควรใช้เพียงอายุเครื่องหรือราคาที่เคยซื้อมาเป็นตัวกำหนดราคามือสอง</p>
+        <hr class="section-divider" />
+        <h2>ก่อนขายต้องรู้รุ่นและความจุให้ชัด</h2>
+        <p>ข้อมูลพื้นฐานที่ควรแจ้ง ได้แก่</p>
+        <ul>
+        <li>รุ่น iPhone</li>
+        <li>ความจุ Storage</li>
+        <li>สี</li>
+        <li>Battery Health หากตรวจได้</li>
+        <li>สภาพหน้าจอ</li>
+        <li>สภาพตัวเครื่อง</li>
+        <li>Face ID หรือ Touch ID</li>
+        <li>กล้อง</li>
+        <li>ประวัติซ่อม</li>
+        <li>อุปกรณ์ที่มี</li>
+        </ul>
+        <p>ความจุ เช่น</p>
+        <ul>
+        <li>64GB</li>
+        <li>128GB</li>
+        <li>256GB</li>
+        <li>512GB</li>
+        <li>1TB</li>
+        <li>หรือความจุอื่นตามรุ่น</li>
+        </ul>
+        <p>iPhone รุ่นเดียวกันแต่ความจุต่างกันอาจมีมูลค่าไม่เท่ากัน</p>
+        <hr class="section-divider" />
+        <h2>วิธีดูข้อมูลรุ่นและความจุ</h2>
+        <p>หากเครื่องยังใช้งานได้ สามารถเริ่มจาก:</p>
+        <p><strong>Settings → General → About</strong></p>
+        <p>ข้อมูลที่พบอาจช่วยตรวจ:</p>
+        <ul>
+        <li>Model Name</li>
+        <li>Capacity</li>
+        <li>iOS Version</li>
+        <li>ข้อมูลเครื่องอื่นที่เกี่ยวข้อง</li>
+        </ul>
+        <p>ไม่จำเป็นต้องส่งข้อมูลบัญชีส่วนตัวเพื่อเช็กราคา</p>
+        <p>หากมีข้อมูลที่อาจระบุตัวเครื่องหรือเจ้าของโดยไม่จำเป็น สามารถปิดบังก่อนส่งรูปได้</p>
+        <hr class="section-divider" />
+        <h2>Battery Health มีผลต่อราคาไหม</h2>
+        <p>มีผลต่อความพร้อมใช้งานของเครื่อง</p>
+        <p>ควรแจ้ง Maximum Capacity หากตรวจสอบได้จากระบบ</p>
+        <p>ตัวอย่างอาการที่ควรแจ้งเพิ่มเติม:</p>
+        <ul>
+        <li>แบตหมดเร็ว</li>
+        <li>เครื่องดับเอง</li>
+        <li>ชาร์จไม่เข้า</li>
+        <li>ชาร์จช้า</li>
+        <li>Battery มีข้อความแจ้งเตือน</li>
+        <li>Battery เคยเปลี่ยน</li>
+        <li>เครื่องร้อนผิดปกติขณะใช้งานหรือชาร์จ</li>
+        </ul>
+        <p>เปอร์เซ็นต์ Battery Health เป็นเพียงหนึ่งในปัจจัย ไม่ควรใช้เพียงตัวเลขนี้กำหนดมูลค่าทั้งเครื่อง</p>
+        <p>ต้องดูรุ่น ความจุ สภาพ และการทำงานอื่นร่วมด้วย</p>
+        <hr class="section-divider" />
+        <h2>หน้าจอควรตรวจอะไรบ้าง</h2>
+        <p>หน้าจอมีผลต่อมูลค่าของ iPhone อย่างมาก</p>
+        <p>ควรตรวจ:</p>
+        <ul>
+        <li>ภาพขึ้นปกติ</li>
+        <li>Touch ใช้งานได้</li>
+        <li>ไม่มีเส้น</li>
+        <li>ไม่มีจุดดำขนาดใหญ่</li>
+        <li>ไม่มีอาการกะพริบ</li>
+        <li>ไม่มีสีผิดปกติชัดเจน</li>
+        <li>กระจกไม่แตก</li>
+        <li>ไม่มีรอยกดหนัก</li>
+        <li>ความสว่างใช้งานได้</li>
+        </ul>
+        <p>หากมีตำหนิ ควรถ่ายรูปหน้าจอตอนเปิดและตอนปิดให้เห็นชัด</p>
+        <p>รอยขนแมวเล็กน้อยกับหน้าจอแตกหรือ Panel เสียไม่ควรประเมินเหมือนกัน</p>
+        <hr class="section-divider" />
+        <h2>Face ID หรือ Touch ID ต้องทดสอบ</h2>
+        <p>ถ้ารุ่นรองรับ Face ID ควรตรวจว่าสามารถใช้งานได้ตามปกติ</p>
+        <p>หากเป็นรุ่นที่ใช้ Touch ID ควรตรวจการทำงานของปุ่มและระบบสแกนนิ้ว</p>
+        <p>หากระบบใดใช้งานไม่ได้ควรแจ้งตามจริง</p>
+        <p>ไม่ควรส่ง:</p>
+        <ul>
+        <li>รหัสผ่านเครื่อง</li>
+        <li>Apple ID Password</li>
+        <li>รหัสยืนยันตัวตน</li>
+        <li>Recovery Key</li>
+        </ul>
+        <p>เพื่อใช้ในการเช็กราคา</p>
+        <p>เจ้าของเครื่องสามารถทดสอบฟังก์ชันเหล่านี้ด้วยตนเองได้</p>
+        <hr class="section-divider" />
+        <h2>กล้องหน้าและกล้องหลังควรตรวจ</h2>
+        <p>ทดลองเปิด Camera และสลับเลนส์หรือโหมดที่มีในรุ่นนั้น</p>
+        <p>สังเกต:</p>
+        <ul>
+        <li>ภาพขึ้น</li>
+        <li>Focus ทำงาน</li>
+        <li>ไม่สั่นผิดปกติ</li>
+        <li>ไม่มีจุดหรือคราบที่เห็นชัด</li>
+        <li>กล้องหน้าใช้งานได้</li>
+        <li>Video บันทึกได้</li>
+        </ul>
+        <p>หากกระจกเลนส์แตก กล้องสั่น Focus ไม่เข้า หรือมีอาการอื่น ควรแจ้ง</p>
+        <hr class="section-divider" />
+        <h2>ลำโพงและไมโครโฟนมีผลหรือไม่</h2>
+        <p>ควรตรวจเพราะเป็นฟังก์ชันพื้นฐานของโทรศัพท์</p>
+        <p>สามารถทดลอง:</p>
+        <ul>
+        <li>เปิดเพลงหรือวิดีโอ</li>
+        <li>โทรทดสอบ</li>
+        <li>บันทึกเสียง</li>
+        <li>เปิด Speakerphone</li>
+        </ul>
+        <p>หากเสียงเบาผิดปกติ เสียงแตก หรือ Microphone บางตัวมีปัญหาควรแจ้งตามจริง</p>
+        <hr class="section-divider" />
+        <h2>พอร์ตชาร์จและการชาร์จ</h2>
+        <p>ควรตรวจว่า:</p>
+        <ul>
+        <li>เสียบสายแล้วชาร์จเข้า</li>
+        <li>พอร์ตไม่หลวมผิดปกติ</li>
+        <li>ไม่มีอาการตัดต่อการชาร์จ</li>
+        <li>Wireless Charging ใช้งานได้ถ้ารุ่นรองรับและสามารถทดสอบได้</li>
+        </ul>
+        <p>หากต้องขยับสายจึงจะชาร์จ หรือพอร์ตมีอาการควรแจ้ง</p>
+        <hr class="section-divider" />
+        <h2>สภาพตัวเครื่องควรถ่ายอะไรบ้าง</h2>
+        <p>ควรถ่ายให้เห็น:</p>
+        <ul>
+        <li>ด้านหน้า</li>
+        <li>ด้านหลัง</li>
+        <li>ขอบซ้าย</li>
+        <li>ขอบขวา</li>
+        <li>ด้านบน</li>
+        <li>ด้านล่าง</li>
+        <li>มุมทั้งสี่</li>
+        <li>กล้อง</li>
+        <li>จุดตำหนิ</li>
+        </ul>
+        <p>ควรแจ้งเป็นพิเศษหากพบ:</p>
+        <ul>
+        <li>รอยตก</li>
+        <li>กรอบบุบ</li>
+        <li>ฝาหลังแตก</li>
+        <li>กระจกกล้องแตก</li>
+        <li>เครื่องงอ</li>
+        <li>ปุ่มเสีย</li>
+        <li>มีร่องรอยแกะเครื่อง</li>
+        </ul>
+        <p>การส่งรูปตรงกับสภาพจริงช่วยลดความคลาดเคลื่อนของการประเมินเบื้องต้น</p>
+        <hr class="section-divider" />
+        <h2>iPhone เคยซ่อมยังขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>หากทราบ ควรแจ้งว่าเคย:</p>
+        <ul>
+        <li>เปลี่ยนหน้าจอ</li>
+        <li>เปลี่ยน Battery</li>
+        <li>เปลี่ยนกล้อง</li>
+        <li>ซ่อมพอร์ตชาร์จ</li>
+        <li>ซ่อม Mainboard</li>
+        <li>เปลี่ยนฝาหลัง</li>
+        <li>เปลี่ยนกรอบ</li>
+        <li>ซ่อม Face ID</li>
+        <li>โดนน้ำ</li>
+        </ul>
+        <p>ประวัติการซ่อมไม่ได้หมายความว่าเครื่องจะประเมินไม่ได้</p>
+        <p>แต่ช่วยให้ตรวจความเสี่ยงและสภาพจริงได้ตรงขึ้น</p>
+        <hr class="section-divider" />
+        <h2>Parts and Service History ควรดูไหม</h2>
+        <p>iPhone บางรุ่นและบางเวอร์ชันระบบสามารถแสดงข้อมูลเกี่ยวกับชิ้นส่วนหรือประวัติบริการได้</p>
+        <p>หากเครื่องแสดงข้อมูลดังกล่าว สามารถแจ้งประกอบการประเมินได้</p>
+        <p>ข้อมูลนี้ควรใช้ร่วมกับการตรวจสภาพจริง ไม่ใช่ใช้เพียงอย่างเดียวตัดสินว่าเครื่องดีหรือเสีย</p>
+        <p>หากไม่แน่ใจไม่จำเป็นต้องคาดเดา</p>
+        <hr class="section-divider" />
+        <h2>True Tone หรือฟังก์ชันหน้าจอมีปัญหาต้องแจ้งไหม</h2>
+        <p>ควรแจ้งถ้าพบว่าฟังก์ชันของหน้าจอหรือระบบแสดงผลผิดปกติ</p>
+        <p>แต่การประเมินไม่ควรใช้เพียง True Tone เป็นตัวชี้วัดว่าหน้าจอเดิมหรือเคยซ่อมหรือไม่</p>
+        <p>ควรดูร่วมกับ:</p>
+        <ul>
+        <li>ประวัติที่เจ้าของทราบ</li>
+        <li>การทำงานของหน้าจอ</li>
+        <li>ข้อมูลระบบที่ตรวจสอบได้</li>
+        <li>สภาพจริงของเครื่อง</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>เครื่องเคยโดนน้ำต้องแจ้งไหม</h2>
+        <p>ควรแจ้ง</p>
+        <p>ความเสียหายจากของเหลวอาจมีผลต่ออุปกรณ์หลายส่วน แม้ปัจจุบันเครื่องยังเปิดได้</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>เกิดขึ้นเมื่อไรโดยประมาณ</li>
+        <li>เคยดับหรือไม่</li>
+        <li>เคยซ่อมหรือไม่</li>
+        <li>ปัจจุบันมีอาการอะไร</li>
+        </ul>
+        <p>ข้อมูลนี้ช่วยให้ประเมินความเสี่ยงได้ตรงขึ้น</p>
+        <hr class="section-divider" />
+        <h2>iPhone เปิดไม่ติดยังประเมินได้ไหม</h2>
+        <p>บางกรณีสามารถส่งมาประเมินตามสภาพได้</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>ความจุ</li>
+        <li>อาการก่อนเสีย</li>
+        <li>ชาร์จเข้าหรือไม่</li>
+        <li>มีภาพหรือเสียงตอบสนองหรือไม่</li>
+        <li>เคยตกหรือโดนน้ำหรือไม่</li>
+        <li>เคยซ่อมหรือไม่</li>
+        <li>มีอุปกรณ์อะไรอยู่บ้าง</li>
+        </ul>
+        <p>เครื่องที่ไม่สามารถทดสอบได้มีความไม่แน่นอนสูงกว่าเครื่องปกติ จึงต้องพิจารณาความเสี่ยงเพิ่ม</p>
+        <hr class="section-divider" />
+        <h2>Activation Lock และ Find My ต้องจัดการเมื่อไร</h2>
+        <p>ไม่จำเป็นต้องปิด Find My เพียงเพื่อส่งข้อมูลเช็กราคา</p>
+        <p>เมื่อพร้อมส่งมอบเครื่องจริง เจ้าของควรเป็นผู้จัดการบัญชีของตนเอง</p>
+        <p>ไม่ควรส่ง:</p>
+        <ul>
+        <li>Apple ID Password</li>
+        <li>รหัสผ่านเครื่อง</li>
+        <li>รหัส OTP</li>
+        <li>Recovery Key</li>
+        <li>รหัสยืนยันตัวตน</li>
+        </ul>
+        <p>ให้ผู้อื่นผ่านข้อความ</p>
+        <p>ก่อนซื้อขายจริงควรสามารถส่งมอบเครื่องโดยไม่มีข้อจำกัดจากบัญชีเจ้าของเดิม</p>
+        <hr class="section-divider" />
+        <h2>ต้อง Reset ก่อนส่งรูปเช็กราคาไหม</h2>
+        <p>ไม่จำเป็น</p>
+        <p>หากยังอยู่ในขั้นตอนประเมินเบื้องต้น สามารถส่งรุ่น ความจุ Battery Health รูปและสภาพก่อนได้</p>
+        <p>ก่อน Reset ควร:</p>
+        <ol>
+        <li>Backup ข้อมูลสำคัญ</li>
+        <li>ตรวจรูปและวิดีโอ</li>
+        <li>ตรวจไฟล์</li>
+        <li>ตรวจข้อมูลในแอป</li>
+        <li>ตรวจว่าข้อมูลที่ต้องการเก็บถูกสำรองแล้ว</li>
+        <li>จัดการบัญชีเมื่อพร้อมส่งมอบ</li>
+        <li>Reset เมื่อมั่นใจว่าไม่ต้องใช้ข้อมูลในเครื่องแล้ว</li>
+        </ol>
+        <hr class="section-divider" />
+        <h2>SIM และ eSIM ต้องทำอย่างไร</h2>
+        <p>ก่อนส่งมอบควรตรวจว่าข้อมูลการเชื่อมต่อของผู้ใช้อยู่ในสถานะที่เหมาะสม</p>
+        <p>SIM แบบถอดได้ควรถอดออกก่อนส่งเครื่อง</p>
+        <p>สำหรับ eSIM ควรตรวจการตั้งค่าของผู้ให้บริการและดำเนินการตามความเหมาะสมก่อนส่งมอบ</p>
+        <p>ไม่ควรส่งข้อมูลบัญชีผู้ให้บริการ รหัสผ่าน หรือรหัสยืนยันที่ไม่จำเป็นให้ผู้รับซื้อ</p>
+        <hr class="section-divider" />
+        <h2>ไม่มีกล่องหรือสายยังขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>ควรแจ้งของที่มีจริง เช่น</p>
+        <ul>
+        <li>ตัวเครื่อง</li>
+        <li>Box</li>
+        <li>สาย</li>
+        <li>Adapter</li>
+        <li>เคส</li>
+        <li>ใบเสร็จ</li>
+        <li>เอกสาร</li>
+        <li>อุปกรณ์เสริม</li>
+        </ul>
+        <p>อุปกรณ์มีผลต่อความครบของชุด แต่รุ่น ความจุ สภาพและการทำงานของเครื่องยังเป็นปัจจัยหลัก</p>
+        <hr class="section-divider" />
+        <h2>ประกันเหลือควรแจ้งไหม</h2>
+        <p>ควรแจ้งหากสามารถตรวจสอบได้</p>
+        <p>ข้อมูลที่ใช้ประกอบ เช่น</p>
+        <ul>
+        <li>วันที่ซื้อ</li>
+        <li>ใบเสร็จ</li>
+        <li>หลักฐานการซื้อ</li>
+        <li>สถานะประกันที่ตรวจสอบได้</li>
+        </ul>
+        <p>ไม่ควรคาดเดาว่าประกันยังเหลือหากไม่มีข้อมูลรองรับ</p>
+        <hr class="section-divider" />
+        <h2>iPhone หลายเครื่องหรือเครื่องบริษัท</h2>
+        <p>หากมีหลายเครื่อง สามารถจัดข้อมูลเป็นตาราง</p>
+        <div class="table-responsive">
+        <table class="data-table">
+        <thead><tr><th>รุ่น</th><th>ความจุ</th><th>Battery</th><th>จำนวน</th><th>สภาพ</th></tr></thead>
+        <tbody>
+        <tr><td>iPhone รุ่น...</td><td>128GB</td><td>...</td><td>5</td><td>ใช้งานได้</td></tr>
+        <tr><td>iPhone รุ่น...</td><td>256GB</td><td>...</td><td>3</td><td>มีตำหนิ</td></tr>
+        </tbody></table></div>
+        <p>ควรแยกเครื่องที่มี:</p>
+        <ul>
+        <li>จอแตก</li>
+        <li>Face ID เสีย</li>
+        <li>เปิดไม่ติด</li>
+        <li>Battery ผิดปกติ</li>
+        <li>เคยโดนน้ำ</li>
+        <li>มีประวัติซ่อม</li>
+        </ul>
+        <p>ไม่ควรรวมเครื่องทุกสภาพเป็นกลุ่มเดียวหากความเสียหายต่างกันมาก</p>
+        <hr class="section-divider" />
+        <h2>ปัจจัยหลักที่ใช้ประเมินราคา iPhone</h2>
+        <h3>รุ่น</h3>
+        <p>เป็นจุดเริ่มต้นของการประเมิน</p>
+        <h3>ความจุ</h3>
+        <p>Storage ต่างกันอาจมีมูลค่าต่างกัน</p>
+        <h3>Battery</h3>
+        <p>ดู Battery Health และอาการใช้งานจริง</p>
+        <h3>หน้าจอ</h3>
+        <p>ดู Touch, Panel, กระจกและการแสดงผล</p>
+        <h3>Face ID หรือ Touch ID</h3>
+        <p>ตรวจตามฟังก์ชันของรุ่น</p>
+        <h3>กล้อง</h3>
+        <p>ตรวจกล้องหน้า กล้องหลัง Focus และ Video</p>
+        <h3>ลำโพงและไมโครโฟน</h3>
+        <p>มีผลต่อความพร้อมใช้งาน</p>
+        <h3>การชาร์จ</h3>
+        <p>ดูพอร์ตและระบบชาร์จ</p>
+        <h3>สภาพตัวเครื่อง</h3>
+        <p>รอยตก แตก บุบ และสภาพโครงสร้างมีผล</p>
+        <h3>ประวัติซ่อม</h3>
+        <p>ใช้ประกอบการประเมินความเสี่ยง</p>
+        <h3>บัญชีและ Activation Lock</h3>
+        <p>ก่อนซื้อขายจริงต้องสามารถส่งมอบโดยไม่มีข้อจำกัดจากบัญชีเจ้าของเดิม</p>
+        <h3>อุปกรณ์</h3>
+        <p>กล่อง สาย และเอกสารช่วยเพิ่มความครบของชุด</p>
+        <h3>ประกัน</h3>
+        <p>สถานะที่ตรวจสอบได้ใช้ประกอบการประเมิน</p>
+        <h3>ตลาดของรุ่น</h3>
+        <p>ความต้องการของแต่ละรุ่นเปลี่ยนแปลงได้ตามเวลา</p>
+        <hr class="section-divider" />
         <h2>ขั้นตอนเช็กราคา iPhone ก่อนขาย</h2>
-        <p>ตรวจสอบสภาพตัวเครื่อง ฟังก์ชันการทำงาน และความสมบูรณ์ของระบบ</p>
-      </div>
-
-      <div class="ip-steps-grid">
-        <div class="card ip-step-card">
-          <div class="ip-step-num">3</div>
-          <h3>ส่งรูป</h3>
-          <p>ถ่ายรูปประกอบการประเมิน:</p>
-          <ul class="ip-step-list">
-            <li>หน้าจอ</li>
-            <li>ฝาหลัง</li>
-            <li>ขอบ</li>
-            <li>มุม</li>
-            <li>กล้อง</li>
-            <li>ตำหนิ</li>
-          </ul>
-        </div>
-
-        <div class="card ip-step-card">
-          <div class="ip-step-num">4</div>
-          <h3>ทดสอบฟังก์ชัน</h3>
-          <p>ตรวจสอบการทำงาน เช่น:</p>
-          <ul class="ip-step-list">
-            <li>Face ID / Touch ID</li>
-            <li>Camera</li>
-            <li>Speaker</li>
-            <li>Microphone</li>
-            <li>Charging</li>
-            <li>Touch</li>
-          </ul>
-        </div>
-
-        <div class="card ip-step-card">
-          <div class="ip-step-num">5</div>
-          <h3>แจ้งประวัติซ่อม</h3>
-          <p>ถ้าทราบว่าเคยเปลี่ยนอะไหล่ ให้แจ้งตามจริง</p>
-        </div>
-
-        <div class="card ip-step-card">
-          <div class="ip-step-num">6</div>
-          <h3>แจ้งอุปกรณ์</h3>
-          <p>เช่น กล่องและสาย</p>
-        </div>
-
-        <div class="card ip-step-card">
-          <div class="ip-step-num">7</div>
-          <h3>ประเมินเบื้องต้น</h3>
-          <p>ใช้ข้อมูลรุ่น Configuration และสภาพร่วมกัน</p>
-        </div>
-
-        <div class="card ip-step-card">
-          <div class="ip-step-num">8</div>
-          <h3>พิจารณาก่อนขาย</h3>
-          <p>สามารถเปรียบเทียบและตัดสินใจได้ก่อนส่งมอบเครื่อง</p>
-        </div>
-
-        <div class="card ip-step-card">
-          <div class="ip-step-num">9</div>
-          <h3>Backup และจัดการบัญชี</h3>
-          <p>เมื่อพร้อมขายแล้วจึง Backup, Sign out และจัดการ Find My</p>
-        </div>
-
-        <div class="card ip-step-card">
-          <div class="ip-step-num">10</div>
-          <h3>ตรวจเครื่องจริงและซื้อขาย</h3>
-          <p>ตรวจข้อมูลและสภาพให้ตรงกับรายละเอียดที่ใช้ประเมินก่อนดำเนินการซื้อขาย</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. PROVINCIAL / REMOTE VALUATION SECTION -->
-  <section class="section section-muted">
-    <div class="container container-narrow">
-      <div class="card provincial-card">
+        <h3>1. ส่งรุ่นและความจุ</h3>
+        <p>แจ้งรุ่นพร้อม Storage</p>
+        <h3>2. ส่ง Battery Health</h3>
+        <p>หากตรวจได้</p>
+        <h3>3. ส่งรูป</h3>
+        <p>ถ่ายทุกด้านและจุดตำหนิ</p>
+        <h3>4. แจ้งการทำงาน</h3>
+        <p>เช่น:</p>
+        <ul>
+        <li>Face ID ปกติ</li>
+        <li>กล้องปกติ</li>
+        <li>ชาร์จเข้า</li>
+        <li>หน้าจอปกติ</li>
+        <li>มีอาการอะไร</li>
+        </ul>
+        <h3>5. แจ้งประวัติ</h3>
+        <p>เคยซ่อม ตก หรือโดนน้ำหรือไม่</p>
+        <h3>6. แจ้งอุปกรณ์</h3>
+        <p>Box สาย ใบเสร็จ หรืออุปกรณ์อื่น</p>
+        <h3>7. ประเมินเบื้องต้น</h3>
+        <p>พิจารณารุ่น ความจุ Battery สภาพและการทำงานร่วมกัน</p>
+        <h3>8. ตัดสินใจ</h3>
+        <p>ผู้ขายสามารถพิจารณาก่อนว่าจะขายหรือเก็บเครื่องไว้</p>
+        <h3>9. Backup และจัดการบัญชี</h3>
+        <p>ดำเนินการเมื่อพร้อมขายจริง</p>
+        <h3>10. ตรวจเครื่องและซื้อขาย</h3>
+        <p>ตรวจสภาพและข้อมูลให้ตรงกับที่ใช้ประเมินก่อนดำเนินการซื้อขาย</p>
+        <hr class="section-divider" />
         <h2>อยู่ต่างจังหวัดเริ่มเช็กราคา iPhone ได้อย่างไร</h2>
-        <p>ไม่จำเป็นต้องเดินทางพร้อมเครื่องเพียงเพื่อถามราคาเบื้องต้น</p>
+        <p>ไม่จำเป็นต้องเดินทางพร้อมเครื่องเพียงเพื่อขอราคาประเมินเบื้องต้น</p>
         <p>สามารถเริ่มจากส่ง:</p>
-
-        <div class="provincial-formula">
-          <strong>รุ่น + ความจุ + Battery Health + รูป + สภาพ + ประวัติซ่อม + อุปกรณ์</strong>
-        </div>
-
-        <p>จากนั้นจึงค่อยพิจารณาวิธีส่งมอบหรือนัดหมายตามพื้นที่และความเหมาะสม</p>
-        <p class="provincial-note">
-          หน้า <code>/รับซื้อไอโฟน/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด
-          หน้ารับซื้อ iPhone รายพื้นที่ที่มี Historical Search Equity จะเชื่อมเข้ากับหมวดนี้ภายหลังเมื่อผ่าน Content QA และ Index Release ของแต่ละหน้า
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. INTAKE & CONTACT CTA SECTION -->
-  <section class="section">
-    <div class="container container-narrow">
-      <div class="card intake-card">
+        <p><strong>รุ่น + ความจุ + Battery Health + รูป + สภาพ + อาการ + อุปกรณ์</strong></p>
+        <p>จากนั้นจึงพิจารณาวิธีส่งมอบหรือนัดหมายตามพื้นที่และความเหมาะสม</p>
+        <p>หน้า <code>/รับซื้อไอโฟน/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        <hr class="section-divider" />
         <h2>เริ่มเช็กราคา iPhone ของคุณ</h2>
         <p>ส่งข้อมูล:</p>
-
-        <div class="intake-spec-box">
-          <strong>รุ่น + ความจุ + Battery Health + รูปเครื่อง + สภาพ + ประวัติซ่อม + อุปกรณ์</strong>
-        </div>
-
-        <p class="intake-helper">
-          หากไม่แน่ใจว่ารุ่นอะไร ให้ส่งรูปหน้า About มาได้
-        </p>
-
-        <div class="cta-buttons-row">
-          <a
-            href={getLineUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-line btn-lg"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
-            </svg>
-            <span>LINE: <strong>{getDisplayLine()}</strong></span>
-          </a>
-
-          <a href={getPhoneUrl()} class="btn btn-outline btn-lg intake-phone">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
-          </a>
-        </div>
-
-        <div class="intake-links-footer">
-          <p>
-            ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/">เช็กราคาก่อนขาย</a> และ วิธีขาย
-          </p>
-          <div class="intake-motto">
-            <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
-          </div>
-        </div>
-      </div>
+        <p><strong>รุ่น + ความจุ + Battery Health + รูปทุกด้าน + สภาพ + อาการ + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p>ดูขั้นตอนภาพรวมได้ที่ <strong>เช็กราคาก่อนขาย</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
     </div>
-  </section>
+  </main>
 
-  <!-- 5. FAQ SECTION -->
   <section class="section section-muted">
-    <div class="container">
+    <div class="container container-narrow">
       <FAQ
-        items={iphoneFaqs}
+        items={faqs}
         title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อ iPhone"
-        subtitle="ข้อสงสัยเกี่ยวกับรุ่น แบตเตอรี่ ประวัติซ่อม กล่อง และ Apple ID"
       />
     </div>
   </section>
+
 </BaseLayout>
 
 <style>
-  /* Hero */
-  .ip-hero-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2rem;
-    text-align: center;
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
   }
 
-  .ip-badge {
-    margin-bottom: 1rem;
-  }
-
-  .ip-title {
-    font-size: 2.15rem;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
-
-  @media (min-width: 768px) {
-    .ip-title {
-      font-size: 2.65rem;
-    }
-  }
-
-  .ip-subtitle {
-    font-size: 1.15rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin-bottom: 0;
-  }
-
-  /* Steps Grid (3-10) */
-  .ip-steps-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .ip-steps-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .ip-steps-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  .ip-step-card {
-    padding: 1.75rem 1.5rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .ip-step-num {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--color-accent);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-
-  .ip-step-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
-  }
-
-  .ip-step-card p {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    line-height: 1.55;
-    margin: 0;
-  }
-
-  .ip-step-list {
-    margin: 0.5rem 0 0 1.25rem;
-    padding: 0;
-    font-size: 0.92rem;
-    color: var(--color-text-muted);
-    line-height: 1.5;
-  }
-
-  .ip-step-list li {
-    margin-bottom: 0.25rem;
-  }
-
-  /* Provincial Card */
-  .provincial-card {
-    padding: 2.5rem 2rem;
+  .prose-content {
     background-color: #ffffff;
-  }
-
-  .provincial-card h2 {
-    font-size: 1.65rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
-
-  .provincial-formula {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    background-color: var(--color-bg-subtle);
     border: 1px solid var(--color-border);
-    padding: 0.85rem 1.25rem;
-    border-radius: var(--radius-md);
-    margin: 1rem 0 1.25rem 0;
-    text-align: center;
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
   }
 
-  .provincial-note {
-    background-color: var(--color-bg-subtle);
-    padding: 1rem 1.25rem;
-    border-radius: var(--radius-md);
-    color: var(--color-text-muted);
-    font-size: 0.92rem;
-    line-height: 1.6;
-    margin-top: 1.25rem;
-    margin-bottom: 0;
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
   }
 
-  /* Intake Card */
-  .intake-card {
-    padding: 2.75rem 2rem;
-    text-align: center;
-    background-color: #ffffff;
-  }
-
-  .intake-card h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.75rem;
+  .prose-content h1 {
+    font-size: 2.15rem;
     color: var(--color-primary);
-  }
-
-  .intake-spec-box {
-    font-size: 1.15rem;
-    color: var(--color-primary);
-    background-color: var(--color-accent-light);
-    border: 1px solid #fde68a;
-    padding: 0.85rem 1.25rem;
-    border-radius: var(--radius-md);
-    margin: 1rem auto 1.25rem auto;
-    max-width: 720px;
-  }
-
-  .cta-buttons-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    line-height: 1.3;
+    margin-top: 0;
     margin-bottom: 1.5rem;
   }
 
-  .intake-phone {
-    border-color: var(--color-border);
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .intake-helper {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    max-width: 620px;
-    margin: 0 auto 1.25rem auto;
-    line-height: 1.6;
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
   }
 
-  .intake-links-footer {
-    border-top: 1px solid var(--color-border);
-    padding-top: 1.25rem;
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
-  .intake-links-footer a {
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
     color: var(--color-accent);
     font-weight: 600;
     text-decoration: underline;
   }
 
-  .intake-motto {
-    font-size: 1.15rem;
+  .prose-content a:hover {
     color: var(--color-accent-hover);
-    background-color: var(--color-accent-light);
-    border: 1px solid #fde68a;
-    padding: 0.75rem 1.25rem;
-    border-radius: var(--radius-md);
-    max-width: 480px;
-    margin: 1.25rem auto 0 auto;
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .data-table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .data-table tr:nth-child(even) {
+    background-color: #fafbfc;
   }
 </style>

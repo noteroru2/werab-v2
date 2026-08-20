@@ -1,79 +1,701 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import TrustBar from '../components/TrustBar.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
 import FAQ from '../components/FAQ.astro';
-import RelatedLinks from '../components/RelatedLinks.astro';
-import CTA from '../components/CTA.astro';
-import { resolveSeo } from '../lib/seo/resolve';
-import { getInternalLinks } from '../lib/seo/internal-links';
 
-const seo = resolveSeo('/รับซื้อ-server/');
+const pageTitle = "รับซื้อ Server มือสอง เซิร์ฟเวอร์องค์กร เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อ Server มือสองและเซิร์ฟเวอร์องค์กร ประเมินจากรุ่น CPU RAM ECC Storage RAID Controller Network PSU สภาพและอุปกรณ์ ส่งสเปกกับรูปเช็กราคาก่อนขาย";
+
 const breadcrumbs = [
-  { name: 'หมวดหมู่รับซื้อ', url: '/รับซื้อ/' },
-  { name: 'รับซื้อ Server องค์กร', url: '/รับซื้อ-server/' }
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อ Server",
+    "url": "/รับซื้อ-server/"
+  }
 ];
-const internalLinks = getInternalLinks(seo);
 
 const faqs = [
   {
-    question: 'รับซื้อ Server ประเภทใดบ้าง?',
-    answer: 'เรารับซื้อ Rack Server (1U, 2U, 4U), Tower Server, Blade Server, SAN/NAS Storage, Network Switch แบรนด์ Dell PowerEdge, HPE ProLiant, Lenovo ThinkSystem, Cisco, Synology'
+    "question": "Server มือสองต้องส่งข้อมูลอะไรเพื่อเช็กราคา?",
+    "answer": "ควรส่ง Brand, Model, CPU, RAM, Storage, RAID Controller, Network Card, PSU, จำนวน และรูปเครื่อง หากมีหลาย Configuration ควรแยกข้อมูลแต่ละกลุ่ม"
   },
   {
-    question: 'มีบริการเข้าตรวจประเมินหน้างานและขนย้ายสำหรับองค์กรไหม?',
-    answer: 'เรามีทีมงานพร้อมเข้าประเมินและวางแผนขนย้ายอุปกรณ์จากห้องเซิร์ฟเวอร์หรือ Data Center โดยตรง พร้อมกระบวนการทำลายข้อมูลในฮาร์ดดิสก์อย่างปลอดภัย'
+    "question": "Server ไม่มี HDD หรือ SSD ยังขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินได้ ควรแจ้งว่าไม่รวม Storage และระบุว่า Drive Tray หรือ Caddy ยังอยู่หรือไม่ ราคาจะพิจารณาจาก Hardware ที่รวมขายจริง"
+  },
+  {
+    "question": "Server เปิดไม่ติดหรือมี Hardware Error ยังขายได้ไหม?",
+    "answer": "บางกรณีสามารถส่งมาประเมินตามสภาพได้ ควรแจ้ง Model, Configuration, อาการ, Error Code หรือไฟสถานะ และประวัติซ่อมเท่าที่ทราบ"
+  },
+  {
+    "question": "Server มีข้อมูลบริษัทอยู่ใน HDD ต้องทำอย่างไร?",
+    "answer": "ควรให้เจ้าของข้อมูลหรือผู้รับผิดชอบระบบกำหนดวิธี Backup ล้างข้อมูล หรือเก็บ Drive ไว้ก่อนขาย หากยังไม่พร้อมสามารถขอประเมิน Server โดยไม่รวม Storage ได้ และไม่ควรส่ง Password หรือข้อมูลลับเพื่อขอราคา"
+  },
+  {
+    "question": "มี Server หลายเครื่องจากบริษัทประเมินอย่างไร?",
+    "answer": "ควรจัดรายการตาม Model, CPU, RAM, Storage, Controller, จำนวนและสภาพ หาก Configuration ต่างกันควรแยกแต่ละกลุ่ม เพื่อให้ประเมินจากอุปกรณ์ที่มีอยู่จริงได้ชัดเจนขึ้น"
   }
 ];
 ---
 
 <BaseLayout
-  title={seo.title}
-  description={seo.description}
+  title={pageTitle}
+  description={pageDescription}
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <Breadcrumb items={breadcrumbs} />
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
 
-  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+  <main class="content-container">
     <div class="container container-narrow">
-      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">ENTERPRISE IT & SERVER</span>
-      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
-      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
-        บริการรับซื้อเซิร์ฟเวอร์ สตอเรจ และอุปกรณ์ห้อง Data Center สำหรับองค์กรและ B2B พร้อมบริการจัดการขนย้าย
-      </p>
-    </div>
-  </section>
-
-  <TrustBar />
-
-  <section class="section">
-    <div class="container container-narrow">
-      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2.5rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">บริการรับซื้ออุปกรณ์ไอทีระดับองค์กร (B2B Buyback)</h2>
-        <p>เราพร้อมรองรับการปลดระวางอุปกรณ์ไอที (IT Asset Disposition) ประเมินราคายกชุด:</p>
+      <article class="prose-content">
+        <h1>รับซื้อ Server มือสอง เช็กสเปก อุปกรณ์ และสภาพก่อนขาย</h1>
+        <p>มี Server มือสองจากบริษัท สำนักงาน หรือระบบเดิมที่เลิกใช้งาน แต่ยังไม่แน่ใจว่าควรแจ้งข้อมูลอะไรเพื่อประเมินราคา?</p>
+        <p>Server ต้องดูรายละเอียดมากกว่าชื่อรุ่นเพียงอย่างเดียว เพราะเครื่องรุ่นเดียวกันอาจติดตั้ง <strong>CPU, RAM, Storage, RAID Controller, Network Card, Power Supply และอุปกรณ์ภายใน</strong> ต่างกันมาก</p>
+        <p>ก่อนขายควรเริ่มจากส่ง:</p>
+        <p><strong>Brand + Model + Service Tag/Serial ที่ไม่ใช่ข้อมูลลับ + CPU + RAM + Storage + Controller + รูปเครื่อง + สภาพ</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>Server แบบไหนส่งมาประเมินได้</h2>
+        <p>สามารถส่งข้อมูล Server มือสองหลายประเภทมาสอบถามได้ เช่น</p>
         <ul>
-          <li><strong>Rack & Tower Servers</strong>: Dell EMC PowerEdge, HPE ProLiant Gen9/Gen10/Gen11, Lenovo ThinkSystem</li>
-          <li><strong>Storage & SAN</strong>: Dell PowerStore / Unity, HPE MSA / 3PAR, Synology, QNAP Enterprise</li>
-          <li><strong>Network Switches & Routers</strong>: Cisco Catalyst, Nexus, HPE Aruba, Ubiquiti UniFi</li>
-          <li><strong>มาตรฐานความปลอดภัยของข้อมูล</strong>: บริการ Data Sanitization สำหรับ HDD / SSD ระดับองค์กร</li>
+        <li>Rack Server</li>
+        <li>Tower Server</li>
+        <li>Enterprise Server</li>
+        <li>Server สำหรับสำนักงาน</li>
+        <li>File Server</li>
+        <li>Application Server</li>
+        <li>Virtualization Server</li>
+        <li>Server ที่เลิกใช้งานจากระบบเดิม</li>
+        <li>Server ที่ถอด Storage ออกแล้ว</li>
+        <li>Server ที่เพิ่ม RAM หรือ Storage ภายหลัง</li>
+        <li>Server ที่มีหลาย CPU</li>
+        <li>Server ที่มีหลาย Power Supply</li>
+        <li>Server ที่มีอุปกรณ์เสริมเฉพาะ</li>
+        <li>Server หลายเครื่องจากบริษัทหรือองค์กร</li>
+        <li>Server ที่มีอาการบางประเภท</li>
+        <li>Server ที่ยังไม่ได้ทดสอบ</li>
         </ul>
-      </div>
+        <p>การประเมินต้องดูรุ่น Configuration และสภาพจริงของแต่ละเครื่อง</p>
+        <hr class="section-divider" />
+        <h2>ก่อนขายต้องรู้ Brand และ Model ให้ชัด</h2>
+        <p>Server แต่ละตระกูลมีหลาย Generation และหลาย Configuration</p>
+        <p>ข้อมูลที่ควรหา เช่น</p>
+        <ul>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>Generation</li>
+        <li>Form Factor</li>
+        <li>Service Tag หรือ Serial Number หากใช้ตรวจรุ่นได้และไม่เกี่ยวข้องกับข้อมูลบัญชี</li>
+        <li>รุ่น Chassis</li>
+        <li>จำนวน Bay</li>
+        <li>Configuration ปัจจุบัน</li>
+        </ul>
+        <p>ตัวอย่างแบรนด์ที่พบในตลาด เช่น</p>
+        <ul>
+        <li>Dell</li>
+        <li>HPE</li>
+        <li>Lenovo</li>
+        <li>Cisco</li>
+        <li>Supermicro</li>
+        <li>Fujitsu</li>
+        <li>IBM รุ่นเก่า</li>
+        <li>และแบรนด์อื่น</li>
+        </ul>
+        <p>ไม่ควรประเมินจากคำว่า “Server Dell” หรือ “Server HP” เพียงอย่างเดียว</p>
+        <hr class="section-divider" />
+        <h2>Rack Server กับ Tower Server ควรแยกให้ชัด</h2>
+        <p>Server อาจมีรูปแบบตัวเครื่องต่างกัน</p>
+        <h3>Rack Server</h3>
+        <p>มักติดตั้งใน Rack และควรดูข้อมูลเพิ่ม เช่น</p>
+        <ul>
+        <li>ขนาด 1U, 2U หรือรูปแบบอื่น</li>
+        <li>Rail</li>
+        <li>Front Bezel</li>
+        <li>จำนวน Drive Bay</li>
+        <li>Power Supply</li>
+        <li>Network Interface</li>
+        </ul>
+        <h3>Tower Server</h3>
+        <p>รูปทรงคล้ายเครื่อง Tower แต่ Hardware และระบบภายในออกแบบสำหรับงาน Server</p>
+        <p>ควรแจ้ง Model ให้ชัดเพื่อไม่ให้สับสนกับ Desktop หรือ Workstation</p>
+        <hr class="section-divider" />
+        <h2>Server ต่างจากคอมพิวเตอร์มือสองทั่วไปอย่างไร</h2>
+        <p>หน้า <code>/รับซื้อคอม/</code> ใช้กับ Desktop, Gaming PC และคอมประกอบทั่วไปเป็นหลัก</p>
+        <p>ส่วนหน้า <code>/รับซื้อ-server/</code> ใช้กับระบบ Server ที่มีลักษณะเฉพาะ เช่น</p>
+        <ul>
+        <li>Xeon หรือ CPU สำหรับ Server</li>
+        <li>ECC Memory</li>
+        <li>RAID Controller</li>
+        <li>Hot-Swap Drive Bay</li>
+        <li>Redundant Power Supply</li>
+        <li>Management Interface</li>
+        <li>Enterprise Network Card</li>
+        <li>Rack Chassis</li>
+        <li>Hardware Configuration หลายรูปแบบ</li>
+        </ul>
+        <p>จึงควรแยก Intent และข้อมูลการประเมินออกจากคอมพิวเตอร์ทั่วไป</p>
+        <hr class="section-divider" />
+        <h2>CPU เป็นข้อมูลสำคัญของ Server</h2>
+        <p>ควรแจ้งรุ่น CPU เต็มถ้าทราบ เช่น</p>
+        <ul>
+        <li>Intel Xeon E Series</li>
+        <li>Intel Xeon Silver</li>
+        <li>Intel Xeon Gold</li>
+        <li>Intel Xeon รุ่นอื่น</li>
+        <li>AMD EPYC</li>
+        <li>CPU สำหรับ Server รุ่นอื่น</li>
+        </ul>
+        <p>และควรแจ้ง:</p>
+        <ul>
+        <li>จำนวน CPU ที่ติดตั้ง</li>
+        <li>รุ่นของแต่ละ CPU</li>
+        <li>จำนวน Core ถ้าทราบ</li>
+        <li>เครื่องรองรับหลาย Socket หรือไม่</li>
+        <li>CPU ถูกถอดออกบางตัวหรือไม่</li>
+        </ul>
+        <p>Server Chassis เดียวกันอาจมี Configuration CPU ต่างกันมาก จึงไม่ควรใช้ราคา Chassis อย่างเดียวเป็นฐาน</p>
+        <hr class="section-divider" />
+        <h2>Server มี CPU สองตัวต้องแจ้งทั้งสองตัวไหม</h2>
+        <p>ควรแจ้ง</p>
+        <p>ตัวอย่าง:</p>
+        <p><strong>CPU: Xeon Silver รุ่น... × 2</strong></p>
+        <p>หากเครื่องรองรับ Dual CPU แต่ติดตั้งเพียง 1 ตัว ควรแจ้งว่า:</p>
+        <p><strong>ติดตั้ง CPU 1 ตัว</strong></p>
+        <p>ไม่ควรสรุปว่ามี 2 CPU เพียงเพราะ Mainboard มี 2 Socket</p>
+        <hr class="section-divider" />
+        <h2>RAM Server ต้องดูอะไร</h2>
+        <p>RAM เป็นอีกส่วนที่มีผลต่อ Configuration</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>ความจุรวม</li>
+        <li>จำนวนแถว</li>
+        <li>ความจุต่อแถว</li>
+        <li>DDR Generation</li>
+        <li>ECC หรือไม่ถ้าทราบ</li>
+        <li>Registered / RDIMM / LRDIMM ถ้าทราบ</li>
+        <li>ความเร็ว</li>
+        <li>มี Slot ว่างหรือไม่</li>
+        </ul>
+        <p>ตัวอย่าง:</p>
+        <p><strong>RAM 128GB ECC — 32GB × 4</strong></p>
+        <p>หากไม่ทราบรายละเอียดทั้งหมด ให้แจ้งความจุรวมและถ่ายรูป Label ของ RAM เท่าที่ทำได้อย่างปลอดภัย</p>
+        <hr class="section-divider" />
+        <h2>ECC RAM มีผลต่อการประเมินไหม</h2>
+        <p>มีผลใน Server หลายประเภท เพราะประเภท RAM ต้องเข้ากันกับ Platform และ Configuration ของเครื่อง</p>
+        <p>แต่ไม่ควรสรุปจากรูปลักษณ์เพียงอย่างเดียว</p>
+        <p>หากไม่แน่ใจ ให้ส่ง:</p>
+        <ul>
+        <li>Model Server</li>
+        <li>รูป RAM</li>
+        <li>Part Number</li>
+        <li>ข้อมูลจาก BIOS หรือระบบที่อ่านได้</li>
+        </ul>
+        <p>เพื่อใช้ประกอบการตรวจรุ่น</p>
+        <hr class="section-divider" />
+        <h2>Storage ต้องแจ้งทั้งจำนวนและประเภท</h2>
+        <p>Server อาจติดตั้ง Storage หลายลูก</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>SSD หรือ HDD</li>
+        <li>SAS / SATA / NVMe ถ้าทราบ</li>
+        <li>ความจุต่อ Drive</li>
+        <li>จำนวน Drive</li>
+        <li>มี Tray/Caddy หรือไม่</li>
+        <li>Drive ถูกถอดออกบางส่วนหรือไม่</li>
+        <li>สถานะการทำงานถ้าทราบ</li>
+        </ul>
+        <p>ตัวอย่าง:</p>
+        <p><strong>SAS 1.2TB × 4 พร้อม Caddy</strong></p>
+        <p>หรือ</p>
+        <p><strong>ขายเครื่องไม่รวม Drive</strong></p>
+        <p>ต้องประเมินจากอุปกรณ์ที่ขายจริง</p>
+        <hr class="section-divider" />
+        <h2>Server ไม่มี HDD หรือ SSD ยังขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>Server ที่ถอด Storage ออกแล้วควรแจ้งชัดว่า:</p>
+        <p><strong>ไม่รวม Storage</strong></p>
+        <p>และควรแจ้งว่า Drive Tray หรือ Caddy ยังอยู่หรือถูกถอดไปด้วย</p>
+        <p>Chassis, CPU, RAM, Controller, PSU และอุปกรณ์อื่นยังสามารถเป็นส่วนหนึ่งของการประเมินได้</p>
+        <hr class="section-divider" />
+        <h2>ข้อมูลใน Server ต้องจัดการก่อนขายอย่างไร</h2>
+        <p>Server มักมีข้อมูลบริษัท ระบบงาน ฐานข้อมูล หรือข้อมูลภายในองค์กรอยู่ใน Storage</p>
+        <p>ก่อนขายควรตัดสินใจให้ชัดว่า:</p>
+        <ul>
+        <li>จะเก็บ Drive ไว้</li>
+        <li>จะ Backup ข้อมูล</li>
+        <li>จะล้างข้อมูลตามนโยบายองค์กร</li>
+        <li>หรือจะขาย Storage รวมด้วย</li>
+        </ul>
+        <p>หากยังไม่พร้อมจัดการข้อมูล สามารถขอประเมินตัว Server โดย:</p>
+        <p><strong>ไม่รวม Storage</strong></p>
+        <p>ได้</p>
+        <p>ไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>Root Password</li>
+        <li>Domain Credential</li>
+        <li>Administrator Password</li>
+        <li>Encryption Key</li>
+        <li>Recovery Key</li>
+        <li>API Key</li>
+        <li>ข้อมูลลูกค้า</li>
+        <li>ข้อมูลลับของบริษัท</li>
+        </ul>
+        <p>เพื่อขอราคาประเมินเบื้องต้น</p>
+        <hr class="section-divider" />
+        <h2>RAID Controller มีผลต่อราคาไหม</h2>
+        <p>มีผลใน Server หลายรุ่น</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>รุ่น Controller</li>
+        <li>มี Cache หรือไม่ถ้าทราบ</li>
+        <li>มี Battery/Cache Protection Module หรือไม่</li>
+        <li>จำนวน Drive ที่เชื่อมต่อ</li>
+        <li>Controller เดิมยังอยู่หรือถูกถอดออก</li>
+        <li>มีอาการ Error หรือไม่</li>
+        </ul>
+        <p>ไม่ควรลบ RAID Configuration หรือ Initialize Drive เพียงเพื่อถามราคา หากยังมีข้อมูลที่ต้องเก็บรักษา</p>
+        <hr class="section-divider" />
+        <h2>RAID ไม่ใช่การสำรองข้อมูลเสมอไป</h2>
+        <p>หาก Server ยังมีข้อมูลสำคัญ ไม่ควรถือว่ามี RAID แล้วข้อมูลจะปลอดภัยเสมอ</p>
+        <p>ก่อนเปลี่ยน Configuration, ถอด Drive หรือ Initialize Array ควรให้ผู้รับผิดชอบระบบขององค์กรตรวจสอบข้อมูลก่อน</p>
+        <p>การเช็กราคาตัวเครื่องไม่จำเป็นต้องเปลี่ยน RAID Configuration</p>
+        <hr class="section-divider" />
+        <h2>Network Card และ Interface ควรแจ้งไหม</h2>
+        <p>สำหรับ Server ที่มี Network Configuration พิเศษควรแจ้ง เช่น</p>
+        <ul>
+        <li>1GbE</li>
+        <li>10GbE</li>
+        <li>25GbE หรือประเภทอื่น</li>
+        <li>SFP/SFP+ Adapter</li>
+        <li>Fibre Channel Card</li>
+        <li>Add-on NIC</li>
+        <li>Management Port</li>
+        </ul>
+        <p>หากมี Card เสริม ควรถ่ายรูปหรือแจ้ง Part Number</p>
+        <p>อุปกรณ์เหล่านี้อาจมีมูลค่าแยกจาก Configuration พื้นฐานของเครื่อง</p>
+        <hr class="section-divider" />
+        <h2>Power Supply ต้องดูจำนวนและกำลังไฟ</h2>
+        <p>Server หลายรุ่นใช้ Redundant PSU</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>จำนวน PSU</li>
+        <li>Watt</li>
+        <li>รุ่นหรือ Part Number</li>
+        <li>มีครบตาม Bay หรือไม่</li>
+        <li>มีอาการหรือไฟ Error หรือไม่</li>
+        </ul>
+        <p>ตัวอย่าง:</p>
+        <p><strong>PSU 750W × 2</strong></p>
+        <p>หากเครื่องรองรับ 2 PSU แต่มีเพียงตัวเดียว ต้องแจ้งตามสภาพจริง</p>
+        <hr class="section-divider" />
+        <h2>Rail และ Front Bezel มีผลไหม</h2>
+        <p>มีผลต่อความครบของ Rack Server</p>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>มี Rail หรือไม่</li>
+        <li>Rail ครบคู่หรือไม่</li>
+        <li>มี Front Bezel หรือไม่</li>
+        <li>มีกุญแจ Bezel หรือไม่ถ้ามี</li>
+        <li>มี Cable Management Arm หรือไม่</li>
+        <li>มี Rack Accessories อื่นหรือไม่</li>
+        </ul>
+        <p>ไม่มีก็ยังสามารถส่งมาประเมินได้ แต่ควรแจ้งสิ่งที่มีจริง</p>
+        <hr class="section-divider" />
+        <h2>Management Interface ต้องแจ้งข้อมูลอะไร</h2>
+        <p>Server บางรุ่นมีระบบจัดการระยะไกล เช่น Management Interface เฉพาะของผู้ผลิต</p>
+        <p>ควรแจ้งเพียง:</p>
+        <ul>
+        <li>ระบบ Management มีหรือไม่</li>
+        <li>เข้าใช้งานได้หรือไม่ถ้าทดสอบอย่างถูกต้อง</li>
+        <li>มี License เพิ่มเติมหรือไม่ถ้าตรวจสอบได้</li>
+        </ul>
+        <p>ไม่ควรส่ง Username, Password หรือ Credential ของระบบ Management เพื่อขอราคา</p>
+        <p>ก่อนส่งมอบจริง เจ้าของควรจัดการบัญชีและการตั้งค่าที่เกี่ยวข้องตามนโยบายของตนเอง</p>
+        <hr class="section-divider" />
+        <h2>BIOS หรือ Hardware Inventory ช่วยประเมินได้ไหม</h2>
+        <p>หาก Server ยังเปิดได้ ข้อมูลจาก BIOS หรือ Hardware Inventory สามารถช่วยระบุ Configuration ได้ เช่น</p>
+        <ul>
+        <li>CPU</li>
+        <li>RAM</li>
+        <li>Storage</li>
+        <li>Controller</li>
+        <li>NIC</li>
+        <li>Firmware Information</li>
+        <li>Hardware Status</li>
+        </ul>
+        <p>สามารถถ่ายรูปหน้าจอส่วน Hardware Summary ที่ไม่มีข้อมูลลับประกอบการประเมินได้</p>
+        <p>ไม่จำเป็นต้องส่งภาพหน้าจอที่มีข้อมูลเครือข่ายหรือ Credential ภายในองค์กร</p>
+        <hr class="section-divider" />
+        <h2>Server เปิดไม่ติดยังประเมินได้ไหม</h2>
+        <p>บางกรณีสามารถส่งข้อมูลมาประเมินตามสภาพได้</p>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>CPU</li>
+        <li>RAM</li>
+        <li>Storage ที่ยังอยู่</li>
+        <li>Controller</li>
+        <li>PSU</li>
+        <li>อาการ</li>
+        <li>ไฟสถานะ</li>
+        <li>Error Code ถ้ามี</li>
+        <li>เคยซ่อมหรือไม่</li>
+        </ul>
+        <p>Server ที่ไม่สามารถทดสอบได้มีความไม่แน่นอนสูงกว่าเครื่องที่ตรวจ Configuration และ Hardware Status ได้ครบ</p>
+        <hr class="section-divider" />
+        <h2>มีไฟ Error ควรแจ้งอย่างไร</h2>
+        <p>หากมี:</p>
+        <ul>
+        <li>Warning LED</li>
+        <li>PSU Error</li>
+        <li>Fan Error</li>
+        <li>Memory Error</li>
+        <li>Storage Error</li>
+        <li>Controller Error</li>
+        <li>Hardware Alert</li>
+        </ul>
+        <p>ควรถ่ายรูปและแจ้งข้อความหรือ Code ที่เห็น</p>
+        <p>ไม่ควรลบ Log หรือ Reset Configuration เพียงเพื่อให้สถานะ Error หายก่อนประเมิน</p>
+        <p>ข้อมูล Error ช่วยอธิบายสภาพจริงของเครื่องได้</p>
+        <hr class="section-divider" />
+        <h2>Server มีเสียงพัดลมดังผิดปกติยังประเมินได้ไหม</h2>
+        <p>สามารถส่งข้อมูลมาประเมินได้</p>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>พัดลมดังตั้งแต่เปิด</li>
+        <li>ดังหลัง Boot</li>
+        <li>มี Fan Error</li>
+        <li>มีพัดลมบางตัวไม่หมุน</li>
+        <li>เครื่องเคยเปลี่ยน Fan</li>
+        <li>มี Hardware Error อื่นร่วมด้วยหรือไม่</li>
+        </ul>
+        <p>Server บางรุ่นมีระดับเสียงสูงตามลักษณะการใช้งานอยู่แล้ว จึงไม่ควรสรุปว่าเสียจากความดังเพียงอย่างเดียว</p>
+        <hr class="section-divider" />
+        <h2>Server เคยซ่อมหรือเปลี่ยนอะไหล่ต้องแจ้งไหม</h2>
+        <p>ควรแจ้งหากทราบ</p>
+        <p>เช่นเคย:</p>
+        <ul>
+        <li>เปลี่ยน Mainboard</li>
+        <li>เปลี่ยน PSU</li>
+        <li>เปลี่ยน Fan</li>
+        <li>เปลี่ยน Backplane</li>
+        <li>เปลี่ยน RAID Controller</li>
+        <li>เปลี่ยน Drive</li>
+        <li>เพิ่ม RAM</li>
+        <li>เปลี่ยน CPU</li>
+        <li>ซ่อมระบบ Power</li>
+        <li>ซ่อมอุปกรณ์ภายใน</li>
+        </ul>
+        <p>ประวัติซ่อมไม่ได้หมายความว่าจะขายไม่ได้ แต่ช่วยให้ประเมิน Configuration และความเสี่ยงได้ตรงขึ้น</p>
+        <hr class="section-divider" />
+        <h2>Server เก่ามากยังส่งมาประเมินได้ไหม</h2>
+        <p>สามารถส่งข้อมูลมาดูก่อนได้</p>
+        <p>แต่ Server รุ่นเก่าอาจมีปัจจัย เช่น</p>
+        <ul>
+        <li>ประสิทธิภาพต่อพลังงานต่ำกว่า Platform ใหม่</li>
+        <li>ใช้ RAM หรือ Storage Generation เก่า</li>
+        <li>Firmware และ Software Support จำกัด</li>
+        <li>อุปกรณ์ทดแทนหาได้ยากขึ้น</li>
+        <li>ความต้องการในตลาดลดลง</li>
+        <li>ค่าไฟและต้นทุนการใช้งานสูงเมื่อเทียบกับประสิทธิภาพ</li>
+        </ul>
+        <p>ดังนั้นราคาตอนซื้อใหม่ไม่ใช่ฐานที่เหมาะสมสำหรับประเมินราคาปัจจุบัน</p>
+        <hr class="section-divider" />
+        <h2>Server ที่ถอด RAM หรือ CPU บางส่วนออกแล้วขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>ต้องแจ้ง Configuration ปัจจุบัน ไม่ใช่ Configuration เดิม</p>
+        <p>ตัวอย่าง:</p>
+        <p>เดิมมี:</p>
+        <p><strong>CPU × 2 / RAM 256GB</strong></p>
+        <p>แต่ปัจจุบันเหลือ:</p>
+        <p><strong>CPU × 1 / RAM 64GB</strong></p>
+        <p>ควรใช้ข้อมูลปัจจุบันในการประเมิน</p>
+        <p>ไม่ควรระบุสเปกเดิมโดยไม่บอกว่ามีการถอดอุปกรณ์ออก</p>
+        <hr class="section-divider" />
+        <h2>Server หลายเครื่องควรส่งข้อมูลอย่างไร</h2>
+        <p>หากมีหลายเครื่องควรจัดรายการ</p>
+        <div class="table-responsive">
+        <table class="data-table">
+        <thead><tr><th>รุ่น</th><th>CPU</th><th>RAM</th><th>Storage</th><th>จำนวน</th><th>สภาพ</th></tr></thead>
+        <tbody>
+        <tr><td>รุ่น...</td><td>Xeon... × 2</td><td>128GB</td><td>ไม่รวม Drive</td><td>4</td><td>เปิดติด</td></tr>
+        <tr><td>รุ่น...</td><td>Xeon...</td><td>64GB</td><td>SAS × 4</td><td>3</td><td>มี Error</td></tr>
+        <tr><td>รุ่น...</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>ไม่มี</td><td>2</td><td>ยังไม่ได้ทดสอบ</td></tr>
+        </tbody></table></div>
+        <p>หาก Configuration ต่างกันมาก ควรแยกเป็นแต่ละกลุ่ม</p>
+        <p>ไม่ควรรวมหลาย Configuration ไว้ในราคาหรือสเปกเดียว</p>
+        <hr class="section-divider" />
+        <h2>Server จากบริษัทหรือองค์กรควรเตรียมอะไร</h2>
+        <p>หากเป็นการปลดระวางหลายเครื่อง ควรจัดข้อมูลอย่างน้อย:</p>
+        <ol>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>จำนวน</li>
+        <li>CPU</li>
+        <li>RAM</li>
+        <li>Storage</li>
+        <li>RAID Controller</li>
+        <li>Network Card</li>
+        <li>PSU</li>
+        <li>สภาพ</li>
+        <li>อุปกรณ์ที่รวม</li>
+        <li>Storage รวมขายหรือไม่</li>
+        </ol>
+        <p>หากมี Asset Tag ภายในบริษัท สามารถใช้จัดรายการขององค์กรได้ แต่ไม่จำเป็นต้องเผยแพร่ข้อมูลภายในที่ไม่เกี่ยวข้องกับการประเมิน</p>
+        <hr class="section-divider" />
+        <h2>ควรขาย Server ทั้งเครื่องหรือแยกอะไหล่</h2>
+        <p>ขึ้นอยู่กับ Configuration และความสะดวก</p>
+        <h3>ขายทั้งเครื่อง</h3>
+        <p>เหมาะเมื่อ:</p>
+        <ul>
+        <li>Configuration ยังครบ</li>
+        <li>ต้องการจัดการ Server ทั้งชุด</li>
+        <li>ไม่ต้องการถอด Hardware</li>
+        <li>มีหลายเครื่อง</li>
+        <li>ต้องการลดขั้นตอนในการแยกชิ้น</li>
+        </ul>
+        <h3>แยกชิ้น</h3>
+        <p>บางกรณีอาจพิจารณาอุปกรณ์ที่มีตลาดแยก เช่น</p>
+        <ul>
+        <li>CPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>HDD</li>
+        <li>RAID Controller</li>
+        <li>NIC</li>
+        <li>PSU</li>
+        <li>Rail</li>
+        </ul>
+        <p>แต่ควรประเมินก่อนว่าของที่เหลือหลังถอดอุปกรณ์สำคัญยังมีมูลค่าและจัดการได้อย่างไร</p>
+        <hr class="section-divider" />
+        <h2>Server เสียหนักควรดูเป็นซากคอมพิวเตอร์หรือ Server</h2>
+        <p>หากยังสามารถระบุได้ว่าเป็น Enterprise Server และ Configuration หลักยังอยู่ การเริ่มประเมินจากหน้า Server ช่วยให้เห็นอุปกรณ์เฉพาะของ Server ได้ครบกว่า</p>
+        <p>แต่หากเหลือเป็นชิ้นส่วนทั่วไปจำนวนมาก ไม่มี Configuration เดิม หรือสภาพเป็นชุดอะไหล่เสีย อาจต้องพิจารณามูลค่าคงเหลือในลักษณะเดียวกับซากคอมพิวเตอร์</p>
+        <p>หลักสำคัญคือประเมินจากของที่เหลือและสถานะจริง ไม่ใช่ชื่อเดิมของระบบเพียงอย่างเดียว</p>
+        <hr class="section-divider" />
+        <h2>ปัจจัยหลักที่ใช้ประเมิน Server มือสอง</h2>
+        <h3>Brand และ Model</h3>
+        <p>ใช้ระบุ Platform และ Generation</p>
+        <h3>Generation</h3>
+        <p>Server ชื่อ Series เดียวกันอาจมีหลาย Generation</p>
+        <h3>CPU</h3>
+        <p>ดูรุ่น จำนวน และ Platform</p>
+        <h3>RAM</h3>
+        <p>ดูประเภท ความจุ จำนวนและ Configuration</p>
+        <h3>Storage</h3>
+        <p>ดูชนิด ความจุ จำนวน และ Tray/Caddy</p>
+        <h3>RAID Controller</h3>
+        <p>ดูรุ่นและอุปกรณ์ที่ติดตั้ง</p>
+        <h3>Network</h3>
+        <p>NIC หรือ Adapter พิเศษอาจมีมูลค่าเพิ่มเติม</p>
+        <h3>Power Supply</h3>
+        <p>ดูจำนวน Watt และสถานะ</p>
+        <h3>Rail และ Accessories</h3>
+        <p>มีผลต่อความครบสำหรับ Rack Server</p>
+        <h3>Hardware Status</h3>
+        <p>เครื่องที่ตรวจสอบได้กับเครื่องที่ยังไม่ได้ทดสอบมีความไม่แน่นอนต่างกัน</p>
+        <h3>ประวัติซ่อม</h3>
+        <p>ช่วยประเมินความเสี่ยงของ Hardware</p>
+        <h3>Storage และข้อมูล</h3>
+        <p>ต้องแยกความเป็นเจ้าของข้อมูลออกจากมูลค่าของ Hardware</p>
+        <h3>จำนวนเครื่อง</h3>
+        <p>ล็อตหลายเครื่องควรแยกตาม Model และ Configuration</p>
+        <h3>ตลาดของ Platform</h3>
+        <p>ความต้องการของ Server แต่ละ Generation เปลี่ยนแปลงตามเวลา</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา Server ก่อนขาย</h2>
+        <h3>1. ส่ง Brand และ Model</h3>
+        <p>แจ้งรุ่นเต็มของเครื่อง</p>
+        <h3>2. ส่งรูป</h3>
+        <p>ถ่าย:</p>
+        <ul>
+        <li>ด้านหน้า</li>
+        <li>ด้านหลัง</li>
+        <li>ด้านบนหรือด้านข้างตามรูปแบบเครื่อง</li>
+        <li>ภายในถ้าเปิดได้อย่างปลอดภัย</li>
+        <li>ป้าย Model</li>
+        <li>จุดตำหนิ</li>
+        <li>อุปกรณ์ที่มี</li>
+        </ul>
+        <h3>3. แจ้ง CPU</h3>
+        <p>ระบุรุ่นและจำนวน CPU</p>
+        <h3>4. แจ้ง RAM</h3>
+        <p>ระบุความจุรวมและจำนวนแถวเท่าที่ทราบ</p>
+        <h3>5. แจ้ง Storage</h3>
+        <p>ระบุประเภท ความจุ จำนวน และรวมขายหรือไม่</p>
+        <h3>6. แจ้ง Controller และ Network</h3>
+        <p>ระบุ RAID Controller และ Network Card ถ้าทราบ</p>
+        <h3>7. แจ้ง PSU และอุปกรณ์</h3>
+        <p>เช่น PSU, Rail, Bezel และอุปกรณ์เสริม</p>
+        <h3>8. แจ้งสภาพและอาการ</h3>
+        <p>เปิดติดหรือไม่ มี Error หรือเคยซ่อมหรือไม่</p>
+        <h3>9. ประเมินเบื้องต้น</h3>
+        <p>พิจารณา Platform, Configuration, สภาพ และความครบของอุปกรณ์ร่วมกัน</p>
+        <h3>10. ตรวจสินค้าและซื้อขาย</h3>
+        <p>ตรวจ Model, Configuration, Hardware และสิ่งที่รวมขายให้ตรงกับข้อมูลที่ใช้ประเมินก่อนดำเนินการซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>อยู่ต่างจังหวัดเริ่มเช็กราคา Server ได้อย่างไร</h2>
+        <p>ไม่จำเป็นต้องขน Server หรือ Rack ออกมาก่อนเพื่อถามราคาเบื้องต้น</p>
+        <p>เริ่มจากส่ง:</p>
+        <p><strong>Brand + Model + CPU + RAM + Storage + Controller + PSU + รูป + จำนวน</strong></p>
+        <p>หากเป็นหลายเครื่องควรจัดเป็นตารางแยกตาม Model และ Configuration</p>
+        <p>จากนั้นจึงค่อยพิจารณาวิธีส่งมอบหรือนัดหมายตามพื้นที่ จำนวน ขนาด น้ำหนัก และความเหมาะสม</p>
+        <p>หน้า <code>/รับซื้อ-server/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคา Server ของคุณ</h2>
+        <p>ส่งข้อมูล:</p>
+        <p><strong>Brand + Model + CPU + RAM + Storage + RAID Controller + Network + PSU + จำนวน</strong></p>
+        <p>พร้อม:</p>
+        <p><strong>รูปด้านหน้า + ด้านหลัง + ป้าย Model + Hardware Configuration + อาการ</strong></p>
+        <p>หากไม่รวม HDD หรือ SSD ให้แจ้งตั้งแต่ต้นว่า:</p>
+        <p><strong>ไม่รวม Storage</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p>ดูขั้นตอนภาพรวมได้ที่ <strong>เช็กราคาก่อนขาย</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
 
-      <ProcessSteps />
-
-      <div style="margin-top: 3.5rem;">
-        <FAQ items={faqs} />
-      </div>
-
-      <RelatedLinks
-        clusterLinks={internalLinks.clusterLinks}
-        parentLink={internalLinks.parentLink}
-        guideLinks={internalLinks.guideLinks}
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการรับซื้อ Server"
       />
     </div>
   </section>
 
-  <CTA />
 </BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .data-table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .data-table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

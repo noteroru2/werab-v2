@@ -15,7 +15,14 @@ const FORBIDDEN_PATTERNS = [
   { pattern: /\b10200\b/, name: 'Bangkok fallback postal code 10200' },
   { pattern: /24\s*ชั่วโมง|ตลอด\s*24\s*ชม|เปิด\s*24/i, name: 'Fake 24/7 opening hours claim' },
   { pattern: /latitude|longitude/i, name: 'Unverified GeoCoordinates schema' },
-  { pattern: /สาขาทั่วประเทศ\s*77\s*จังหวัด|มีสาขาทุกจังหวัด/i, name: 'Exaggerated physical branch claim' }
+  { pattern: /สาขาทั่วประเทศ\s*77\s*จังหวัด|มีสาขาทุกจังหวัด/i, name: 'Exaggerated physical branch claim' },
+  { pattern: /official\s+(JBL|Marshall|Bose|Sony|Dell|HPE|Lenovo|Cisco|Supermicro)\s+partner/i, name: 'Fake official brand partner claim' },
+  { pattern: /official\s+brand\s+authorization|official\s+service\s+center|authorized\s+service\s+center/i, name: 'Fake official brand authorization claim' },
+  { pattern: /certified\s+(enterprise\s+disposal|ITAD)\s+provider/i, name: 'Fake enterprise ITAD / disposal certification claim' },
+  { pattern: /รับประกันล้างเซนเซอร์|รับประกันล้างฝ้า|รับประกันกำจัดรา/i, name: 'Unapproved guaranteed camera repair/cleaning claim' },
+  { pattern: /รับประกันกันน้ำ|รับประกันสภาพกันน้ำ/i, name: 'Unapproved guaranteed waterproof claim' },
+  { pattern: /รับประกันกู้ข้อมูล|รับประกันลบข้อมูล/i, name: 'Unapproved data recovery or destruction guarantee claim' },
+  { pattern: /รับซื้อซากทุกชนิด|รับซื้อทุกชิ้น|รับซื้อ\s*Server\s*ทุก(รุ่น|สภาพ|แบรนด์|องค์กร)/i, name: 'Unapproved universal buyback guarantee claim' }
 ];
 
 const SCAN_DIRS = ['src', 'public'];
