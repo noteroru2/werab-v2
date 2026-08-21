@@ -23,6 +23,7 @@ const AUDIT_SCRIPTS = [
   { name: 'Index Release Gatekeeper Audit', script: 'scripts/index-release-audit.mjs' },
   { name: 'E2 Local Master Map ↔ Runtime Parity Audit', script: 'scripts/e2-parity-audit.mjs' },
   { name: 'Local Content Differentiation Audit', script: 'scripts/local-differentiation-audit.mjs' },
+  { name: 'Content Copy Normalizer Mutation Audit', script: 'scripts/content-copy-mutation-audit.mjs' },
   { name: 'Cutover Blocker Readiness Audit', script: 'scripts/cutover-audit.mjs' }
 ];
 

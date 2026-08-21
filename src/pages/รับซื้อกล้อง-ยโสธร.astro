@@ -1,0 +1,403 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อกล้องยโสธร กล้องมือสอง มีอาการก็เช็กราคาได้ | เรารับซื้อ.com";
+const pageDescription = "รับซื้อกล้องมือสองในยโสธร ทั้ง DSLR Mirrorless Body และ Lens เช็กสภาพ Sensor จอ EVF Shutter Focus รา ฝุ่น อาการเสียและต้นทุนก่อนซ่อมหรือขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อกล้อง",
+    "url": "/รับซื้อกล้อง/"
+  },
+  {
+    "name": "รับซื้อกล้องยโสธร เช็กสภาพและความคุ้มค่าก่อนซ่อมหรือขาย",
+    "url": "/รับซื้อกล้อง-ยโสธร/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "กล้องมีราใน Lens ต้องล้างก่อนขายไหม?",
+    "answer": "ไม่จำเป็นทุกกรณี ควรเช็กราคาตามสภาพก่อนและเปรียบเทียบค่าล้างหรือค่าซ่อมกับมูลค่าที่อาจเพิ่ม ไม่ควรแกะ Lens เองหากไม่มีความชำนาญ"
+  },
+  {
+    "question": "Sensor มีจุดต้องทำความสะอาดก่อนหรือไม่?",
+    "answer": "ควรตรวจให้แน่ใจก่อนว่าจุดสัมพันธ์กับ Sensor หรือ Lens และไม่ควรขัด Sensor ซ้ำหรือใช้สารที่ไม่เหมาะสมเพื่อเตรียมขาย"
+  },
+  {
+    "question": "จอเสียแต่ EVF ใช้งานได้ยังประเมินได้ไหม?",
+    "answer": "ได้ ควรแจ้งอาการของจอและ EVF แยกกัน รวมถึงฟังก์ชันอื่นที่ยังทำงานได้"
+  },
+  {
+    "question": "กล้องเปิดไม่ติดต้องซ่อมก่อนเช็กราคาไหม?",
+    "answer": "ไม่จำเป็น สามารถส่ง Model Lens รูป Battery Charger อาการและประวัติความเสียหายมาประเมินเบื้องต้นก่อน"
+  },
+  {
+    "question": "Battery เสื่อมต้องซื้อใหม่ก่อนขายหรือไม่?",
+    "answer": "ไม่จำเป็นทุกกรณี ควรเปรียบเทียบต้นทุน Battery ใหม่กับมูลค่าที่คาดว่าจะเพิ่มก่อนตัดสินใจ"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อกล้องยโสธร เช็กสภาพและความคุ้มค่าก่อนซ่อมหรือขาย</h1>
+        <p>กล้องที่มีอาการไม่ได้หมายความว่าต้องซ่อมหรือทำความสะอาดก่อนขายทุกตัว</p>
+        <p>หน้า <code>/รับซื้อกล้อง-ยโสธร/</code> รักษา Historical Search Intent:</p>
+        <p><strong>Camera + Yasothon</strong></p>
+        <p>โดยเน้นการแยกว่า:</p>
+        <p><strong>สภาพปัจจุบันเป็นอย่างไร → อะไรยังใช้งานได้ → การซ่อมหรือทำความสะอาดคุ้มก่อนขายหรือไม่</strong></p>
+        <p>ข้อมูลเริ่มต้น:</p>
+        <p><strong>Brand + Model + Lens + รูป + อาการ + Shutter Count ถ้าทราบ + Battery + Charger</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>อยู่ยโสธรไม่จำเป็นต้องซ่อมกล้องก่อนเช็กราคา</h2>
+        <p>หากกล้องมี:</p>
+        <ul>
+        <li>จอเสีย</li>
+        <li>EVF มีอาการ</li>
+        <li>Focus มีปัญหา</li>
+        <li>Sensor มีจุด</li>
+        <li>Lens มีฝ้า</li>
+        <li>Battery เสื่อม</li>
+        <li>ปุ่มเสีย</li>
+        <li>เปิดไม่ติด</li>
+        </ul>
+        <p>สามารถเริ่มจากส่งข้อมูลตามสภาพได้</p>
+        <p>หลังทราบข้อมูลจึงค่อยเปรียบเทียบว่าการซ่อมหรือทำความสะอาดก่อนขายมีความคุ้มค่าหรือไม่</p>
+        <p>หน้านี้ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในทุกพื้นที่ของยโสธร</p>
+        <hr class="section-divider" />
+        <h2>จุดในภาพควรหาสาเหตุก่อนตัดสินใจล้าง Sensor</h2>
+        <p>จุดในภาพอาจสัมพันธ์กับ:</p>
+        <ul>
+        <li>Sensor</li>
+        <li>Lens</li>
+        <li>ฝุ่น</li>
+        <li>คราบ</li>
+        <li>ระบบ Optical</li>
+        <li>สาเหตุอื่น</li>
+        </ul>
+        <p>หากยังไม่แน่ใจ ไม่ควรขัด Sensor ซ้ำหลายครั้ง</p>
+        <p>สามารถแจ้ง:</p>
+        <ul>
+        <li>จุดอยู่ตำแหน่งเดิมหรือไม่</li>
+        <li>เปลี่ยน Lens แล้วจุดยังอยู่หรือไม่</li>
+        <li>เกิดชัดที่ Aperture ใด</li>
+        <li>มีภาพตัวอย่างหรือไม่</li>
+        </ul>
+        <p>ข้อมูลเหล่านี้มีประโยชน์กว่าการพยายามทำความสะอาดโดยไม่มีความชำนาญ</p>
+        <hr class="section-divider" />
+        <h2>Lens มีฝุ่น ฝ้า หรือสงสัยว่ามีราไม่ควรแกะเอง</h2>
+        <p>สามารถตรวจด้วยสายตาและถ่ายรูปตามที่มองเห็น</p>
+        <p>หากสงสัยว่ามี:</p>
+        <ul>
+        <li>ฝุ่น</li>
+        <li>ฝ้า</li>
+        <li>รา</li>
+        <li>คราบ</li>
+        <li>รอย</li>
+        </ul>
+        <p>ควรแจ้งตามสภาพ</p>
+        <p>ไม่ควรถอดชิ้น Lens ภายในออกเพียงเพื่อทำให้ดูดีขึ้นก่อนขาย</p>
+        <p>การแกะอาจสร้างความเสียหายเพิ่มหากไม่มีเครื่องมือหรือประสบการณ์</p>
+        <hr class="section-divider" />
+        <h2>จอเสียกับ EVF เสียไม่ใช่อาการเดียวกัน</h2>
+        <p>ควรตรวจว่า:</p>
+        <ul>
+        <li>จอหลังใช้งานได้หรือไม่</li>
+        <li>Touch ใช้งานได้หรือไม่</li>
+        <li>EVF ขึ้นภาพหรือไม่</li>
+        <li>กล้องยังถ่ายได้หรือไม่</li>
+        <li>Playback ทำงานหรือไม่</li>
+        </ul>
+        <p>หากจอหลังมีปัญหาแต่ EVF ยังใช้ได้ หรือกลับกัน ควรแจ้งแยกให้ชัด</p>
+        <hr class="section-divider" />
+        <h2>Shutter มีอาการควรแจ้งก่อนตัดสินใจซ่อม</h2>
+        <p>อาการที่อาจพบ เช่น:</p>
+        <ul>
+        <li>Error</li>
+        <li>กดถ่ายไม่ทำงาน</li>
+        <li>ภาพบางส่วนผิดปกติ</li>
+        <li>เสียง Shutter ผิดปกติ</li>
+        <li>กล้องดับเมื่อถ่าย</li>
+        </ul>
+        <p>ไม่ควรรีบเปลี่ยน Shutter โดยยังไม่ทราบต้นทุนและมูลค่าของ Body</p>
+        <p>สามารถเช็กราคาตามสภาพก่อนเพื่อเปรียบเทียบความคุ้มค่า</p>
+        <hr class="section-divider" />
+        <h2>Auto Focus มีปัญหาควรลองแยก Body และ Lens</h2>
+        <p>หากมี Lens มากกว่าหนึ่งตัว สามารถสังเกตว่า:</p>
+        <ul>
+        <li>เป็นกับ Lens ทุกตัวหรือไม่</li>
+        <li>เป็นเฉพาะ Lens เดียวหรือไม่</li>
+        <li>Manual Focus ใช้ได้หรือไม่</li>
+        <li>Motor มีเสียงหรือไม่</li>
+        </ul>
+        <p>ไม่จำเป็นต้องถอดหรือแกะกลไก Focus เพื่อหาสาเหตุก่อนขาย</p>
+        <hr class="section-divider" />
+        <h2>Battery เสื่อมควรเปลี่ยนก่อนขายหรือไม่</h2>
+        <p>ไม่จำเป็นทุกกรณี</p>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>Battery ใช้งานได้</li>
+        <li>หมดเร็ว</li>
+        <li>ชาร์จไม่เข้า</li>
+        <li>Battery บวม</li>
+        <li>มี Battery กี่ก้อน</li>
+        <li>เป็นของเดิมหรือของเทียบ</li>
+        </ul>
+        <p>แล้วเปรียบเทียบต้นทุนของ Battery ใหม่กับมูลค่าที่คาดว่าจะเพิ่มขึ้น</p>
+        <p>หาก Battery บวมไม่ควรฝืนใส่กลับเข้า Body หรือชาร์จซ้ำ</p>
+        <hr class="section-divider" />
+        <h2>กล้องเปิดไม่ติดยังเช็กราคาได้</h2>
+        <p>สามารถส่ง:</p>
+        <ul>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>Lens</li>
+        <li>Battery</li>
+        <li>Charger</li>
+        <li>รูป</li>
+        <li>อาการก่อนเสีย</li>
+        <li>เคยตกหรือโดนน้ำหรือไม่</li>
+        <li>ประวัติซ่อม</li>
+        </ul>
+        <p>หากมีกลิ่นไหม้ ความร้อนผิดปกติ หรือร่องรอยของเหลว ไม่ควรทดลองเปิดหรือชาร์จซ้ำหลายครั้ง</p>
+        <hr class="section-divider" />
+        <h2>เคยโดนน้ำหรือความชื้นควรแจ้ง</h2>
+        <p>ความชื้นอาจสัมพันธ์กับหลายส่วน เช่น:</p>
+        <ul>
+        <li>Body</li>
+        <li>Lens</li>
+        <li>Connector</li>
+        <li>Sensor</li>
+        <li>EVF</li>
+        <li>Circuit</li>
+        </ul>
+        <p>ควรแจ้งสิ่งที่ทราบตามจริง</p>
+        <p>ไม่ควรพยายามเปิด Body หรือ Lens เพื่อเป่า/เช็ดภายในเองหากไม่มีความชำนาญ</p>
+        <hr class="section-divider" />
+        <h2>การซ่อมก่อนขายควรคิดจากความคุ้มค่า</h2>
+        <p>ก่อนซ่อมสามารถเปรียบเทียบ:</p>
+        <ol>
+        <li>มูลค่าตามสภาพปัจจุบัน</li>
+        <li>ค่าอะไหล่</li>
+        <li>ค่าแรง</li>
+        <li>ความเสี่ยงจากการซ่อม</li>
+        <li>ระยะเวลา</li>
+        <li>มูลค่าที่คาดว่าจะเพิ่ม</li>
+        </ol>
+        <p>กล้องรุ่นเก่าบางตัวอาจไม่คุ้มกับการซ่อมบางรายการ แม้อาการนั้นจะซ่อมได้</p>
+        <hr class="section-divider" />
+        <h2>อุปกรณ์ไม่ครบไม่จำเป็นต้องซื้อใหม่ก่อน</h2>
+        <p>ควรแจ้งตามจริงว่ามี:</p>
+        <ul>
+        <li>Battery</li>
+        <li>Charger</li>
+        <li>Strap</li>
+        <li>Cap</li>
+        <li>Hood</li>
+        <li>กล่อง</li>
+        <li>คู่มือ</li>
+        <li>Flash</li>
+        <li>อุปกรณ์อื่น</li>
+        </ul>
+        <p>ไม่จำเป็นต้องซื้อของมาเติมชุดโดยยังไม่รู้ว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่</p>
+        <hr class="section-divider" />
+        <h2>Serial Number ไม่จำเป็นต้องเปิดเผยสาธารณะ</h2>
+        <p>เริ่มจาก:</p>
+        <p><strong>Brand + Model + Lens + รูป + อาการ</strong></p>
+        <p>ก่อน</p>
+        <p>หากจำเป็นต้องใช้ Serial ในขั้นตอนตรวจสอบภายหลัง ควรส่งผ่านช่องทางที่เหมาะสม</p>
+        <hr class="section-divider" />
+        <h2>หน้ายโสธรต่างจากหน้ารับซื้อกล้องหลัก</h2>
+        <p>หน้า <a href="/รับซื้อกล้อง/">รับซื้อกล้อง</a> เป็น Broad Camera Money Hub</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อกล้อง-ยโสธร/</code></p>
+        <p>รักษา:</p>
+        <p><strong>Camera + Yasothon</strong></p>
+        <p>โดยมีมุมหลักเรื่อง <strong>สภาพและความคุ้มค่าก่อนซ่อมหรือขาย</strong></p>
+        <p>แต่ไม่ได้เปลี่ยน Primary Intent ให้เป็นหน้าซ่อมกล้อง</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคากล้องที่มีอาการในยโสธร</h2>
+        <h3>1. ส่ง Brand และ Model</h3>
+        <p>ใช้รุ่นเต็ม</p>
+        <h3>2. แจ้ง Lens</h3>
+        <p>รุ่นที่รวมขายหรือใช้ทดสอบ</p>
+        <h3>3. ส่งรูป</h3>
+        <p>Body Lens จอและตำหนิ</p>
+        <h3>4. แจ้งอาการ</h3>
+        <p>ตามที่เกิดขึ้นจริง</p>
+        <h3>5. แจ้ง Shutter</h3>
+        <p>Count หรืออาการถ้าทราบ</p>
+        <h3>6. แจ้ง Sensor / ภาพตัวอย่าง</h3>
+        <p>หากมีจุดหรือคราบ</p>
+        <h3>7. แจ้ง Battery</h3>
+        <p>จำนวนและสภาพ</p>
+        <h3>8. แจ้งประวัติ</h3>
+        <p>ตก น้ำ ความชื้น หรือซ่อม</p>
+        <h3>9. เปรียบเทียบก่อนซ่อม</h3>
+        <p>ดูต้นทุนกับมูลค่าที่อาจเพิ่ม</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยันรุ่น ฟังก์ชันและสภาพก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคากล้องในยโสธร</h2>
+        <p>ส่ง:</p>
+        <p><strong>Brand + Model + Lens + รูป + อาการ + Shutter + Battery</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขายกล้องในยโสธร"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

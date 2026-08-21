@@ -26,6 +26,9 @@ export function normalizeApproved(md) {
   body = body.replace(/^SEO Metadata[\s\S]*?(?=#\s)/i, '');
   if (!body) body = md;
 
+  // Remove markdown table divider lines like |---|---|---:|---|
+  body = body.replace(/\|?[\s\-:]*---[\s\-:|]*/g, ' ');
+
   return body
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // [text](url) -> text (safe link markup differences)
     .replace(/[#*`_~|]/g, ' ')               // markdown symbols
@@ -247,6 +250,96 @@ export const PAGES_CONFIG = [
     path: '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/',
     approvedFile: 'docs/content-approved/local-notebook-khonkaen.md',
     astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-ขอนแก่น.astro'
+  },
+  {
+    path: '/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/',
+    approvedFile: 'docs/content-approved/district-notebook-phon-khonkaen.md',
+    astroFile: 'src/pages/รับซื้อ-notebook-อำเภอพล-ขอนแก่น.astro'
+  },
+  {
+    path: '/รับซื้อโทรศัพท์-มือถือ-ย/',
+    approvedFile: 'docs/content-approved/local-mobile-yasothon.md',
+    astroFile: 'src/pages/รับซื้อโทรศัพท์-มือถือ-ย.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/',
+    approvedFile: 'docs/content-approved/local-notebook-kalasin.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-กาฬสินธ.astro'
+  },
+  {
+    path: '/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/',
+    approvedFile: 'docs/content-approved/district-notebook-chumphae-khonkaen.md',
+    astroFile: 'src/pages/รับซื้อ-notebook-ชุมแพ-ขอนแก่น.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/',
+    approvedFile: 'docs/content-approved/local-notebook-roiet.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-หนองบัว/',
+    approvedFile: 'docs/content-approved/local-notebook-nongbualamphu.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-หนองบัว.astro'
+  },
+  {
+    path: '/รับซื้อโน๊ตบุ๊ค-อุดรธาน/',
+    approvedFile: 'docs/content-approved/local-notebook-udonthani.md',
+    astroFile: 'src/pages/รับซื้อโน๊ตบุ๊ค-อุดรธาน.astro'
+  },
+  {
+    path: '/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/',
+    approvedFile: 'docs/content-approved/local-speaker-roiet.md',
+    astroFile: 'src/pages/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall.astro'
+  },
+  {
+    path: '/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/',
+    approvedFile: 'docs/content-approved/local-iphone-roiet.md',
+    astroFile: 'src/pages/รับซื้อไอโฟน-iphone-ร้อยเอ็ด.astro'
+  },
+  {
+    path: '/รับซื้อกล้องมือสองมุก/',
+    approvedFile: 'docs/content-approved/local-camera-mukdahan.md',
+    astroFile: 'src/pages/รับซื้อกล้องมือสองมุก.astro'
+  },
+  {
+    path: '/รับซื้อคอม-สารคาม/',
+    approvedFile: 'docs/content-approved/local-computer-mahasarakham.md',
+    astroFile: 'src/pages/รับซื้อคอม-สารคาม.astro'
+  },
+  {
+    path: '/รับซื้อmacbook-อุดรธานี/',
+    approvedFile: 'docs/content-approved/local-macbook-udonthani.md',
+    astroFile: 'src/pages/รับซื้อmacbook-อุดรธานี.astro'
+  },
+  {
+    path: '/รับซื้อกล้องอุบล-กล้องcanon-niko/',
+    approvedFile: 'docs/content-approved/local-camera-ubon.md',
+    astroFile: 'src/pages/รับซื้อกล้องอุบล-กล้องcanon-niko.astro'
+  },
+  {
+    path: '/รับซื้อกล้อง-ยโสธร/',
+    approvedFile: 'docs/content-approved/local-camera-yasothon.md',
+    astroFile: 'src/pages/รับซื้อกล้อง-ยโสธร.astro'
+  },
+  {
+    path: '/รับซื้อกล้องถ่ายรูป-ศรี/',
+    approvedFile: 'docs/content-approved/local-camera-sisaket.md',
+    astroFile: 'src/pages/รับซื้อกล้องถ่ายรูป-ศรี.astro'
+  },
+  {
+    path: '/รับซื้อกล้องมือสองสุร/',
+    approvedFile: 'docs/content-approved/local-camera-surin.md',
+    astroFile: 'src/pages/รับซื้อกล้องมือสองสุร.astro'
+  },
+  {
+    path: '/รับซื้อลำโพง-ยโสธร/',
+    approvedFile: 'docs/content-approved/local-speaker-yasothon.md',
+    astroFile: 'src/pages/รับซื้อลำโพง-ยโสธร.astro'
+  },
+  {
+    path: '/รับซื้อไอแพด-ยโสธร-ipad/',
+    approvedFile: 'docs/content-approved/local-ipad-yasothon.md',
+    astroFile: 'src/pages/รับซื้อไอแพด-ยโสธร-ipad.astro'
   }
 ];
 

@@ -1,0 +1,413 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อกล้องมือสองมุกดาหาร DSLR Mirrorless เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อกล้องมือสองในมุกดาหาร ทั้ง DSLR Mirrorless กล้องพร้อมเลนส์และอุปกรณ์ ประเมินจากรุ่น Sensor Shutter จอ ช่องมองภาพ เลนส์ สภาพและประวัติซ่อม";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อกล้อง",
+    "url": "/รับซื้อกล้อง/"
+  },
+  {
+    "name": "รับซื้อกล้องมือสองมุกดาหาร เช็ก Body เลนส์ Sensor และสภาพก่อนขาย",
+    "url": "/รับซื้อกล้องมือสองมุก/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "กล้องพร้อมเลนส์ควรส่งข้อมูลอย่างไร?",
+    "answer": "ควรแจ้งรุ่น Body และรุ่น Lens แยกกัน พร้อมรูปและอุปกรณ์ที่รวมขาย เพื่อไม่ให้ประเมินเลนส์แบบเหมารวมกับ Body"
+  },
+  {
+    "question": "Shutter Count สูงยังเช็กราคาได้ไหม?",
+    "answer": "ได้ Shutter Count เป็นเพียงข้อมูลประกอบหนึ่ง ควรดูร่วมกับสภาพ Body Sensor จอ EVF ปุ่มและประวัติซ่อม"
+  },
+  {
+    "question": "Lens มีฝุ่นหรือสงสัยว่ามีรายังประเมินได้ไหม?",
+    "answer": "สามารถส่งรูปและข้อมูลตามสภาพได้ ไม่ควรแกะ Lens เองหากไม่มีความชำนาญเพียงเพื่อเตรียมขาย"
+  },
+  {
+    "question": "จอหลังหรือ EVF มีปัญหายังเช็กราคาได้หรือไม่?",
+    "answer": "ได้ ควรแจ้งว่าอาการเกิดกับส่วนใดและฟังก์ชันอื่นยังทำงานได้หรือไม่ โดยไม่จำเป็นต้องซ่อมก่อนขอราคา"
+  },
+  {
+    "question": "ไม่มีกล่องหรือ Charger ยังส่งมาประเมินได้ไหม?",
+    "answer": "ได้ ควรแจ้งอุปกรณ์ที่มีจริง ไม่จำเป็นต้องซื้อของใหม่มาเติมชุดก่อนทราบว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อกล้องมือสองมุกดาหาร เช็ก Body เลนส์ Sensor และสภาพก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อกล้องมือสองมุก/</code> รักษา Historical Search Intent:</p>
+        <p><strong>Camera + Mukdahan</strong></p>
+        <p>การประเมินกล้องมือสองควรแยก Body, Lens และอุปกรณ์ออกจากกัน เพราะอาการหรือสภาพของชิ้นส่วนหนึ่งไม่จำเป็นต้องเหมือนอีกชิ้น</p>
+        <p>เริ่มจากส่ง:</p>
+        <p><strong>Brand + Model + Lens + Shutter Count ถ้าทราบ + รูป + อาการ + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>ควรแยกว่าเป็น Body อย่างเดียวหรือชุดพร้อมเลนส์</h2>
+        <p>ก่อนประเมินควรแจ้งให้ชัดว่าเป็น:</p>
+        <ul>
+        <li>Body อย่างเดียว</li>
+        <li>Body + Kit Lens</li>
+        <li>Body + Lens เพิ่ม</li>
+        <li>หลาย Body</li>
+        <li>หลาย Lens</li>
+        <li>ชุดพร้อม Flash หรืออุปกรณ์อื่น</li>
+        </ul>
+        <p>หากมีเลนส์หลายตัว ควรแจ้งรุ่นแยกทีละตัว</p>
+        <p>ไม่ควรใช้คำว่า:</p>
+        <p><strong>กล้องพร้อมเลนส์</strong></p>
+        <p>โดยไม่ระบุว่าเป็นเลนส์รุ่นใด</p>
+        <hr class="section-divider" />
+        <h2>DSLR กับ Mirrorless ควรระบุ Model เต็ม</h2>
+        <p>ตัวอย่างข้อมูลที่ควรส่ง:</p>
+        <p><strong>Canon EOS ...</strong></p>
+        <p><strong>Sony Alpha ...</strong></p>
+        <p><strong>Fujifilm X-...</strong></p>
+        <p><strong>Nikon Z...</strong></p>
+        <p>หรือรุ่นอื่น</p>
+        <p>ชื่อแบรนด์หรือ Series อย่างเดียวอาจมีหลาย Generation</p>
+        <p>การกล่าวถึงแบรนด์เป็นข้อมูลจำแนกสินค้า ไม่ได้หมายความว่าเว็บไซต์เป็นตัวแทนหรือศูนย์บริการของผู้ผลิต</p>
+        <hr class="section-divider" />
+        <h2>Shutter Count ใช้เป็นข้อมูลประกอบ ไม่ใช่ข้อมูลเดียว</h2>
+        <p>หากสามารถตรวจ Shutter Count ได้ สามารถแจ้งประกอบการประเมิน</p>
+        <p>แต่ควรดูร่วมกับ:</p>
+        <ul>
+        <li>อายุ</li>
+        <li>สภาพ Body</li>
+        <li>Sensor</li>
+        <li>Shutter</li>
+        <li>ปุ่ม</li>
+        <li>Dial</li>
+        <li>จอ</li>
+        <li>EVF</li>
+        <li>Port</li>
+        <li>Battery</li>
+        <li>ประวัติซ่อม</li>
+        </ul>
+        <p>ไม่ควรสรุปสภาพกล้องจาก Shutter Count เพียงอย่างเดียว</p>
+        <hr class="section-divider" />
+        <h2>Sensor ควรตรวจอย่างระมัดระวัง</h2>
+        <p>หากสามารถถอด Lens ได้อย่างปลอดภัย สามารถสังเกตสภาพภายนอกของ Sensor ได้</p>
+        <p>ควรแจ้งหากสงสัยว่ามี:</p>
+        <ul>
+        <li>ฝุ่น</li>
+        <li>คราบ</li>
+        <li>จุด</li>
+        <li>รา</li>
+        <li>รอย</li>
+        <li>ความเสียหาย</li>
+        </ul>
+        <p>ไม่ควรขัดหรือใช้สารทำความสะอาดที่ไม่เหมาะสมเพียงเพื่อเตรียมขาย</p>
+        <p>หากไม่แน่ใจ สามารถส่งรูปหรือแจ้งอาการจากภาพถ่ายแทน</p>
+        <hr class="section-divider" />
+        <h2>จุดในภาพอาจมาจาก Sensor หรือ Lens</h2>
+        <p>หากภาพมีจุด ไม่ควรรีบสรุปว่า Sensor เสีย</p>
+        <p>สามารถทดสอบเบื้องต้นโดยใช้:</p>
+        <ul>
+        <li>Lens อื่นถ้ามี</li>
+        <li>Aperture ที่เหมาะสม</li>
+        <li>พื้นหลังเรียบ</li>
+        </ul>
+        <p>แล้วแจ้งผลตามที่สังเกตได้</p>
+        <p>ไม่จำเป็นต้องแกะชิ้นส่วนภายในเพื่อหาสาเหตุก่อนเช็กราคา</p>
+        <hr class="section-divider" />
+        <h2>Lens ควรตรวจแยกจาก Body</h2>
+        <p>สำหรับ Lens ควรแจ้ง:</p>
+        <ul>
+        <li>รุ่นเต็ม</li>
+        <li>Mount</li>
+        <li>รอยภายนอก</li>
+        <li>หน้าเลนส์</li>
+        <li>ท้ายเลนส์</li>
+        <li>Focus</li>
+        <li>Zoom</li>
+        <li>Aperture</li>
+        <li>Stabilization ถ้ามี</li>
+        </ul>
+        <p>และสังเกตภายในว่ามี:</p>
+        <ul>
+        <li>ฝุ่น</li>
+        <li>ฝ้า</li>
+        <li>รา</li>
+        <li>คราบ</li>
+        <li>รอย</li>
+        </ul>
+        <p>หรือไม่</p>
+        <p>หากไม่แน่ใจว่าเป็นรา ไม่ควรแกะ Lens เองเพียงเพื่อขาย</p>
+        <hr class="section-divider" />
+        <h2>Auto Focus และระบบกันสั่นควรแจ้งเมื่อมีอาการ</h2>
+        <p>หากกล้องหรือ Lens มีอาการ:</p>
+        <ul>
+        <li>Focus ช้า</li>
+        <li>Focus ไม่เข้า</li>
+        <li>Motor มีเสียง</li>
+        <li>ภาพสั่นผิดปกติ</li>
+        <li>Stabilizer Error</li>
+        <li>Lens Error</li>
+        </ul>
+        <p>ควรแจ้งตามที่พบ</p>
+        <p>ไม่ควรสรุปว่าเกิดจาก Motor, Mainboard หรือชุดกันสั่นโดยไม่ได้ตรวจ</p>
+        <hr class="section-divider" />
+        <h2>จอหลังและ EVF ควรตรวจทั้งคู่</h2>
+        <p>กล้อง Mirrorless บางรุ่นยังถ่ายได้แม้จอหลังหรือ EVF มีอาการ</p>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>จอปกติ</li>
+        <li>Touch มีปัญหา</li>
+        <li>จอเป็นเส้น</li>
+        <li>จอกระพริบ</li>
+        <li>EVF ไม่ขึ้น</li>
+        <li>EVF มีฝุ่นหรือคราบ</li>
+        <li>ภาพในช่องมองผิดปกติ</li>
+        </ul>
+        <p>ถ้าจอนอกหรือระบบอื่นทำงานได้ สามารถแจ้งข้อมูลนั้นประกอบ</p>
+        <hr class="section-divider" />
+        <h2>ปุ่ม Dial และ Port มีผลต่อการใช้งาน</h2>
+        <p>ควรทดสอบเท่าที่ปลอดภัย เช่น:</p>
+        <ul>
+        <li>Shutter Button</li>
+        <li>Mode Dial</li>
+        <li>Command Dial</li>
+        <li>Menu Button</li>
+        <li>Playback</li>
+        <li>Memory Card Slot</li>
+        <li>USB</li>
+        <li>HDMI</li>
+        <li>Microphone Port</li>
+        <li>Hot Shoe</li>
+        </ul>
+        <p>หากบางส่วนเสีย ควรแจ้งตามอาการจริง</p>
+        <hr class="section-divider" />
+        <h2>Battery และ Charger ควรนับตามของที่มี</h2>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>Battery เดิมกี่ก้อน</li>
+        <li>Battery เทียบกี่ก้อน</li>
+        <li>Charger เดิม</li>
+        <li>Charger เทียบ</li>
+        <li>ไม่มี Charger</li>
+        </ul>
+        <p>Battery ที่เก็บไฟไม่อยู่ควรแจ้งแยกจาก Battery ปกติ</p>
+        <p>หาก Battery บวม ไม่ควรฝืนใส่กลับเข้า Body หรือชาร์จซ้ำ</p>
+        <hr class="section-divider" />
+        <h2>กล้องเคยซ่อมหรือโดนน้ำควรแจ้ง</h2>
+        <p>ควรแจ้งเท่าที่ทราบ เช่น:</p>
+        <ul>
+        <li>เปลี่ยน Shutter</li>
+        <li>เปลี่ยนจอ</li>
+        <li>ซ่อม Mainboard</li>
+        <li>ซ่อม Card Slot</li>
+        <li>ซ่อม Mount</li>
+        <li>ทำความสะอาด Sensor</li>
+        <li>เคยตก</li>
+        <li>เคยโดนน้ำหรือความชื้น</li>
+        </ul>
+        <p>ข้อมูลเหล่านี้ช่วยอธิบายสภาพได้ตรงขึ้น</p>
+        <hr class="section-divider" />
+        <h2>Serial Number ไม่จำเป็นต้องเผยแพร่สาธารณะ</h2>
+        <p>การถามราคาเบื้องต้นสามารถเริ่มจาก:</p>
+        <p><strong>Brand + Model + Lens + รูป + สภาพ</strong></p>
+        <p>ก่อน</p>
+        <p>หากต้องใช้ Serial ในขั้นตอนตรวจสอบเพิ่มเติม ควรส่งผ่านช่องทางที่เหมาะสม ไม่จำเป็นต้องโพสต์ Serial สาธารณะ</p>
+        <hr class="section-divider" />
+        <h2>อยู่มุกดาหารสามารถส่งรายการอุปกรณ์มาก่อนได้</h2>
+        <p>สามารถเริ่มจากส่งข้อมูลและรูปก่อน แล้วจึงค่อยพิจารณาวิธีตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>หน้า Local นี้ไม่ได้หมายความว่ามีสาขา พนักงาน หรือจุดรับซื้อประจำอยู่ในทุกพื้นที่ของจังหวัดมุกดาหาร</p>
+        <hr class="section-divider" />
+        <h2>หน้ามุกดาหารต่างจากหน้ารับซื้อกล้องหลัก</h2>
+        <p>หน้า <a href="/รับซื้อกล้อง/">รับซื้อกล้อง</a> เป็น Broad Camera Money Hub</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อกล้องมือสองมุก/</code></p>
+        <p>รักษา:</p>
+        <p><strong>Camera + Mukdahan</strong></p>
+        <p>จึงไม่ควรขยายเป็นหน้า National Camera อีกชุด</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคากล้องในมุกดาหาร</h2>
+        <h3>1. แจ้ง Brand และ Model</h3>
+        <p>ใช้รุ่นเต็ม</p>
+        <h3>2. แยก Body และ Lens</h3>
+        <p>ระบุของที่รวมขาย</p>
+        <h3>3. แจ้ง Shutter Count</h3>
+        <p>ถ้าตรวจได้</p>
+        <h3>4. ส่งรูป Body</h3>
+        <p>ทุกด้านและตำหนิ</p>
+        <h3>5. ส่งรูป Lens</h3>
+        <p>รวมหน้าและท้ายเลนส์</p>
+        <h3>6. แจ้ง Sensor และภาพตัวอย่าง</h3>
+        <p>หากพบจุดหรืออาการ</p>
+        <h3>7. แจ้งจอและ EVF</h3>
+        <p>ตามที่ทดสอบได้</p>
+        <h3>8. แจ้ง Battery และ Charger</h3>
+        <p>จำนวนและสภาพ</p>
+        <h3>9. แจ้งประวัติซ่อม</h3>
+        <p>รวมตก น้ำ หรือความชื้นถ้าทราบ</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยันรุ่น Serial สภาพและอุปกรณ์ก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคากล้องมือสองในมุกดาหาร</h2>
+        <p>ส่ง:</p>
+        <p><strong>Brand + Model + Lens + Shutter + รูป + อาการ + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขายกล้องมือสองในมุกดาหาร"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

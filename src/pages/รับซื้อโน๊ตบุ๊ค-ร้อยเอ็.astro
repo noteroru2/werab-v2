@@ -1,0 +1,414 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อโน๊ตบุ๊คร้อยเอ็ด Notebook Laptop เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อโน๊ตบุ๊คมือสองในร้อยเอ็ด Notebook Laptop และ Gaming Notebook ประเมินจากรุ่น CPU RAM SSD GPU Battery หน้าจอ สภาพ อุปกรณ์และประวัติซ่อม";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊ค",
+    "url": "/รับซื้อโน๊ตบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คร้อยเอ็ด เช็กสภาพ อุปกรณ์ และราคาก่อนขาย",
+    "url": "/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "ไม่มีกล่องหรือ Adapter ยังเช็กราคาได้ไหม?",
+    "answer": "ได้ ควรแจ้งอุปกรณ์ที่มีจริง ไม่จำเป็นต้องซื้อของใหม่มาเติมชุดก่อนทราบว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่"
+  },
+  {
+    "question": "Notebook เพิ่ม RAM หรือ SSD มาแล้วมีผลไหม?",
+    "answer": "ควรแจ้ง Configuration ปัจจุบันและสิ่งที่รวมขายจริง เพราะอาจต่างจากสเปกตอนซื้อใหม่"
+  },
+  {
+    "question": "เครื่องเคยโดนน้ำยังประเมินได้หรือไม่?",
+    "answer": "สามารถส่งข้อมูลตามสภาพได้ ควรแจ้งประวัติที่ทราบ อาการปัจจุบัน และไม่ควรปิดบังความเสียหายจากของเหลว"
+  },
+  {
+    "question": "Battery บวมควรเปิดเครื่องทดสอบไหม?",
+    "answer": "ไม่ควรใช้งานหนักหรือเปิดทดสอบซ้ำโดยไม่จำเป็น ควรแจ้งสภาพ Battery และรูปประกอบแทน"
+  },
+  {
+    "question": "เครื่องเปิดไม่ติดต้องซ่อมก่อนขายไหม?",
+    "answer": "ไม่จำเป็นทุกกรณี สามารถเช็กราคาตามสภาพก่อน แล้วค่อยเปรียบเทียบต้นทุนและความเสี่ยงในการซ่อม"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อโน๊ตบุ๊คร้อยเอ็ด เช็กสภาพ อุปกรณ์ และราคาก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/</code> รักษา Historical Search Intent:</p>
+        <p><strong>Notebook + Roi Et</strong></p>
+        <p>URL เดิมถูกตัดคำ แต่ยังคงใช้เส้นทางเดิมเพื่อรักษาความต่อเนื่องของ Historical URL โดยไม่สร้าง URL ใหม่เพียงเพราะชื่อเดิมไม่สมบูรณ์</p>
+        <p>ก่อนประเมินควรส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter + สิ่งที่รวมขาย</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>เช็กราคาก่อนตัดสินใจซื้ออุปกรณ์มาเติมชุด</h2>
+        <p>Notebook มือสองบางเครื่องอาจ:</p>
+        <ul>
+        <li>ไม่มีกล่อง</li>
+        <li>ไม่มี Adapter</li>
+        <li>Battery เสื่อม</li>
+        <li>RAM น้อย</li>
+        <li>SSD ความจุน้อย</li>
+        <li>มีรอย</li>
+        </ul>
+        <p>ไม่จำเป็นต้องซื้ออุปกรณ์หรืออัปเกรดทุกอย่างก่อนขาย</p>
+        <p>ควรรู้ราคาตามสภาพปัจจุบันก่อน แล้วค่อยตัดสินใจว่าต้นทุนเพิ่มเติมคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่</p>
+        <hr class="section-divider" />
+        <h2>อยู่ร้อยเอ็ดสามารถเริ่มจากส่งข้อมูลก่อนได้</h2>
+        <p>การสอบถามราคาเบื้องต้นสามารถเริ่มจากข้อมูลและรูปเครื่อง</p>
+        <p>ไม่จำเป็นต้องเดินทางพร้อม Notebook เพียงเพื่อถามราคา</p>
+        <p>หลังทราบข้อมูลแล้วจึงค่อยพิจารณาการตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในทุกพื้นที่ของจังหวัดร้อยเอ็ด</p>
+        <hr class="section-divider" />
+        <h2>Model เต็มช่วยลดการประเมินผิดรุ่น</h2>
+        <p>Notebook หน้าตาคล้ายกันอาจเป็นคนละ:</p>
+        <ul>
+        <li>Generation</li>
+        <li>CPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>GPU</li>
+        <li>Display</li>
+        </ul>
+        <p>ควรตรวจ Model จากตัวเครื่องหรือระบบ</p>
+        <p>หากไม่แน่ใจให้ส่งรูปป้าย Model แทนการคาดเดา</p>
+        <hr class="section-divider" />
+        <h2>CPU และ GPU ควรระบุแยกกัน</h2>
+        <p>Notebook ทำงานทั่วไปอาจไม่มี Dedicated GPU</p>
+        <p>Gaming Notebook มักมี GPU เพิ่มเติม</p>
+        <p>ควรแจ้ง:</p>
+        <p><strong>CPU รุ่นเต็ม</strong></p>
+        <p>และถ้ามี:</p>
+        <p><strong>GPU รุ่นเต็ม</strong></p>
+        <p>ช่วยให้แยก Configuration ได้ถูกต้อง</p>
+        <hr class="section-divider" />
+        <h2>RAM และ SSD ที่เพิ่มมาแล้วควรนับตามของจริง</h2>
+        <p>ตัวอย่าง:</p>
+        <p>เดิมเครื่องมี:</p>
+        <p><strong>RAM 8GB / SSD 256GB</strong></p>
+        <p>แต่ปัจจุบันเป็น:</p>
+        <p><strong>RAM 16GB / SSD 1TB</strong></p>
+        <p>ควรใช้ Configuration ปัจจุบันในการประเมิน หาก Hardware เหล่านั้นรวมขายจริง</p>
+        <hr class="section-divider" />
+        <h2>Adapter มีผลแต่ไม่ควรรีบซื้อใหม่</h2>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>Adapter เดิม</li>
+        <li>Adapter เทียบ</li>
+        <li>ไม่มี Adapter</li>
+        <li>สายชำรุด</li>
+        <li>ชาร์จไม่ปกติ</li>
+        </ul>
+        <p>จากนั้นจึงค่อยพิจารณาว่าการหา Adapter มาเพิ่มคุ้มค่าหรือไม่</p>
+        <hr class="section-divider" />
+        <h2>Battery ควรแจ้งตามอาการจริง</h2>
+        <p>ตัวอย่าง:</p>
+        <ul>
+        <li>ใช้งานได้ปกติ</li>
+        <li>หมดเร็ว</li>
+        <li>ไม่เก็บไฟ</li>
+        <li>ต้องเสียบ Adapter</li>
+        <li>เคยเปลี่ยน</li>
+        <li>Health ต่ำ</li>
+        <li>Battery บวม</li>
+        </ul>
+        <p>หาก Battery บวมควรหลีกเลี่ยงการใช้งานหนักและการกดตัวเครื่องบริเวณที่นูน</p>
+        <hr class="section-divider" />
+        <h2>จอ Keyboard และบานพับควรตรวจพร้อมกัน</h2>
+        <p>Notebook ที่ CPU และสเปกดีอาจยังมีต้นทุนซ่อมจากส่วนอื่น</p>
+        <p>ควรแจ้งหากมี:</p>
+        <ul>
+        <li>จอเป็นเส้น</li>
+        <li>จอแตก</li>
+        <li>จุดดำ</li>
+        <li>Keyboard เสีย</li>
+        <li>ปุ่มหลุด</li>
+        <li>Touchpad เสีย</li>
+        <li>บานพับแตก</li>
+        <li>ฝาหลังเสียหาย</li>
+        </ul>
+        <p>ควรถ่ายตำหนิให้เห็นก่อนประเมิน</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเคยโดนน้ำควรแจ้ง</h2>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>โดนน้ำเมื่อไรโดยประมาณ</li>
+        <li>บริเวณใด</li>
+        <li>หลังจากนั้นยังเปิดได้หรือไม่</li>
+        <li>เคยทำความสะอาดหรือซ่อมหรือไม่</li>
+        <li>ปัจจุบันมีอาการอะไร</li>
+        </ul>
+        <p>ความเสียหายจากของเหลวอาจมีผลต่อ Hardware มากกว่ารอยภายนอกที่เห็น</p>
+        <hr class="section-divider" />
+        <h2>Notebook เปิดไม่ติดยังเช็กราคาได้</h2>
+        <p>ส่งข้อมูลเท่าที่ทราบ เช่น:</p>
+        <ul>
+        <li>Model</li>
+        <li>CPU</li>
+        <li>GPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>Adapter</li>
+        <li>รูป</li>
+        <li>อาการก่อนเสีย</li>
+        </ul>
+        <p>เครื่องที่ไม่สามารถทดสอบได้จะมีความไม่แน่นอนมากกว่าเครื่องปกติ</p>
+        <p>หากมีกลิ่นไหม้ Battery บวม หรือความร้อนผิดปกติ ไม่ควรเปิดหรือชาร์จซ้ำหลายครั้งโดยไม่จำเป็น</p>
+        <hr class="section-divider" />
+        <h2>มี Notebook หลายเครื่องควรส่งรายการ</h2>
+        <p>สามารถจัดเป็นตาราง:</p>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>รุ่น</th>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>SSD</th>
+                <th>จำนวน</th>
+                <th>สภาพ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>รุ่น...</td>
+                <td>i5-...</td>
+                <td>8GB</td>
+                <td>256GB</td>
+                <td>6</td>
+                <td>ใช้งานได้</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>i5-...</td>
+                <td>16GB</td>
+                <td>512GB</td>
+                <td>3</td>
+                <td>มีตำหนิ</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>2</td>
+                <td>เปิดไม่ติด</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>ช่วยให้ประเมินแต่ละ Configuration แยกกันได้</p>
+        <hr class="section-divider" />
+        <h2>ข้อมูลส่วนตัวไม่ใช่ส่วนหนึ่งของราคาประเมิน</h2>
+        <p>ไม่ต้องส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>Email Password</li>
+        </ul>
+        <p>เพื่อถามราคา</p>
+        <p>เจ้าของควรสำรองข้อมูลและจัดการบัญชีของตนเองก่อนส่งมอบจริง</p>
+        <hr class="section-divider" />
+        <h2>หน้าร้อยเอ็ดต่างจาก Notebook Money Hub</h2>
+        <p>หน้า:</p>
+        <p><code>/รับซื้อโน๊ตบุ๊ค/</code></p>
+        <p>เป็น Broad Notebook Money Hub</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/</code></p>
+        <p>รักษา:</p>
+        <p><strong>Notebook + Roi Et</strong></p>
+        <p>จึงไม่ควรใช้หน้านี้เป็นอีกหน้าเพื่อแข่งขันกับ Parent สำหรับคำรับซื้อ Notebook แบบกว้าง</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา Notebook ในร้อยเอ็ด</h2>
+        <h3>1. ส่ง Model</h3>
+        <p>ชื่อรุ่นเต็ม</p>
+        <h3>2. ส่ง CPU</h3>
+        <p>รหัสเต็ม</p>
+        <h3>3. ส่ง RAM และ SSD</h3>
+        <p>Configuration ปัจจุบัน</p>
+        <h3>4. ส่ง GPU</h3>
+        <p>ถ้ามี</p>
+        <h3>5. แจ้ง Battery</h3>
+        <p>Health หรืออาการ</p>
+        <h3>6. แจ้ง Adapter</h3>
+        <p>ตามสิ่งที่รวมขาย</p>
+        <h3>7. ส่งรูปและตำหนิ</h3>
+        <p>รวมหน้าจอและบานพับ</p>
+        <h3>8. แจ้งประวัติซ่อม</h3>
+        <p>รวมถึงความเสียหายจากน้ำถ้าทราบ</p>
+        <h3>9. ประเมินก่อนเติมอุปกรณ์</h3>
+        <p>ไม่จำเป็นต้องซื้อของเพิ่มก่อนรู้ว่าคุ้มค่าหรือไม่</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยันรุ่น สเปก สภาพและอุปกรณ์ก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคาโน๊ตบุ๊คในร้อยเอ็ด</h2>
+        <p>ส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขาย Notebook ในร้อยเอ็ด"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

@@ -1,0 +1,365 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อโน๊ตบุ๊คชุมแพ ขอนแก่น Notebook Gaming เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อโน๊ตบุ๊คมือสองในชุมแพ ขอนแก่น Notebook Laptop และ Gaming Notebook ส่งรุ่น สเปก Battery รูป อาการและอุปกรณ์เพื่อเช็กราคาก่อนตัดสินใจขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊ค",
+    "url": "/รับซื้อโน๊ตบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คขอนแก่น",
+    "url": "/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คชุมแพ ขอนแก่น เช็กสเปกและอาการก่อนขาย",
+    "url": "/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "หน้าชุมแพต่างจากหน้ารับซื้อโน๊ตบุ๊คขอนแก่นอย่างไร?",
+    "answer": "หน้าขอนแก่นเป็นเจ้าของ Intent ระดับจังหวัด ส่วนหน้านี้รักษา Historical Search Intent ที่เจาะจงชุมแพ จึงอยู่ในลำดับชั้นพื้นที่ที่แคบกว่า"
+  },
+  {
+    "question": "Gaming Notebook มีอาการดับยังเช็กราคาได้ไหม?",
+    "answer": "ได้ ควรแจ้ง Model CPU GPU อาการและประวัติซ่อมตามจริง และไม่จำเป็นต้อง Stress Test หนักซ้ำหากเครื่องไม่เสถียร"
+  },
+  {
+    "question": "จอแตกหรือบานพับเสียต้องซ่อมก่อนขายหรือไม่?",
+    "answer": "ไม่จำเป็นทุกกรณี ควรเช็กราคาตามสภาพก่อน แล้วเปรียบเทียบค่าอะไหล่ ค่าแรงและมูลค่าที่คาดว่าจะเพิ่ม"
+  },
+  {
+    "question": "ไม่มี Adapter ยังขายได้ไหม?",
+    "answer": "สามารถส่งมาประเมินได้ โดยควรแจ้งว่าไม่มี Adapter ตั้งแต่ต้น"
+  },
+  {
+    "question": "เครื่องเปิดไม่ติดควรทดลองเปิดหลายครั้งไหม?",
+    "answer": "ไม่ควรทดลองซ้ำหลายครั้งหากมี Battery บวม กลิ่นไหม้ ความร้อนผิดปกติ หรือร่องรอยของเหลว"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อโน๊ตบุ๊คชุมแพ ขอนแก่น เช็กสเปกและอาการก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/</code> รักษา Historical Search Intent ระดับพื้นที่:</p>
+        <p><strong>Notebook + ชุมแพ + ขอนแก่น</strong></p>
+        <p>โดยอยู่ภายใต้ Local Intent ระดับจังหวัดของหน้า <a href="/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/">รับซื้อโน๊ตบุ๊คขอนแก่น</a></p>
+        <p>หน้านี้จึงไม่ใช้แทนหน้าขอนแก่นทั้งจังหวัด และไม่ควรขยายไปเป็นหน้า Notebook ระดับประเทศ</p>
+        <p>เริ่มจากส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + อาการ + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>ชุมแพเป็น Historical Intent ระดับพื้นที่ย่อย</h2>
+        <p>ผู้ค้นหาที่ระบุคำว่า <strong>ชุมแพ</strong> มี Location Intent แคบกว่าคำว่า <strong>ขอนแก่น</strong></p>
+        <p>โครงสร้างจึงควรเป็น:</p>
+        <p><strong>Notebook หลัก → ขอนแก่นระดับจังหวัด → ชุมแพ</strong></p>
+        <p>ไม่ใช่ให้หน้าอำเภอแข่งขันโดยตรงกับ Parent Money Hub</p>
+        <p>การมีหน้าเฉพาะชุมแพไม่ได้หมายความว่ามีสาขา พนักงาน หรือจุดรับซื้อประจำอยู่ในพื้นที่</p>
+        <hr class="section-divider" />
+        <h2>เครื่องมีอาการสามารถเช็กข้อมูลก่อนตัดสินใจซ่อมได้</h2>
+        <p>หาก Notebook มีปัญหา เช่น</p>
+        <ul>
+        <li>เปิดช้า</li>
+        <li>จอฟ้า</li>
+        <li>ดับ</li>
+        <li>Battery เสื่อม</li>
+        <li>Keyboard เสีย</li>
+        <li>จอมีปัญหา</li>
+        <li>บานพับแตก</li>
+        </ul>
+        <p>ควรเริ่มจากตรวจ Model และสเปกก่อน</p>
+        <p>เครื่องรุ่นต่างกันอาจมีความคุ้มค่าในการซ่อมต่างกัน แม้อาการภายนอกเหมือนกัน</p>
+        <hr class="section-divider" />
+        <h2>Model และ Configuration ต้องตรงกับเครื่องปัจจุบัน</h2>
+        <p>Notebook ที่ผ่านการใช้งานอาจถูก:</p>
+        <ul>
+        <li>เพิ่ม RAM</li>
+        <li>เปลี่ยน SSD</li>
+        <li>เปลี่ยน Battery</li>
+        <li>เปลี่ยนจอ</li>
+        </ul>
+        <p>ดังนั้นควรแจ้งสิ่งที่อยู่ในเครื่องจริงในปัจจุบัน</p>
+        <p>ไม่ควรใช้สเปกจากหน้าสินค้าเดิมโดยไม่ตรวจเครื่อง</p>
+        <hr class="section-divider" />
+        <h2>CPU และ GPU ช่วยแยกมูลค่าเครื่อง</h2>
+        <p>ควรแจ้ง CPU แบบเต็ม เช่น:</p>
+        <p><strong>Core i5-12500H</strong></p>
+        <p>หรือ:</p>
+        <p><strong>Ryzen 7 6800H</strong></p>
+        <p>หากเป็น Gaming Notebook ควรแจ้ง GPU ด้วย</p>
+        <p>เช่น:</p>
+        <p><strong>RTX 3050</strong></p>
+        <p><strong>RTX 3060</strong></p>
+        <p><strong>RTX 4060 Laptop GPU</strong></p>
+        <p>ชื่อ Series ของเครื่องเพียงอย่างเดียวอาจไม่พอ</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเล่นเกมดับหรือร้อนควรแจ้งตามอาการ</h2>
+        <p>หากมีอาการเวลาใช้งานหนัก เช่น</p>
+        <ul>
+        <li>ดับ</li>
+        <li>Restart</li>
+        <li>ภาพแตก</li>
+        <li>GPU Error</li>
+        <li>จอฟ้า</li>
+        <li>Fan ดัง</li>
+        <li>Temperature สูงผิดปกติ</li>
+        </ul>
+        <p>ควรแจ้งตามที่พบ</p>
+        <p>ไม่จำเป็นต้อง Stress Test ซ้ำอย่างหนักเพียงเพื่อถามราคา โดยเฉพาะเมื่อเครื่องไม่เสถียรอยู่แล้ว</p>
+        <hr class="section-divider" />
+        <h2>Battery กับระบบชาร์จควรแยกข้อมูล</h2>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>Battery หมดเร็ว</li>
+        <li>Battery ไม่เก็บไฟ</li>
+        <li>Battery บวม</li>
+        <li>ชาร์จไม่เข้า</li>
+        <li>Port ชาร์จหลวม</li>
+        <li>Adapter มีปัญหา</li>
+        </ul>
+        <p>อาการเหล่านี้ไม่ควรถูกสรุปว่าเกิดจากอะไหล่ตัวใดโดยไม่มีการตรวจ</p>
+        <hr class="section-divider" />
+        <h2>หน้าจอและบานพับควรถ่ายชัดเจน</h2>
+        <p>หากมีจอ:</p>
+        <ul>
+        <li>แตก</li>
+        <li>เป็นเส้น</li>
+        <li>กระพริบ</li>
+        <li>มีจุด</li>
+        <li>สีผิดปกติ</li>
+        </ul>
+        <p>ควรถ่ายขณะเปิดเครื่อง</p>
+        <p>หากบานพับมีปัญหา ควรถ่ายทั้งสองข้างและบริเวณฝาจอหรือ Palmrest ที่เกี่ยวข้อง</p>
+        <hr class="section-divider" />
+        <h2>ไม่มี Adapter ยังส่งมาประเมินได้</h2>
+        <p>ควรแจ้งว่า:</p>
+        <p><strong>ไม่มี Adapter</strong></p>
+        <p>หรือ:</p>
+        <p><strong>ใช้ Adapter เทียบ</strong></p>
+        <p>ไม่จำเป็นต้องซื้อใหม่ก่อนทราบว่าต้นทุนคุ้มกับมูลค่าที่อาจเพิ่มขึ้นหรือไม่</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดไม่ติดควรหยุดทดสอบเมื่อมีอาการเสี่ยง</h2>
+        <p>สามารถสังเกตไฟสถานะ Fan หรืออาการพื้นฐานได้</p>
+        <p>แต่ถ้ามี:</p>
+        <ul>
+        <li>กลิ่นไหม้</li>
+        <li>ความร้อนผิดปกติ</li>
+        <li>Battery บวม</li>
+        <li>ร่องรอยของเหลว</li>
+        </ul>
+        <p>ไม่ควรเปิดหรือชาร์จซ้ำหลายครั้ง</p>
+        <p>สามารถส่งข้อมูลตามสภาพเพื่อประเมินเบื้องต้นได้</p>
+        <hr class="section-divider" />
+        <h2>ประวัติซ่อมช่วยอธิบายสภาพของเครื่อง</h2>
+        <p>ควรแจ้งถ้าทราบว่าเคย:</p>
+        <ul>
+        <li>ซ่อม Mainboard</li>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Battery</li>
+        <li>เปลี่ยน Keyboard</li>
+        <li>ซ่อมบานพับ</li>
+        <li>เปลี่ยน SSD</li>
+        <li>เพิ่ม RAM</li>
+        <li>โดนน้ำ</li>
+        </ul>
+        <p>ไม่จำเป็นต้องมีเอกสารทุกครั้ง แต่ควรแจ้งข้อมูลที่ทราบตามจริง</p>
+        <hr class="section-divider" />
+        <h2>ไม่ต้องให้รหัสผ่านเพื่อเช็กราคา</h2>
+        <p>ไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>Email Password</li>
+        </ul>
+        <p>การประเมิน Hardware เบื้องต้นไม่จำเป็นต้องใช้ข้อมูลลับของเจ้าของเครื่อง</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา Notebook ในชุมแพ</h2>
+        <h3>1. ส่ง Model</h3>
+        <p>ใช้ชื่อรุ่นเต็ม</p>
+        <h3>2. ส่ง CPU และ GPU</h3>
+        <p>โดยเฉพาะ Gaming Notebook</p>
+        <h3>3. ส่ง RAM และ SSD</h3>
+        <p>Configuration ที่รวมขาย</p>
+        <h3>4. แจ้ง Battery</h3>
+        <p>Health หรืออาการ</p>
+        <h3>5. ส่งรูป</h3>
+        <p>รวมหน้าจอ บานพับและตำหนิ</p>
+        <h3>6. แจ้งอาการ</h3>
+        <p>ถ้าเครื่องไม่ปกติ</p>
+        <h3>7. แจ้ง Adapter</h3>
+        <p>เดิม เทียบ หรือไม่มี</p>
+        <h3>8. แจ้งประวัติซ่อม</h3>
+        <p>ถ้าทราบ</p>
+        <h3>9. เช็กราคาตามสภาพ</h3>
+        <p>ก่อนลงทุนซ่อม</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยัน Configuration ก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคาโน๊ตบุ๊คในชุมแพ ขอนแก่น</h2>
+        <p>ส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป + อาการ + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขาย Notebook ในชุมแพ"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

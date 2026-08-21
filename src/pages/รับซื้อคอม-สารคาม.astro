@@ -1,0 +1,459 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อคอมมหาสารคาม คอมประกอบ Gaming PC เช็กสเปกก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อคอมมือสองในมหาสารคาม ทั้งคอมประกอบ Gaming PC คอมสำนักงานและเครื่องใช้งานทั่วไป ประเมินจาก CPU GPU RAM SSD Mainboard PSU สภาพและอุปกรณ์";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อคอมพิวเตอร์",
+    "url": "/รับซื้อคอม/"
+  },
+  {
+    "name": "รับซื้อคอมมหาสารคาม เช็ก CPU การ์ดจอ และสเปกก่อนขาย",
+    "url": "/รับซื้อคอม-สารคาม/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "Gaming PC ต้องแจ้งสเปกอะไรบ้าง?",
+    "answer": "ควรแจ้ง CPU, GPU, RAM, SSD, Mainboard และ PSU รวมถึงรูปและอาการถ้ามี เพราะชื่อ Gaming PC อย่างเดียวไม่สามารถบอก Configuration ได้ครบ"
+  },
+  {
+    "question": "ต้องรวมจอขายกับเครื่องหรือไม่?",
+    "answer": "ไม่จำเป็น สามารถแจ้งได้ว่าขายเฉพาะตัวเครื่องหรือรวม Monitor และอุปกรณ์ใดบ้าง"
+  },
+  {
+    "question": "ต้องล้างข้อมูลใน SSD ก่อนถามราคาไหม?",
+    "answer": "เพื่อถามราคาไม่จำเป็นต้องส่งข้อมูลส่วนตัว หากต้องการเก็บ SSD สามารถแจ้งว่าไม่รวม Storage แล้วประเมินจาก Hardware ที่ขายจริง"
+  },
+  {
+    "question": "คอมเปิดไม่ติดยังประเมินได้ไหม?",
+    "answer": "ได้ สามารถส่งสเปกที่ทราบ รูปและอาการก่อนเสียเพื่อประเมินเบื้องต้น โดยไม่ควรเปิดซ้ำหลายครั้งหากมีกลิ่นไหม้หรือความร้อนผิดปกติ"
+  },
+  {
+    "question": "มีคอมสำนักงานหลายเครื่องส่งรายการมาได้ไหม?",
+    "answer": "ได้ ควรแบ่งตาม CPU, RAM, SSD, GPU จำนวนและสภาพ เพื่อไม่ให้ใช้ Configuration ของเครื่องเดียวแทนทั้งล็อต"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อคอมมหาสารคาม เช็ก CPU การ์ดจอ และสเปกก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อคอม-สารคาม/</code> รักษา Historical Search Intent:</p>
+        <p><strong>Desktop PC / Computer + Maha Sarakham</strong></p>
+        <p>การประเมินคอมประกอบมือสองควรดูเป็นชุด Hardware ไม่ควรใช้เพียงคำว่า Gaming PC หรือ Core i5 เป็นข้อมูลทั้งหมด</p>
+        <p>ข้อมูลที่ควรส่งก่อน:</p>
+        <p><strong>CPU + GPU + RAM + SSD/HDD + Mainboard + PSU + Case + รูป + อาการ</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>อยู่มหาสารคามสามารถส่งสเปกคอมมาเช็กราคาก่อนได้</h2>
+        <p>ไม่จำเป็นต้องยกคอมทั้งเครื่องไปเพียงเพื่อสอบถามราคาเบื้องต้น</p>
+        <p>สามารถเริ่มจากส่ง:</p>
+        <ul>
+        <li>CPU</li>
+        <li>GPU</li>
+        <li>RAM</li>
+        <li>SSD หรือ HDD</li>
+        <li>Mainboard</li>
+        <li>PSU</li>
+        <li>Case</li>
+        <li>รูปเครื่อง</li>
+        <li>อาการ</li>
+        <li>อุปกรณ์ที่รวมขาย</li>
+        </ul>
+        <p>หากยังตรวจสเปกไม่ครบ สามารถเริ่มจากข้อมูลที่มีแล้วค่อยตรวจเพิ่มเติม</p>
+        <p>หลังทราบข้อมูลเบื้องต้นจึงค่อยพิจารณาขั้นตอนตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>หน้า Local นี้ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ทุกพื้นที่ของจังหวัดมหาสารคาม</p>
+        <hr class="section-divider" />
+        <h2>CPU ต้องแจ้งรุ่นเต็ม</h2>
+        <p>คำว่า:</p>
+        <p><strong>Core i5</strong></p>
+        <p>หรือ</p>
+        <p><strong>Ryzen 5</strong></p>
+        <p>ยังไม่เพียงพอสำหรับประเมินคอม</p>
+        <p>ควรแจ้งรหัสเต็ม เช่น:</p>
+        <p><strong>Intel Core i5-12400F</strong></p>
+        <p><strong>Intel Core i7-12700</strong></p>
+        <p><strong>AMD Ryzen 5 5600</strong></p>
+        <p><strong>AMD Ryzen 7 5700X</strong></p>
+        <p>CPU คนละ Generation อาจใช้ Platform คนละรุ่นและมีมูลค่าต่างกัน</p>
+        <hr class="section-divider" />
+        <h2>การ์ดจอควรระบุรุ่นและความจุให้ถูก</h2>
+        <p>สำหรับ Gaming PC หรือเครื่องทำงานกราฟิก ควรแจ้ง GPU เช่น:</p>
+        <p><strong>GeForce RTX 3060 12GB</strong></p>
+        <p><strong>GeForce RTX 4060 8GB</strong></p>
+        <p>หรือรุ่นอื่นตามเครื่องจริง</p>
+        <p>ถ้าทราบ Brand หรือรุ่นย่อยสามารถแจ้งเพิ่มได้</p>
+        <p>ไม่ควรประเมินจากคำว่า:</p>
+        <p><strong>RTX</strong></p>
+        <p>อย่างเดียว</p>
+        <p>เพราะแต่ละรุ่นมีประสิทธิภาพและตลาดต่างกัน</p>
+        <hr class="section-divider" />
+        <h2>RAM ควรแจ้งทั้งความจุและจำนวนแถวถ้าทราบ</h2>
+        <p>ตัวอย่าง:</p>
+        <p><strong>16GB (8GB × 2)</strong></p>
+        <p>หรือ</p>
+        <p><strong>32GB (16GB × 2)</strong></p>
+        <p>หากทราบว่าเป็น DDR4 หรือ DDR5 สามารถแจ้งประกอบได้</p>
+        <p>เครื่องที่มี RAM ความจุเท่ากันอาจใช้ Platform ต่างกัน จึงควรพิจารณาร่วมกับ CPU และ Mainboard</p>
+        <hr class="section-divider" />
+        <h2>SSD และ HDD ต้องแจ้งตามของที่รวมขายจริง</h2>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>SSD NVMe</li>
+        <li>SSD SATA</li>
+        <li>HDD</li>
+        <li>ความจุ</li>
+        <li>จำนวน Drive</li>
+        </ul>
+        <p>ตัวอย่าง:</p>
+        <p><strong>NVMe SSD 512GB + HDD 1TB</strong></p>
+        <p>หากต้องการเก็บ Storage ที่มีข้อมูลส่วนตัวไว้ ควรแจ้งว่า:</p>
+        <p><strong>ไม่รวม SSD</strong></p>
+        <p>หรือ</p>
+        <p><strong>ไม่รวม HDD</strong></p>
+        <p>ตั้งแต่ก่อนประเมิน</p>
+        <hr class="section-divider" />
+        <h2>Mainboard ช่วยบอก Platform และความสามารถในการอัปเกรด</h2>
+        <p>หากตรวจได้ ควรแจ้งรุ่น Mainboard เช่น:</p>
+        <p><strong>B550</strong></p>
+        <p><strong>B660</strong></p>
+        <p><strong>B760</strong></p>
+        <p><strong>A520</strong></p>
+        <p>หรือชื่อรุ่นเต็ม</p>
+        <p>Mainboard มีผลต่อ:</p>
+        <ul>
+        <li>CPU ที่รองรับ</li>
+        <li>RAM</li>
+        <li>Slot</li>
+        <li>Storage</li>
+        <li>Port</li>
+        <li>การอัปเกรด</li>
+        </ul>
+        <p>จึงไม่ควรประเมินคอมจาก CPU และ GPU เพียงสองอย่าง</p>
+        <hr class="section-divider" />
+        <h2>PSU ควรระบุยี่ห้อ รุ่น และกำลังไฟถ้าทราบ</h2>
+        <p>สำหรับ Gaming PC โดยเฉพาะเครื่องที่มีการ์ดจอแยก ควรแจ้ง PSU</p>
+        <p>ตัวอย่าง:</p>
+        <p><strong>650W 80+</strong></p>
+        <p>แต่หากทราบเฉพาะกำลังไฟก็สามารถส่งข้อมูลเท่าที่มีได้</p>
+        <p>ไม่ควรเปิด PSU หรือแกะชิ้นส่วนภายในเพียงเพื่อเช็กข้อมูลก่อนขาย</p>
+        <hr class="section-divider" />
+        <h2>Case และสภาพภายนอกมีผลต่อความพร้อมใช้งาน</h2>
+        <p>ควรถ่าย:</p>
+        <ul>
+        <li>ด้านหน้า</li>
+        <li>ด้านข้าง</li>
+        <li>ด้านในที่มองเห็นได้</li>
+        <li>ด้านหลัง</li>
+        <li>Port</li>
+        <li>Tempered Glass ถ้ามี</li>
+        </ul>
+        <p>ควรแจ้งหาก:</p>
+        <ul>
+        <li>ฝาแตก</li>
+        <li>กระจกแตก</li>
+        <li>มีสนิม</li>
+        <li>Port หน้าเสีย</li>
+        <li>Fan ไม่หมุน</li>
+        <li>RGB มีปัญหา</li>
+        <li>Case บุบ</li>
+        </ul>
+        <p>ไม่จำเป็นต้องเปลี่ยน Case ก่อนเช็กราคา</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดติดแต่มีอาการควรแจ้งตามจริง</h2>
+        <p>ตัวอย่าง:</p>
+        <ul>
+        <li>เปิดแล้วดับ</li>
+        <li>Restart</li>
+        <li>จอฟ้า</li>
+        <li>ค้าง</li>
+        <li>การ์ดจอไม่ขึ้น</li>
+        <li>ภาพแตก</li>
+        <li>เล่นเกมแล้วดับ</li>
+        <li>Fan เสียงดัง</li>
+        <li>ความร้อนผิดปกติ</li>
+        </ul>
+        <p>ควรแจ้งว่าอาการเกิดขึ้นเมื่อใดและเกิดบ่อยแค่ไหนเท่าที่ทราบ</p>
+        <p>ไม่ควรวินิจฉัยว่า Mainboard, PSU หรือ GPU เสียโดยยังไม่ได้ตรวจ</p>
+        <hr class="section-divider" />
+        <h2>คอมเปิดไม่ติดยังเช็กราคาได้</h2>
+        <p>สามารถเริ่มจากส่ง:</p>
+        <ul>
+        <li>CPU</li>
+        <li>GPU</li>
+        <li>Mainboard</li>
+        <li>RAM</li>
+        <li>Storage</li>
+        <li>PSU</li>
+        <li>รูป</li>
+        <li>อาการก่อนเสีย</li>
+        </ul>
+        <p>เครื่องที่ทดสอบไม่ได้จะมีความไม่แน่นอนมากกว่าเครื่องปกติ แต่ไม่ได้หมายความว่า Hardware ทุกชิ้นไม่มีมูลค่า</p>
+        <p>หากมีกลิ่นไหม้ ควัน หรือความร้อนผิดปกติ ไม่ควรเปิดซ้ำหลายครั้งเพียงเพื่อขอราคา</p>
+        <hr class="section-divider" />
+        <h2>ขายเฉพาะเครื่องหรือรวมจอก็ต้องแจ้งให้ชัด</h2>
+        <p>หากมี:</p>
+        <ul>
+        <li>Monitor</li>
+        <li>Keyboard</li>
+        <li>Mouse</li>
+        <li>Wi-Fi Adapter</li>
+        <li>Speaker</li>
+        <li>UPS</li>
+        <li>อุปกรณ์อื่น</li>
+        </ul>
+        <p>ควรแจ้งว่าอะไร <strong>รวมขาย</strong> และอะไร <strong>ไม่รวม</strong></p>
+        <p>ไม่ควรรวมราคาจอหรืออุปกรณ์โดยอัตโนมัติหากเจ้าของยังต้องการเก็บไว้</p>
+        <hr class="section-divider" />
+        <h2>คอมจากสำนักงานหลายเครื่องควรแยก Configuration</h2>
+        <p>หากมีหลายเครื่องสามารถจัดข้อมูล เช่น:</p>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>SSD</th>
+                <th>GPU</th>
+                <th>จำนวน</th>
+                <th>สภาพ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>i5-...</td>
+                <td>8GB</td>
+                <td>256GB</td>
+                <td>Integrated</td>
+                <td>5</td>
+                <td>ใช้งานได้</td>
+              </tr>
+              <tr>
+                <td>i5-...</td>
+                <td>16GB</td>
+                <td>512GB</td>
+                <td>Integrated</td>
+                <td>3</td>
+                <td>มีตำหนิ</td>
+              </tr>
+              <tr>
+                <td>Ryzen 5 ...</td>
+                <td>16GB</td>
+                <td>512GB</td>
+                <td>RTX ...</td>
+                <td>2</td>
+                <td>ใช้งานได้</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>ไม่ควรใช้สเปกของเครื่องเดียวแทนทั้งล็อตหาก Hardware ต่างกัน</p>
+        <hr class="section-divider" />
+        <h2>ข้อมูลใน Storage ไม่จำเป็นสำหรับการประเมิน Hardware</h2>
+        <p>เพื่อสอบถามราคา ไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>Email Password</li>
+        <li>ข้อมูลลูกค้า</li>
+        <li>เอกสารภายในองค์กร</li>
+        </ul>
+        <p>หากต้องการเก็บ SSD หรือ HDD ไว้สามารถแจ้งได้ตั้งแต่ต้น</p>
+        <hr class="section-divider" />
+        <h2>หน้ามหาสารคามต่างจากหน้ารับซื้อคอมหลักอย่างไร</h2>
+        <p>หน้า <a href="/รับซื้อคอม/">รับซื้อคอม</a> เป็น Broad Computer / Desktop Money Hub</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อคอม-สารคาม/</code></p>
+        <p>รักษา:</p>
+        <p><strong>Computer / Desktop PC + Maha Sarakham</strong></p>
+        <p>จึงไม่ควรขยายหน้านี้ให้เป็นหน้า National Computer อีกหน้า</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคาคอมในมหาสารคาม</h2>
+        <h3>1. ส่ง CPU</h3>
+        <p>ใช้รุ่นเต็ม</p>
+        <h3>2. ส่ง GPU</h3>
+        <p>ถ้ามีการ์ดจอแยก</p>
+        <h3>3. ส่ง RAM</h3>
+        <p>ความจุและประเภทถ้าทราบ</p>
+        <h3>4. ส่ง Storage</h3>
+        <p>SSD/HDD และความจุ</p>
+        <h3>5. แจ้ง Mainboard</h3>
+        <p>รุ่นเท่าที่ตรวจได้</p>
+        <h3>6. แจ้ง PSU</h3>
+        <p>Brand รุ่นและ Watt ถ้าทราบ</p>
+        <h3>7. ส่งรูป Case</h3>
+        <p>รวมด้านในและตำหนิที่มองเห็น</p>
+        <h3>8. แจ้งอาการ</h3>
+        <p>หากเครื่องไม่ปกติ</p>
+        <h3>9. แจ้งสิ่งที่รวมขาย</h3>
+        <p>จอและอุปกรณ์แยกให้ชัด</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยัน Hardware และสภาพก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคาคอมในมหาสารคาม</h2>
+        <p>ส่ง:</p>
+        <p><strong>CPU + GPU + RAM + SSD + Mainboard + PSU + รูป + อาการ</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขายคอมในมหาสารคาม"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

@@ -1,0 +1,403 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อโน๊ตบุ๊คอำเภอพล ขอนแก่น Notebook มือสอง เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อโน๊ตบุ๊คมือสองในอำเภอพล ขอนแก่น ส่งรุ่น CPU RAM SSD GPU แบตเตอรี่ รูป สภาพและอุปกรณ์เพื่อเช็กราคาเบื้องต้นก่อนตัดสินใจขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊ค",
+    "url": "/รับซื้อโน๊ตบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คขอนแก่น",
+    "url": "/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คอำเภอพล ขอนแก่น เช็กรุ่นและสภาพก่อนขาย",
+    "url": "/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "หน้านี้ต่างจากหน้ารับซื้อโน๊ตบุ๊คขอนแก่นอย่างไร?",
+    "answer": "หน้าขอนแก่นรักษา Intent ระดับจังหวัด ส่วนหน้านี้รักษา Historical Search Intent ที่ระบุอำเภอพลโดยเฉพาะ จึงไม่ควรใช้สองหน้าแทนกัน"
+  },
+  {
+    "question": "อยู่ในอำเภอพลต้องนำเครื่องไปให้ดูก่อนถึงจะทราบราคาไหม?",
+    "answer": "สามารถเริ่มจากส่ง Model สเปก รูป Battery อาการและอุปกรณ์เพื่อประเมินเบื้องต้นก่อน แล้วจึงค่อยพิจารณาขั้นตอนตรวจสินค้าและส่งมอบ"
+  },
+  {
+    "question": "Gaming Notebook ต้องแจ้ง GPU หรือไม่?",
+    "answer": "ควรแจ้งรุ่น GPU เต็ม เพราะเครื่อง Series เดียวกันอาจมีหลาย Configuration และมีมูลค่าต่างกัน"
+  },
+  {
+    "question": "เครื่องเปิดไม่ติดต้องซ่อมก่อนขายไหม?",
+    "answer": "ไม่จำเป็นทุกกรณี สามารถเช็กราคาตามสภาพก่อน แล้วจึงเปรียบเทียบต้นทุนและความเสี่ยงของการซ่อม"
+  },
+  {
+    "question": "ไม่มี Adapter ยังประเมินได้ไหม?",
+    "answer": "ได้ ควรแจ้งว่าไม่มี Adapter ตั้งแต่ต้น และไม่จำเป็นต้องซื้อใหม่ก่อนทราบว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อโน๊ตบุ๊คอำเภอพล ขอนแก่น เช็กรุ่นและสภาพก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/</code> เป็น Historical URL ที่รักษา Search Intent ระดับพื้นที่ย่อย:</p>
+        <p><strong>Notebook + อำเภอพล + ขอนแก่น</strong></p>
+        <p>หน้านี้ไม่ได้ใช้แทนหน้าขอนแก่นระดับจังหวัด และไม่ได้ใช้แทนหน้ารับซื้อ Notebook หลัก</p>
+        <p>หากมี Notebook อยู่ในอำเภอพลและกำลังคิดว่าจะขาย สามารถเริ่มจากส่งข้อมูลของเครื่องก่อน:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter + อาการ</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>อำเภอพลเป็น Intent ที่แยกจากหน้าขอนแก่นระดับจังหวัด</h2>
+        <p>โครงสร้างข้อมูลของเว็บไซต์แยกระหว่าง:</p>
+        <ul>
+        <li>หน้ารับซื้อ Notebook หลัก</li>
+        <li>หน้าระดับจังหวัดขอนแก่น</li>
+        <li>Historical URL ระดับอำเภอพล</li>
+        </ul>
+        <p>หากกำลังมองหาข้อมูลภาพรวมของจังหวัด สามารถดูได้ที่ <a href="/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/">รับซื้อโน๊ตบุ๊คขอนแก่น</a></p>
+        <p>ส่วนหน้านี้รักษาบริบทเฉพาะของผู้ขายที่ค้นหาร่วมกับคำว่า <strong>อำเภอพล</strong></p>
+        <p>การมีหน้าเฉพาะพื้นที่ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในอำเภอพล</p>
+        <hr class="section-divider" />
+        <h2>ก่อนเดินทางควรส่งข้อมูลเครื่องให้ครบก่อน</h2>
+        <p>Notebook อาจมีมูลค่าต่างกันมากแม้ชื่อ Series เหมือนกัน</p>
+        <p>การส่งรูปอย่างเดียวอาจยังไม่พอ</p>
+        <p>ข้อมูลที่ช่วยแยกเครื่องได้คือ:</p>
+        <ul>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>CPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>GPU ถ้ามี</li>
+        <li>Battery</li>
+        <li>Adapter</li>
+        <li>สภาพหน้าจอ</li>
+        <li>ตำหนิ</li>
+        <li>ประวัติซ่อมถ้าทราบ</li>
+        </ul>
+        <p>หลังทราบข้อมูลเบื้องต้นแล้วจึงค่อยพิจารณาขั้นตอนตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <hr class="section-divider" />
+        <h2>Model เต็มสำคัญกว่าชื่อบนฝาเครื่อง</h2>
+        <p>คำว่า:</p>
+        <p><strong>ASUS VivoBook</strong></p>
+        <p><strong>Acer Aspire</strong></p>
+        <p><strong>Lenovo IdeaPad</strong></p>
+        <p>หรือชื่อ Series อื่น</p>
+        <p>อาจครอบคลุมหลาย Generation และหลาย Configuration</p>
+        <p>ควรตรวจ Model จาก:</p>
+        <ul>
+        <li>Sticker ใต้เครื่อง</li>
+        <li>BIOS</li>
+        <li>System Information</li>
+        <li>About</li>
+        <li>กล่องเดิม</li>
+        </ul>
+        <p>ถ้าอ่านรุ่นไม่ชัด สามารถถ่ายรูปป้ายใต้เครื่องประกอบได้</p>
+        <hr class="section-divider" />
+        <h2>CPU ควรแจ้งเป็นรหัสเต็ม</h2>
+        <p>ตัวอย่าง:</p>
+        <p><strong>Intel Core i5-1135G7</strong></p>
+        <p><strong>Intel Core i5-12450H</strong></p>
+        <p><strong>AMD Ryzen 5 5500U</strong></p>
+        <p><strong>AMD Ryzen 7 7735HS</strong></p>
+        <p>ข้อมูลนี้ช่วยแยก Generation ได้ดีกว่าการแจ้งเพียง Core i5 หรือ Ryzen 7</p>
+        <hr class="section-divider" />
+        <h2>Gaming Notebook ต้องแจ้ง GPU</h2>
+        <p>หากเป็น Gaming Notebook ควรแจ้งการ์ดจอด้วย เช่น</p>
+        <ul>
+        <li>GTX Series</li>
+        <li>RTX Series</li>
+        <li>Radeon รุ่นที่ติดตั้งในเครื่อง</li>
+        </ul>
+        <p>ควรใช้รุ่นเต็มเท่าที่ตรวจได้</p>
+        <p>Gaming Notebook Series เดียวกันอาจมี CPU และ GPU หลายแบบ จึงไม่ควรประเมินจากชื่อเครื่องเพียงอย่างเดียว</p>
+        <hr class="section-divider" />
+        <h2>RAM และ SSD ต้องใช้ Configuration ปัจจุบัน</h2>
+        <p>หากเครื่องเคยอัปเกรดควรแจ้งสิ่งที่ติดตั้งอยู่จริง</p>
+        <p>ตัวอย่าง:</p>
+        <p><strong>RAM 16GB / SSD 512GB</strong></p>
+        <p>หากตั้งใจถอด SSD เก็บไว้ก่อนขาย ควรแจ้งว่า:</p>
+        <p><strong>ไม่รวม SSD</strong></p>
+        <p>ตั้งแต่ขั้นตอนเช็กราคา</p>
+        <p>ราคาควรอิง Hardware ที่จะส่งมอบจริง</p>
+        <hr class="section-divider" />
+        <h2>Battery เสื่อมหรือไม่เก็บไฟยังเช็กราคาได้</h2>
+        <p>ควรแจ้งอาการ เช่น</p>
+        <ul>
+        <li>Battery ใช้งานได้ปกติ</li>
+        <li>หมดเร็ว</li>
+        <li>ไม่เก็บไฟ</li>
+        <li>ต้องเสียบ Adapter</li>
+        <li>Battery Health ต่ำ</li>
+        <li>เคยเปลี่ยน Battery</li>
+        <li>Battery บวม</li>
+        </ul>
+        <p>หาก Battery บวม ไม่ควรกดบริเวณที่นูนหรือใช้งานเครื่องหนักโดยไม่จำเป็น</p>
+        <hr class="section-divider" />
+        <h2>หน้าจอและบานพับมีผลต่อสภาพเครื่อง</h2>
+        <p>ควรถ่าย:</p>
+        <ul>
+        <li>หน้าจอขณะเปิด</li>
+        <li>ฝาหลัง</li>
+        <li>บานพับซ้ายและขวา</li>
+        <li>Keyboard</li>
+        <li>Palmrest</li>
+        <li>ด้านล่าง</li>
+        </ul>
+        <p>ควรแจ้งหากมี:</p>
+        <ul>
+        <li>จอเป็นเส้น</li>
+        <li>จุดดำ</li>
+        <li>จอกระพริบ</li>
+        <li>จอแตก</li>
+        <li>บานพับหลวม</li>
+        <li>ฝาแตก</li>
+        <li>ตัวเครื่องแยก</li>
+        </ul>
+        <p>ไม่ควรสรุปสาเหตุของอาการหากยังไม่ได้ตรวจ Hardware</p>
+        <hr class="section-divider" />
+        <h2>ไม่มี Adapter ยังส่งมาประเมินได้</h2>
+        <p>สามารถแจ้งว่าไม่มี Adapter ได้</p>
+        <p>ไม่จำเป็นต้องรีบซื้อ Adapter ใหม่ก่อนทราบว่า:</p>
+        <ul>
+        <li>ราคาตามสภาพปัจจุบันเท่าไร</li>
+        <li>Adapter มีต้นทุนเท่าไร</li>
+        <li>มูลค่าที่เพิ่มขึ้นคุ้มกับต้นทุนหรือไม่</li>
+        </ul>
+        <p>หากมี Adapter เทียบก็ควรแจ้งตามจริง</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดไม่ติดควรแจ้งอาการแบบไหน</h2>
+        <p>หากเปิดไม่ได้ ให้ส่งข้อมูลที่ทราบ เช่น</p>
+        <ul>
+        <li>Model</li>
+        <li>CPU</li>
+        <li>GPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>Adapter</li>
+        <li>ไฟสถานะ</li>
+        <li>Fan</li>
+        <li>อาการก่อนเสีย</li>
+        <li>เคยตกหรือโดนน้ำหรือไม่</li>
+        <li>ประวัติซ่อม</li>
+        </ul>
+        <p>หากมีกลิ่นไหม้ ความร้อนผิดปกติ หรือ Battery บวม ไม่ควรทดลองเปิดหรือชาร์จซ้ำหลายครั้งเพียงเพื่อเช็กราคา</p>
+        <hr class="section-divider" />
+        <h2>Notebook เคยซ่อมยังขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินตามสภาพได้</p>
+        <p>ควรแจ้งหากทราบว่าเคย:</p>
+        <ul>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Battery</li>
+        <li>ซ่อม Mainboard</li>
+        <li>เปลี่ยน Keyboard</li>
+        <li>เพิ่ม RAM</li>
+        <li>เปลี่ยน SSD</li>
+        <li>ซ่อมบานพับ</li>
+        <li>ซ่อมระบบชาร์จ</li>
+        <li>โดนน้ำ</li>
+        </ul>
+        <p>ประวัติซ่อมช่วยอธิบายสภาพ ไม่ได้หมายความว่าเครื่องจะไม่มีมูลค่า</p>
+        <hr class="section-divider" />
+        <h2>ข้อมูลส่วนตัวไม่ต้องส่งเพื่อเช็กราคา</h2>
+        <p>ไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>Email Password</li>
+        </ul>
+        <p>เพื่อขอราคาประเมิน Hardware</p>
+        <p>เจ้าของควรสำรองและจัดการข้อมูลของตนเองก่อนส่งมอบจริง</p>
+        <p>หากต้องการเก็บ SSD สามารถแจ้งได้ตั้งแต่ต้น</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา Notebook ในอำเภอพล</h2>
+        <h3>1. ส่ง Model</h3>
+        <p>ใช้ชื่อรุ่นเต็มเท่าที่ตรวจได้</p>
+        <h3>2. ส่ง CPU</h3>
+        <p>ระบุ Generation และรุ่น</p>
+        <h3>3. ส่ง RAM และ SSD</h3>
+        <p>ใช้ Configuration ปัจจุบัน</p>
+        <h3>4. ส่ง GPU ถ้ามี</h3>
+        <p>สำคัญสำหรับ Gaming Notebook</p>
+        <h3>5. แจ้ง Battery</h3>
+        <p>Health หรืออาการ</p>
+        <h3>6. ส่งรูป</h3>
+        <p>รวมหน้าจอ บานพับและตำหนิ</p>
+        <h3>7. แจ้ง Adapter</h3>
+        <p>เดิม เทียบ หรือไม่มี</p>
+        <h3>8. แจ้งประวัติซ่อม</h3>
+        <p>เท่าที่ทราบ</p>
+        <h3>9. เช็กราคาเบื้องต้น</h3>
+        <p>ก่อนตัดสินใจเดินทางหรือซ่อม</p>
+        <h3>10. ตรวจสินค้าก่อนซื้อขาย</h3>
+        <p>ยืนยันรุ่น สเปก สภาพและสิ่งที่รวมขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคาโน๊ตบุ๊คในอำเภอพล ขอนแก่น</h2>
+        <p>ส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขาย Notebook ในอำเภอพล"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

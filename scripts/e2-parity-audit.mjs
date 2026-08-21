@@ -102,7 +102,25 @@ const ALLOWED_INDEX_LOCAL = new Set([
   normalizePath('/รับซื้อโน๊ตบุ๊ค-นครราชส/'),
   normalizePath('/รับซื้อเมืองขอนแก่น/'),
   normalizePath('/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/'),
-  normalizePath('/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/')
+  normalizePath('/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/'),
+  normalizePath('/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/'),
+  normalizePath('/รับซื้อโทรศัพท์-มือถือ-ย/'),
+  normalizePath('/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/'),
+  normalizePath('/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/'),
+  normalizePath('/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/'),
+  normalizePath('/รับซื้อโน๊ตบุ๊ค-หนองบัว/'),
+  normalizePath('/รับซื้อโน๊ตบุ๊ค-อุดรธาน/'),
+  normalizePath('/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/'),
+  normalizePath('/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/'),
+  normalizePath('/รับซื้อกล้องมือสองมุก/'),
+  normalizePath('/รับซื้อคอม-สารคาม/'),
+  normalizePath('/รับซื้อmacbook-อุดรธานี/'),
+  normalizePath('/รับซื้อกล้องอุบล-กล้องcanon-niko/'),
+  normalizePath('/รับซื้อกล้อง-ยโสธร/'),
+  normalizePath('/รับซื้อกล้องถ่ายรูป-ศรี/'),
+  normalizePath('/รับซื้อกล้องมือสองสุร/'),
+  normalizePath('/รับซื้อลำโพง-ยโสธร/'),
+  normalizePath('/รับซื้อไอแพด-ยโสธร-ipad/')
 ]);
 
 for (const row of localWinners) {
@@ -156,18 +174,18 @@ if (ubonSeo.state !== 'INDEX' || ubonSeo.httpStatus !== 200 || ubonSeo.robots !=
 }
 
 const yasothonSeo = resolveSeo('/รับซื้อโทรศัพท์-มือถือ-ย/');
-if (yasothonSeo.state !== 'HOLD_NOINDEX' || yasothonSeo.httpStatus !== 200 || yasothonSeo.robots !== 'noindex,follow') {
-  errors.push(`Remediated path /รับซื้อโทรศัพท์-มือถือ-ย/ did not resolve to valid HOLD_NOINDEX (state: ${yasothonSeo.state}, status: ${yasothonSeo.httpStatus}, robots: ${yasothonSeo.robots})`);
+if (yasothonSeo.state !== 'INDEX' || yasothonSeo.httpStatus !== 200 || yasothonSeo.robots !== 'index,follow') {
+  errors.push(`Remediated path /รับซื้อโทรศัพท์-มือถือ-ย/ did not resolve to valid INDEX (state: ${yasothonSeo.state}, status: ${yasothonSeo.httpStatus}, robots: ${yasothonSeo.robots})`);
 }
 
-if (activeIndexCount !== 17) errors.push(`Expected 17 Active INDEX local winners, found ${activeIndexCount}`);
-if (holdNoindexCount !== 7) errors.push(`Expected 7 HOLD_NOINDEX candidates, found ${holdNoindexCount}`);
-if (draftCount !== 12) errors.push(`Expected 12 DRAFT candidates, found ${draftCount}`);
+if (activeIndexCount !== 35) errors.push(`Expected 35 Active INDEX local winners, found ${activeIndexCount}`);
+if (holdNoindexCount !== 0) errors.push(`Expected 0 HOLD_NOINDEX candidates, found ${holdNoindexCount}`);
+if (draftCount !== 1) errors.push(`Expected 1 DRAFT candidates, found ${draftCount}`);
 
 console.log(`- Checked Master Map URLs:            ${checked} / 36`);
-console.log(`- Current Active INDEX:               ${activeIndexCount} (Expected: 17)`);
-console.log(`- Current HOLD_NOINDEX:              ${holdNoindexCount} (Expected: 7)`);
-console.log(`- Current DRAFT (404):               ${draftCount} (Expected: 12)`);
+console.log(`- Current Active INDEX:               ${activeIndexCount} (Expected: 35)`);
+console.log(`- Current HOLD_NOINDEX:              ${holdNoindexCount} (Expected: 0)`);
+console.log(`- Current DRAFT (404):               ${draftCount} (Expected: 1)`);
 console.log(`- GONE Collisions:                   0`);
 console.log(`- REDIRECT Collisions:               0\n`);
 

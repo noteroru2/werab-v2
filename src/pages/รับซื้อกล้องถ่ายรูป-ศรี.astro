@@ -1,0 +1,456 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อกล้องศรีสะเกษ Body Lens อุปกรณ์หลายชิ้น เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อกล้องมือสองในศรีสะเกษ ทั้ง Body Lens DSLR Mirrorless และอุปกรณ์กล้อง ประเมินแยกรุ่น เลนส์ Shutter Battery Charger Flash และสภาพก่อนขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อกล้อง",
+    "url": "/รับซื้อกล้อง/"
+  },
+  {
+    "name": "รับซื้อกล้องศรีสะเกษ ประเมิน Body Lens และอุปกรณ์แยกก่อนขาย",
+    "url": "/รับซื้อกล้องถ่ายรูป-ศรี/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "มีกล้องพร้อม Lens หลายตัวควรส่งข้อมูลอย่างไร?",
+    "answer": "ควรแยก Body และ Lens เป็นรายการ ระบุรุ่น จำนวนและสภาพของแต่ละชิ้น เพื่อไม่ให้ประเมินทั้งชุดแบบเหมารวม"
+  },
+  {
+    "question": "Lens มีฝุ่นหรือฝ้ายังประเมินได้ไหม?",
+    "answer": "ได้ ควรแจ้งตามสภาพที่มองเห็น หากไม่แน่ใจว่าเป็นฝุ่น ฝ้าหรือราไม่ควรแกะ Lens เองเพื่อหาคำตอบก่อนขาย"
+  },
+  {
+    "question": "Shutter Count ต้องแจ้งทุก Body หรือไม่?",
+    "answer": "ถ้าตรวจได้ควรแยกตาม Body แต่ Shutter Count เป็นเพียงข้อมูลประกอบและต้องดูร่วมกับสภาพส่วนอื่น"
+  },
+  {
+    "question": "Memory Card จำเป็นต้องรวมขายไหม?",
+    "answer": "ไม่จำเป็น สามารถถอดเก็บไว้ได้ โดยเฉพาะเมื่อมีภาพหรือข้อมูลส่วนตัว และควรแจ้งว่าไม่รวม Memory Card"
+  },
+  {
+    "question": "อุปกรณ์บางชิ้นยังไม่ได้ทดสอบส่งมาประเมินได้ไหม?",
+    "answer": "ได้ ควรระบุว่า “ยังไม่ได้ทดสอบ” แทนการระบุว่าใช้งานปกติ เพื่อให้ข้อมูลสภาพตรงกับสิ่งที่ทราบจริง"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อกล้องศรีสะเกษ ประเมิน Body Lens และอุปกรณ์แยกก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อกล้องถ่ายรูป-ศรี/</code> รักษา Historical Search Intent:</p>
+        <p><strong>Camera + Sisaket</strong></p>
+        <p>หากมีชุดกล้องที่ประกอบด้วย Body, Lens, Battery, Charger, Flash หรืออุปกรณ์หลายชิ้น ควรแยกแต่ละรายการก่อนประเมิน ไม่ควรตีมูลค่าทั้งชุดจาก Body เพียงชิ้นเดียว</p>
+        <p>เริ่มจากส่งรายการ:</p>
+        <p><strong>Body + Lens + จำนวน + Shutter Count ถ้าทราบ + Battery + Charger + Accessories + รูป</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>กล้องหนึ่งชุดควรแยกเป็นรายการก่อน</h2>
+        <p>ตัวอย่างชุดกล้องอาจประกอบด้วย:</p>
+        <ul>
+        <li>Body 1 ตัว</li>
+        <li>Lens 2 ตัว</li>
+        <li>Battery 2 ก้อน</li>
+        <li>Charger</li>
+        <li>Flash</li>
+        <li>Strap</li>
+        <li>Hood</li>
+        <li>Filter</li>
+        <li>กระเป๋า</li>
+        </ul>
+        <p>ควรระบุว่าอะไรอยู่ในชุดจริง</p>
+        <p>เพราะมูลค่าของ Body และ Lens แต่ละตัวไม่เหมือนกัน</p>
+        <hr class="section-divider" />
+        <h2>มีหลาย Body หรือหลาย Lens ควรทำรายการแยก</h2>
+        <p>ตัวอย่าง:</p>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ประเภท</th>
+                <th>รุ่น</th>
+                <th>จำนวน</th>
+                <th>สภาพ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Body</td>
+                <td>รุ่น...</td>
+                <td>1</td>
+                <td>ใช้งานได้</td>
+              </tr>
+              <tr>
+                <td>Lens</td>
+                <td>รุ่น...</td>
+                <td>1</td>
+                <td>มีฝุ่น</td>
+              </tr>
+              <tr>
+                <td>Lens</td>
+                <td>รุ่น...</td>
+                <td>1</td>
+                <td>ปกติ</td>
+              </tr>
+              <tr>
+                <td>Battery</td>
+                <td>รุ่น...</td>
+                <td>2</td>
+                <td>ใช้งานได้</td>
+              </tr>
+              <tr>
+                <td>Flash</td>
+                <td>รุ่น...</td>
+                <td>1</td>
+                <td>ยังไม่ได้ทดสอบ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>รูปแบบนี้ช่วยให้รู้ว่าอุปกรณ์แต่ละชิ้นอยู่ในสภาพใด</p>
+        <hr class="section-divider" />
+        <h2>Body ควรตรวจรุ่นและระบบให้ชัด</h2>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>DSLR หรือ Mirrorless</li>
+        <li>Mount ถ้าทราบ</li>
+        <li>Shutter Count ถ้าตรวจได้</li>
+        <li>Battery</li>
+        <li>Charger</li>
+        </ul>
+        <p>ไม่ควรแจ้งเพียง:</p>
+        <p><strong>กล้อง DSLR</strong></p>
+        <p>หรือ:</p>
+        <p><strong>กล้อง Mirrorless</strong></p>
+        <p>เพราะไม่สามารถแยก Generation และ Platform ได้</p>
+        <hr class="section-divider" />
+        <h2>Lens ควรเขียนชื่อเต็มแยกทีละตัว</h2>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>Focal Length</li>
+        <li>Aperture</li>
+        <li>Mount</li>
+        <li>รุ่นเต็ม</li>
+        <li>AF</li>
+        <li>Stabilization ถ้ามี</li>
+        <li>สภาพกระจกหน้า/ท้าย</li>
+        <li>สภาพภายในเท่าที่มองเห็น</li>
+        </ul>
+        <p>ตัวอย่าง:</p>
+        <p><strong>35mm F2</strong></p>
+        <p>กับ:</p>
+        <p><strong>24-105mm F4</strong></p>
+        <p>เป็น Lens คนละประเภทและไม่ควรรวมเป็นคำว่า “เลนส์ 2 ตัว” อย่างเดียว</p>
+        <hr class="section-divider" />
+        <h2>Lens มีฝุ่นไม่ได้แปลว่าเป็นราเสมอไป</h2>
+        <p>หากมองเห็นสิ่งผิดปกติภายใน Lens ควรอธิบายตามที่เห็น เช่น:</p>
+        <ul>
+        <li>ฝุ่น</li>
+        <li>ฝ้า</li>
+        <li>เส้นคล้ายรา</li>
+        <li>คราบ</li>
+        <li>รอย</li>
+        </ul>
+        <p>หากไม่แน่ใจ ไม่ควรฟันธงว่าเป็นรา</p>
+        <p>และไม่ควรแกะ Lens เพื่อทำความสะอาดก่อนขายหากไม่มีความชำนาญ</p>
+        <hr class="section-divider" />
+        <h2>Shutter Count ควรแยกตาม Body</h2>
+        <p>หากมีหลาย Body ต้องระบุ Count ของแต่ละตัว ไม่ควรใช้ตัวเลขเดียวแทนทุกเครื่อง</p>
+        <p>Shutter Count ใช้ประกอบกับ:</p>
+        <ul>
+        <li>สภาพ Body</li>
+        <li>Sensor</li>
+        <li>จอ</li>
+        <li>EVF</li>
+        <li>ปุ่ม</li>
+        <li>Dial</li>
+        <li>Mount</li>
+        <li>ประวัติซ่อม</li>
+        </ul>
+        <p>ไม่ใช่ตัวเลขเดียวที่กำหนดสภาพทั้งหมด</p>
+        <hr class="section-divider" />
+        <h2>Battery และ Charger ควรนับตามจำนวนจริง</h2>
+        <p>ตัวอย่าง:</p>
+        <p><strong>Body 1 ตัว / Battery 3 ก้อน / Charger 1 ตัว</strong></p>
+        <p>ควรแจ้งด้วยว่า Battery เป็น:</p>
+        <ul>
+        <li>ของเดิม</li>
+        <li>ของเทียบ</li>
+        <li>เก็บไฟปกติ</li>
+        <li>เสื่อม</li>
+        <li>บวม</li>
+        <li>ยังไม่ได้ทดสอบ</li>
+        </ul>
+        <p>Battery บวมไม่ควรฝืนใส่ Body หรือชาร์จซ้ำ</p>
+        <hr class="section-divider" />
+        <h2>Flash และอุปกรณ์เสริมควรแยกจาก Body</h2>
+        <p>หากมี:</p>
+        <ul>
+        <li>External Flash</li>
+        <li>Trigger</li>
+        <li>Grip</li>
+        <li>Microphone</li>
+        <li>Cage</li>
+        <li>Filter</li>
+        <li>Tripod</li>
+        <li>Remote</li>
+        <li>Adapter</li>
+        <li>Memory Card</li>
+        </ul>
+        <p>ควรแจ้งแยก</p>
+        <p>อุปกรณ์บางรายการอาจมีมูลค่าในตัวเอง ไม่ควรรวมว่าเป็น “ของแถม” โดยอัตโนมัติ</p>
+        <hr class="section-divider" />
+        <h2>Memory Card มีข้อมูลควรเก็บหรือล้างก่อนส่งมอบ</h2>
+        <p>Memory Card ไม่จำเป็นต้องรวมขายกับกล้อง</p>
+        <p>หากมีภาพหรือข้อมูลส่วนตัวสามารถถอดเก็บไว้ได้</p>
+        <p>เพื่อประเมินกล้องไม่จำเป็นต้องส่ง:</p>
+        <ul>
+        <li>Password ของบัญชี</li>
+        <li>Cloud Password</li>
+        <li>Email Password</li>
+        <li>ข้อมูลส่วนตัวอื่น</li>
+        </ul>
+        <p>ควรแจ้งให้ชัดว่า Memory Card รวมขายหรือไม่</p>
+        <hr class="section-divider" />
+        <h2>กล้องหรือ Lens มีตำหนิควรถ่ายแยก</h2>
+        <p>ควรถ่าย:</p>
+        <ul>
+        <li>Body ทุกด้าน</li>
+        <li>Mount</li>
+        <li>Sensor เท่าที่ปลอดภัย</li>
+        <li>จอ</li>
+        <li>EVF</li>
+        <li>หน้า Lens</li>
+        <li>ท้าย Lens</li>
+        <li>กระบอก Lens</li>
+        <li>ตำหนิ</li>
+        <li>Serial ในขั้นตอนที่เหมาะสม</li>
+        </ul>
+        <p>ไม่จำเป็นต้องโพสต์ Serial สาธารณะเพื่อถามราคา</p>
+        <hr class="section-divider" />
+        <h2>กล้องเปิดไม่ติดหรืออุปกรณ์บางชิ้นยังไม่ได้ทดสอบ</h2>
+        <p>สามารถแบ่งสถานะเป็น:</p>
+        <ul>
+        <li>ใช้งานได้</li>
+        <li>มีอาการ</li>
+        <li>เปิดไม่ติด</li>
+        <li>ยังไม่ได้ทดสอบ</li>
+        </ul>
+        <p>ไม่ควรเขียนว่าใช้งานปกติหากยังไม่ได้ตรวจ</p>
+        <p>หากมีร่องรอยน้ำ ความร้อนผิดปกติ หรือ Battery บวม ไม่ควรทดลองเปิดซ้ำหลายครั้ง</p>
+        <hr class="section-divider" />
+        <h2>ชุดกล้องจากงานหรือองค์กรควรแบ่งรายการ Hardware</h2>
+        <p>หากมีอุปกรณ์หลายชิ้นจาก:</p>
+        <ul>
+        <li>งานถ่ายภาพ</li>
+        <li>Studio</li>
+        <li>บริษัท</li>
+        <li>หน่วยงาน</li>
+        <li>ผู้ใช้งานส่วนตัวที่เลิกใช้งาน</li>
+        </ul>
+        <p>ควรส่งรายการ Hardware โดยไม่ต้องส่งข้อมูลลูกค้า ไฟล์งาน หรือข้อมูลภายในที่ไม่เกี่ยวข้องกับการประเมิน</p>
+        <hr class="section-divider" />
+        <h2>อยู่ศรีสะเกษสามารถเริ่มจากส่งรายการและรูปก่อนได้</h2>
+        <p>ไม่จำเป็นต้องนำอุปกรณ์ทั้งหมดไปเพียงเพื่อขอราคาเบื้องต้น</p>
+        <p>สามารถเริ่มจาก:</p>
+        <p><strong>รายการ + รุ่น + จำนวน + รูป + สภาพ</strong></p>
+        <p>แล้วค่อยพิจารณาขั้นตอนตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>หน้า Local นี้ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ทุกพื้นที่ของจังหวัดศรีสะเกษ</p>
+        <hr class="section-divider" />
+        <h2>หน้าศรีสะเกษต่างจากหน้ารับซื้อกล้องหลัก</h2>
+        <p>หน้า <a href="/รับซื้อกล้อง/">รับซื้อกล้อง</a> เป็น Broad Camera Money Hub</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อกล้องถ่ายรูป-ศรี/</code></p>
+        <p>รักษา:</p>
+        <p><strong>Camera + Sisaket</strong></p>
+        <p>มุมของหน้านี้คือการประเมิน <strong>Body + Lens + Accessories</strong> แยกเป็นรายการ ไม่ใช่การสร้าง National Camera Page ซ้ำ</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคาชุดกล้องในศรีสะเกษ</h2>
+        <h3>1. แยก Body</h3>
+        <p>Brand และ Model</p>
+        <h3>2. แยก Lens</h3>
+        <p>ระบุรุ่นทีละตัว</p>
+        <h3>3. ระบุจำนวน</h3>
+        <p>หากมีหลายชิ้น</p>
+        <h3>4. แจ้ง Shutter Count</h3>
+        <p>แยกแต่ละ Body ถ้าทราบ</p>
+        <h3>5. แจ้ง Battery และ Charger</h3>
+        <p>จำนวนและสภาพ</p>
+        <h3>6. แจ้ง Accessories</h3>
+        <p>Flash Grip Adapter หรืออุปกรณ์อื่น</p>
+        <h3>7. ส่งรูป</h3>
+        <p>แต่ละชิ้นและตำหนิ</p>
+        <h3>8. แบ่งสถานะ</h3>
+        <p>ปกติ มีอาการ เปิดไม่ติด หรือยังไม่ทดสอบ</p>
+        <h3>9. ระบุสิ่งที่ไม่รวมขาย</h3>
+        <p>เช่น Memory Card</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยันรุ่น จำนวน สภาพและอุปกรณ์ก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคากล้องในศรีสะเกษ</h2>
+        <p>ส่ง:</p>
+        <p><strong>Body + Lens + รุ่น + จำนวน + Shutter + Battery + Accessories + รูป</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขายกล้องในศรีสะเกษ"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

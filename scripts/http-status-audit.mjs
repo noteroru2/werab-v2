@@ -44,6 +44,32 @@ const testCases = [
   { path: '/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/', expectedStatus: 200, expectedState: 'INDEX' },
   { path: '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/', expectedStatus: 200, expectedState: 'INDEX' },
 
+  // 1.3 Batch 4 Released 200 Routes (INDEX)
+  { path: '/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโทรศัพท์-มือถือ-ย/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/', expectedStatus: 200, expectedState: 'INDEX' },
+
+  // 1.4 Batch 5 Released 200 Routes (INDEX)
+  { path: '/รับซื้อโน๊ตบุ๊ค-หนองบัว/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อโน๊ตบุ๊ค-อุดรธาน/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อกล้องมือสองมุก/', expectedStatus: 200, expectedState: 'INDEX' },
+
+  // 1.5 Batch 6 Released 200 Routes (INDEX)
+  { path: '/รับซื้อคอม-สารคาม/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อmacbook-อุดรธานี/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อกล้องอุบล-กล้องcanon-niko/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อกล้อง-ยโสธร/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อกล้องถ่ายรูป-ศรี/', expectedStatus: 200, expectedState: 'INDEX' },
+
+  // 1.6 Final E2 Released 200 Routes (INDEX)
+  { path: '/รับซื้อกล้องมือสองสุร/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อลำโพง-ยโสธร/', expectedStatus: 200, expectedState: 'INDEX' },
+  { path: '/รับซื้อไอแพด-ยโสธร-ipad/', expectedStatus: 200, expectedState: 'INDEX' },
+
   // 2. 301 Permanent Redirects
   { path: '/rab-sue-com/', expectedStatus: 301, expectedRedirect: '/รับซื้อคอม/' },
   { path: '/รับซื้อ-ใกล้ฉัน/', expectedStatus: 301, expectedRedirect: '/รับซื้อ/' },

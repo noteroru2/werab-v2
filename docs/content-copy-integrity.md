@@ -1,10 +1,10 @@
 # Content Copy Integrity Audit Report — เรารับซื้อ.com V2
 
-Generated: 2026-08-20T13:54:33.863Z
+Generated: 2026-08-21T10:28:38.747Z
 
 ## Summary
-- **Pages Checked:** 26
-- **PASS_EXACT / PASS_NORMALIZED:** 26
+- **Pages Checked:** 44
+- **PASS_EXACT / PASS_NORMALIZED:** 44
 - **FAIL_DIFFERENT:** 0
 - **SOURCE_COPY_MISSING:** 0
 
@@ -46,43 +46,61 @@ The following shared template components are globally excluded from page-specifi
 | `/รับซื้อเมืองขอนแก่น/` | `docs/content-approved/local-macbook-khonkaen.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
 | `/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/` | `docs/content-approved/local-notebook-yasothon.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
 | `/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/` | `docs/content-approved/local-notebook-khonkaen.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/` | `docs/content-approved/district-notebook-phon-khonkaen.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อโทรศัพท์-มือถือ-ย/` | `docs/content-approved/local-mobile-yasothon.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/` | `docs/content-approved/local-notebook-kalasin.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/` | `docs/content-approved/district-notebook-chumphae-khonkaen.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/` | `docs/content-approved/local-notebook-roiet.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อโน๊ตบุ๊ค-หนองบัว/` | `docs/content-approved/local-notebook-nongbualamphu.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อโน๊ตบุ๊ค-อุดรธาน/` | `docs/content-approved/local-notebook-udonthani.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/` | `docs/content-approved/local-speaker-roiet.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/` | `docs/content-approved/local-iphone-roiet.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อกล้องมือสองมุก/` | `docs/content-approved/local-camera-mukdahan.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อคอม-สารคาม/` | `docs/content-approved/local-computer-mahasarakham.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อmacbook-อุดรธานี/` | `docs/content-approved/local-macbook-udonthani.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อกล้องอุบล-กล้องcanon-niko/` | `docs/content-approved/local-camera-ubon.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อกล้อง-ยโสธร/` | `docs/content-approved/local-camera-yasothon.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อกล้องถ่ายรูป-ศรี/` | `docs/content-approved/local-camera-sisaket.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อกล้องมือสองสุร/` | `docs/content-approved/local-camera-surin.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อลำโพง-ยโสธร/` | `docs/content-approved/local-speaker-yasothon.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
+| `/รับซื้อไอแพด-ยโสธร-ipad/` | `docs/content-approved/local-ipad-yasothon.md` | `INDEX` | 200 | `index,follow` | `self` | `YES` | PASS | PASS | PASS | 1 | **PASS** | 0 | 0 | 0 | 5/5 (PASS) | PASS | PASS | **PASS_EXACT** |
 
 ## Detailed Hashes & Verification
 
 ```
 Path: /รับซื้อโน๊ตบุ๊ค/
-Approved Hash:    bdfb5c288e6cd20ccb07b09b87bbf17cc94f20e61d085de8a0afeb41771df4a7
-Implemented Hash: bdfb5c288e6cd20ccb07b09b87bbf17cc94f20e61d085de8a0afeb41771df4a7
+Approved Hash:    a8590b42ea714e279cc4b9b84aa4ba52d9bf9b9ca1cf2825c76f8468e82e405f
+Implemented Hash: a8590b42ea714e279cc4b9b84aa4ba52d9bf9b9ca1cf2825c76f8468e82e405f
 Status:           PASS_EXACT
 
 Path: /รับซื้อคอม/
-Approved Hash:    f2bce98e8349a419c364b2673cdbc26aa0fe6382136e968c638b3fe2575f2cb7
-Implemented Hash: f2bce98e8349a419c364b2673cdbc26aa0fe6382136e968c638b3fe2575f2cb7
+Approved Hash:    e01b310d1c9a56b9c3d709df88f30fd649d84f5c5441aa47c1bb845ecc075fb3
+Implemented Hash: e01b310d1c9a56b9c3d709df88f30fd649d84f5c5441aa47c1bb845ecc075fb3
 Status:           PASS_EXACT
 
 Path: /รับซื้อแมคบุ๊ค/
-Approved Hash:    6d76c53f6516407f9506ccc6c35c57ca2165b0e763aee5b1755d2a31d0aa83e8
-Implemented Hash: 6d76c53f6516407f9506ccc6c35c57ca2165b0e763aee5b1755d2a31d0aa83e8
+Approved Hash:    296587127882d79b5ff02df78a1ffcc275074c251c1d88fa9af52e0b69e8d384
+Implemented Hash: 296587127882d79b5ff02df78a1ffcc275074c251c1d88fa9af52e0b69e8d384
 Status:           PASS_EXACT
 
 Path: /รับซื้อไอโฟน/
-Approved Hash:    df68d660077337f4014952641ff51c1b65562645e4d46a03c6e92a6e46a0a39d
-Implemented Hash: df68d660077337f4014952641ff51c1b65562645e4d46a03c6e92a6e46a0a39d
+Approved Hash:    e16d59c1e7a026ce69d2ab2f468876dacf3e442ca45f2b22c71b926808c7783f
+Implemented Hash: e16d59c1e7a026ce69d2ab2f468876dacf3e442ca45f2b22c71b926808c7783f
 Status:           PASS_EXACT
 
 Path: /รับซื้อไอแพด/
-Approved Hash:    d2e07326571b0185df45ac6b31b9ae44ceb7277f23aa8bcecefc4d209db779d1
-Implemented Hash: d2e07326571b0185df45ac6b31b9ae44ceb7277f23aa8bcecefc4d209db779d1
+Approved Hash:    edfd4ac0d494b968cf89780ff3de862a7aafa4c3c13a5243013d9abb5aa4fa9a
+Implemented Hash: edfd4ac0d494b968cf89780ff3de862a7aafa4c3c13a5243013d9abb5aa4fa9a
 Status:           PASS_EXACT
 
 Path: /รับซื้อกล้อง/
-Approved Hash:    043800229fade9ac1d5ad3157f8de4e8c1a08df40384e475ab0fafb616f123f2
-Implemented Hash: 043800229fade9ac1d5ad3157f8de4e8c1a08df40384e475ab0fafb616f123f2
+Approved Hash:    99190e77a3a3c0d8d11c5ee6fe70690cc056d3daa6e05867c6225736949de59c
+Implemented Hash: 99190e77a3a3c0d8d11c5ee6fe70690cc056d3daa6e05867c6225736949de59c
 Status:           PASS_EXACT
 
 Path: /รับซื้อลำโพง/
-Approved Hash:    46047feabfd38975ee547b5a49b9e1a9593be181c88ad2062985917a13b30474
-Implemented Hash: 46047feabfd38975ee547b5a49b9e1a9593be181c88ad2062985917a13b30474
+Approved Hash:    adfa95b36b1790fb30471e736deba164bbf44d7b7f53ae89e08f74778751badf
+Implemented Hash: adfa95b36b1790fb30471e736deba164bbf44d7b7f53ae89e08f74778751badf
 Status:           PASS_EXACT
 
 Path: /รับซื้อซากคอมพิวเตอร์/
@@ -176,8 +194,98 @@ Implemented Hash: 6f1fbffefabcb2a868bed3c80b198e3ae0c13c833968bc4a59af172b40838f
 Status:           PASS_EXACT
 
 Path: /รับซื้อโน๊ตบุ๊ค-ขอนแก่น/
-Approved Hash:    fd24df6402dc0905b35e4b8cb301480aae8c57f471f5975ab482bb312b636bb2
-Implemented Hash: fd24df6402dc0905b35e4b8cb301480aae8c57f471f5975ab482bb312b636bb2
+Approved Hash:    864bd3bf0fbe0067c32671304b7933b4b0c4766b9141f6b05423839e33e3ee93
+Implemented Hash: 864bd3bf0fbe0067c32671304b7933b4b0c4766b9141f6b05423839e33e3ee93
+Status:           PASS_EXACT
+
+Path: /รับซื้อ-notebook-อำเภอพล-ขอนแก่น/
+Approved Hash:    f7e18c8dd2bce9ce73c690b74f061e7b9068af0091525dea9f1eb85481aaac45
+Implemented Hash: f7e18c8dd2bce9ce73c690b74f061e7b9068af0091525dea9f1eb85481aaac45
+Status:           PASS_EXACT
+
+Path: /รับซื้อโทรศัพท์-มือถือ-ย/
+Approved Hash:    d89908713cd0d650ec7996569abf1208b1d67221b397843a999f792cdd2fd749
+Implemented Hash: d89908713cd0d650ec7996569abf1208b1d67221b397843a999f792cdd2fd749
+Status:           PASS_EXACT
+
+Path: /รับซื้อโน๊ตบุ๊ค-กาฬสินธ/
+Approved Hash:    a3cbcf8cd5456cb158ce0b7955c8d348ef49715901e29d1898ba46c336dea034
+Implemented Hash: a3cbcf8cd5456cb158ce0b7955c8d348ef49715901e29d1898ba46c336dea034
+Status:           PASS_EXACT
+
+Path: /รับซื้อ-notebook-ชุมแพ-ขอนแก่น/
+Approved Hash:    fa3a32afeef42850fa80e4b28ea03339e4eb77fda6b5c3697fdd6705f26843c7
+Implemented Hash: fa3a32afeef42850fa80e4b28ea03339e4eb77fda6b5c3697fdd6705f26843c7
+Status:           PASS_EXACT
+
+Path: /รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/
+Approved Hash:    e4e72f2d19c5ae090c353bc77ece13acb844a8a106bd31022661f75021ab3382
+Implemented Hash: e4e72f2d19c5ae090c353bc77ece13acb844a8a106bd31022661f75021ab3382
+Status:           PASS_EXACT
+
+Path: /รับซื้อโน๊ตบุ๊ค-หนองบัว/
+Approved Hash:    45cb31a1999fca0568fc7f3d3b4ed98b2f692fc9c99303e3424c92d56b84aa38
+Implemented Hash: 45cb31a1999fca0568fc7f3d3b4ed98b2f692fc9c99303e3424c92d56b84aa38
+Status:           PASS_EXACT
+
+Path: /รับซื้อโน๊ตบุ๊ค-อุดรธาน/
+Approved Hash:    6d459a15cacd495855ad51f2fea14e5c2fe6c9a167417b6e61e8637d59fe3e04
+Implemented Hash: 6d459a15cacd495855ad51f2fea14e5c2fe6c9a167417b6e61e8637d59fe3e04
+Status:           PASS_EXACT
+
+Path: /รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/
+Approved Hash:    ea195af0b1e2aeba6e9f4e9808017343a7776ca64e5488b6f035bea115a3bb2d
+Implemented Hash: ea195af0b1e2aeba6e9f4e9808017343a7776ca64e5488b6f035bea115a3bb2d
+Status:           PASS_EXACT
+
+Path: /รับซื้อไอโฟน-iphone-ร้อยเอ็ด/
+Approved Hash:    65ee89cbc0b84e879a4f01eb1149d44591e9a6035b61b23133192c577dca2e66
+Implemented Hash: 65ee89cbc0b84e879a4f01eb1149d44591e9a6035b61b23133192c577dca2e66
+Status:           PASS_EXACT
+
+Path: /รับซื้อกล้องมือสองมุก/
+Approved Hash:    93327d6caae7400982a24a4bb0582f256f68bdfbd7a00fd6bead18dc49557b3c
+Implemented Hash: 93327d6caae7400982a24a4bb0582f256f68bdfbd7a00fd6bead18dc49557b3c
+Status:           PASS_EXACT
+
+Path: /รับซื้อคอม-สารคาม/
+Approved Hash:    80602dbc11f47bbc553553adf9d5fecd3e0a52f9679cf1b51df2c0060790ec43
+Implemented Hash: 80602dbc11f47bbc553553adf9d5fecd3e0a52f9679cf1b51df2c0060790ec43
+Status:           PASS_EXACT
+
+Path: /รับซื้อmacbook-อุดรธานี/
+Approved Hash:    b17dfa70a2673b7b13318307f788b49316f3b3c353f0d5ed0f80c0a5eeb7a82b
+Implemented Hash: b17dfa70a2673b7b13318307f788b49316f3b3c353f0d5ed0f80c0a5eeb7a82b
+Status:           PASS_EXACT
+
+Path: /รับซื้อกล้องอุบล-กล้องcanon-niko/
+Approved Hash:    c16ed96c2875c2140043d116576ff838a7b6663eee043e0e02a6cf2e2f89197f
+Implemented Hash: c16ed96c2875c2140043d116576ff838a7b6663eee043e0e02a6cf2e2f89197f
+Status:           PASS_EXACT
+
+Path: /รับซื้อกล้อง-ยโสธร/
+Approved Hash:    e0e4eaeb7486af2db0d9ab9eb450dddda39f2ce801e4c8ff635ad49809afb0d4
+Implemented Hash: e0e4eaeb7486af2db0d9ab9eb450dddda39f2ce801e4c8ff635ad49809afb0d4
+Status:           PASS_EXACT
+
+Path: /รับซื้อกล้องถ่ายรูป-ศรี/
+Approved Hash:    95befd4ec12b6fd41ac31ad6aeda1e7c8fa3a0f8a143f66a66e3b38feecd243f
+Implemented Hash: 95befd4ec12b6fd41ac31ad6aeda1e7c8fa3a0f8a143f66a66e3b38feecd243f
+Status:           PASS_EXACT
+
+Path: /รับซื้อกล้องมือสองสุร/
+Approved Hash:    42b150b4385a9adb3322bab332aeb4ef2795205e2a25ad3595170bf6bcd1f97f
+Implemented Hash: 42b150b4385a9adb3322bab332aeb4ef2795205e2a25ad3595170bf6bcd1f97f
+Status:           PASS_EXACT
+
+Path: /รับซื้อลำโพง-ยโสธร/
+Approved Hash:    c20e53eaa1a1f07d10db82f378b78fd2f02b6d05fd7d6ba543e532f864321b3d
+Implemented Hash: c20e53eaa1a1f07d10db82f378b78fd2f02b6d05fd7d6ba543e532f864321b3d
+Status:           PASS_EXACT
+
+Path: /รับซื้อไอแพด-ยโสธร-ipad/
+Approved Hash:    eae96f4d763d46e03e00c6011682c06f8a7c5796682e3a69416828c2d5f46173
+Implemented Hash: eae96f4d763d46e03e00c6011682c06f8a7c5796682e3a69416828c2d5f46173
 Status:           PASS_EXACT
 
 ```

@@ -1,0 +1,406 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อโน๊ตบุ๊คหนองบัวลำภู Notebook มือสอง เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อโน๊ตบุ๊คมือสองในหนองบัวลำภู Notebook Laptop และ Gaming Notebook เช็กรุ่น CPU RAM SSD GPU Battery สภาพและอุปกรณ์ก่อนตัดสินใจขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊ค",
+    "url": "/รับซื้อโน๊ตบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คหนองบัวลำภู ส่งสเปกและรูปเช็กราคาก่อนขาย",
+    "url": "/รับซื้อโน๊ตบุ๊ค-หนองบัว/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "อยู่หนองบัวลำภูสามารถส่งรูปเช็กราคาก่อนได้ไหม?",
+    "answer": "สามารถเริ่มจากส่ง Model สเปก Battery รูป สภาพและอุปกรณ์ก่อน แล้วจึงค่อยพิจารณาขั้นตอนตรวจสินค้าและส่งมอบตามความเหมาะสม"
+  },
+  {
+    "question": "Notebook เพิ่ม RAM หรือ SSD มาแล้วควรแจ้งแบบไหน?",
+    "answer": "ควรแจ้ง Configuration ปัจจุบันและ Hardware ที่รวมขายจริง ไม่จำเป็นต้องยึดตามสเปกเดิมตอนซื้อเครื่อง"
+  },
+  {
+    "question": "Battery เสื่อมต้องเปลี่ยนก่อนขายไหม?",
+    "answer": "ไม่จำเป็นทุกกรณี ควรเช็กราคาตามสภาพก่อนแล้วเปรียบเทียบต้นทุนเปลี่ยน Battery กับมูลค่าที่อาจเพิ่ม"
+  },
+  {
+    "question": "เครื่องเปิดไม่ติดยังเช็กราคาได้ไหม?",
+    "answer": "ได้ สามารถส่ง Model สเปกที่ทราบ รูป Adapter อาการและประวัติซ่อมเพื่อประเมินเบื้องต้นก่อน"
+  },
+  {
+    "question": "ไม่มี Adapter ยังประเมินได้หรือไม่?",
+    "answer": "ได้ ควรแจ้งว่าไม่มี Adapter ตั้งแต่ต้น ไม่จำเป็นต้องซื้อใหม่ก่อนรู้ว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อโน๊ตบุ๊คหนองบัวลำภู ส่งสเปกและรูปเช็กราคาก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-หนองบัว/</code> รักษา Historical Search Intent:</p>
+        <p><strong>Notebook + Nong Bua Lamphu</strong></p>
+        <p>สำหรับผู้ขายที่ยังไม่แน่ใจว่ารุ่นและสภาพของเครื่องอยู่ในระดับใด สามารถเริ่มจากส่งข้อมูลก่อน โดยไม่จำเป็นต้องตัดสินใจขายทันที</p>
+        <p>ข้อมูลที่ควรเตรียม:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter + อาการ</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>เริ่มจากเช็กราคาก่อนวางแผนเดินทางหรือส่งมอบ</h2>
+        <p>สำหรับ Notebook มือสอง สิ่งที่มีผลต่อการประเมินไม่ได้มีเพียงอายุเครื่อง</p>
+        <p>Notebook ที่ซื้อในช่วงเวลาใกล้กันอาจมี:</p>
+        <ul>
+        <li>CPU คนละ Generation</li>
+        <li>RAM ต่างกัน</li>
+        <li>SSD ต่างความจุ</li>
+        <li>GPU ต่างรุ่น</li>
+        <li>Battery ต่างสภาพ</li>
+        <li>อุปกรณ์ไม่เท่ากัน</li>
+        </ul>
+        <p>ผู้ขายในหนองบัวลำภูจึงสามารถเริ่มจากส่งข้อมูลและรูปเครื่องก่อน แล้วค่อยพิจารณาขั้นตอนตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>หน้า Local นี้ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ทุกพื้นที่ของจังหวัดหนองบัวลำภู</p>
+        <hr class="section-divider" />
+        <h2>รุ่นเต็มช่วยป้องกันการประเมินผิดเครื่อง</h2>
+        <p>คำว่า:</p>
+        <p><strong>Acer Aspire</strong></p>
+        <p><strong>ASUS VivoBook</strong></p>
+        <p><strong>Lenovo IdeaPad</strong></p>
+        <p><strong>HP Pavilion</strong></p>
+        <p>อาจเป็นชื่อ Series ที่มีหลายรุ่นย่อย</p>
+        <p>ควรตรวจ Model จาก:</p>
+        <ul>
+        <li>ป้ายใต้เครื่อง</li>
+        <li>BIOS</li>
+        <li>System Information</li>
+        <li>About</li>
+        <li>โปรแกรมของผู้ผลิต</li>
+        <li>กล่องเดิม</li>
+        </ul>
+        <p>หากอ่านไม่ออก สามารถถ่ายรูปป้ายใต้เครื่องมาใช้ประกอบการแยกรุ่นได้</p>
+        <hr class="section-divider" />
+        <h2>CPU ควรดูถึงรหัส Generation</h2>
+        <p>ตัวอย่าง:</p>
+        <p><strong>Intel Core i5-8250U</strong></p>
+        <p>กับ</p>
+        <p><strong>Intel Core i5-1235U</strong></p>
+        <p>แม้เป็น Core i5 เหมือนกัน แต่เป็นคนละ Generation</p>
+        <p>เช่นเดียวกับ:</p>
+        <p><strong>Ryzen 5 3500U</strong></p>
+        <p>กับ</p>
+        <p><strong>Ryzen 5 7530U</strong></p>
+        <p>การแจ้งรหัสเต็มช่วยให้เข้าใจ Platform ของเครื่องได้ตรงกว่า</p>
+        <hr class="section-divider" />
+        <h2>Notebook ที่เคยอัปเกรดต้องแจ้งสเปกปัจจุบัน</h2>
+        <p>หากซื้อเครื่องมาเดิมเป็น:</p>
+        <p><strong>RAM 8GB / SSD 256GB</strong></p>
+        <p>แต่ปัจจุบันอัปเกรดเป็น:</p>
+        <p><strong>RAM 16GB / SSD 1TB</strong></p>
+        <p>ควรแจ้ง Configuration ปัจจุบัน หาก Hardware เหล่านั้นรวมขายจริง</p>
+        <p>หากต้องการถอด SSD หรือ RAM บางส่วนเก็บไว้ ควรแจ้งตั้งแต่ก่อนประเมินเพื่อให้ใช้ Configuration ที่ถูกต้อง</p>
+        <hr class="section-divider" />
+        <h2>Gaming Notebook ต้องรู้ GPU และ Adapter</h2>
+        <p>สำหรับ Gaming Notebook การแจ้งเพียงชื่อ Series อาจยังไม่พอ</p>
+        <p>ควรส่ง:</p>
+        <ul>
+        <li>CPU</li>
+        <li>GPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>Adapter</li>
+        <li>สภาพจอ</li>
+        </ul>
+        <p>ตัวอย่าง GPU:</p>
+        <ul>
+        <li>GTX Series</li>
+        <li>RTX Series</li>
+        <li>Radeon รุ่นที่ติดตั้งในเครื่อง</li>
+        </ul>
+        <p>ควรระบุรุ่นเต็มเท่าที่ตรวจได้ เพราะ Gaming Notebook รุ่นเดียวกันอาจมี GPU หลาย Configuration</p>
+        <hr class="section-divider" />
+        <h2>Battery ควรแจ้งทั้ง Health และอาการใช้งาน</h2>
+        <p>ถ้าเครื่องมีข้อมูล Battery Health สามารถส่งประกอบได้</p>
+        <p>หากไม่มี ให้แจ้งจากการใช้งานจริง เช่น:</p>
+        <ul>
+        <li>ใช้งานได้ตามปกติ</li>
+        <li>หมดเร็ว</li>
+        <li>ไม่เก็บไฟ</li>
+        <li>ต้องเสียบ Adapter</li>
+        <li>ชาร์จไม่เต็ม</li>
+        <li>เคยเปลี่ยน Battery</li>
+        <li>Battery บวม</li>
+        </ul>
+        <p>หาก Battery บวม ไม่ควรกดตัวเครื่องบริเวณที่นูนหรือใช้งานหนักโดยไม่จำเป็น</p>
+        <hr class="section-divider" />
+        <h2>Adapter เดิม Adapter เทียบ หรือไม่มี Adapter ควรแจ้ง</h2>
+        <p>Notebook บางรุ่นต้องใช้ Adapter ที่มีกำลังไฟเฉพาะ</p>
+        <p>ควรแจ้งว่า:</p>
+        <ul>
+        <li>Adapter เดิม</li>
+        <li>Adapter เทียบ</li>
+        <li>มีเฉพาะสาย</li>
+        <li>ไม่มี Adapter</li>
+        <li>Adapter มีอาการ</li>
+        </ul>
+        <p>ไม่จำเป็นต้องซื้อ Adapter ใหม่ก่อนรู้ว่าต้นทุนที่เพิ่มขึ้นคุ้มกับมูลค่าเครื่องหรือไม่</p>
+        <hr class="section-divider" />
+        <h2>จอและบานพับควรถ่ายหลายมุม</h2>
+        <p>ควรส่งรูป:</p>
+        <ul>
+        <li>หน้าจอขณะเปิด</li>
+        <li>ฝาหลัง</li>
+        <li>Keyboard</li>
+        <li>Palmrest</li>
+        <li>บานพับ</li>
+        <li>ด้านล่าง</li>
+        <li>Port</li>
+        </ul>
+        <p>หากมีอาการควรแจ้ง เช่น:</p>
+        <ul>
+        <li>จอเป็นเส้น</li>
+        <li>จุดดำ</li>
+        <li>สีผิดปกติ</li>
+        <li>จอกระพริบ</li>
+        <li>จอแตก</li>
+        <li>บานพับหลวม</li>
+        <li>ฝาแยก</li>
+        <li>ตัวเครื่องแตก</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดไม่ติดยังสามารถเช็กราคาตามสภาพได้</h2>
+        <p>ควรส่งข้อมูลที่ทราบ เช่น:</p>
+        <ul>
+        <li>Model</li>
+        <li>CPU/GPU ถ้าทราบ</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>Adapter</li>
+        <li>รูป</li>
+        <li>ไฟสถานะ</li>
+        <li>อาการก่อนเสีย</li>
+        <li>ประวัติซ่อม</li>
+        <li>เคยตกหรือโดนน้ำหรือไม่</li>
+        </ul>
+        <p>หากมีกลิ่นไหม้ Battery บวม หรือความร้อนผิดปกติ ไม่ควรทดลองเปิดหรือชาร์จซ้ำหลายครั้งเพียงเพื่อขอราคา</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเคยซ่อมควรบอกตามข้อมูลที่ทราบ</h2>
+        <p>ตัวอย่าง:</p>
+        <ul>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Battery</li>
+        <li>เปลี่ยน Keyboard</li>
+        <li>ซ่อม Mainboard</li>
+        <li>ซ่อม Port ชาร์จ</li>
+        <li>เพิ่ม RAM</li>
+        <li>เปลี่ยน SSD</li>
+        <li>ซ่อมบานพับ</li>
+        <li>เคยโดนน้ำ</li>
+        </ul>
+        <p>ข้อมูลเหล่านี้ช่วยให้เข้าใจสภาพเครื่องตรงขึ้น</p>
+        <p>เครื่องที่เคยซ่อมไม่ได้หมายความว่าจะไม่มีมูลค่า</p>
+        <hr class="section-divider" />
+        <h2>ข้อมูลส่วนตัวไม่ใช่ข้อมูลที่ใช้ถามราคา Hardware</h2>
+        <p>เพื่อขอราคาประเมินเบื้องต้น ไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>Email Password</li>
+        </ul>
+        <p>เจ้าของควรสำรองข้อมูลและจัดการบัญชีของตนเองก่อนส่งมอบจริง</p>
+        <p>หากต้องการเก็บ SSD ไว้ สามารถแจ้งว่าไม่รวม SSD ได้</p>
+        <hr class="section-divider" />
+        <h2>หน้าหนองบัวลำภูต่างจากหน้ารับซื้อ Notebook หลัก</h2>
+        <p>หน้า <a href="/รับซื้อโน๊ตบุ๊ค/">รับซื้อโน๊ตบุ๊ค</a> เป็น Broad Notebook Money Hub</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อโน๊ตบุ๊ค-หนองบัว/</code></p>
+        <p>รักษา Search Intent:</p>
+        <p><strong>Notebook + Nong Bua Lamphu</strong></p>
+        <p>จึงไม่ควรขยายหน้านี้ให้กลายเป็นอีกหน้าสำหรับคำรับซื้อ Notebook ระดับประเทศ</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคา Notebook ในหนองบัวลำภู</h2>
+        <h3>1. ส่ง Model</h3>
+        <p>ใช้ชื่อรุ่นเต็ม</p>
+        <h3>2. ส่ง CPU</h3>
+        <p>แจ้งรหัสเต็มเท่าที่ตรวจได้</p>
+        <h3>3. ส่ง RAM และ SSD</h3>
+        <p>ใช้ Configuration ปัจจุบัน</p>
+        <h3>4. ส่ง GPU</h3>
+        <p>ถ้ามี Dedicated GPU</p>
+        <h3>5. แจ้ง Battery</h3>
+        <p>Health หรืออาการใช้งาน</p>
+        <h3>6. ส่งรูป</h3>
+        <p>รวมหน้าจอ ตัวเครื่องและตำหนิ</p>
+        <h3>7. แจ้ง Adapter</h3>
+        <p>เดิม เทียบ หรือไม่มี</p>
+        <h3>8. แจ้งประวัติซ่อม</h3>
+        <p>เท่าที่ทราบ</p>
+        <h3>9. เช็กราคาเบื้องต้น</h3>
+        <p>ก่อนตัดสินใจซ่อมหรือเดินทาง</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยันสเปก สภาพและของที่รวมขายก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคาโน๊ตบุ๊คในหนองบัวลำภู</h2>
+        <p>ส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป + Adapter</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขาย Notebook ในหนองบัวลำภู"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

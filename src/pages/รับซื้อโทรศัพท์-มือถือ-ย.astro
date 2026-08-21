@@ -1,0 +1,375 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อมือถือยโสธร โทรศัพท์มือสอง iPhone Android เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อมือถือมือสองในยโสธร ทั้ง iPhone และ Android ประเมินจากรุ่น ความจุ Battery หน้าจอ กล้อง สภาพ อุปกรณ์และประวัติซ่อม ส่งรูปเช็กราคาก่อนขาย";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อไอโฟน",
+    "url": "/รับซื้อไอโฟน/"
+  },
+  {
+    "name": "รับซื้อมือถือยโสธร เช็กรุ่น แบตเตอรี่ หน้าจอ และสภาพก่อนขาย",
+    "url": "/รับซื้อโทรศัพท์-มือถือ-ย/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "iPhone และ Android ส่งมาเช็กราคาได้เหมือนกันไหม?",
+    "answer": "สามารถเริ่มจากข้อมูลพื้นฐานคล้ายกัน เช่น รุ่น ความจุ Battery รูปและสภาพ แต่รายละเอียดเฉพาะรุ่นอาจต่างกัน จึงควรแจ้งชื่อรุ่นเต็ม"
+  },
+  {
+    "question": "Battery เสื่อมต้องเปลี่ยนก่อนขายไหม?",
+    "answer": "ไม่จำเป็นทุกกรณี ควรเช็กราคาตามสภาพก่อน แล้วค่อยเปรียบเทียบค่าเปลี่ยน Battery กับมูลค่าที่คาดว่าจะเพิ่ม"
+  },
+  {
+    "question": "มือถือเคยเปลี่ยนจอยังประเมินได้ไหม?",
+    "answer": "ได้ ควรแจ้งประวัติที่ทราบ รวมถึงสภาพจอ Touch และฟังก์ชันต่าง ๆ ในปัจจุบัน"
+  },
+  {
+    "question": "เครื่องเปิดไม่ติดต้องซ่อมก่อนหรือไม่?",
+    "answer": "ไม่จำเป็นทุกกรณี สามารถส่งรุ่น ความจุ รูป อาการและประวัติความเสียหายมาเช็กราคาเบื้องต้นก่อน"
+  },
+  {
+    "question": "ต้องส่ง Password หรือ OTP เพื่อเช็กราคาไหม?",
+    "answer": "ไม่ต้อง และไม่ควรส่ง Password, PIN, OTP หรือ Recovery Code เพื่อขอราคาประเมิน"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อมือถือยโสธร เช็กรุ่น แบตเตอรี่ หน้าจอ และสภาพก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อโทรศัพท์-มือถือ-ย/</code> เป็น Historical URL ที่รักษา Intent:</p>
+        <p><strong>โทรศัพท์มือถือ / Smartphone + ยโสธร</strong></p>
+        <p>แม้ URL เดิมถูกตัดทอน แต่เส้นทางนี้มี Search Equity ของตนเอง จึงรักษา URL เดิมไว้และใช้เนื้อหาใหม่ที่กำหนด Intent ให้ชัดเจน</p>
+        <p>ก่อนเช็กราคาควรส่ง:</p>
+        <p><strong>ยี่ห้อ + รุ่น + ความจุ + สี + Battery + รูป + ตำหนิ + ประวัติซ่อมถ้ามี</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>อยู่ยโสธรสามารถส่งรูปและข้อมูลเครื่องมาก่อนได้</h2>
+        <p>ไม่จำเป็นต้องเดินทางพร้อมโทรศัพท์เพียงเพื่อถามราคาเบื้องต้น</p>
+        <p>สามารถเริ่มจาก:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>ความจุ</li>
+        <li>รูปหน้าและหลัง</li>
+        <li>Battery</li>
+        <li>สภาพหน้าจอ</li>
+        <li>กล้อง</li>
+        <li>ระบบปลดล็อก</li>
+        <li>อุปกรณ์</li>
+        <li>ประวัติซ่อม</li>
+        </ul>
+        <p>หลังจากนั้นจึงค่อยพิจารณาขั้นตอนตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
+        <p>หน้านี้ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในทุกพื้นที่ของจังหวัดยโสธร</p>
+        <hr class="section-divider" />
+        <h2>iPhone และ Android ต้องแจ้งรุ่นเต็มเหมือนกัน</h2>
+        <p>สำหรับ iPhone ควรแจ้งเช่น:</p>
+        <p><strong>iPhone 13 128GB</strong></p>
+        <p>หรือ</p>
+        <p><strong>iPhone 15 Pro 256GB</strong></p>
+        <p>สำหรับ Android ควรแจ้ง:</p>
+        <ul>
+        <li>Brand</li>
+        <li>Model</li>
+        <li>Storage</li>
+        <li>RAM ถ้าทราบ</li>
+        <li>สี</li>
+        </ul>
+        <p>การแจ้งเพียงว่าเป็น Samsung, OPPO, vivo หรือ Xiaomi ยังไม่เพียงพอสำหรับแยกรุ่น</p>
+        <p>การกล่าวถึงแบรนด์เป็นเพียงข้อมูลจำแนกสินค้า ไม่ได้หมายถึงความเกี่ยวข้องหรือการแต่งตั้งจากผู้ผลิต</p>
+        <hr class="section-divider" />
+        <h2>หน้าจอมีผลต่อสภาพของมือถืออย่างมาก</h2>
+        <p>ควรแจ้งหากมี:</p>
+        <ul>
+        <li>กระจกแตก</li>
+        <li>จอแตก</li>
+        <li>เส้น</li>
+        <li>จุดดำ</li>
+        <li>Burn-in</li>
+        <li>สีผิดปกติ</li>
+        <li>Touch ใช้ไม่ได้บางตำแหน่ง</li>
+        <li>จอกระพริบ</li>
+        <li>จอไม่ขึ้น</li>
+        </ul>
+        <p>ควรถ่ายให้เห็นอาการชัดเจนถ้าเครื่องยังเปิดได้</p>
+        <hr class="section-divider" />
+        <h2>Battery ควรแจ้งจากข้อมูลที่ตรวจได้</h2>
+        <p>สำหรับรุ่นที่มี Battery Health สามารถส่งเปอร์เซ็นต์ประกอบได้</p>
+        <p>หากไม่มีค่า Health ให้แจ้งอาการ เช่น:</p>
+        <ul>
+        <li>ใช้งานได้ปกติ</li>
+        <li>หมดเร็ว</li>
+        <li>ดับเอง</li>
+        <li>ชาร์จช้า</li>
+        <li>ชาร์จไม่เข้า</li>
+        <li>Battery บวม</li>
+        <li>เคยเปลี่ยน Battery</li>
+        </ul>
+        <p>ถ้า Battery บวม ไม่ควรกดบริเวณตัวเครื่องหรือชาร์จซ้ำโดยไม่จำเป็น</p>
+        <hr class="section-divider" />
+        <h2>กล้องและระบบปลดล็อกต้องแจ้งเมื่อมีอาการ</h2>
+        <p>ตัวอย่าง:</p>
+        <ul>
+        <li>กล้องไม่โฟกัส</li>
+        <li>กล้องสั่น</li>
+        <li>Lens แตก</li>
+        <li>Face ID ใช้ไม่ได้</li>
+        <li>Fingerprint ใช้ไม่ได้</li>
+        <li>Speaker แตก</li>
+        <li>Microphone มีปัญหา</li>
+        <li>Port ชาร์จหลวม</li>
+        </ul>
+        <p>ควรแจ้งตามอาการจริง โดยไม่จำเป็นต้องวินิจฉัยว่าอะไหล่ชิ้นใดเสีย</p>
+        <hr class="section-divider" />
+        <h2>มือถือเคยซ่อมหรือเปลี่ยนอะไหล่ยังเช็กราคาได้</h2>
+        <p>ควรแจ้งหากทราบว่าเคย:</p>
+        <ul>
+        <li>เปลี่ยนจอ</li>
+        <li>เปลี่ยน Battery</li>
+        <li>เปลี่ยนฝาหลัง</li>
+        <li>เปลี่ยนกล้อง</li>
+        <li>ซ่อม Board</li>
+        <li>ซ่อม Port ชาร์จ</li>
+        <li>โดนน้ำ</li>
+        <li>ตกกระแทกหนัก</li>
+        </ul>
+        <p>ประวัติซ่อมเป็นหนึ่งในข้อมูลประกอบ ไม่ได้หมายความว่าเครื่องจะขายไม่ได้</p>
+        <hr class="section-divider" />
+        <h2>เครื่องติดบัญชีหรือยังมีข้อมูลส่วนตัวควรทำอย่างไร</h2>
+        <p>เพื่อขอราคาเบื้องต้น <strong>ไม่ต้องส่งรหัสผ่าน</strong></p>
+        <p>ไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Apple ID Password</li>
+        <li>Google Password</li>
+        <li>Recovery Code</li>
+        <li>Email Password</li>
+        </ul>
+        <p>ก่อนส่งมอบจริง เจ้าของควรสามารถจัดการบัญชีที่ผูกกับเครื่องของตนเองได้</p>
+        <hr class="section-divider" />
+        <h2>IMEI ไม่จำเป็นต้องโพสต์สาธารณะเพื่อถามราคา</h2>
+        <p>การประเมินเบื้องต้นสามารถเริ่มจาก:</p>
+        <p><strong>รุ่น + ความจุ + Battery + รูป + สภาพ</strong></p>
+        <p>ก่อน</p>
+        <p>หากขั้นตอนตรวจสอบภายหลังจำเป็นต้องใช้ข้อมูลระบุตัวเครื่อง ควรส่งผ่านช่องทางที่เหมาะสม ไม่จำเป็นต้องโพสต์ IMEI สาธารณะ</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดไม่ติดหรือโดนน้ำยังส่งข้อมูลได้</h2>
+        <p>ควรแจ้ง:</p>
+        <ul>
+        <li>รุ่น</li>
+        <li>ความจุ</li>
+        <li>อาการ</li>
+        <li>ชาร์จแล้วมีการตอบสนองหรือไม่</li>
+        <li>เคยตกหรือโดนน้ำหรือไม่</li>
+        <li>เคยซ่อมหรือไม่</li>
+        </ul>
+        <p>หากเครื่องร้อนผิดปกติ Battery บวม หรือมีกลิ่นไหม้ ไม่ควรทดลองชาร์จหรือเปิดซ้ำหลายครั้ง</p>
+        <hr class="section-divider" />
+        <h2>ไม่มีกล่องหรืออุปกรณ์ยังขายได้ไหม</h2>
+        <p>สามารถส่งมาประเมินได้</p>
+        <p>แจ้งตามจริงว่า:</p>
+        <ul>
+        <li>มีกล่องหรือไม่</li>
+        <li>มีสายหรือไม่</li>
+        <li>มี Adapter หรือไม่</li>
+        <li>มีอุปกรณ์ใดรวมขาย</li>
+        </ul>
+        <p>ไม่จำเป็นต้องซื้ออุปกรณ์ใหม่มาเติมชุดก่อนรู้ว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่</p>
+        <hr class="section-divider" />
+        <h2>ความสัมพันธ์กับหน้ารับซื้อ iPhone หลัก</h2>
+        <p>หน้า <a href="/รับซื้อไอโฟน/">รับซื้อไอโฟน</a> เป็น Money Hub สำหรับ Broad iPhone Intent</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อโทรศัพท์-มือถือ-ย/</code></p>
+        <p>รักษา:</p>
+        <p><strong>Smartphone / Mobile + Yasothon</strong></p>
+        <p>จึงสามารถครอบคลุมโทรศัพท์หลายแบรนด์ตาม Historical Intent ของ URL โดยไม่เปลี่ยนหน้ารับซื้อ iPhone หลักให้กลายเป็นหน้ามือถือทุกแบรนด์</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนเช็กราคามือถือในยโสธร</h2>
+        <h3>1. แจ้งยี่ห้อและรุ่น</h3>
+        <p>ใช้ชื่อเต็ม</p>
+        <h3>2. แจ้งความจุ</h3>
+        <p>ตามเครื่องจริง</p>
+        <h3>3. ส่งรูป</h3>
+        <p>หน้า หลัง กรอบ กล้องและตำหนิ</p>
+        <h3>4. แจ้ง Battery</h3>
+        <p>Health หรืออาการถ้ามี</p>
+        <h3>5. แจ้งหน้าจอและระบบปลดล็อก</h3>
+        <p>หากมีปัญหา</p>
+        <h3>6. แจ้งประวัติซ่อม</h3>
+        <p>เท่าที่ทราบ</p>
+        <h3>7. แจ้งอุปกรณ์</h3>
+        <p>ตามสิ่งที่รวมขาย</p>
+        <h3>8. ประเมินเบื้องต้น</h3>
+        <p>จากรุ่นและสภาพ</p>
+        <h3>9. ตัดสินใจก่อนขาย</h3>
+        <p>ยังไม่จำเป็นต้องตกลงทันที</p>
+        <h3>10. ตรวจสินค้า</h3>
+        <p>ยืนยันรุ่น สภาพและสิ่งที่รวมขายก่อนซื้อขาย</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคามือถือในยโสธร</h2>
+        <p>ส่ง:</p>
+        <p><strong>รุ่น + ความจุ + Battery + รูป + ตำหนิ + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขายมือถือมือสองในยโสธร"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

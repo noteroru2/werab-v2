@@ -78,7 +78,25 @@ const INDEX_PAGES = [
   '/รับซื้อโน๊ตบุ๊ค-นครราชส/',
   '/รับซื้อเมืองขอนแก่น/',
   '/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/',
-  '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/'
+  '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/',
+  '/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/',
+  '/รับซื้อโทรศัพท์-มือถือ-ย/',
+  '/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/',
+  '/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/',
+  '/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/',
+  '/รับซื้อโน๊ตบุ๊ค-หนองบัว/',
+  '/รับซื้อโน๊ตบุ๊ค-อุดรธาน/',
+  '/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/',
+  '/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/',
+  '/รับซื้อกล้องมือสองมุก/',
+  '/รับซื้อคอม-สารคาม/',
+  '/รับซื้อmacbook-อุดรธานี/',
+  '/รับซื้อกล้องอุบล-กล้องcanon-niko/',
+  '/รับซื้อกล้อง-ยโสธร/',
+  '/รับซื้อกล้องถ่ายรูป-ศรี/',
+  '/รับซื้อกล้องมือสองสุร/',
+  '/รับซื้อลำโพง-ยโสธร/',
+  '/รับซื้อไอแพด-ยโสธร-ipad/'
 ];
 
 const MONEY_HUBS = [
@@ -161,7 +179,25 @@ const pageFiles = {
   '/รับซื้อโน๊ตบุ๊ค-นครราชส/': 'src/pages/รับซื้อโน๊ตบุ๊ค-นครราชส.astro',
   '/รับซื้อเมืองขอนแก่น/': 'src/pages/รับซื้อเมืองขอนแก่น.astro',
   '/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/': 'src/pages/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร.astro',
-  '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/': 'src/pages/รับซื้อโน๊ตบุ๊ค-ขอนแก่น.astro'
+  '/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/': 'src/pages/รับซื้อโน๊ตบุ๊ค-ขอนแก่น.astro',
+  '/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/': 'src/pages/รับซื้อ-notebook-อำเภอพล-ขอนแก่น.astro',
+  '/รับซื้อโทรศัพท์-มือถือ-ย/': 'src/pages/รับซื้อโทรศัพท์-มือถือ-ย.astro',
+  '/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/': 'src/pages/รับซื้อโน๊ตบุ๊ค-กาฬสินธ.astro',
+  '/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/': 'src/pages/รับซื้อ-notebook-ชุมแพ-ขอนแก่น.astro',
+  '/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/': 'src/pages/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็.astro',
+  '/รับซื้อโน๊ตบุ๊ค-หนองบัว/': 'src/pages/รับซื้อโน๊ตบุ๊ค-หนองบัว.astro',
+  '/รับซื้อโน๊ตบุ๊ค-อุดรธาน/': 'src/pages/รับซื้อโน๊ตบุ๊ค-อุดรธาน.astro',
+  '/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/': 'src/pages/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall.astro',
+  '/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/': 'src/pages/รับซื้อไอโฟน-iphone-ร้อยเอ็ด.astro',
+  '/รับซื้อกล้องมือสองมุก/': 'src/pages/รับซื้อกล้องมือสองมุก.astro',
+  '/รับซื้อคอม-สารคาม/': 'src/pages/รับซื้อคอม-สารคาม.astro',
+  '/รับซื้อmacbook-อุดรธานี/': 'src/pages/รับซื้อmacbook-อุดรธานี.astro',
+  '/รับซื้อกล้องอุบล-กล้องcanon-niko/': 'src/pages/รับซื้อกล้องอุบล-กล้องcanon-niko.astro',
+  '/รับซื้อกล้อง-ยโสธร/': 'src/pages/รับซื้อกล้อง-ยโสธร.astro',
+  '/รับซื้อกล้องถ่ายรูป-ศรี/': 'src/pages/รับซื้อกล้องถ่ายรูป-ศรี.astro',
+  '/รับซื้อกล้องมือสองสุร/': 'src/pages/รับซื้อกล้องมือสองสุร.astro',
+  '/รับซื้อลำโพง-ยโสธร/': 'src/pages/รับซื้อลำโพง-ยโสธร.astro',
+  '/รับซื้อไอแพด-ยโสธร-ipad/': 'src/pages/รับซื้อไอแพด-ยโสธร-ipad.astro'
 };
 
 const pageOutboundMap = new Map();
@@ -287,16 +323,22 @@ const newIaRows = parseCSV(newIaRaw).slice(1);
 const localWinners = newIaRows.filter(r => r[4] === 'LOCAL_MONEY' || r[3] === 'LOCAL_MONEY');
 const allE2Paths = localWinners.map(r => normalizePath(r[8]));
 
+const DISTRICT_E2_PATHS = new Set([
+  '/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/',
+  '/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/'
+]);
+
 const releasedE2Paths = allE2Paths.filter(p => resolveSeo(p).state === 'INDEX');
 console.log(`\n- Authoritative E2 Pool Size:        ${allE2Paths.length} URLs`);
-console.log(`- Authoritative E2 Released (INDEX): ${releasedE2Paths.length} URLs (Expected: 17)`);
+console.log(`- Authoritative E2 Released (INDEX): ${releasedE2Paths.length} URLs (Expected: 35)`);
 
-if (releasedE2Paths.length !== 17) {
-  linkViolations.push(`Expected 17 released E2 INDEX pages, found ${releasedE2Paths.length}`);
+if (releasedE2Paths.length !== 35) {
+  linkViolations.push(`Expected 35 released E2 INDEX pages, found ${releasedE2Paths.length}`);
 }
 
 let releasedE2OrphanCount = 0;
-let releasedE2DepthPassCount = 0;
+let releasedE2Depth2Count = 0;
+let releasedE2Depth3Count = 0;
 
 for (const p of releasedE2Paths) {
   const inLinks = inboundMap.get(p) || [];
@@ -307,19 +349,40 @@ for (const p of releasedE2Paths) {
   }
   const depth = depthMap.get(p) ?? 999;
   if (depth <= 2) {
-    releasedE2DepthPassCount++;
+    releasedE2Depth2Count++;
+  }
+  if (depth <= 3) {
+    releasedE2Depth3Count++;
+  }
+
+  if (DISTRICT_E2_PATHS.has(p)) {
+    if (depth > 3) {
+      linkViolations.push(`Released E2 District page ${p} crawl depth is ${depth} (> 3 hops from homepage)`);
+    }
+    // Verify direct inbound is from Province, NOT broad hub
+    if (inLinks.includes('/รับซื้อโน๊ตบุ๊ค/')) {
+      linkViolations.push(`District page ${p} is directly linked from broad notebook hub /รับซื้อโน๊ตบุ๊ค/ (violates hierarchy)`);
+    }
+    if (!inLinks.includes('/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/')) {
+      linkViolations.push(`District page ${p} is missing required inbound link from province /รับซื้อโน๊ตบุ๊ค-ขอนแก่น/`);
+    }
   } else {
-    linkViolations.push(`Released E2 Local Winner ${p} crawl depth is ${depth} (> 2 hops from homepage)`);
+    if (depth > 2) {
+      linkViolations.push(`Released E2 Local Winner ${p} crawl depth is ${depth} (> 2 hops from homepage)`);
+    }
   }
 }
 
 console.log(`- Released E2 Orphans:               ${releasedE2OrphanCount} / ${releasedE2Paths.length} (Expected: 0)`);
-console.log(`- Released E2 Depth <= 2:            ${releasedE2DepthPassCount} / ${releasedE2Paths.length} (Expected: 17)`);
+console.log(`- Released E2 Depth <= 2:            ${releasedE2Depth2Count} / ${releasedE2Paths.length} (Expected: 33)`);
+console.log(`- Released E2 Depth <= 3:            ${releasedE2Depth3Count} / ${releasedE2Paths.length} (Expected: 35)`);
 
 // 4. Batch and Category Sub-checks
 const SPEAKER_PAGES = [
   '/รับซื้อลำโพง-อุดรธานี/',
-  '/รับซื้อลำโพง-สารคาม/'
+  '/รับซื้อลำโพง-สารคาม/',
+  '/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/',
+  '/รับซื้อลำโพง-ยโสธร/'
 ];
 
 for (const p of SPEAKER_PAGES) {
@@ -330,6 +393,23 @@ for (const p of SPEAKER_PAGES) {
   const depth = depthMap.get(p) ?? 999;
   if (depth > 2) {
     linkViolations.push(`Speaker Local Winner ${p} crawl depth is ${depth} (> 2 hops from homepage)`);
+  }
+}
+
+const FINAL_3_PAGES = [
+  '/รับซื้อกล้องมือสองสุร/',
+  '/รับซื้อลำโพง-ยโสธร/',
+  '/รับซื้อไอแพด-ยโสธร-ipad/'
+];
+
+for (const p of FINAL_3_PAGES) {
+  const inLinks = inboundMap.get(p) || [];
+  if (inLinks.length === 0) {
+    linkViolations.push(`Final 3 Local Winner ${p} is an orphan (0 inbound links)`);
+  }
+  const depth = depthMap.get(p) ?? 999;
+  if (depth > 2) {
+    linkViolations.push(`Final 3 Local Winner ${p} crawl depth is ${depth} (> 2 hops from homepage)`);
   }
 }
 
@@ -390,17 +470,61 @@ for (const p of BATCH_3_PAGES) {
   }
 }
 
-// 5. Ensure 0 public links to unreleased district pages
-const UNRELEASED_DISTRICT_PAGES = [
+const BATCH_4_PAGES = [
   '/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/',
-  '/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/'
+  '/รับซื้อโทรศัพท์-มือถือ-ย/',
+  '/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/',
+  '/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/',
+  '/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/'
 ];
 
-for (const dist of UNRELEASED_DISTRICT_PAGES) {
-  const normDist = normalizePath(dist);
-  const inLinks = inboundMap.get(normDist) || [];
-  if (inLinks.length > 0) {
-    linkViolations.push(`Unreleased District page ${normDist} received public inbound links from: ${inLinks.join(', ')}`);
+for (const p of BATCH_4_PAGES) {
+  const inLinks = inboundMap.get(p) || [];
+  if (inLinks.length === 0) {
+    linkViolations.push(`Batch 4 Local Winner ${p} is an orphan (0 inbound links)`);
+  }
+  const depth = depthMap.get(p) ?? 999;
+  const maxAllowedDepth = DISTRICT_E2_PATHS.has(p) ? 3 : 2;
+  if (depth > maxAllowedDepth) {
+    linkViolations.push(`Batch 4 Local Winner ${p} crawl depth is ${depth} (> ${maxAllowedDepth} hops from homepage)`);
+  }
+}
+
+const BATCH_5_PAGES = [
+  '/รับซื้อโน๊ตบุ๊ค-หนองบัว/',
+  '/รับซื้อโน๊ตบุ๊ค-อุดรธาน/',
+  '/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/',
+  '/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/',
+  '/รับซื้อกล้องมือสองมุก/'
+];
+
+for (const p of BATCH_5_PAGES) {
+  const inLinks = inboundMap.get(p) || [];
+  if (inLinks.length === 0) {
+    linkViolations.push(`Batch 5 Local Winner ${p} is an orphan (0 inbound links)`);
+  }
+  const depth = depthMap.get(p) ?? 999;
+  if (depth > 2) {
+    linkViolations.push(`Batch 5 Local Winner ${p} crawl depth is ${depth} (> 2 hops from homepage)`);
+  }
+}
+
+const BATCH_6_PAGES = [
+  '/รับซื้อคอม-สารคาม/',
+  '/รับซื้อmacbook-อุดรธานี/',
+  '/รับซื้อกล้องอุบล-กล้องcanon-niko/',
+  '/รับซื้อกล้อง-ยโสธร/',
+  '/รับซื้อกล้องถ่ายรูป-ศรี/'
+];
+
+for (const p of BATCH_6_PAGES) {
+  const inLinks = inboundMap.get(p) || [];
+  if (inLinks.length === 0) {
+    linkViolations.push(`Batch 6 Local Winner ${p} is an orphan (0 inbound links)`);
+  }
+  const depth = depthMap.get(p) ?? 999;
+  if (depth > 2) {
+    linkViolations.push(`Batch 6 Local Winner ${p} crawl depth is ${depth} (> 2 hops from homepage)`);
   }
 }
 
@@ -411,6 +535,6 @@ if (linkViolations.length > 0) {
   }
   process.exit(1);
 } else {
-  console.log(`\n✅ All internal links, Money Hubs, Speaker Survivors (2/2), and Batches 1-3 (15/15) verified cleanly (17/17 Released E2 Orphans = 0, Depth <= 2, 0 district leaks)!`);
+  console.log(`\n✅ All internal links, Money Hubs, Speaker Survivors (4/4), Batches 1-6 (30/30), and Final 3 (3/3) verified cleanly (35/35 Released E2 Orphans = 0, Depth <= 2 for 33/35, Depth <= 3 for 35/35)!`);
   process.exit(0);
 }

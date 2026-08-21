@@ -1,0 +1,428 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import FAQ from '../components/FAQ.astro';
+
+const pageTitle = "รับซื้อโน๊ตบุ๊คอุดรธานี Notebook บริษัท Gaming เช็กราคาก่อนขาย | เรารับซื้อ.com";
+const pageDescription = "รับซื้อโน๊ตบุ๊คมือสองในอุดรธานี ทั้ง Notebook สำนักงาน Business Laptop และ Gaming Notebook ประเมินจากรุ่น สเปก Battery สภาพ อุปกรณ์และจำนวนเครื่อง";
+
+const breadcrumbs = [
+  {
+    "name": "หน้าแรก",
+    "url": "/"
+  },
+  {
+    "name": "รายการรับซื้อสินค้า",
+    "url": "/รับซื้อ/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊ค",
+    "url": "/รับซื้อโน๊ตบุ๊ค/"
+  },
+  {
+    "name": "รับซื้อโน๊ตบุ๊คอุดรธานี เช็กสเปก เครื่องเดี่ยวหรือหลายเครื่องก่อนขาย",
+    "url": "/รับซื้อโน๊ตบุ๊ค-อุดรธาน/"
+  }
+];
+
+const faqs = [
+  {
+    "question": "มี Notebook หลายเครื่องจากสำนักงานส่งรายการมาก่อนได้ไหม?",
+    "answer": "ได้ ควรแบ่งตาม Model, CPU, RAM, SSD, จำนวนและสภาพ หาก Configuration ต่างกันควรแยกเป็นคนละกลุ่ม"
+  },
+  {
+    "question": "เครื่องรุ่นเดียวกันแต่ RAM ต่างกันควรรวมกันไหม?",
+    "answer": "ควรแยก Configuration เพราะ Hardware ที่ติดตั้งจริงต่างกันและไม่ควรใช้เครื่องหนึ่งแทนทั้งหมด"
+  },
+  {
+    "question": "ขายเครื่องบริษัทโดยไม่รวม SSD ได้ไหม?",
+    "answer": "สามารถแจ้งว่าไม่รวม SSD ได้ และไม่จำเป็นต้องเปิดเผยข้อมูลภายในเพื่อประเมิน Hardware"
+  },
+  {
+    "question": "Notebook ที่เปิดไม่ติดรวมอยู่ในล็อตได้ไหม?",
+    "answer": "ได้ แต่ควรแยกสถานะจากเครื่องปกติและแจ้ง Model สเปกที่ทราบ รวมถึงอาการก่อนเสีย"
+  },
+  {
+    "question": "Adapter มีไม่ครบทุกเครื่องยังประเมินได้ไหม?",
+    "answer": "ได้ ควรแจ้งจำนวน Adapter ที่มีจริง ไม่จำเป็นต้องซื้อเพิ่มให้ครบก่อนเช็กราคา"
+  }
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <div class="container" style="padding-top: 1.5rem;">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <main class="content-container">
+    <div class="container container-narrow">
+      <article class="prose-content">
+        <h1>รับซื้อโน๊ตบุ๊คอุดรธานี เช็กสเปก เครื่องเดี่ยวหรือหลายเครื่องก่อนขาย</h1>
+        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-อุดรธาน/</code> รักษา Historical Search Intent:</p>
+        <p><strong>Notebook + Udon Thani</strong></p>
+        <p>โดยครอบคลุมการประเมินทั้ง Notebook ส่วนตัว เครื่องสำนักงาน Business Laptop และ Gaming Notebook ตามรุ่น สเปกและสภาพจริง</p>
+        <p>สามารถเริ่มจาก:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + จำนวนเครื่อง + รูป</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <hr class="section-divider" />
+        <h2>Notebook เครื่องเดียวและหลายเครื่องควรเตรียมข้อมูลต่างกัน</h2>
+        <p>หากมีเพียงเครื่องเดียว สามารถส่ง:</p>
+        <ul>
+        <li>Model</li>
+        <li>CPU</li>
+        <li>RAM</li>
+        <li>SSD</li>
+        <li>GPU</li>
+        <li>Battery</li>
+        <li>รูป</li>
+        <li>Adapter</li>
+        <li>ตำหนิ</li>
+        </ul>
+        <p>แต่หากเป็น Notebook หลายเครื่องจากบริษัท สำนักงาน หรือการเปลี่ยนอุปกรณ์ ควรจัดรายการแยกตามรุ่นและ Configuration</p>
+        <p>ไม่ควรใช้ข้อมูลของเครื่องหนึ่งแทนทั้งล็อตหากสภาพต่างกัน</p>
+        <hr class="section-divider" />
+        <h2>ตัวอย่างการส่งรายการ Notebook หลายเครื่อง</h2>
+        <p>สามารถจัดข้อมูลลักษณะนี้:</p>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>รุ่น</th>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>SSD</th>
+                <th>จำนวน</th>
+                <th>สภาพ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>รุ่น...</td>
+                <td>Core i5-...</td>
+                <td>8GB</td>
+                <td>256GB</td>
+                <td>6</td>
+                <td>ใช้งานได้</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>Core i5-...</td>
+                <td>16GB</td>
+                <td>512GB</td>
+                <td>4</td>
+                <td>Battery เสื่อม</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>Core i7-...</td>
+                <td>16GB</td>
+                <td>512GB</td>
+                <td>2</td>
+                <td>มีตำหนิ</td>
+              </tr>
+              <tr>
+                <td>รุ่น...</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>ไม่ทราบ</td>
+                <td>1</td>
+                <td>เปิดไม่ติด</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>การแยกกลุ่มช่วยให้ไม่ใช้ราคาเฉลี่ยแบบผิด Configuration</p>
+        <hr class="section-divider" />
+        <h2>Business Laptop ควรดูสภาพ Port และ Keyboard ด้วย</h2>
+        <p>Notebook สำหรับสำนักงานหรือธุรกิจอาจมีการใช้งาน Port และ Keyboard มากกว่าเครื่องทั่วไป</p>
+        <p>ควรตรวจ:</p>
+        <ul>
+        <li>USB</li>
+        <li>USB-C</li>
+        <li>HDMI</li>
+        <li>LAN ถ้ามี</li>
+        <li>Keyboard</li>
+        <li>Touchpad</li>
+        <li>Webcam</li>
+        <li>Wi-Fi</li>
+        <li>Speaker</li>
+        <li>ระบบชาร์จ</li>
+        </ul>
+        <p>หากบางส่วนมีปัญหา สามารถแจ้งตามอาการจริงโดยไม่ต้องวินิจฉัยสาเหตุเอง</p>
+        <hr class="section-divider" />
+        <h2>CPU Generation มีผลต่อการแยกเครื่องสำนักงาน</h2>
+        <p>คำว่า:</p>
+        <p><strong>Core i5</strong></p>
+        <p>ไม่เพียงพอสำหรับแยก Notebook หลาย Generation</p>
+        <p>ควรระบุเช่น:</p>
+        <p><strong>Core i5-8250U</strong></p>
+        <p><strong>Core i5-10210U</strong></p>
+        <p><strong>Core i5-1135G7</strong></p>
+        <p><strong>Core i5-1235U</strong></p>
+        <p>เพื่อช่วยบอก Platform และช่วงอายุของเครื่องได้ชัดขึ้น</p>
+        <hr class="section-divider" />
+        <h2>Gaming Notebook ต้องแยก GPU และ Adapter</h2>
+        <p>หากเป็น Gaming Notebook ให้ส่งเพิ่ม:</p>
+        <ul>
+        <li>GPU</li>
+        <li>Adapter</li>
+        <li>สเปกจอถ้าทราบ</li>
+        </ul>
+        <p>ตัวอย่าง:</p>
+        <p><strong>RTX 3050 Laptop GPU</strong></p>
+        <p><strong>RTX 3060 Laptop GPU</strong></p>
+        <p><strong>RTX 4060 Laptop GPU</strong></p>
+        <p>เครื่อง Series เดียวกันอาจมี GPU ต่างกัน จึงควรตรวจ Configuration เต็มก่อนประเมิน</p>
+        <hr class="section-divider" />
+        <h2>RAM และ SSD ของเครื่ององค์กรอาจไม่เหมือนกันทุกเครื่อง</h2>
+        <p>แม้ Notebook จะเป็น Model เดียวกัน แต่อาจถูกอัปเกรดคนละช่วงเวลา</p>
+        <p>ตัวอย่าง:</p>
+        <ul>
+        <li>บางเครื่อง RAM 8GB</li>
+        <li>บางเครื่อง RAM 16GB</li>
+        <li>บางเครื่อง SSD 256GB</li>
+        <li>บางเครื่อง SSD 512GB</li>
+        </ul>
+        <p>หากเป็นล็อตใหญ่ ควรแบ่งกลุ่มตาม Configuration ที่ตรวจได้</p>
+        <hr class="section-divider" />
+        <h2>ข้อมูลใน SSD ของบริษัทไม่จำเป็นสำหรับการประเมินราคา</h2>
+        <p>เพื่อเช็กราคา Hardware ไม่ควรส่ง:</p>
+        <ul>
+        <li>Password</li>
+        <li>PIN</li>
+        <li>OTP</li>
+        <li>Recovery Key</li>
+        <li>ข้อมูลลูกค้า</li>
+        <li>ข้อมูลภายในบริษัท</li>
+        <li>Email Password</li>
+        </ul>
+        <p>หากองค์กรต้องเก็บ Storage ไว้ สามารถแจ้งว่า:</p>
+        <p><strong>ขายเครื่องโดยไม่รวม SSD</strong></p>
+        <p>และประเมินจาก Hardware ที่เหลือจริง</p>
+        <hr class="section-divider" />
+        <h2>Battery ของหลายเครื่องควรแบ่งกลุ่มตามสภาพ</h2>
+        <p>หากตรวจ Health ได้ สามารถแบ่ง เช่น:</p>
+        <ul>
+        <li>Battery ปกติ</li>
+        <li>Battery เสื่อม</li>
+        <li>ไม่เก็บไฟ</li>
+        <li>ต้องเสียบ Adapter</li>
+        <li>Battery บวม</li>
+        <li>ยังไม่ได้ทดสอบ</li>
+        </ul>
+        <p>ไม่ควรถือว่า Battery ของทุกเครื่องอยู่ในสภาพเดียวกันเพียงเพราะเป็นรุ่นเดียวกัน</p>
+        <p>หาก Battery บวมควรหยุดใช้งานหนักและหลีกเลี่ยงการกดตัวเครื่องบริเวณที่นูน</p>
+        <hr class="section-divider" />
+        <h2>Notebook ที่มีตำหนิยังสามารถอยู่ในรายการได้</h2>
+        <p>ไม่จำเป็นต้องคัดออกเพราะมี:</p>
+        <ul>
+        <li>รอย</li>
+        <li>จอมีปัญหา</li>
+        <li>Keyboard เสีย</li>
+        <li>บานพับแตก</li>
+        <li>Battery เสื่อม</li>
+        <li>ไม่มี Adapter</li>
+        <li>เปิดไม่ติด</li>
+        </ul>
+        <p>ควรแยกสภาพของเครื่องนั้นออกจากกลุ่มปกติ เพื่อให้การประเมินไม่ปะปนกัน</p>
+        <hr class="section-divider" />
+        <h2>เครื่องเปิดไม่ติดควรติดป้ายหรือระบุให้ชัดเมื่อมีหลายเครื่อง</h2>
+        <p>หากเป็นล็อตหลายเครื่อง สามารถแบ่งเป็น:</p>
+        <p><strong>ใช้งานได้</strong></p>
+        <p><strong>มีอาการ</strong></p>
+        <p><strong>เปิดไม่ติด</strong></p>
+        <p><strong>ยังไม่ได้ทดสอบ</strong></p>
+        <p>เครื่องเปิดไม่ติดสามารถส่ง Model และสเปกที่ทราบประกอบได้</p>
+        <p>หากมีกลิ่นไหม้ Battery บวม หรือความร้อนผิดปกติ ไม่ควรเปิดซ้ำหลายครั้ง</p>
+        <hr class="section-divider" />
+        <h2>Adapter ควรนับตามสิ่งที่มีจริง</h2>
+        <p>หากมี 10 เครื่องแต่มี Adapter เพียง 7 ตัว ควรแจ้งตามจริง</p>
+        <p>ไม่ควรระบุว่าครบชุดหากอุปกรณ์มีไม่ครบทุกเครื่อง</p>
+        <p>สำหรับเครื่องเดี่ยวก็ใช้หลักเดียวกัน:</p>
+        <ul>
+        <li>Adapter เดิม</li>
+        <li>Adapter เทียบ</li>
+        <li>ไม่มี Adapter</li>
+        </ul>
+        <hr class="section-divider" />
+        <h2>ผู้ขายในอุดรธานีสามารถเริ่มจากรายการก่อน</h2>
+        <p>สามารถส่งข้อมูลเบื้องต้นก่อนตัดสินใจขั้นตอนตรวจสินค้าและส่งมอบ</p>
+        <p>หน้า Local นี้ไม่ได้หมายความว่ามีสาขา พนักงาน หรือจุดรับซื้อประจำอยู่ทุกพื้นที่ในจังหวัดอุดรธานี</p>
+        <hr class="section-divider" />
+        <h2>ความสัมพันธ์กับหน้ารับซื้อ Notebook หลัก</h2>
+        <p>หน้า <a href="/รับซื้อโน๊ตบุ๊ค/">รับซื้อโน๊ตบุ๊ค</a> เป็น Broad Notebook Money Hub</p>
+        <p>ส่วน:</p>
+        <p><code>/รับซื้อโน๊ตบุ๊ค-อุดรธาน/</code></p>
+        <p>รักษา:</p>
+        <p><strong>Notebook + Udon Thani</strong></p>
+        <p>จึงเน้น Geographic Intent ของจังหวัด โดยไม่เปลี่ยนเป็นหน้า Notebook ระดับประเทศอีกหน้า</p>
+        <hr class="section-divider" />
+        <h2>ขั้นตอนส่ง Notebook เครื่องเดียวหรือหลายเครื่อง</h2>
+        <h3>1. แยก Model</h3>
+        <p>อย่ารวมหลายรุ่นเป็นรายการเดียว</p>
+        <h3>2. แยก CPU</h3>
+        <p>ใช้รหัสรุ่นเต็มถ้าทราบ</p>
+        <h3>3. แยก RAM และ SSD</h3>
+        <p>ตาม Configuration ปัจจุบัน</p>
+        <h3>4. แจ้ง GPU</h3>
+        <p>สำหรับเครื่องที่มี Dedicated GPU</p>
+        <h3>5. แบ่งสภาพ</h3>
+        <p>ปกติ มีอาการ เปิดไม่ติด หรือยังไม่ทดสอบ</p>
+        <h3>6. แจ้ง Battery</h3>
+        <p>เท่าที่ตรวจได้</p>
+        <h3>7. นับ Adapter</h3>
+        <p>ตามจำนวนจริง</p>
+        <h3>8. ส่งรูป</h3>
+        <p>ทั้งภาพรวมและตำหนิสำคัญ</p>
+        <h3>9. ประเมินตามแต่ละกลุ่ม</h3>
+        <p>ไม่ใช้เครื่องเดียวแทนทั้งล็อต</p>
+        <h3>10. ตรวจสินค้าก่อนซื้อขาย</h3>
+        <p>ยืนยันจำนวน Configuration และสภาพจริง</p>
+        <hr class="section-divider" />
+        <h2>เริ่มเช็กราคา Notebook ในอุดรธานี</h2>
+        <p>เครื่องเดียวส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป</strong></p>
+        <p>หลายเครื่องส่ง:</p>
+        <p><strong>รุ่น + Configuration + จำนวน + สภาพ + อุปกรณ์</strong></p>
+        <p>LINE: <strong>@webuy</strong></p>
+        <p>โทร: <strong>064-257-9353</strong></p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
+        <hr class="section-divider" />
+      </article>
+    </div>
+  </main>
+
+  <section class="section section-muted">
+    <div class="container container-narrow">
+      <FAQ
+        items={faqs}
+        title="คำถามที่พบบ่อยเกี่ยวกับการขาย Notebook ในอุดรธานี"
+      />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .content-container {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .prose-content {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (max-width: 640px) {
+    .prose-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+
+  .prose-content h1 {
+    font-size: 2.15rem;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-content h2 {
+    font-size: 1.55rem;
+    color: var(--color-primary);
+    line-height: 1.35;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .prose-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .prose-content ul,
+  .prose-content ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+  }
+
+  .prose-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+  }
+
+  .prose-content strong {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .prose-content a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .prose-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .table th {
+    background-color: var(--color-bg-subtle);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+</style>

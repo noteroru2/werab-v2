@@ -18,6 +18,7 @@
     "audit:release": "tsx scripts/index-release-audit.mjs",
     "audit:cutover": "tsx scripts/cutover-audit.mjs",
     "audit:content-copy": "tsx scripts/content-copy-audit.mjs",
+    "audit:copy-mutation": "tsx scripts/content-copy-mutation-audit.mjs",
     "audit:global-ui": "tsx scripts/global-ui-audit.mjs",
     "audit:survivors": "tsx scripts/survivor-decision-parity-audit.mjs",
     "audit:e2-parity": "tsx scripts/e2-parity-audit.mjs",
