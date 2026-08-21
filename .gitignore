@@ -17,3 +17,9 @@ pnpm-debug.log*
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Test artifacts & profiles
+.tmp_chrome_profile/
+*.json.tmp
+scratch_*.json
+a11y_diag.json

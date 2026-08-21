@@ -20,8 +20,10 @@ const guides: { name: string; path: string }[] = [];
       <!-- Column 1: Brand Info & Positioning -->
       <div class="footer-col brand-col">
         <div class="footer-brand">
-          <span class="logo-mark">WE BUY</span>
-          <span class="brand-title">{BUSINESS_FACTS.VERIFIED.brandName}</span>
+          <div class="logo-main">
+            <span class="logo-prefix">เรารับซื้อ</span><span class="logo-dotcom">.com</span>
+          </div>
+          <span class="logo-tagline">ศูนย์รับซื้อสินค้าไอทีมือสอง</span>
         </div>
         <p class="footer-positioning">
           <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
@@ -30,11 +32,11 @@ const guides: { name: string; path: string }[] = [];
           ข้อมูลและบริการรับประเมินสินค้าไอทีมือสองตามรุ่น สเปก สภาพ และอุปกรณ์ เพื่อให้ผู้ขายเช็กราคาเบื้องต้นก่อนตัดสินใจ
         </p>
         <div class="footer-contact-cards">
-          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="contact-chip">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="contact-chip line-chip">
             <span class="chip-label">LINE:</span>
             <span class="chip-value">{getDisplayLine()}</span>
           </a>
-          <a href={getPhoneUrl()} class="contact-chip">
+          <a href={getPhoneUrl()} class="contact-chip phone-chip">
             <span class="chip-label">โทร:</span>
             <span class="chip-value">{getDisplayPhone()}</span>
           </a>
@@ -43,7 +45,7 @@ const guides: { name: string; path: string }[] = [];
 
       <!-- Column 2: Categories -->
       <div class="footer-col">
-        <h4 class="footer-heading">หมวดสินค้าหลัก</h4>
+        <h3 class="footer-heading">หมวดสินค้าหลัก</h3>
         <ul class="footer-links">
           {categories.map(c => (
             <li><a href={c.path}>{c.name}</a></li>
@@ -53,7 +55,7 @@ const guides: { name: string; path: string }[] = [];
 
       <!-- Column 3: Seller Guides -->
       <div class="footer-col">
-        <h4 class="footer-heading">ข้อมูลสำหรับผู้ขาย</h4>
+        <h3 class="footer-heading">ข้อมูลสำหรับผู้ขาย</h3>
         <ul class="footer-links">
           {guides.map(g => (
             <li><a href={g.path}>{g.name}</a></li>
@@ -63,7 +65,7 @@ const guides: { name: string; path: string }[] = [];
 
       <!-- Column 4: Privacy & Notice -->
       <div class="footer-col">
-        <h4 class="footer-heading">คำแนะนำและความเป็นส่วนตัว</h4>
+        <h3 class="footer-heading">คำแนะนำและความเป็นส่วนตัว</h3>
         <div class="privacy-notice-box">
           <p>
             ไม่ควรส่ง Password, OTP หรือข้อมูลบัญชีส่วนตัวที่ไม่จำเป็นเพื่อขอราคาประเมินเบื้องต้น
@@ -88,9 +90,9 @@ const guides: { name: string; path: string }[] = [];
 
 <style>
   .site-footer {
-    background-color: var(--color-primary-dark);
-    color: var(--color-text-inverse);
-    padding-top: 4rem;
+    background-color: var(--navy-950);
+    color: #e2e8f0;
+    padding-top: 3.5rem;
     padding-bottom: 2rem;
     margin-top: auto;
     border-top: 1px solid #1e293b;
@@ -99,7 +101,7 @@ const guides: { name: string; path: string }[] = [];
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
     margin-bottom: 3rem;
   }
 
@@ -112,134 +114,195 @@ const guides: { name: string; path: string }[] = [];
   @media (min-width: 1024px) {
     .footer-grid {
       grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
+      gap: 2.5rem;
     }
   }
 
   .footer-brand {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    flex-direction: column;
     margin-bottom: 1rem;
+    line-height: 1.15;
   }
 
-  .logo-mark {
-    background-color: var(--color-accent);
-    color: #ffffff;
-    font-size: 0.75rem;
+  .footer-brand .logo-main {
+    font-size: 1.5rem;
     font-weight: 800;
-    padding: 0.3rem 0.5rem;
-    border-radius: var(--radius-sm);
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: baseline;
   }
 
-  .brand-title {
-    font-size: 1.25rem;
-    font-weight: 700;
+  .footer-brand .logo-prefix {
     color: #ffffff;
+  }
+
+  .footer-brand .logo-dotcom {
+    color: var(--orange-500);
+    font-weight: 900;
+    margin-left: 1px;
+  }
+
+  .footer-brand .logo-tagline {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 600;
+    margin-top: 2px;
   }
 
   .footer-positioning {
-    color: var(--color-accent-light);
+    color: #fed7aa;
     font-size: 0.95rem;
     margin-bottom: 0.75rem;
-    line-height: 1.5;
+  }
+
+  .footer-positioning strong {
+    color: #fdba74;
   }
 
   .footer-desc {
-    color: #94a3b8;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    color: #cbd5e1;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .footer-contact-cards {
     display: flex;
-    gap: 0.75rem;
     flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .contact-chip {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    background-color: #1e293b;
     padding: 0.4rem 0.75rem;
     border-radius: var(--radius-sm);
-    color: #f8fafc;
     font-size: 0.85rem;
-    border: 1px solid #334155;
+    text-decoration: none;
+    transition: all 0.15s ease;
   }
 
-  .contact-chip:hover {
-    border-color: var(--color-accent);
+  .line-chip {
+    background-color: rgba(6, 199, 85, 0.2);
+    color: #86efac;
+    border: 1px solid rgba(6, 199, 85, 0.4);
+  }
+
+  .line-chip:hover {
+    background-color: rgba(6, 199, 85, 0.3);
+    color: #ffffff;
+  }
+
+  .phone-chip {
+    background-color: rgba(255, 100, 18, 0.2);
+    color: #fed7aa;
+    border: 1px solid rgba(255, 100, 18, 0.4);
+  }
+
+  .phone-chip:hover {
+    background-color: rgba(255, 100, 18, 0.3);
     color: #ffffff;
   }
 
   .chip-label {
-    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .chip-value {
     font-weight: 600;
   }
 
   .footer-heading {
     color: #ffffff;
-    font-size: 1.1rem;
-    margin-bottom: 1.25rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: var(--orange-500);
+    border-radius: 2px;
   }
 
   .footer-links {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-
-  .footer-links li {
-    margin-bottom: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .footer-links a {
-    color: #94a3b8;
-    font-size: 0.9rem;
-    transition: color 0.15s;
+    color: #cbd5e1;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: color 0.15s ease, transform 0.15s ease;
+    display: inline-block;
   }
 
   .footer-links a:hover {
-    color: var(--color-accent-light);
+    color: var(--orange-400);
+    transform: translateX(2px);
   }
 
   .privacy-notice-box {
-    padding: 0.85rem 1rem;
-    background-color: rgba(30, 41, 59, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-sm);
-    border-left: 3px solid var(--color-accent);
+    padding: 1rem;
+    font-size: 0.82rem;
+    color: #cbd5e1;
+    line-height: 1.55;
   }
 
   .privacy-notice-box p {
-    color: #94a3b8;
-    font-size: 0.85rem;
-    line-height: 1.55;
-    margin: 0;
+    margin-bottom: 0;
+    color: #cbd5e1;
+    font-size: 0.82rem;
   }
 
   .footer-bottom {
-    border-top: 1px solid #1e293b;
-    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
-    text-align: center;
-    color: #64748b;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    border-top: 1px solid #1e293b;
     font-size: 0.85rem;
+    color: #94a3b8;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
     .footer-bottom {
       flex-direction: row;
-      justify-content: space-between;
     }
   }
 
+  .footer-bottom p {
+    margin-bottom: 0;
+    color: #94a3b8;
+    font-size: 0.85rem;
+  }
+
   .domain-info a {
-    color: var(--color-accent-light);
+    color: #cbd5e1;
+    text-decoration: none;
+  }
+
+  .domain-info a:hover {
+    color: var(--orange-400);
   }
 </style>
