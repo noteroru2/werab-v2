@@ -47,6 +47,8 @@ const faqs = [
     "answer": "สามารถแจ้งว่าไม่รวม SSD ได้ โดยราคาต้องอิง Configuration ที่ขายจริง"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -55,23 +57,68 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อโน๊ตบุ๊คสกลนคร เช็กรุ่น สเปก และสภาพก่อนตัดสินใจขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อโน๊ตบุ๊คสกลนคร เช็กรุ่น สเปก และสภาพก่อนตัดสินใจขาย</h1>
         <p>Notebook มือสองควรประเมินจาก Configuration และสภาพของเครื่องจริง โดยเฉพาะเครื่องที่มีอายุหลายปีหรือผ่านการอัปเกรด RAM และ SSD</p>
         <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-สกลนคร/</code> รักษา Historical Intent:</p>
         <p><strong>Notebook + Sakon Nakhon</strong></p>
-        <p>ส่ง:</p>
-        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูปเครื่อง</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>อยู่ในสกลนครเริ่มเช็กราคาจากข้อมูลก่อนได้</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">ส่ง:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูปเครื่อง</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.webp" type="image/webp" />
+              <source srcset="/images/hero-laptop.avif" type="image/avif" />
+              <source srcset="/images/hero-laptop.webp" type="image/webp" />
+              <img
+                src="/images/hero-laptop.webp"
+                alt="รับซื้อโน๊ตบุ๊คสกลนคร เช็กรุ่น สเปก และสภาพก่อนตัดสินใจขาย"
+                width="1200"
+                height="755"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>อยู่ในสกลนครเริ่มเช็กราคาจากข้อมูลก่อนได้</h2>
         <p>ผู้ขายสามารถส่งข้อมูลเบื้องต้นก่อนการเดินทางหรือส่งมอบสินค้า</p>
         <p>สิ่งที่ควรรู้คือ:</p>
         <ul>
@@ -83,8 +130,9 @@ const faqs = [
         </ul>
         <p>หลังจากนั้นจึงค่อยพิจารณาขั้นตอนต่อไปตามพื้นที่และความเหมาะสม</p>
         <p>ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำในทุกพื้นที่ของจังหวัด</p>
-        <hr class="section-divider" />
-        <h2>Notebook รุ่นเก่าควรตรวจสเปกก่อนตัดสินใจซ่อม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Notebook รุ่นเก่าควรตรวจสเปกก่อนตัดสินใจซ่อม</h2>
         <p>เครื่องเก่าบางรุ่นอาจยังมีมูลค่าจาก:</p>
         <ul>
         <li>CPU</li>
@@ -97,25 +145,43 @@ const faqs = [
         </ul>
         <p>หากมีอาการ ไม่ควรรีบซ่อมทุกกรณี</p>
         <p>ควรเช็กราคาตามสภาพก่อน แล้วเปรียบเทียบกับค่าใช้จ่าย</p>
-        <hr class="section-divider" />
-        <h2>CPU ต้องใช้รหัสรุ่นเต็ม</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>CPU ต้องใช้รหัสรุ่นเต็ม</h2>
         <p>ตัวอย่าง:</p>
         <p><strong>Intel Core i5-1135G7</strong></p>
         <p>หรือ</p>
         <p><strong>AMD Ryzen 5 5500U</strong></p>
         <p>ช่วยแยก Generation ได้ดีกว่าคำว่า Core i5 หรือ Ryzen 5 อย่างเดียว</p>
-        <hr class="section-divider" />
-        <h2>Gaming Notebook ต้องแจ้ง GPU</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Gaming Notebook ต้องแจ้ง GPU</h2>
         <p>หากเครื่องมี Dedicated GPU ควรระบุรุ่น</p>
         <p>เพราะ Notebook Gaming ชื่อ Series เดียวกันอาจมีหลาย GPU Configuration</p>
         <p>ควรแจ้ง Adapter ด้วย เพราะกำลังไฟของ Adapter อาจต่างกันตามรุ่น</p>
-        <hr class="section-divider" />
-        <h2>RAM และ SSD ที่เพิ่มภายหลังมีผลกับ Configuration</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>RAM และ SSD ที่เพิ่มภายหลังมีผลกับ Configuration</h2>
         <p>ควรแจ้งของที่ติดตั้งอยู่ในปัจจุบัน</p>
         <p>ถ้าตั้งใจถอด SSD หรือ RAM บางส่วนเก็บไว้ ต้องแจ้งก่อนประเมิน</p>
         <p>ราคาควรอิงสิ่งที่ขายจริง ไม่ใช่ Configuration ที่เคยมีในอดีต</p>
-        <hr class="section-divider" />
-        <h2>Battery เสื่อมกับระบบชาร์จเสียไม่เหมือนกัน</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Battery เสื่อมกับระบบชาร์จเสียไม่เหมือนกัน</h2>
         <p>ควรแยกว่า:</p>
         <ul>
         <li>Battery หมดเร็ว</li>
@@ -126,8 +192,16 @@ const faqs = [
         <li>Battery บวม</li>
         </ul>
         <p>หากยังไม่ทราบสาเหตุ ไม่ควรระบุว่าเป็นอะไหล่ชิ้นใดแน่นอน</p>
-        <hr class="section-divider" />
-        <h2>จอมีปัญหาควรถ่ายตอนเปิดเครื่อง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>จอมีปัญหาควรถ่ายตอนเปิดเครื่อง</h2>
         <p>อาการที่ควรแจ้ง เช่น</p>
         <ul>
         <li>เป็นเส้น</li>
@@ -138,8 +212,9 @@ const faqs = [
         <li>ไม่มีภาพ</li>
         </ul>
         <p>หากต่อ Monitor ภายนอกแล้วแสดงผลได้ ควรแจ้งข้อมูลนี้ประกอบ</p>
-        <hr class="section-divider" />
-        <h2>Keyboard และบานพับมีผลต่อความพร้อมใช้งาน</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Keyboard และบานพับมีผลต่อความพร้อมใช้งาน</h2>
         <p>ควรแจ้งหาก:</p>
         <ul>
         <li>ปุ่มเสีย</li>
@@ -151,8 +226,16 @@ const faqs = [
         <li>Palmrest แตก</li>
         </ul>
         <p>ความเสียหายเหล่านี้อาจทำให้ต้นทุนการซ่อมต่างกัน</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเคยซ่อมต้องแจ้งหรือไม่</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องเคยซ่อมต้องแจ้งหรือไม่</h2>
         <p>ควรแจ้งเท่าที่ทราบ เช่น</p>
         <ul>
         <li>เปลี่ยน Battery</li>
@@ -164,8 +247,9 @@ const faqs = [
         <li>ซ่อมบานพับ</li>
         </ul>
         <p>ไม่ได้หมายความว่าเครื่องที่เคยซ่อมจะขายไม่ได้ แต่ช่วยอธิบายสภาพได้ชัดขึ้น</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเปิดไม่ติดควรทดลองซ้ำไหม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องเปิดไม่ติดควรทดลองซ้ำไหม</h2>
         <p>หากไม่มีอาการอันตราย สามารถสังเกตข้อมูลพื้นฐานได้ เช่นไฟชาร์จหรือพัดลม</p>
         <p>แต่หาก:</p>
         <ul>
@@ -175,8 +259,16 @@ const faqs = [
         <li>มีร่องรอยของเหลว</li>
         </ul>
         <p>ไม่ควรเปิดซ้ำหลายครั้งเพื่อทดสอบเพียงเพื่อขอราคา</p>
-        <hr class="section-divider" />
-        <h2>ข้อมูลส่วนตัวควรจัดการแยกจาก Hardware</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ข้อมูลส่วนตัวควรจัดการแยกจาก Hardware</h2>
         <p>สำหรับการประเมินเบื้องต้น ไม่ต้องให้:</p>
         <ul>
         <li>Password</li>
@@ -187,18 +279,26 @@ const faqs = [
         </ul>
         <p>เจ้าของควรสำรองและจัดการข้อมูลของตนเองก่อนส่งมอบจริง</p>
         <p>สามารถแจ้งว่าไม่รวม SSD หากต้องการเก็บ Storage ไว้</p>
-        <hr class="section-divider" />
-        <h2>Notebook หลายเครื่องจากองค์กร</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Notebook หลายเครื่องจากองค์กร</h2>
         <p>สามารถจัดเป็นตาราง:</p>
-        <table class="table table-bordered">
+        <div class="table-responsive"><table class="table table-bordered">
           <thead><tr><th>รุ่น</th><th>CPU</th><th>RAM</th><th>SSD</th><th>จำนวน</th><th>สภาพ</th></tr></thead>
           <tbody>
           <tr><td>รุ่น...</td><td>i5-...</td><td>8GB</td><td>256GB</td><td>7</td><td>ปกติ</td></tr>
           <tr><td>รุ่น...</td><td>i5-...</td><td>16GB</td><td>512GB</td><td>3</td><td>Battery เสื่อม</td></tr>
           <tr><td>รุ่น...</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>2</td><td>ยังไม่ได้ทดสอบ</td></tr>
-          </tbody></table>
+          </tbody></table></div>
         <p>หากแต่ละเครื่องต่างกันมาก ควรแยกกลุ่มให้ชัด</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
         <h2>หน้าสกลนครไม่แทนหน้ารับซื้อ Notebook หลัก</h2>
         <p>หน้า <a href="/รับซื้อโน๊ตบุ๊ค/"><code>/รับซื้อโน๊ตบุ๊ค/</code></a> เป็น Broad Money Hub</p>
         <p>ส่วน:</p>
@@ -206,39 +306,114 @@ const faqs = [
         <p>มี Intent:</p>
         <p><strong>Notebook + Sakon Nakhon</strong></p>
         <p>จึงควรรักษาความเป็น Local Historical URL ไม่ขยายเป็นหน้า National Notebook อีกชุด</p>
-        <hr class="section-divider" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
         <h2>ขั้นตอนเช็กราคา Notebook ในสกลนคร</h2>
-        <h3>1. ส่ง Model</h3>
-        <p>ชื่อรุ่นเต็ม</p>
-        <h3>2. ส่ง CPU</h3>
-        <p>รหัสเต็มถ้าทราบ</p>
-        <h3>3. ส่ง RAM และ SSD</h3>
-        <p>ของที่ติดตั้งจริง</p>
-        <h3>4. ส่ง GPU</h3>
-        <p>หากมี</p>
-        <h3>5. แจ้ง Battery และ Adapter</h3>
-        <p>ตามอาการจริง</p>
-        <h3>6. ส่งรูป</h3>
-        <p>รวมหน้าจอและตำหนิ</p>
-        <h3>7. แจ้งอาการ</h3>
-        <p>Hardware หรือการใช้งาน</p>
-        <h3>8. แจ้งประวัติซ่อม</h3>
-        <p>ถ้าทราบ</p>
-        <h3>9. เช็กราคาก่อนซ่อม</h3>
-        <p>เปรียบเทียบต้นทุนก่อนตัดสินใจ</p>
-        <h3>10. ตรวจสินค้า</h3>
-        <p>ยืนยันสเปกและสภาพก่อนซื้อขาย</p>
-        <hr class="section-divider" />
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. ส่ง Model</h3>
+              <p>ชื่อรุ่นเต็ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. ส่ง CPU</h3>
+              <p>รหัสเต็มถ้าทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. ส่ง RAM และ SSD</h3>
+              <p>ของที่ติดตั้งจริง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. ส่ง GPU</h3>
+              <p>หากมี</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. แจ้ง Battery และ Adapter</h3>
+              <p>ตามอาการจริง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. ส่งรูป</h3>
+              <p>รวมหน้าจอและตำหนิ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้งอาการ</h3>
+              <p>Hardware หรือการใช้งาน</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. แจ้งประวัติซ่อม</h3>
+              <p>ถ้าทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. เช็กราคาก่อนซ่อม</h3>
+              <p>เปรียบเทียบต้นทุนก่อนตัดสินใจ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจสินค้า</h3>
+              <p>ยืนยันสเปกและสภาพก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="commercial-final-cta">
         <h2>เริ่มเช็กราคาโน๊ตบุ๊คในสกลนคร</h2>
         <p>ส่ง:</p>
         <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
-        <hr class="section-divider" />
-        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในสกลนคร" />
-      </article>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
     </div>
-  </main>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในสกลนคร" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>

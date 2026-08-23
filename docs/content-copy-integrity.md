@@ -1,6 +1,6 @@
 # Content Copy Integrity Audit Report — เรารับซื้อ.com V2
 
-Generated: 2026-08-21T15:23:32.003Z
+Generated: 2026-08-23T04:40:49.456Z
 
 ## Summary
 - **Pages Checked:** 44

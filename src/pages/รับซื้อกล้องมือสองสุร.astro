@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อกล้องมือสองสุรินทร์ DSLR Mirrorless Lens เช็กราคาก่อนขาย | เรารับซื้อ.com";
 const pageDescription = "รับซื้อกล้องมือสองในสุรินทร์ ทั้ง DSLR Mirrorless Body และ Lens ประเมินจากรุ่น ระบบกล้อง Sensor Shutter Focus เลนส์ Battery อุปกรณ์และสภาพก่อนขาย";
@@ -27,24 +28,24 @@ const breadcrumbs = [
 
 const faqs = [
   {
-    "question": "DSLR และ Mirrorless ประเมินเหมือนกันหรือไม่?",
-    "answer": "ใช้ข้อมูลพื้นฐานคล้ายกัน แต่ควรแยก Model ระบบ Sensor Lens Mount Shutter และฟังก์ชันของแต่ละเครื่อง ไม่ควรประเมินจากคำว่า DSLR หรือ Mirrorless เพียงอย่างเดียว"
+    question: "DSLR และ Mirrorless ประเมินเหมือนกันหรือไม่?",
+    answer: "ใช้ข้อมูลพื้นฐานคล้ายกัน แต่ควรแยก Model ระบบ Sensor Lens Mount Shutter และฟังก์ชันของแต่ละเครื่อง ไม่ควรประเมินจากคำว่า DSLR หรือ Mirrorless เพียงอย่างเดียว"
   },
   {
-    "question": "Shutter Count สูงยังส่งมาเช็กราคาได้ไหม?",
-    "answer": "ได้ Shutter Count เป็นเพียงข้อมูลประกอบและควรพิจารณาร่วมกับ Sensor ระบบ Focus จอ EVF Body Lens และประวัติซ่อม"
+    question: "Shutter Count สูงยังส่งมาเช็กราคาได้ไหม?",
+    answer: "ได้ Shutter Count เป็นเพียงข้อมูลประกอบและควรพิจารณาร่วมกับ Sensor ระบบ Focus จอ EVF Body Lens และประวัติซ่อม"
   },
   {
-    "question": "Lens มีฝุ่นหรือสงสัยว่ามีรายังประเมินได้หรือไม่?",
-    "answer": "ได้ ควรส่งรูปและอธิบายตามที่มองเห็น ไม่ควรแกะ Lens เองหากไม่มีความชำนาญเพียงเพื่อเตรียมขาย"
+    question: "Lens มีฝุ่นหรือสงสัยว่ามีรายังประเมินได้หรือไม่?",
+    answer: "ได้ ควรส่งรูปและอธิบายตามที่มองเห็น ไม่ควรแกะ Lens เองหากไม่มีความชำนาญเพียงเพื่อเตรียมขาย"
   },
   {
-    "question": "กล้องมีจุดในภาพต้องล้าง Sensor ก่อนหรือไม่?",
-    "answer": "ไม่จำเป็นทุกกรณี ควรแยกก่อนว่าอาการอาจสัมพันธ์กับ Sensor หรือ Lens และไม่ควรใช้วิธีทำความสะอาดที่เสี่ยง"
+    question: "กล้องมีจุดในภาพต้องล้าง Sensor ก่อนหรือไม่?",
+    answer: "ไม่จำเป็นทุกกรณี ควรแยกก่อนว่าอาการอาจสัมพันธ์กับ Sensor หรือ Lens และไม่ควรใช้วิธีทำความสะอาดที่เสี่ยง"
   },
   {
-    "question": "ไม่มี Charger หรือกล่องยังส่งมาประเมินได้ไหม?",
-    "answer": "ได้ ควรแจ้งอุปกรณ์ที่มีจริง ไม่จำเป็นต้องซื้อของใหม่มาเติมชุดก่อนทราบว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่"
+    question: "ไม่มี Charger หรือกล่องยังส่งมาประเมินได้ไหม?",
+    answer: "ได้ ควรแจ้งอุปกรณ์ที่มีจริง ไม่จำเป็นต้องซื้อของใหม่มาเติมชุดก่อนทราบว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่"
   }
 ];
 ---
@@ -55,281 +56,459 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
+  <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อกล้องมือสองสุรินทร์ เช็กระบบ Body Lens และสภาพก่อนขาย</h1>
+          <p class="hero-lead-text">หน้า <code>/รับซื้อกล้องมือสองสุร/</code> รักษา Historical Search Intent:</p>
+          <p style="font-size: 1.05rem; font-weight: 800; color: #c2410c; margin-bottom: 0.75rem;">
+            <strong>Camera + Surin</strong>
+          </p>
+          <p>
+            กล้องมือสองไม่ควรประเมินจากชื่อแบรนด์หรือจำนวน Shutter เพียงอย่างเดียว เพราะ Body, Lens, Sensor, ระบบ Focus, จอ, EVF, Battery และอุปกรณ์สามารถอยู่ในสภาพต่างกันได้
+          </p>
 
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อกล้องมือสองสุรินทร์ เช็กระบบ Body Lens และสภาพก่อนขาย</h1>
-        <p>หน้า <code>/รับซื้อกล้องมือสองสุร/</code> รักษา Historical Search Intent:</p>
-        <p><strong>Camera + Surin</strong></p>
-        <p>กล้องมือสองไม่ควรประเมินจากชื่อแบรนด์หรือจำนวน Shutter เพียงอย่างเดียว เพราะ Body, Lens, Sensor, ระบบ Focus, จอ, EVF, Battery และอุปกรณ์สามารถอยู่ในสภาพต่างกันได้</p>
-        <p>เริ่มจากส่ง:</p>
-        <p><strong>Brand + Model + Lens + Shutter Count ถ้าทราบ + รูป + Battery + Charger + อาการ</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
+          <div class="hero-intake-card">
+            <p style="font-weight: 600; margin-bottom: 0.35rem;">เริ่มจากส่ง:</p>
+            <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+              <strong>Brand + Model + Lens + Shutter Count ถ้าทราบ + รูป + Battery + Charger + อาการ</strong>
+            </p>
+            <div class="hero-cta-bar">
+              <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+                </svg>
+                <span>LINE: <strong>{getDisplayLine()}</strong></span>
+              </a>
+              <a href={getPhoneUrl()} class="btn btn-phone">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-camera-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-camera-500.webp" type="image/webp" />
+              <source srcset="/images/hero-camera.avif" type="image/avif" />
+              <source srcset="/images/hero-camera.webp" type="image/webp" />
+              <img
+                src="/images/hero-camera.webp"
+                alt="รับซื้อกล้องมือสองสุรินทร์ เช็กระบบ Body Lens และสภาพก่อนขาย"
+                width="971"
+                height="716"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: SURIN SERVICE INTAKE -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
         <h2>อยู่สุรินทร์สามารถส่งข้อมูล Body และ Lens มาก่อนได้</h2>
         <p>ก่อนตัดสินใจขาย สามารถเริ่มจากส่งข้อมูลและรูปของอุปกรณ์ที่มี</p>
         <p>ควรแจ้งว่าเป็น:</p>
         <ul>
-        <li>Body อย่างเดียว</li>
-        <li>Body + Kit Lens</li>
-        <li>Body + Lens เพิ่ม</li>
-        <li>หลาย Lens</li>
-        <li>มี Flash หรืออุปกรณ์เสริม</li>
-        <li>มี Battery และ Charger กี่ชิ้น</li>
+          <li>Body อย่างเดียว</li>
+          <li>Body + Kit Lens</li>
+          <li>Body + Lens เพิ่ม</li>
+          <li>หลาย Lens</li>
+          <li>มี Flash หรืออุปกรณ์เสริม</li>
+          <li>มี Battery และ Charger กี่ชิ้น</li>
         </ul>
         <p>หลังทราบข้อมูลเบื้องต้นแล้วจึงค่อยพิจารณาขั้นตอนตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
         <p>หน้า Local นี้ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ทุกพื้นที่ของจังหวัดสุรินทร์</p>
-        <hr class="section-divider" />
-        <h2>DSLR และ Mirrorless ควรแยกระบบให้ถูก</h2>
-        <p>การแจ้งเพียงคำว่า:</p>
-        <p><strong>กล้อง Canon</strong></p>
-        <p><strong>กล้อง Sony</strong></p>
-        <p><strong>กล้อง Fujifilm</strong></p>
-        <p>หรือ:</p>
-        <p><strong>กล้อง Nikon</strong></p>
-        <p>ยังไม่พอสำหรับแยกรุ่น</p>
-        <p>ควรแจ้ง Model เต็มของ Body และถ้าทราบให้ระบุว่าเป็น:</p>
-        <ul>
-        <li>DSLR</li>
-        <li>Mirrorless</li>
-        <li>APS-C</li>
-        <li>Full-frame</li>
-        <li>ระบบอื่นตามรุ่น</li>
-        </ul>
-        <p>ชื่อแบรนด์มีไว้เพื่อจำแนกสินค้าเท่านั้น ไม่ได้หมายความว่าเว็บไซต์เป็นตัวแทนหรือศูนย์บริการของผู้ผลิต</p>
-        <hr class="section-divider" />
-        <h2>APS-C และ Full-frame ไม่ควรประเมินรวมกันจากรูปลักษณ์</h2>
-        <p>กล้องสองตัวอาจมีขนาดใกล้เคียงกัน แต่ใช้ Sensor และระบบต่างกัน</p>
-        <p>ควรตรวจจาก Model จริง</p>
-        <p>ไม่ควรเดาจาก:</p>
-        <ul>
-        <li>ขนาด Body</li>
-        <li>ขนาด Lens</li>
-        <li>ราคาตอนซื้อ</li>
-        <li>อายุโดยประมาณ</li>
-        </ul>
-        <p>เพียงอย่างเดียว</p>
-        <p>การรู้รุ่นเต็มช่วยแยก Platform ได้ถูกต้องกว่า</p>
-        <hr class="section-divider" />
-        <h2>Lens Mount ต้องสัมพันธ์กับระบบของ Body</h2>
-        <p>หากขายพร้อม Lens ควรแจ้ง:</p>
-        <ul>
-        <li>รุ่น Lens</li>
-        <li>Mount ถ้าทราบ</li>
-        <li>Focal Length</li>
-        <li>Aperture</li>
-        <li>ระบบ Focus</li>
-        <li>ระบบกันสั่นถ้ามี</li>
-        </ul>
-        <p>Lens ที่มีช่วงระยะเหมือนกันอาจเป็นคนละ Mount และใช้กับ Body คนละระบบ</p>
-        <p>หากไม่แน่ใจ Mount สามารถส่งรูป:</p>
-        <ul>
-        <li>หน้า Lens</li>
-        <li>ด้านข้าง</li>
-        <li>ท้าย Lens</li>
-        <li>ตัวหนังสือบนกระบอก</li>
-        </ul>
-        <p>แทนการคาดเดาได้</p>
-        <hr class="section-divider" />
-        <h2>Shutter Count เป็นเพียงข้อมูลประกอบ</h2>
-        <p>หากสามารถตรวจ Shutter Count ได้ สามารถส่งตัวเลขประกอบ</p>
-        <p>แต่ควรดูร่วมกับ:</p>
-        <ul>
-        <li>สภาพ Body</li>
-        <li>Sensor</li>
-        <li>ระบบ Shutter</li>
-        <li>ปุ่ม</li>
-        <li>Dial</li>
-        <li>Mount</li>
-        <li>จอ</li>
-        <li>EVF</li>
-        <li>Port</li>
-        <li>Battery</li>
-        <li>ประวัติซ่อม</li>
-        </ul>
-        <p>กล้อง Shutter ต่ำไม่ได้หมายความว่าสภาพทุกส่วนสมบูรณ์ และกล้อง Shutter สูงก็ไม่ได้หมายความว่าไม่มีมูลค่า</p>
-        <hr class="section-divider" />
-        <h2>ระบบ Focus ควรดูทั้ง Body และ Lens</h2>
-        <p>หากพบอาการ เช่น:</p>
-        <ul>
-        <li>Focus ช้า</li>
-        <li>Focus หลุด</li>
-        <li>Focus ไม่เข้า</li>
-        <li>Hunting</li>
-        <li>Motor Lens มีเสียง</li>
-        <li>Tracking ผิดปกติ</li>
-        </ul>
-        <p>ควรแจ้งว่าใช้ Lens ตัวใดทดสอบ</p>
-        <p>หากมี Lens มากกว่าหนึ่งตัว สามารถลองแยกเท่าที่ทำได้อย่างปลอดภัยเพื่อดูว่าอาการเกิดกับ Lens เดียวหรือหลายตัว</p>
-        <p>ไม่ควรแกะชุด Focus หรือ Lens เพื่อหาสาเหตุเอง</p>
-        <hr class="section-divider" />
-        <h2>Sensor มีจุดควรแยกจากปัญหา Lens</h2>
-        <p>หากภาพมีจุด อาจเกี่ยวข้องกับ:</p>
-        <ul>
-        <li>ฝุ่นบน Sensor</li>
-        <li>ฝุ่นหรือคราบบน Lens</li>
-        <li>สิ่งสกปรกในระบบ</li>
-        <li>สาเหตุอื่น</li>
-        </ul>
-        <p>หากมี Lens มากกว่าหนึ่งตัว สามารถเปรียบเทียบภาพได้</p>
-        <p>ไม่ควรขัด Sensor อย่างแรงหรือใช้สารทำความสะอาดที่ไม่เหมาะสมเพียงเพื่อเตรียมขาย</p>
-        <p>หากไม่แน่ใจ สามารถส่งภาพตัวอย่างประกอบแทน</p>
-        <hr class="section-divider" />
-        <h2>Lens ควรตรวจภายนอกและภายในเท่าที่มองเห็น</h2>
-        <p>ควรสังเกต:</p>
-        <ul>
-        <li>หน้า Lens</li>
-        <li>ท้าย Lens</li>
-        <li>กระบอก</li>
-        <li>Focus Ring</li>
-        <li>Zoom Ring</li>
-        <li>Mount</li>
-        <li>AF</li>
-        <li>Stabilization ถ้ามี</li>
-        </ul>
-        <p>ภายในอาจพบ:</p>
-        <ul>
-        <li>ฝุ่น</li>
-        <li>ฝ้า</li>
-        <li>คราบ</li>
-        <li>สิ่งที่สงสัยว่าเป็นรา</li>
-        <li>รอย</li>
-        </ul>
-        <p>หากไม่แน่ใจว่าเป็นอะไร ควรบอกตามที่เห็น ไม่จำเป็นต้องแกะ Lens เพื่อตรวจภายใน</p>
-        <hr class="section-divider" />
-        <h2>จอและ EVF ควรแยกสถานะ</h2>
-        <p>ควรแจ้งว่า:</p>
-        <ul>
-        <li>จอหลังใช้งานได้</li>
-        <li>Touch ใช้งานได้</li>
-        <li>จอเป็นเส้น</li>
-        <li>จอกระพริบ</li>
-        <li>EVF ใช้งานได้</li>
-        <li>EVF ไม่ขึ้น</li>
-        <li>EVF มีจุดหรือคราบ</li>
-        </ul>
-        <p>กล้องบางตัวอาจยังถ่ายได้แม้จอหรือ EVF มีอาการ จึงควรบอกแต่ละฟังก์ชันแยกกัน</p>
-        <hr class="section-divider" />
-        <h2>Memory Card Slot และ Port มีผลต่อการใช้งาน</h2>
-        <p>ควรแจ้งหากมี:</p>
-        <ul>
-        <li>Card Error</li>
-        <li>อ่าน Card ไม่ได้</li>
-        <li>Slot มีปัญหา</li>
-        <li>USB ใช้งานไม่ได้</li>
-        <li>HDMI มีอาการ</li>
-        <li>Microphone Port มีปัญหา</li>
-        <li>Hot Shoe มีอาการ</li>
-        </ul>
-        <p>ไม่จำเป็นต้องซ่อมทุกอาการก่อนส่งมาประเมิน</p>
-        <hr class="section-divider" />
-        <h2>Battery และ Charger ต้องแจ้งตามจำนวนจริง</h2>
-        <p>ตัวอย่าง:</p>
-        <p><strong>Battery เดิม 1 ก้อน + Charger เดิม</strong></p>
-        <p>หรือ:</p>
-        <p><strong>Battery เทียบ 2 ก้อน / ไม่มี Charger</strong></p>
-        <p>ควรแจ้งหาก Battery:</p>
-        <ul>
-        <li>หมดเร็ว</li>
-        <li>ชาร์จไม่เข้า</li>
-        <li>เสื่อม</li>
-        <li>บวม</li>
-        <li>ยังไม่ได้ทดสอบ</li>
-        </ul>
-        <p>หาก Battery บวม ไม่ควรฝืนใส่กลับเข้า Body หรือชาร์จซ้ำ</p>
-        <hr class="section-divider" />
-        <h2>กล้องเคยตก โดนน้ำ หรือมีความชื้นควรแจ้ง</h2>
-        <p>ข้อมูลที่ช่วยประกอบ เช่น:</p>
-        <ul>
-        <li>เคยตกหรือไม่</li>
-        <li>เคยโดนน้ำหรือไม่</li>
-        <li>เก็บในพื้นที่ชื้นเป็นเวลานานหรือไม่</li>
-        <li>หลังเกิดเหตุยังเปิดได้หรือไม่</li>
-        <li>เคยซ่อมหรือทำความสะอาดหรือไม่</li>
-        </ul>
-        <p>ไม่ควรเปิด Body หรือ Lens เพื่อจัดการความชื้นภายในเองหากไม่มีความชำนาญ</p>
-        <hr class="section-divider" />
-        <h2>อุปกรณ์เสริมควรแยกจาก Body และ Lens</h2>
-        <p>หากมี:</p>
-        <ul>
-        <li>Flash</li>
-        <li>Grip</li>
-        <li>Cage</li>
-        <li>Microphone</li>
-        <li>Filter</li>
-        <li>Hood</li>
-        <li>Adapter</li>
-        <li>Strap</li>
-        <li>Battery เพิ่ม</li>
-        <li>Charger เพิ่ม</li>
-        </ul>
-        <p>ควรแจ้งเป็นรายการ</p>
-        <p>อุปกรณ์บางชิ้นอาจมีมูลค่าแยก ไม่ควรถือว่าเป็นของแถมโดยอัตโนมัติ</p>
-        <hr class="section-divider" />
-        <h2>Serial Number ไม่จำเป็นต้องโพสต์สาธารณะ</h2>
-        <p>เพื่อถามราคาเบื้องต้นสามารถเริ่มจาก:</p>
-        <p><strong>Brand + Model + Lens + รูป + สภาพ</strong></p>
-        <p>ก่อน</p>
-        <p>หากภายหลังจำเป็นต้องตรวจ Serial เพื่อยืนยันข้อมูลสินค้า ควรส่งผ่านช่องทางที่เหมาะสม ไม่จำเป็นต้องโพสต์ต่อสาธารณะ</p>
-        <hr class="section-divider" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: DSLR VS MIRRORLESS & SENSOR SIZES -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>DSLR และ Mirrorless ควรแยกระบบให้ถูก</h2>
+          <p>การแจ้งเพียงคำว่า:</p>
+          <p><strong>กล้อง Canon</strong></p>
+          <p><strong>กล้อง Sony</strong></p>
+          <p><strong>กล้อง Fujifilm</strong></p>
+          <p>หรือ:</p>
+          <p><strong>กล้อง Nikon</strong></p>
+          <p>ยังไม่พอสำหรับแยกรุ่น</p>
+          <p>ควรแจ้ง Model เต็มของ Body และถ้าทราบให้ระบุว่าเป็น:</p>
+          <ul>
+            <li>DSLR</li>
+            <li>Mirrorless</li>
+            <li>APS-C</li>
+            <li>Full-frame</li>
+            <li>ระบบอื่นตามรุ่น</li>
+          </ul>
+          <p>ชื่อแบรนด์มีไว้เพื่อจำแนกสินค้าเท่านั้น ไม่ได้หมายความว่าเว็บไซต์เป็นตัวแทนหรือศูนย์บริการของผู้ผลิต</p>
+        </div>
+
+        <div class="comm-card">
+          <h2>APS-C และ Full-frame ไม่ควรประเมินรวมกันจากรูปลักษณ์</h2>
+          <p>กล้องสองตัวอาจมีขนาดใกล้เคียงกัน แต่ใช้ Sensor และระบบต่างกัน</p>
+          <p>ควรตรวจจาก Model จริง</p>
+          <p>ไม่ควรเดาจาก:</p>
+          <ul>
+            <li>ขนาด Body</li>
+            <li>ขนาด Lens</li>
+            <li>ราคาตอนซื้อ</li>
+            <li>อายุโดยประมาณ</li>
+          </ul>
+          <p>เพียงอย่างเดียว</p>
+          <p>การรู้รุ่นเต็มช่วยแยก Platform ได้ถูกต้องกว่า</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: LENS MOUNT & SHUTTER COUNT -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Lens Mount ต้องสัมพันธ์กับระบบของ Body</h2>
+          <p>หากขายพร้อม Lens ควรแจ้ง:</p>
+          <ul>
+            <li>รุ่น Lens</li>
+            <li>Mount ถ้าทราบ</li>
+            <li>Focal Length</li>
+            <li>Aperture</li>
+            <li>ระบบ Focus</li>
+            <li>ระบบกันสั่นถ้ามี</li>
+          </ul>
+          <p>Lens ที่มีช่วงระยะเหมือนกันอาจเป็นคนละ Mount และใช้กับ Body คนละระบบ</p>
+          <p>หากไม่แน่ใจ Mount สามารถส่งรูป:</p>
+          <ul>
+            <li>หน้า Lens</li>
+            <li>ด้านข้าง</li>
+            <li>ท้าย Lens</li>
+            <li>ตัวหนังสือบนกระบอก</li>
+          </ul>
+          <p>แทนการคาดเดาได้</p>
+        </div>
+
+        <div class="comm-card">
+          <h2>Shutter Count เป็นเพียงข้อมูลประกอบ</h2>
+          <p>หากสามารถตรวจ Shutter Count ได้ สามารถส่งตัวเลขประกอบ</p>
+          <p>แต่ควรดูร่วมกับ:</p>
+          <ul>
+            <li>สภาพ Body</li>
+            <li>Sensor</li>
+            <li>ระบบ Shutter</li>
+            <li>ปุ่ม</li>
+            <li>Dial</li>
+            <li>Mount</li>
+            <li>จอ</li>
+            <li>EVF</li>
+            <li>Port</li>
+            <li>Battery</li>
+            <li>ประวัติซ่อม</li>
+          </ul>
+          <p>กล้อง Shutter ต่ำไม่ได้หมายความว่าสภาพทุกส่วนสมบูรณ์ และกล้อง Shutter สูงก็ไม่ได้หมายความว่าไม่มีมูลค่า</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FOCUS, SENSOR & LENS CONDITION -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ระบบ Focus ควรดูทั้ง Body และ Lens</h2>
+          <p>หากพบอาการ เช่น:</p>
+          <ul>
+            <li>Focus ช้า</li>
+            <li>Focus หลุด</li>
+            <li>Focus ไม่เข้า</li>
+            <li>Hunting</li>
+            <li>Motor Lens มีเสียง</li>
+            <li>Tracking ผิดปกติ</li>
+          </ul>
+          <p>ควรแจ้งว่าใช้ Lens ตัวใดทดสอบ</p>
+          <p>หากมี Lens มากกว่าหนึ่งตัว สามารถลองแยกเท่าที่ทำได้อย่างปลอดภัยเพื่อดูว่าอาการเกิดกับ Lens เดียวหรือหลายตัว</p>
+          <p>ไม่ควรแกะชุด Focus หรือ Lens เพื่อหาสาเหตุเอง</p>
+
+          <h2 style="margin-top: 1.5rem;">Sensor มีจุดควรแยกจากปัญหา Lens</h2>
+          <p>หากภาพมีจุด อาจเกี่ยวข้องกับ:</p>
+          <ul>
+            <li>ฝุ่นบน Sensor</li>
+            <li>ฝุ่นหรือคราบบน Lens</li>
+            <li>สิ่งสกปรกในระบบ</li>
+            <li>สาเหตุอื่น</li>
+          </ul>
+          <p>หากมี Lens มากกว่าหนึ่งตัว สามารถเปรียบเทียบภาพได้</p>
+          <p>ไม่ควรขัด Sensor อย่างแรงหรือใช้สารทำความสะอาดที่ไม่เหมาะสมเพียงเพื่อเตรียมขาย</p>
+          <p>หากไม่แน่ใจ สามารถส่งภาพตัวอย่างประกอบแทน</p>
+        </div>
+
+        <div class="comm-card">
+          <h2>Lens ควรตรวจภายนอกและภายในเท่าที่มองเห็น</h2>
+          <p>ควรสังเกต:</p>
+          <ul>
+            <li>หน้า Lens</li>
+            <li>ท้าย Lens</li>
+            <li>กระบอก</li>
+            <li>Focus Ring</li>
+            <li>Zoom Ring</li>
+            <li>Mount</li>
+            <li>AF</li>
+            <li>Stabilization ถ้ามี</li>
+          </ul>
+          <p>ภายในอาจพบ:</p>
+          <ul>
+            <li>ฝุ่น</li>
+            <li>ฝ้า</li>
+            <li>คราบ</li>
+            <li>สิ่งที่สงสัยว่าเป็นรา</li>
+            <li>รอย</li>
+          </ul>
+          <p>หากไม่แน่ใจว่าเป็นอะไร ควรบอกตามที่เห็น ไม่จำเป็นต้องแกะ Lens เพื่อตรวจภายใน</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: DISPLAY, EVF, PORTS, BATTERY, DROPS & ACCESSORIES -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>จอและ EVF ควรแยกสถานะ</h2>
+          <p>ควรแจ้งว่า:</p>
+          <ul>
+            <li>จอหลังใช้งานได้</li>
+            <li>Touch ใช้งานได้</li>
+            <li>จอเป็นเส้น</li>
+            <li>จอกระพริบ</li>
+            <li>EVF ใช้งานได้</li>
+            <li>EVF ไม่ขึ้น</li>
+            <li>EVF มีจุดหรือคราบ</li>
+          </ul>
+          <p>กล้องบางตัวอาจยังถ่ายได้แม้จอหรือ EVF มีอาการ จึงควรบอกแต่ละฟังก์ชันแยกกัน</p>
+
+          <h2 style="margin-top: 1.5rem;">Memory Card Slot และ Port มีผลต่อการใช้งาน</h2>
+          <p>ควรแจ้งหากมี:</p>
+          <ul>
+            <li>Card Error</li>
+            <li>อ่าน Card ไม่ได้</li>
+            <li>Slot มีปัญหา</li>
+            <li>USB ใช้งานไม่ได้</li>
+            <li>HDMI มีอาการ</li>
+            <li>Microphone Port มีปัญหา</li>
+            <li>Hot Shoe มีอาการ</li>
+          </ul>
+          <p>ไม่จำเป็นต้องซ่อมทุกอาการก่อนส่งมาประเมิน</p>
+
+          <h2 style="margin-top: 1.5rem;">Battery และ Charger ต้องแจ้งตามจำนวนจริง</h2>
+          <p>ตัวอย่าง:</p>
+          <p><strong>Battery เดิม 1 ก้อน + Charger เดิม</strong></p>
+          <p>หรือ:</p>
+          <p><strong>Battery เทียบ 2 ก้อน / ไม่มี Charger</strong></p>
+          <p>ควรแจ้งหาก Battery:</p>
+          <ul>
+            <li>หมดเร็ว</li>
+            <li>ชาร์จไม่เข้า</li>
+            <li>เสื่อม</li>
+            <li>บวม</li>
+            <li>ยังไม่ได้ทดสอบ</li>
+          </ul>
+          <p>หาก Battery บวม ไม่ควรฝืนใส่กลับเข้า Body หรือชาร์จซ้ำ</p>
+        </div>
+
+        <div class="comm-card">
+          <h2>กล้องเคยตก โดนน้ำ หรือมีความชื้นควรแจ้ง</h2>
+          <p>ข้อมูลที่ช่วยประกอบ เช่น:</p>
+          <ul>
+            <li>เคยตกหรือไม่</li>
+            <li>เคยโดนน้ำหรือไม่</li>
+            <li>เก็บในพื้นที่ชื้นเป็นเวลานานหรือไม่</li>
+            <li>หลังเกิดเหตุยังเปิดได้หรือไม่</li>
+            <li>เคยซ่อมหรือทำความสะอาดหรือไม่</li>
+          </ul>
+          <p>ไม่ควรเปิด Body หรือ Lens เพื่อจัดการความชื้นภายในเองหากไม่มีความชำนาญ</p>
+
+          <h2 style="margin-top: 1.5rem;">อุปกรณ์เสริมควรแยกจาก Body และ Lens</h2>
+          <p>หากมี:</p>
+          <ul>
+            <li>Flash</li>
+            <li>Grip</li>
+            <li>Cage</li>
+            <li>Microphone</li>
+            <li>Filter</li>
+            <li>Hood</li>
+            <li>Adapter</li>
+            <li>Strap</li>
+            <li>Battery เพิ่ม</li>
+            <li>Charger เพิ่ม</li>
+          </ul>
+          <p>ควรแจ้งเป็นรายการ</p>
+          <p>อุปกรณ์บางชิ้นอาจมีมูลค่าแยก ไม่ควรถือว่าเป็นของแถมโดยอัตโนมัติ</p>
+
+          <h2 style="margin-top: 1.5rem;">Serial Number ไม่จำเป็นต้องโพสต์สาธารณะ</h2>
+          <p>เพื่อถามราคาเบื้องต้นสามารถเริ่มจาก:</p>
+          <p style="font-size: 1.05rem; font-weight: 700; color: var(--navy-950); margin: 0.5rem 0;">
+            <strong>Brand + Model + Lens + รูป + สภาพ</strong>
+          </p>
+          <p>ก่อน</p>
+          <p>หากภายหลังจำเป็นต้องตรวจ Serial เพื่อยืนยันข้อมูลสินค้า ควรส่งผ่านช่องทางที่เหมาะสม ไม่จำเป็นต้องโพสต์ต่อสาธารณะ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: SURIN VS CAMERA HUB -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
         <h2>หน้าสุรินทร์ต่างจากหน้ารับซื้อกล้องหลัก</h2>
         <p>หน้า <a href="/รับซื้อกล้อง/">รับซื้อกล้อง</a> เป็น Broad Camera Money Hub</p>
         <p>ส่วน:</p>
         <p><code>/รับซื้อกล้องมือสองสุร/</code></p>
         <p>รักษา:</p>
-        <p><strong>Camera + Surin</strong></p>
+        <p style="font-size: 1.1rem; font-weight: 800; color: var(--navy-950); margin: 0.5rem 0;">
+          <strong>Camera + Surin</strong>
+        </p>
         <p>จึงเป็นหน้าเฉพาะ Historical Local Intent ไม่ใช่การสร้าง Camera Money Hub ซ้ำ</p>
-        <hr class="section-divider" />
-        <h2>ขั้นตอนเช็กราคากล้องมือสองในสุรินทร์</h2>
-        <h3>1. แจ้ง Brand และ Model</h3>
-        <p>ใช้รุ่นเต็มของ Body</p>
-        <h3>2. แจ้งระบบกล้อง</h3>
-        <p>DSLR / Mirrorless และ Sensor Format ถ้าทราบ</p>
-        <h3>3. แยก Lens</h3>
-        <p>ระบุรุ่นและ Mount เท่าที่ทราบ</p>
-        <h3>4. แจ้ง Shutter Count</h3>
-        <p>ถ้าตรวจได้</p>
-        <h3>5. ตรวจระบบ Focus</h3>
-        <p>แจ้งอาการตามที่พบ</p>
-        <h3>6. ส่งรูป</h3>
-        <p>Body Lens จอ EVF และตำหนิ</p>
-        <h3>7. แจ้ง Battery และ Charger</h3>
-        <p>จำนวนและสภาพ</p>
-        <h3>8. แจ้งอุปกรณ์เสริม</h3>
-        <p>ตามสิ่งที่รวมขาย</p>
-        <h3>9. แจ้งประวัติ</h3>
-        <p>ตก น้ำ ความชื้น หรือซ่อม</p>
-        <h3>10. ตรวจสินค้า</h3>
-        <p>ยืนยันรุ่น ระบบ Lens ฟังก์ชันและสภาพก่อนซื้อขาย</p>
-        <hr class="section-divider" />
-        <h2>เริ่มเช็กราคากล้องมือสองในสุรินทร์</h2>
-        <p>ส่ง:</p>
-        <p><strong>Brand + Model + Lens + Shutter + Battery + รูป + อาการ + อุปกรณ์</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
-        <h2>คำถามที่พบบ่อยเกี่ยวกับการขายกล้องมือสองในสุรินทร์</h2>
-        <h3>DSLR และ Mirrorless ประเมินเหมือนกันหรือไม่?</h3>
-        <p>ใช้ข้อมูลพื้นฐานคล้ายกัน แต่ควรแยก Model ระบบ Sensor Lens Mount Shutter และฟังก์ชันของแต่ละเครื่อง ไม่ควรประเมินจากคำว่า DSLR หรือ Mirrorless เพียงอย่างเดียว</p>
-        <h3>Shutter Count สูงยังส่งมาเช็กราคาได้ไหม?</h3>
-        <p>ได้ Shutter Count เป็นเพียงข้อมูลประกอบและควรพิจารณาร่วมกับ Sensor ระบบ Focus จอ EVF Body Lens และประวัติซ่อม</p>
-        <h3>Lens มีฝุ่นหรือสงสัยว่ามีรายังประเมินได้หรือไม่?</h3>
-        <p>ได้ ควรส่งรูปและอธิบายตามที่มองเห็น ไม่ควรแกะ Lens เองหากไม่มีความชำนาญเพียงเพื่อเตรียมขาย</p>
-        <h3>กล้องมีจุดในภาพต้องล้าง Sensor ก่อนหรือไม่?</h3>
-        <p>ไม่จำเป็นทุกกรณี ควรแยกก่อนว่าอาการอาจสัมพันธ์กับ Sensor หรือ Lens และไม่ควรใช้วิธีทำความสะอาดที่เสี่ยง</p>
-        <h3>ไม่มี Charger หรือกล่องยังส่งมาประเมินได้ไหม?</h3>
-        <p>ได้ ควรแจ้งอุปกรณ์ที่มีจริง ไม่จำเป็นต้องซื้อของใหม่มาเติมชุดก่อนทราบว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่</p>
-      </article>
-
-      <section class="faq-section" style="margin-top: 3rem;">
-        <FAQ items={faqs} />
-      </section>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <!-- SECTION 7: 10-STEP PROCESS -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
+        <h2>ขั้นตอนเช็กราคากล้องมือสองในสุรินทร์</h2>
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. แจ้ง Brand และ Model</h3>
+              <p>ใช้รุ่นเต็มของ Body</p>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div>
+              <h3>2. แจ้งระบบกล้อง</h3>
+              <p>DSLR / Mirrorless และ Sensor Format ถ้าทราบ</p>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div>
+              <h3>3. แยก Lens</h3>
+              <p>ระบุรุ่นและ Mount เท่าที่ทราบ</p>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div>
+              <h3>4. แจ้ง Shutter Count</h3>
+              <p>ถ้าตรวจได้</p>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div>
+              <h3>5. ตรวจระบบ Focus</h3>
+              <p>แจ้งอาการตามที่พบ</p>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div>
+              <h3>6. ส่งรูป</h3>
+              <p>Body Lens จอ EVF และตำหนิ</p>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้ง Battery และ Charger</h3>
+              <p>จำนวนและสภาพ</p>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div>
+              <h3>8. แจ้งอุปกรณ์เสริม</h3>
+              <p>ตามสิ่งที่รวมขาย</p>
+            </div>
+          </div>
+
+          <div class="process-step-item">
+            <div>
+              <h3>9. แจ้งประวัติ</h3>
+              <p>ตก น้ำ ความชื้น หรือซ่อม</p>
+            </div>
+          </div>
+
+          <div class="process-step-item" style="grid-column: 1 / -1;">
+            <div>
+              <h3>10. ตรวจสินค้า</h3>
+              <p>ยืนยันรุ่น ระบบ Lens ฟังก์ชันและสภาพก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="commercial-final-cta">
+        <h2>เริ่มเช็กราคากล้องมือสองในสุรินทร์</h2>
+        <p style="margin-bottom: 0.5rem;">ส่ง:</p>
+        <p style="font-size: 1.25rem; font-weight: 800; color: #fdba74; margin-bottom: 1.5rem;">
+          <strong>Brand + Model + Lens + Shutter + Battery + รูป + อาการ + อุปกรณ์</strong>
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <p style="font-size: 1.05rem; font-weight: 700;">
+          <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: FAQ -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายกล้องมือสองในสุรินทร์" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>

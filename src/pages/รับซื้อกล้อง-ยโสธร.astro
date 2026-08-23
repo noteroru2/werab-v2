@@ -47,6 +47,8 @@ const faqs = [
     "answer": "ไม่จำเป็นทุกกรณี ควรเปรียบเทียบต้นทุน Battery ใหม่กับมูลค่าที่คาดว่าจะเพิ่มก่อนตัดสินใจ"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -55,25 +57,70 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อกล้องยโสธร เช็กสภาพและความคุ้มค่าก่อนซ่อมหรือขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อกล้องยโสธร เช็กสภาพและความคุ้มค่าก่อนซ่อมหรือขาย</h1>
         <p>กล้องที่มีอาการไม่ได้หมายความว่าต้องซ่อมหรือทำความสะอาดก่อนขายทุกตัว</p>
         <p>หน้า <code>/รับซื้อกล้อง-ยโสธร/</code> รักษา Historical Search Intent:</p>
         <p><strong>Camera + Yasothon</strong></p>
         <p>โดยเน้นการแยกว่า:</p>
         <p><strong>สภาพปัจจุบันเป็นอย่างไร → อะไรยังใช้งานได้ → การซ่อมหรือทำความสะอาดคุ้มก่อนขายหรือไม่</strong></p>
-        <p>ข้อมูลเริ่มต้น:</p>
-        <p><strong>Brand + Model + Lens + รูป + อาการ + Shutter Count ถ้าทราบ + Battery + Charger</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>อยู่ยโสธรไม่จำเป็นต้องซ่อมกล้องก่อนเช็กราคา</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">ข้อมูลเริ่มต้น:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>Brand + Model + Lens + รูป + อาการ + Shutter Count ถ้าทราบ + Battery + Charger</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-camera-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-camera-500.webp" type="image/webp" />
+              <source srcset="/images/hero-camera.avif" type="image/avif" />
+              <source srcset="/images/hero-camera.webp" type="image/webp" />
+              <img
+                src="/images/hero-camera.webp"
+                alt="รับซื้อกล้องยโสธร เช็กสภาพและความคุ้มค่าก่อนซ่อมหรือขาย"
+                width="971"
+                height="716"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>อยู่ยโสธรไม่จำเป็นต้องซ่อมกล้องก่อนเช็กราคา</h2>
         <p>หากกล้องมี:</p>
         <ul>
         <li>จอเสีย</li>
@@ -88,8 +135,9 @@ const faqs = [
         <p>สามารถเริ่มจากส่งข้อมูลตามสภาพได้</p>
         <p>หลังทราบข้อมูลจึงค่อยเปรียบเทียบว่าการซ่อมหรือทำความสะอาดก่อนขายมีความคุ้มค่าหรือไม่</p>
         <p>หน้านี้ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในทุกพื้นที่ของยโสธร</p>
-        <hr class="section-divider" />
-        <h2>จุดในภาพควรหาสาเหตุก่อนตัดสินใจล้าง Sensor</h2>
+        </div>
+        <div class="comm-card">
+          <h2>จุดในภาพควรหาสาเหตุก่อนตัดสินใจล้าง Sensor</h2>
         <p>จุดในภาพอาจสัมพันธ์กับ:</p>
         <ul>
         <li>Sensor</li>
@@ -108,8 +156,16 @@ const faqs = [
         <li>มีภาพตัวอย่างหรือไม่</li>
         </ul>
         <p>ข้อมูลเหล่านี้มีประโยชน์กว่าการพยายามทำความสะอาดโดยไม่มีความชำนาญ</p>
-        <hr class="section-divider" />
-        <h2>Lens มีฝุ่น ฝ้า หรือสงสัยว่ามีราไม่ควรแกะเอง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Lens มีฝุ่น ฝ้า หรือสงสัยว่ามีราไม่ควรแกะเอง</h2>
         <p>สามารถตรวจด้วยสายตาและถ่ายรูปตามที่มองเห็น</p>
         <p>หากสงสัยว่ามี:</p>
         <ul>
@@ -122,8 +178,9 @@ const faqs = [
         <p>ควรแจ้งตามสภาพ</p>
         <p>ไม่ควรถอดชิ้น Lens ภายในออกเพียงเพื่อทำให้ดูดีขึ้นก่อนขาย</p>
         <p>การแกะอาจสร้างความเสียหายเพิ่มหากไม่มีเครื่องมือหรือประสบการณ์</p>
-        <hr class="section-divider" />
-        <h2>จอเสียกับ EVF เสียไม่ใช่อาการเดียวกัน</h2>
+        </div>
+        <div class="comm-card">
+          <h2>จอเสียกับ EVF เสียไม่ใช่อาการเดียวกัน</h2>
         <p>ควรตรวจว่า:</p>
         <ul>
         <li>จอหลังใช้งานได้หรือไม่</li>
@@ -133,8 +190,16 @@ const faqs = [
         <li>Playback ทำงานหรือไม่</li>
         </ul>
         <p>หากจอหลังมีปัญหาแต่ EVF ยังใช้ได้ หรือกลับกัน ควรแจ้งแยกให้ชัด</p>
-        <hr class="section-divider" />
-        <h2>Shutter มีอาการควรแจ้งก่อนตัดสินใจซ่อม</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Shutter มีอาการควรแจ้งก่อนตัดสินใจซ่อม</h2>
         <p>อาการที่อาจพบ เช่น:</p>
         <ul>
         <li>Error</li>
@@ -145,8 +210,9 @@ const faqs = [
         </ul>
         <p>ไม่ควรรีบเปลี่ยน Shutter โดยยังไม่ทราบต้นทุนและมูลค่าของ Body</p>
         <p>สามารถเช็กราคาตามสภาพก่อนเพื่อเปรียบเทียบความคุ้มค่า</p>
-        <hr class="section-divider" />
-        <h2>Auto Focus มีปัญหาควรลองแยก Body และ Lens</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Auto Focus มีปัญหาควรลองแยก Body และ Lens</h2>
         <p>หากมี Lens มากกว่าหนึ่งตัว สามารถสังเกตว่า:</p>
         <ul>
         <li>เป็นกับ Lens ทุกตัวหรือไม่</li>
@@ -155,8 +221,16 @@ const faqs = [
         <li>Motor มีเสียงหรือไม่</li>
         </ul>
         <p>ไม่จำเป็นต้องถอดหรือแกะกลไก Focus เพื่อหาสาเหตุก่อนขาย</p>
-        <hr class="section-divider" />
-        <h2>Battery เสื่อมควรเปลี่ยนก่อนขายหรือไม่</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Battery เสื่อมควรเปลี่ยนก่อนขายหรือไม่</h2>
         <p>ไม่จำเป็นทุกกรณี</p>
         <p>ควรแจ้งว่า:</p>
         <ul>
@@ -169,8 +243,9 @@ const faqs = [
         </ul>
         <p>แล้วเปรียบเทียบต้นทุนของ Battery ใหม่กับมูลค่าที่คาดว่าจะเพิ่มขึ้น</p>
         <p>หาก Battery บวมไม่ควรฝืนใส่กลับเข้า Body หรือชาร์จซ้ำ</p>
-        <hr class="section-divider" />
-        <h2>กล้องเปิดไม่ติดยังเช็กราคาได้</h2>
+        </div>
+        <div class="comm-card">
+          <h2>กล้องเปิดไม่ติดยังเช็กราคาได้</h2>
         <p>สามารถส่ง:</p>
         <ul>
         <li>Brand</li>
@@ -184,8 +259,16 @@ const faqs = [
         <li>ประวัติซ่อม</li>
         </ul>
         <p>หากมีกลิ่นไหม้ ความร้อนผิดปกติ หรือร่องรอยของเหลว ไม่ควรทดลองเปิดหรือชาร์จซ้ำหลายครั้ง</p>
-        <hr class="section-divider" />
-        <h2>เคยโดนน้ำหรือความชื้นควรแจ้ง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เคยโดนน้ำหรือความชื้นควรแจ้ง</h2>
         <p>ความชื้นอาจสัมพันธ์กับหลายส่วน เช่น:</p>
         <ul>
         <li>Body</li>
@@ -197,8 +280,9 @@ const faqs = [
         </ul>
         <p>ควรแจ้งสิ่งที่ทราบตามจริง</p>
         <p>ไม่ควรพยายามเปิด Body หรือ Lens เพื่อเป่า/เช็ดภายในเองหากไม่มีความชำนาญ</p>
-        <hr class="section-divider" />
-        <h2>การซ่อมก่อนขายควรคิดจากความคุ้มค่า</h2>
+        </div>
+        <div class="comm-card">
+          <h2>การซ่อมก่อนขายควรคิดจากความคุ้มค่า</h2>
         <p>ก่อนซ่อมสามารถเปรียบเทียบ:</p>
         <ol>
         <li>มูลค่าตามสภาพปัจจุบัน</li>
@@ -209,8 +293,16 @@ const faqs = [
         <li>มูลค่าที่คาดว่าจะเพิ่ม</li>
         </ol>
         <p>กล้องรุ่นเก่าบางตัวอาจไม่คุ้มกับการซ่อมบางรายการ แม้อาการนั้นจะซ่อมได้</p>
-        <hr class="section-divider" />
-        <h2>อุปกรณ์ไม่ครบไม่จำเป็นต้องซื้อใหม่ก่อน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>อุปกรณ์ไม่ครบไม่จำเป็นต้องซื้อใหม่ก่อน</h2>
         <p>ควรแจ้งตามจริงว่ามี:</p>
         <ul>
         <li>Battery</li>
@@ -224,13 +316,21 @@ const faqs = [
         <li>อุปกรณ์อื่น</li>
         </ul>
         <p>ไม่จำเป็นต้องซื้อของมาเติมชุดโดยยังไม่รู้ว่าคุ้มกับมูลค่าที่เพิ่มขึ้นหรือไม่</p>
-        <hr class="section-divider" />
-        <h2>Serial Number ไม่จำเป็นต้องเปิดเผยสาธารณะ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Serial Number ไม่จำเป็นต้องเปิดเผยสาธารณะ</h2>
         <p>เริ่มจาก:</p>
         <p><strong>Brand + Model + Lens + รูป + อาการ</strong></p>
         <p>ก่อน</p>
         <p>หากจำเป็นต้องใช้ Serial ในขั้นตอนตรวจสอบภายหลัง ควรส่งผ่านช่องทางที่เหมาะสม</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
         <h2>หน้ายโสธรต่างจากหน้ารับซื้อกล้องหลัก</h2>
         <p>หน้า <a href="/รับซื้อกล้อง/">รับซื้อกล้อง</a> เป็น Broad Camera Money Hub</p>
         <p>ส่วน:</p>
@@ -239,165 +339,114 @@ const faqs = [
         <p><strong>Camera + Yasothon</strong></p>
         <p>โดยมีมุมหลักเรื่อง <strong>สภาพและความคุ้มค่าก่อนซ่อมหรือขาย</strong></p>
         <p>แต่ไม่ได้เปลี่ยน Primary Intent ให้เป็นหน้าซ่อมกล้อง</p>
-        <hr class="section-divider" />
-        <h2>ขั้นตอนเช็กราคากล้องที่มีอาการในยโสธร</h2>
-        <h3>1. ส่ง Brand และ Model</h3>
-        <p>ใช้รุ่นเต็ม</p>
-        <h3>2. แจ้ง Lens</h3>
-        <p>รุ่นที่รวมขายหรือใช้ทดสอบ</p>
-        <h3>3. ส่งรูป</h3>
-        <p>Body Lens จอและตำหนิ</p>
-        <h3>4. แจ้งอาการ</h3>
-        <p>ตามที่เกิดขึ้นจริง</p>
-        <h3>5. แจ้ง Shutter</h3>
-        <p>Count หรืออาการถ้าทราบ</p>
-        <h3>6. แจ้ง Sensor / ภาพตัวอย่าง</h3>
-        <p>หากมีจุดหรือคราบ</p>
-        <h3>7. แจ้ง Battery</h3>
-        <p>จำนวนและสภาพ</p>
-        <h3>8. แจ้งประวัติ</h3>
-        <p>ตก น้ำ ความชื้น หรือซ่อม</p>
-        <h3>9. เปรียบเทียบก่อนซ่อม</h3>
-        <p>ดูต้นทุนกับมูลค่าที่อาจเพิ่ม</p>
-        <h3>10. ตรวจสินค้า</h3>
-        <p>ยืนยันรุ่น ฟังก์ชันและสภาพก่อนซื้อขาย</p>
-        <hr class="section-divider" />
-        <h2>เริ่มเช็กราคากล้องในยโสธร</h2>
-        <p>ส่ง:</p>
-        <p><strong>Brand + Model + Lens + รูป + อาการ + Shutter + Battery</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
-      </article>
-    </div>
-  </main>
-
-  <section class="section section-muted">
-    <div class="container container-narrow">
-      <FAQ
-        items={faqs}
-        title="คำถามที่พบบ่อยเกี่ยวกับการขายกล้องในยโสธร"
-      />
+      </div>
     </div>
   </section>
 
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
+        <h2>ขั้นตอนเช็กราคากล้องที่มีอาการในยโสธร</h2>
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. ส่ง Brand และ Model</h3>
+              <p>ใช้รุ่นเต็ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. แจ้ง Lens</h3>
+              <p>รุ่นที่รวมขายหรือใช้ทดสอบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. ส่งรูป</h3>
+              <p>Body Lens จอและตำหนิ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. แจ้งอาการ</h3>
+              <p>ตามที่เกิดขึ้นจริง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. แจ้ง Shutter</h3>
+              <p>Count หรืออาการถ้าทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. แจ้ง Sensor / ภาพตัวอย่าง</h3>
+              <p>หากมีจุดหรือคราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้ง Battery</h3>
+              <p>จำนวนและสภาพ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. แจ้งประวัติ</h3>
+              <p>ตก น้ำ ความชื้น หรือซ่อม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. เปรียบเทียบก่อนซ่อม</h3>
+              <p>ดูต้นทุนกับมูลค่าที่อาจเพิ่ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจสินค้า</h3>
+              <p>ยืนยันรุ่น ฟังก์ชันและสภาพก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="commercial-final-cta">
+        <h2>เริ่มเช็กราคากล้องในยโสธร</h2>
+        <p>ส่ง:</p>
+        <p><strong>Brand + Model + Lens + รูป + อาการ + Shutter + Battery</strong></p>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายกล้องในยโสธร" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>
-
-<style>
-  .content-container {
-    padding: 2.5rem 0 4rem 0;
-  }
-
-  .prose-content {
-    background-color: #ffffff;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem 2rem;
-    box-shadow: var(--shadow-sm);
-  }
-
-  @media (max-width: 640px) {
-    .prose-content {
-      padding: 1.75rem 1.25rem;
-    }
-  }
-
-  .prose-content h1 {
-    font-size: 2.15rem;
-    color: var(--color-primary);
-    line-height: 1.3;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .prose-content h2 {
-    font-size: 1.55rem;
-    color: var(--color-primary);
-    line-height: 1.35;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .prose-content h3 {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    line-height: 1.4;
-    margin-top: 1.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .prose-content p {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--color-text-main);
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-
-  .prose-content ul,
-  .prose-content ol {
-    margin-top: 0.5rem;
-    margin-bottom: 1.25rem;
-    padding-left: 1.75rem;
-  }
-
-  .prose-content li {
-    font-size: 1.02rem;
-    line-height: 1.7;
-    color: var(--color-text-main);
-    margin-bottom: 0.4rem;
-  }
-
-  .prose-content strong {
-    color: var(--color-primary);
-    font-weight: 700;
-  }
-
-  .prose-content a {
-    color: var(--color-accent);
-    font-weight: 600;
-    text-decoration: underline;
-  }
-
-  .prose-content a:hover {
-    color: var(--color-accent-hover);
-  }
-
-  .section-divider {
-    border: 0;
-    height: 1px;
-    background-color: var(--color-border);
-    margin: 2.5rem 0;
-  }
-
-  .table-responsive {
-    overflow-x: auto;
-    margin: 1.5rem 0;
-  }
-
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-  }
-
-  .table th,
-  .table td {
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--color-border);
-    text-align: left;
-  }
-
-  .table th {
-    background-color: var(--color-bg-subtle);
-    color: var(--color-primary);
-    font-weight: 600;
-  }
-
-  .table tr:nth-child(even) {
-    background-color: #fafbfc;
-  }
-</style>

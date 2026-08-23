@@ -69,9 +69,9 @@ const t2Md = baseComputerMd.replace(t2Target, 'ไม่จำเป็นต้
 runMutationTest('TEST 2: Change one visible Thai word', baseComputerMd, t2Md, baseComputerAstro, null, 'FAIL', 'Changing one Thai word in approved MD must fail copy audit.');
 
 // TEST 3: Add one visible sentence
-const t3Target = '</article>';
+const t3Target = '</BaseLayout>';
 if (!baseComputerAstro.includes(t3Target)) throw new Error('t3Target not found in รับซื้อคอม-สารคาม.astro');
-const t3Astro = baseComputerAstro.replace(t3Target, '<p>ประโยคเพิ่มเติมที่ไม่มีในเอกสารอนุมัติ</p></article>');
+const t3Astro = baseComputerAstro.replace(t3Target, '<p>ประโยคเพิ่มเติมที่ไม่มีในเอกสารอนุมัติ</p></BaseLayout>');
 runMutationTest('TEST 3: Add one visible sentence', baseComputerMd, null, baseComputerAstro, t3Astro, 'FAIL', 'Adding a visible sentence in Astro page must fail copy audit.');
 
 // TEST 4: Delete one Markdown table BODY row

@@ -83,6 +83,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -91,6 +92,7 @@ body {
   flex-direction: column;
   color: var(--text);
   background-color: var(--surface);
+  overflow-x: hidden;
 }
 
 main {
@@ -555,27 +557,134 @@ tr:nth-child(even) td {
 
 /* Commercial Hero (Money Hubs & Local Pages) */
 .commercial-hero {
-  padding: 2rem 0 3rem 0;
+  padding: 2rem 0 2.5rem 0;
   background: linear-gradient(180deg, #ffffff 0%, var(--surface) 100%);
   border-bottom: 1px solid var(--border);
 }
 
 @media (min-width: 768px) {
   .commercial-hero {
-    padding: 2.75rem 0 3.75rem 0;
+    padding: 2.5rem 0 3.25rem 0;
   }
 }
 
 .commercial-hero-hub {
-  min-height: 380px;
+  min-height: 360px;
 }
 
 .commercial-hero-local {
-  min-height: 280px;
+  min-height: 260px;
+  padding: 1.75rem 0 2.25rem 0;
+}
+
+@media (min-width: 768px) {
+  .commercial-hero-local {
+    padding: 2rem 0 2.75rem 0;
+  }
+}
+
+/* Hub Hero 2-Column Responsive Layout */
+.hub-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .hub-hero-grid {
+    grid-template-columns: 56% 44%;
+    gap: 2.5rem;
+  }
+}
+
+.hub-hero-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.hub-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.hub-product-visual-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hub-hero-product-img {
+  width: 100%;
+  height: auto;
+  max-width: 460px;
+  min-width: 200px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 16px 28px rgb(6 27 53 / 0.12));
+  transition: transform 0.3s ease;
+}
+
+/* Local Hero 2-Column Responsive Layout */
+.local-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  min-width: 0;
+}
+
+@media (min-width: 992px) {
+  .local-hero-grid {
+    grid-template-columns: 62% 38%;
+    gap: 2rem;
+  }
+}
+
+.local-hero-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.local-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.local-product-visual-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.local-hero-product-img {
+  width: 100%;
+  height: auto;
+  max-width: 340px;
+  min-width: 200px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 12px 22px rgb(6 27 53 / 0.10));
 }
 
 .hero-content-wrapper {
-  max-width: 960px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -587,30 +696,30 @@ tr:nth-child(even) td {
   border: 1px solid var(--border);
   padding: 0.3rem 0.85rem;
   border-radius: var(--radius-full);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
   box-shadow: 0 2px 6px rgb(6 27 53 / 0.04);
 }
 
 .hero-h1 {
   font-size: 1.85rem;
-  font-weight: 800;
+  font-weight: 850;
   color: var(--navy-950);
   line-height: 1.25;
   letter-spacing: -0.025em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 @media (min-width: 768px) {
   .hero-h1 {
-    font-size: 2.45rem;
+    font-size: 2.35rem;
   }
 }
 
 .hero-lead-text {
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero-intake-card {
@@ -618,8 +727,8 @@ tr:nth-child(even) td {
   border: 1px solid var(--border);
   border-left: 5px solid #ff6412;
   border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
-  margin: 1.5rem 0;
+  padding: 1.15rem 1.35rem;
+  margin: 1.25rem 0;
   box-shadow: 0 4px 14px rgb(6 27 53 / 0.05);
 }
 
@@ -629,9 +738,32 @@ tr:nth-child(even) td {
 
 .hero-cta-bar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .hero-cta-bar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.hero-cta-bar .btn {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .hero-cta-bar .btn {
+    width: auto;
+  }
 }
 
 /* Commercial Section Backgrounds & Containers */

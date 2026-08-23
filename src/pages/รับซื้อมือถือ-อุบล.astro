@@ -47,6 +47,8 @@ const faqs = [
     "answer": "สามารถเริ่มจากรุ่น ความจุ รูป อาการ และประวัติความเสียหายได้ แต่เครื่องที่ไม่สามารถทดสอบได้จะมีความไม่แน่นอนมากกว่าเครื่องปกติ"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -55,36 +57,90 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อมือถืออุบลราชธานี เช็กรุ่น แบตเตอรี่ และสภาพก่อนขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อมือถืออุบลราชธานี เช็กรุ่น แบตเตอรี่ และสภาพก่อนขาย</h1>
         <p>หากมีมือถือมือสองอยู่ในอุบลราชธานี การประเมินก่อนขายควรเริ่มจากข้อมูลของเครื่องจริง ไม่ใช่ใช้เพียงราคาตอนซื้อหรือชื่อแบรนด์</p>
         <p>หน้า <code>/รับซื้อมือถือ-อุบล/</code> รักษา Historical Intent ของผู้ค้นหาที่ต้องการขายโทรศัพท์มือถือในอุบลราชธานี ทั้ง iPhone และสมาร์ทโฟนระบบอื่น</p>
-        <p>ส่งก่อน:</p>
-        <p><strong>รุ่น + ความจุ + สี + Battery + รูปด้านหน้า/หลัง + ตำหนิ + ประวัติซ่อมถ้ามี</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>อยู่ในอุบลราชธานีส่งรูปเช็กราคาก่อนได้</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">ส่งก่อน:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>รุ่น + ความจุ + สี + Battery + รูปด้านหน้า/หลัง + ตำหนิ + ประวัติซ่อมถ้ามี</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-smartphone-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-smartphone-500.webp" type="image/webp" />
+              <source srcset="/images/hero-smartphone.avif" type="image/avif" />
+              <source srcset="/images/hero-smartphone.webp" type="image/webp" />
+              <img
+                src="/images/hero-smartphone.webp"
+                alt="รับซื้อมือถืออุบลราชธานี เช็กรุ่น แบตเตอรี่ และสภาพก่อนขาย"
+                width="668"
+                height="717"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>อยู่ในอุบลราชธานีส่งรูปเช็กราคาก่อนได้</h2>
         <p>ผู้ขายที่อยู่ในอำเภอเมือง วารินชำราบ หรือพื้นที่อื่นของจังหวัด สามารถเริ่มจากข้อมูลเครื่องก่อน</p>
         <p>ไม่จำเป็นต้องเดินทางพร้อมโทรศัพท์เพียงเพื่อถามราคาเบื้องต้น</p>
         <p>หลังประเมินแล้วจึงค่อยตกลงขั้นตอนตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
         <p>ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในทุกอำเภอ</p>
-        <hr class="section-divider" />
-        <h2>iPhone ควรแจ้งรุ่นและความจุให้ครบ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>iPhone ควรแจ้งรุ่นและความจุให้ครบ</h2>
         <p>ตัวอย่าง:</p>
         <p><strong>iPhone 15 Pro 256GB</strong></p>
         <p>ข้อมูลนี้มีประโยชน์กว่าการแจ้งเพียง:</p>
         <p><strong>iPhone 15</strong></p>
         <p>เพราะ Series เดียวกันอาจมีหลายรุ่นย่อยและหลายความจุ</p>
         <p>หากมี Battery Health สามารถส่งประกอบได้</p>
-        <hr class="section-divider" />
-        <h2>Android ควรแจ้งชื่อรุ่นเต็มเช่นกัน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Android ควรแจ้งชื่อรุ่นเต็มเช่นกัน</h2>
         <p>สมาร์ทโฟน Android แต่ละ Brand มีหลาย Series และหลาย Configuration</p>
         <p>ควรแจ้ง:</p>
         <ul>
@@ -96,8 +152,9 @@ const faqs = [
         <li>สภาพ</li>
         </ul>
         <p>หากมี Box สามารถใช้ข้อมูลบนกล่องช่วยตรวจรุ่นได้</p>
-        <hr class="section-divider" />
-        <h2>หน้าจอเป็นจุดที่ควรถ่ายอย่างละเอียด</h2>
+        </div>
+        <div class="comm-card">
+          <h2>หน้าจอเป็นจุดที่ควรถ่ายอย่างละเอียด</h2>
         <p>ควรถ่ายขณะ:</p>
         <ul>
         <li>เปิดจอพื้นสว่าง</li>
@@ -115,8 +172,16 @@ const faqs = [
         <li>สีเพี้ยน</li>
         <li>จอกระพริบ</li>
         </ul>
-        <hr class="section-divider" />
-        <h2>Battery ต่ำต้องเปลี่ยนก่อนขายหรือไม่</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Battery ต่ำต้องเปลี่ยนก่อนขายหรือไม่</h2>
         <p>ไม่จำเป็นทุกกรณี</p>
         <p>ควรเช็กราคาตามสภาพก่อน แล้วเปรียบเทียบ:</p>
         <ul>
@@ -126,8 +191,9 @@ const faqs = [
         <li>มูลค่าที่คาดว่าจะเพิ่ม</li>
         </ul>
         <p>สำหรับ iPhone สามารถแจ้ง Battery Health ที่ระบบแสดงได้หากมี</p>
-        <hr class="section-divider" />
-        <h2>เคยเปลี่ยนจอควรแจ้งไหม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เคยเปลี่ยนจอควรแจ้งไหม</h2>
         <p>ควรแจ้งหากทราบ</p>
         <p>รวมถึง:</p>
         <ul>
@@ -139,8 +205,16 @@ const faqs = [
         <li>เคยโดนน้ำ</li>
         </ul>
         <p>ข้อมูลเหล่านี้ช่วยลดความคลาดเคลื่อนเมื่อตรวจเครื่องจริง</p>
-        <hr class="section-divider" />
-        <h2>Face ID ลายนิ้วมือ หรือกล้องมีปัญหาควรแจ้ง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Face ID ลายนิ้วมือ หรือกล้องมีปัญหาควรแจ้ง</h2>
         <p>ฟังก์ชันที่ไม่สมบูรณ์อาจมีผลต่อการประเมิน</p>
         <p>ควรแจ้งตามอาการจริง เช่น</p>
         <ul>
@@ -153,8 +227,9 @@ const faqs = [
         <li>Port ชาร์จหลวม</li>
         </ul>
         <p>ไม่ควรสรุปว่าเกิดจากอะไหล่ใดหากยังไม่ได้ตรวจ</p>
-        <hr class="section-divider" />
-        <h2>เครื่องติดบัญชีควรจัดการก่อนส่งมอบ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องติดบัญชีควรจัดการก่อนส่งมอบ</h2>
         <p>ก่อนซื้อขายจริง เจ้าของควรสามารถจัดการบัญชีที่ผูกกับเครื่องของตนเองได้</p>
         <p>แต่เพื่อขอราคา ไม่ควรส่ง:</p>
         <ul>
@@ -166,8 +241,16 @@ const faqs = [
         <li>Recovery Code</li>
         </ul>
         <p>การประเมินเบื้องต้นไม่จำเป็นต้องใช้รหัสเหล่านี้</p>
-        <hr class="section-divider" />
-        <h2>เครื่องไม่มีอุปกรณ์ยังขายได้ไหม</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องไม่มีอุปกรณ์ยังขายได้ไหม</h2>
         <p>สามารถส่งมาประเมินได้แม้ไม่มี:</p>
         <ul>
         <li>กล่อง</li>
@@ -177,8 +260,9 @@ const faqs = [
         </ul>
         <p>ควรแจ้งเพียงว่าอะไรมีและอะไรไม่มี</p>
         <p>ไม่จำเป็นต้องซื้อของใหม่มาเติมชุดก่อนรู้ว่าคุ้มค่าหรือไม่</p>
-        <hr class="section-divider" />
-        <h2>มือถือเปิดไม่ติดหรือโดนน้ำควรทำอย่างไร</h2>
+        </div>
+        <div class="comm-card">
+          <h2>มือถือเปิดไม่ติดหรือโดนน้ำควรทำอย่างไร</h2>
         <p>ควรแจ้ง:</p>
         <ul>
         <li>รุ่น</li>
@@ -189,55 +273,140 @@ const faqs = [
         <li>เคยซ่อมหรือไม่</li>
         </ul>
         <p>หาก Battery บวม เครื่องร้อน หรือมีกลิ่นผิดปกติ ไม่ควรชาร์จหรือเปิดซ้ำหลายครั้งโดยไม่จำเป็น</p>
-        <hr class="section-divider" />
-        <h2>ขายหลายเครื่องพร้อมกันควรส่งข้อมูลแบบไหน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ขายหลายเครื่องพร้อมกันควรส่งข้อมูลแบบไหน</h2>
         <p>หากมีหลายเครื่องจากร้าน บริษัท หรือการเปลี่ยนอุปกรณ์ภายในองค์กร สามารถจัดเป็นตาราง:</p>
-        <table class="table table-bordered">
+        <div class="table-responsive"><table class="table table-bordered">
           <thead><tr><th>รุ่น</th><th>ความจุ</th><th>จำนวน</th><th>Battery</th><th>สภาพ</th></tr></thead>
           <tbody>
           <tr><td>รุ่น...</td><td>128GB</td><td>4</td><td>ปกติ</td><td>มีรอย</td></tr>
           <tr><td>รุ่น...</td><td>256GB</td><td>3</td><td>Health ...</td><td>ปกติ</td></tr>
           <tr><td>รุ่น...</td><td>128GB</td><td>2</td><td>ไม่ทราบ</td><td>เปิดไม่ติด</td></tr>
-          </tbody></table>
+          </tbody></table></div>
         <p>ไม่ควรใช้ข้อมูลเครื่องหนึ่งแทนทั้งล็อตหากสภาพแตกต่างกัน</p>
-        <hr class="section-divider" />
-        <h2>หน้าอุบลนี้ต่างจากหน้ารับซื้อ iPhone หลักอย่างไร</h2>
+        </div>
+        <div class="comm-card">
+          <h2>หน้าอุบลนี้ต่างจากหน้ารับซื้อ iPhone หลักอย่างไร</h2>
         <p>หน้า <a href="/รับซื้อไอโฟน/"><code>/รับซื้อไอโฟน/</code></a> ดูแล Broad iPhone Intent</p>
         <p>ส่วนหน้า <code>/รับซื้อมือถือ-อุบล/</code> รักษา Historical Local Search Intent สำหรับมือถือในพื้นที่อุบลราชธานี</p>
         <p>หน้านี้จึงไม่ควรถูกขยายให้กลายเป็นหน้า National Smartphone Hub อีกหน้า</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
         <h2>ขั้นตอนเช็กราคามือถือในอุบลราชธานี</h2>
-        <h3>1. แจ้งรุ่น</h3>
-        <p>ใช้ชื่อเต็ม</p>
-        <h3>2. แจ้งความจุ</h3>
-        <p>ตามเครื่องจริง</p>
-        <h3>3. ส่งรูป</h3>
-        <p>หน้า หลัง กรอบ และตำหนิ</p>
-        <h3>4. แจ้ง Battery</h3>
-        <p>ข้อมูลที่ตรวจได้</p>
-        <h3>5. แจ้งฟังก์ชันที่มีอาการ</h3>
-        <p>กล้อง Touch Face ID หรือลายนิ้วมือ</p>
-        <h3>6. แจ้งประวัติซ่อม</h3>
-        <p>เท่าที่ทราบ</p>
-        <h3>7. แจ้งอุปกรณ์</h3>
-        <p>ตามของที่รวมขาย</p>
-        <h3>8. ประเมินเบื้องต้น</h3>
-        <p>จากรุ่นและสภาพร่วมกัน</p>
-        <h3>9. ตัดสินใจก่อนขาย</h3>
-        <p>เช็กข้อมูลก่อนโดยยังไม่จำเป็นต้องตกลงทันที</p>
-        <h3>10. ตรวจเครื่องจริง</h3>
-        <p>ยืนยันรุ่น สภาพและสิ่งที่รวมขายก่อนซื้อขาย</p>
-        <hr class="section-divider" />
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. แจ้งรุ่น</h3>
+              <p>ใช้ชื่อเต็ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. แจ้งความจุ</h3>
+              <p>ตามเครื่องจริง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. ส่งรูป</h3>
+              <p>หน้า หลัง กรอบ และตำหนิ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. แจ้ง Battery</h3>
+              <p>ข้อมูลที่ตรวจได้</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. แจ้งฟังก์ชันที่มีอาการ</h3>
+              <p>กล้อง Touch Face ID หรือลายนิ้วมือ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. แจ้งประวัติซ่อม</h3>
+              <p>เท่าที่ทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้งอุปกรณ์</h3>
+              <p>ตามของที่รวมขาย</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. ประเมินเบื้องต้น</h3>
+              <p>จากรุ่นและสภาพร่วมกัน</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. ตัดสินใจก่อนขาย</h3>
+              <p>เช็กข้อมูลก่อนโดยยังไม่จำเป็นต้องตกลงทันที</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจเครื่องจริง</h3>
+              <p>ยืนยันรุ่น สภาพและสิ่งที่รวมขายก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="commercial-final-cta">
         <h2>เริ่มเช็กราคามือถือในอุบลราชธานี</h2>
         <p>ส่ง:</p>
         <p><strong>รุ่น + ความจุ + Battery + รูป + ตำหนิ + อุปกรณ์</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
-        <hr class="section-divider" />
-        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายมือถือมือสองในอุบลราชธานี" />
-      </article>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
     </div>
-  </main>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายมือถือมือสองในอุบลราชธานี" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>

@@ -47,6 +47,8 @@ const faqs = [
     "answer": "ได้ ควรแจ้งว่าไม่มี Adapter และไม่จำเป็นต้องซื้อใหม่ก่อนเปรียบเทียบความคุ้มค่า"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -55,24 +57,69 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อโน๊ตบุ๊คยโสธร เช็กสภาพและความคุ้มค่าก่อนซ่อมหรือขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อโน๊ตบุ๊คยโสธร เช็กสภาพและความคุ้มค่าก่อนซ่อมหรือขาย</h1>
         <p>Notebook ที่มีอาการไม่ได้หมายความว่าต้องซ่อมก่อนขายทุกเครื่อง</p>
         <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/</code> จึงเน้นการเช็ก:</p>
         <p><strong>รุ่น + สเปก + อาการ + ต้นทุนที่อาจต้องซ่อม</strong></p>
         <p>ก่อนตัดสินใจ</p>
-        <p>Historical Intent ของหน้านี้คือ:</p>
-        <p><strong>Notebook + Yasothon</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>อยู่ยโสธรสามารถส่งอาการและรูปมาก่อนได้</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">Historical Intent ของหน้านี้คือ:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>Notebook + Yasothon</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.webp" type="image/webp" />
+              <source srcset="/images/hero-laptop.avif" type="image/avif" />
+              <source srcset="/images/hero-laptop.webp" type="image/webp" />
+              <img
+                src="/images/hero-laptop.webp"
+                alt="รับซื้อโน๊ตบุ๊คยโสธร เช็กสภาพและความคุ้มค่าก่อนซ่อมหรือขาย"
+                width="1200"
+                height="755"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>อยู่ยโสธรสามารถส่งอาการและรูปมาก่อนได้</h2>
         <p>หากเครื่องมีปัญหา ไม่จำเป็นต้องซ่อมหรือเดินทางก่อนรู้ข้อมูลเบื้องต้น</p>
         <p>ส่ง:</p>
         <ul>
@@ -88,8 +135,9 @@ const faqs = [
         </ul>
         <p>แล้วค่อยประเมินว่าควรขายตามสภาพหรือดำเนินการอย่างอื่น</p>
         <p>ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ทุกพื้นที่ในยโสธร</p>
-        <hr class="section-divider" />
-        <h2>เครื่องปกติกับเครื่องมีอาการต้องประเมินต่างกัน</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องปกติกับเครื่องมีอาการต้องประเมินต่างกัน</h2>
         <p>เครื่องที่:</p>
         <ul>
         <li>เปิดได้</li>
@@ -99,8 +147,16 @@ const faqs = [
         </ul>
         <p>มีข้อมูลประกอบมากกว่าเครื่องที่ไม่สามารถทดสอบได้</p>
         <p>หากเครื่องมีอาการ ควรแจ้งตามจริงแทนการพยายามทำให้ดูเหมือนปกติ</p>
-        <hr class="section-divider" />
-        <h2>จอเสียควรซ่อมก่อนขายหรือไม่</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>จอเสียควรซ่อมก่อนขายหรือไม่</h2>
         <p>ควรเปรียบเทียบ:</p>
         <ol>
         <li>ราคาตามสภาพ</li>
@@ -110,13 +166,22 @@ const faqs = [
         <li>มูลค่าที่คาดว่าจะเพิ่ม</li>
         </ol>
         <p>จอมีเส้นหรือแตกไม่ได้หมายความว่าการเปลี่ยนจอจะคุ้มในทุกเครื่อง</p>
-        <hr class="section-divider" />
-        <h2>Battery เสื่อมควรเปลี่ยนก่อนหรือไม่</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Battery เสื่อมควรเปลี่ยนก่อนหรือไม่</h2>
         <p>หลักการเหมือนกัน</p>
         <p>หาก Battery เสื่อมแต่เครื่องยังใช้งานได้ ควรเช็กราคาปัจจุบันก่อน</p>
         <p>แล้วค่อยเปรียบเทียบค่า Battery และค่าแรงกับมูลค่าที่คาดว่าจะเพิ่มขึ้น</p>
-        <hr class="section-divider" />
-        <h2>Keyboard หรือบานพับเสียต้องแจ้ง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Keyboard หรือบานพับเสียต้องแจ้ง</h2>
         <p>ควรถ่ายตำหนิและแจ้งว่า:</p>
         <ul>
         <li>ปุ่มใดเสีย</li>
@@ -127,17 +192,27 @@ const faqs = [
         <li>Bottom Case แตก</li>
         </ul>
         <p>ความเสียหายโครงสร้างอาจมีต้นทุนต่างจากตำหนิภายนอกทั่วไป</p>
-        <hr class="section-divider" />
-        <h2>CPU และ GPU ยังต้องแจ้งแม้เครื่องมีอาการ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>CPU และ GPU ยังต้องแจ้งแม้เครื่องมีอาการ</h2>
         <p>เครื่องเสียไม่ได้ทำให้รุ่น Hardware หมดความสำคัญ</p>
         <p>Gaming Notebook ที่มี GPU รุ่นสูงกับ Notebook ทั่วไปที่มีอาการเดียวกันอาจมีมูลค่าต่างกัน</p>
         <p>ควรแจ้งสเปกเท่าที่ทราบ</p>
-        <hr class="section-divider" />
-        <h2>ไม่มี Adapter ยังประเมินได้</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ไม่มี Adapter ยังประเมินได้</h2>
         <p>สามารถแจ้งว่าไม่มี Adapter ได้</p>
         <p>ไม่ควรซื้อ Adapter ใหม่เพียงเพราะคิดว่าจะขายได้ราคาสูงขึ้นโดยยังไม่ได้เปรียบเทียบต้นทุน</p>
-        <hr class="section-divider" />
-        <h2>เคยซ่อม Mainboard ควรบอกหรือไม่</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เคยซ่อม Mainboard ควรบอกหรือไม่</h2>
         <p>ควรแจ้งหากทราบ</p>
         <p>รวมถึง:</p>
         <ul>
@@ -149,8 +224,16 @@ const faqs = [
         <li>เคยโดนน้ำ</li>
         </ul>
         <p>ช่วยให้ประเมินความเสี่ยงของเครื่องได้ดีขึ้น</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเปิดไม่ติดไม่ควรเปิดซ้ำโดยไม่มีเหตุผล</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องเปิดไม่ติดไม่ควรเปิดซ้ำโดยไม่มีเหตุผล</h2>
         <p>หากกด Power แล้วไม่ขึ้น ควรสังเกต:</p>
         <ul>
         <li>ไฟชาร์จ</li>
@@ -167,8 +250,9 @@ const faqs = [
         <li>ร่องรอยน้ำ</li>
         </ul>
         <p>ไม่ควรทดลองเปิดซ้ำหลายครั้งเพียงเพื่อขอราคา</p>
-        <hr class="section-divider" />
-        <h2>ข้อมูลส่วนตัวไม่เกี่ยวกับการประเมินราคา Hardware</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ข้อมูลส่วนตัวไม่เกี่ยวกับการประเมินราคา Hardware</h2>
         <p>ไม่ควรส่ง:</p>
         <ul>
         <li>Password</li>
@@ -179,7 +263,14 @@ const faqs = [
         </ul>
         <p>หากต้องการเก็บ SSD สามารถแจ้งว่าไม่รวม Storage ได้</p>
         <p>ราคาจะประเมินจากสิ่งที่ขายจริง</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
         <h2>หน้า Local ยโสธรรักษา Intent อะไร</h2>
         <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค/</code> เป็นเจ้าของ Broad Notebook Intent</p>
         <p>ส่วน:</p>
@@ -187,40 +278,114 @@ const faqs = [
         <p>เป็น:</p>
         <p><strong>Notebook + Yasothon</strong></p>
         <p>จุดเด่นของหน้านี้คือช่วยให้ผู้ขายเข้าใจการเปรียบเทียบสภาพปัจจุบันกับต้นทุนซ่อมก่อนตัดสินใจ ไม่ใช่การสร้าง National Notebook Page ซ้ำ</p>
-        <hr class="section-divider" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
         <h2>ขั้นตอนประเมินก่อนซ่อมหรือขาย</h2>
-        <h3>1. ส่ง Model</h3>
-        <p>เพื่อระบุเครื่องให้ถูก</p>
-        <h3>2. ส่งสเปก</h3>
-        <p>CPU RAM SSD และ GPU ถ้ามี</p>
-        <h3>3. ส่งรูปตำหนิ</h3>
-        <p>ทั้งภายนอกและหน้าจอ</p>
-        <h3>4. แจ้งอาการ</h3>
-        <p>ตามที่เกิดขึ้นจริง</p>
-        <h3>5. แจ้ง Battery และ Adapter</h3>
-        <p>เพื่อแยกระบบไฟเบื้องต้น</p>
-        <h3>6. แจ้งประวัติซ่อม</h3>
-        <p>ถ้าทราบ</p>
-        <h3>7. เช็กราคาตามสภาพ</h3>
-        <p>ก่อนลงทุนซ่อม</p>
-        <h3>8. ประเมินค่าใช้จ่าย</h3>
-        <p>หากคิดจะซ่อม</p>
-        <h3>9. เปรียบเทียบความคุ้มค่า</h3>
-        <p>ขายตามสภาพหรือซ่อมก่อน</p>
-        <h3>10. ตรวจสินค้า</h3>
-        <p>ยืนยันสเปกและสภาพก่อนซื้อขาย</p>
-        <hr class="section-divider" />
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. ส่ง Model</h3>
+              <p>เพื่อระบุเครื่องให้ถูก</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. ส่งสเปก</h3>
+              <p>CPU RAM SSD และ GPU ถ้ามี</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. ส่งรูปตำหนิ</h3>
+              <p>ทั้งภายนอกและหน้าจอ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. แจ้งอาการ</h3>
+              <p>ตามที่เกิดขึ้นจริง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. แจ้ง Battery และ Adapter</h3>
+              <p>เพื่อแยกระบบไฟเบื้องต้น</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. แจ้งประวัติซ่อม</h3>
+              <p>ถ้าทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. เช็กราคาตามสภาพ</h3>
+              <p>ก่อนลงทุนซ่อม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. ประเมินค่าใช้จ่าย</h3>
+              <p>หากคิดจะซ่อม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. เปรียบเทียบความคุ้มค่า</h3>
+              <p>ขายตามสภาพหรือซ่อมก่อน</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจสินค้า</h3>
+              <p>ยืนยันสเปกและสภาพก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="commercial-final-cta">
         <h2>เริ่มเช็กราคาโน๊ตบุ๊คในยโสธร</h2>
         <p>ส่ง:</p>
         <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป + อาการ</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
 
-        <hr class="section-divider" />
-        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในยโสธร" />
-      </article>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
     </div>
-  </main>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในยโสธร" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>

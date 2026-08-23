@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อสินค้าไอทีมือสอง เช็กราคาก่อนขาย | เรารับซื้อ.com";
 const pageDescription = "รับซื้อสินค้าไอทีมือสอง โน๊ตบุ๊ค คอม MacBook iPhone iPad กล้อง ลำโพง และอุปกรณ์ไอที ส่งรุ่น รูป สภาพและอุปกรณ์เพื่อเช็กราคาเบื้องต้นก่อนตัดสินใจขาย";
@@ -18,277 +18,1266 @@ const breadcrumbs = [
   description={pageDescription}
   breadcrumbs={breadcrumbs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
+  <!-- 1. WIDE COMMERCIAL HERO (54% / 46% SPLIT) -->
+  <section class="home-hero-section">
+    <div class="commercial-container">
+      <div class="home-hero-grid">
+        <!-- LEFT COLUMN: 54% -->
+        <div class="home-hero-left">
+          <h1 class="home-hero-h1">รับซื้อสินค้าไอทีมือสอง <span class="h1-orange-accent">เช็กราคาก่อนขายก่อนตัดสินใจ</span></h1>
 
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อสินค้าไอทีมือสอง เช็กราคาก่อนขายก่อนตัดสินใจ</h1>
-        <p>มีสินค้าไอทีที่ไม่ได้ใช้แล้ว แต่ยังไม่แน่ใจว่าควรขายราคาเท่าไร?</p>
-        <p>เรารับซื้อ.com ใช้แนวทาง:</p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <p>เริ่มจากส่งข้อมูลของสินค้าที่มีจริง ไม่จำเป็นต้องรีบเดินทางหรือรีบล้างข้อมูลเพียงเพื่อถามราคาเบื้องต้น</p>
-        <p>ส่ง:</p>
-        <p><strong>รุ่น + สเปก + รูป + สภาพ + อุปกรณ์</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>เลือกประเภทสินค้าที่ต้องการเช็กราคา</h2>
-        <h3><a href="/รับซื้อโน๊ตบุ๊ค/">โน๊ตบุ๊ค</a></h3>
-        <p>Notebook, Laptop, Gaming Notebook และเครื่องมีตำหนิบางประเภท</p>
-        <p>ควรส่ง CPU, RAM, SSD, GPU, Battery และ Adapter</p>
-        <h3><a href="/รับซื้อคอม/">คอมพิวเตอร์</a></h3>
-        <p>Desktop, Gaming PC และคอมประกอบ</p>
-        <p>ควรส่ง CPU, GPU, RAM, SSD, Mainboard และ PSU</p>
-        <h3><a href="/รับซื้อแมคบุ๊ค/">MacBook</a></h3>
-        <p>MacBook Air และ MacBook Pro</p>
-        <p>ควรส่งรุ่น Chip, RAM, SSD, Battery และสภาพ</p>
-        <h3><a href="/รับซื้อไอโฟน/">iPhone</a></h3>
-        <p>ควรส่งรุ่น ความจุ Battery Health หน้าจอ การทำงาน และสภาพ</p>
-        <h3><a href="/รับซื้อไอแพด/">iPad</a></h3>
-        <p>ควรส่งรุ่น Generation ความจุ Wi-Fi/Cellular และอุปกรณ์</p>
-        <h3><a href="/รับซื้อกล้อง/">กล้องและเลนส์</a></h3>
-        <p>ควรแยก Body กับ Lens พร้อมแจ้ง Sensor, Shutter, สภาพและอุปกรณ์</p>
-        <h3><a href="/รับซื้อลำโพง/">ลำโพง</a></h3>
-        <p>ควรแจ้ง Brand, Model, Battery, การเชื่อมต่อและสภาพเสียง</p>
-        <h3>อุปกรณ์ไอทีอื่น</h3>
-        <p>สามารถส่งชื่อสินค้า รุ่น รูปและสภาพมาสอบถามเบื้องต้นได้</p>
-        <hr class="section-divider" />
-        <h2>การประเมินราคาไม่ได้ดูแค่ชื่อรุ่น</h2>
-        <p>สินค้ารุ่นเดียวกันอาจมีราคาต่างกันได้จาก:</p>
-        <ul>
-        <li>สเปก</li>
-        <li>ความจุ</li>
-        <li>Battery</li>
-        <li>สภาพ</li>
-        <li>อุปกรณ์</li>
-        <li>ประวัติซ่อม</li>
-        <li>การทำงาน</li>
-        <li>ประกันที่ตรวจสอบได้</li>
-        <li>ความต้องการในตลาดมือสอง</li>
-        </ul>
-        <p>จึงควรส่งข้อมูลของสินค้าจริงประกอบกัน</p>
-        <hr class="section-divider" />
-        <h2>ส่งข้อมูลอะไรแล้วช่วยให้ประเมินได้ง่ายขึ้น</h2>
-        <h3>รุ่น</h3>
-        <p>ชื่อรุ่นเต็มหรือ Model Number</p>
-        <h3>สเปก</h3>
-        <p>เช่น CPU, GPU, RAM, SSD หรือความจุ</p>
-        <h3>รูปสินค้า</h3>
-        <p>ทุกด้านและตำหนิ</p>
-        <h3>สภาพ</h3>
-        <p>เปิดติดหรือไม่ มีอาการอะไร</p>
-        <h3>อุปกรณ์</h3>
-        <p>Adapter, Charger, Box, Cable หรืออุปกรณ์เสริม</p>
-        <h3>ประวัติ</h3>
-        <p>เคยซ่อม ตก โดนน้ำ หรือเปลี่ยนอะไหล่หรือไม่</p>
-        <hr class="section-divider" />
-        <h2>สินค้ามีตำหนิไม่จำเป็นต้องซ่อมก่อนทุกครั้ง</h2>
-        <p>หากสินค้า:</p>
-        <ul>
-        <li>จอแตก</li>
-        <li>Battery เสื่อม</li>
-        <li>ไม่มี Adapter</li>
-        <li>มีรอย</li>
-        <li>เคยซ่อม</li>
-        <li>เปิดไม่ติด</li>
-        <li>มีฟังก์ชันเสีย</li>
-        </ul>
-        <p>สามารถเริ่มจากเช็กราคาตามสภาพก่อนได้</p>
-        <p>ก่อนนำไปซ่อมควรเปรียบเทียบค่าใช้จ่ายกับส่วนต่างมูลค่าที่คาดว่าจะเพิ่ม</p>
-        <hr class="section-divider" />
-        <h2>ควรซ่อมก่อนขายหรือขายตามสภาพ</h2>
-        <p>ให้เปรียบเทียบ:</p>
-        <ol>
-        <li>ราคาตามสภาพ</li>
-        <li>ค่าซ่อม</li>
-        <li>ความเสี่ยง</li>
-        <li>เวลาที่ใช้</li>
-        <li>ราคาหลังซ่อมโดยประมาณ</li>
-        </ol>
-        <p>ไม่จำเป็นต้องเลือกซ่อมเพียงเพราะสินค้ามีตำหนิ</p>
-        <hr class="section-divider" />
-        <h2>ไม่รู้รุ่นหรือสเปกก็เริ่มได้</h2>
-        <p>หากไม่ทราบข้อมูล สามารถเริ่มจากถ่ายรูป:</p>
-        <ul>
-        <li>ด้านหน้า</li>
-        <li>ด้านหลัง</li>
-        <li>Sticker</li>
-        <li>ป้าย Model</li>
-        <li>หน้าจอข้อมูลระบบ</li>
-        <li>จุดตำหนิ</li>
-        </ul>
-        <p>จากนั้นค่อยช่วยแยกข้อมูลที่จำเป็นต่อการประเมิน</p>
-        <hr class="section-divider" />
-        <h2>ยังไม่พร้อมขายก็เช็กราคาก่อนได้</h2>
-        <p>การสอบถามราคาเบื้องต้นไม่จำเป็นต้องหมายความว่าต้องขายทันที</p>
-        <p>ผู้ขายสามารถใช้ข้อมูลเพื่อ:</p>
-        <ul>
-        <li>เปรียบเทียบ</li>
-        <li>ตัดสินใจว่าจะขายหรือเก็บ</li>
-        <li>พิจารณาว่าควรซ่อมหรือไม่</li>
-        <li>เตรียมข้อมูลและอุปกรณ์ให้ครบ</li>
-        </ul>
-        <p>ราคาประเมินเบื้องต้นยังต้องตรวจสินค้าและสภาพจริงก่อนซื้อขาย</p>
-        <hr class="section-divider" />
-        <h2>ข้อมูลส่วนตัวควรจัดการเมื่อพร้อมส่งมอบ</h2>
-        <p>ไม่ควรส่ง Password หรือข้อมูลบัญชีที่ไม่จำเป็นเพื่อเช็กราคา</p>
-        <p>ก่อนส่งมอบควร:</p>
-        <ol>
-        <li>Backup ข้อมูลสำคัญ</li>
-        <li>ตรวจบัญชี</li>
-        <li>ออกจากระบบที่จำเป็น</li>
-        <li>จัดการ Find My หรือ Activation Lock ในอุปกรณ์ที่เกี่ยวข้อง</li>
-        <li>ล้างข้อมูลเมื่อพร้อมส่งมอบ</li>
-        </ol>
-        <p>เจ้าของบัญชีควรเป็นผู้จัดการข้อมูลและรหัสผ่านของตนเอง</p>
-        <hr class="section-divider" />
-        <h2>อยู่ต่างจังหวัดสามารถเริ่มออนไลน์ก่อน</h2>
-        <p>หากไม่ได้อยู่ใกล้จุดนัดหมาย สามารถเริ่มจากส่งข้อมูลและรูปก่อน</p>
-        <p>หลังจากตรวจรายละเอียดเบื้องต้นแล้วจึงค่อยพิจารณาวิธีส่งมอบตามประเภทสินค้า พื้นที่ และความเหมาะสม</p>
-        <p>เว็บไซต์นี้ไม่ได้ใช้เพื่ออ้างว่ามีสาขาอยู่ในทุกจังหวัด</p>
-        <hr class="section-divider" />
-        <h2>ขั้นตอนตั้งแต่เช็กราคาจนถึงตัดสินใจ</h2>
-        <h3>1. เลือกประเภทสินค้า</h3>
-        <h3>2. ส่งรุ่นหรือสเปก</h3>
-        <h3>3. ส่งรูป</h3>
-        <h3>4. แจ้งสภาพและอาการ</h3>
-        <h3>5. แจ้งอุปกรณ์</h3>
-        <h3>6. ประเมินเบื้องต้น</h3>
-        <h3>7. ผู้ขายพิจารณา</h3>
-        <h3>8. เตรียมข้อมูลและบัญชีเมื่อพร้อมขาย</h3>
-        <h3>9. ตรวจสินค้าจริง</h3>
-        <h3>10. ดำเนินการซื้อขายเมื่อข้อมูลและสภาพตรงกัน</h3>
-        <hr class="section-divider" />
-        <h2>เริ่มเช็กราคาก่อนขาย</h2>
-        <p>หากมีสินค้าอยู่ตอนนี้ เริ่มจากส่ง:</p>
-        <p><strong>สินค้าอะไร + รุ่นอะไร + สเปกเท่าที่รู้ + รูป + สภาพ + อุปกรณ์</strong></p>
-        <p>หากไม่รู้รุ่น ส่งรูปมาก่อนได้</p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-      </article>
+          <p class="home-hero-lead">มีสินค้าไอทีที่ไม่ได้ใช้แล้ว แต่ยังไม่แน่ใจว่าควรขายราคาเท่าไร?</p>
+
+          <!-- COMMERCIAL VALUE & APPROACH CARD -->
+          <div class="home-hero-approach-card">
+            <p class="approach-label">เรารับซื้อ.com ใช้แนวทาง:</p>
+            <p class="approach-slogan">
+              <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
+            </p>
+            <p class="approach-desc">
+              เริ่มจากส่งข้อมูลของสินค้าที่มีจริง ไม่จำเป็นต้องรีบเดินทางหรือรีบล้างข้อมูลเพียงเพื่อถามราคาเบื้องต้น
+            </p>
+          </div>
+
+          <!-- INTAKE SPEC TAG & CTAS -->
+          <div class="home-hero-intake-card">
+            <div class="intake-spec-row">
+              <span class="intake-prompt-badge">ส่ง:</span>
+              <p class="intake-spec-text">
+                <strong>รุ่น + สเปก + รูป + สภาพ + อุปกรณ์</strong>
+              </p>
+            </div>
+
+            <div class="home-hero-cta-bar">
+              <a
+                href={getLineUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-line btn-hero-action"
+                aria-label={`LINE ${getDisplayLine()} แอดไลน์เพื่อส่งรูปและเช็กราคา`}
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+                </svg>
+                <span>LINE: <strong>{getDisplayLine()}</strong></span>
+              </a>
+
+              <a
+                href={getPhoneUrl()}
+                class="btn btn-phone btn-hero-action"
+                aria-label={`โทร ${getDisplayPhone()} ปรึกษาและเช็กราคา`}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: 46% LARGE PRODUCT COMPOSITION -->
+        <div class="home-hero-right">
+          <div class="product-visual-wrapper">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-it-products-640.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-it-products-640.webp" type="image/webp" />
+              <source srcset="/images/hero-it-products.avif" type="image/avif" />
+              <source srcset="/images/hero-it-products.webp" type="image/webp" />
+              <img
+                src="/images/hero-it-products.webp"
+                alt="รับซื้อสินค้าไอทีมือสอง โน๊ตบุ๊ค คอมพิวเตอร์ MacBook iPhone iPad กล้อง ลำโพง"
+                width="1097"
+                height="777"
+                class="hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
 
+  <!-- 2. CATEGORY SELECTION TILES (8 TILES DIRECTLY UNDER HERO) -->
+  <section class="commercial-section section-white">
+    <div class="commercial-container">
+      <div class="section-title-wrap">
+        <h2 class="section-main-h2">เลือกประเภทสินค้าที่ต้องการเช็กราคา</h2>
+      </div>
+
+      <div class="home-category-grid">
+        <!-- 1. โน๊ตบุ๊ค -->
+        <div class="cat-tile">
+          <div class="cat-tile-top">
+            <div class="cat-icon-wrap" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="1" y1="20" x2="23" y2="20"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="cat-content">
+            <h3 class="cat-title"><a href="/รับซื้อโน๊ตบุ๊ค/">โน๊ตบุ๊ค</a></h3>
+            <p class="cat-desc">Notebook, Laptop, Gaming Notebook และเครื่องมีตำหนิบางประเภท</p>
+            <p class="cat-spec-hint">ควรส่ง CPU, RAM, SSD, GPU, Battery และ Adapter</p>
+          </div>
+        </div>
+
+        <!-- 2. คอมพิวเตอร์ -->
+        <div class="cat-tile">
+          <div class="cat-tile-top">
+            <div class="cat-icon-wrap" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="14" rx="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="cat-content">
+            <h3 class="cat-title"><a href="/รับซื้อคอม/">คอมพิวเตอร์</a></h3>
+            <p class="cat-desc">Desktop, Gaming PC และคอมประกอบ</p>
+            <p class="cat-spec-hint">ควรส่ง CPU, GPU, RAM, SSD, Mainboard และ PSU</p>
+          </div>
+        </div>
+
+        <!-- 3. MacBook -->
+        <div class="cat-tile">
+          <div class="cat-tile-top">
+            <div class="cat-icon-wrap" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+                <path d="M2 20h20"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="cat-content">
+            <h3 class="cat-title"><a href="/รับซื้อแมคบุ๊ค/">MacBook</a></h3>
+            <p class="cat-desc">MacBook Air และ MacBook Pro</p>
+            <p class="cat-spec-hint">ควรส่งรุ่น Chip, RAM, SSD, Battery และสภาพ</p>
+          </div>
+        </div>
+
+        <!-- 4. iPhone -->
+        <div class="cat-tile">
+          <div class="cat-tile-top">
+            <div class="cat-icon-wrap" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="cat-content">
+            <h3 class="cat-title"><a href="/รับซื้อไอโฟน/">iPhone</a></h3>
+            <p class="cat-desc">ควรส่งรุ่น ความจุ Battery Health หน้าจอ การทำงาน และสภาพ</p>
+          </div>
+        </div>
+
+        <!-- 5. iPad -->
+        <div class="cat-tile">
+          <div class="cat-tile-top">
+            <div class="cat-icon-wrap" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="cat-content">
+            <h3 class="cat-title"><a href="/รับซื้อไอแพด/">iPad</a></h3>
+            <p class="cat-desc">ควรส่งรุ่น Generation ความจุ Wi-Fi/Cellular และอุปกรณ์</p>
+          </div>
+        </div>
+
+        <!-- 6. กล้องและเลนส์ -->
+        <div class="cat-tile">
+          <div class="cat-tile-top">
+            <div class="cat-icon-wrap" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="cat-content">
+            <h3 class="cat-title"><a href="/รับซื้อกล้อง/">กล้องและเลนส์</a></h3>
+            <p class="cat-desc">ควรแยก Body กับ Lens พร้อมแจ้ง Sensor, Shutter, สภาพและอุปกรณ์</p>
+          </div>
+        </div>
+
+        <!-- 7. ลำโพง -->
+        <div class="cat-tile">
+          <div class="cat-tile-top">
+            <div class="cat-icon-wrap" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                <circle cx="12" cy="14" r="4"></circle>
+                <line x1="12" y1="6" x2="12.01" y2="6"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="cat-content">
+            <h3 class="cat-title"><a href="/รับซื้อลำโพง/">ลำโพง</a></h3>
+            <p class="cat-desc">ควรแจ้ง Brand, Model, Battery, การเชื่อมต่อและสภาพเสียง</p>
+          </div>
+        </div>
+
+        <!-- 8. อุปกรณ์ไอทีอื่น -->
+        <div class="cat-tile">
+          <div class="cat-tile-top">
+            <div class="cat-icon-wrap" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="cat-content">
+            <h3 class="cat-title">อุปกรณ์ไอทีอื่น</h3>
+            <p class="cat-desc">สามารถส่งชื่อสินค้า รุ่น รูปและสภาพมาสอบถามเบื้องต้นได้</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. EVALUATION FACTORS (CENTERED COMMERCIAL SURFACE PANEL) -->
+  <section class="commercial-section section-surface">
+    <div class="commercial-container">
+      <div class="evaluation-panel-card">
+        <h2 class="evaluation-panel-h2">การประเมินราคาไม่ได้ดูแค่ชื่อรุ่น</h2>
+        <p class="evaluation-panel-lead">สินค้ารุ่นเดียวกันอาจมีราคาต่างกันได้จาก:</p>
+
+        <ul class="evaluation-factor-grid">
+          <li class="factor-item"><span>สเปก</span></li>
+          <li class="factor-item"><span>ความจุ</span></li>
+          <li class="factor-item"><span>Battery</span></li>
+          <li class="factor-item"><span>สภาพ</span></li>
+          <li class="factor-item"><span>อุปกรณ์</span></li>
+          <li class="factor-item"><span>ประวัติซ่อม</span></li>
+          <li class="factor-item"><span>การทำงาน</span></li>
+          <li class="factor-item"><span>ประกันที่ตรวจสอบได้</span></li>
+          <li class="factor-item"><span>ความต้องการในตลาดมือสอง</span></li>
+        </ul>
+
+        <p class="evaluation-panel-footer">จึงควรส่งข้อมูลของสินค้าจริงประกอบกัน</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. INFORMATION TO SEND (NUMBERED STEP CARDS) -->
+  <section class="commercial-section section-white">
+    <div class="commercial-container">
+      <div class="section-title-wrap">
+        <h2 class="section-main-h2">ส่งข้อมูลอะไรแล้วช่วยให้ประเมินได้ง่ายขึ้น</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="info-send-card">
+          <div class="info-card-badge" aria-hidden="true"></div>
+          <h3>รุ่น</h3>
+          <p>ชื่อรุ่นเต็มหรือ Model Number</p>
+        </div>
+        <div class="info-send-card">
+          <div class="info-card-badge" aria-hidden="true"></div>
+          <h3>สเปก</h3>
+          <p>เช่น CPU, GPU, RAM, SSD หรือความจุ</p>
+        </div>
+        <div class="info-send-card">
+          <div class="info-card-badge" aria-hidden="true"></div>
+          <h3>รูปสินค้า</h3>
+          <p>ทุกด้านและตำหนิ</p>
+        </div>
+        <div class="info-send-card">
+          <div class="info-card-badge" aria-hidden="true"></div>
+          <h3>สภาพ</h3>
+          <p>เปิดติดหรือไม่ มีอาการอะไร</p>
+        </div>
+        <div class="info-send-card">
+          <div class="info-card-badge" aria-hidden="true"></div>
+          <h3>อุปกรณ์</h3>
+          <p>Adapter, Charger, Box, Cable หรืออุปกรณ์เสริม</p>
+        </div>
+        <div class="info-send-card">
+          <div class="info-card-badge" aria-hidden="true"></div>
+          <h3>ประวัติ</h3>
+          <p>เคยซ่อม ตก โดนน้ำ หรือเปลี่ยนอะไหล่หรือไม่</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FLAWED PRODUCTS & REPAIR VS AS-IS (2-COLUMN COMPARISON) -->
+  <section class="commercial-section section-surface">
+    <div class="commercial-container">
+      <div class="grid-2">
+        <div class="comm-card comm-card-accent-amber">
+          <h2>สินค้ามีตำหนิไม่จำเป็นต้องซ่อมก่อนทุกครั้ง</h2>
+          <p class="card-lead-text">หากสินค้า:</p>
+          <ul class="styled-bullet-list">
+            <li>จอแตก</li>
+            <li>Battery เสื่อม</li>
+            <li>ไม่มี Adapter</li>
+            <li>มีรอย</li>
+            <li>เคยซ่อม</li>
+            <li>เปิดไม่ติด</li>
+            <li>มีฟังก์ชันเสีย</li>
+          </ul>
+          <div class="callout-inner-box">
+            <p>สามารถเริ่มจากเช็กราคาตามสภาพก่อนได้</p>
+            <p>ก่อนนำไปซ่อมควรเปรียบเทียบค่าใช้จ่ายกับส่วนต่างมูลค่าที่คาดว่าจะเพิ่ม</p>
+          </div>
+        </div>
+
+        <div class="comm-card comm-card-accent-blue">
+          <h2>ควรซ่อมก่อนขายหรือขายตามสภาพ</h2>
+          <p class="card-lead-text">ให้เปรียบเทียบ:</p>
+          <ol class="styled-numbered-list">
+            <li>ราคาตามสภาพ</li>
+            <li>ค่าซ่อม</li>
+            <li>ความเสี่ยง</li>
+            <li>เวลาที่ใช้</li>
+            <li>ราคาหลังซ่อมโดยประมาณ</li>
+          </ol>
+          <div class="callout-inner-box">
+            <p>ไม่จำเป็นต้องเลือกซ่อมเพียงเพราะสินค้ามีตำหนิ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. UNKNOWN SPEC & NOT READY TO SELL (2-COLUMN CARDS) -->
+  <section class="commercial-section section-white">
+    <div class="commercial-container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ไม่รู้รุ่นหรือสเปกก็เริ่มได้</h2>
+          <p class="card-lead-text">หากไม่ทราบข้อมูล สามารถเริ่มจากถ่ายรูป:</p>
+          <ul class="styled-bullet-list">
+            <li>ด้านหน้า</li>
+            <li>ด้านหลัง</li>
+            <li>Sticker</li>
+            <li>ป้าย Model</li>
+            <li>หน้าจอข้อมูลระบบ</li>
+            <li>จุดตำหนิ</li>
+          </ul>
+          <p class="card-foot-note">จากนั้นค่อยช่วยแยกข้อมูลที่จำเป็นต่อการประเมิน</p>
+        </div>
+
+        <div class="comm-card">
+          <h2>ยังไม่พร้อมขายก็เช็กราคาก่อนได้</h2>
+          <p class="card-lead-text">การสอบถามราคาเบื้องต้นไม่จำเป็นต้องหมายความว่าต้องขายทันที</p>
+          <p class="card-sub-lead">ผู้ขายสามารถใช้ข้อมูลเพื่อ:</p>
+          <ul class="styled-bullet-list">
+            <li>เปรียบเทียบ</li>
+            <li>ตัดสินใจว่าจะขายหรือเก็บ</li>
+            <li>พิจารณาว่าควรซ่อมหรือไม่</li>
+            <li>เตรียมข้อมูลและอุปกรณ์ให้ครบ</li>
+          </ul>
+          <p class="card-foot-note">ราคาประเมินเบื้องต้นยังต้องตรวจสินค้าและสภาพจริงก่อนซื้อขาย</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PRIVACY & REGIONAL ONLINE (DISTINCT RHYTHM) -->
+  <section class="commercial-section section-surface">
+    <div class="commercial-container">
+      <div class="grid-2">
+        <div class="comm-card comm-card-privacy">
+          <h2>ข้อมูลส่วนตัวควรจัดการเมื่อพร้อมส่งมอบ</h2>
+          <div class="privacy-warning-box">
+            <p>ไม่ควรส่ง Password หรือข้อมูลบัญชีที่ไม่จำเป็นเพื่อเช็กราคา</p>
+          </div>
+          <p class="card-lead-text">ก่อนส่งมอบควร:</p>
+          <ol class="styled-numbered-list">
+            <li>Backup ข้อมูลสำคัญ</li>
+            <li>ตรวจบัญชี</li>
+            <li>ออกจากระบบที่จำเป็น</li>
+            <li>จัดการ Find My หรือ Activation Lock ในอุปกรณ์ที่เกี่ยวข้อง</li>
+            <li>ล้างข้อมูลเมื่อพร้อมส่งมอบ</li>
+          </ol>
+          <p class="card-foot-note">เจ้าของบัญชีควรเป็นผู้จัดการข้อมูลและรหัสผ่านของตนเอง</p>
+        </div>
+
+        <div class="comm-card comm-card-regional">
+          <h2>อยู่ต่างจังหวัดสามารถเริ่มออนไลน์ก่อน</h2>
+          <p class="card-lead-text">หากไม่ได้อยู่ใกล้จุดนัดหมาย สามารถเริ่มจากส่งข้อมูลและรูปก่อน</p>
+          <div class="regional-highlight-box">
+            <p>หลังจากตรวจรายละเอียดเบื้องต้นแล้วจึงค่อยพิจารณาวิธีส่งมอบตามประเภทสินค้า พื้นที่ และความเหมาะสม</p>
+          </div>
+          <p class="card-foot-note">เว็บไซต์นี้ไม่ได้ใช้เพื่ออ้างว่ามีสาขาอยู่ในทุกจังหวัด</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. 10-STEP PROCESS (2-COLUMN PILL GRID) -->
+  <section class="commercial-section section-white">
+    <div class="commercial-container">
+      <div class="section-title-wrap">
+        <h2 class="section-main-h2">ขั้นตอนตั้งแต่เช็กราคาจนถึงตัดสินใจ</h2>
+      </div>
+
+      <div class="process-pill-grid">
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>1. เลือกประเภทสินค้า</h3>
+          </div>
+        </div>
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>2. ส่งรุ่นหรือสเปก</h3>
+          </div>
+        </div>
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>3. ส่งรูป</h3>
+          </div>
+        </div>
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>4. แจ้งสภาพและอาการ</h3>
+          </div>
+        </div>
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>5. แจ้งอุปกรณ์</h3>
+          </div>
+        </div>
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>6. ประเมินเบื้องต้น</h3>
+          </div>
+        </div>
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>7. ผู้ขายพิจารณา</h3>
+          </div>
+        </div>
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>8. เตรียมข้อมูลและบัญชีเมื่อพร้อมขาย</h3>
+          </div>
+        </div>
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>9. ตรวจสินค้าจริง</h3>
+          </div>
+        </div>
+        <div class="process-pill-item">
+          <div class="process-pill-content">
+            <h3>10. ดำเนินการซื้อขายเมื่อข้อมูลและสภาพตรงกัน</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FINAL COMMERCIAL CTA (DEEP NAVY GRADIENT BANNER) -->
+  <section class="commercial-section section-surface">
+    <div class="commercial-container">
+      <div class="commercial-final-cta-banner">
+        <h2 class="final-cta-h2">เริ่มเช็กราคาก่อนขาย</h2>
+        <p class="final-cta-lead">หากมีสินค้าอยู่ตอนนี้ เริ่มจากส่ง:</p>
+
+        <div class="final-cta-spec-box">
+          <p><strong>สินค้าอะไร + รุ่นอะไร + สเปกเท่าที่รู้ + รูป + สภาพ + อุปกรณ์</strong></p>
+        </div>
+
+        <p class="final-cta-sub">หากไม่รู้รุ่น ส่งรูปมาก่อนได้</p>
+
+        <div class="final-cta-btn-bar">
+          <a
+            href={getLineUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-line btn-final-action"
+            aria-label={`LINE ${getDisplayLine()} แอดไลน์เพื่อส่งรูปและเช็กราคา`}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+
+          <a
+            href={getPhoneUrl()}
+            class="btn btn-phone btn-final-action"
+            aria-label={`โทร ${getDisplayPhone()} ปรึกษาและเช็กราคา`}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <p class="final-cta-slogan">
+          <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-  .content-container {
-    padding: 2.5rem 0 4rem 0;
+  /* ============================================================
+     COMMERCIAL LAYOUT CONTAINER & BALANCED SECTION DENSITY
+     ============================================================ */
+  .commercial-container {
+    width: min(100% - 32px, 1280px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .prose-content {
-    background-color: #ffffff;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem 2rem;
-    box-shadow: var(--shadow-sm);
-  }
-
-  @media (max-width: 640px) {
-    .prose-content {
-      padding: 1.75rem 1.25rem;
+  @media (min-width: 768px) {
+    .commercial-container {
+      width: min(100% - 48px, 1280px);
     }
   }
 
-  .prose-content h1 {
+  /* BALANCED SECTION SPACING (52-60px Desktop, 36px Mobile) */
+  .commercial-section {
+    padding: 2.25rem 0;
+  }
+
+  @media (min-width: 1024px) {
+    .commercial-section {
+      padding: 3.5rem 0;
+    }
+  }
+
+  .section-white {
+    background-color: #ffffff;
+  }
+
+  .section-surface {
+    background-color: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-title-wrap {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .section-main-h2 {
+    font-size: 1.85rem;
+    font-weight: 850;
+    color: var(--navy-950);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+
+  @media (min-width: 768px) {
+    .section-main-h2 {
+      font-size: 2.15rem;
+    }
+  }
+
+  /* ============================================================
+     1. HERO SECTION (54% / 46% SPLIT)
+     ============================================================ */
+  .home-hero-section {
+    padding: 2.25rem 0 3rem 0;
+    background: linear-gradient(180deg, #ffffff 0%, var(--surface) 100%);
+    border-bottom: 1px solid var(--border);
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .home-hero-section {
+      padding: 3rem 0 3.75rem 0;
+      min-height: 560px;
+    }
+  }
+
+  .home-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .home-hero-grid {
+      grid-template-columns: 54% 46%;
+      gap: 2.25rem;
+    }
+  }
+
+  .home-hero-h1 {
     font-size: 2.15rem;
-    color: var(--color-primary);
-    line-height: 1.3;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .prose-content h2 {
-    font-size: 1.55rem;
-    color: var(--color-primary);
-    line-height: 1.35;
-    margin-top: 2.5rem;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--navy-950);
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-border);
   }
 
-  .prose-content h3 {
-    font-size: 1.2rem;
-    color: var(--color-primary);
+  .h1-orange-accent {
+    color: #c2410c;
+  }
+
+  @media (min-width: 768px) {
+    .home-hero-h1 {
+      font-size: 2.85rem;
+      line-height: 1.12;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .home-hero-h1 {
+      font-size: 3.25rem;
+      line-height: 1.1;
+    }
+  }
+
+  .home-hero-lead {
+    font-size: 1.08rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  /* COMMERCIAL APPROACH / VALUE CARD */
+  .home-hero-approach-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-left: 5px solid #ff6412;
+    border-radius: 14px;
+    padding: 1.15rem 1.35rem;
+    box-shadow: 0 4px 16px rgb(6 27 53 / 0.05);
+    margin-bottom: 1.15rem;
+  }
+
+  .approach-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .approach-slogan {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #c2410c;
+    margin-bottom: 0.35rem;
     line-height: 1.4;
-    margin-top: 1.75rem;
+  }
+
+  .approach-desc {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* INTAKE CARD & CTAS */
+  .home-hero-intake-card {
+    background-color: #fff7ed;
+    border: 1px dashed #fdba74;
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+  }
+
+  .intake-spec-row {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .intake-prompt-badge {
+    background-color: #c2410c;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 800;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    display: inline-block;
+  }
+
+  .intake-spec-text {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--navy-950);
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .home-hero-cta-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .home-hero-cta-bar {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+  }
+
+  .btn-hero-action {
+    font-size: 1rem;
+    font-weight: 750;
+    padding: 0.85rem 1.5rem;
+    min-height: 52px;
+    border-radius: 12px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (min-width: 640px) {
+    .btn-hero-action {
+      flex: 1 1 200px;
+      width: auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .home-hero-section {
+      padding: 1.25rem 0 1.5rem 0;
+      min-height: auto;
+    }
+    .home-hero-grid {
+      gap: 1.25rem;
+    }
+    .home-hero-h1 {
+      font-size: 1.85rem;
+      margin-bottom: 0.65rem;
+    }
+    .home-hero-lead {
+      font-size: 1rem;
+      margin-bottom: 0.65rem;
+    }
+    .home-hero-approach-card {
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.75rem;
+      border-radius: 10px;
+    }
+    .approach-slogan {
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+    .home-hero-intake-card {
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+    }
+    .intake-spec-row {
+      margin-bottom: 0.65rem;
+      gap: 0.45rem;
+    }
+    .intake-spec-text {
+      font-size: 0.98rem;
+    }
+    .btn-hero-action {
+      min-height: 48px;
+      padding: 0.7rem 1.15rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  /* RIGHT COLUMN PRODUCT VISUAL (FLOATING TRANSPARENT COMPOSITION) */
+  .home-hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-visual-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 630px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-product-img {
+    width: 100%;
+    height: auto;
+    max-width: 630px;
+    min-width: 300px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 20px 32px rgb(6 27 53 / 0.12));
+    transition: transform 0.3s ease;
+  }
+
+  /* ============================================================
+     2. CATEGORY SELECTION TILES (8 TILES)
+     ============================================================ */
+  .home-category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  @media (min-width: 640px) {
+    .home-category-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .home-category-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+  }
+
+  .cat-tile {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.35rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 4px 12px rgb(6 27 53 / 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative;
+  }
+
+  .cat-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgb(6 27 53 / 0.08);
+    border-color: #ff6412;
+  }
+
+  .cat-tile-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 0.75rem;
   }
 
-  .prose-content p {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--color-text-main);
-    margin-top: 0;
-    margin-bottom: 1rem;
+  .cat-tile-top::after {
+    content: "เช็กราคา →";
+    font-size: 0.82rem;
+    font-weight: 750;
+    color: #c2410c;
+    letter-spacing: -0.01em;
   }
 
-  .prose-content ul,
-  .prose-content ol {
-    margin-top: 0.5rem;
-    margin-bottom: 1.25rem;
-    padding-left: 1.75rem;
+  .cat-icon-wrap {
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    width: 42px;
+    height: 42px;
   }
 
-  .prose-content li {
-    font-size: 1.02rem;
-    line-height: 1.7;
-    color: var(--color-text-main);
+  .cat-title {
+    font-size: 1.18rem;
+    font-weight: 850;
+    color: var(--navy-950);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+
+  .cat-title a {
+    color: var(--navy-950);
+    text-decoration: none;
+  }
+
+  .cat-title a:hover {
+    color: #c2410c;
+  }
+
+  .cat-desc {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.5;
     margin-bottom: 0.4rem;
   }
 
-  .prose-content strong {
-    color: var(--color-primary);
+  .cat-spec-hint {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* ============================================================
+     3. EVALUATION FACTORS (CENTERED SURFACE PANEL)
+     ============================================================ */
+  .evaluation-panel-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 2.25rem 1.75rem;
+    max-width: 1080px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgb(6 27 53 / 0.04);
+  }
+
+  @media (min-width: 768px) {
+    .evaluation-panel-card {
+      padding: 2.75rem 2.5rem;
+    }
+  }
+
+  .evaluation-panel-h2 {
+    font-size: 1.85rem;
+    font-weight: 850;
+    color: var(--navy-950);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .evaluation-panel-lead {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .evaluation-factor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (min-width: 640px) {
+    .evaluation-factor-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+    }
+  }
+
+  .factor-item {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem 1.15rem;
     font-weight: 700;
-  }
-
-  .prose-content a {
-    color: var(--color-accent);
-    font-weight: 600;
-    text-decoration: underline;
-  }
-
-  .prose-content a:hover {
-    color: var(--color-accent-hover);
-  }
-
-  .section-divider {
-    border: 0;
-    height: 1px;
-    background-color: var(--color-border);
-    margin: 2.5rem 0;
-  }
-
-  .table-responsive {
-    overflow-x: auto;
-    margin: 1.5rem 0;
-  }
-
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
     font-size: 0.95rem;
+    color: var(--navy-950);
+    display: flex;
+    align-items: center;
+    margin: 0;
   }
 
-  .data-table th,
-  .data-table td {
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--color-border);
-    text-align: left;
+  .factor-item::before {
+    content: "•";
+    color: #ea580c;
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-right: 0.6rem;
   }
 
-  .data-table th {
-    background-color: var(--color-bg-subtle);
-    color: var(--color-primary);
-    font-weight: 600;
+  .evaluation-panel-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--navy-950);
   }
 
-  .data-table tr:nth-child(even) {
-    background-color: #fafbfc;
+  /* ============================================================
+     4. INFORMATION TO SEND (NUMBERED STEP CARDS)
+     ============================================================ */
+  .info-send-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.35rem;
+    box-shadow: 0 2px 8px rgb(6 27 53 / 0.03);
+    position: relative;
+  }
+
+  .info-card-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--navy-950);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.95rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .info-send-card:nth-child(1) .info-card-badge::before { content: "1"; }
+  .info-send-card:nth-child(2) .info-card-badge::before { content: "2"; }
+  .info-send-card:nth-child(3) .info-card-badge::before { content: "3"; }
+  .info-send-card:nth-child(4) .info-card-badge::before { content: "4"; }
+  .info-send-card:nth-child(5) .info-card-badge::before { content: "5"; }
+  .info-send-card:nth-child(6) .info-card-badge::before { content: "6"; }
+
+  .info-send-card h3 {
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: var(--navy-950);
+    margin-bottom: 0.4rem;
+  }
+
+  .info-send-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ============================================================
+     5. FLAWED PRODUCTS & REPAIR VS AS-IS (ACCENT BORDERS)
+     ============================================================ */
+  .comm-card-accent-amber {
+    border-top: 4px solid #f59e0b;
+  }
+
+  .comm-card-accent-blue {
+    border-top: 4px solid var(--navy-800);
+  }
+
+  .card-lead-text {
+    font-weight: 700;
+    color: var(--navy-950);
+    margin-bottom: 0.65rem;
+    font-size: 1rem;
+  }
+
+  .styled-bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .styled-bullet-list li {
+    position: relative;
+    padding-left: 1.35rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  .styled-bullet-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0.2rem;
+    color: #ea580c;
+    font-weight: 800;
+  }
+
+  .styled-numbered-list {
+    padding-left: 1.5rem;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .styled-numbered-list li {
+    margin-bottom: 0.45rem;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  .callout-inner-box {
+    background-color: var(--surface);
+    border-radius: 10px;
+    padding: 0.85rem 1.15rem;
+    border-left: 4px solid #ff6412;
+  }
+
+  .callout-inner-box p {
+    font-size: 0.92rem;
+    color: var(--navy-950);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+
+  .callout-inner-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .card-foot-note {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .card-sub-lead {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ============================================================
+     7. PRIVACY & REGIONAL ONLINE (DISTINCT PANELS)
+     ============================================================ */
+  .comm-card-privacy {
+    border-left: 5px solid #0284c7;
+  }
+
+  .privacy-warning-box {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    padding: 0.85rem 1.15rem;
+    margin-bottom: 1rem;
+  }
+
+  .privacy-warning-box p {
+    color: #b91c1c;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  .comm-card-regional {
+    border-left: 5px solid #10b981;
+  }
+
+  .regional-highlight-box {
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    padding: 0.85rem 1.15rem;
+    margin: 0.85rem 0;
+  }
+
+  .regional-highlight-box p {
+    color: #166534;
+    font-size: 0.92rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ============================================================
+     8. 10-STEP PROCESS (2-COLUMN PILL GRID)
+     ============================================================ */
+  .process-pill-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .process-pill-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem 1.25rem;
+    }
+  }
+
+  .process-pill-item {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem 1.25rem;
+    box-shadow: 0 2px 6px rgb(6 27 53 / 0.03);
+    display: flex;
+    align-items: center;
+  }
+
+  .process-pill-content h3 {
+    font-size: 1.02rem;
+    font-weight: 750;
+    color: var(--navy-950);
+    margin: 0;
+  }
+
+  /* ============================================================
+     9. FINAL COMMERCIAL CTA BANNER (DEEP NAVY GRADIENT)
+     ============================================================ */
+  .commercial-final-cta-banner {
+    background: linear-gradient(135deg, #061b35 0%, #0a2540 50%, #0f3460 100%);
+    border-radius: 20px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 16px 40px rgb(6 27 53 / 0.16);
+  }
+
+  @media (min-width: 768px) {
+    .commercial-final-cta-banner {
+      padding: 3.75rem 2.5rem;
+    }
+  }
+
+  .final-cta-h2 {
+    font-size: 2.15rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .final-cta-lead {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    margin-bottom: 1rem;
+  }
+
+  .final-cta-spec-box {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 0.85rem 1.5rem;
+    max-width: 640px;
+    margin: 0 auto 0.85rem auto;
+  }
+
+  .final-cta-spec-box p {
+    font-size: 1.12rem;
+    font-weight: 800;
+    color: #ffedd5;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .final-cta-sub {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 1.75rem;
+  }
+
+  .final-cta-btn-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+
+  .btn-final-action {
+    font-size: 1.05rem;
+    font-weight: 750;
+    padding: 0.9rem 2rem;
+    min-height: 52px;
+    border-radius: 12px;
+  }
+
+  .final-cta-slogan {
+    font-size: 1.12rem;
+    font-weight: 800;
+    color: #ffedd5;
+    margin: 0;
   }
 </style>

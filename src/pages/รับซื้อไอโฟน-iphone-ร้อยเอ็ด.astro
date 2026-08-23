@@ -47,6 +47,8 @@ const faqs = [
     "answer": "ไม่ต้อง และไม่ควรส่ง Apple ID Password, Passcode, PIN, OTP หรือ Recovery Key เพื่อขอราคาประเมิน"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -55,23 +57,68 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อไอโฟนร้อยเอ็ด เช็กรุ่น Battery Health และประวัติเครื่องก่อนขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อไอโฟนร้อยเอ็ด เช็กรุ่น Battery Health และประวัติเครื่องก่อนขาย</h1>
         <p>หน้า <code>/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/</code> รักษา Historical Search Intent:</p>
         <p><strong>iPhone + Roi Et</strong></p>
         <p>การประเมิน iPhone ควรดูมากกว่ารุ่นและสี โดยควรตรวจความจุ Battery Health หน้าจอ Face ID กล้อง สภาพตัวเครื่อง และประวัติซ่อมร่วมกัน</p>
-        <p>ส่งก่อน:</p>
-        <p><strong>รุ่น + ความจุ + สี + Battery Health + รูป + ตำหนิ + ประวัติซ่อมถ้ามี</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>เริ่มจากระบุ Generation และรุ่นย่อยให้ถูก</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">ส่งก่อน:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>รุ่น + ความจุ + สี + Battery Health + รูป + ตำหนิ + ประวัติซ่อมถ้ามี</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-smartphone-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-smartphone-500.webp" type="image/webp" />
+              <source srcset="/images/hero-smartphone.avif" type="image/avif" />
+              <source srcset="/images/hero-smartphone.webp" type="image/webp" />
+              <img
+                src="/images/hero-smartphone.webp"
+                alt="รับซื้อไอโฟนร้อยเอ็ด เช็กรุ่น Battery Health และประวัติเครื่องก่อนขาย"
+                width="668"
+                height="717"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เริ่มจากระบุ Generation และรุ่นย่อยให้ถูก</h2>
         <p>ตัวอย่าง:</p>
         <ul>
         <li>iPhone 13</li>
@@ -85,8 +132,9 @@ const faqs = [
         <p><strong>iPhone Pro</strong></p>
         <p>อย่างเดียวไม่เพียงพอ</p>
         <p>ควรแจ้ง Generation พร้อมรุ่นย่อยและความจุ</p>
-        <hr class="section-divider" />
-        <h2>ความจุต้องใช้ของเครื่องจริง</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ความจุต้องใช้ของเครื่องจริง</h2>
         <p>ควรตรวจว่าเป็น:</p>
         <ul>
         <li>64GB</li>
@@ -98,8 +146,16 @@ const faqs = [
         </ul>
         <p>ไม่ควรคาดเดาจากความจำ หากยังสามารถเปิดดูข้อมูลในเครื่องได้</p>
         <p>ความจุเป็นหนึ่งในข้อมูลสำคัญในการแยก Configuration</p>
-        <hr class="section-divider" />
-        <h2>Battery Health ควรส่งค่าที่ระบบแสดง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Battery Health ควรส่งค่าที่ระบบแสดง</h2>
         <p>หาก iPhone ยังแสดง Battery Health สามารถส่งเปอร์เซ็นต์นั้นประกอบได้</p>
         <p>ควรแจ้งด้วยหาก:</p>
         <ul>
@@ -111,8 +167,9 @@ const faqs = [
         <li>Battery บวม</li>
         </ul>
         <p>หาก Battery บวม ไม่ควรกดตัวเครื่องหรือชาร์จซ้ำโดยไม่จำเป็น</p>
-        <hr class="section-divider" />
-        <h2>ประวัติการเปลี่ยนอะไหล่ควรแจ้งตามที่ทราบ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ประวัติการเปลี่ยนอะไหล่ควรแจ้งตามที่ทราบ</h2>
         <p>ควรแจ้งหากเครื่องเคย:</p>
         <ul>
         <li>เปลี่ยนจอ</li>
@@ -125,8 +182,16 @@ const faqs = [
         <li>ตกกระแทกหนัก</li>
         </ul>
         <p>ประวัติซ่อมไม่ได้หมายความว่าเครื่องขายไม่ได้ แต่ช่วยให้สภาพที่ใช้ประเมินตรงกับเครื่องจริงมากขึ้น</p>
-        <hr class="section-divider" />
-        <h2>หน้าจอควรตรวจทั้งภาพและ Touch</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>หน้าจอควรตรวจทั้งภาพและ Touch</h2>
         <p>ควรแจ้งหากมี:</p>
         <ul>
         <li>รอย</li>
@@ -139,8 +204,9 @@ const faqs = [
         <li>แสงผิดปกติ</li>
         </ul>
         <p>หากเคยเปลี่ยนจอ ควรแจ้งเท่าที่ทราบ</p>
-        <hr class="section-divider" />
-        <h2>Face ID ควรทดสอบก่อนขายหากเครื่องใช้งานได้</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Face ID ควรทดสอบก่อนขายหากเครื่องใช้งานได้</h2>
         <p>สามารถแจ้งว่า:</p>
         <ul>
         <li>Face ID ใช้งานได้</li>
@@ -149,8 +215,16 @@ const faqs = [
         <li>ระบบแสดงข้อความผิดปกติ</li>
         </ul>
         <p>หากใช้ไม่ได้ ไม่ควรวินิจฉัยสาเหตุเองว่าเกิดจากชิ้นส่วนใดโดยไม่มีการตรวจ</p>
-        <hr class="section-divider" />
-        <h2>กล้องแต่ละตัวควรตรวจตามฟังก์ชัน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>กล้องแต่ละตัวควรตรวจตามฟังก์ชัน</h2>
         <p>ควรสังเกต:</p>
         <ul>
         <li>โฟกัส</li>
@@ -161,8 +235,9 @@ const faqs = [
         <li>การสลับระยะตามรุ่น</li>
         </ul>
         <p>หากมีอาการ สามารถส่งตัวอย่างหรือแจ้งอาการตามที่พบ</p>
-        <hr class="section-divider" />
-        <h2>Speaker Microphone และ Port ชาร์จก็ควรแจ้ง</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Speaker Microphone และ Port ชาร์จก็ควรแจ้ง</h2>
         <p>iPhone ที่หน้าจอและ Battery ปกติอาจยังมีอาการในส่วนอื่น</p>
         <p>เช่น:</p>
         <ul>
@@ -174,8 +249,16 @@ const faqs = [
         <li>Vibration ผิดปกติ</li>
         </ul>
         <p>ควรแจ้งตามสภาพจริง</p>
-        <hr class="section-divider" />
-        <h2>Apple ID และ Find My ต้องจัดการโดยเจ้าของเครื่อง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Apple ID และ Find My ต้องจัดการโดยเจ้าของเครื่อง</h2>
         <p>ก่อนส่งมอบจริง เจ้าของควรสามารถจัดการบัญชีที่ผูกกับเครื่องของตนเองได้</p>
         <p>แต่เพื่อสอบถามราคา <strong>ไม่ต้องส่งรหัสลับ</strong></p>
         <p>ไม่ควรส่ง:</p>
@@ -188,14 +271,23 @@ const faqs = [
         <li>Email Password</li>
         </ul>
         <p>การประเมินเบื้องต้นไม่จำเป็นต้องได้รับข้อมูลเหล่านี้</p>
-        <hr class="section-divider" />
-        <h2>IMEI และ Serial ไม่จำเป็นต้องโพสต์สาธารณะ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>IMEI และ Serial ไม่จำเป็นต้องโพสต์สาธารณะ</h2>
         <p>สามารถเริ่มจาก:</p>
         <p><strong>รุ่น + ความจุ + Battery + รูป + สภาพ</strong></p>
         <p>ก่อน</p>
         <p>หากภายหลังจำเป็นต้องใช้ IMEI หรือ Serial ในขั้นตอนตรวจสอบเพิ่มเติม ควรส่งผ่านช่องทางที่เหมาะสม ไม่ควรโพสต์ข้อมูลระบุตัวเครื่องสาธารณะโดยไม่จำเป็น</p>
-        <hr class="section-divider" />
-        <h2>ไม่มีกล่องหรือสายยังส่งมาประเมินได้</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ไม่มีกล่องหรือสายยังส่งมาประเมินได้</h2>
         <p>ควรแจ้งสิ่งที่มีจริง เช่น:</p>
         <ul>
         <li>กล่อง</li>
@@ -206,8 +298,9 @@ const faqs = [
         </ul>
         <p>ไม่มีอุปกรณ์บางอย่างยังสามารถเช็กราคาได้</p>
         <p>ไม่จำเป็นต้องซื้ออุปกรณ์ใหม่มาเติมชุดก่อนทราบว่าคุ้มกับมูลค่าที่เพิ่มหรือไม่</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเปิดไม่ติดยังส่งข้อมูลได้</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องเปิดไม่ติดยังส่งข้อมูลได้</h2>
         <p>สามารถเริ่มจาก:</p>
         <ul>
         <li>รุ่น</li>
@@ -220,7 +313,14 @@ const faqs = [
         </ul>
         <p>เครื่องที่ไม่สามารถทดสอบฟังก์ชันได้จะมีความไม่แน่นอนมากกว่าเครื่องที่ใช้งานได้</p>
         <p>หาก Battery บวม เครื่องร้อน หรือมีกลิ่นไหม้ ไม่ควรชาร์จหรือเปิดซ้ำหลายครั้ง</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
         <h2>หน้าร้อยเอ็ดต่างจากหน้ารับซื้อ iPhone หลัก</h2>
         <p>หน้า <a href="/รับซื้อไอโฟน/">รับซื้อไอโฟน</a> เป็น Broad iPhone Money Hub</p>
         <p>ส่วน:</p>
@@ -228,165 +328,114 @@ const faqs = [
         <p>รักษา:</p>
         <p><strong>iPhone + Roi Et</strong></p>
         <p>จึงไม่ควรเปลี่ยนหน้านี้ให้ครอบคลุมมือถือทุกระบบหรือแข่งขันกับ Parent ด้วย Intent ระดับประเทศ</p>
-        <hr class="section-divider" />
-        <h2>ขั้นตอนเช็กราคา iPhone ในร้อยเอ็ด</h2>
-        <h3>1. แจ้งรุ่น</h3>
-        <p>Generation และรุ่นย่อย</p>
-        <h3>2. แจ้งความจุ</h3>
-        <p>ตามเครื่องจริง</p>
-        <h3>3. แจ้ง Battery Health</h3>
-        <p>ถ้าระบบแสดง</p>
-        <h3>4. ส่งรูป</h3>
-        <p>หน้า หลัง กรอบและชุดกล้อง</p>
-        <h3>5. ตรวจหน้าจอ</h3>
-        <p>รวม Touch และตำหนิ</p>
-        <h3>6. ตรวจ Face ID และกล้อง</h3>
-        <p>แจ้งอาการถ้ามี</p>
-        <h3>7. แจ้งประวัติซ่อม</h3>
-        <p>เท่าที่ทราบ</p>
-        <h3>8. แจ้งอุปกรณ์</h3>
-        <p>ตามสิ่งที่รวมขาย</p>
-        <h3>9. เช็กราคาเบื้องต้น</h3>
-        <p>ก่อนซื้ออะไหล่หรือซ่อมเพิ่ม</p>
-        <h3>10. ตรวจสินค้า</h3>
-        <p>ยืนยันรุ่น สภาพและสถานะก่อนซื้อขาย</p>
-        <hr class="section-divider" />
-        <h2>เริ่มเช็กราคา iPhone ในร้อยเอ็ด</h2>
-        <p>ส่ง:</p>
-        <p><strong>รุ่น + ความจุ + Battery Health + รูป + ตำหนิ</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
-      </article>
-    </div>
-  </main>
-
-  <section class="section section-muted">
-    <div class="container container-narrow">
-      <FAQ
-        items={faqs}
-        title="คำถามที่พบบ่อยเกี่ยวกับการขาย iPhone ในร้อยเอ็ด"
-      />
+      </div>
     </div>
   </section>
 
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
+        <h2>ขั้นตอนเช็กราคา iPhone ในร้อยเอ็ด</h2>
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. แจ้งรุ่น</h3>
+              <p>Generation และรุ่นย่อย</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. แจ้งความจุ</h3>
+              <p>ตามเครื่องจริง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. แจ้ง Battery Health</h3>
+              <p>ถ้าระบบแสดง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. ส่งรูป</h3>
+              <p>หน้า หลัง กรอบและชุดกล้อง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. ตรวจหน้าจอ</h3>
+              <p>รวม Touch และตำหนิ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. ตรวจ Face ID และกล้อง</h3>
+              <p>แจ้งอาการถ้ามี</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้งประวัติซ่อม</h3>
+              <p>เท่าที่ทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. แจ้งอุปกรณ์</h3>
+              <p>ตามสิ่งที่รวมขาย</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. เช็กราคาเบื้องต้น</h3>
+              <p>ก่อนซื้ออะไหล่หรือซ่อมเพิ่ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจสินค้า</h3>
+              <p>ยืนยันรุ่น สภาพและสถานะก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="commercial-final-cta">
+        <h2>เริ่มเช็กราคา iPhone ในร้อยเอ็ด</h2>
+        <p>ส่ง:</p>
+        <p><strong>รุ่น + ความจุ + Battery Health + รูป + ตำหนิ</strong></p>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขาย iPhone ในร้อยเอ็ด" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>
-
-<style>
-  .content-container {
-    padding: 2.5rem 0 4rem 0;
-  }
-
-  .prose-content {
-    background-color: #ffffff;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem 2rem;
-    box-shadow: var(--shadow-sm);
-  }
-
-  @media (max-width: 640px) {
-    .prose-content {
-      padding: 1.75rem 1.25rem;
-    }
-  }
-
-  .prose-content h1 {
-    font-size: 2.15rem;
-    color: var(--color-primary);
-    line-height: 1.3;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .prose-content h2 {
-    font-size: 1.55rem;
-    color: var(--color-primary);
-    line-height: 1.35;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .prose-content h3 {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    line-height: 1.4;
-    margin-top: 1.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .prose-content p {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--color-text-main);
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-
-  .prose-content ul,
-  .prose-content ol {
-    margin-top: 0.5rem;
-    margin-bottom: 1.25rem;
-    padding-left: 1.75rem;
-  }
-
-  .prose-content li {
-    font-size: 1.02rem;
-    line-height: 1.7;
-    color: var(--color-text-main);
-    margin-bottom: 0.4rem;
-  }
-
-  .prose-content strong {
-    color: var(--color-primary);
-    font-weight: 700;
-  }
-
-  .prose-content a {
-    color: var(--color-accent);
-    font-weight: 600;
-    text-decoration: underline;
-  }
-
-  .prose-content a:hover {
-    color: var(--color-accent-hover);
-  }
-
-  .section-divider {
-    border: 0;
-    height: 1px;
-    background-color: var(--color-border);
-    margin: 2.5rem 0;
-  }
-
-  .table-responsive {
-    overflow-x: auto;
-    margin: 1.5rem 0;
-  }
-
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-  }
-
-  .table th,
-  .table td {
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--color-border);
-    text-align: left;
-  }
-
-  .table th {
-    background-color: var(--color-bg-subtle);
-    color: var(--color-primary);
-    font-weight: 600;
-  }
-
-  .table tr:nth-child(even) {
-    background-color: #fafbfc;
-  }
-</style>

@@ -51,6 +51,8 @@ const faqs = [
     "answer": "ไม่ควรทดลองซ้ำหลายครั้งหากมี Battery บวม กลิ่นไหม้ ความร้อนผิดปกติ หรือร่องรอยของเหลว"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -59,31 +61,77 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อโน๊ตบุ๊คชุมแพ ขอนแก่น เช็กสเปกและอาการก่อนขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อโน๊ตบุ๊คชุมแพ ขอนแก่น เช็กสเปกและอาการก่อนขาย</h1>
         <p>หน้า <code>/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/</code> รักษา Historical Search Intent ระดับพื้นที่:</p>
         <p><strong>Notebook + ชุมแพ + ขอนแก่น</strong></p>
         <p>โดยอยู่ภายใต้ Local Intent ระดับจังหวัดของหน้า <a href="/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/">รับซื้อโน๊ตบุ๊คขอนแก่น</a></p>
         <p>หน้านี้จึงไม่ใช้แทนหน้าขอนแก่นทั้งจังหวัด และไม่ควรขยายไปเป็นหน้า Notebook ระดับประเทศ</p>
-        <p>เริ่มจากส่ง:</p>
-        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + อาการ + Adapter</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>ชุมแพเป็น Historical Intent ระดับพื้นที่ย่อย</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">เริ่มจากส่ง:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + อาการ + Adapter</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.webp" type="image/webp" />
+              <source srcset="/images/hero-laptop.avif" type="image/avif" />
+              <source srcset="/images/hero-laptop.webp" type="image/webp" />
+              <img
+                src="/images/hero-laptop.webp"
+                alt="รับซื้อโน๊ตบุ๊คชุมแพ ขอนแก่น เช็กสเปกและอาการก่อนขาย"
+                width="1200"
+                height="755"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ชุมแพเป็น Historical Intent ระดับพื้นที่ย่อย</h2>
         <p>ผู้ค้นหาที่ระบุคำว่า <strong>ชุมแพ</strong> มี Location Intent แคบกว่าคำว่า <strong>ขอนแก่น</strong></p>
         <p>โครงสร้างจึงควรเป็น:</p>
         <p><strong>Notebook หลัก → ขอนแก่นระดับจังหวัด → ชุมแพ</strong></p>
         <p>ไม่ใช่ให้หน้าอำเภอแข่งขันโดยตรงกับ Parent Money Hub</p>
         <p>การมีหน้าเฉพาะชุมแพไม่ได้หมายความว่ามีสาขา พนักงาน หรือจุดรับซื้อประจำอยู่ในพื้นที่</p>
-        <hr class="section-divider" />
-        <h2>เครื่องมีอาการสามารถเช็กข้อมูลก่อนตัดสินใจซ่อมได้</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องมีอาการสามารถเช็กข้อมูลก่อนตัดสินใจซ่อมได้</h2>
         <p>หาก Notebook มีปัญหา เช่น</p>
         <ul>
         <li>เปิดช้า</li>
@@ -96,8 +144,16 @@ const faqs = [
         </ul>
         <p>ควรเริ่มจากตรวจ Model และสเปกก่อน</p>
         <p>เครื่องรุ่นต่างกันอาจมีความคุ้มค่าในการซ่อมต่างกัน แม้อาการภายนอกเหมือนกัน</p>
-        <hr class="section-divider" />
-        <h2>Model และ Configuration ต้องตรงกับเครื่องปัจจุบัน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Model และ Configuration ต้องตรงกับเครื่องปัจจุบัน</h2>
         <p>Notebook ที่ผ่านการใช้งานอาจถูก:</p>
         <ul>
         <li>เพิ่ม RAM</li>
@@ -107,8 +163,9 @@ const faqs = [
         </ul>
         <p>ดังนั้นควรแจ้งสิ่งที่อยู่ในเครื่องจริงในปัจจุบัน</p>
         <p>ไม่ควรใช้สเปกจากหน้าสินค้าเดิมโดยไม่ตรวจเครื่อง</p>
-        <hr class="section-divider" />
-        <h2>CPU และ GPU ช่วยแยกมูลค่าเครื่อง</h2>
+        </div>
+        <div class="comm-card">
+          <h2>CPU และ GPU ช่วยแยกมูลค่าเครื่อง</h2>
         <p>ควรแจ้ง CPU แบบเต็ม เช่น:</p>
         <p><strong>Core i5-12500H</strong></p>
         <p>หรือ:</p>
@@ -119,8 +176,16 @@ const faqs = [
         <p><strong>RTX 3060</strong></p>
         <p><strong>RTX 4060 Laptop GPU</strong></p>
         <p>ชื่อ Series ของเครื่องเพียงอย่างเดียวอาจไม่พอ</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเล่นเกมดับหรือร้อนควรแจ้งตามอาการ</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องเล่นเกมดับหรือร้อนควรแจ้งตามอาการ</h2>
         <p>หากมีอาการเวลาใช้งานหนัก เช่น</p>
         <ul>
         <li>ดับ</li>
@@ -133,8 +198,9 @@ const faqs = [
         </ul>
         <p>ควรแจ้งตามที่พบ</p>
         <p>ไม่จำเป็นต้อง Stress Test ซ้ำอย่างหนักเพียงเพื่อถามราคา โดยเฉพาะเมื่อเครื่องไม่เสถียรอยู่แล้ว</p>
-        <hr class="section-divider" />
-        <h2>Battery กับระบบชาร์จควรแยกข้อมูล</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Battery กับระบบชาร์จควรแยกข้อมูล</h2>
         <p>ควรแจ้งว่า:</p>
         <ul>
         <li>Battery หมดเร็ว</li>
@@ -145,8 +211,16 @@ const faqs = [
         <li>Adapter มีปัญหา</li>
         </ul>
         <p>อาการเหล่านี้ไม่ควรถูกสรุปว่าเกิดจากอะไหล่ตัวใดโดยไม่มีการตรวจ</p>
-        <hr class="section-divider" />
-        <h2>หน้าจอและบานพับควรถ่ายชัดเจน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>หน้าจอและบานพับควรถ่ายชัดเจน</h2>
         <p>หากมีจอ:</p>
         <ul>
         <li>แตก</li>
@@ -157,15 +231,24 @@ const faqs = [
         </ul>
         <p>ควรถ่ายขณะเปิดเครื่อง</p>
         <p>หากบานพับมีปัญหา ควรถ่ายทั้งสองข้างและบริเวณฝาจอหรือ Palmrest ที่เกี่ยวข้อง</p>
-        <hr class="section-divider" />
-        <h2>ไม่มี Adapter ยังส่งมาประเมินได้</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ไม่มี Adapter ยังส่งมาประเมินได้</h2>
         <p>ควรแจ้งว่า:</p>
         <p><strong>ไม่มี Adapter</strong></p>
         <p>หรือ:</p>
         <p><strong>ใช้ Adapter เทียบ</strong></p>
         <p>ไม่จำเป็นต้องซื้อใหม่ก่อนทราบว่าต้นทุนคุ้มกับมูลค่าที่อาจเพิ่มขึ้นหรือไม่</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเปิดไม่ติดควรหยุดทดสอบเมื่อมีอาการเสี่ยง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องเปิดไม่ติดควรหยุดทดสอบเมื่อมีอาการเสี่ยง</h2>
         <p>สามารถสังเกตไฟสถานะ Fan หรืออาการพื้นฐานได้</p>
         <p>แต่ถ้ามี:</p>
         <ul>
@@ -176,8 +259,9 @@ const faqs = [
         </ul>
         <p>ไม่ควรเปิดหรือชาร์จซ้ำหลายครั้ง</p>
         <p>สามารถส่งข้อมูลตามสภาพเพื่อประเมินเบื้องต้นได้</p>
-        <hr class="section-divider" />
-        <h2>ประวัติซ่อมช่วยอธิบายสภาพของเครื่อง</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ประวัติซ่อมช่วยอธิบายสภาพของเครื่อง</h2>
         <p>ควรแจ้งถ้าทราบว่าเคย:</p>
         <ul>
         <li>ซ่อม Mainboard</li>
@@ -190,7 +274,14 @@ const faqs = [
         <li>โดนน้ำ</li>
         </ul>
         <p>ไม่จำเป็นต้องมีเอกสารทุกครั้ง แต่ควรแจ้งข้อมูลที่ทราบตามจริง</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
         <h2>ไม่ต้องให้รหัสผ่านเพื่อเช็กราคา</h2>
         <p>ไม่ควรส่ง:</p>
         <ul>
@@ -201,165 +292,114 @@ const faqs = [
         <li>Email Password</li>
         </ul>
         <p>การประเมิน Hardware เบื้องต้นไม่จำเป็นต้องใช้ข้อมูลลับของเจ้าของเครื่อง</p>
-        <hr class="section-divider" />
-        <h2>ขั้นตอนเช็กราคา Notebook ในชุมแพ</h2>
-        <h3>1. ส่ง Model</h3>
-        <p>ใช้ชื่อรุ่นเต็ม</p>
-        <h3>2. ส่ง CPU และ GPU</h3>
-        <p>โดยเฉพาะ Gaming Notebook</p>
-        <h3>3. ส่ง RAM และ SSD</h3>
-        <p>Configuration ที่รวมขาย</p>
-        <h3>4. แจ้ง Battery</h3>
-        <p>Health หรืออาการ</p>
-        <h3>5. ส่งรูป</h3>
-        <p>รวมหน้าจอ บานพับและตำหนิ</p>
-        <h3>6. แจ้งอาการ</h3>
-        <p>ถ้าเครื่องไม่ปกติ</p>
-        <h3>7. แจ้ง Adapter</h3>
-        <p>เดิม เทียบ หรือไม่มี</p>
-        <h3>8. แจ้งประวัติซ่อม</h3>
-        <p>ถ้าทราบ</p>
-        <h3>9. เช็กราคาตามสภาพ</h3>
-        <p>ก่อนลงทุนซ่อม</p>
-        <h3>10. ตรวจสินค้า</h3>
-        <p>ยืนยัน Configuration ก่อนซื้อขาย</p>
-        <hr class="section-divider" />
-        <h2>เริ่มเช็กราคาโน๊ตบุ๊คในชุมแพ ขอนแก่น</h2>
-        <p>ส่ง:</p>
-        <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป + อาการ + Adapter</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
-      </article>
-    </div>
-  </main>
-
-  <section class="section section-muted">
-    <div class="container container-narrow">
-      <FAQ
-        items={faqs}
-        title="คำถามที่พบบ่อยเกี่ยวกับการขาย Notebook ในชุมแพ"
-      />
+      </div>
     </div>
   </section>
 
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
+        <h2>ขั้นตอนเช็กราคา Notebook ในชุมแพ</h2>
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. ส่ง Model</h3>
+              <p>ใช้ชื่อรุ่นเต็ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. ส่ง CPU และ GPU</h3>
+              <p>โดยเฉพาะ Gaming Notebook</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. ส่ง RAM และ SSD</h3>
+              <p>Configuration ที่รวมขาย</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. แจ้ง Battery</h3>
+              <p>Health หรืออาการ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. ส่งรูป</h3>
+              <p>รวมหน้าจอ บานพับและตำหนิ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. แจ้งอาการ</h3>
+              <p>ถ้าเครื่องไม่ปกติ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้ง Adapter</h3>
+              <p>เดิม เทียบ หรือไม่มี</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. แจ้งประวัติซ่อม</h3>
+              <p>ถ้าทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. เช็กราคาตามสภาพ</h3>
+              <p>ก่อนลงทุนซ่อม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจสินค้า</h3>
+              <p>ยืนยัน Configuration ก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="commercial-final-cta">
+        <h2>เริ่มเช็กราคาโน๊ตบุ๊คในชุมแพ ขอนแก่น</h2>
+        <p>ส่ง:</p>
+        <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป + อาการ + Adapter</strong></p>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขาย Notebook ในชุมแพ" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>
-
-<style>
-  .content-container {
-    padding: 2.5rem 0 4rem 0;
-  }
-
-  .prose-content {
-    background-color: #ffffff;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem 2rem;
-    box-shadow: var(--shadow-sm);
-  }
-
-  @media (max-width: 640px) {
-    .prose-content {
-      padding: 1.75rem 1.25rem;
-    }
-  }
-
-  .prose-content h1 {
-    font-size: 2.15rem;
-    color: var(--color-primary);
-    line-height: 1.3;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .prose-content h2 {
-    font-size: 1.55rem;
-    color: var(--color-primary);
-    line-height: 1.35;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .prose-content h3 {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    line-height: 1.4;
-    margin-top: 1.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .prose-content p {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--color-text-main);
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-
-  .prose-content ul,
-  .prose-content ol {
-    margin-top: 0.5rem;
-    margin-bottom: 1.25rem;
-    padding-left: 1.75rem;
-  }
-
-  .prose-content li {
-    font-size: 1.02rem;
-    line-height: 1.7;
-    color: var(--color-text-main);
-    margin-bottom: 0.4rem;
-  }
-
-  .prose-content strong {
-    color: var(--color-primary);
-    font-weight: 700;
-  }
-
-  .prose-content a {
-    color: var(--color-accent);
-    font-weight: 600;
-    text-decoration: underline;
-  }
-
-  .prose-content a:hover {
-    color: var(--color-accent-hover);
-  }
-
-  .section-divider {
-    border: 0;
-    height: 1px;
-    background-color: var(--color-border);
-    margin: 2.5rem 0;
-  }
-
-  .table-responsive {
-    overflow-x: auto;
-    margin: 1.5rem 0;
-  }
-
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-  }
-
-  .table th,
-  .table td {
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--color-border);
-    text-align: left;
-  }
-
-  .table th {
-    background-color: var(--color-bg-subtle);
-    color: var(--color-primary);
-    font-weight: 600;
-  }
-
-  .table tr:nth-child(even) {
-    background-color: #fafbfc;
-  }
-</style>

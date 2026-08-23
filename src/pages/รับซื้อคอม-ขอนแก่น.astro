@@ -47,6 +47,8 @@ const faqs = [
     "answer": "ควรเริ่มจากแยก Model หรือ Configuration เป็นกลุ่ม พร้อมจำนวนและสภาพ หากเครื่องในกลุ่มเดียวกันเหมือนกันสามารถจัดข้อมูลร่วมกันได้และค่อยส่งรูปตัวอย่างกับจุดที่ต่างกัน"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -55,22 +57,67 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อคอมขอนแก่น เช็กสเปกและมูลค่า Hardware ก่อนขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อคอมขอนแก่น เช็กสเปกและมูลค่า Hardware ก่อนขาย</h1>
         <p>คอมพิวเตอร์มือสองในขอนแก่นหนึ่งเครื่องอาจมีมูลค่าต่างกันมาก แม้ใช้ Case รุ่นเดียวกัน เพราะ Hardware ภายในสามารถถูกอัปเกรดหรือถอดเปลี่ยนได้ตลอดอายุการใช้งาน</p>
         <p>หน้า <code>/รับซื้อคอม-ขอนแก่น/</code> จึงเน้นการประเมิน <strong>Desktop, Gaming PC, Workstation และคอมประกอบในพื้นที่ขอนแก่นจาก Configuration ปัจจุบัน</strong></p>
-        <p>เริ่มจาก:</p>
-        <p><strong>CPU + GPU + RAM + SSD + Mainboard + PSU + รูปภายใน Case</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>ผู้ขายในขอนแก่นเริ่มประเมินจากรูปและสเปกก่อนได้</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">เริ่มจาก:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>CPU + GPU + RAM + SSD + Mainboard + PSU + รูปภายใน Case</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-desktop-pc-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-desktop-pc-500.webp" type="image/webp" />
+              <source srcset="/images/hero-desktop-pc.avif" type="image/avif" />
+              <source srcset="/images/hero-desktop-pc.webp" type="image/webp" />
+              <img
+                src="/images/hero-desktop-pc.webp"
+                alt="รับซื้อคอมขอนแก่น เช็กสเปกและมูลค่า Hardware ก่อนขาย"
+                width="688"
+                height="784"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ผู้ขายในขอนแก่นเริ่มประเมินจากรูปและสเปกก่อนได้</h2>
         <p>หากอยู่ใน:</p>
         <ul>
         <li>อำเภอเมืองขอนแก่น</li>
@@ -84,8 +131,9 @@ const faqs = [
         <p>สามารถเริ่มจากข้อมูลเครื่องก่อนโดยไม่จำเป็นต้องขน Case หรือชุดคอมเพื่อถามราคา</p>
         <p>หลังประเมินเบื้องต้นจึงค่อยพิจารณาวิธีตรวจสินค้าและส่งมอบตามพื้นที่และความเหมาะสม</p>
         <p>ไม่ได้หมายความว่ามีหน้าร้านหรือจุดรับซื้ออยู่ทุกอำเภอ</p>
-        <hr class="section-divider" />
-        <h2>อย่าประเมินคอมประกอบจากราคาตอนซื้อเพียงอย่างเดียว</h2>
+        </div>
+        <div class="comm-card">
+          <h2>อย่าประเมินคอมประกอบจากราคาตอนซื้อเพียงอย่างเดียว</h2>
         <p>ราคาตอนประกอบใหม่อาจประกอบด้วย:</p>
         <ul>
         <li>Hardware ที่ปัจจุบันถูกเปลี่ยนออกแล้ว</li>
@@ -97,8 +145,16 @@ const faqs = [
         </ul>
         <p>แต่ราคามือสองต้องดูชิ้นส่วนที่อยู่ในเครื่องจริงในปัจจุบัน</p>
         <p>ดังนั้นใบเสร็จเดิมใช้ช่วยตรวจข้อมูลได้ แต่ไม่ใช่ตัวกำหนดราคาปัจจุบันเพียงอย่างเดียว</p>
-        <hr class="section-divider" />
-        <h2>การ์ดจอและ CPU ควรระบุให้ครบก่อน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>การ์ดจอและ CPU ควรระบุให้ครบก่อน</h2>
         <p>สำหรับ Gaming PC ควรเริ่มจากสองรายการนี้</p>
         <p>ตัวอย่าง:</p>
         <p><strong>CPU: Intel Core i5-13400F</strong></p>
@@ -107,8 +163,9 @@ const faqs = [
         <p><strong>CPU: Ryzen 7 5700X</strong></p>
         <p><strong>GPU: RX 6700 XT</strong></p>
         <p>ไม่ควรใช้คำว่า “i5 + RTX” เพราะยังไม่สามารถแยก Generation และระดับ Hardware ได้ชัดเจน</p>
-        <hr class="section-divider" />
-        <h2>Mainboard สำคัญเมื่อเครื่องมีการอัปเกรด</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Mainboard สำคัญเมื่อเครื่องมีการอัปเกรด</h2>
         <p>ผู้ขายบางรายทราบ CPU และ GPU แต่ไม่ทราบ Board</p>
         <p>หากทำได้ควรแจ้ง:</p>
         <ul>
@@ -125,8 +182,16 @@ const faqs = [
         <li>Upgrade Path</li>
         </ul>
         <p>หากไม่ทราบสามารถถ่ายรูปภายใน Case ให้เห็นชื่อรุ่นบน Board ได้</p>
-        <hr class="section-divider" />
-        <h2>RAM ต้องดูทั้งความจุและ Generation</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>RAM ต้องดูทั้งความจุและ Generation</h2>
         <p>ควรแจ้ง:</p>
         <ul>
         <li>DDR4 หรือ DDR5</li>
@@ -137,8 +202,9 @@ const faqs = [
         <p>เช่น</p>
         <p><strong>DDR5 16GB × 2 = 32GB</strong></p>
         <p>เครื่องที่ระบุเพียงว่า “RAM เยอะ” ยังไม่เพียงพอต่อการแยก Configuration</p>
-        <hr class="section-divider" />
-        <h2>SSD หลายลูกต้องแจ้งสิ่งที่ขายจริง</h2>
+        </div>
+        <div class="comm-card">
+          <h2>SSD หลายลูกต้องแจ้งสิ่งที่ขายจริง</h2>
         <p>ตัวอย่าง:</p>
         <p>เครื่องมี:</p>
         <ul>
@@ -149,8 +215,16 @@ const faqs = [
         <p>แต่ผู้ขายต้องการเก็บ NVMe 1TB ไว้</p>
         <p>ควรแจ้งตั้งแต่ตอนประเมินว่า Storage ใดรวมขายจริง</p>
         <p>ไม่ควรใช้สเปกเต็มของเครื่องแล้วถอด Drive ออกภายหลังโดยไม่แจ้ง</p>
-        <hr class="section-divider" />
-        <h2>Workstation ควรแยกจาก Gaming PC อย่างไร</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Workstation ควรแยกจาก Gaming PC อย่างไร</h2>
         <p>Workstation บางเครื่องใช้ Hardware ที่ต่างจาก Gaming PC เช่น</p>
         <ul>
         <li>CPU รุ่นที่มี Core สูง</li>
@@ -161,8 +235,9 @@ const faqs = [
         <li>Hardware เฉพาะงาน</li>
         </ul>
         <p>หากเป็น Workstation ควรแจ้ง Configuration เต็มเท่าที่ทราบ ไม่ควรประเมินจากรูปลักษณ์ Case หรือ GPU เพียงชิ้นเดียว</p>
-        <hr class="section-divider" />
-        <h2>เครื่องขายพร้อม Monitor ควรแยกรายการ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องขายพร้อม Monitor ควรแยกรายการ</h2>
         <p>Monitor มีมูลค่าของตัวเอง</p>
         <p>ควรแจ้ง:</p>
         <ul>
@@ -178,16 +253,25 @@ const faqs = [
         <p>หรือ</p>
         <p><strong>จอไม่รวมขาย</strong></p>
         <p>ช่วยป้องกันความคลาดเคลื่อนเมื่อตรวจสินค้าจริง</p>
-        <hr class="section-divider" />
-        <h2>เครื่องไม่มีการ์ดจอยังประเมินได้ไหม</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องไม่มีการ์ดจอยังประเมินได้ไหม</h2>
         <p>ได้</p>
         <p>บางเครื่องใช้ Integrated Graphics หรือขายหลังจากถอด GPU ออกแล้ว</p>
         <p>ควรแจ้งว่า:</p>
         <p><strong>ไม่รวมการ์ดจอ</strong></p>
         <p>และแจ้ง CPU ให้ชัด เพราะ CPU บางรุ่นมี iGPU และบางรุ่นไม่มี</p>
         <p>ไม่ควรสมมติว่าเครื่องเปิดใช้งานได้โดยไม่ตรวจว่า Configuration ปัจจุบันรองรับภาพออกหรือไม่</p>
-        <hr class="section-divider" />
-        <h2>PSU ไม่ควรถูกมองข้าม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>PSU ไม่ควรถูกมองข้าม</h2>
         <p>ควรถ่าย Label ของ PSU หากอ่านรุ่นได้</p>
         <p>ข้อมูลสำคัญ:</p>
         <ul>
@@ -200,8 +284,16 @@ const faqs = [
         <li>อาการ</li>
         </ul>
         <p>PSU ที่ไม่มีข้อมูลชัดกับ PSU รุ่นที่ตรวจสอบได้ไม่ควรถูกประเมินเหมือนกันโดยอัตโนมัติ</p>
-        <hr class="section-divider" />
-        <h2>คอมมีอาการแต่ยังเปิดได้ต้องแจ้งตามจริง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>คอมมีอาการแต่ยังเปิดได้ต้องแจ้งตามจริง</h2>
         <p>ตัวอย่าง:</p>
         <ul>
         <li>Boot ช้า</li>
@@ -217,8 +309,9 @@ const faqs = [
         </ul>
         <p>อาการเหล่านี้มีผลต่อความเสี่ยงในการตรวจ</p>
         <p>ไม่ควรซ่อนอาการเพื่อให้เครื่องดูเหมือนปกติ</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเปิดไม่ติดควรใช้หน้าคอมนี้หรือซากคอม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องเปิดไม่ติดควรใช้หน้าคอมนี้หรือซากคอม</h2>
         <p>หากเครื่องเปิดไม่ติดแต่ยังมี Configuration ชัด สามารถส่งข้อมูลเบื้องต้นได้</p>
         <p>แต่หาก:</p>
         <ul>
@@ -229,58 +322,143 @@ const faqs = [
         </ul>
         <p>Intent จะใกล้กับ <strong>รับซื้อซากคอมพิวเตอร์</strong> มากกว่า</p>
         <p>หน้า <code>/รับซื้อคอม-ขอนแก่น/</code> จึงรักษา Local Intent ของเครื่อง Desktop/PC เป็นหลัก ไม่ใช่หน้าซากคอมประจำจังหวัด</p>
-        <hr class="section-divider" />
-        <h2>บริษัทหรือสำนักงานในขอนแก่นมีหลายเครื่องควรจัดกลุ่ม</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>บริษัทหรือสำนักงานในขอนแก่นมีหลายเครื่องควรจัดกลุ่ม</h2>
         <p>ควรแยกตาม Configuration เช่น</p>
-        <table class="table table-bordered">
+        <div class="table-responsive"><table class="table table-bordered">
           <thead><tr><th>กลุ่ม</th><th>CPU</th><th>RAM</th><th>Storage</th><th>จำนวน</th><th>สถานะ</th></tr></thead>
           <tbody>
           <tr><td>A</td><td>i5-...</td><td>16GB</td><td>512GB</td><td>6</td><td>ใช้งานได้</td></tr>
           <tr><td>B</td><td>i5-...</td><td>8GB</td><td>256GB</td><td>10</td><td>มีรอย</td></tr>
           <tr><td>C</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>ไม่มี</td><td>3</td><td>ยังไม่ได้ทดสอบ</td></tr>
-          </tbody></table>
+          </tbody></table></div>
         <p>หากมี Asset Tag สามารถใช้จัดรายการภายในได้ แต่ไม่จำเป็นต้องส่งข้อมูลบริษัทอื่นที่ไม่เกี่ยวกับ Hardware</p>
-        <hr class="section-divider" />
-        <h2>หน้า Local ขอนแก่นต้องไม่แทนหน้ารับซื้อคอมหลัก</h2>
+        </div>
+        <div class="comm-card">
+          <h2>หน้า Local ขอนแก่นต้องไม่แทนหน้ารับซื้อคอมหลัก</h2>
         <p>หน้า <a href="/รับซื้อคอม/"><code>/รับซื้อคอม/</code></a> เป็นเจ้าของ Broad Intent:</p>
         <p><strong>รับซื้อคอม / Gaming PC / Desktop / คอมประกอบ</strong></p>
         <p>ส่วนหน้านี้เป็น:</p>
         <p><strong>Computer + Khon Kaen</strong></p>
         <p>จึงไม่ควรเพิ่มข้อความทั่วประเทศหรือขยายไปเป็นหน้า Broad Computer อีกหน้า</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
         <h2>ขั้นตอนเช็กราคาคอมในขอนแก่น</h2>
-        <h3>1. แจ้ง CPU</h3>
-        <p>ใช้รุ่นเต็ม</p>
-        <h3>2. แจ้ง GPU</h3>
-        <p>หากไม่มีให้ระบุว่าไม่มี</p>
-        <h3>3. แจ้ง RAM และ Storage</h3>
-        <p>ใช้ Configuration ปัจจุบัน</p>
-        <h3>4. แจ้ง Mainboard และ PSU</h3>
-        <p>ถ้าทราบ</p>
-        <h3>5. ส่งรูป</h3>
-        <p>ภายนอกและภายใน Case</p>
-        <h3>6. แจ้งอาการ</h3>
-        <p>รวมถึง Hardware ที่ยังไม่ได้ทดสอบ</p>
-        <h3>7. แจ้งสิ่งที่รวมขาย</h3>
-        <p>เช่น Monitor, Keyboard หรืออุปกรณ์อื่น</p>
-        <h3>8. ประเมินเบื้องต้น</h3>
-        <p>พิจารณา Hardware และสภาพจริง</p>
-        <h3>9. ตัดสินใจ</h3>
-        <p>ขายทั้งเครื่องหรือแยกอุปกรณ์</p>
-        <h3>10. ตรวจสินค้า</h3>
-        <p>ตรวจ Configuration ให้ตรงกับข้อมูลก่อนซื้อขาย</p>
-        <hr class="section-divider" />
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. แจ้ง CPU</h3>
+              <p>ใช้รุ่นเต็ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. แจ้ง GPU</h3>
+              <p>หากไม่มีให้ระบุว่าไม่มี</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. แจ้ง RAM และ Storage</h3>
+              <p>ใช้ Configuration ปัจจุบัน</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. แจ้ง Mainboard และ PSU</h3>
+              <p>ถ้าทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. ส่งรูป</h3>
+              <p>ภายนอกและภายใน Case</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. แจ้งอาการ</h3>
+              <p>รวมถึง Hardware ที่ยังไม่ได้ทดสอบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้งสิ่งที่รวมขาย</h3>
+              <p>เช่น Monitor, Keyboard หรืออุปกรณ์อื่น</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. ประเมินเบื้องต้น</h3>
+              <p>พิจารณา Hardware และสภาพจริง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. ตัดสินใจ</h3>
+              <p>ขายทั้งเครื่องหรือแยกอุปกรณ์</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจสินค้า</h3>
+              <p>ตรวจ Configuration ให้ตรงกับข้อมูลก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="commercial-final-cta">
         <h2>เริ่มเช็กราคาคอมในขอนแก่น</h2>
         <p>ส่ง:</p>
         <p><strong>CPU + GPU + RAM + SSD + Mainboard + PSU</strong></p>
         <p>พร้อมรูปภายใน Case และตำหนิ</p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
-        <hr class="section-divider" />
-        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายคอมมือสองในขอนแก่น" />
-      </article>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
     </div>
-  </main>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายคอมมือสองในขอนแก่น" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>

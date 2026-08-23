@@ -47,6 +47,8 @@ const faqs = [
     "answer": "ไม่จำเป็นทุกกรณี ควรเริ่มจากเช็กราคาตามสภาพและเปรียบเทียบค่าใช้จ่ายในการซ่อมก่อนตัดสินใจ"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -55,23 +57,68 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อโน๊ตบุ๊คชัยภูมิ เช็กสเปก แบตเตอรี่ และสภาพก่อนขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อโน๊ตบุ๊คชัยภูมิ เช็กสเปก แบตเตอรี่ และสภาพก่อนขาย</h1>
         <p>การขาย Notebook มือสองในชัยภูมิสามารถเริ่มจากการตรวจข้อมูลเครื่องก่อน โดยเฉพาะ Model, CPU, RAM, SSD, GPU และ Battery เพราะ Notebook ชื่อ Series เดียวกันอาจมีหลาย Configuration</p>
         <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/</code> รักษา Historical Intent:</p>
         <p><strong>Notebook + Chaiyaphum</strong></p>
-        <p>ส่ง:</p>
-        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>ผู้ขายในชัยภูมิส่งข้อมูลมาก่อนได้</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">ส่ง:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.webp" type="image/webp" />
+              <source srcset="/images/hero-laptop.avif" type="image/avif" />
+              <source srcset="/images/hero-laptop.webp" type="image/webp" />
+              <img
+                src="/images/hero-laptop.webp"
+                alt="รับซื้อโน๊ตบุ๊คชัยภูมิ เช็กสเปก แบตเตอรี่ และสภาพก่อนขาย"
+                width="1200"
+                height="755"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ผู้ขายในชัยภูมิส่งข้อมูลมาก่อนได้</h2>
         <p>ไม่ว่าจะอยู่ในอำเภอเมืองชัยภูมิหรือพื้นที่อื่นในจังหวัด สามารถเริ่มจากส่งรายละเอียดก่อน</p>
         <p>การประเมินเบื้องต้นช่วยให้ตัดสินใจได้ว่าจะ:</p>
         <ul>
@@ -81,8 +128,9 @@ const faqs = [
         <li>หรือเก็บไว้ใช้งานต่อ</li>
         </ul>
         <p>ไม่จำเป็นต้องเดินทางพร้อมเครื่องเพียงเพื่อขอราคาเบื้องต้น และไม่ได้หมายความว่ามีจุดรับซื้อประจำในทุกอำเภอ</p>
-        <hr class="section-divider" />
-        <h2>Model เต็มช่วยแยกรุ่นได้ถูกต้องกว่า</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Model เต็มช่วยแยกรุ่นได้ถูกต้องกว่า</h2>
         <p>ควรตรวจจาก:</p>
         <ul>
         <li>ใต้เครื่อง</li>
@@ -92,8 +140,16 @@ const faqs = [
         <li>กล่องเดิม</li>
         </ul>
         <p>Notebook Series เดียวกันอาจเปลี่ยนสเปกตามปีและรุ่นย่อย</p>
-        <hr class="section-divider" />
-        <h2>CPU และ GPU สำคัญกับเครื่องคนละประเภท</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>CPU และ GPU สำคัญกับเครื่องคนละประเภท</h2>
         <p>Notebook ทำงานทั่วไปอาจใช้ Integrated Graphics</p>
         <p>แต่ Gaming Notebook หรือเครื่องกราฟิกมักมี Dedicated GPU</p>
         <p>ดังนั้นหากมี GPU ควรแจ้งรุ่นเต็ม</p>
@@ -101,14 +157,23 @@ const faqs = [
         <p><strong>RTX 4050 Laptop GPU</strong></p>
         <p>แทนการแจ้งเพียงว่า:</p>
         <p><strong>RTX</strong></p>
-        <hr class="section-divider" />
-        <h2>RAM และ SSD ต้องใช้ของที่ติดตั้งจริง</h2>
+        </div>
+        <div class="comm-card">
+          <h2>RAM และ SSD ต้องใช้ของที่ติดตั้งจริง</h2>
         <p>หากอัปเกรดแล้ว ให้แจ้งสเปกปัจจุบัน</p>
         <p>เช่น:</p>
         <p><strong>RAM 32GB / SSD 1TB</strong></p>
         <p>หากตั้งใจเก็บ SSD ไว้ ต้องระบุว่า Storage ไม่รวมขายตั้งแต่ตอนประเมิน</p>
-        <hr class="section-divider" />
-        <h2>Battery และ Adapter ควรพิจารณาคู่กัน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Battery และ Adapter ควรพิจารณาคู่กัน</h2>
         <p>Notebook ที่ Battery เสื่อมแต่ Adapter ปกติกับเครื่องที่มีปัญหาทั้ง Battery และระบบชาร์จมีความเสี่ยงต่างกัน</p>
         <p>ควรแจ้ง:</p>
         <ul>
@@ -118,8 +183,9 @@ const faqs = [
         <li>Adapter เดิมหรือเทียบ</li>
         <li>Port ชาร์จมีอาการหรือไม่</li>
         </ul>
-        <hr class="section-divider" />
-        <h2>หน้าจอและบานพับต้องดูจากสภาพจริง</h2>
+        </div>
+        <div class="comm-card">
+          <h2>หน้าจอและบานพับต้องดูจากสภาพจริง</h2>
         <p>ควรถ่าย:</p>
         <ul>
         <li>จอขณะเปิด</li>
@@ -130,8 +196,16 @@ const faqs = [
         <li>Bottom Case</li>
         </ul>
         <p>หากมีจอเป็นเส้น จอกระพริบ หรือบานพับแตก ควรแจ้งให้ชัด</p>
-        <hr class="section-divider" />
-        <h2>Gaming Notebook ร้อนหรือดับควรแจ้งอาการ</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Gaming Notebook ร้อนหรือดับควรแจ้งอาการ</h2>
         <p>หากมีอาการเวลาใช้งานหนัก เช่น</p>
         <ul>
         <li>ดับ</li>
@@ -143,8 +217,9 @@ const faqs = [
         </ul>
         <p>ควรแจ้งตามที่พบ</p>
         <p>ไม่จำเป็นต้อง Stress Test ซ้ำอย่างหนักหากเครื่องไม่เสถียรอยู่แล้ว</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเคยซ่อมหรือโดนน้ำควรแจ้ง</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องเคยซ่อมหรือโดนน้ำควรแจ้ง</h2>
         <p>ข้อมูลอย่าง:</p>
         <ul>
         <li>เปลี่ยนจอ</li>
@@ -156,8 +231,16 @@ const faqs = [
         </ul>
         <p>มีประโยชน์ต่อการประเมินสภาพ</p>
         <p>ไม่ควรปิดบังอาการหรือประวัติที่ทราบ</p>
-        <hr class="section-divider" />
-        <h2>ไม่มี Adapter หรือกล่องยังเช็กราคาได้</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ไม่มี Adapter หรือกล่องยังเช็กราคาได้</h2>
         <p>ได้</p>
         <p>ควรแจ้งว่า:</p>
         <ul>
@@ -167,8 +250,9 @@ const faqs = [
         <li>มีกล่องหรือไม่</li>
         </ul>
         <p>ไม่จำเป็นต้องซื้ออุปกรณ์เพิ่มก่อนประเมิน</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเปิดไม่ติดควรส่งข้อมูลอะไร</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องเปิดไม่ติดควรส่งข้อมูลอะไร</h2>
         <p>ส่ง:</p>
         <ul>
         <li>Model</li>
@@ -181,58 +265,143 @@ const faqs = [
         <li>ประวัติก่อนเสีย</li>
         </ul>
         <p>หากมีกลิ่นไหม้หรือ Battery บวม ไม่ควรเปิดซ้ำโดยไม่จำเป็น</p>
-        <hr class="section-divider" />
-        <h2>Notebook หลายเครื่องควรแยก Configuration</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Notebook หลายเครื่องควรแยก Configuration</h2>
         <p>สำหรับบริษัทหรือสำนักงาน สามารถส่งเป็นรายการ:</p>
-        <table class="table table-bordered">
+        <div class="table-responsive"><table class="table table-bordered">
           <thead><tr><th>รุ่น</th><th>CPU</th><th>RAM</th><th>SSD</th><th>จำนวน</th><th>สภาพ</th></tr></thead>
           <tbody>
           <tr><td>รุ่น...</td><td>i5-...</td><td>8GB</td><td>256GB</td><td>5</td><td>ปกติ</td></tr>
           <tr><td>รุ่น...</td><td>i7-...</td><td>16GB</td><td>512GB</td><td>2</td><td>Battery เสื่อม</td></tr>
           <tr><td>รุ่น...</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>1</td><td>เปิดไม่ติด</td></tr>
-          </tbody></table>
+          </tbody></table></div>
         <p>ไม่ต้องเปิดเผยข้อมูลภายในที่ไม่เกี่ยวกับ Hardware</p>
-        <hr class="section-divider" />
-        <h2>หน้า Local ชัยภูมิต่างจาก Notebook Money Hub</h2>
+        </div>
+        <div class="comm-card">
+          <h2>หน้า Local ชัยภูมิต่างจาก Notebook Money Hub</h2>
         <p>หน้า <a href="/รับซื้อโน๊ตบุ๊ค/"><code>/รับซื้อโน๊ตบุ๊ค/</code></a> เป็นเจ้าของ Broad Notebook Intent</p>
         <p>ส่วน:</p>
         <p><code>/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/</code></p>
         <p>เป็นหน้า:</p>
         <p><strong>Notebook + Chaiyaphum</strong></p>
         <p>จึงไม่ควรใช้เนื้อหาหน้านี้แข่งขันกับ Parent ด้วยคำกว้างในระดับประเทศ</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
         <h2>ขั้นตอนเช็กราคา Notebook ในชัยภูมิ</h2>
-        <h3>1. ส่ง Model</h3>
-        <p>ชื่อเต็มเท่าที่ตรวจได้</p>
-        <h3>2. ส่ง CPU</h3>
-        <p>รหัสรุ่นเต็ม</p>
-        <h3>3. ส่ง RAM และ SSD</h3>
-        <p>Configuration ปัจจุบัน</p>
-        <h3>4. ส่ง GPU</h3>
-        <p>สำหรับ Gaming หรือเครื่องที่มี Dedicated GPU</p>
-        <h3>5. แจ้ง Battery และ Adapter</h3>
-        <p>ตามสภาพจริง</p>
-        <h3>6. ส่งรูป</h3>
-        <p>รวมจอและบานพับ</p>
-        <h3>7. แจ้งตำหนิ</h3>
-        <p>ทั้งภายนอกและการใช้งาน</p>
-        <h3>8. แจ้งประวัติซ่อม</h3>
-        <p>หากทราบ</p>
-        <h3>9. ประเมินก่อนตัดสินใจ</h3>
-        <p>เปรียบเทียบการขายกับการซ่อมถ้าจำเป็น</p>
-        <h3>10. ตรวจเครื่อง</h3>
-        <p>ยืนยันสเปกและสภาพก่อนซื้อขาย</p>
-        <hr class="section-divider" />
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. ส่ง Model</h3>
+              <p>ชื่อเต็มเท่าที่ตรวจได้</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. ส่ง CPU</h3>
+              <p>รหัสรุ่นเต็ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. ส่ง RAM และ SSD</h3>
+              <p>Configuration ปัจจุบัน</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. ส่ง GPU</h3>
+              <p>สำหรับ Gaming หรือเครื่องที่มี Dedicated GPU</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. แจ้ง Battery และ Adapter</h3>
+              <p>ตามสภาพจริง</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. ส่งรูป</h3>
+              <p>รวมจอและบานพับ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้งตำหนิ</h3>
+              <p>ทั้งภายนอกและการใช้งาน</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. แจ้งประวัติซ่อม</h3>
+              <p>หากทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. ประเมินก่อนตัดสินใจ</h3>
+              <p>เปรียบเทียบการขายกับการซ่อมถ้าจำเป็น</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจเครื่อง</h3>
+              <p>ยืนยันสเปกและสภาพก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="commercial-final-cta">
         <h2>เริ่มเช็กราคาโน๊ตบุ๊คในชัยภูมิ</h2>
         <p>ส่ง:</p>
         <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
-        <hr class="section-divider" />
-        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในชัยภูมิ" />
-      </article>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
     </div>
-  </main>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในชัยภูมิ" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>

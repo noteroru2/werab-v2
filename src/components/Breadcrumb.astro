@@ -6,63 +6,57 @@ interface Props {
 }
 
 const { items } = Astro.props;
+
+// Filter out initial root item if already present in items array to avoid duplicate "หน้าแรก"
+const displayItems = items && items[0]?.url === '/' ? items.slice(1) : (items || []);
 ---
 
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-  <div class="container">
-    <ol class="breadcrumb-list">
-      <li class="breadcrumb-item">
-        <a href="/">หน้าแรก</a>
-      </li>
-      {items.map((item, index) => {
-        const isLast = index === items.length - 1;
-        return (
-          <li class={`breadcrumb-item ${isLast ? 'active' : ''}`}>
-            <span class="separator" aria-hidden="true">/</span>
-            {isLast ? (
-              <span aria-current="page">{item.name}</span>
-            ) : (
-              <a href={item.url}>{item.name}</a>
-            )}
-          </li>
-        );
-      })}
-    </ol>
-  </div>
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="/">หน้าแรก</a>
+    </li>
+    {displayItems.map((item, index) => {
+      const isLast = index === displayItems.length - 1;
+      return (
+        <li class={`breadcrumb-item ${isLast ? 'active' : ''}`}>
+          <span class="separator" aria-hidden="true">/</span>
+          {isLast ? (
+            <span aria-current="page">{item.name}</span>
+          ) : (
+            <a href={item.url}>{item.name}</a>
+          )}
+        </li>
+      );
+    })}
+  </ol>
 </nav>
 
 <style>
   .breadcrumb-nav {
-    background-color: var(--surface-2);
-    border-bottom: 1px solid var(--border);
-    padding: 0.55rem 0;
-    font-size: 0.82rem;
+    background: transparent;
+    padding: 0 0 0.65rem 0;
+    font-size: 0.84rem;
     max-width: 100%;
-    overflow: hidden;
+    min-width: 0;
   }
 
   .breadcrumb-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 0.4rem;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    gap: 0.35rem;
     max-width: 100%;
-  }
-
-  .breadcrumb-list::-webkit-scrollbar {
-    display: none;
+    min-width: 0;
   }
 
   .breadcrumb-item {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.35rem;
     color: var(--text-subtle);
   }
 
@@ -70,19 +64,21 @@ const { items } = Astro.props;
     color: var(--text-muted);
     font-weight: 500;
     text-decoration: none;
+    transition: color 0.15s ease;
   }
 
   .breadcrumb-item a:hover {
-    color: var(--orange-600);
+    color: #c2410c;
   }
 
   .breadcrumb-item.active span {
     color: var(--navy-950);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .separator {
-    color: var(--border-hover);
+    color: #94a3b8;
     user-select: none;
+    font-size: 0.75rem;
   }
 </style>

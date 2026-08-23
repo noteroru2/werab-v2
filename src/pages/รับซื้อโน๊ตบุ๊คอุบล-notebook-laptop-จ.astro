@@ -47,6 +47,8 @@ const faqs = [
     "answer": "ควรจัดรายการตามรุ่น CPU RAM SSD จำนวนและสภาพ หากแต่ละกลุ่มมี Configuration ต่างกันควรแยกเป็นคนละรายการ และไม่จำเป็นต้องเปิดเผยข้อมูลบริษัทที่ไม่เกี่ยวข้องกับการประเมิน Hardware"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -55,23 +57,68 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อโน๊ตบุ๊คอุบลราชธานี เช็กรุ่น สเปก และสภาพก่อนขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อโน๊ตบุ๊คอุบลราชธานี เช็กรุ่น สเปก และสภาพก่อนขาย</h1>
         <p>มีโน๊ตบุ๊คมือสองอยู่ในอุบลราชธานีและกำลังคิดว่าจะขาย แต่ยังไม่แน่ใจว่ารุ่นนี้ควรประเมินจากอะไร หรือควรเตรียมข้อมูลแบบไหนก่อนตัดสินใจ?</p>
         <p>หน้าอุบลราชธานีนี้ใช้สำหรับการประเมิน <strong>Notebook, Laptop และ Gaming Notebook มือสองที่ผู้ขายอยู่ในพื้นที่อุบลราชธานี</strong> โดยแยก Intent ออกจากหน้ารับซื้อโน๊ตบุ๊คภาพรวม</p>
-        <p>สิ่งที่ควรส่งก่อนคือ:</p>
-        <p><strong>รุ่น + CPU + RAM + SSD + GPU ถ้ามี + รูป + Battery + สภาพ + อุปกรณ์</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p>การส่งข้อมูลให้ครบก่อนช่วยให้ประเมินเบื้องต้นได้ตรงกว่าการแจ้งเพียงว่า “มีโน๊ตบุ๊คขายหนึ่งเครื่อง”</p>
-        <hr class="section-divider" />
-        <h2>อยู่ในอุบลราชธานี ไม่จำเป็นต้องยกเครื่องมาเพื่อถามราคาก่อน</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">สิ่งที่ควรส่งก่อนคือ:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>รุ่น + CPU + RAM + SSD + GPU ถ้ามี + รูป + Battery + สภาพ + อุปกรณ์</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        <div style="margin-top: 1rem;"><p>การส่งข้อมูลให้ครบก่อนช่วยให้ประเมินเบื้องต้นได้ตรงกว่าการแจ้งเพียงว่า “มีโน๊ตบุ๊คขายหนึ่งเครื่อง”</p></div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.webp" type="image/webp" />
+              <source srcset="/images/hero-laptop.avif" type="image/avif" />
+              <source srcset="/images/hero-laptop.webp" type="image/webp" />
+              <img
+                src="/images/hero-laptop.webp"
+                alt="รับซื้อโน๊ตบุ๊คอุบลราชธานี เช็กรุ่น สเปก และสภาพก่อนขาย"
+                width="1200"
+                height="755"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>อยู่ในอุบลราชธานี ไม่จำเป็นต้องยกเครื่องมาเพื่อถามราคาก่อน</h2>
         <p>หากยังอยู่ในขั้นเช็กราคา สามารถเริ่มจากส่งข้อมูลและรูปก่อน</p>
         <p>เหมาะกับผู้ขายที่อยู่ทั้ง:</p>
         <ul>
@@ -87,8 +134,9 @@ const faqs = [
         </ul>
         <p>การกล่าวถึงพื้นที่เหล่านี้ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้ออยู่ทุกอำเภอ</p>
         <p>จุดประสงค์คือให้ผู้ขายสามารถเริ่มเช็กราคาได้ก่อน แล้วจึงค่อยพิจารณาวิธีส่งมอบหรือนัดหมายตามพื้นที่และความเหมาะสม</p>
-        <hr class="section-divider" />
-        <h2>โน๊ตบุ๊คแบบไหนส่งมาประเมินได้</h2>
+        </div>
+        <div class="comm-card">
+          <h2>โน๊ตบุ๊คแบบไหนส่งมาประเมินได้</h2>
         <p>สามารถส่งรายละเอียดโน๊ตบุ๊คหลายประเภทมาสอบถามได้ เช่น</p>
         <ul>
         <li>Notebook สำหรับทำงานทั่วไป</li>
@@ -109,8 +157,16 @@ const faqs = [
         </ul>
         <p>แต่ละสภาพต้องประเมินต่างกัน</p>
         <p>เครื่องที่เปิดใช้งานและตรวจสเปกได้ครบ มีความไม่แน่นอนน้อยกว่าเครื่องที่ไม่สามารถทดสอบได้</p>
-        <hr class="section-divider" />
-        <h2>ก่อนขายควรรู้รุ่นเต็มของเครื่อง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ก่อนขายควรรู้รุ่นเต็มของเครื่อง</h2>
         <p>ชื่อบนฝาเครื่องเพียงอย่างเดียวอาจยังไม่พอ</p>
         <p>ตัวอย่างเช่น Notebook ตระกูลเดียวกันอาจมีหลาย:</p>
         <ul>
@@ -135,8 +191,9 @@ const faqs = [
         <li>Application ของผู้ผลิต</li>
         </ul>
         <p>หากไม่แน่ใจ สามารถถ่ายรูปป้าย Model ส่งมาประกอบได้</p>
-        <hr class="section-divider" />
-        <h2>CPU มีผลต่อราคาอย่างไร</h2>
+        </div>
+        <div class="comm-card">
+          <h2>CPU มีผลต่อราคาอย่างไร</h2>
         <p>CPU เป็นหนึ่งในข้อมูลหลักที่ใช้แยก Generation และระดับของเครื่อง</p>
         <p>ควรแจ้งรุ่นเต็ม เช่น</p>
         <ul>
@@ -148,8 +205,16 @@ const faqs = [
         <li>หรือรุ่นอื่น</li>
         </ul>
         <p>คำว่า “Core i7” หรือ “Ryzen 7” อย่างเดียวอาจยังไม่พอ เพราะแต่ละ Generation มีประสิทธิภาพและอายุของ Platform ต่างกัน</p>
-        <hr class="section-divider" />
-        <h2>RAM และ SSD ควรแจ้งเท่าไร</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>RAM และ SSD ควรแจ้งเท่าไร</h2>
         <p>ควรแจ้งความจุปัจจุบันของเครื่อง</p>
         <p>ตัวอย่าง:</p>
         <p><strong>RAM 16GB / SSD 512GB</strong></p>
@@ -157,8 +222,9 @@ const faqs = [
         <p><strong>RAM 32GB / SSD 1TB</strong></p>
         <p>หากมีการอัปเกรดจากสเปกเดิม ควรแจ้ง Configuration ปัจจุบัน</p>
         <p>สำหรับเครื่องที่มี SSD มากกว่าหนึ่งลูก ควรระบุว่าสิ่งใดรวมขายจริง</p>
-        <hr class="section-divider" />
-        <h2>Gaming Notebook ต้องแจ้งการ์ดจอให้ชัด</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Gaming Notebook ต้องแจ้งการ์ดจอให้ชัด</h2>
         <p>สำหรับ Gaming Notebook การ์ดจอมีผลต่อการแยกมูลค่าของเครื่องมาก</p>
         <p>ควรแจ้งรุ่นเต็ม เช่น</p>
         <ul>
@@ -172,8 +238,16 @@ const faqs = [
         </ul>
         <p>เครื่องชื่อเดียวกันบางรุ่นมีหลาย GPU Configuration</p>
         <p>ดังนั้นไม่ควรใช้ชื่อ Series ของตัวเครื่องอย่างเดียวในการประเมิน</p>
-        <hr class="section-divider" />
-        <h2>Gaming Notebook ในอุบลควรทดสอบอะไรก่อนขาย</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Gaming Notebook ในอุบลควรทดสอบอะไรก่อนขาย</h2>
         <p>ถ้าเครื่องยังใช้งานได้ ไม่จำเป็นต้อง Stress Test อย่างหนักเพียงเพื่อถามราคา</p>
         <p>สามารถตรวจเบื้องต้นว่า:</p>
         <ul>
@@ -199,8 +273,9 @@ const faqs = [
         <li>พัดลมมีเสียง</li>
         </ul>
         <p>ควรแจ้งตามอาการจริง</p>
-        <hr class="section-divider" />
-        <h2>Battery เสื่อมยังขายได้ไหม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Battery เสื่อมยังขายได้ไหม</h2>
         <p>สามารถส่งมาประเมินตามสภาพได้</p>
         <p>ควรแจ้งข้อมูลที่ตรวจสอบได้ เช่น</p>
         <ul>
@@ -213,8 +288,16 @@ const faqs = [
         <li>Battery Health ถ้ามีข้อมูลจากระบบ</li>
         </ul>
         <p>หาก Battery บวม ควรหลีกเลี่ยงการกดหรือใช้งานเครื่องโดยไม่จำเป็น เพราะอาจมีความเสี่ยงต่ออุปกรณ์และความปลอดภัย</p>
-        <hr class="section-divider" />
-        <h2>ไม่มี Adapter ยังเช็กราคาได้ไหม</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ไม่มี Adapter ยังเช็กราคาได้ไหม</h2>
         <p>ได้</p>
         <p>ควรแจ้งตั้งแต่ต้นว่า:</p>
         <p><strong>ไม่มี Adapter</strong></p>
@@ -224,8 +307,9 @@ const faqs = [
         <p><strong>มี Adapter เดิม</strong></p>
         <p>Adapter มีผลต่อความครบและความพร้อมใช้งาน แต่ไม่ใช่ปัจจัยเดียวในการประเมิน</p>
         <p>ไม่จำเป็นต้องรีบซื้อ Adapter ใหม่ก่อนรู้ว่าต้นทุนคุ้มกับมูลค่าที่เพิ่มหรือไม่</p>
-        <hr class="section-divider" />
-        <h2>หน้าจอมีปัญหาควรแจ้งแบบไหน</h2>
+        </div>
+        <div class="comm-card">
+          <h2>หน้าจอมีปัญหาควรแจ้งแบบไหน</h2>
         <p>ควรถ่ายรูปหน้าจอขณะเปิดเครื่อง และแจ้งอาการ เช่น</p>
         <ul>
         <li>มี Dead Pixel</li>
@@ -240,8 +324,16 @@ const faqs = [
         </ul>
         <p>ถ้าเครื่องต่อจอนอกได้แต่จอในมีอาการ ควรแจ้งข้อมูลนี้ด้วย</p>
         <p>ไม่ควรสรุปสาเหตุว่าเป็น Panel, Cable หรือ Mainboard หากยังไม่ได้ตรวจ</p>
-        <hr class="section-divider" />
-        <h2>Keyboard และ Touchpad มีผลต่อการประเมินไหม</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Keyboard และ Touchpad มีผลต่อการประเมินไหม</h2>
         <p>มีผลต่อสภาพการใช้งาน</p>
         <p>ควรแจ้งหาก:</p>
         <ul>
@@ -255,8 +347,9 @@ const faqs = [
         <li>มีรอยหนักบริเวณ Keyboard</li>
         </ul>
         <p>สำหรับ Gaming Notebook ควรแจ้งเพิ่มเติมหากปุ่มหรือระบบไฟของเครื่องมีอาการ</p>
-        <hr class="section-divider" />
-        <h2>เครื่องมีรอยหรือฝาแตกยังขายได้ไหม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>เครื่องมีรอยหรือฝาแตกยังขายได้ไหม</h2>
         <p>สามารถส่งมาประเมินได้</p>
         <p>ควรถ่ายตำหนิชัด ๆ เช่น</p>
         <ul>
@@ -271,8 +364,16 @@ const faqs = [
         <li>มีร่องรอยแกะเครื่อง</li>
         </ul>
         <p>รอยใช้งานทั่วไปกับความเสียหายที่กระทบโครงสร้างควรพิจารณาต่างกัน</p>
-        <hr class="section-divider" />
-        <h2>เครื่องเคยซ่อมต้องแจ้งไหม</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องเคยซ่อมต้องแจ้งไหม</h2>
         <p>ควรแจ้งหากทราบ</p>
         <p>เช่นเคย:</p>
         <ul>
@@ -288,8 +389,9 @@ const faqs = [
         <li>ซ่อมจากอาการน้ำเข้า</li>
         </ul>
         <p>ประวัติซ่อมไม่ได้หมายความว่าจะขายไม่ได้เสมอไป แต่ช่วยอธิบายสภาพของเครื่องได้ตรงขึ้น</p>
-        <hr class="section-divider" />
-        <h2>โน๊ตบุ๊คเปิดไม่ติดยังประเมินได้ไหม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>โน๊ตบุ๊คเปิดไม่ติดยังประเมินได้ไหม</h2>
         <p>บางกรณีสามารถส่งมาประเมินตามสภาพได้</p>
         <p>ควรแจ้ง:</p>
         <ul>
@@ -308,8 +410,16 @@ const faqs = [
         </ul>
         <p>เครื่องเปิดไม่ติดมีความไม่แน่นอนสูงกว่าเครื่องที่สามารถตรวจสเปกและทดสอบได้</p>
         <p>ไม่ควรเปิดเครื่องซ้ำหลายครั้งหากมีอาการร้อนผิดปกติ กลิ่นไหม้ หรือความเสียหายที่เห็นชัด</p>
-        <hr class="section-divider" />
-        <h2>เครื่องโดนน้ำควรแจ้งตามจริง</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องโดนน้ำควรแจ้งตามจริง</h2>
         <p>ควรแจ้งหากเครื่องเคย:</p>
         <ul>
         <li>น้ำหก</li>
@@ -327,8 +437,9 @@ const faqs = [
         <li>เคยซ่อมหรือทำความสะอาดหรือไม่</li>
         </ul>
         <p>ข้อมูลนี้มีผลต่อความเสี่ยงของ Hardware ภายใน</p>
-        <hr class="section-divider" />
-        <h2>ควรซ่อมก่อนขายหรือขายตามสภาพ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ควรซ่อมก่อนขายหรือขายตามสภาพ</h2>
         <p>ไม่จำเป็นต้องซ่อมทุกเครื่องก่อนขาย</p>
         <p>ควรเปรียบเทียบ:</p>
         <ol>
@@ -340,8 +451,16 @@ const faqs = [
         </ol>
         <p>ตัวอย่างเช่น เครื่องที่มีเพียง Battery เสื่อมอาจประเมินต่างจากเครื่องที่มีปัญหา Mainboard หลายจุด</p>
         <p>จึงควรเช็กราคาตามสภาพก่อนตัดสินใจลงทุนซ่อม</p>
-        <hr class="section-divider" />
-        <h2>ข้อมูลส่วนตัวใน Notebook ควรจัดการก่อนส่งมอบ</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ข้อมูลส่วนตัวใน Notebook ควรจัดการก่อนส่งมอบ</h2>
         <p>Notebook อาจมี:</p>
         <ul>
         <li>รูป</li>
@@ -364,36 +483,54 @@ const faqs = [
         <li>ข้อมูลลับของบริษัท</li>
         </ul>
         <p>หากยังไม่พร้อมจัดการข้อมูล สามารถเริ่มเช็กราคาเครื่องก่อนแล้วค่อยตัดสินใจเรื่อง Storage และข้อมูลภายหลัง</p>
-        <hr class="section-divider" />
-        <h2>ขายเครื่องโดยไม่รวม SSD ได้ไหม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ขายเครื่องโดยไม่รวม SSD ได้ไหม</h2>
         <p>บางกรณีสามารถแจ้งตั้งแต่ต้นว่า:</p>
         <p><strong>ไม่รวม SSD</strong></p>
         <p>ได้</p>
         <p>โดยเฉพาะเมื่อมีข้อมูลสำคัญหรือผู้ขายต้องการเก็บ Drive ไว้</p>
         <p>ราคาจะต้องพิจารณาจาก Configuration ที่ขายจริง</p>
         <p>ไม่ควรแจ้งสเปกว่ามี SSD รวมขาย หากตั้งใจถอดออกก่อนส่งมอบ</p>
-        <hr class="section-divider" />
-        <h2>เครื่องจากบริษัทหรือสำนักงานในอุบลมีหลายเครื่องควรทำอย่างไร</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องจากบริษัทหรือสำนักงานในอุบลมีหลายเครื่องควรทำอย่างไร</h2>
         <p>หากมี Notebook หลายเครื่อง ไม่จำเป็นต้องส่งรายละเอียดแบบข้อความยาวทีละเครื่อง</p>
         <p>สามารถจัดเป็นตาราง เช่น</p>
-        <table class="table table-bordered">
+        <div class="table-responsive"><table class="table table-bordered">
           <thead><tr><th>รุ่น</th><th>CPU</th><th>RAM</th><th>SSD</th><th>จำนวน</th><th>สภาพ</th></tr></thead>
           <tbody>
           <tr><td>รุ่น...</td><td>i5-...</td><td>8GB</td><td>256GB</td><td>5</td><td>ใช้งานได้</td></tr>
           <tr><td>รุ่น...</td><td>i5-...</td><td>16GB</td><td>512GB</td><td>3</td><td>Battery เสื่อม</td></tr>
           <tr><td>รุ่น...</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>2</td><td>เปิดไม่ติด</td></tr>
-          </tbody></table>
+          </tbody></table></div>
         <p>หากมี Asset Tag ภายในบริษัท สามารถใช้ช่วยจัดรายการได้โดยไม่ต้องเปิดเผยข้อมูลภายในที่ไม่เกี่ยวข้อง</p>
-        <hr class="section-divider" />
-        <h2>ผู้ขายในอำเภอเมืองอุบลราชธานีและวารินชำราบเริ่มอย่างไร</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ผู้ขายในอำเภอเมืองอุบลราชธานีและวารินชำราบเริ่มอย่างไร</h2>
         <p>หากอยู่บริเวณเมืองอุบลราชธานีหรือวารินชำราบ สามารถเริ่มจากส่งข้อมูลเครื่องก่อนเช่นเดียวกัน</p>
         <p>สิ่งสำคัญคือไม่จำเป็นต้องเดินทางพร้อม Notebook เพียงเพื่อถามราคาเบื้องต้น</p>
         <p>ส่ง:</p>
         <p><strong>Model + สเปก + รูป + Battery + อาการ + อุปกรณ์</strong></p>
         <p>ก่อน</p>
         <p>เมื่อมีข้อมูลเพียงพอแล้วจึงค่อยพิจารณารูปแบบการตรวจสินค้าและส่งมอบตามความเหมาะสม</p>
-        <hr class="section-divider" />
-        <h2>อยู่เดชอุดม พิบูลมังสาหาร หรือต่างอำเภอทำอย่างไร</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>อยู่เดชอุดม พิบูลมังสาหาร หรือต่างอำเภอทำอย่างไร</h2>
         <p>หลักการเหมือนกัน</p>
         <p>เริ่มจากส่งรายละเอียดเพื่อประเมินก่อน</p>
         <p>หากอยู่ห่างจากตัวเมือง การรู้ข้อมูลเบื้องต้นก่อนช่วยลดการเดินทางที่ยังไม่จำเป็น</p>
@@ -409,8 +546,9 @@ const faqs = [
         </ul>
         <p>จากนั้นจึงค่อยตกลงขั้นตอนถัดไปตามพื้นที่และลักษณะของสินค้า</p>
         <p>ไม่ได้หมายความว่ามีจุดรับซื้อประจำอยู่ในทุกอำเภอ</p>
-        <hr class="section-divider" />
-        <h2>ปัจจัยหลักที่ใช้ประเมินโน๊ตบุ๊คมือสองในอุบลราชธานี</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ปัจจัยหลักที่ใช้ประเมินโน๊ตบุ๊คมือสองในอุบลราชธานี</h2>
         <h3>รุ่นและ Generation</h3>
         <p>ใช้แยกระดับของเครื่องและอายุของ Platform</p>
         <h3>CPU</h3>
@@ -437,17 +575,36 @@ const faqs = [
         <p>หากยังเหลือและตรวจสอบได้ สามารถใช้เป็นข้อมูลประกอบ</p>
         <h3>ตลาดของรุ่น</h3>
         <p>ความต้องการของ Notebook แต่ละรุ่นเปลี่ยนแปลงตามเวลา</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
         <h2>ขั้นตอนเช็กราคาโน๊ตบุ๊คในอุบลก่อนขาย</h2>
-        <h3>1. ส่ง Brand และ Model</h3>
-        <p>แจ้งรุ่นเต็มเท่าที่ทราบ</p>
-        <h3>2. ส่งสเปก</h3>
-        <p>อย่างน้อย:</p>
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. ส่ง Brand และ Model</h3>
+              <p>แจ้งรุ่นเต็มเท่าที่ทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. ส่งสเปก</h3>
+              <p>อย่างน้อย:</p>
         <p><strong>CPU + RAM + SSD</strong></p>
         <p>หากเป็น Gaming Notebook เพิ่ม:</p>
         <p><strong>GPU</strong></p>
-        <h3>3. ส่งรูปเครื่อง</h3>
-        <p>ควรถ่าย:</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. ส่งรูปเครื่อง</h3>
+              <p>ควรถ่าย:</p>
         <ul>
         <li>ฝาหน้า</li>
         <li>หน้าจอ</li>
@@ -457,21 +614,58 @@ const faqs = [
         <li>Adapter</li>
         <li>จุดตำหนิ</li>
         </ul>
-        <h3>4. แจ้ง Battery</h3>
-        <p>ระบุอาการใช้งานหรือ Battery Health ถ้ามีข้อมูล</p>
-        <h3>5. แจ้งอาการ</h3>
-        <p>เช่น จอมีเส้น Keyboard เสีย เปิดไม่ติด หรือมีปัญหาอื่น</p>
-        <h3>6. แจ้งประวัติ</h3>
-        <p>เคยซ่อม ตก โดนน้ำ หรือเปลี่ยนอุปกรณ์หรือไม่</p>
-        <h3>7. แจ้งอุปกรณ์</h3>
-        <p>เช่น Adapter, Box หรืออุปกรณ์อื่นที่รวมขาย</p>
-        <h3>8. ประเมินเบื้องต้น</h3>
-        <p>พิจารณารุ่น สเปก สภาพและอุปกรณ์ร่วมกัน</p>
-        <h3>9. ตัดสินใจ</h3>
-        <p>ผู้ขายสามารถพิจารณาก่อนว่าจะขาย ซ่อม หรือเก็บเครื่องไว้</p>
-        <h3>10. ตรวจเครื่องและซื้อขาย</h3>
-        <p>ตรวจรุ่น สเปก สภาพ และสิ่งที่รวมขายให้ตรงกับข้อมูลที่ใช้ประเมินก่อนดำเนินการซื้อขาย</p>
-        <hr class="section-divider" />
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. แจ้ง Battery</h3>
+              <p>ระบุอาการใช้งานหรือ Battery Health ถ้ามีข้อมูล</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. แจ้งอาการ</h3>
+              <p>เช่น จอมีเส้น Keyboard เสีย เปิดไม่ติด หรือมีปัญหาอื่น</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. แจ้งประวัติ</h3>
+              <p>เคยซ่อม ตก โดนน้ำ หรือเปลี่ยนอุปกรณ์หรือไม่</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้งอุปกรณ์</h3>
+              <p>เช่น Adapter, Box หรืออุปกรณ์อื่นที่รวมขาย</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. ประเมินเบื้องต้น</h3>
+              <p>พิจารณารุ่น สเปก สภาพและอุปกรณ์ร่วมกัน</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. ตัดสินใจ</h3>
+              <p>ผู้ขายสามารถพิจารณาก่อนว่าจะขาย ซ่อม หรือเก็บเครื่องไว้</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจเครื่องและซื้อขาย</h3>
+              <p>ตรวจรุ่น สเปก สภาพ และสิ่งที่รวมขายให้ตรงกับข้อมูลที่ใช้ประเมินก่อนดำเนินการซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
         <h2>หน้าอุบลราชธานีนี้ต่างจากหน้ารับซื้อโน๊ตบุ๊คหลักอย่างไร</h2>
         <p>หน้า <a href="/รับซื้อโน๊ตบุ๊ค/"><code>/รับซื้อโน๊ตบุ๊ค/</code></a> เป็นหน้าบริการหลักสำหรับ Intent รับซื้อ Notebook โดยรวม</p>
         <p>ส่วนหน้า <code>/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/</code> รักษา Historical Search Intent ของผู้ค้นหาที่ระบุพื้นที่อุบลราชธานี</p>
@@ -479,20 +673,46 @@ const faqs = [
         <p>จุดประสงค์คือรักษา:</p>
         <p><strong>Notebook + Ubon Ratchathani local intent</strong></p>
         <p>ให้ชัดเจน</p>
-        <hr class="section-divider" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="commercial-final-cta">
         <h2>เริ่มเช็กราคาโน๊ตบุ๊คในอุบลราชธานี</h2>
         <p>ส่ง:</p>
         <p><strong>Brand + Model + CPU + RAM + SSD + GPU ถ้ามี</strong></p>
         <p>พร้อม:</p>
         <p><strong>รูปทุกด้าน + Battery + อาการ + Adapter + จุดตำหนิ</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p>หากยังไม่ทราบรุ่น ให้เริ่มจากรูปเครื่องและป้าย Model</p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
-        <hr class="section-divider" />
-        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในอุบลราชธานี" />
-      </article>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p>หากยังไม่ทราบรุ่น ให้เริ่มจากรูปเครื่องและป้าย Model</p>
+        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
     </div>
-  </main>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในอุบลราชธานี" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>

@@ -47,6 +47,8 @@ const faqs = [
     "answer": "สามารถแจ้งว่าไม่รวม SSD ได้ ราคาจะพิจารณาจาก Configuration ที่รวมขายจริง"
   }
 ];
+import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
+
 ---
 
 <BaseLayout
@@ -55,28 +57,74 @@ const faqs = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
 >
-  <div class="container" style="padding-top: 1.5rem;">
-    <Breadcrumb items={breadcrumbs} />
-  </div>
-
-  <main class="content-container">
-    <div class="container container-narrow">
-      <article class="prose-content">
-        <h1>รับซื้อโน๊ตบุ๊คขอนแก่น เช็กรุ่น สเปก และสภาพก่อนขาย</h1>
+  <!-- COMMERCIAL LOCAL HERO -->
+    <!-- COMMERCIAL LOCAL HERO -->
+  <section class="commercial-hero commercial-hero-local">
+    <div class="container">
+      <div class="local-hero-grid">
+        <div class="local-hero-left">
+          <Breadcrumb items={breadcrumbs} />
+          <h1 class="hero-h1">รับซื้อโน๊ตบุ๊คขอนแก่น เช็กรุ่น สเปก และสภาพก่อนขาย</h1>
         <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/</code> เป็น Historical Local URL ระดับจังหวัดสำหรับ:</p>
         <p><strong>Notebook + Khon Kaen</strong></p>
         <p>และเป็น Local Intent ระดับจังหวัดที่แยกออกจาก Historical URL ระดับอำเภอที่อาจมี Search Equity ของตนเอง</p>
-        <p>จุดเริ่มต้นคือ:</p>
-        <p><strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <hr class="section-divider" />
-        <h2>หน้าขอนแก่นนี้เป็น Intent ระดับจังหวัด</h2>
+        <div class="hero-intake-card">
+          <p style="font-weight: 600; margin-bottom: 0.35rem;">จุดเริ่มต้นคือ:</p>
+          <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
+            <strong>Model + CPU + RAM + SSD + GPU ถ้ามี + Battery + รูป + Adapter</strong>
+          </p>
+          <div class="hero-cta-bar">
+            <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+              </svg>
+              <span>LINE: <strong>{getDisplayLine()}</strong></span>
+            </a>
+            <a href={getPhoneUrl()} class="btn btn-phone">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <div class="local-hero-right">
+          <div class="local-product-visual-wrap">
+            <picture>
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.avif" type="image/avif" />
+              <source media="(max-width: 640px)" srcset="/images/hero-laptop-500.webp" type="image/webp" />
+              <source srcset="/images/hero-laptop.avif" type="image/avif" />
+              <source srcset="/images/hero-laptop.webp" type="image/webp" />
+              <img
+                src="/images/hero-laptop.webp"
+                alt="รับซื้อโน๊ตบุ๊คขอนแก่น เช็กรุ่น สเปก และสภาพก่อนขาย"
+                width="1200"
+                height="755"
+                class="local-hero-product-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>หน้าขอนแก่นนี้เป็น Intent ระดับจังหวัด</h2>
         <p>หน้า Local นี้ครอบคลุมคำค้นที่ระบุขอนแก่นในระดับจังหวัด</p>
         <p>หาก Historical URL อื่นระบุพื้นที่ย่อยเฉพาะ เช่น อำเภอหนึ่งภายในขอนแก่น URL นั้นอาจมี Intent ของตัวเองและไม่ควรถูกรวมโดยอัตโนมัติ</p>
         <p>ดังนั้นหน้านี้จะไม่ใส่รายชื่ออำเภอจำนวนมากเพียงเพื่อขยาย Keyword</p>
-        <hr class="section-divider" />
-        <h2>Model และ Generation เป็นข้อมูลแรกที่ควรตรวจ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Model และ Generation เป็นข้อมูลแรกที่ควรตรวจ</h2>
         <p>ควรส่งชื่อรุ่นเต็มจาก:</p>
         <ul>
         <li>ใต้เครื่อง</li>
@@ -86,8 +134,16 @@ const faqs = [
         <li>กล่องเดิม</li>
         </ul>
         <p>เพราะ Series เดียวกันอาจมีหลาย Generation</p>
-        <hr class="section-divider" />
-        <h2>Notebook ทั่วไปกับ Gaming Notebook ต้องดูข้อมูลต่างกันบางส่วน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Notebook ทั่วไปกับ Gaming Notebook ต้องดูข้อมูลต่างกันบางส่วน</h2>
         <p>Notebook ทั่วไปควรแจ้งอย่างน้อย:</p>
         <ul>
         <li>CPU</li>
@@ -102,22 +158,32 @@ const faqs = [
         <li>หน้าจอถ้าทราบ</li>
         </ul>
         <p>เพื่อแยก Configuration ให้ถูกต้อง</p>
-        <hr class="section-divider" />
-        <h2>CPU ต้องแจ้งรหัสเต็ม</h2>
+        </div>
+        <div class="comm-card">
+          <h2>CPU ต้องแจ้งรหัสเต็ม</h2>
         <p>เช่น:</p>
         <p><strong>Intel Core i5-12450H</strong></p>
         <p>หรือ</p>
         <p><strong>AMD Ryzen 7 7735HS</strong></p>
         <p>ไม่ควรแจ้งเพียง Core i5 หรือ Ryzen 7</p>
         <p>Generation มีผลต่ออายุ Platform และความสามารถของเครื่อง</p>
-        <hr class="section-divider" />
-        <h2>RAM และ SSD ควรใช้ Configuration ปัจจุบัน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>RAM และ SSD ควรใช้ Configuration ปัจจุบัน</h2>
         <p>หากอัปเกรดแล้วให้แจ้งของที่อยู่ในเครื่องจริง</p>
         <p>เช่น:</p>
         <p><strong>RAM 16GB / SSD 512GB</strong></p>
         <p>หากจะถอด SSD หรือ RAM บางส่วนออกก่อนขายต้องแจ้งตั้งแต่ก่อนประเมิน</p>
-        <hr class="section-divider" />
-        <h2>Battery ควรดูทั้ง Health และอาการ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Battery ควรดูทั้ง Health และอาการ</h2>
         <p>หากระบบแสดง Health สามารถส่งได้</p>
         <p>หากไม่แสดง ให้แจ้งว่า:</p>
         <ul>
@@ -129,8 +195,16 @@ const faqs = [
         <li>บวม</li>
         </ul>
         <p>ถ้า Battery บวมควรหลีกเลี่ยงการใช้งานหนัก</p>
-        <hr class="section-divider" />
-        <h2>จอและตัวเครื่องควรส่งรูปหลายด้าน</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>จอและตัวเครื่องควรส่งรูปหลายด้าน</h2>
         <p>ควรถ่าย:</p>
         <ul>
         <li>หน้าจอ</li>
@@ -142,14 +216,23 @@ const faqs = [
         <li>Adapter</li>
         </ul>
         <p>และถ่ายตำหนิแยกหากมี</p>
-        <hr class="section-divider" />
-        <h2>Notebook ที่ไม่มี Adapter ยังเช็กราคาได้</h2>
+        </div>
+        <div class="comm-card">
+          <h2>Notebook ที่ไม่มี Adapter ยังเช็กราคาได้</h2>
         <p>ควรแจ้งว่า:</p>
         <p><strong>ไม่มี Adapter</strong></p>
         <p>ตั้งแต่ต้น</p>
         <p>ไม่จำเป็นต้องซื้อ Adapter ใหม่ก่อนทราบว่ามูลค่าที่เพิ่มขึ้นคุ้มกับต้นทุนหรือไม่</p>
-        <hr class="section-divider" />
-        <h2>เครื่องมีอาการหรือเปิดไม่ติด</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เครื่องมีอาการหรือเปิดไม่ติด</h2>
         <p>สามารถเริ่มจากส่งข้อมูลตามที่ทราบ</p>
         <p>เช่น:</p>
         <ul>
@@ -162,8 +245,9 @@ const faqs = [
         </ul>
         <p>ไม่ควรวินิจฉัยสาเหตุเองหากยังไม่ได้ตรวจ</p>
         <p>และหากมี Battery บวม กลิ่นไหม้ หรือความร้อนผิดปกติ ไม่ควรทดลองเปิดซ้ำหลายครั้ง</p>
-        <hr class="section-divider" />
-        <h2>ประวัติซ่อมและการอัปเกรดมีผล</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ประวัติซ่อมและการอัปเกรดมีผล</h2>
         <p>ควรแจ้งหากทราบว่าเคย:</p>
         <ul>
         <li>เพิ่ม RAM</li>
@@ -176,8 +260,16 @@ const faqs = [
         <li>โดนน้ำ</li>
         </ul>
         <p>ช่วยให้ Configuration และสภาพปัจจุบันชัดขึ้น</p>
-        <hr class="section-divider" />
-        <h2>Notebook จากสำนักงานหรือองค์กรในขอนแก่น</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>Notebook จากสำนักงานหรือองค์กรในขอนแก่น</h2>
         <p>หากมีหลายเครื่องควรแบ่งเป็นกลุ่ม:</p>
         <div class="table-responsive">
           <table class="table">
@@ -220,8 +312,9 @@ const faqs = [
           </table>
         </div>
         <p>ไม่จำเป็นต้องส่งข้อมูลภายในองค์กรที่ไม่เกี่ยวข้องกับ Hardware</p>
-        <hr class="section-divider" />
-        <h2>ข้อมูลส่วนตัวควรจัดการก่อนส่งมอบ</h2>
+        </div>
+        <div class="comm-card">
+          <h2>ข้อมูลส่วนตัวควรจัดการก่อนส่งมอบ</h2>
         <p>เพื่อประเมินเบื้องต้นไม่ควรส่ง:</p>
         <ul>
         <li>Password</li>
@@ -231,7 +324,14 @@ const faqs = [
         <li>Email Password</li>
         </ul>
         <p>หากต้องการเก็บ Storage สามารถแจ้งว่าไม่รวม SSD ได้</p>
-        <hr class="section-divider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="comm-card">
         <h2>ความสัมพันธ์กับหน้ารับซื้อ Notebook หลัก</h2>
         <p>หน้า:</p>
         <p><code>/รับซื้อโน๊ตบุ๊ค/</code></p>
@@ -242,36 +342,112 @@ const faqs = [
         <p><strong>Notebook + Khon Kaen province intent</strong></p>
         <p>จึงไม่ควรขยายเป็นหน้า Notebook ทั่วประเทศ</p>
         <p>และไม่ควรแย่ง Intent เฉพาะอำเภอจาก Historical URL ที่ถูกอนุมัติแยกต่างหาก</p>
-        <hr class="section-divider" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
         <h2>ขั้นตอนเช็กราคา Notebook ในขอนแก่น</h2>
-        <h3>1. ส่ง Model</h3>
-        <p>ชื่อเต็ม</p>
-        <h3>2. ส่ง CPU</h3>
-        <p>รหัสรุ่นเต็ม</p>
-        <h3>3. ส่ง RAM และ SSD</h3>
-        <p>Configuration ปัจจุบัน</p>
-        <h3>4. ส่ง GPU</h3>
-        <p>หากมี</p>
-        <h3>5. แจ้ง Battery</h3>
-        <p>Health หรืออาการ</p>
-        <h3>6. ส่งรูป</h3>
-        <p>ทุกด้านและตำหนิ</p>
-        <h3>7. แจ้ง Adapter</h3>
-        <p>เดิม เทียบ หรือไม่มี</p>
-        <h3>8. แจ้งประวัติ</h3>
-        <p>ซ่อมหรืออัปเกรดถ้าทราบ</p>
-        <h3>9. ประเมินเบื้องต้น</h3>
-        <p>ก่อนตัดสินใจเดินทางหรือซ่อม</p>
-        <h3>10. ตรวจสินค้า</h3>
-        <p>ยืนยันรุ่น สเปกและสภาพก่อนซื้อขาย</p>
-        <hr class="section-divider" />
+        <div class="process-grid" style="margin-top: 1.25rem;">
+          <div class="process-step-item">
+            <div>
+              <h3>1. ส่ง Model</h3>
+              <p>ชื่อเต็ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>2. ส่ง CPU</h3>
+              <p>รหัสรุ่นเต็ม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>3. ส่ง RAM และ SSD</h3>
+              <p>Configuration ปัจจุบัน</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>4. ส่ง GPU</h3>
+              <p>หากมี</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>5. แจ้ง Battery</h3>
+              <p>Health หรืออาการ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>6. ส่งรูป</h3>
+              <p>ทุกด้านและตำหนิ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>7. แจ้ง Adapter</h3>
+              <p>เดิม เทียบ หรือไม่มี</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>8. แจ้งประวัติ</h3>
+              <p>ซ่อมหรืออัปเกรดถ้าทราบ</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>9. ประเมินเบื้องต้น</h3>
+              <p>ก่อนตัดสินใจเดินทางหรือซ่อม</p>
+            </div>
+          </div>
+          <div class="process-step-item">
+            <div>
+              <h3>10. ตรวจสินค้า</h3>
+              <p>ยืนยันรุ่น สเปกและสภาพก่อนซื้อขาย</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL COMMERCIAL CTA -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <div class="commercial-final-cta">
         <h2>เริ่มเช็กราคาโน๊ตบุ๊คในขอนแก่น</h2>
         <p>ส่ง:</p>
         <p><strong>Model + CPU + RAM + SSD + GPU + Battery + รูป + Adapter</strong></p>
-        <p>LINE: <strong>@webuy</strong></p>
-        <p>โทร: <strong>064-257-9353</strong></p>
-        <p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p>
-        <hr class="section-divider" />
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="btn btn-line btn-hero-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 10.3c0-4.6-4.9-8.3-10.9-8.3C7.1 2 2.2 5.7 2.2 10.3c0 4.1 3.6 7.6 8.6 8.2.3.1.8.2.9.6.1.4.1 1 .1 1.4 0 .4-.2 1.5-.2 1.5s-.1.6.3.3c.4-.3 2.5-1.5 3.5-2.2.5-.3 1.1-.5 1.7-.5 4.3 0 7-3.7 7-7.3z"/>
+            </svg>
+            <span>LINE: <strong>{getDisplayLine()}</strong></span>
+          </a>
+          <a href={getPhoneUrl()} class="btn btn-phone btn-hero-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>โทร: <strong>{getDisplayPhone()}</strong></span>
+          </a>
+        </div>
+
+        <div style="margin-top: 0.5rem;"><p><strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-surface">
+    <div class="container">
+      <div class="comm-card">
         <h2>หน้าข้อมูล Notebook ในพื้นที่ย่อยของขอนแก่น</h2>
         <p>สำหรับ Historical URL ที่มี Search Intent ระดับอำเภอ สามารถดูข้อมูลเฉพาะพื้นที่ได้ที่:</p>
         <ul>
@@ -279,9 +455,15 @@ const faqs = [
         <li><a href="/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/">รับซื้อโน๊ตบุ๊คชุมแพ ขอนแก่น</a></li>
         </ul>
         <p>หน้าเหล่านี้รักษา Search Intent ระดับพื้นที่ย่อยของ URL เดิม ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในอำเภอดังกล่าว</p>
-        <hr class="section-divider" />
-        <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในขอนแก่น" />
-      </article>
+      </div>
     </div>
-  </main>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="commercial-section section-white">
+    <div class="container">
+      <FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการขายโน๊ตบุ๊คมือสองในขอนแก่น" subtitle="" />
+    </div>
+  </section>
 </BaseLayout>
