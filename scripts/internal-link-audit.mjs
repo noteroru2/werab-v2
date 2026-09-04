@@ -99,6 +99,11 @@ const INDEX_PAGES = [
   '/รับซื้อไอแพด-ยโสธร-ipad/'
 ];
 
+const ALLOWED_NOINDEX_UTILITY_LINKS = new Set([
+  '/terms/',
+  '/privacy-policy/'
+]);
+
 const MONEY_HUBS = [
   '/รับซื้อ/',
   '/รับซื้อโน๊ตบุ๊ค/',
@@ -219,6 +224,12 @@ for (const [source, outLinks] of pageOutboundMap.entries()) {
       linkViolations.push(`Physical page ${source} links to REDIRECT source: ${target}`);
     }
     const targetSeo = resolveSeo(target);
+    if (ALLOWED_NOINDEX_UTILITY_LINKS.has(target)) {
+      if (targetSeo.state !== 'HOLD_NOINDEX' || targetSeo.httpStatus !== 200 || targetSeo.robots !== 'noindex,follow') {
+        linkViolations.push(`Physical page ${source} links to utility route with unsafe lifecycle: ${target} (${targetSeo.state}, ${targetSeo.httpStatus}, ${targetSeo.robots})`);
+      }
+      continue;
+    }
     if (targetSeo.state === 'HOLD_NOINDEX') {
       linkViolations.push(`Physical page ${source} links to unapproved HOLD_NOINDEX route: ${target}`);
     } else if (targetSeo.state !== 'INDEX' || targetSeo.httpStatus !== 200) {

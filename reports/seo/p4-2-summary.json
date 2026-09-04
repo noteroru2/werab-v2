@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-04",
+  "phase": "RECOVERY P4.2 — CODEX UX + SEO RECOVERY INTEGRATION",
+  "verdict": "STATIC_INTEGRATION_PASS_FULL_BUILD_REQUIRES_WINDOWS_GATE",
+  "lifecycle": {
+    "INDEX": 86,
+    "HOLD_NOINDEX": 31,
+    "DRAFT": 29,
+    "REDIRECT": 53,
+    "GONE": 206
+  },
+  "controlledUrls": 405,
+  "realProductRecords": 23,
+  "realProductDerivatives": 92,
+  "reviewedGalleryProtectedPages": 5,
+  "fixes": [
+    "cross_platform_eol_hashing",
+    "five_gallery_hash_reapprovals",
+    "remove_hold_price_page_from_llms",
+    "article_webpage_id_link",
+    "conservative_payment_wording",
+    "self_contained_real_product_gallery_layout"
+  ]
+}

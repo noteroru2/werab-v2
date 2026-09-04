@@ -11,7 +11,12 @@ const categories = [
   { name: 'รับซื้อกล้อง', path: '/รับซื้อกล้อง/' }
 ];
 
-const guides: { name: string; path: string }[] = [];
+const guides: { name: string; path: string }[] = [
+  { name: 'เช็กราคาก่อนขาย', path: '/เช็กราคาก่อนขาย/' },
+  { name: 'มาตรฐานการประเมิน', path: '/ความน่าเชื่อถือ/' },
+  { name: 'เกี่ยวกับเรา', path: '/เกี่ยวกับเรา/' },
+  { name: 'ติดต่อส่งรูปประเมิน', path: '/contact/' }
+];
 ---
 
 <footer class="site-footer">
@@ -75,6 +80,14 @@ const guides: { name: string; path: string }[] = [];
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="footer-policy-links" aria-label="ข้อมูลบริการและนโยบาย">
+      <a href="/เกี่ยวกับเรา/">เกี่ยวกับเรา</a>
+      <a href="/ความน่าเชื่อถือ/">มาตรฐานการประเมิน</a>
+      <a href="/terms/">เงื่อนไขบริการ</a>
+      <a href="/privacy-policy/">ความเป็นส่วนตัว</a>
+      <a href="/contact/">ติดต่อเรา</a>
     </div>
 
     <div class="footer-bottom">
@@ -272,6 +285,26 @@ const guides: { name: string; path: string }[] = [];
     color: #cbd5e1;
     font-size: 0.82rem;
   }
+
+
+  .footer-policy-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .6rem 1rem;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+
+  .footer-policy-links a {
+    color: #cbd5e1;
+    font-size: .82rem;
+    text-decoration: none;
+  }
+
+  .footer-policy-links a:hover { color: var(--orange-400); }
 
   .footer-bottom {
     display: flex;

@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-04",
+  "phase": "RECOVERY P4 — PRODUCTION RELEASE GATE + SITEMAP / INDEX REQUEST + GSC OBSERVATION BASELINE",
+  "releaseVersion": "recovery-p4-2026-09-04",
+  "controlledUrls": 405,
+  "lifecycleCounts": {
+    "INDEX": 86,
+    "HOLD_NOINDEX": 31,
+    "DRAFT": 29,
+    "REDIRECT": 53,
+    "GONE": 206
+  },
+  "expectedSitemapUrls": 86,
+  "redirectRules": 53,
+  "goneUrls": 206,
+  "indexRequestPriorityUrls": 15,
+  "gscBaselineRows": 25,
+  "productionPreDeployVerdict": "NO_GO_PRODUCTION_PARITY_FAIL",
+  "indexRequestExecution": "NOT_EXECUTED_REQUIRES_GSC_ACCESS_AFTER_DEPLOY",
+  "gscCurrentBaseline": "NOT_AVAILABLE_IN_REPO_REQUIRES_POST_DEPLOY_EXPORT",
+  "buildGate": {
+    "npmCi": "TRANSPORT_TIMEOUT",
+    "astroBuild": "NOT_RUN_DEPENDENCIES_UNAVAILABLE",
+    "astroCheck": "NOT_RUN_DEPENDENCIES_UNAVAILABLE",
+    "nodeModulesCleaned": true
+  },
+  "staticVerdict": "PASS",
+  "productionVerdict": "NO_GO_PRE_DEPLOY",
+  "productionBlockers": [
+    "CURRENT_PUBLIC_PRODUCTION_PARITY_FAIL",
+    "ASTRO_BUILD_NOT_PROVEN",
+    "GSC_SUBMISSION_NOT_EXECUTED"
+  ]
+}

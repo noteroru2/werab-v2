@@ -29,11 +29,13 @@ const { Content } = pageEntry ? await render(pageEntry) : { Content: null };
 const breadcrumbs = [
   { name: 'หน้าแรก', url: '/' },
   ...(seo.parent ? [{ name: seo.parent.replace(/\//g, ''), url: seo.parent }] : []),
-  { name: pageEntry?.data.title || seo.title || 'หน้าบริการ', url: currentPath }
+  { name: pageEntry?.data.h1 || pageEntry?.data.title || seo.h1 || seo.title || 'หน้าบริการ', url: currentPath }
 ];
 
 // Internal Links
 const internalLinks = getInternalLinks(seo);
+const editorialDate = pageEntry?.data.lastReviewed || pageEntry?.data.updatedDate || pageEntry?.data.pubDate;
+const shouldUseArticleSchema = Boolean(pageEntry && ['guide', 'model', 'condition', 'location'].includes(pageEntry.data.pageType));
 
 // Select product asset based on content cluster or title
 let productImg = '/images/hero-speaker.webp';
@@ -56,6 +58,26 @@ if (pageEntry?.data.contentCluster === 'notebook' || pageEntry?.data.title.inclu
   productImgMobile = '/images/hero-camera-500.webp';
   productAvif = '/images/hero-camera.avif';
   productAvifMobile = '/images/hero-camera-500.avif';
+} else if (pageEntry?.data.contentCluster === 'macbook' || pageEntry?.data.title.includes('MacBook')) {
+  productImg = '/images/hero-macbook.webp';
+  productImgMobile = '/images/hero-macbook-500.webp';
+  productAvif = '/images/hero-macbook.avif';
+  productAvifMobile = '/images/hero-macbook-500.avif';
+} else if (pageEntry?.data.contentCluster === 'ipad' || pageEntry?.data.title.includes('iPad')) {
+  productImg = '/images/hero-tablet.webp';
+  productImgMobile = '/images/hero-tablet-500.webp';
+  productAvif = '/images/hero-tablet.avif';
+  productAvifMobile = '/images/hero-tablet-500.avif';
+} else if (pageEntry?.data.contentCluster === 'iphone' || pageEntry?.data.contentCluster === 'android' || pageEntry?.data.title.includes('iPhone')) {
+  productImg = '/images/hero-smartphone.webp';
+  productImgMobile = '/images/hero-smartphone-500.webp';
+  productAvif = '/images/hero-smartphone.avif';
+  productAvifMobile = '/images/hero-smartphone-500.avif';
+} else if (pageEntry?.data.contentCluster === 'general' || pageEntry?.data.contentCluster === 'condition' || pageEntry?.data.contentCluster === 'valuation') {
+  productImg = '/images/hero-it-products.webp';
+  productImgMobile = '/images/hero-it-products-640.webp';
+  productAvif = '/images/hero-it-products.avif';
+  productAvifMobile = '/images/hero-it-products-640.avif';
 }
 ---
 
@@ -66,6 +88,16 @@ if (pageEntry?.data.contentCluster === 'notebook' || pageEntry?.data.title.inclu
     breadcrumbs={breadcrumbs}
     faqs={pageEntry.data.faqItems}
     noindex={seo.state !== 'INDEX'}
+    socialImage={productImg}
+    socialImageAlt={pageEntry.data.heroImageAlt || pageEntry.data.title}
+    article={shouldUseArticleSchema ? {
+      headline: pageEntry.data.h1 || pageEntry.data.title,
+      description: pageEntry.data.description,
+      image: productImg,
+      datePublished: pageEntry.data.pubDate,
+      dateModified: editorialDate,
+      authorName: pageEntry.data.author || 'ทีมงานเรารับซื้อ'
+    } : undefined}
   >
     <!-- COMMERCIAL LOCAL HERO -->
     <section class="commercial-hero commercial-hero-local">
@@ -75,6 +107,14 @@ if (pageEntry?.data.contentCluster === 'notebook' || pageEntry?.data.title.inclu
             <Breadcrumb items={breadcrumbs} />
             <h1 class="hero-h1">{pageEntry.data.h1 || pageEntry.data.title}</h1>
             <p class="hero-lead-text">{pageEntry.data.description}</p>
+
+            {(pageEntry.data.author || pageEntry.data.reviewer || editorialDate) && (
+              <p class="editorial-meta">
+                {pageEntry.data.author && <span>เรียบเรียงโดย {pageEntry.data.author}</span>}
+                {pageEntry.data.reviewer && <span>ตรวจทานโดย {pageEntry.data.reviewer}</span>}
+                {editorialDate && <time datetime={editorialDate}>อัปเดต {new Intl.DateTimeFormat('th-TH', { dateStyle: 'long' }).format(new Date(editorialDate))}</time>}
+              </p>
+            )}
 
             <div class="hero-intake-card">
               <p style="font-weight: 600; margin-bottom: 0.35rem;">เริ่มจากส่งข้อมูล:</p>
@@ -122,8 +162,17 @@ if (pageEntry?.data.contentCluster === 'notebook' || pageEntry?.data.title.inclu
       </div>
     </section>
 
+    <nav class="page-jump-nav" aria-label="สารบัญหน้านี้">
+      <div class="container page-jump-inner">
+        <span>ไปยัง:</span>
+        <a href="#รายละเอียด">รายละเอียด</a>
+        {pageEntry.data.faqItems && pageEntry.data.faqItems.length > 0 && <a href="#คำถามที่พบบ่อย">คำถามที่พบบ่อย</a>}
+        <a href="#หน้าที่เกี่ยวข้อง">หน้าที่เกี่ยวข้อง</a>
+      </div>
+    </nav>
+
     <!-- CONTENT SECTION -->
-    <section class="commercial-section section-white">
+    <section id="รายละเอียด" class="commercial-section section-white">
       <div class="container">
         <div class="comm-card" style="padding: 2.25rem 2rem;">
           <article class="prose-content">
@@ -134,14 +183,14 @@ if (pageEntry?.data.contentCluster === 'notebook' || pageEntry?.data.title.inclu
     </section>
 
     {pageEntry.data.faqItems && pageEntry.data.faqItems.length > 0 && (
-      <section class="commercial-section section-surface">
+      <section id="คำถามที่พบบ่อย" class="commercial-section section-surface">
         <div class="container">
           <FAQ items={pageEntry.data.faqItems} />
         </div>
       </section>
     )}
 
-    <section class="commercial-section section-white">
+    <section id="หน้าที่เกี่ยวข้อง" class="commercial-section section-white">
       <div class="container">
         <RelatedLinks
           clusterLinks={internalLinks.clusterLinks}

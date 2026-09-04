@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreMoneyAuthority from '../components/CoreMoneyAuthority.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
+import RealProductGallery from '../components/RealProductGallery.astro';
 import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อกล้องมือสอง กล้อง Mirrorless DSLR และเลนส์ | เรารับซื้อ.com";
@@ -103,6 +105,30 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <RealProductGallery
+    category="camera"
+    title="ภาพกล้อง Insta360 X5 พร้อมกล่องและอุปกรณ์จริง"
+    description="ภาพตัวกล้องภายในกล่องและสภาพกล่องด้านนอก ช่วยตรวจรุ่น อุปกรณ์ที่มี และสภาพก่อนขอราคาประเมิน"
+  />
+
+  <CoreMoneyAuthority
+    categoryName='กล้องและเลนส์มือสอง'
+    valuationFactors={[
+      'รุ่น Body และรุ่น Lens แบบเต็ม',
+      'Sensor, Shutter, หน้าจอ EVF ปุ่ม และระบบโฟกัส',
+      'ฝ้า รา รอย ชิ้นส่วนยาง แบตเตอรี่ และ Mount',
+      'กล่อง Charger ฝาปิด สายคล้อง และอุปกรณ์ที่รวมขาย'
+    ]}
+    supportLinks={[
+      { name: 'Sony', path: '/รับซื้อกล้อง-sony/' },
+      { name: 'Canon', path: '/รับซื้อกล้อง-canon/' },
+      { name: 'Nikon', path: '/รับซื้อกล้อง-nikon/' },
+      { name: 'Fujifilm', path: '/รับซื้อกล้อง-fujifilm-ฟูจิฟิล์ม/' },
+      { name: 'เปิดไม่ติด', path: '/สภาพสินค้า/เปิดไม่ติด/' },
+      { name: 'จอแตก/จอมีปัญหา', path: '/สภาพสินค้า/จอแตก/' }
+    ]}
+  />
 
   <!-- SECTION 1: CAMERA TYPES & BRANDS -->
   <section class="commercial-section section-white">
@@ -672,7 +698,7 @@ const faqs = [
           <strong>รุ่น Body + รุ่น Lens + รูป + สภาพ + อาการ + อุปกรณ์</strong>
         </p>
         <p>จากนั้นจึงค่อยตกลงวิธีส่งมอบหรือนัดหมายตามพื้นที่ ประเภทสินค้า และความเหมาะสม</p>
-        <p>หน้า <code>/รับซื้อกล้อง/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        
       </div>
     </div>
   </section>
@@ -702,6 +728,9 @@ const faqs = [
           </a>
         </div>
 
+        <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
+          ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/"><strong>เช็กราคาก่อนขาย</strong></a>
+        </p>
         <p style="font-size: 1.05rem; font-weight: 700;">
           <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
         </p>
@@ -714,21 +743,20 @@ const faqs = [
     <div class="container">
       <div class="comm-card">
         <h2>หน้าข้อมูลรับซื้อกล้องตามพื้นที่</h2>
-        <p style="margin-bottom: 1.25rem;">
-          สำหรับ Historical URL ที่มี Search Intent เฉพาะพื้นที่ สามารถดูรายละเอียดการเตรียมข้อมูลกล้อง เลนส์ และอุปกรณ์ก่อนขายได้ที่:
-        </p>
+        
 
         <div class="local-links-container" style="margin-bottom: 1.25rem;">
           <a href="/รับซื้อกล้องมือสองมุก/" class="local-link-chip">รับซื้อกล้องมือสองมุกดาหาร</a>
           <a href="/รับซื้อกล้องอุบล-กล้องcanon-niko/" class="local-link-chip">รับซื้อกล้องอุบลราชธานี</a>
           <a href="/รับซื้อกล้อง-ยโสธร/" class="local-link-chip">รับซื้อกล้องยโสธร</a>
           <a href="/รับซื้อกล้องถ่ายรูป-ศรี/" class="local-link-chip">รับซื้อกล้องศรีสะเกษ</a>
+          <a href="/รับซื้อกล้องถ่ายรูปจัง/" class="local-link-chip">รับซื้อกล้องขอนแก่น</a>
+          <a href="/รับซื้อกล้องมือสอง-บริก/" class="local-link-chip">ส่งรูปเช็กราคากล้องจากต่างจังหวัด</a>
+          <a href="/รับซื้อกล้อง-fujifilm-ฟูจิฟิล์ม/" class="local-link-chip">รับซื้อกล้อง Fujifilm</a>
           <a href="/รับซื้อกล้องมือสองสุร/" class="local-link-chip">รับซื้อกล้องมือสองสุรินทร์</a>
         </div>
 
-        <p style="font-size: 0.9rem; color: var(--text-muted);">
-          หน้านี้รักษา Search Intent เดิมของกล้องตามพื้นที่ ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในมุกดาหาร
-        </p>
+        
       </div>
     </div>
   </section>

@@ -31,8 +31,8 @@ const breadcrumbs = [
 
 const faqs = [
   {
-    "question": "หน้าชุมแพต่างจากหน้ารับซื้อโน๊ตบุ๊คขอนแก่นอย่างไร?",
-    "answer": "หน้าขอนแก่นเป็นเจ้าของ Intent ระดับจังหวัด ส่วนหน้านี้รักษา Historical Search Intent ที่เจาะจงชุมแพ จึงอยู่ในลำดับชั้นพื้นที่ที่แคบกว่า"
+    "question": "อยู่ชุมแพ ขอนแก่น ส่งข้อมูลโน๊ตบุ๊คประเมินราคาก่อนได้ไหม?",
+    "answer": "ได้ สามารถส่งรุ่น สเปก รูปสภาพ แบตเตอรี่ และอุปกรณ์เพื่อเช็กราคาเบื้องต้นก่อนตัดสินใจขาย"
   },
   {
     "question": "Gaming Notebook มีอาการดับยังเช็กราคาได้ไหม?",
@@ -69,9 +69,9 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
         <div class="local-hero-left">
           <Breadcrumb items={breadcrumbs} />
           <h1 class="hero-h1">รับซื้อโน๊ตบุ๊คชุมแพ ขอนแก่น เช็กสเปกและอาการก่อนขาย</h1>
-        <p>หน้า <code>/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/</code> รักษา Historical Search Intent ระดับพื้นที่:</p>
-        <p><strong>Notebook + ชุมแพ + ขอนแก่น</strong></p>
-        <p>โดยอยู่ภายใต้ Local Intent ระดับจังหวัดของหน้า <a href="/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/">รับซื้อโน๊ตบุ๊คขอนแก่น</a></p>
+        
+        
+        
         <p>หน้านี้จึงไม่ใช้แทนหน้าขอนแก่นทั้งจังหวัด และไม่ควรขยายไปเป็นหน้า Notebook ระดับประเทศ</p>
         <div class="hero-intake-card">
           <p style="font-weight: 600; margin-bottom: 0.35rem;">เริ่มจากส่ง:</p>
@@ -122,14 +122,6 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
   <section class="commercial-section section-white">
     <div class="container">
       <div class="grid-2">
-        <div class="comm-card">
-          <h2>ชุมแพเป็น Historical Intent ระดับพื้นที่ย่อย</h2>
-        <p>ผู้ค้นหาที่ระบุคำว่า <strong>ชุมแพ</strong> มี Location Intent แคบกว่าคำว่า <strong>ขอนแก่น</strong></p>
-        <p>โครงสร้างจึงควรเป็น:</p>
-        <p><strong>Notebook หลัก → ขอนแก่นระดับจังหวัด → ชุมแพ</strong></p>
-        <p>ไม่ใช่ให้หน้าอำเภอแข่งขันโดยตรงกับ Parent Money Hub</p>
-        <p>การมีหน้าเฉพาะชุมแพไม่ได้หมายความว่ามีสาขา พนักงาน หรือจุดรับซื้อประจำอยู่ในพื้นที่</p>
-        </div>
         <div class="comm-card">
           <h2>เครื่องมีอาการสามารถเช็กข้อมูลก่อนตัดสินใจซ่อมได้</h2>
         <p>หาก Notebook มีปัญหา เช่น</p>

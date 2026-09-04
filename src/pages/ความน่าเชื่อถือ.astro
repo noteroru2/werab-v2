@@ -3,65 +3,96 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import TrustBar from '../components/TrustBar.astro';
 import CTA from '../components/CTA.astro';
+import { BUSINESS_FACTS, getDisplayLine, getDisplayPhone } from '../config/business';
 import { resolveSeo } from '../lib/seo/resolve';
 
 const seo = resolveSeo('/ความน่าเชื่อถือ/');
 const breadcrumbs = [
+  { name: 'หน้าแรก', url: '/' },
   { name: 'ความน่าเชื่อถือ', url: '/ความน่าเชื่อถือ/' }
 ];
 ---
 
-<BaseLayout
-  title={seo.title}
-  description={seo.description}
-  breadcrumbs={breadcrumbs}
->
-  <Breadcrumb items={breadcrumbs} />
-
-  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+<BaseLayout title={seo.title} description={seo.description} breadcrumbs={breadcrumbs}>
+  <section class="commercial-hero">
     <div class="container container-narrow">
-      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">TRUST & STANDARDS</span>
-      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
-      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
-        มาตรฐานความปลอดภัย นโยบายการลบข้อมูลส่วนบุคคล และความโปร่งใสในทุกขั้นตอนการรับซื้อ
-      </p>
+      <Breadcrumb items={breadcrumbs} />
+      <div class="commercial-hero-content" style="text-align:center;">
+        <span class="badge badge-accent" style="margin-bottom:.75rem;">TRUST & VALUATION</span>
+        <h1 class="hero-h1">มาตรฐานการประเมินและหลักฐานที่ควรตรวจสอบก่อนขาย</h1>
+        <p class="hero-lead-text">ความน่าเชื่อถือของการรับซื้อควรดูจากข้อมูลที่ตรวจสอบได้ กระบวนการที่อธิบายได้ และหลักฐานการตกลงซื้อขาย ไม่ใช่คำรับรองกว้าง ๆ เพียงอย่างเดียว</p>
+      </div>
     </div>
   </section>
 
   <TrustBar />
 
-  <section class="section">
+  <section class="commercial-section section-white">
     <div class="container container-narrow">
-      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">3 เสาหลักแห่งความน่าเชื่อถือ</h2>
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>1. ก่อนประเมิน ต้องระบุสินค้าที่กำลังพูดถึงให้ชัด</h2>
+          <p>เริ่มจากรุ่น รุ่นย่อย สเปกหรือความจุ สภาพ และอุปกรณ์ที่รวมขาย การให้ราคาโดยไม่มีข้อมูลเหล่านี้มีโอกาสคลาดเคลื่อนสูง</p>
+          <p>หากไม่ทราบรุ่น ควรส่งรูป Label, About, System Information หรือจุดที่ใช้ระบุรุ่นได้ โดยไม่ต้องส่งข้อมูลบัญชีที่ไม่เกี่ยวข้อง</p>
+        </div>
+        <div class="comm-card">
+          <h2>2. จุดที่ทำให้ราคาเปลี่ยนควรอธิบายได้</h2>
+          <p>เมื่อราคาหลังตรวจต่างจากราคาประเมินเบื้องต้น เหตุผลควรเชื่อมกับสิ่งที่ตรวจพบ เช่น รุ่นย่อยไม่ตรง สเปกเปลี่ยน จอมีปัญหา แบตเตอรี่เสื่อม อุปกรณ์ขาด หรือมีอาการที่ไม่ได้เห็นจากรูป</p>
+          <p>ผู้ขายสามารถถามได้ว่าปัจจัยใดมีผลต่อราคาและข้อมูลใดที่ใช้ยืนยันปัจจัยนั้น</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
-          <div>
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.3rem;">
-              1. มาตรฐานการล้างข้อมูลส่วนบุคคล (Data Sanitization)
-            </h3>
-            <p>
-              เรารับรองและตรวจสอบว่าอุปกรณ์ทุกเครื่องได้รับการล้างข้อมูล (Factory Reset / Secure Wipe) และลงชื่อออกจากบัญชีส่วนบุคคล เช่น Apple ID, Google Account, Microsoft Account อย่างสมบูรณ์ 100% เพื่อป้องกันข้อมูลส่วนตัวของผู้ขายรั่วไหล
-            </p>
-          </div>
+  <section class="commercial-section section-surface">
+    <div class="container container-narrow">
+      <div class="comm-card">
+        <h2>หลักฐานที่ผู้ขายควรเก็บไว้</h2>
+        <div class="grid-2">
+          <ul>
+            <li>ข้อความหรือแชทที่สรุปรุ่นและสภาพที่ใช้ประเมิน</li>
+            <li>รายการอุปกรณ์ที่ตกลงว่ารวมขาย</li>
+            <li>ราคาประเมินเบื้องต้นและเงื่อนไขที่แจ้งไว้</li>
+          </ul>
+          <ul>
+            <li>ข้อความยืนยันราคาสุดท้ายก่อนส่งมอบ</li>
+            <li>หลักฐานการชำระเงินหลังตกลงซื้อขาย</li>
+            <li>เลขรุ่นหรือ Serial บางส่วนเมื่อจำเป็นต่อการแยกรายการหลายเครื่อง</li>
+          </ul>
+        </div>
+        <p>ไม่ควรเปิดเผย Password, PIN, OTP หรือ Recovery Key เพื่อใช้เป็นหลักฐานการเป็นเจ้าของหรือเพื่อขอราคาประเมิน</p>
+      </div>
+    </div>
+  </section>
 
-          <div>
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.3rem;">
-              2. ความโปร่งใสด้านการตรวจสอบสภาพ (Transparent Valuation)
-            </h3>
-            <p>
-              ทุกการประเมินราคาจะมีการชี้แจงเหตุผลตามสภาพจริง เช่น สุขภาพแบตเตอรี่ รอยตำหนิ หรืออุปกรณ์ที่ขาดหาย โดยไม่มีการกดราคาโดยไม่มีหลักเกณฑ์
-            </p>
-          </div>
+  <section class="commercial-section section-white">
+    <div class="container container-narrow">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>ความเป็นส่วนตัวและข้อมูลในเครื่อง</h2>
+          <p>การเช็กราคาเบื้องต้นไม่จำเป็นต้องเข้าถึงไฟล์ส่วนตัวของผู้ขาย เจ้าของควรสำรองข้อมูล ออกจากบัญชี ปิดระบบล็อกที่เกี่ยวข้อง และล้างข้อมูลด้วยตนเองเมื่อพร้อมส่งมอบจริง</p>
+          <p>หากเป็นเครื่องบริษัทหรือมีข้อมูลสำคัญ สามารถแจ้งตั้งแต่ต้นว่าไม่รวม Storage หรือมีขั้นตอนจัดการข้อมูลภายในก่อนส่งมอบ</p>
+        </div>
+        <div class="comm-card">
+          <h2>กรรมสิทธิ์และสินค้าที่มีข้อสงสัย</h2>
+          <p>ผู้ขายควรมีสิทธิ์จำหน่ายสินค้าที่นำมาขาย หากข้อมูลรุ่น เจ้าของบัญชี ระบบล็อก หรือที่มาของสินค้ามีข้อขัดแย้ง ควรแก้ไขและยืนยันสิทธิ์ให้เรียบร้อยก่อนทำรายการ</p>
+          <p>รายละเอียดที่ต้องใช้ยืนยันอาจต่างกันตามประเภทและมูลค่าสินค้า จึงไม่ควรส่งเอกสารส่วนตัวเกินความจำเป็นตั้งแต่ขั้นเช็กราคา</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div>
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.3rem;">
-              3. ปฏิบัติตามกฎหมายอย่างเคร่งครัด (Legal Compliance)
-            </h3>
-            <p>
-              เราไม่รับซื้อของผิดกฎหมาย สินค้าที่ถูกขโมย หรือของหลุดจำนำที่ไม่มีเอกสารแสดงความเป็นเจ้าของที่ถูกต้อง และดำเนินขั้นตอนการชำระเงินที่ปลอดภัยและสามารถตรวจสอบได้
-            </p>
-          </div>
+  <section class="commercial-section section-surface">
+    <div class="container container-narrow">
+      <div class="comm-card">
+        <h2>ข้อมูลบริการที่ตรวจสอบได้บนเว็บไซต์</h2>
+        <p>ผู้ดูแลการประเมินที่เว็บไซต์ระบุคือ <strong>{BUSINESS_FACTS.VERIFIED.contactPerson}</strong> ติดต่อผ่าน LINE <strong>{getDisplayLine()}</strong> หรือโทร <strong>{getDisplayPhone()}</strong></p>
+        <div class="local-links-container" style="margin-top:1.25rem;">
+          <a href="/เกี่ยวกับเรา/" class="local-link-chip">เกี่ยวกับผู้ดูแลและวิธีทำข้อมูล</a>
+          <a href="/เช็กราคาก่อนขาย/" class="local-link-chip">ขั้นตอนเช็กราคาก่อนขาย</a>
+          <a href="/terms/" class="local-link-chip">เงื่อนไขการประเมินและซื้อขาย</a>
+          <a href="/privacy-policy/" class="local-link-chip">แนวทางความเป็นส่วนตัว</a>
+          <a href="/contact/" class="local-link-chip">ติดต่อทีมประเมิน</a>
         </div>
       </div>
     </div>

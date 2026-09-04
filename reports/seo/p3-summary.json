@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-04",
+  "phase": "RECOVERY P3 — CORE MONEY PAGE RANKING PUSH + TRUST / PROOF / E-E-A-T",
+  "lifecycleCounts": {
+    "INDEX": 86,
+    "HOLD_NOINDEX": 31,
+    "DRAFT": 29,
+    "REDIRECT": 53,
+    "GONE": 206
+  },
+  "controlledUrls": 405,
+  "coreMoneyPagesEnhanced": 6,
+  "trustPagesPromoted": 2,
+  "newIndexUrls": 2,
+  "redirectChanges": 0,
+  "urlEquityMasterRows": 1912,
+  "staticVerdict": "PASS",
+  "productionVerdict": "DEPLOY_HOLD_UNTIL_BUILD",
+  "contentHygieneSourcesScanned": 105,
+  "buildGate": {
+    "npmCi": "TRANSPORT_TIMEOUT",
+    "astroBuild": "NOT_RUN_DEPENDENCIES_UNAVAILABLE",
+    "nodeModulesCleaned": true
+  }
+}

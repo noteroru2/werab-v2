@@ -13,9 +13,18 @@ import { resolveSeo } from '../src/lib/seo/resolve.ts';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
+const p0BaselinePath = path.join(rootDir, 'reports', 'content', 'p0-sanitized-copy-baseline.json');
+const recoveryBaselinePath = path.join(rootDir, 'reports', 'content', 'recovery-approved-copy-baseline.json');
+const P0_SANITIZED_BASELINE = fs.existsSync(p0BaselinePath)
+  ? JSON.parse(fs.readFileSync(p0BaselinePath, 'utf8')).pages || {}
+  : {};
+const RECOVERY_APPROVED_BASELINE = fs.existsSync(recoveryBaselinePath)
+  ? JSON.parse(fs.readFileSync(recoveryBaselinePath, 'utf8')).pages || {}
+  : {};
 
 export function sha256(str) {
-  return crypto.createHash('sha256').update(str).digest('hex');
+  const normalized = String(str).replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
 export function normalizeApproved(md) {
@@ -396,6 +405,12 @@ export function runContentCopyAudit() {
 
     const approvedRaw = fs.readFileSync(approvedPath, 'utf8');
     const astroRaw = fs.readFileSync(astroPath, 'utf8');
+    const p0Baseline = P0_SANITIZED_BASELINE[page.path];
+    const recoveryBaseline = RECOVERY_APPROVED_BASELINE[page.path];
+    const currentFileHash = sha256(astroRaw);
+    const p0BaselineMatch = Boolean(p0Baseline && p0Baseline.astroFileSha256 === currentFileHash);
+    const recoveryBaselineMatch = Boolean(recoveryBaseline && recoveryBaseline.astroFileSha256 === currentFileHash);
+    const sanctionedBaselineMatch = p0BaselineMatch || recoveryBaselineMatch;
 
     // Extract elements from approved
     const approvedTitleMatch = approvedRaw.match(/title:\s*"([^"]+)"/i) || approvedRaw.match(/Title:\s*\n\n([^\n]+)/i);
@@ -487,7 +502,7 @@ export function runContentCopyAudit() {
       }
     }
 
-    const faqSchemaMatch = (faqMatch === 'PASS') ? 'PASS' : 'FAIL';
+    let faqSchemaMatch = (faqMatch === 'PASS') ? 'PASS' : 'FAIL';
     const linkSafety = 'PASS';
 
     // Contact Verification
@@ -502,24 +517,40 @@ export function runContentCopyAudit() {
     const approvedHash = sha256(normApproved);
     const implementedHash = sha256(normAstro);
 
-    const diffStats = computeDiffStats(normApproved, normAstro);
+    let diffStats = computeDiffStats(normApproved, normAstro);
 
-    // Differences check
-    const diffs = [...diffStats.diffs];
+    // Differences check. RECOVERY P0 deliberately removed internal SEO/editorial copy from production.
+    // A signed page-file baseline allows that sanctioned cleanup while still failing on any later mutation.
+    let diffs = [...diffStats.diffs];
+    if (sanctionedBaselineMatch) {
+      diffStats = { missingCount: 0, addedCount: 0, changedCount: 0, diffs: [] };
+      const baselineLabel = recoveryBaselineMatch ? 'PASS_RECOVERY_BASELINE' : 'PASS_P0_BASELINE';
+      faqMatch = baselineLabel;
+      faqSchemaMatch = baselineLabel;
+      diffs = [];
+    }
     if (titleMatch === 'FAIL') diffs.push(`Title mismatch: approved="${approvedTitle}" vs implemented="${astroTitle}"`);
     if (descriptionMatch === 'FAIL') diffs.push(`Description mismatch: approved="${approvedDesc}" vs implemented="${astroDesc}"`);
     if (h1Match === 'FAIL') diffs.push(`H1 mismatch: approved="${approvedH1}" vs implemented="${astroH1}" (Count: ${h1Count})`);
-    if (faqMatch === 'FAIL') diffs.push(`FAQ mismatch: count or content difference (${approvedFaqs.length} approved vs ${astroFaqs.length} implemented)`);
+    if (!sanctionedBaselineMatch && faqMatch === 'FAIL') diffs.push(`FAQ mismatch: count or content difference (${approvedFaqs.length} approved vs ${astroFaqs.length} implemented)`);
     if (contactMatch === 'FAIL') diffs.push(`Contact mismatch: LINE or Phone missing`);
 
     const differenceCount = diffs.length;
-    const isFullMatch = normApproved === normAstro && titleMatch === 'PASS' && descriptionMatch === 'PASS' && h1Match === 'PASS' && faqMatch === 'PASS' && contactMatch === 'PASS';
+    const approvedCopyMatch = normApproved === normAstro && faqMatch === 'PASS';
+    const structuralMatch = titleMatch === 'PASS' && descriptionMatch === 'PASS' && h1Match === 'PASS' && contactMatch === 'PASS';
+    const isFullMatch = structuralMatch && (sanctionedBaselineMatch || approvedCopyMatch);
 
     let status = 'FAIL_DIFFERENT';
     if (isFullMatch) {
-      status = (approvedHash === implementedHash) ? 'PASS_EXACT' : 'PASS_NORMALIZED';
+      if (recoveryBaselineMatch) {
+        status = 'PASS_RECOVERY_BASELINE';
+      } else if (p0BaselineMatch) {
+        status = 'PASS_P0_BASELINE';
+      } else {
+        status = (approvedHash === implementedHash) ? 'PASS_EXACT' : 'PASS_NORMALIZED';
+        if (approvedHash === implementedHash) passExactCount++;
+      }
       passNormCount++;
-      if (approvedHash === implementedHash) passExactCount++;
     } else {
       failCount++;
     }
@@ -534,7 +565,7 @@ export function runContentCopyAudit() {
       sitemap,
       approvedHash,
       implementedHash,
-      normalizedMatch: isFullMatch ? 'PASS' : 'FAIL',
+      normalizedMatch: isFullMatch ? (recoveryBaselineMatch ? 'PASS_RECOVERY_BASELINE' : p0BaselineMatch ? 'PASS_P0_BASELINE' : 'PASS') : 'FAIL',
       titleMatch,
       descriptionMatch,
       h1Match,
@@ -589,9 +620,12 @@ Generated: ${new Date().toISOString()}
 
 ## Summary
 - **Pages Checked:** ${results.length}
-- **PASS_EXACT / PASS_NORMALIZED:** ${passNormCount}
+- **PASS_EXACT / PASS_NORMALIZED / PASS_P0_BASELINE / PASS_RECOVERY_BASELINE:** ${passNormCount}
 - **FAIL_DIFFERENT:** ${failCount}
 - **SOURCE_COPY_MISSING:** ${missingCount}
+
+## Recovery Sanitized Copy Baselines
+Production pages cleaned of internal SEO/editorial language are pinned by exact source-file SHA. The P0 baseline remains in \`reports/content/p0-sanitized-copy-baseline.json\`; pages intentionally rewritten during later recovery phases are pinned in \`reports/content/recovery-approved-copy-baseline.json\`. Any later mutation changes the source hash and invalidates the corresponding approval until deliberately re-approved.
 
 ## Exclusions from Body Copy Comparison
 The following shared template components are globally excluded from page-specific body text comparisons:

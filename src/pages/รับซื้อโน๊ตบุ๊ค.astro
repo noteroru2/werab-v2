@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreMoneyAuthority from '../components/CoreMoneyAuthority.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
+import RealProductGallery from '../components/RealProductGallery.astro';
 import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อโน๊ตบุ๊คมือสอง Gaming Notebook เช็กราคาก่อนขาย | เรารับซื้อ.com";
@@ -103,6 +105,30 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <RealProductGallery
+    category="notebook"
+    title="ภาพโน๊ตบุ๊คจริงหลายรุ่นและหลายสภาพ"
+    description="ตัวอย่าง Acer Swift, Lenovo และ MSI Gaming ที่ถ่ายทั้งหน้าจอ คีย์บอร์ด ตัวเครื่อง และพอร์ต ซึ่งเป็นมุมที่ช่วยตรวจรุ่นและสภาพก่อนประเมิน"
+  />
+
+  <CoreMoneyAuthority
+    categoryName='โน๊ตบุ๊คมือสอง'
+    valuationFactors={[
+      'รุ่นเต็มและ Generation ของ CPU',
+      'RAM, SSD และ GPU ที่ติดตั้งอยู่จริง',
+      'สุขภาพแบตเตอรี่ หน้าจอ Keyboard และบานพับ',
+      'Adapter กล่อง ประกันคงเหลือ และประวัติซ่อมที่ทราบ'
+    ]}
+    supportLinks={[
+      { name: 'ASUS มือสอง', path: '/รับซื้อโน๊ตบุ๊ค-asus/' },
+      { name: 'Lenovo มือสอง', path: '/รับซื้อโน๊ตบุ๊ค-lenovo/' },
+      { name: 'Acer มือสอง', path: '/รับซื้อโน๊ตบุ๊ค-acer/' },
+      { name: 'Dell มือสอง', path: '/รับซื้อโน๊ตบุ๊ค-dell/' },
+      { name: 'แบตเสื่อม', path: '/สภาพสินค้า/แบตเสื่อม/' },
+      { name: 'จอแตก/จอมีปัญหา', path: '/สภาพสินค้า/จอแตก/' }
+    ]}
+  />
 
   <!-- SECTION 1: TYPES & BRANDS -->
   <section class="commercial-section section-white">
@@ -647,7 +673,7 @@ const faqs = [
           <strong>รุ่น + สเปก + รูป + สภาพ + อุปกรณ์</strong>
         </p>
         <p>แล้วจึงพิจารณาวิธีส่งมอบหรือนัดหมายตามความเหมาะสม</p>
-        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        
         <p>สำหรับบางพื้นที่ที่มีหน้าข้อมูลเฉพาะ จะเชื่อมจากหน้าหมวดเมื่อเนื้อหาและข้อมูลของพื้นที่นั้นผ่านการตรวจสอบแล้ว</p>
       </div>
     </div>
@@ -682,7 +708,7 @@ const faqs = [
           หากยังไม่แน่ใจว่าสเปกอยู่ตรงไหน สามารถเริ่มจาก วิธีตรวจสเปกก่อนขาย เมื่อคู่มือนี้พร้อมเผยแพร่ หรือส่งรูปข้อมูลเครื่องมาช่วยตรวจสอบก่อนได้
         </p>
         <p style="font-size: 0.95rem;">
-          ดูขั้นตอนภาพรวมได้ที่ เช็กราคาก่อนขาย และ วิธีขาย
+          ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/"><strong>เช็กราคาก่อนขาย</strong></a>
         </p>
       </div>
     </div>
@@ -703,6 +729,9 @@ const faqs = [
           <a href="/รับซื้อโน๊ตบุ๊ค-เลย/" class="local-link-chip">รับซื้อโน๊ตบุ๊คเลย</a>
           <a href="/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/" class="local-link-chip">รับซื้อโน๊ตบุ๊คชัยภูมิ</a>
           <a href="/รับซื้อโน๊ตบุ๊ค-สกลนคร/" class="local-link-chip">รับซื้อโน๊ตบุ๊คสกลนคร</a>
+          <a href="/รับซื้อโน๊ตบุ๊ค-บึงกาฬ/" class="local-link-chip">รับซื้อโน๊ตบุ๊คบึงกาฬ</a>
+          <a href="/รับซื้อโน๊ตบุ๊ค-จังหวัด/" class="local-link-chip">รับซื้อโน๊ตบุ๊คหนองคาย</a>
+          <a href="/รับซื้อโน๊ตบุ๊ค-ศรีสะเ-2/" class="local-link-chip">รับซื้อโน๊ตบุ๊คศรีสะเกษ</a>
           <a href="/รับซื้อโน๊ตบุ๊ค-นครพนม/" class="local-link-chip">รับซื้อโน๊ตบุ๊คนครพนม</a>
           <a href="/รับซื้อโน๊ตบุ๊ค-นครราชส/" class="local-link-chip">รับซื้อโน๊ตบุ๊คโคราช นครราชสีมา</a>
           <a href="/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/" class="local-link-chip">รับซื้อโน๊ตบุ๊คยโสธร</a>
@@ -713,9 +742,7 @@ const faqs = [
           <a href="/รับซื้อโน๊ตบุ๊ค-อุดรธาน/" class="local-link-chip">รับซื้อโน๊ตบุ๊คอุดรธานี</a>
         </div>
 
-        <p style="font-size: 0.9rem; color: var(--text-muted);">
-          หน้าเหล่านี้เป็นข้อมูลตาม Search Intent ของแต่ละพื้นที่ ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในทุกจังหวัดหรือทุกอำเภอ
-        </p>
+        
       </div>
     </div>
   </section>

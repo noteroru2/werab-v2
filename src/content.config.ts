@@ -35,7 +35,9 @@ const pagesCollection = defineCollection({
       'pc',
       'gaming',
       'b2b',
-      'android'
+      'android',
+      'condition',
+      'valuation'
     ]).default('general'),
     primaryIntent: z.enum([
       'buyback',

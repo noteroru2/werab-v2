@@ -1,0 +1,210 @@
+{
+  "generatedAt": "2026-09-04T11:43:00+07:00",
+  "phase": "RECOVERY_P0",
+  "historicalWindow": {
+    "start": "2026-04-07",
+    "end": "2026-07-06",
+    "clicks": 1226,
+    "impressions": 24583
+  },
+  "currentControlledLifecycle": {
+    "INDEX": 51,
+    "HOLD_NOINDEX": 41,
+    "DRAFT": 29,
+    "REDIRECT": 46,
+    "GONE": 206,
+    "TOTAL": 373
+  },
+  "historicalEquityByCurrentState": {
+    "ACTIVE_INDEX_200": {
+      "urls": 51,
+      "clicks90d": 460.0,
+      "impressions90d": 8276.0
+    },
+    "ACTIVE_REDIRECT_301": {
+      "urls": 46,
+      "clicks90d": 49.0,
+      "impressions90d": 1347.0
+    },
+    "HOLD_NOINDEX_200": {
+      "urls": 41,
+      "clicks90d": 6.0,
+      "impressions90d": 298.0
+    },
+    "DRAFT_NOT_RELEASED": {
+      "urls": 29,
+      "clicks90d": 0.0,
+      "impressions90d": 0.0
+    },
+    "GONE_410": {
+      "urls": 206,
+      "clicks90d": 456.0,
+      "impressions90d": 9106.0
+    },
+    "UNREGISTERED_OR_PRIVATE": {
+      "urls": 1524,
+      "clicks90d": 255.0,
+      "impressions90d": 5556.0
+    }
+  },
+  "p0EquityRecoveredToRedirects": {
+    "clicks90d": 43,
+    "sources": [
+      "/รับซื้อมือถือใกล้ฉัน-อุ/",
+      "/รับซื้อมือถือใกล้ฉัน-ขอ/"
+    ],
+    "target": "/รับซื้อโทรศัพท์มือถือ-จ/"
+  },
+  "remainingRelevantUnregistered": {
+    "urlsWithHistoricalClicks": 50,
+    "clicks90d": 171.0,
+    "topCandidates": [
+      {
+        "path": "/รับซื้อเมืองศรีสะเกษ/",
+        "clicks90d": 9.0,
+        "impressions90d": 183.0,
+        "position90d": 8.74,
+        "cluster": "macbook",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "รับซื้อ MacBook, iMac , iPhone , iPad เมืองศรีสะเกษ ศรีสะเกษ"
+      },
+      {
+        "path": "/รับซื้อโดรน/",
+        "clicks90d": 9.0,
+        "impressions90d": 69.0,
+        "position90d": 14.78,
+        "cluster": "gadget",
+        "planning": "E_REVIEW",
+        "legacyTitle": "UNKNOWN"
+      },
+      {
+        "path": "/รับซื้อกล้องมือสอง-บริก/",
+        "clicks90d": 8.0,
+        "impressions90d": 140.0,
+        "position90d": 26.64,
+        "cluster": "camera",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "รับซื้อกล้องมือสอง บริการรับซื้อถึงหน้าบ้าน ทั่วประเทศ ให้ราคาสูง"
+      },
+      {
+        "path": "/รับซื้อทีวี-อุบล-รับซื้/",
+        "clicks90d": 8.0,
+        "impressions90d": 59.0,
+        "position90d": 9.32,
+        "cluster": "general_buyback",
+        "planning": "E_REVIEW",
+        "legacyTitle": "UNKNOWN"
+      },
+      {
+        "path": "/รับซื้อกล้องถ่ายรูปจัง/",
+        "clicks90d": 7.0,
+        "impressions90d": 204.0,
+        "position90d": 10.44,
+        "cluster": "camera",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "รับซื้อกล้องถ่ายรูปจังหวัดขอนแก่น | รับซื้อกล้อง ขอนแก่น"
+      },
+      {
+        "path": "/รับซื้อคอม-ศรีสะเกษ/",
+        "clicks90d": 7.0,
+        "impressions90d": 99.0,
+        "position90d": 9.83,
+        "cluster": "computer",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "UNKNOWN"
+      },
+      {
+        "path": "/รับซื้อโน๊ตบุ๊ค-บึงกาฬ/",
+        "clicks90d": 7.0,
+        "impressions90d": 97.0,
+        "position90d": 7.1,
+        "cluster": "notebook",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "บึงกาฬ รับซื้อโน๊ตบุ๊ค สู้ทุกราคา บริการรับถึงที่ จ่ายสด ไม่กดราคา ปลอดภัย 100%"
+      },
+      {
+        "path": "/รับซื้อไอแพด-อุบล/",
+        "clicks90d": 7.0,
+        "impressions90d": 68.0,
+        "position90d": 13.24,
+        "cluster": "ipad",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "UNKNOWN"
+      },
+      {
+        "path": "/รับซื้อนางรอง/",
+        "clicks90d": 6.0,
+        "impressions90d": 112.0,
+        "position90d": 8.24,
+        "cluster": "general_buyback",
+        "planning": "E_REVIEW",
+        "legacyTitle": "UNKNOWN"
+      },
+      {
+        "path": "/รับซื้อโน๊ตบุ๊ค-จังหวัด/",
+        "clicks90d": 6.0,
+        "impressions90d": 95.0,
+        "position90d": 8.47,
+        "cluster": "notebook",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "รับซื้อโน๊ตบุ๊ค จังหวัดหนองคาย บริการรับซื้อถึงที่ ให้ราคาสูงที่สุด รับซื้อโน๊ตบุ๊คมือสอง"
+      },
+      {
+        "path": "/รับซื้อเมืองอุดรธานี/",
+        "clicks90d": 6.0,
+        "impressions90d": 64.0,
+        "position90d": 9.84,
+        "cluster": "macbook",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "รับซื้อ MacBook, iMac , iPhone , iPad เมืองอุดรธานี อุดรธานี"
+      },
+      {
+        "path": "/รับซื้อเดชอุดม/",
+        "clicks90d": 5.0,
+        "impressions90d": 124.0,
+        "position90d": 8.58,
+        "cluster": "general_buyback",
+        "planning": "E_REVIEW",
+        "legacyTitle": "UNKNOWN"
+      },
+      {
+        "path": "/รับซื้อโทรศัพท์-อุบล/",
+        "clicks90d": 4.0,
+        "impressions90d": 182.0,
+        "position90d": 9.18,
+        "cluster": "iphone",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "UNKNOWN"
+      },
+      {
+        "path": "/รับซื้อโน๊ตบุ๊ค-notebook/",
+        "clicks90d": 4.0,
+        "impressions90d": 102.0,
+        "position90d": 40.28,
+        "cluster": "notebook",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "UNKNOWN"
+      },
+      {
+        "path": "/รับซื้อกล้อง-fujifilm-ฟูจิฟิล์ม/",
+        "clicks90d": 4.0,
+        "impressions90d": 78.0,
+        "position90d": 11.51,
+        "cluster": "camera",
+        "planning": "A_PRESERVE_REWRITE",
+        "legacyTitle": "รับซื้อกล้อง Fujifilm ฟูจิฟิล์ม รับซื้อกล้องมือสอง ให้ราคาสูงที่สุด พร้อมรับถึงที่"
+      }
+    ]
+  },
+  "contentHygiene": {
+    "contaminatedPageFilesBefore": 42,
+    "auditOccurrencesBefore": 322,
+    "auditOccurrencesAfter": 0,
+    "changedPageFiles": 44
+  },
+  "releaseGates": {
+    "staticP0Audit": "PASS",
+    "contentHygiene": "PASS",
+    "dependencyBuild": "PENDING_RUNTIME_VERIFICATION"
+  }
+}

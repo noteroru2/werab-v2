@@ -41,16 +41,36 @@ export function getInternalLinks(currentSeo: ResolvedSeo): {
     };
   }
 
-  // 2. Resolve Cluster Related Links (Same cluster, state === INDEX)
+  // 2. Resolve explicitly curated related pages first, then fill from same cluster.
   const clusterLinks: InternalLinkItem[] = [];
   const guideLinks: InternalLinkItem[] = [];
+  const seen = new Set<string>();
+
+  for (const relatedPath of currentSeo.relatedPages || []) {
+    const related = resolveSeo(relatedPath);
+    if (!related.indexable || related.state !== 'INDEX' || related.normalizedPath === currentPath) continue;
+    if (related.primaryIntent === 'price_check' || related.primaryIntent === 'guide' || related.pageType === 'guide' || related.pageType === 'condition') {
+      if (!guideLinks.some(item => item.path === related.normalizedPath)) {
+        guideLinks.push({ path: related.normalizedPath, title: related.h1 || related.title || related.normalizedPath });
+      }
+      continue;
+    }
+    if (!seen.has(related.normalizedPath)) {
+      seen.add(related.normalizedPath);
+      clusterLinks.push({
+        path: related.normalizedPath,
+        title: related.h1 || related.title || related.normalizedPath,
+        badge: related.pageType === 'location' ? 'พื้นที่ให้บริการ' : undefined
+      });
+    }
+  }
 
   for (const [path, record] of SEO_MANIFEST_MAP.entries()) {
-    if (path === currentPath) continue;
+    if (path === currentPath || seen.has(path)) continue;
     if (record.state !== 'INDEX') continue;
 
-    // Check cluster relevance
     if (record.contentCluster === currentCluster && currentCluster !== 'general') {
+      seen.add(path);
       clusterLinks.push({
         path: record.path,
         title: record.h1 || record.title || record.path,
@@ -58,20 +78,17 @@ export function getInternalLinks(currentSeo: ResolvedSeo): {
       });
     }
 
-    // Check guide relevance
-    if (record.primaryIntent === 'price_check' || record.pageType === 'guide') {
-      if (guideLinks.length < 3) {
-        guideLinks.push({
-          path: record.path,
-          title: record.h1 || record.title || record.path
-        });
-      }
+    if ((record.primaryIntent === 'price_check' || record.primaryIntent === 'guide' || record.pageType === 'guide' || record.pageType === 'condition') && !guideLinks.some(item => item.path === record.path)) {
+      guideLinks.push({
+        path: record.path,
+        title: record.h1 || record.title || record.path
+      });
     }
   }
 
   return {
     parentLink,
     clusterLinks: clusterLinks.slice(0, 6),
-    guideLinks
+    guideLinks: guideLinks.slice(0, 3)
   };
 }

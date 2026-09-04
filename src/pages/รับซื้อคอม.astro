@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreMoneyAuthority from '../components/CoreMoneyAuthority.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
+import RealProductGallery from '../components/RealProductGallery.astro';
 import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อคอมมือสอง Gaming PC และคอมประกอบ เช็กราคาก่อนขาย | เรารับซื้อ.com";
@@ -103,6 +105,29 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <RealProductGallery
+    category="pc"
+    title="ภาพคอมประกอบจริงทั้งเคสสีดำและสีขาว"
+    description="ภาพตัวเคส ภายในเครื่อง ระบบพัดลม แรม และการ์ดจอ GeForce RTX ซึ่งเป็นข้อมูลสำคัญในการแยกสเปกและประเมินสภาพ"
+  />
+
+  <CoreMoneyAuthority
+    categoryName='คอมพิวเตอร์และ Gaming PC มือสอง'
+    valuationFactors={[
+      'CPU และ GPU รุ่นเต็ม',
+      'RAM, SSD/HDD, Mainboard และ PSU',
+      'สภาพ Case ระบบระบายความร้อน และการทำงานของพอร์ต',
+      'ชิ้นส่วนที่มีประกัน กล่อง หรืออุปกรณ์เดิม'
+    ]}
+    supportLinks={[
+      { name: 'คอมประกอบ / Gaming PC', path: '/รับซื้อคอมประกอบ/' },
+      { name: 'คอมเสียและซากคอม', path: '/รับซื้อซากคอมพิวเตอร์/' },
+      { name: 'เครื่องเปิดไม่ติด', path: '/สภาพสินค้า/เปิดไม่ติด/' },
+      { name: 'ไม่มีอุปกรณ์', path: '/สภาพสินค้า/ไม่มีอุปกรณ์/' },
+      { name: 'เช็กราคาก่อนขาย', path: '/เช็กราคาก่อนขาย/' }
+    ]}
+  />
 
   <!-- SECTION 1: TYPES OF COMPUTERS -->
   <section class="commercial-section section-white">
@@ -668,7 +693,7 @@ const faqs = [
         </p>
         <p>เพื่อเริ่มประเมินได้</p>
         <p>จากนั้นจึงค่อยตกลงวิธีส่งมอบหรือนัดหมายตามประเภทสินค้า พื้นที่ และความเหมาะสม</p>
-        <p>หน้า <code>/รับซื้อคอม/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        
       </div>
     </div>
   </section>
@@ -700,7 +725,7 @@ const faqs = [
         </div>
 
         <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
-          ดูขั้นตอนภาพรวมได้ที่ เช็กราคาก่อนขาย และ วิธีขาย
+          ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/"><strong>เช็กราคาก่อนขาย</strong></a>
         </p>
         <p style="font-size: 1.05rem; font-weight: 700;">
           <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
@@ -722,11 +747,11 @@ const faqs = [
           <a href="/รับซื้อคอม-อุดรธานี/" class="local-link-chip">รับซื้อคอมอุดรธานี</a>
           <a href="/รับซื้อคอม-ขอนแก่น/" class="local-link-chip">รับซื้อคอมขอนแก่น</a>
           <a href="/รับซื้อคอม-สารคาม/" class="local-link-chip">รับซื้อคอมมหาสารคาม</a>
+          <a href="/รับซื้อคอม-ศรีสะเกษ/" class="local-link-chip">รับซื้อคอมศรีสะเกษ</a>
+          <a href="/รับซื้อคอม-สายไหม/" class="local-link-chip">รับซื้อคอมสายไหม</a>
         </div>
 
-        <p style="font-size: 0.9rem; color: var(--text-muted);">
-          หน้าเหล่านี้รักษา Search Intent เฉพาะพื้นที่ของ URL เดิม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในทุกจังหวัด
-        </p>
+        
       </div>
     </div>
   </section>

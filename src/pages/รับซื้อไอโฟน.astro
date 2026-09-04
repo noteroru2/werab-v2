@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreMoneyAuthority from '../components/CoreMoneyAuthority.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
 import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
@@ -103,6 +104,24 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <CoreMoneyAuthority
+    categoryName='iPhone มือสอง'
+    valuationFactors={[
+      'รุ่นและความจุของเครื่อง',
+      'Battery Health หน้าจอ Face ID กล้อง และพอร์ตชาร์จ',
+      'สภาพกรอบ/ฝาหลังและการทำงานของปุ่ม',
+      'Parts and Service History อุปกรณ์ และประกันคงเหลือที่ตรวจสอบได้'
+    ]}
+    supportLinks={[
+      { name: 'iPhone 13', path: '/รับซื้อ-iphone-13/' },
+      { name: 'iPhone 14', path: '/รับซื้อ-iphone-14/' },
+      { name: 'iPhone 15', path: '/รับซื้อ-iphone-15/' },
+      { name: 'แบตเสื่อม', path: '/สภาพสินค้า/แบตเสื่อม/' },
+      { name: 'จอแตก/จอมีปัญหา', path: '/สภาพสินค้า/จอแตก/' },
+      { name: 'ไม่มีอุปกรณ์', path: '/สภาพสินค้า/ไม่มีอุปกรณ์/' }
+    ]}
+  />
 
   <!-- SECTION 1: IPHONE TYPES -->
   <section class="commercial-section section-white">
@@ -646,7 +665,7 @@ const faqs = [
           <strong>รุ่น + ความจุ + Battery Health + รูป + สภาพ + อาการ + อุปกรณ์</strong>
         </p>
         <p>จากนั้นจึงพิจารณาวิธีส่งมอบหรือนัดหมายตามพื้นที่และความเหมาะสม</p>
-        <p>หน้า <code>/รับซื้อไอโฟน/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        
       </div>
     </div>
   </section>
@@ -677,7 +696,7 @@ const faqs = [
         </div>
 
         <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
-          ดูขั้นตอนภาพรวมได้ที่ <strong>เช็กราคาก่อนขาย</strong>
+          ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/"><strong>เช็กราคาก่อนขาย</strong></a>
         </p>
         <p style="font-size: 1.05rem; font-weight: 700;">
           <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
@@ -698,14 +717,14 @@ const faqs = [
         <div class="local-links-container" style="margin-bottom: 1.25rem;">
           <a href="/รับซื้อโทรศัพท์มือถือ-จ/" class="local-link-chip">รับซื้อโทรศัพท์มือถือภาคอีสาน</a>
           <a href="/รับซื้อมือถือ-อุบล/" class="local-link-chip">รับซื้อมือถืออุบลราชธานี</a>
+          <a href="/รับซื้อเมืองอุดรธานี/" class="local-link-chip">รับซื้อสินค้า Apple เมืองอุดรธานี</a>
+          <a href="/รับซื้อเมืองศรีสะเกษ/" class="local-link-chip">รับซื้อสินค้า Apple เมืองศรีสะเกษ</a>
           <a href="/รับซื้อไอโฟน-มหาสารคาม/" class="local-link-chip">รับซื้อไอโฟนมหาสารคาม</a>
           <a href="/รับซื้อโทรศัพท์-มือถือ-ย/" class="local-link-chip">รับซื้อมือถือยโสธร</a>
           <a href="/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/" class="local-link-chip">รับซื้อไอโฟนร้อยเอ็ด</a>
         </div>
 
-        <p style="font-size: 0.9rem; color: var(--text-muted);">
-          หน้าเหล่านี้เป็นข้อมูลตาม Search Intent ของแต่ละพื้นที่ ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในทุกจังหวัดหรือทุกอำเภอ
-        </p>
+        
       </div>
     </div>
   </section>

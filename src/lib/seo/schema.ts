@@ -46,6 +46,7 @@ export function generateSchemaGraph(options: SchemaOptions): string {
     alternateName: BUSINESS_FACTS.VERIFIED.englishBrandName,
     url: siteUrl,
     description: BUSINESS_FACTS.VERIFIED.tagline,
+    knowsAbout: BUSINESS_FACTS.VERIFIED.acceptedCategories,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: BUSINESS_FACTS.VERIFIED.phone,
@@ -69,7 +70,19 @@ export function generateSchemaGraph(options: SchemaOptions): string {
   };
   graph.push(websiteEntity);
 
-  // 3. BreadcrumbList Entity
+  // 3. WebPage Entity (connects each URL to the site and its primary topic)
+  graph.push({
+    '@type': 'WebPage',
+    '@id': `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: seo.title || seo.h1 || BUSINESS_FACTS.VERIFIED.brandName,
+    description: seo.description || BUSINESS_FACTS.VERIFIED.tagline,
+    inLanguage: 'th',
+    isPartOf: { '@id': `${siteUrl}/#website` },
+    about: { '@id': `${siteUrl}/#organization` }
+  });
+
+  // 4. BreadcrumbList Entity
   if (breadcrumbs && breadcrumbs.length > 0) {
     const itemListElement = breadcrumbs.map((item, index) => ({
       '@type': 'ListItem',
@@ -85,7 +98,7 @@ export function generateSchemaGraph(options: SchemaOptions): string {
     });
   }
 
-  // 4. Service Entity (For Money & Category Pages)
+  // 5. Service Entity (For Money & Category Pages)
   if (seo.pageType === 'category' || seo.pageType === 'service' || seo.pageType === 'hub' || seo.pageType === 'location') {
     graph.push({
       '@type': 'Service',
@@ -103,7 +116,7 @@ export function generateSchemaGraph(options: SchemaOptions): string {
     });
   }
 
-  // 5. FAQPage Entity (Rendered ONLY when visible FAQ items exist)
+  // 6. FAQPage Entity (Rendered ONLY when visible FAQ items exist)
   if (faqs && faqs.length > 0) {
     graph.push({
       '@type': 'FAQPage',
@@ -119,7 +132,7 @@ export function generateSchemaGraph(options: SchemaOptions): string {
     });
   }
 
-  // 6. Article Entity (For Guides, Reviews, Location articles)
+  // 7. Article Entity (For Guides, Reviews, Location articles)
   if (article) {
     graph.push({
       '@type': 'Article',
@@ -129,18 +142,22 @@ export function generateSchemaGraph(options: SchemaOptions): string {
       image: article.image
         ? (article.image.startsWith('http') ? article.image : `${siteUrl}${article.image}`)
         : undefined,
-      datePublished: article.datePublished || new Date().toISOString(),
-      dateModified: article.dateModified || article.datePublished || new Date().toISOString(),
-      author: {
-        '@type': 'Person',
-        name: article.authorName || BUSINESS_FACTS.VERIFIED.contactPerson
-      },
+      ...(article.datePublished ? { datePublished: article.datePublished } : {}),
+      ...(article.dateModified || article.datePublished
+        ? { dateModified: article.dateModified || article.datePublished }
+        : {}),
+      author: article.authorName?.includes('ทีมงาน')
+        ? { '@id': `${siteUrl}/#organization` }
+        : {
+            '@type': 'Person',
+            name: article.authorName || BUSINESS_FACTS.VERIFIED.contactPerson
+          },
       publisher: {
         '@id': `${siteUrl}/#organization`
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': pageUrl
+        '@id': `${pageUrl}#webpage`
       }
     });
   }

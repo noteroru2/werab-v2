@@ -31,8 +31,8 @@ const breadcrumbs = [
 
 const faqs = [
   {
-    "question": "หน้านี้ต่างจากหน้ารับซื้อโน๊ตบุ๊คขอนแก่นอย่างไร?",
-    "answer": "หน้าขอนแก่นรักษา Intent ระดับจังหวัด ส่วนหน้านี้รักษา Historical Search Intent ที่ระบุอำเภอพลโดยเฉพาะ จึงไม่ควรใช้สองหน้าแทนกัน"
+    "question": "อยู่ อำเภอพล ขอนแก่น ส่งข้อมูลโน๊ตบุ๊คประเมินราคาก่อนได้ไหม?",
+    "answer": "ได้ ส่งรุ่น สเปก รูปสภาพ แบตเตอรี่ และอุปกรณ์ที่มีเพื่อเช็กราคาเบื้องต้นก่อนนัดหมายหรือจัดส่ง"
   },
   {
     "question": "อยู่ในอำเภอพลต้องนำเครื่องไปให้ดูก่อนถึงจะทราบราคาไหม?",
@@ -69,8 +69,8 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
         <div class="local-hero-left">
           <Breadcrumb items={breadcrumbs} />
           <h1 class="hero-h1">รับซื้อโน๊ตบุ๊คอำเภอพล ขอนแก่น เช็กรุ่นและสภาพก่อนขาย</h1>
-        <p>หน้า <code>/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/</code> เป็น Historical URL ที่รักษา Search Intent ระดับพื้นที่ย่อย:</p>
-        <p><strong>Notebook + อำเภอพล + ขอนแก่น</strong></p>
+        
+        
         <p>หน้านี้ไม่ได้ใช้แทนหน้าขอนแก่นระดับจังหวัด และไม่ได้ใช้แทนหน้ารับซื้อ Notebook หลัก</p>
         <div class="hero-intake-card">
           <p style="font-weight: 600; margin-bottom: 0.35rem;">หากมี Notebook อยู่ในอำเภอพลและกำลังคิดว่าจะขาย สามารถเริ่มจากส่งข้อมูลของเครื่องก่อน:</p>
@@ -121,18 +121,6 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
   <section class="commercial-section section-white">
     <div class="container">
       <div class="grid-2">
-        <div class="comm-card">
-          <h2>อำเภอพลเป็น Intent ที่แยกจากหน้าขอนแก่นระดับจังหวัด</h2>
-        <p>โครงสร้างข้อมูลของเว็บไซต์แยกระหว่าง:</p>
-        <ul>
-        <li>หน้ารับซื้อ Notebook หลัก</li>
-        <li>หน้าระดับจังหวัดขอนแก่น</li>
-        <li>Historical URL ระดับอำเภอพล</li>
-        </ul>
-        <p>หากกำลังมองหาข้อมูลภาพรวมของจังหวัด สามารถดูได้ที่ <a href="/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/">รับซื้อโน๊ตบุ๊คขอนแก่น</a></p>
-        <p>ส่วนหน้านี้รักษาบริบทเฉพาะของผู้ขายที่ค้นหาร่วมกับคำว่า <strong>อำเภอพล</strong></p>
-        <p>การมีหน้าเฉพาะพื้นที่ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในอำเภอพล</p>
-        </div>
         <div class="comm-card">
           <h2>ก่อนเดินทางควรส่งข้อมูลเครื่องให้ครบก่อน</h2>
         <p>Notebook อาจมีมูลค่าต่างกันมากแม้ชื่อ Series เหมือนกัน</p>

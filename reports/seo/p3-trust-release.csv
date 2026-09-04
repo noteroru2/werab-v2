@@ -1,0 +1,5 @@
+﻿path,before,after,p3Change,contentStatus
+/เกี่ยวกับเรา/,HOLD_NOINDEX,INDEX,ผู้ดูแลข้อมูล + วิธีประเมิน + ช่องทางติดต่อ,READY
+/ความน่าเชื่อถือ/,HOLD_NOINDEX,INDEX,หลักเกณฑ์ราคา + หลักฐาน + privacy/ownership guidance,READY
+/terms/,HOLD_NOINDEX,HOLD_NOINDEX,rewrite เงื่อนไขประเมิน/ยืนยันราคาแบบ conservative,READY
+/privacy-policy/,HOLD_NOINDEX,HOLD_NOINDEX,rewrite ข้อมูลที่ใช้/ไม่ควรส่ง/จัดการข้อมูลก่อนส่งมอบ,READY

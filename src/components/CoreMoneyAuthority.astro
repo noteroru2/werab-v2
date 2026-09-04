@@ -1,0 +1,126 @@
+---
+import { BUSINESS_FACTS, getDisplayLine, getLineUrl } from '../config/business';
+
+interface SupportLink {
+  name: string;
+  path: string;
+}
+
+interface Props {
+  categoryName: string;
+  valuationFactors: string[];
+  supportLinks?: SupportLink[];
+}
+
+const { categoryName, valuationFactors, supportLinks = [] } = Astro.props;
+---
+
+<section class="core-authority" aria-labelledby="core-authority-heading">
+  <div class="container">
+    <div class="core-authority-shell">
+      <div class="authority-intro">
+        <div>
+          <p class="authority-kicker">หลักเกณฑ์ที่ใช้ประเมินก่อนรับซื้อ</p>
+          <h2 id="core-authority-heading">{categoryName} ประเมินจากข้อมูลที่ตรวจสอบได้ ไม่ดูแค่ชื่อรุ่น</h2>
+          <p>
+            ราคาที่แจ้งจากรูปและข้อมูลเป็น <strong>การประเมินเบื้องต้น</strong> เพื่อช่วยให้ผู้ขายตัดสินใจก่อนส่งมอบสินค้า
+            ราคาสุดท้ายยืนยันอีกครั้งหลังตรวจว่ารุ่น สเปก สภาพ การทำงาน และอุปกรณ์ตรงกับข้อมูลที่ส่งมา
+          </p>
+        </div>
+        <div class="reviewer-card">
+          <span class="reviewer-label">ผู้ดูแลข้อมูลการประเมิน</span>
+          <strong>{BUSINESS_FACTS.VERIFIED.contactPerson}</strong>
+          <span>{BUSINESS_FACTS.VERIFIED.brandName}</span>
+          <span class="reviewed-date">ตรวจทานเนื้อหาล่าสุด 4 กันยายน 2026</span>
+        </div>
+      </div>
+
+      <div class="authority-grid">
+        <div class="authority-card">
+          <h3>สิ่งที่ใช้ประกอบราคา</h3>
+          <ul>
+            {valuationFactors.map(factor => <li>{factor}</li>)}
+          </ul>
+        </div>
+
+        <div class="authority-card">
+          <h3>สิ่งที่ควรแจ้งตั้งแต่ต้น</h3>
+          <ul>
+            <li>ตำหนิที่มองเห็นได้และอาการที่ใช้งานผิดปกติ</li>
+            <li>ประวัติซ่อมหรือเปลี่ยนชิ้นส่วนที่ทราบ</li>
+            <li>อุปกรณ์ กล่อง หรือชิ้นส่วนที่รวมขายจริง</li>
+            <li>ข้อมูลรุ่น/สเปกที่ตรงกับเครื่องปัจจุบัน</li>
+          </ul>
+        </div>
+
+        <div class="authority-card">
+          <h3>ข้อมูลที่ไม่ต้องส่งเพื่อขอราคา</h3>
+          <ul>
+            <li>Password, PIN, OTP หรือ Recovery Key</li>
+            <li>ข้อมูลบัญชีส่วนตัวที่ไม่เกี่ยวกับการระบุรุ่น</li>
+            <li>ข้อมูลส่วนบุคคลที่ไม่จำเป็นต่อการประเมิน</li>
+          </ul>
+          <p class="authority-note">เจ้าของควรสำรองข้อมูล ออกจากบัญชี และจัดการระบบล็อกด้วยตนเองเมื่อพร้อมส่งมอบจริง</p>
+        </div>
+      </div>
+
+      {supportLinks.length > 0 && (
+        <div class="support-links-wrap">
+          <h3>ดูข้อมูลเฉพาะรุ่น แบรนด์ และสภาพที่เกี่ยวข้อง</h3>
+          <div class="support-link-grid">
+            {supportLinks.map(link => (
+              <a href={link.path} class="support-link">{link.name}</a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div class="authority-footer">
+        <p>
+          ต้องการประเมินเครื่องจริง เริ่มจากส่งรุ่น รูป สเปก สภาพ และอุปกรณ์ผ่าน
+          <a href={getLineUrl()} target="_blank" rel="noopener noreferrer"><strong> LINE {getDisplayLine()}</strong></a>
+        </p>
+        <nav aria-label="ข้อมูลความน่าเชื่อถือของบริการ">
+          <a href="/เช็กราคาก่อนขาย/">วิธีเช็กราคาก่อนขาย</a>
+          <a href="/ความน่าเชื่อถือ/">มาตรฐานการประเมิน</a>
+          <a href="/เกี่ยวกับเรา/">ผู้ดูแลและข้อมูลบริการ</a>
+          <a href="/contact/">ช่องทางติดต่อ</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .core-authority { padding: 2.25rem 0; background: var(--surface); }
+  .core-authority-shell { border: 1px solid var(--border); border-radius: var(--radius-lg); background: #fff; padding: clamp(1.25rem, 3vw, 2rem); box-shadow: 0 12px 36px rgb(6 27 53 / 0.06); }
+  .authority-intro { display: grid; gap: 1.25rem; align-items: start; }
+  .authority-kicker { margin: 0 0 .35rem; color: var(--orange-700); font-weight: 800; font-size: .82rem; letter-spacing: .03em; text-transform: uppercase; }
+  .authority-intro h2 { margin: 0 0 .75rem; font-size: clamp(1.35rem, 2.2vw, 1.8rem); }
+  .authority-intro p { margin-bottom: 0; }
+  .reviewer-card { display: flex; flex-direction: column; gap: .2rem; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem 1.1rem; }
+  .reviewer-label { color: var(--text-muted); font-size: .78rem; }
+  .reviewer-card strong { color: var(--navy-950); font-size: 1.05rem; }
+  .reviewer-card span:not(.reviewer-label):not(.reviewed-date) { color: var(--text-muted); font-size: .88rem; }
+  .reviewed-date { margin-top: .35rem; color: var(--text-muted); font-size: .76rem; }
+  .authority-grid { display: grid; gap: 1rem; margin-top: 1.4rem; }
+  .authority-card { border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.1rem; background: var(--surface); }
+  .authority-card h3 { margin: 0 0 .7rem; font-size: 1rem; }
+  .authority-card ul { margin: 0; padding-left: 1.1rem; }
+  .authority-card li { margin: .35rem 0; }
+  .authority-note { margin: .7rem 0 0; color: var(--text-muted); font-size: .86rem; }
+  .support-links-wrap { margin-top: 1.4rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); }
+  .support-links-wrap h3 { margin: 0 0 .8rem; font-size: 1rem; }
+  .support-link-grid { display: flex; flex-wrap: wrap; gap: .55rem; }
+  .support-link { display: inline-flex; padding: .55rem .75rem; border: 1px solid var(--border); border-radius: 999px; background: #fff; color: var(--navy-900); text-decoration: none; font-size: .86rem; font-weight: 700; }
+  .support-link:hover { border-color: var(--orange-400); color: var(--orange-700); }
+  .authority-footer { display: grid; gap: .8rem; margin-top: 1.4rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); }
+  .authority-footer p { margin: 0; }
+  .authority-footer nav { display: flex; flex-wrap: wrap; gap: .8rem 1rem; }
+  .authority-footer nav a { font-size: .84rem; font-weight: 700; }
+  @media (min-width: 760px) {
+    .authority-intro { grid-template-columns: minmax(0, 1fr) 260px; }
+    .authority-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .authority-footer { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  }
+</style>

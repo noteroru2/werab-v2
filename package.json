@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
+    "images:real-products": "node scripts/optimize-real-product-images.mjs",
     "qa": "tsx scripts/qa.mjs",
     "audit:claims": "tsx scripts/claim-audit.mjs",
     "audit:schema": "tsx scripts/schema-audit.mjs",
@@ -23,7 +24,19 @@
     "audit:survivors": "tsx scripts/survivor-decision-parity-audit.mjs",
     "audit:e2-parity": "tsx scripts/e2-parity-audit.mjs",
     "audit:differentiation": "tsx scripts/local-differentiation-audit.mjs",
-    "report:parity": "node scripts/generate-parity-report.mjs"
+    "report:parity": "node scripts/generate-parity-report.mjs",
+    "audit:content-hygiene": "node scripts/content-hygiene-audit.mjs",
+    "audit:p0": "node scripts/recovery-p0-audit.mjs",
+    "audit:p1": "node scripts/recovery-p1-audit.mjs",
+    "audit:p2": "node scripts/recovery-p2-audit.mjs",
+    "audit:p3": "node scripts/recovery-p3-audit.mjs",
+    "report:p4": "node scripts/generate-p4-release-artifacts.mjs",
+    "audit:p4": "node scripts/recovery-p4-audit.mjs",
+    "audit:p4:live": "node scripts/recovery-p4-live-audit.mjs",
+    "audit:p4:live:full": "node scripts/recovery-p4-live-audit.mjs --full",
+    "audit:p4.1": "node scripts/recovery-p4-1-audit.mjs",
+    "gate:predeploy": "npm run audit:content-hygiene && npm run audit:p0 && npm run audit:p1 && npm run audit:p2 && npm run audit:p3 && npm run audit:p4 && npm run audit:p4.1 && npm run audit:p4.2 && npm run audit:redirects && npm run audit:sitemap && npm run audit:links && npm run audit:content-copy && npm run audit:survivors && npm run audit:cutover && npm run build && npm run check",
+    "audit:p4.2": "node scripts/recovery-p4-2-audit.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

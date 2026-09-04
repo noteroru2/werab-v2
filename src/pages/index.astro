@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustBar from '../components/TrustBar.astro';
+import RealProductGallery from '../components/RealProductGallery.astro';
 import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อสินค้าไอทีมือสอง เช็กราคาก่อนขาย | เรารับซื้อ.com";
@@ -100,6 +102,8 @@ const breadcrumbs = [
       </div>
     </div>
   </section>
+
+  <TrustBar />
 
   <!-- 2. CATEGORY SELECTION TILES (8 TILES DIRECTLY UNDER HERO) -->
   <section class="commercial-section section-white">
@@ -238,13 +242,19 @@ const breadcrumbs = [
             </div>
           </div>
           <div class="cat-content">
-            <h3 class="cat-title">อุปกรณ์ไอทีอื่น</h3>
+            <h3 class="cat-title"><a href="/รับซื้อ/">อุปกรณ์ไอทีอื่น</a></h3>
             <p class="cat-desc">สามารถส่งชื่อสินค้า รุ่น รูปและสภาพมาสอบถามเบื้องต้นได้</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <RealProductGallery
+    featuredOnly={true}
+    title="สินค้าจริงที่เคยนำมาถ่ายข้อมูลประกอบการประเมิน"
+    description="ตัวอย่างโน๊ตบุ๊ค MacBook iPad กล้อง และคอมประกอบที่ถ่ายจากหลายมุม เพื่อใช้ยืนยันรุ่น สเปก อุปกรณ์ และสภาพจริง"
+  />
 
   <!-- 3. EVALUATION FACTORS (CENTERED COMMERCIAL SURFACE PANEL) -->
   <section class="commercial-section section-surface">

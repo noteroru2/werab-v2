@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     "question": "คอมเปิดไม่ติดยังส่งข้อมูลได้ไหม?",
-    "answer": "สามารถส่งข้อมูลเบื้องต้นได้ แต่ถ้าเสียหนักหรือไม่สามารถทดสอบ Hardware หลายส่วน Intent อาจเข้ากับการประเมินซากคอมพิวเตอร์มากกว่า"
+    "answer": "สามารถส่งข้อมูลเบื้องต้นได้ แต่ถ้าเสียหนักหรือไม่สามารถทดสอบ Hardware หลายส่วน ควรประเมินในลักษณะซากคอมพิวเตอร์หรือชิ้นส่วนมากกว่า"
   },
   {
     "question": "มีคอมหลายเครื่องในขอนแก่นควรส่งรูปทุกเครื่องไหม?",
@@ -66,7 +66,7 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
           <Breadcrumb items={breadcrumbs} />
           <h1 class="hero-h1">รับซื้อคอมขอนแก่น เช็กสเปกและมูลค่า Hardware ก่อนขาย</h1>
         <p>คอมพิวเตอร์มือสองในขอนแก่นหนึ่งเครื่องอาจมีมูลค่าต่างกันมาก แม้ใช้ Case รุ่นเดียวกัน เพราะ Hardware ภายในสามารถถูกอัปเกรดหรือถอดเปลี่ยนได้ตลอดอายุการใช้งาน</p>
-        <p>หน้า <code>/รับซื้อคอม-ขอนแก่น/</code> จึงเน้นการประเมิน <strong>Desktop, Gaming PC, Workstation และคอมประกอบในพื้นที่ขอนแก่นจาก Configuration ปัจจุบัน</strong></p>
+        
         <div class="hero-intake-card">
           <p style="font-weight: 600; margin-bottom: 0.35rem;">เริ่มจาก:</p>
           <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
@@ -320,8 +320,8 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
         <li>ไม่สามารถทดสอบ Hardware</li>
         <li>เหลือเป็นอะไหล่</li>
         </ul>
-        <p>Intent จะใกล้กับ <strong>รับซื้อซากคอมพิวเตอร์</strong> มากกว่า</p>
-        <p>หน้า <code>/รับซื้อคอม-ขอนแก่น/</code> จึงรักษา Local Intent ของเครื่อง Desktop/PC เป็นหลัก ไม่ใช่หน้าซากคอมประจำจังหวัด</p>
+        <p>กรณีนี้ควรประเมินในลักษณะ <strong>ซากคอมพิวเตอร์หรือชิ้นส่วน</strong> มากกว่า</p>
+        
         </div>
       </div>
     </div>
@@ -341,14 +341,6 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
           <tr><td>C</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td>ไม่มี</td><td>3</td><td>ยังไม่ได้ทดสอบ</td></tr>
           </tbody></table></div>
         <p>หากมี Asset Tag สามารถใช้จัดรายการภายในได้ แต่ไม่จำเป็นต้องส่งข้อมูลบริษัทอื่นที่ไม่เกี่ยวกับ Hardware</p>
-        </div>
-        <div class="comm-card">
-          <h2>หน้า Local ขอนแก่นต้องไม่แทนหน้ารับซื้อคอมหลัก</h2>
-        <p>หน้า <a href="/รับซื้อคอม/"><code>/รับซื้อคอม/</code></a> เป็นเจ้าของ Broad Intent:</p>
-        <p><strong>รับซื้อคอม / Gaming PC / Desktop / คอมประกอบ</strong></p>
-        <p>ส่วนหน้านี้เป็น:</p>
-        <p><strong>Computer + Khon Kaen</strong></p>
-        <p>จึงไม่ควรเพิ่มข้อความทั่วประเทศหรือขยายไปเป็นหน้า Broad Computer อีกหน้า</p>
         </div>
       </div>
     </div>

@@ -1,0 +1,16 @@
+﻿priority,path,url,role,requestMethod,afterDeployOnly,historicalClicks90d,historicalImpressions90d,historicalPosition90d,reason
+1,/,https://xn--c3c3a0aa6cvaf8b9dze.com/,HOME_RELEASE,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,4,170,24.94,Release discovery and site-level recrawl
+2,/รับซื้อ/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อ/,CORE_HUB,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,0,15,19.00,Primary commercial hub
+3,/รับซื้อโน๊ตบุ๊ค/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อโน๊ตบุ๊ค/,CORE_MONEY,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,4,330,22.68,Notebook core ranking owner
+4,/รับซื้อคอม/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อคอม/,CORE_MONEY,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,1,63,15.19,Computer core ranking owner
+5,/รับซื้อแมคบุ๊ค/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อแมคบุ๊ค/,CORE_MONEY,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,,,,MacBook core ranking owner
+6,/รับซื้อไอโฟน/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อไอโฟน/,CORE_MONEY,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,,,,iPhone core ranking owner
+7,/รับซื้อไอแพด/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อไอแพด/,CORE_MONEY,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,,,,iPad core ranking owner
+8,/รับซื้อกล้อง/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อกล้อง/,CORE_MONEY,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,2,57,28.75,Camera core ranking owner
+9,/เช็กราคาก่อนขาย/,https://xn--c3c3a0aa6cvaf8b9dze.com/เช็กราคาก่อนขาย/,VALUATION_HUB,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,0,5,6.00,Seller valuation support hub
+10,/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/,HISTORICAL_WINNER,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,75,973,7.59,Historical notebook winner: highest measured IT click equity
+11,/รับซื้อคอม-อุดรธานี/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อคอม-อุดรธานี/,HISTORICAL_WINNER,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,45,498,8.21,Historical computer winner
+12,/รับซื้อคอม-ขอนแก่น/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อคอม-ขอนแก่น/,HISTORICAL_WINNER,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,26,496,13.39,Historical computer winner
+13,/รับซื้อโทรศัพท์มือถือ-จ/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อโทรศัพท์มือถือ-จ/,HISTORICAL_WINNER,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,25,746,9.13,Historical mobile winner
+14,/รับซื้อโน๊ตบุ๊ค-บุรีรัม/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อโน๊ตบุ๊ค-บุรีรัม/,HISTORICAL_WINNER,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,20,240,7.67,Historical notebook winner
+15,/รับซื้อมือถือ-อุบล/,https://xn--c3c3a0aa6cvaf8b9dze.com/รับซื้อมือถือ-อุบล/,HISTORICAL_WINNER,GSC_URL_INSPECTION_REQUEST_INDEXING,YES,19,435,12.67,Historical mobile winner

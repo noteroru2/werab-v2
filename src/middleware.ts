@@ -1,6 +1,7 @@
 import { defineMiddleware } from 'astro:middleware';
 import { resolveSeo } from './lib/seo/resolve';
 import { normalizePath } from './lib/seo/normalize';
+import { RELEASE_VERSION } from './config/release';
 
 /**
  * Serializes any redirect target into a safe, percent-encoded HTTP URL
@@ -15,7 +16,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const rawPathname = url.pathname;
 
   // Skip static assets and special system endpoints
-  if (
+  const isStaticAsset =
     rawPathname.startsWith('/_astro/') ||
     rawPathname.startsWith('/@') ||
     rawPathname.startsWith('/_image') ||
@@ -26,12 +27,25 @@ export const onRequest = defineMiddleware(async (context, next) => {
     rawPathname.endsWith('.jpg') ||
     rawPathname.endsWith('.jpeg') ||
     rawPathname.endsWith('.svg') ||
+    rawPathname.endsWith('.avif') ||
     rawPathname.endsWith('.webp') ||
     rawPathname.endsWith('.woff2') ||
     rawPathname.endsWith('.xml') ||
-    rawPathname.endsWith('.txt')
-  ) {
-    return next();
+    rawPathname.endsWith('.txt');
+
+  if (isStaticAsset) {
+    const response = await next();
+    response.headers.set('X-Content-Type-Options', 'nosniff');
+    response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+    response.headers.set('X-Werab-Release', RELEASE_VERSION);
+    if (rawPathname.startsWith('/_astro/')) {
+      response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+    } else if (/\.(?:avif|webp|png|jpe?g|svg|woff2)$/.test(rawPathname)) {
+      response.headers.set('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
+    } else if (/\.(?:xml|txt)$/.test(rawPathname)) {
+      response.headers.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
+    }
+    return response;
   }
 
   // 1. Path Normalization: Decode raw incoming pathname to compare with decoded normalized format
@@ -59,7 +73,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
       headers: {
         Location: safeRedirectUrl(seo.redirectTo, url),
         'Cache-Control': 'public, max-age=86400',
-        'X-Robots-Tag': 'noindex, nofollow'
+        'X-Robots-Tag': 'noindex, nofollow',
+        'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'X-Werab-Release': RELEASE_VERSION
       }
     });
   }
@@ -96,7 +114,12 @@ export const onRequest = defineMiddleware(async (context, next) => {
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
         'X-Robots-Tag': 'noindex, nofollow',
-        'Cache-Control': 'public, max-age=604800'
+        'Cache-Control': 'public, max-age=604800',
+        'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'X-Frame-Options': 'DENY',
+        'X-Werab-Release': RELEASE_VERSION
       }
     });
   }
@@ -109,6 +132,17 @@ export const onRequest = defineMiddleware(async (context, next) => {
   // Add basic security headers
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  response.headers.set('X-Werab-Release', RELEASE_VERSION);
+  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=()');
+  response.headers.set('X-Frame-Options', 'DENY');
+  response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
+  if (import.meta.env.PROD) {
+    response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    response.headers.set(
+      'Content-Security-Policy',
+      "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests"
+    );
+  }
 
   return response;
 });

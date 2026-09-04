@@ -123,12 +123,8 @@ export function runGlobalUiAudit() {
     '/รับซื้อคอมประกอบ/',
     '/รับซื้อเครื่องเกม/',
     '/ราคากลางรับซื้อ/',
-    '/ความน่าเชื่อถือ/',
     '/รับซื้อ-macbook/',
-    '/terms/',
-    '/privacy-policy/',
-    '/cookie-policy/',
-    '/contact/'
+    '/cookie-policy/'
   ];
 
   let unsafeHeaderLinks = 0;

@@ -22,6 +22,8 @@ interface Props {
     dateModified?: string;
     authorName?: string;
   };
+  socialImage?: string;
+  socialImageAlt?: string;
 }
 
 const {
@@ -31,15 +33,26 @@ const {
   noindex: propNoindex,
   breadcrumbs,
   faqs,
-  article
+  article,
+  socialImage = '/images/hero-it-products.webp',
+  socialImageAlt
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const seo = resolveSeo(currentPath);
 
 const siteUrl = BUSINESS_FACTS.VERIFIED.siteUrl;
-const pageTitle = propTitle || seo.title || `${BUSINESS_FACTS.VERIFIED.brandName} | ${BUSINESS_FACTS.VERIFIED.tagline}`;
+const fullPageTitle = propTitle || seo.title || `${BUSINESS_FACTS.VERIFIED.brandName} | ${BUSINESS_FACTS.VERIFIED.tagline}`;
+const compactPageTitle = (title: string) => {
+  let compact = title.replace(/\s*\|\s*เรารับซื้อ\.com\s*$/, '');
+  if (compact.length > 65) compact = compact.replace('เช็กราคาก่อนขาย', 'เช็กราคา');
+  if (compact.length > 65) compact = compact.replace('มือสอง', '');
+  return compact.replace(/\s+/g, ' ').trim();
+};
+const pageTitle = compactPageTitle(fullPageTitle);
 const pageDescription = propDescription || seo.description || BUSINESS_FACTS.VERIFIED.tagline;
+const socialImageUrl = socialImage.startsWith('http') ? socialImage : `${siteUrl}${socialImage}`;
+const resolvedSocialImageAlt = socialImageAlt || pageTitle;
 
 // Canonical calculation: strictly self canonical or explicit canonical
 const canonicalUrl = propCanonical
@@ -72,6 +85,7 @@ const schemaJson = generateSchemaGraph({
   <meta name="description" content={pageDescription} />
   <meta name="robots" content={robotsDirective} />
   <link rel="canonical" href={canonicalUrl} />
+  <meta name="theme-color" content="#061b35" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23061b35'/><text x='50' y='65' font-size='50' font-weight='bold' text-anchor='middle' fill='%23ff6412'>W</text></svg>" />
 
   <!-- Open Graph / Facebook -->
@@ -81,11 +95,15 @@ const schemaJson = generateSchemaGraph({
   <meta property="og:description" content={pageDescription} />
   <meta property="og:site_name" content={BUSINESS_FACTS.VERIFIED.brandName} />
   <meta property="og:locale" content="th_TH" />
+  <meta property="og:image" content={socialImageUrl} />
+  <meta property="og:image:alt" content={resolvedSocialImageAlt} />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={pageDescription} />
+  <meta name="twitter:image" content={socialImageUrl} />
+  <meta name="twitter:image:alt" content={resolvedSocialImageAlt} />
 
   <!-- Structured Data JSON-LD -->
   <script type="application/ld+json" is:inline set:html={schemaJson} />
@@ -93,6 +111,7 @@ const schemaJson = generateSchemaGraph({
   <slot name="head" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหาหลัก</a>
   <Header currentPath={seo.normalizedPath} />
 
   <main id="main-content">

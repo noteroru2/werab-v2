@@ -1,0 +1,227 @@
+{
+  "generatedAt": "2026-09-04T00:00:00+07:00",
+  "phase": "RECOVERY_P0",
+  "purpose": "Sanctioned production-copy baseline after removal of internal SEO/editorial language. Any later page-file mutation invalidates this baseline until deliberately re-approved.",
+  "pages": {
+    "/รับซื้อโน๊ตบุ๊ค/": {
+      "approvedSource": "docs/content-approved/notebook.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค.astro",
+      "astroFileSha256": "45f3050af35f0176f7fca219948aaa6eaf9fd41ce80cb53f17c93c3cb85275a8"
+    },
+    "/รับซื้อคอม/": {
+      "approvedSource": "docs/content-approved/computer.md",
+      "astroFile": "src/pages/รับซื้อคอม.astro",
+      "astroFileSha256": "7e8feaad8b1e606fd62046cc170d781bff50790a1413c5d70e3df6c3680fd3e9"
+    },
+    "/รับซื้อแมคบุ๊ค/": {
+      "approvedSource": "docs/content-approved/macbook.md",
+      "astroFile": "src/pages/รับซื้อแมคบุ๊ค.astro",
+      "astroFileSha256": "edca8d94a9201d60cb50e93d03181cb0456a0076deaba57824237e9af4b40474"
+    },
+    "/รับซื้อไอโฟน/": {
+      "approvedSource": "docs/content-approved/iphone.md",
+      "astroFile": "src/pages/รับซื้อไอโฟน.astro",
+      "astroFileSha256": "709095f58e746480acc08800731a83d81969fdc603f3db79740e669b1dd36c5e"
+    },
+    "/รับซื้อไอแพด/": {
+      "approvedSource": "docs/content-approved/ipad.md",
+      "astroFile": "src/pages/รับซื้อไอแพด.astro",
+      "astroFileSha256": "f04489819097ba0161613691288e5f7a0a0bd567e8ac5de8af6465dd9163c23d"
+    },
+    "/รับซื้อกล้อง/": {
+      "approvedSource": "docs/content-approved/camera.md",
+      "astroFile": "src/pages/รับซื้อกล้อง.astro",
+      "astroFileSha256": "496d84af857961ca926873472ff1892b6a9adde29cd6c059efaf0543cabe7535"
+    },
+    "/รับซื้อลำโพง/": {
+      "approvedSource": "docs/content-approved/speaker.md",
+      "astroFile": "src/pages/รับซื้อลำโพง.astro",
+      "astroFileSha256": "d64455b9341826ead5875bd9c5a77cb9ca74d27454c352952239a0dc6a203d4a"
+    },
+    "/รับซื้อซากคอมพิวเตอร์/": {
+      "approvedSource": "docs/content-approved/computer-scrap.md",
+      "astroFile": "src/pages/รับซื้อซากคอมพิวเตอร์.astro",
+      "astroFileSha256": "317aa0b41f497260b40e96adbc110080b9bb264d7aced91ddb4995b406e58857"
+    },
+    "/รับซื้อ-server/": {
+      "approvedSource": "docs/content-approved/server.md",
+      "astroFile": "src/pages/รับซื้อ-server.astro",
+      "astroFileSha256": "2e957843c805680a4b25ee743ac6525a09846181cc3293a59eb9a41fe2b20b30"
+    },
+    "/รับซื้อ/": {
+      "approvedSource": "docs/content-approved/main-buyback.md",
+      "astroFile": "src/pages/รับซื้อ.astro",
+      "astroFileSha256": "9a53d94e207134875e355e9aca6680031f0f742ef04088a4de23d984d7b741fe"
+    },
+    "/": {
+      "approvedSource": "docs/content-approved/homepage.md",
+      "astroFile": "src/pages/index.astro",
+      "astroFileSha256": "de7aa96a16fcdf5e9a6cce3d5dee744a79d15882290c3c6a43e747137dce710b"
+    },
+    "/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/": {
+      "approvedSource": "docs/content-approved/local-notebook-ubon.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ.astro",
+      "astroFileSha256": "f93c00f9205074b2bd221e6305da91883ab8fad45234fe2bb255dd567d38dc63"
+    },
+    "/รับซื้อคอม-อุดรธานี/": {
+      "approvedSource": "docs/content-approved/local-computer-udon.md",
+      "astroFile": "src/pages/รับซื้อคอม-อุดรธานี.astro",
+      "astroFileSha256": "b4dfb0e086de65404ed1a82cc9d5c26e47ec974fbdfb7f5f3fdbb1eff6f5f33b"
+    },
+    "/รับซื้อคอม-ขอนแก่น/": {
+      "approvedSource": "docs/content-approved/local-computer-khonkaen.md",
+      "astroFile": "src/pages/รับซื้อคอม-ขอนแก่น.astro",
+      "astroFileSha256": "ec9d2714f3c54d304a49617c092cb08ec24fff4c777051c034ad29c6d0ccddf7"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-บุรีรัม/": {
+      "approvedSource": "docs/content-approved/local-notebook-buriram.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-บุรีรัม.astro",
+      "astroFileSha256": "cde2500f95e1aeb3105a19323c63b915f7d02ddb9cf5fdc0174ffb1d74063b23"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-เลย/": {
+      "approvedSource": "docs/content-approved/local-notebook-loei.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-เลย.astro",
+      "astroFileSha256": "5b43bf255eee183eedb66b47343f1873980423fe746572bd1ed8be497c6343b1"
+    },
+    "/รับซื้อโทรศัพท์มือถือ-จ/": {
+      "approvedSource": "docs/content-approved/local-phone-regional-isan.md",
+      "astroFile": "src/pages/รับซื้อโทรศัพท์มือถือ-จ.astro",
+      "astroFileSha256": "5db87c09d142476709c5b3abdc74bf2cdc9309ddbfbb31947497adfd5c4f15ee"
+    },
+    "/รับซื้อมือถือ-อุบล/": {
+      "approvedSource": "docs/content-approved/local-mobile-ubon.md",
+      "astroFile": "src/pages/รับซื้อมือถือ-อุบล.astro",
+      "astroFileSha256": "95c73b1f91fb7a8a970431fd3a1303068b4b60fc06686a8383bdeb7a68cbdd87"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/": {
+      "approvedSource": "docs/content-approved/local-notebook-chaiyaphum.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ.astro",
+      "astroFileSha256": "91e393bce0cd5603319119ead7ef62033d2b2bc86b284af9627cd8dca5862b99"
+    },
+    "/รับซื้อไอโฟน-มหาสารคาม/": {
+      "approvedSource": "docs/content-approved/local-iphone-mahasarakham.md",
+      "astroFile": "src/pages/รับซื้อไอโฟน-มหาสารคาม.astro",
+      "astroFileSha256": "8a3c8bfd61a0b08075bbf0a47dd88edca1cc779bcdccc5b4ef980c082b0f4967"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-สกลนคร/": {
+      "approvedSource": "docs/content-approved/local-notebook-sakonnakhon.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-สกลนคร.astro",
+      "astroFileSha256": "38f07342189a34a58ccb5b546a360a042ebef0771df347d53b030ed3ab59a039"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-นครพนม/": {
+      "approvedSource": "docs/content-approved/local-notebook-nakhonphanom.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-นครพนม.astro",
+      "astroFileSha256": "99c925353d943efb475abd14f4bb34520eeb4d387a92922b0ba2de98d0427489"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-นครราชส/": {
+      "approvedSource": "docs/content-approved/local-notebook-korat.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-นครราชส.astro",
+      "astroFileSha256": "0a6c7128bec48fed8ed7f706dae72b3152c565eab159b9b2974f3cbda9792d7d"
+    },
+    "/รับซื้อเมืองขอนแก่น/": {
+      "approvedSource": "docs/content-approved/local-macbook-khonkaen.md",
+      "astroFile": "src/pages/รับซื้อเมืองขอนแก่น.astro",
+      "astroFileSha256": "3e2ba86bb52c7e614a9e382f138f34f9ad5c5554dd5929ef0965c2fc26403e3b"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/": {
+      "approvedSource": "docs/content-approved/local-notebook-yasothon.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร.astro",
+      "astroFileSha256": "ccc172c242cd53a1c583c67f6a5a0c75e68e222f67995e6efc4939bf4c1fcc6d"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/": {
+      "approvedSource": "docs/content-approved/local-notebook-khonkaen.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-ขอนแก่น.astro",
+      "astroFileSha256": "b890756ed64260b44d381dc894c8fb2b7aab4790d9f7a9646b6e706a62c4fdf0"
+    },
+    "/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/": {
+      "approvedSource": "docs/content-approved/district-notebook-phon-khonkaen.md",
+      "astroFile": "src/pages/รับซื้อ-notebook-อำเภอพล-ขอนแก่น.astro",
+      "astroFileSha256": "8102b3ca7ec93bc2c01cf2af54f9bd30986b9126526e5352ceb390f680a43970"
+    },
+    "/รับซื้อโทรศัพท์-มือถือ-ย/": {
+      "approvedSource": "docs/content-approved/local-mobile-yasothon.md",
+      "astroFile": "src/pages/รับซื้อโทรศัพท์-มือถือ-ย.astro",
+      "astroFileSha256": "aa2ab67be0f511f89b41914040a713643ecad1850d4ef8be58fc699fb81ac4dc"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/": {
+      "approvedSource": "docs/content-approved/local-notebook-kalasin.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-กาฬสินธ.astro",
+      "astroFileSha256": "da4a291ecd9ca5c1ef3077a90777c8e9e9adbb120c122c29b80d78ea27c067fc"
+    },
+    "/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/": {
+      "approvedSource": "docs/content-approved/district-notebook-chumphae-khonkaen.md",
+      "astroFile": "src/pages/รับซื้อ-notebook-ชุมแพ-ขอนแก่น.astro",
+      "astroFileSha256": "54bb9176abe31aa2dc5d2bc00f6f0f934d4c7b7519bc1203c2fc518b8355752c"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/": {
+      "approvedSource": "docs/content-approved/local-notebook-roiet.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็.astro",
+      "astroFileSha256": "265550a07cdfa66820b384e95f0bbe23e0f90133692d5ff674e99071ed6e6456"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-หนองบัว/": {
+      "approvedSource": "docs/content-approved/local-notebook-nongbualamphu.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-หนองบัว.astro",
+      "astroFileSha256": "f1263bdc054c622c91d0b89fb4d156d040df60721407c7e8774de717df5acc21"
+    },
+    "/รับซื้อโน๊ตบุ๊ค-อุดรธาน/": {
+      "approvedSource": "docs/content-approved/local-notebook-udonthani.md",
+      "astroFile": "src/pages/รับซื้อโน๊ตบุ๊ค-อุดรธาน.astro",
+      "astroFileSha256": "37fea60119846b400be8ab7c12cb9ecc84665675bffa3877248ef941c0bf148c"
+    },
+    "/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/": {
+      "approvedSource": "docs/content-approved/local-speaker-roiet.md",
+      "astroFile": "src/pages/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall.astro",
+      "astroFileSha256": "32933cac7609f5ab012c6d8a821a816f40d364ee5f3df2bd6a95509949ce1b08"
+    },
+    "/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/": {
+      "approvedSource": "docs/content-approved/local-iphone-roiet.md",
+      "astroFile": "src/pages/รับซื้อไอโฟน-iphone-ร้อยเอ็ด.astro",
+      "astroFileSha256": "b326c35e14d3f5cdf70824e7611b64505ff531f392739b2508e9730768858261"
+    },
+    "/รับซื้อกล้องมือสองมุก/": {
+      "approvedSource": "docs/content-approved/local-camera-mukdahan.md",
+      "astroFile": "src/pages/รับซื้อกล้องมือสองมุก.astro",
+      "astroFileSha256": "4230fd52f9bb5cb0aa847cd527554536ebcfbe7eb722a27d7c1a0ca8af9864f6"
+    },
+    "/รับซื้อคอม-สารคาม/": {
+      "approvedSource": "docs/content-approved/local-computer-mahasarakham.md",
+      "astroFile": "src/pages/รับซื้อคอม-สารคาม.astro",
+      "astroFileSha256": "24c610f300a73b5c4d4a92271183d31c3ba6b62cadf314d88a39d3d89edc82f5"
+    },
+    "/รับซื้อmacbook-อุดรธานี/": {
+      "approvedSource": "docs/content-approved/local-macbook-udonthani.md",
+      "astroFile": "src/pages/รับซื้อmacbook-อุดรธานี.astro",
+      "astroFileSha256": "46858917908bc3adf9cb00947534e76128b03a052e8d99991edc960017a61293"
+    },
+    "/รับซื้อกล้องอุบล-กล้องcanon-niko/": {
+      "approvedSource": "docs/content-approved/local-camera-ubon.md",
+      "astroFile": "src/pages/รับซื้อกล้องอุบล-กล้องcanon-niko.astro",
+      "astroFileSha256": "8d6204733ca2598e50d0025ed4069c93ce58f3415dbab8ebf11b13ea74fb8b2e"
+    },
+    "/รับซื้อกล้อง-ยโสธร/": {
+      "approvedSource": "docs/content-approved/local-camera-yasothon.md",
+      "astroFile": "src/pages/รับซื้อกล้อง-ยโสธร.astro",
+      "astroFileSha256": "58eaac71df4168e5082a7265e67ce308678fb6aee047148c296efe93c9637bdb"
+    },
+    "/รับซื้อกล้องถ่ายรูป-ศรี/": {
+      "approvedSource": "docs/content-approved/local-camera-sisaket.md",
+      "astroFile": "src/pages/รับซื้อกล้องถ่ายรูป-ศรี.astro",
+      "astroFileSha256": "6fff7f25aa5aabfb24a41e11a6d639677b0d92940eacde6deeb47c5b83a3e25d"
+    },
+    "/รับซื้อกล้องมือสองสุร/": {
+      "approvedSource": "docs/content-approved/local-camera-surin.md",
+      "astroFile": "src/pages/รับซื้อกล้องมือสองสุร.astro",
+      "astroFileSha256": "5001e75f27104b6b86590b48a8fdd629d221231f5ec6f69ac033c062f13b60b5"
+    },
+    "/รับซื้อลำโพง-ยโสธร/": {
+      "approvedSource": "docs/content-approved/local-speaker-yasothon.md",
+      "astroFile": "src/pages/รับซื้อลำโพง-ยโสธร.astro",
+      "astroFileSha256": "0046809d45aca088be2680dbc19fec528c8e2aa9e85bfde002f6bed60086b06f"
+    },
+    "/รับซื้อไอแพด-ยโสธร-ipad/": {
+      "approvedSource": "docs/content-approved/local-ipad-yasothon.md",
+      "astroFile": "src/pages/รับซื้อไอแพด-ยโสธร-ipad.astro",
+      "astroFileSha256": "7c0070a9b24d89297b4bd813afa77fe069606fa6ee19c5a0e8ded463e51ccb27"
+    }
+  }
+}

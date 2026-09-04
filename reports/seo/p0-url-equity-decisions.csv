@@ -1,0 +1,360 @@
+﻿path,clicks90d,impressions90d,position90d,contentCluster,planningRecommendation,currentState,p0Action,redirectTarget,priority,reason
+/รับซื้อมือถือใกล้ฉัน-อุ/,24,508,7.72,iphone,C_301_CONSOLIDATE,REDIRECT,KEEP_ONE_HOP_301,/รับซื้อโทรศัพท์มือถือ-จ/,P0,P0: historical title identifies Udon Thani intent; consolidated one-hop to regional Isan mobile owner instead of the Ubon page.
+/รับซื้อมือถือใกล้ฉัน-ขอ/,19,748,9.56,iphone,C_301_CONSOLIDATE,REDIRECT,KEEP_ONE_HOP_301,/รับซื้อโทรศัพท์มือถือ-จ/,P0,P0: historical Khon Kaen near-me mobile alias consolidated one-hop to the regional Isan mobile owner until a dedicated broad Khon Kaen mobile owner is released.
+/contact/,,,,general,SYSTEM_CURRENT_ROUTE,INDEX,KEEP_INDEX,,P0,P0: promoted from HOLD_NOINDEX to INDEX so /ติดต่อเรา/ does not redirect to a noindex destination.
+/รับซื้อ-apple-watch/,,,,iphone,SYSTEM_CURRENT_ROUTE,INDEX,KEEP_INDEX,,P0,P0: promoted from HOLD_NOINDEX to INDEX so historical near-me redirect equity lands on an indexable self-canonical owner.
+/รับซื้อคอมประกอบ/,,,,pc,SYSTEM_CURRENT_ROUTE,INDEX,KEEP_INDEX,,P0,P0: promoted from HOLD_NOINDEX to INDEX so historical near-me redirect equity lands on an indexable self-canonical owner.
+/รับซื้อสมาร์ทโฟน-android/,,,,android,SYSTEM_CURRENT_ROUTE,INDEX,KEEP_INDEX,,P0,P0: promoted from HOLD_NOINDEX to INDEX so historical near-me redirect equity lands on an indexable self-canonical owner.
+/รับซื้อเครื่องเกม/,,,,gaming,SYSTEM_CURRENT_ROUTE,INDEX,KEEP_INDEX,,P0,P0: promoted from HOLD_NOINDEX to INDEX so historical near-me redirect equity lands on an indexable self-canonical owner.
+/รับซื้อโน๊ตบุ๊คอุบล-notebook-laptop-จ/,75,973,7.59,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้าเก่า-รับซื้/,73,1045,11.31,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอม-อุดรธานี/,45,498,8.21,computer,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อตู้แช่อุบลราชธา/,39,522,8.93,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตสายไหม/,32,613,8.34,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอม-ขอนแก่น/,26,496,13.39,computer,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อโทรศัพท์มือถือ-จ/,25,746,9.13,iphone,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อโน๊ตบุ๊ค-บุรีรัม/,20,240,7.67,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อโน๊ตบุ๊ค-เลย/,20,164,9.34,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อมือถือ-อุบล/,19,435,12.67,iphone,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับจำนำศรีสะเกษ/,18,337,11.53,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองสุ/,16,152,9.71,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ/,15,320,8.23,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/,15,206,10.72,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อซากคอมพิวเตอร์/,15,164,20.39,computer,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับจำนำโน๊ตบุ๊คศรีสะเก/,15,127,6.90,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อไอโฟน-มหาสารคาม/,14,346,9.56,iphone,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อตั๋วจำนำกันทรลั/,14,192,9.60,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้าเฮนเนสซี่-hennessy/,13,158,10.70,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค-สกลนคร/,12,276,9.07,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับจำนำอำนาจเจริญ/,12,182,8.84,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-ใกล้ฉัน/,12,161,18.48,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค-นครพนม/,12,128,7.66,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้า-เขตบางกะปิ/,12,123,16.67,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค-นครราชส/,11,296,9.52,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเมืองขอนแก่น/,11,133,11.54,macbook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้า/,10,223,11.49,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองร้/,10,113,13.12,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค-notebook-ยโสธร/,10,76,6.03,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้า-อำเภอบางพล/,10,70,8.93,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-อำเภอเมือ-3/,10,54,5.26,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/,9,506,14.47,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อโน๊ตบุ๊ค-กาฬสินธ/,9,247,8.06,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเมืองศรีสะเกษ/,9,183,8.74,macbook,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อโทรศัพท์-มือถือ-ย/,9,135,11.02,iphone,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/,9,103,11.84,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อโดรน/,9,69,14.78,gadget,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P1,Residual historical traffic (9 clicks) requiring explicit stakeholder decision
+/รับซื้อกล้องมือสอง-บริก/,8,140,26.64,camera,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้า-เขตทวีวัฒน/,8,69,16.65,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อทีวี-อุบล-รับซื้/,8,59,9.32,general_buyback,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P1,Residual historical traffic (8 clicks) requiring explicit stakeholder decision
+/รับซื้อเหล้า-อำเภอเมือ-4/,8,27,5.11,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/ร้านรับจำนำยโสธร/,7,332,10.27,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อกล้องถ่ายรูปจัง/,7,204,10.44,camera,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับจำนำมือถือ-จังหวัดยโ/,7,174,9.06,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำบ้านผือ/,7,161,9.48,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำปากช่อง/,7,106,9.39,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองอุ/,7,101,8.27,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอม-ศรีสะเกษ/,7,99,9.83,computer,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อโน๊ตบุ๊ค-บึงกาฬ/,7,97,7.10,notebook,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้ารีเจนซี่/,7,71,12.14,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อไอแพด-อุบล/,7,68,13.24,ipad,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อตั๋วจำนำกมลาไสย/,6,236,10.70,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองชั/,6,217,9.65,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็/,6,187,7.35,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อนางรอง/,6,112,8.24,general_buyback,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P1,Residual historical traffic (6 clicks) requiring explicit stakeholder decision
+/รับซื้อลำโพง-อุดรธานี/,6,104,9.49,audio,B_PRESERVE_IMPROVE,INDEX,KEEP_INDEX,,P1,Active approved V2 INDEX route with verified content foundation
+/รับซื้อโน๊ตบุ๊ค-จังหวัด/,6,95,8.47,notebook,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อตั๋วจำนำเมืองนค-2/,6,85,7.95,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเมืองอุดรธานี/,6,64,9.84,macbook,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อโน๊ตบุ๊ค-หนองบัว/,6,61,7.18,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับจำนำมือถืออุบล/,5,215,10.24,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำศรีบุญเ/,5,177,7.44,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อไอโฟน-iphone-ร้อยเอ็ด/,5,174,10.16,iphone,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเดชอุดม/,5,124,8.58,general_buyback,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P1,Residual historical traffic (5 clicks) requiring explicit stakeholder decision
+/ร้านรับจํานําลําโพงบลู/,5,115,13.11,general,D_RETIRE,GONE,KEEP_410,,P1,Authoritative runtime GONE 410 route
+/รับซื้อตั๋วจำนำเมืองบุ/,5,102,8.80,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้าเรด-เลเบิ้ล/,5,88,20.58,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค-อุดรธาน/,5,86,9.09,notebook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อกล้องมือสองมุก/,5,44,10.75,camera,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้า-อำเภอคลองห/,5,40,6.17,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อลำโพง-ร้อยเอ็ด-jbl-marshall/,5,36,9.64,audio,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้า-jameson/,5,21,29.10,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-บรบือ/,5,20,11.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตทุ่งครุ/,5,13,5.92,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค/,4,330,22.68,notebook,B_PRESERVE_IMPROVE,INDEX,KEEP_INDEX,,P1,Foundational IT category money hub
+/รับซื้อโทรศัพท์-อุบล/,4,182,9.18,iphone,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/,4,170,24.94,core,B_PRESERVE_IMPROVE,INDEX,KEEP_INDEX,,P1,Active approved V2 INDEX route with verified content foundation
+/รับซื้อตั๋วจำนำพรเจริญ/,4,131,8.93,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำบ้านไผ่/,4,127,10.58,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอม-สารคาม/,4,107,10.26,computer,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อโน๊ตบุ๊ค-notebook/,4,102,40.28,notebook,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P1,High-equity historical IT search winner; keep exact public URL and rewrite content
+/ร้านรับจำนำมือถือใกล้ฉ/,3,453,22.19,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองนค/,3,296,11.50,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำนากลาง/,3,236,9.45,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเมืองบุรีรัมย์/,3,190,7.95,macbook,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P1,Residual historical traffic (3 clicks) requiring explicit stakeholder decision
+/รับซื้อไอโฟน-จังหวัดอุด/,3,159,11.17,iphone,A_PRESERVE_REWRITE,HOLD_NOINDEX,HOLD_UNTIL_CONTENT_READY,,P1,Approved survivor candidate designated for full V2 content rebuild
+/รับซื้อตั๋วจำนำโพนทอง/,3,150,8.45,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/fixcom-ubon/,2,318,9.18,general,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P1,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/รับซื้อตั๋วจำนำชุมแพ/,2,203,9.52,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำขุขันธ์/,2,128,10.87,off_topic,D_RETIRE,GONE,KEEP_410,,P1,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อกล้องมือสอง-มหาส/,2,109,10.75,camera,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P1,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/รับซื้อโน๊ตบุ๊ค-สุรินทร/,2,102,11.34,notebook,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P1,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/รับซื้อไอโฟน-ขอนแก่น/,2,100,16.88,iphone,A_PRESERVE_REWRITE,HOLD_NOINDEX,HOLD_UNTIL_CONTENT_READY,,P1,Approved survivor candidate designated for full V2 content rebuild
+/รับซื้อกล้องอุบล-กล้องcanon-niko/,4,91,10.44,camera,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อกล้อง-fujifilm-ฟูจิฟิล์ม/,4,78,11.51,camera,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อกมลาไสย/,4,70,9.71,general_buyback,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (4 clicks) requiring explicit stakeholder decision
+/รับซื้อโน๊ตบุ๊ค-ศรีสะเ-2/,4,70,7.07,notebook,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเฟอร์นิเจอร์มือ/,4,59,19.24,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำคำชะอี/,4,51,8.08,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อกล้อง-ยโสธร/,4,50,7.54,camera,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อแม็คบุ๊ค-macbook/,4,43,8.70,macbook,C_301_CONSOLIDATE,REDIRECT,KEEP_ONE_HOP_301,/รับซื้อแมคบุ๊ค/,P2,Active migration redirect rule targeting /รับซื้อแมคบุ๊ค/
+/รับซื้อกล้องถ่ายรูป-ศรี/,4,41,6.98,camera,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อคอม-สายไหม/,4,35,9.37,computer,A_PRESERVE_REWRITE,UNREGISTERED,P1_REBUILD_PRESERVE_EXACT_URL,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อmacbook-อุดรธานี/,4,34,10.41,macbook,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้า-เขตพระโขนง/,4,30,7.37,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-อำเภอเมือง/,4,29,19.97,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อลำโพง-สารคาม/,4,28,19.61,audio,B_PRESERVE_IMPROVE,INDEX,KEEP_INDEX,,P2,Active approved V2 INDEX route with verified content foundation
+/รับจำนำลำโพง-marshall/,4,21,15.14,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำหนองหาน/,3,99,8.42,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อโน๊ตบุ๊ค-มหาสารค/,3,93,10.16,notebook,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (3 clicks) requiring explicit stakeholder decision
+/รับซื้อโน๊ตบุ๊คจังหวัด/,3,86,10.23,notebook,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (3 clicks) requiring explicit stakeholder decision
+/จำนำอุบล-ใกล้ฉัน/,3,77,29.62,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อฮาร์ดดิส/,3,64,36.25,general_buyback,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (3 clicks) requiring explicit stakeholder decision
+/รับซื้อธวัชบุรี/,3,60,10.53,general_buyback,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (3 clicks) requiring explicit stakeholder decision
+/รับซื้อเหล้า-เขตหนองแขม/,3,55,8.15,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับจำนำโน๊ตบุ๊ค-ยโสธร/,3,54,23.37,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองเล/,3,54,10.54,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อกล้อง-อุดรธานี/,3,46,13.59,camera,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (3 clicks) requiring explicit stakeholder decision
+/tag/รับซื้อไอแพดอุดรธานี/,3,44,8.36,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อ-hdd-มือสอง/,3,29,17.66,guide,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (3 clicks) requiring explicit stakeholder decision
+/รับซื้อลำโพง-ยโสธร/,3,28,9.50,audio,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/tag/รับซื้อมือถือ-อำเภอบ้าน/,3,25,6.24,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อไอแพด-ยโสธร-ipad/,3,24,11.67,ipad,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/รับซื้อเหล้า-blue-label/,3,23,18.96,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับจำนำไอแพด-จังหวัดยโส/,3,19,14.47,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อแมคบุ๊ค-ขอนแก่น/,3,18,16.11,macbook,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (3 clicks) requiring explicit stakeholder decision
+/รับซื้อกล้องมือสอง-ร้อ-2/,2,83,9.42,camera,D_RETIRE,GONE,KEEP_410,,P2,Authoritative runtime GONE 410 route
+/รับซื้อตั๋วจำนำเมืองยโ/,2,58,9.84,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อกล้อง/,2,57,28.75,camera,B_PRESERVE_IMPROVE,INDEX,KEEP_INDEX,,P2,Foundational IT category money hub
+/รับซื้อตั๋วจำนำเมืองสก/,2,55,9.89,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อไอแพด-มหาสารคาม/,2,44,9.00,ipad,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/buy-camera-bungkan/,2,43,11.70,camera,C_301_CONSOLIDATE,UNREGISTERED,P1_301_CONSOLIDATION_REVIEW,,P2,Legacy English URL alias proposed for consolidation into Thai category hub
+/รับซื้อเหล้าซีวาส-chivas/,2,42,15.45,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอม-หลักสี่/,2,41,12.63,computer,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/รับซื้อกล้องมือสอง-กาฬ-2/,2,36,7.19,camera,D_RETIRE,GONE,KEEP_410,,P2,Authoritative runtime GONE 410 route
+/รับซื้อโน๊ตบุ๊ค-อำนาจเจ/,2,35,7.06,notebook,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/buy-camera-surin/,2,33,8.73,camera,C_301_CONSOLIDATE,REDIRECT,KEEP_ONE_HOP_301,/รับซื้อกล้องมือสองสุร/,P2,Active migration redirect rule targeting /รับซื้อกล้องมือสองสุร/
+/rab-sue-computer-chon-buri/,2,27,17.56,computer,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/รับซื้อไอแพด-ขอนแก่น/,2,27,12.48,ipad,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/tag/รับจำนำมือถือ-อำเภอม่วง/,2,26,8.15,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอม-อำนาจเจริญ/,2,26,10.15,computer,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/รับซื้อกล้อง-sony/,2,19,19.16,camera,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/tag/รับซื้อกล้อง-บุรีรัมย์/,2,17,9.82,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อ-macbook-สารคาม/,2,14,8.86,macbook,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/tag/รับซื้อตั๋วจำนำ-โกสุมพิ/,2,10,7.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อ-notebook-อำเภอพิบูลมังส/,2,9,8.89,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อไอแพด-สิงห์บุรี/,2,8,7.38,ipad,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/รับซื้อเหล้า-อำเภอพระสม/,2,6,4.33,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อ-nintendo-พิษณุโลก/,2,3,5.67,general_buyback,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (2 clicks) requiring explicit stakeholder decision
+/รับจำนำคอม-อุบล/,1,97,11.10,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำลำโพง-เลย/,1,96,11.02,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อยางตลาด/,1,93,9.47,general_buyback,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (1 clicks) requiring explicit stakeholder decision
+/รับซื้อตั๋วจำนำกันทรวิ/,1,77,9.31,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/จำนำไอโฟน-iphone-อุบล/,1,69,16.20,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอม/,1,63,15.19,computer,B_PRESERVE_IMPROVE,INDEX,KEEP_INDEX,,P2,Foundational IT category money hub
+/รับซื้อตั๋วจำนำปทุมราช/,1,59,12.49,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/สินค้าหลุดจำนำอุบล/,1,57,9.33,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำบ้านเขว/,1,49,7.73,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-ระยอง/,1,42,10.05,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอม-อุบล/,1,37,16.41,computer,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (1 clicks) requiring explicit stakeholder decision
+/รับซื้อคอมพิวเตอร์-ร้อย/,1,34,11.24,computer,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (1 clicks) requiring explicit stakeholder decision
+/buy-camera-mahasarakam/,1,30,7.57,camera,C_301_CONSOLIDATE,HOLD_NOINDEX,HOLD_UNTIL_CONTENT_READY,,P2,Legacy English URL alias proposed for consolidation into Thai category hub
+/รับซื้อเหล้า-black-label/,1,28,11.93,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-เชียงราย/page/3/,1,27,7.85,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตลาดกระบ/,1,26,10.50,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำนิคมคำส/,1,24,13.58,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอมพิวเตอร์-ยโสธ/,1,23,7.83,computer,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (1 clicks) requiring explicit stakeholder decision
+/tag/รับซื้อมือถือ-นาเชือก/,1,22,6.68,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-อำเภอโนนส/,1,21,7.90,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อทีวีอุดรธานี/,1,20,9.70,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-วาปีปทุม/,1,19,5.89,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-100-pipers/,1,19,31.95,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถืออำเภอปทุม/,1,18,6.17,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อคอม-อำเภอหนองหาน/,1,17,6.94,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/ขายโน๊ตบุ๊คอุบล/,1,15,16.93,notebook,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (1 clicks) requiring explicit stakeholder decision
+/tag/รับซื้อคอมกาฬสินธุ์/,1,14,10.86,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/buy-camera-nakonpanom/,1,13,6.92,camera,C_301_CONSOLIDATE,UNREGISTERED,P1_301_CONSOLIDATION_REVIEW,,P2,Legacy English URL alias proposed for consolidation into Thai category hub
+/tag/รับซื้อมือถือ-โกสุมพิสั/,1,12,6.83,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อไอโฟน-อำเภอหนองว/,1,12,6.58,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อ-iphone-ศรีบุญเรือง-หนอ/,1,10,6.70,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-ชัยนาท/,1,10,18.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อกล้องมือสอง-กาฬส/,1,10,9.60,camera,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (1 clicks) requiring explicit stakeholder decision
+/tag/รับซื้อคอม-อำเภอชุมแพ/,1,8,8.12,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อแมคบุ๊ค-อุดรธานี/,1,8,12.38,macbook,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (1 clicks) requiring explicit stakeholder decision
+/รับซื้อการ์ดจอมือสอง-อ-20/,1,7,11.29,computer,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (1 clicks) requiring explicit stakeholder decision
+/tag/รับซื้อกล้องโพลารอยด์/,1,5,8.40,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อทีวีศรีสะเกษ/,1,4,7.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถืออุบล/,1,4,8.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/จำนำโทรศัพท์-อำเภอเขื่อ/,1,3,5.33,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-อำเภอตร/,1,3,7.67,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตคลองเตย/,1,2,8.00,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้องอุบล/,1,1,18.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อไอโฟน-อ่างทอง/,1,1,9.00,iphone,E_REVIEW,UNREGISTERED,OWNER_REVIEW,,P2,Residual historical traffic (1 clicks) requiring explicit stakeholder decision
+/รับซื้อตั๋วจำนำโนนสูง/,0,81,10.20,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับจำนำลำโพง-jbl-marshall-ยโสธร/,0,65,17.66,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อกล้องมือสองสุร/,0,58,9.31,camera,A_PRESERVE_REWRITE,INDEX,KEEP_INDEX,,P2,High-equity historical IT search winner; keep exact public URL and rewrite content
+/tag/รับซื้อมือถือหนองบัวลำ/,0,46,8.43,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-สระบุรี/,0,44,9.16,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อไอโฟน-ท่าบ่อ-หนอง/,0,38,8.63,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/buy-camera-sisaket/,0,29,11.93,camera,C_301_CONSOLIDATE,UNREGISTERED,P1_301_CONSOLIDATION_REVIEW,,P2,Legacy English URL alias proposed for consolidation into Thai category hub
+/tag/รับจำนำไอโฟน-อำเภอเขมรา/,0,29,3.90,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อลำโพง-marshall/,0,26,24.00,audio,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อตั๋วจำนำเมืองร้/#ขั้�.../,0,22,9.64,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองร้/#ทำไ�.../,0,22,9.64,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองร้/#ปัญ�.../,0,22,9.64,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อ-ps4-อุบล-play-station-4/,0,21,8.00,general_buyback,D_RETIRE,GONE,KEEP_410,,P2,Authoritative runtime GONE 410 route
+/รับซื้อกล้อง-fujifilm-x-a3-รับซื้อ/,0,21,15.24,camera,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/tag/รับซื้อโน๊ตบุ๊ค-จังหวัด/,0,20,13.60,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเดชอุดม/,0,20,10.55,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อตั๋วจำนำ-ชุมแพ/,0,19,10.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตบางแค/,0,19,5.74,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อ-iphone-กันทรลักษ์-ศรีส/,0,18,7.89,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถืออำเภอเมือ/,0,18,12.22,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำนากลาง/#ขั้�%.../,0,18,13.22,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำนากลาง/#ทำไ�%.../,0,18,13.22,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำนากลาง/#ปัญ�%.../,0,18,13.22,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/ร้านรับซื้อโทรทัศน์-อุบ/,0,16,8.38,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-อำเภอพล/,0,15,10.60,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อ/,0,15,19.00,general_buyback,B_PRESERVE_IMPROVE,INDEX,KEEP_INDEX,,P2,Foundational IT category money hub
+/tag/รับจำนำไอโฟน-อำเภอน้ำขุ/,0,13,8.23,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-อำเภอแวงใ/,0,13,6.62,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-อำเภอชุ/,0,13,8.31,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/อันดับ-1-รับจำนำกล้อง-อุบ/,0,13,17.92,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อตั๋วจำนำ-ใกล้ฉัน/,0,12,10.42,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-อำเภอน้ำโ/,0,12,8.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-jack-danails/,0,12,12.33,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-สกลนคร/,0,11,10.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้องบุรีรัมย์/,0,10,10.20,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถืออำเภอหนอง/,0,10,7.40,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/ขายโน๊ตบุ๊ค-อุบล/,0,10,44.00,notebook,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/tag/จำนำโทรศัพท์-อำเภอกุดข้/,0,9,6.67,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำลำโพง-อุดรธานี/,0,9,9.44,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำอุบล/,0,9,11.22,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-พิษณุโลก/,0,9,9.78,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-อุตรดิตถ์/page/3/,0,9,12.11,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/ไอโฟนหลุดจำนำอุบล/,0,9,10.11,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำศรีสะเกษ/,0,8,8.62,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำไอโฟน-อำเภอกุดข้/,0,8,7.88,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อ-macbook/,0,8,15.62,macbook,C_301_CONSOLIDATE,REDIRECT,KEEP_ONE_HOP_301,/รับซื้อแมคบุ๊ค/,P2,Active migration redirect rule targeting /รับซื้อแมคบุ๊ค/
+/รับซ่อมมือถือ-อุบลราชธานี-คู่มือ/,0,8,11.12,iphone,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/tag/จำนำโทรศัพท์-อำเภอตระกา/,0,7,9.43,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อคอมพิวเตอร์อุบล/,0,7,11.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือบุรีรัมย์/,0,7,9.14,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือหนองคาย/,0,7,18.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อคอม-บรบือ/,0,6,9.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/ร้านขายไอแพดในอุบล-ipad/,0,6,19.83,ipad,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/tag/จำนำโทรศัพท์-อำเภอตาลสุ/,0,5,9.40,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำลำโพง-อุบลราชธาน/,0,5,11.80,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อ-computer-สกลนคร/,0,5,9.60,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-พัทลุง/page/3/,0,5,8.80,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-พยัคฆภูมิ/,0,5,5.60,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-หนองบัวลำ/,0,5,6.80,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-อำเภอศรีธ/,0,5,6.80,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-อำเภอมั/,0,5,6.40,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อคอมพิวเตอร์-ภูเก/,0,5,26.60,computer,C_301_CONSOLIDATE,REDIRECT,KEEP_ONE_HOP_301,/รับซื้อคอม/,P2,Active migration redirect rule targeting /รับซื้อคอม/
+/รับซื้อไอแพด-แอร์-6-ipad-air-6-อุบล/,0,5,61.80,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/เช็กราคาก่อนขาย/,0,5,6.00,guide,D_RETIRE,HOLD_NOINDEX,HOLD_UNTIL_CONTENT_READY,,P2,Zero search equity thin duplicate post
+/tag/จำนำโทรศัพท์-อำเภอเขมรา/,0,4,7.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำไอแพดอุบล/,0,4,11.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-กุดรัง/,0,4,7.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-นาดูน/,0,4,8.25,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-อำเภอเด/,0,4,11.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับจำนำไอโฟน-13-รับจำนำ-iphone-13/,0,4,62.25,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อกล้องกล้อง-olympus/,0,4,11.50,camera,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อกล้องมือสองบึง/,0,4,9.25,camera,D_RETIRE,HOLD_NOINDEX,HOLD_UNTIL_CONTENT_READY,,P2,Thin secondary survivor without standalone demand; planned for retirement
+/รับซื้อคอมพิวเตอร์-ชลบุ/,0,4,19.25,computer,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อเหล้า-เขตบางกะปิ/#ขั้%E.../,0,4,5.50,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตบางกะปิ/#คำถ%E.../,0,4,5.50,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตบางกะปิ/#ทำไ%E.../,0,4,5.50,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตบางกะปิ/#ปัจ%E.../,0,4,5.50,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตบางกะปิ/#รับ%E.../,0,4,5.50,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตบางกะปิ/#วิธ%E.../,0,4,5.50,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อเหล้า-เขตบางกะปิ/#เหล%E.../,0,4,5.50,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/มือถือ-มือสอง-อำเภอตระกา/,0,3,6.33,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำโน๊ตบุ๊คอำนาจเจ/,0,3,8.67,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-นครพนม/,0,3,10.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-ปราจีนบุรี/,0,3,10.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-อ่างทอง/,0,3,23.33,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อตั๋วจำนำ/,0,3,9.67,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อตั๋วจำนำของ/,0,3,13.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-อำเภอกระน/,0,3,13.67,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-อำเภอมัญจ/,0,3,9.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อเหล้า-เขตบางแค-บร/,0,3,6.67,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อ-nintendo-อุบลราชธานี/,0,3,22.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อคอม-โคราช/,0,3,9.33,computer,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/tag/ขายเหล้า/,0,2,7.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/จำนำโทรศัพท์-อำเภอทุ่งศ/,0,2,8.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำไอโฟน-อำเภอเขื่อ/,0,2,11.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อ-computer-อุดรธานี/,0,2,11.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-ร้อยเอ็ด/,0,2,12.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-เลย/,0,2,13.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้องมือสอง-ขอนแ/,0,2,39.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อคอม-มือสอง-อำเภอเ/,0,2,13.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อตั๋วจำนำ-บ้านไผ่/,0,2,11.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อตั๋วจำนำ-ร้อยเอ็/,0,2,11.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-อำเภอน้ำพ/,0,2,7.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถืออำเภอเมยว/,0,2,8.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อเหล้า-100-paper/,0,2,5.50,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-อำเภอพิ/,0,2,9.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-โกสุมพิ/,0,2,7.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อไวน์/,0,2,11.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/ติดต่อเรา/,0,2,44.50,general,C_301_CONSOLIDATE,REDIRECT,KEEP_ONE_HOP_301,/contact/,P2,Active migration redirect rule targeting /contact/
+/รับจำนำกล้อง-อุบล/,0,2,12.50,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อ-nintendo-ชุมพร/,0,2,8.50,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อกล้องมือสอง-อำนา/,0,2,9.00,camera,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อตั๋วจำนำคำชะอี/#ขั้�%.../,0,2,7.00,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำคำชะอี/#ทำไ�%.../,0,2,7.00,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำคำชะอี/#ปัญ�%.../,0,2,7.00,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองสุ/#ขั้�.../,0,2,11.00,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองสุ/#ทำไ�.../,0,2,11.00,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อตั๋วจำนำเมืองสุ/#ปัญ�.../,0,2,11.00,off_topic,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/ร้านจำนำในอุบล/,0,2,74.00,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/จำนำโทรศัพท์-อำเภอศรีเม/,0,1,9.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/มือถือ-มือสอง-อำเภอบุณฑร/,0,1,9.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำมือถือ-อำเภอน้ำข/,0,1,8.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำมือถือ-อำเภอโขงเ/,0,1,9.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำลำโพง-ขอนแก่น/,0,1,5.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับจำนำไอโฟน-อำเภอน้ำยื/,0,1,7.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อ-airpod-บ้านไผ่-ขอนแก่น/,0,1,6.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-ขอนแก่น/,0,1,11.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-นครราชสีมา/,0,1,10.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-ลพบุรี/page/3/,0,1,8.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-สระแก้ว/,0,1,8.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-สิงห์บุรี/page/3/,0,1,9.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้อง-สุพรรณบุรี/page/3/,0,1,9.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อกล้องกาฬสินธุ์/,0,1,10.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อคอม-อำเภอน้ำพอง/,0,1,10.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อคอม-อำเภอเกษตรวิ/,0,1,4.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถือ-อำเภอกุดจ/,0,1,4.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อมือถืออำเภอโพนท/,0,1,11.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อรถมือสอง-ในจังหว/,0,1,17.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อลำโพงอุบลราชธาน/,0,1,16.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อเหล้าไทย/,0,1,11.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-ห้วยแถล/,0,1,6.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-อำเภอรา/,0,1,5.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อโน๊ตบุ๊ค-เชียงยื/,0,1,7.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อไอโฟน-อำนาจเจริญ/,0,1,7.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/รับซื้อไอโฟน-เมืองมหาสา/,0,1,12.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/tag/อำเภอสว่างวีระวงศ์/,0,1,8.00,archive,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive
+/รับซื้อ-nintendo-ตรัง/,0,1,71.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อ-nintendo-นครปฐม/,0,1,6.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อ-nintendo-พัทลุง/,0,1,8.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อ-nintendo-พิจิตร/,0,1,11.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อ-nintendo-สิงห์บุรี/,0,1,9.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อ-nintendo-สุราษฎร์ธานี/,0,1,12.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อ-nintendo-เชียงใหม่/,0,1,36.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อ-nintendo-เพชรบูรณ์/,0,1,10.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อ-oppo-อุดรธานี/,0,1,31.00,general_buyback,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อ-คอมพิวเตอร์-ขอนแ/,0,1,6.00,computer,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อกล้อง-อ่างทอง/,0,1,10.00,camera,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อคอม-อ่างทอง/,0,1,11.00,computer,D_RETIRE,UNREGISTERED,RETIRE_REVIEW,,P2,Zero search equity thin duplicate post
+/รับซื้อตั๋วจำนำนางรอง/,0,1,5.00,off_topic,D_RETIRE,GONE,KEEP_410,,P2,Off-topic legacy niche (alcohol / pawn / home appliance) or thin archive

@@ -7,7 +7,7 @@ import { normalizePath } from '../lib/seo/normalize';
 
 export const GET: APIRoute = async () => {
   const siteUrl = BUSINESS_FACTS.VERIFIED.siteUrl;
-  const sitemapUrls: Array<{ loc: string; lastmod?: string; changefreq?: string; priority?: string }> = [];
+  const sitemapUrls: Array<{ loc: string; lastmod?: string }> = [];
 
   // Read collection entries to get accurate dates
   const pages = await getCollection('pages');
@@ -33,16 +33,9 @@ export const GET: APIRoute = async () => {
       const fullUrl = `${siteUrl}${seo.normalizedPath}`;
       const lastmod = collectionDateMap.get(seo.normalizedPath) || record.lastmod;
 
-      let priority = '0.7';
-      if (seo.normalizedPath === '/') priority = '1.0';
-      else if (seo.pageType === 'hub') priority = '0.9';
-      else if (seo.pageType === 'category') priority = '0.8';
-      else if (seo.pageType === 'location') priority = '0.7';
-
       sitemapUrls.push({
         loc: fullUrl,
-        lastmod,
-        priority
+        lastmod
       });
     }
   }
@@ -61,7 +54,6 @@ export const GET: APIRoute = async () => {
     if (entry.lastmod) {
       xmlLines.push(`    <lastmod>${entry.lastmod}</lastmod>`);
     }
-    xmlLines.push(`    <priority>${entry.priority}</priority>`);
     xmlLines.push('  </url>');
   }
 

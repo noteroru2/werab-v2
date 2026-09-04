@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-04",
+  "phase": "RECOVERY P2 — TOPICAL AUTHORITY EXPANSION + BRAND / SERIES / CONDITION SUPPORT",
+  "lifecycleCounts": {
+    "INDEX": 84,
+    "HOLD_NOINDEX": 33,
+    "DRAFT": 29,
+    "REDIRECT": 53,
+    "GONE": 206
+  },
+  "controlledUrls": 405,
+  "supportPagesReleased": 21,
+  "brandSeriesPages": 16,
+  "conditionValuationPages": 5,
+  "p2RedirectConsolidations": 5,
+  "urlEquityMasterRows": 1912,
+  "historicalSonyBrandClicksRecovered": 2.0,
+  "staticVerdict": "PASS",
+  "productionVerdict": "DEPLOY_HOLD_UNTIL_BUILD"
+}

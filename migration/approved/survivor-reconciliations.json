@@ -1,0 +1,56 @@
+[
+  {
+    "path": "/รับซื้อกล้อง-canon-2/",
+    "originalDecision": "HOLD_NOINDEX",
+    "effectiveDisposition": "REDIRECT",
+    "target": "/รับซื้อกล้อง-canon/",
+    "phase": "RECOVERY_P2",
+    "reason": "Duplicate Canon legacy slug consolidated into the Canon brand owner."
+  },
+  {
+    "path": "/รับซื้อกล้อง-sony-a6400/",
+    "originalDecision": "HOLD_NOINDEX",
+    "effectiveDisposition": "REDIRECT",
+    "target": "/รับซื้อกล้อง-sony/",
+    "phase": "RECOVERY_P2",
+    "reason": "Thin single-model Sony legacy slug consolidated into the Sony brand owner."
+  },
+  {
+    "path": "/รับซื้อกล้อง-sony-rx100/",
+    "originalDecision": "HOLD_NOINDEX",
+    "effectiveDisposition": "REDIRECT",
+    "target": "/รับซื้อกล้อง-sony/",
+    "phase": "RECOVERY_P2",
+    "reason": "Thin RX100 legacy slug consolidated into the Sony brand owner."
+  },
+  {
+    "path": "/รับซื้อกล้อง-sony-a7/",
+    "originalDecision": "HOLD_NOINDEX",
+    "effectiveDisposition": "INDEX",
+    "phase": "RECOVERY_P2",
+    "reason": "Historical Sony A7 slug promoted as a differentiated series support owner."
+  },
+  {
+    "path": "/รับซื้อไอโฟน-15-iphone-15/",
+    "originalDecision": "HOLD_NOINDEX",
+    "effectiveDisposition": "REDIRECT",
+    "target": "/รับซื้อ-iphone-15/",
+    "phase": "RECOVERY_P2",
+    "reason": "Legacy iPhone 15 slug consolidated into the clean iPhone 15 series owner."
+  },
+  {
+    "path": "/รับซื้อกล้อง-canon/",
+    "originalDecision": "HOLD_NOINDEX",
+    "effectiveDisposition": "INDEX",
+    "phase": "RECOVERY_P2",
+    "reason": "Clean Canon historical slug promoted as the Canon brand support owner."
+  },
+  {
+    "path": "/รับซื้อกล้อง-nikon-รับซื้อกล/",
+    "originalDecision": "HOLD_NOINDEX",
+    "effectiveDisposition": "REDIRECT",
+    "target": "/รับซื้อกล้อง-nikon/",
+    "phase": "RECOVERY_P2",
+    "reason": "Truncated Nikon legacy slug consolidated into the clean Nikon brand owner."
+  }
+]

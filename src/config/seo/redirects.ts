@@ -1,7 +1,7 @@
 /**
  * src/config/seo/redirects.ts
  * Authoritative 301 Permanent Redirect Registry for เรารับซื้อ.com V2.
- * Contains exactly 44 verified historical migration redirect sources.
+ * Contains verified historical migration redirect sources. P0 adds explicit high-equity near-me consolidations.
  */
 
 import { normalizePath } from '../../lib/seo/normalize';
@@ -24,7 +24,7 @@ export const RAW_REDIRECT_RULES: Array<{ source: string; target: string; reason?
   { source: '/rab-sue-macbook/', target: '/รับซื้อแมคบุ๊ค/', reason: 'English transliteration alias' },
   { source: '/rab-sue-notebook/', target: '/รับซื้อโน๊ตบุ๊ค/', reason: 'English transliteration alias' },
 
-  // 2. 'ใกล้ฉัน' (Near Me) Variants -> Canonical Category Hubs (11 rules)
+  // 2. 'ใกล้ฉัน' (Near Me) Variants -> Canonical / regional owners (13 rules)
   { source: '/รับซื้อ-ใกล้ฉัน/', target: '/รับซื้อ/', reason: 'Near-me alias consolidation' },
   { source: '/รับซื้อคอม-ใกล้ฉัน/', target: '/รับซื้อคอม/', reason: 'Near-me alias consolidation' },
   { source: '/รับซื้อคอมประกอบ-ใกล้ฉัน/', target: '/รับซื้อคอมประกอบ/', reason: 'Near-me alias consolidation' },
@@ -36,6 +36,8 @@ export const RAW_REDIRECT_RULES: Array<{ source: string; target: string; reason?
   { source: '/รับซื้อลำโพง-ใกล้ฉัน/', target: '/รับซื้อลำโพง/', reason: 'Near-me alias consolidation' },
   { source: '/รับซื้อสมาร์ทโฟน-android-ใกล้ฉัน/', target: '/รับซื้อสมาร์ทโฟน-android/', reason: 'Near-me alias consolidation' },
   { source: '/รับซื้อเครื่องเกม-ใกล้ฉัน/', target: '/รับซื้อเครื่องเกม/', reason: 'Near-me alias consolidation' },
+  { source: '/รับซื้อมือถือใกล้ฉัน-อุ/', target: '/รับซื้อโทรศัพท์มือถือ-จ/', reason: 'P0 historical near-me equity consolidation: Udon mobile intent to regional mobile owner' },
+  { source: '/รับซื้อมือถือใกล้ฉัน-ขอ/', target: '/รับซื้อโทรศัพท์มือถือ-จ/', reason: 'P0 historical near-me equity consolidation: Khon Kaen mobile intent to regional mobile owner' },
 
   // 3. Contact (1 rule)
   { source: '/ติดต่อเรา/', target: '/contact/', reason: 'Thai contact alias' },
@@ -68,7 +70,18 @@ export const RAW_REDIRECT_RULES: Array<{ source: string; target: string; reason?
   { source: '/รับซื้อ-macbook-แม็คบุ๊ค-ใกล้ฉั/', target: '/รับซื้อแมคบุ๊ค/', reason: 'Authoritative survivor redirect' },
   { source: '/รับซื้อ-notebook-ใกล้ฉัน/', target: '/รับซื้อโน๊ตบุ๊ค/', reason: 'Authoritative survivor redirect' },
   { source: '/รับซื้อไอโฟนใกล้ฉัน/', target: '/รับซื้อไอโฟน/', reason: 'Authoritative survivor redirect' },
-  { source: '/buy-camera-surin/', target: '/รับซื้อกล้องมือสองสุร/', reason: 'Authoritative survivor redirect' }
+  { source: '/buy-camera-surin/', target: '/รับซื้อกล้องมือสองสุร/', reason: 'Authoritative survivor redirect' },
+
+  // 7. RECOVERY P1 duplicate-intent consolidation (2 rules)
+  { source: '/รับซื้อโทรศัพท์-อุบล/', target: '/รับซื้อมือถือ-อุบล/', reason: 'P1: consolidate weaker historical Ubon phone duplicate into established local mobile owner' },
+  { source: '/รับซื้อโน๊ตบุ๊ค-notebook/', target: '/รับซื้อโน๊ตบุ๊ค/', reason: 'P1: consolidate broad duplicate notebook slug into core notebook authority page' },
+
+  // 8. RECOVERY P2 brand/model consolidation (5 rules)
+  { source: '/รับซื้อกล้อง-canon-2/', target: '/รับซื้อกล้อง-canon/', reason: 'P2: consolidate duplicate Canon model-heavy legacy slug into Canon brand owner' },
+  { source: '/รับซื้อกล้อง-nikon-รับซื้อกล/', target: '/รับซื้อกล้อง-nikon/', reason: 'P2: consolidate truncated Nikon legacy slug into clean Nikon brand owner' },
+  { source: '/รับซื้อกล้อง-sony-a6400/', target: '/รับซื้อกล้อง-sony/', reason: 'P2: retire thin single-model Sony legacy page into Sony brand owner' },
+  { source: '/รับซื้อกล้อง-sony-rx100/', target: '/รับซื้อกล้อง-sony/', reason: 'P2: retire thin RX100 legacy page into Sony brand owner' },
+  { source: '/รับซื้อไอโฟน-15-iphone-15/', target: '/รับซื้อ-iphone-15/', reason: 'P2: consolidate legacy iPhone 15 slug into clean iPhone 15 series owner' }
 ];
 
 // Normalized Map for O(1) Lookup

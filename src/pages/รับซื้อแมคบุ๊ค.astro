@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreMoneyAuthority from '../components/CoreMoneyAuthority.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
+import RealProductGallery from '../components/RealProductGallery.astro';
 import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อ MacBook มือสอง MacBook Air Pro เช็กราคาก่อนขาย | เรารับซื้อ.com";
@@ -103,6 +105,30 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <RealProductGallery
+    category="macbook"
+    title="ภาพ MacBook Air M1 และ M3 จากเครื่องจริง"
+    description="ภาพด้านหน้า ฝาหลัง ตัวเครื่อง และหน้าข้อมูลระบบสำหรับตรวจชิป หน่วยความจำและรุ่น โดยปกปิดเลขประจำเครื่องก่อนเผยแพร่แล้ว"
+  />
+
+  <CoreMoneyAuthority
+    categoryName='MacBook มือสอง'
+    valuationFactors={[
+      'MacBook Air/Pro รุ่นปี ชิป และขนาดหน้าจอ',
+      'Memory และ SSD ของเครื่อง',
+      'สุขภาพแบตเตอรี่ Cycle Count จอ Keyboard และพอร์ต',
+      'Activation Lock สภาพภายนอก อุปกรณ์ และประวัติซ่อมที่ทราบ'
+    ]}
+    supportLinks={[
+      { name: 'MacBook Air', path: '/รับซื้อ-macbook-air/' },
+      { name: 'MacBook Pro', path: '/รับซื้อ-macbook-pro/' },
+      { name: 'แบตเสื่อม', path: '/สภาพสินค้า/แบตเสื่อม/' },
+      { name: 'จอแตก/จอมีปัญหา', path: '/สภาพสินค้า/จอแตก/' },
+      { name: 'เปิดไม่ติด', path: '/สภาพสินค้า/เปิดไม่ติด/' },
+      { name: 'ไม่มีอุปกรณ์', path: '/สภาพสินค้า/ไม่มีอุปกรณ์/' }
+    ]}
+  />
 
   <!-- SECTION 1: MACBOOK TYPES -->
   <section class="commercial-section section-white">
@@ -738,7 +764,7 @@ const faqs = [
           <strong>รุ่น + Chip + RAM + SSD + Battery + รูป + สภาพ + อุปกรณ์</strong>
         </p>
         <p>จากนั้นจึงพิจารณาวิธีส่งมอบหรือนัดหมายตามพื้นที่ ประเภทสินค้า และความเหมาะสม</p>
-        <p>หน้า <code>/รับซื้อแมคบุ๊ค/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        
         <p>หากมีหน้าข้อมูลเฉพาะพื้นที่ที่ผ่านการตรวจสอบและได้รับอนุมัติในภายหลัง จึงค่อยเชื่อมโยงจากโครงสร้างที่เหมาะสม</p>
       </div>
     </div>
@@ -771,7 +797,7 @@ const faqs = [
         </div>
 
         <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
-          ดูขั้นตอนภาพรวมได้ที่ <strong>เช็กราคาก่อนขาย</strong>
+          ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/"><strong>เช็กราคาก่อนขาย</strong></a>
         </p>
         <p style="font-size: 1.05rem; font-weight: 700;">
           <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
@@ -785,18 +811,16 @@ const faqs = [
     <div class="container">
       <div class="comm-card">
         <h2>หน้าข้อมูลรับซื้อ MacBook ตามพื้นที่</h2>
-        <p style="margin-bottom: 1.25rem;">
-          สำหรับ Historical URL ที่มี Search Intent เฉพาะพื้นที่ สามารถดูรายละเอียดการเตรียมข้อมูลและเช็กราคาก่อนขายได้ที่:
-        </p>
+        
 
         <div class="local-links-container" style="margin-bottom: 1.25rem;">
           <a href="/รับซื้อเมืองขอนแก่น/" class="local-link-chip">รับซื้อ MacBook ขอนแก่น</a>
           <a href="/รับซื้อmacbook-อุดรธานี/" class="local-link-chip">รับซื้อ MacBook อุดรธานี</a>
+          <a href="/รับซื้อเมืองอุดรธานี/" class="local-link-chip">รับซื้อสินค้า Apple เมืองอุดรธานี</a>
+          <a href="/รับซื้อเมืองศรีสะเกษ/" class="local-link-chip">รับซื้อสินค้า Apple เมืองศรีสะเกษ</a>
         </div>
 
-        <p style="font-size: 0.9rem; color: var(--text-muted);">
-          หน้านี้รักษา Search Intent เดิมของ MacBook ตามพื้นที่ ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในขอนแก่น
-        </p>
+        
       </div>
     </div>
   </section>

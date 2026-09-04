@@ -142,15 +142,42 @@ const navItems = [
     const drawer = document.getElementById('mobile-nav-drawer');
     if (!toggle || !drawer) return;
 
+    const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    function setOpen(open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'ปิดเมนูนำทาง' : 'เปิดเมนูนำทาง');
+      drawer.hidden = !open;
+      document.body.classList.toggle('mobile-nav-open', open);
+      if (open) drawer.querySelector(focusableSelector)?.focus();
+      else toggle.focus();
+    }
+
     toggle.addEventListener('click', function() {
-      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isExpanded));
-      if (isExpanded) {
-        drawer.hidden = true;
-        toggle.setAttribute('aria-label', 'เปิดเมนูนำทาง');
-      } else {
-        drawer.hidden = false;
-        toggle.setAttribute('aria-label', 'ปิดเมนูนำทาง');
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    drawer.addEventListener('click', function(event) {
+      if (event.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (toggle.getAttribute('aria-expanded') !== 'true') return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setOpen(false);
+        return;
+      }
+      if (event.key !== 'Tab') return;
+      const focusable = [toggle, ...drawer.querySelectorAll(focusableSelector)];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     });
   })();

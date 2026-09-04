@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-09-04T00:00:00+07:00",
+  "phase": "RECOVERY_P0",
+  "expectedLifecycleCounts": {
+    "INDEX": 51,
+    "HOLD_NOINDEX": 41,
+    "DRAFT": 29,
+    "REDIRECT": 46,
+    "GONE": 206
+  },
+  "expectedRedirectRuleCount": 46,
+  "promotedRedirectTargets": [
+    "/รับซื้อคอมประกอบ/",
+    "/รับซื้อเครื่องเกม/",
+    "/รับซื้อ-apple-watch/",
+    "/รับซื้อสมาร์ทโฟน-android/",
+    "/contact/"
+  ],
+  "p0HistoricalRedirects": {
+    "/รับซื้อมือถือใกล้ฉัน-อุ/": "/รับซื้อโทรศัพท์มือถือ-จ/",
+    "/รับซื้อมือถือใกล้ฉัน-ขอ/": "/รับซื้อโทรศัพท์มือถือ-จ/"
+  },
+  "goneCount": 206
+}

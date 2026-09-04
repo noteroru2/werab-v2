@@ -1,0 +1,6 @@
+﻿checkpoint,focus,action,decision
+D+0,Release/indexing,Submit sitemap once after live gate passes; request indexing only priority queue URLs,No expansion
+D+3,Discovery/crawl,Inspect sitemap status and URL Inspection sample; record Google-selected canonical and last crawl,Fix technical blockers only
+D+7,Impression recovery,Compare page/query impressions for six core clusters and historical winners,Do not rewrite pages from 1-3 days of noise
+D+14,Query→page ownership,"Review cannibalization, canonical selection, indexed/not-indexed reasons and winners",Targeted title/internal-link adjustments only if evidence is clear
+D+28,Recovery decision,"Compare clicks, impressions, CTR and average position against release baseline and historical reference",Approve P5 expansion only if crawl/index stability and topic signals are healthy

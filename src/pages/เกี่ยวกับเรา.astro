@@ -3,51 +3,88 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import TrustBar from '../components/TrustBar.astro';
 import CTA from '../components/CTA.astro';
-import { BUSINESS_FACTS } from '../config/business';
+import { BUSINESS_FACTS, getDisplayLine, getDisplayPhone } from '../config/business';
 import { resolveSeo } from '../lib/seo/resolve';
 
 const seo = resolveSeo('/เกี่ยวกับเรา/');
 const breadcrumbs = [
+  { name: 'หน้าแรก', url: '/' },
   { name: 'เกี่ยวกับเรา', url: '/เกี่ยวกับเรา/' }
 ];
 ---
 
-<BaseLayout
-  title={seo.title}
-  description={seo.description}
-  breadcrumbs={breadcrumbs}
->
-  <Breadcrumb items={breadcrumbs} />
-
-  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
+<BaseLayout title={seo.title} description={seo.description} breadcrumbs={breadcrumbs}>
+  <section class="commercial-hero">
     <div class="container container-narrow">
-      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">ABOUT US</span>
-      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
-      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
-        {BUSINESS_FACTS.VERIFIED.brandName} บริการรับซื้อสินค้าไอทีที่เน้นความโปร่งใสและตรงไปตรงมา
-      </p>
+      <Breadcrumb items={breadcrumbs} />
+      <div class="commercial-hero-content" style="text-align:center;">
+        <span class="badge badge-accent" style="margin-bottom:.75rem;">ABOUT</span>
+        <h1 class="hero-h1">{seo.h1}</h1>
+        <p class="hero-lead-text">
+          {BUSINESS_FACTS.VERIFIED.brandName} จัดทำข้อมูลสำหรับผู้ที่ต้องการขายสินค้าไอทีมือสอง โดยเน้นให้รู้ว่าต้องส่งข้อมูลอะไร ราคาเปลี่ยนจากอะไร และควรตรวจอะไรให้ชัดก่อนตกลงซื้อขาย
+        </p>
+      </div>
     </div>
   </section>
 
   <TrustBar />
 
-  <section class="section">
+  <section class="commercial-section section-white">
     <div class="container container-narrow">
-      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">วิสัยทัศน์และการให้บริการ</h2>
+      <div class="comm-card">
+        <h2>ใครดูแลข้อมูลการประเมินบนเว็บไซต์</h2>
         <p>
-          {BUSINESS_FACTS.VERIFIED.brandName} ดำเนินงานโดยมุ่งเน้นการเป็นตัวกลางในการรับซื้อและส่งต่ออุปกรณ์ไอทีมือสองที่มีคุณภาพ เราเข้าใจดีว่าผู้ขายต้องการความชัดเจนในเรื่องราคา ความรวดเร็วในการตรวจสอบ และความปลอดภัยของข้อมูลในอุปกรณ์
+          ผู้ดูแลการประเมินที่ระบุในเว็บไซต์คือ <strong>{BUSINESS_FACTS.VERIFIED.contactPerson}</strong> ภายใต้แบรนด์ <strong>{BUSINESS_FACTS.VERIFIED.brandName}</strong>
+          ช่องทางหลักที่ใช้ติดต่อคือ LINE <strong>{getDisplayLine()}</strong> และโทรศัพท์ <strong>{getDisplayPhone()}</strong>
         </p>
         <p>
-          เราจึงยึดมั่นในหลักการ <strong>"ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ"</strong> เพื่อให้ลูกค้าได้รับข้อมูลที่ถูกต้องก่อนการตัดสินใจซื้อขายจริงทุกครั้ง
+          เราแสดงข้อมูลผู้ดูแลและช่องทางติดต่อให้ตรงกันในหน้าบริการหลัก เพื่อให้ผู้ขายตรวจสอบได้ว่าเนื้อหาที่อ่านเชื่อมกับบริการใดและติดต่อใครเมื่อมีคำถาม
         </p>
+      </div>
+    </div>
+  </section>
 
-        <h3 style="font-size: 1.25rem; margin-top: 2rem; margin-bottom: 0.75rem;">จุดเด่นบริการของเรา</h3>
-        <ul>
-          {BUSINESS_FACTS.VERIFIED.valueProps.map(prop => (
-            <li>{prop}</li>
-          ))}
-        </ul>
+  <section class="commercial-section section-surface">
+    <div class="container container-narrow">
+      <div class="grid-2">
+        <div class="comm-card">
+          <h2>เราใช้ความรู้แบบไหนในการประเมิน</h2>
+          <p>การประเมินสินค้าไอทีมือสองไม่ควรดูเพียงชื่อยี่ห้อหรือปีที่ซื้อ เพราะรุ่นเดียวกันอาจมี Configuration และสภาพต่างกันมาก</p>
+          <ul>
+            <li>Notebook และคอม: รุ่น CPU, GPU, RAM, SSD และชิ้นส่วนปัจจุบัน</li>
+            <li>MacBook, iPhone และ iPad: รุ่นย่อย ความจุ แบตเตอรี่ สภาพจอ ระบบล็อกและประวัติซ่อมที่ทราบ</li>
+            <li>กล้อง: Body, Lens, Sensor, Shutter, แบตเตอรี่ อุปกรณ์ และสภาพชิ้นส่วนสำคัญ</li>
+          </ul>
+          <p>หน้าหมวดสินค้าหลักจึงอธิบายวิธีดูรุ่นและจุดตรวจเฉพาะประเภท ไม่ใช้คำตอบเดียวกับสินค้าทุกชนิด</p>
+        </div>
+
+        <div class="comm-card">
+          <h2>ราคาบนแชทกับราคาสุดท้ายต่างกันอย่างไร</h2>
+          <p>รูปและข้อมูลช่วยให้ประเมินช่วงราคาได้ก่อน แต่ไม่สามารถยืนยันรายละเอียดที่มองไม่เห็นจากภาพทั้งหมด</p>
+          <p>ราคาสุดท้ายจึงควรยืนยันหลังตรวจว่ารุ่น สเปก การทำงาน ตำหนิ และอุปกรณ์ตรงกับข้อมูลที่ใช้ประเมินหรือไม่</p>
+          <p>หากมีจุดที่ทำให้ราคาเปลี่ยน ควรอธิบายจากสิ่งที่ตรวจพบ เช่น สเปกไม่ตรง แบตเตอรี่เสื่อม จอมีปัญหา อุปกรณ์ขาด หรือเครื่องมีประวัติซ่อมที่มีผลต่อมูลค่า</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="commercial-section section-white">
+    <div class="container container-narrow">
+      <div class="comm-card">
+        <h2>สิ่งที่เว็บไซต์นี้ตั้งใจช่วยผู้ขาย</h2>
+        <ol>
+          <li>ระบุรุ่นและสเปกให้ถูกก่อนเปรียบเทียบราคา</li>
+          <li>เข้าใจว่าตำหนิและอุปกรณ์มีผลต่อมูลค่าอย่างไร</li>
+          <li>เตรียมรูปและข้อมูลที่ใช้ประเมินได้จริง</li>
+          <li>แยกการประเมินออนไลน์ออกจากการยืนยันราคาหลังตรวจสินค้า</li>
+          <li>หลีกเลี่ยงการส่งข้อมูลลับที่ไม่จำเป็น เช่น Password, PIN หรือ OTP</li>
+        </ol>
+        <div class="local-links-container" style="margin-top:1.25rem;">
+          <a href="/เช็กราคาก่อนขาย/" class="local-link-chip">วิธีเช็กราคาก่อนขาย</a>
+          <a href="/ความน่าเชื่อถือ/" class="local-link-chip">มาตรฐานการประเมินและหลักฐาน</a>
+          <a href="/contact/" class="local-link-chip">ช่องทางติดต่อ</a>
+          <a href="/privacy-policy/" class="local-link-chip">แนวทางความเป็นส่วนตัว</a>
+        </div>
       </div>
     </div>
   </section>

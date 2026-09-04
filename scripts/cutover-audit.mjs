@@ -7,7 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SEO_MANIFEST_MAP, APPROVED_INDEX_PAGES } from '../src/config/seo/manifest.ts';
+import { SEO_MANIFEST_MAP } from '../src/config/seo/manifest.ts';
 import { resolveSeo } from '../src/lib/seo/resolve.ts';
 import { GONE_PATHS, GONE_PATHS_RAW } from '../src/config/seo/gone.ts';
 import { REDIRECT_MAP } from '../src/config/seo/redirects.ts';
@@ -64,6 +64,12 @@ for (const p of v2GoneSet) {
 const survivorDecisions = JSON.parse(
   fs.readFileSync(path.join(rootDir, 'migration/approved/survivor-decisions.json'), 'utf8')
 );
+const survivorReconciliations = JSON.parse(
+  fs.readFileSync(path.join(rootDir, 'migration/approved/survivor-reconciliations.json'), 'utf8')
+);
+const survivorReconciliationMap = new Map(
+  survivorReconciliations.map(r => [normalizePath(r.path), r])
+);
 
 if (survivorDecisions.length !== 63) {
   blockers.push(`Survivor decisions count is ${survivorDecisions.length}, expected exactly 63!`);
@@ -93,9 +99,35 @@ for (const s of survivorDecisions) {
       blockers.push(`Redirect survivor ${normS} status mismatch: ${seo.httpStatus} (state: ${seo.state})`);
     }
   } else if (s.decision === 'HOLD_NOINDEX') {
-    if (seo.state !== 'HOLD_NOINDEX' || seo.httpStatus !== 200) {
+    const reconciliation = survivorReconciliationMap.get(normS);
+    if (reconciliation) {
+      if (reconciliation.originalDecision !== 'HOLD_NOINDEX') {
+        blockers.push(`Survivor reconciliation ${normS} originalDecision mismatch: ${reconciliation.originalDecision}`);
+      }
+      if (reconciliation.effectiveDisposition === 'INDEX') {
+        if (seo.state !== 'INDEX' || seo.httpStatus !== 200 || seo.contentStatus !== 'READY' || !seo.canonicalIsSelf) {
+          blockers.push(`Reconciled INDEX survivor ${normS} is unsafe: state=${seo.state}, status=${seo.httpStatus}, content=${seo.contentStatus}`);
+        }
+      } else if (reconciliation.effectiveDisposition === 'REDIRECT') {
+        if (seo.state !== 'REDIRECT' || seo.httpStatus !== 301) {
+          blockers.push(`Reconciled REDIRECT survivor ${normS} is unsafe: state=${seo.state}, status=${seo.httpStatus}`);
+        }
+        const expectedTarget = normalizePath(reconciliation.target || '');
+        if (!expectedTarget || normalizePath(seo.redirectTo || '') !== expectedTarget) {
+          blockers.push(`Reconciled REDIRECT survivor ${normS} target mismatch: got ${seo.redirectTo}, expected ${expectedTarget}`);
+        }
+      } else {
+        blockers.push(`Unknown survivor reconciliation disposition for ${normS}: ${reconciliation.effectiveDisposition}`);
+      }
+    } else if (seo.state !== 'HOLD_NOINDEX' || seo.httpStatus !== 200) {
       blockers.push(`HOLD_NOINDEX survivor ${normS} state mismatch: ${seo.state}`);
     }
+  }
+}
+
+for (const [pathKey] of survivorReconciliationMap) {
+  if (!survivorPaths.has(pathKey)) {
+    blockers.push(`Survivor reconciliation references non-survivor path: ${pathKey}`);
   }
 }
 
@@ -125,8 +157,8 @@ for (const gonePath of GONE_PATHS) {
 }
 
 // 5. Check 301 Redirect Registry (Must return 301, never 200/410, target valid)
-if (REDIRECT_MAP.size !== 44) {
-  blockers.push(`Migration redirect registry size is ${REDIRECT_MAP.size}, expected exactly 44!`);
+if (REDIRECT_MAP.size !== 53) {
+  blockers.push(`P4 release redirect registry size is ${REDIRECT_MAP.size}, expected exactly 53!`);
 }
 
 for (const [src, rule] of REDIRECT_MAP.entries()) {
@@ -242,15 +274,15 @@ for (const [pathUrl, record] of SEO_MANIFEST_MAP.entries()) {
   }
 }
 
-const expectedApprovedIndexCount = APPROVED_INDEX_PAGES.length;
-if (indexCount !== expectedApprovedIndexCount) {
-  blockers.push(`Active INDEX page count is ${indexCount}, expected exactly ${expectedApprovedIndexCount} from APPROVED_INDEX_PAGES!`);
+const expectedReleaseIndexCount = 86;
+if (indexCount !== expectedReleaseIndexCount) {
+  blockers.push(`Active INDEX page count is ${indexCount}, expected exactly ${expectedReleaseIndexCount} for RECOVERY P4!`);
 }
 
 console.log(`Audited Routes Summary:`);
 console.log(`- GONE (410): ${GONE_PATHS.size} paths (Legacy Baseline: ${legacyGoneSet.size})`);
 console.log(`- MIGRATION REDIRECTS (301): ${REDIRECT_MAP.size} rules`);
-console.log(`- SURVIVORS TOTAL: ${survivorDecisions.length} (REBUILD_INDEX: ${survivorCounts.REBUILD_INDEX}, NEW_REDIRECT: ${survivorCounts.NEW_REDIRECT}, EXISTING_REDIRECT: ${survivorCounts.EXISTING_REDIRECT}, HOLD_NOINDEX: ${survivorCounts.HOLD_NOINDEX})`);
+console.log(`- SURVIVORS TOTAL: ${survivorDecisions.length} original decisions (REBUILD_INDEX: ${survivorCounts.REBUILD_INDEX}, NEW_REDIRECT: ${survivorCounts.NEW_REDIRECT}, EXISTING_REDIRECT: ${survivorCounts.EXISTING_REDIRECT}, HOLD_NOINDEX: ${survivorCounts.HOLD_NOINDEX}); reconciled later: ${survivorReconciliationMap.size}`);
 console.log(`- ACTIVE INDEX (200, Approved READY Content): ${indexCount} pages`);
 console.log(`- HOLD_NOINDEX (200, Safe Hold / Review): ${holdCount} pages`);
 console.log(`- DRAFT / PLANNED / ARCHIVED (404/Private): ${draftCount} pages`);

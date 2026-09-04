@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreMoneyAuthority from '../components/CoreMoneyAuthority.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
+import RealProductGallery from '../components/RealProductGallery.astro';
 import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
 
 const pageTitle = "รับซื้อ iPad มือสอง เช็กรุ่น ความจุ แบตเตอรี่และสภาพ | เรารับซื้อ.com";
@@ -103,6 +105,29 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <RealProductGallery
+    category="tablet"
+    title="ภาพ iPad Pro M1 และ iPad Gen 10 จากเครื่องจริง"
+    description="ภาพตัวเครื่อง หน้าจอ กล่อง และหน้าข้อมูลระบบที่ใช้ตรวจรุ่นกับความจุ โดยปกปิดข้อมูลระบุตัวเครื่องก่อนเผยแพร่แล้ว"
+  />
+
+  <CoreMoneyAuthority
+    categoryName='iPad มือสอง'
+    valuationFactors={[
+      'รุ่น Generation ความจุ และ Wi‑Fi/Cellular',
+      'หน้าจอ Touch ID/Face ID กล้อง ลำโพง และพอร์ต',
+      'แบตเตอรี่ สภาพตัวเครื่อง และการโก่งของบอดี้',
+      'Apple Pencil/Keyboard/กล่องและอุปกรณ์ที่รวมขาย'
+    ]}
+    supportLinks={[
+      { name: 'iPad Pro', path: '/รับซื้อ-ipad-pro/' },
+      { name: 'iPad Air', path: '/รับซื้อ-ipad-air/' },
+      { name: 'แบตเสื่อม', path: '/สภาพสินค้า/แบตเสื่อม/' },
+      { name: 'จอแตก/Touch มีปัญหา', path: '/สภาพสินค้า/จอแตก/' },
+      { name: 'ไม่มีอุปกรณ์', path: '/สภาพสินค้า/ไม่มีอุปกรณ์/' }
+    ]}
+  />
 
   <!-- SECTION 1: IPAD TYPES & GROUPS -->
   <section class="commercial-section section-white">
@@ -555,7 +580,7 @@ const faqs = [
           <strong>รุ่น + ความจุ + Wi-Fi/Cellular + รูป + สภาพ + Battery + อุปกรณ์</strong>
         </p>
         <p>ไม่จำเป็นต้องเดินทางพร้อมเครื่องเพื่อสอบถามราคาเบื้องต้นก่อน</p>
-        <p>หน้า <code>/รับซื้อไอแพด/</code> เป็นข้อมูลบริการภาพรวม ไม่ได้ใช้เพื่ออ้างว่ามีสาขาในทุกจังหวัด</p>
+        
       </div>
     </div>
   </section>
@@ -586,7 +611,7 @@ const faqs = [
         </div>
 
         <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
-          ดูขั้นตอนภาพรวมได้ที่ <strong>เช็กราคาก่อนขาย</strong>
+          ดูขั้นตอนภาพรวมได้ที่ <a href="/เช็กราคาก่อนขาย/"><strong>เช็กราคาก่อนขาย</strong></a>
         </p>
         <p style="font-size: 1.05rem; font-weight: 700;">
           <strong>ก่อนขาย เช็กราคา เข้าใจสภาพ แล้วค่อยตัดสินใจ</strong>
@@ -600,17 +625,16 @@ const faqs = [
     <div class="container">
       <div class="comm-card">
         <h2>หน้าข้อมูลรับซื้อ iPad ตามพื้นที่</h2>
-        <p style="margin-bottom: 1.25rem;">
-          สำหรับ Historical URL ที่มี Search Intent เฉพาะพื้นที่ สามารถดูรายละเอียดการเตรียมข้อมูลรุ่น ความจุ Battery สภาพ และอุปกรณ์ก่อนขายได้ที่:
-        </p>
+        
 
         <div class="local-links-container" style="margin-bottom: 1.25rem;">
           <a href="/รับซื้อไอแพด-ยโสธร-ipad/" class="local-link-chip">รับซื้อ iPad ยโสธร</a>
+          <a href="/รับซื้อไอแพด-อุบล/" class="local-link-chip">รับซื้อ iPad อุบลราชธานี</a>
+          <a href="/รับซื้อเมืองอุดรธานี/" class="local-link-chip">รับซื้อสินค้า Apple เมืองอุดรธานี</a>
+          <a href="/รับซื้อเมืองศรีสะเกษ/" class="local-link-chip">รับซื้อสินค้า Apple เมืองศรีสะเกษ</a>
         </div>
 
-        <p style="font-size: 0.9rem; color: var(--text-muted);">
-          หน้านี้รักษา Search Intent เดิมของ iPad ตามพื้นที่ ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในยโสธร
-        </p>
+        
       </div>
     </div>
   </section>

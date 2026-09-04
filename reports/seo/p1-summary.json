@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-04",
+  "phase": "RECOVERY P1 — HISTORICAL WINNER REBUILD + CORE MONEY PAGE AUTHORITY",
+  "lifecycleCounts": {
+    "INDEX": 63,
+    "HOLD_NOINDEX": 40,
+    "DRAFT": 29,
+    "REDIRECT": 48,
+    "GONE": 206
+  },
+  "controlledUrls": 386,
+  "redirectRules": 48,
+  "goneCount": 206,
+  "historicalCandidatesReleased": 13,
+  "exactRebuilds": 11,
+  "exactRebuildClicks90d": 69,
+  "consolidations": 2,
+  "consolidatedClicks90d": 8,
+  "totalHistoricalClicksDisposed90d": 77,
+  "supportGuideReleased": "/เช็กราคาก่อนขาย/",
+  "coreAuthorityLinksAdded": 21,
+  "remainingAPreserveUnregisteredCount": 1,
+  "remainingAPreserveUnregisteredClicks90d": 0.0,
+  "remainingItUnregisteredCount": 1476,
+  "remainingItUnregisteredClicks90d": 135.0,
+  "expectedMaxRecoveredSimilarityPct": 16.1,
+  "staticVerdict": "PASS"
+}

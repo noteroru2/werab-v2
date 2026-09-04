@@ -27,8 +27,14 @@ console.log(`============================================================\n`);
 const survivorDecisions = JSON.parse(
   fs.readFileSync(path.join(rootDir, 'migration/legacy/survivor-decisions.json'), 'utf8')
 );
+const survivorReconciliations = JSON.parse(
+  fs.readFileSync(path.join(rootDir, 'migration/approved/survivor-reconciliations.json'), 'utf8')
+);
+const survivorReconciliationMap = new Map(
+  survivorReconciliations.map(r => [normalizePath(r.path), r])
+);
 
-console.log(`Loaded ${survivorDecisions.length} authoritative survivor decisions.`);
+console.log(`Loaded ${survivorDecisions.length} authoritative survivor decisions plus ${survivorReconciliationMap.size} approved recovery reconciliations.`);
 
 let errors = [];
 let checkedCount = 0;
@@ -80,11 +86,33 @@ for (const item of survivorDecisions) {
       }
     }
   } else if (item.decision === 'HOLD_NOINDEX') {
-    if (seo.state !== 'HOLD_NOINDEX' || seo.httpStatus !== 200) {
-      errors.push(`HOLD_NOINDEX survivor ${normPath} resolved to state: ${seo.state}, status: ${seo.httpStatus}`);
-    }
-    if (seo.sitemapEligible) {
-      errors.push(`HOLD_NOINDEX survivor ${normPath} is marked sitemapEligible!`);
+    const reconciliation = survivorReconciliationMap.get(normPath);
+    if (reconciliation) {
+      if (reconciliation.originalDecision !== 'HOLD_NOINDEX') {
+        errors.push(`Reconciliation ${normPath} originalDecision mismatch: ${reconciliation.originalDecision}`);
+      }
+      if (reconciliation.effectiveDisposition === 'INDEX') {
+        if (seo.state !== 'INDEX' || seo.httpStatus !== 200 || seo.contentStatus !== 'READY' || !seo.canonicalIsSelf) {
+          errors.push(`Reconciled INDEX survivor ${normPath} resolved unsafely: state=${seo.state}, status=${seo.httpStatus}, content=${seo.contentStatus}`);
+        }
+      } else if (reconciliation.effectiveDisposition === 'REDIRECT') {
+        if (seo.state !== 'REDIRECT' || seo.httpStatus !== 301) {
+          errors.push(`Reconciled REDIRECT survivor ${normPath} resolved to state=${seo.state}, status=${seo.httpStatus}`);
+        }
+        const expectedTarget = normalizePath(reconciliation.target || '');
+        if (!expectedTarget || normalizePath(seo.redirectTo || '') !== expectedTarget) {
+          errors.push(`Reconciled REDIRECT survivor ${normPath} target mismatch: got '${seo.redirectTo}', expected '${expectedTarget}'`);
+        }
+      } else {
+        errors.push(`Unknown reconciliation disposition '${reconciliation.effectiveDisposition}' for survivor ${normPath}`);
+      }
+    } else {
+      if (seo.state !== 'HOLD_NOINDEX' || seo.httpStatus !== 200) {
+        errors.push(`HOLD_NOINDEX survivor ${normPath} resolved to state: ${seo.state}, status: ${seo.httpStatus}`);
+      }
+      if (seo.sitemapEligible) {
+        errors.push(`HOLD_NOINDEX survivor ${normPath} is marked sitemapEligible!`);
+      }
     }
   } else {
     errors.push(`Unknown decision '${item.decision}' for survivor ${normPath}`);
@@ -111,6 +139,6 @@ if (errors.length > 0) {
   }
   process.exit(1);
 } else {
-  console.log(`✅ ALL 63 SURVIVOR DECISIONS MATCH THE V2 MANIFEST 100% PERFECTLY!`);
+  console.log(`✅ ALL 63 SURVIVOR DECISIONS MATCH THE V2 MANIFEST AFTER APPROVED RECOVERY RECONCILIATIONS!`);
   process.exit(0);
 }

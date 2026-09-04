@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-04",
+  "environment": "OpenAI artifact container",
+  "npmCi": "TRANSPORT_TIMEOUT",
+  "astroBuild": "NOT_RUN_DEPENDENCIES_UNAVAILABLE",
+  "astroCheck": "NOT_RUN_DEPENDENCIES_UNAVAILABLE",
+  "nodeModulesCleaned": true,
+  "releaseEffect": "PRODUCTION_DEPLOY_HOLD",
+  "note": "The repository static P0-P4 audits pass, but this environment cannot complete npm dependency installation. Run npm ci/build/check in the deployment environment before release."
+}

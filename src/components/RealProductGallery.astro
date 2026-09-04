@@ -1,0 +1,163 @@
+---
+import { REAL_PRODUCT_IMAGES, type RealProductCategory } from '../data/real-product-images';
+
+interface Props {
+  category?: RealProductCategory;
+  featuredOnly?: boolean;
+  title?: string;
+  description?: string;
+}
+
+const {
+  category,
+  featuredOnly = false,
+  title = 'ตัวอย่างสินค้าจริงที่ใช้ประกอบการประเมิน',
+  description = 'ภาพถ่ายสินค้าจริงช่วยให้เห็นรุ่น สภาพภายนอก หน้าจอ อุปกรณ์ และจุดที่ควรแจ้งก่อนขอราคาประเมิน',
+} = Astro.props;
+
+const images = REAL_PRODUCT_IMAGES.filter((image) =>
+  (!category || image.category === category) && (!featuredOnly || image.featured)
+);
+---
+
+{images.length > 0 && (
+  <section class="real-product-gallery-section" aria-labelledby={`real-product-gallery-${category || 'featured'}`}>
+    <div class="container">
+      <div class="section-title-wrap real-gallery-heading">
+        <p class="real-gallery-eyebrow">ภาพถ่ายจากสินค้าจริง</p>
+        <h2 id={`real-product-gallery-${category || 'featured'}`} class="section-main-h2">{title}</h2>
+        <p>{description}</p>
+      </div>
+
+      <div class="real-product-grid">
+        {images.map((image) => (
+          <figure class:list={['real-product-card', { 'is-portrait': image.portrait }] }>
+            <picture>
+              <source
+                type="image/avif"
+                srcset={`/images/real-products/${image.slug}-600.avif 600w, /images/real-products/${image.slug}-1200.avif 1200w`}
+                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
+              />
+              <source
+                type="image/webp"
+                srcset={`/images/real-products/${image.slug}-600.webp 600w, /images/real-products/${image.slug}-1200.webp 1200w`}
+                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
+              />
+              <img
+                src={`/images/real-products/${image.slug}-1200.webp`}
+                alt={image.alt}
+                width={image.portrait ? 904 : 1200}
+                height={image.portrait ? 1200 : 900}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <p class="real-gallery-note">รูปใช้เพื่อแสดงลักษณะสินค้าและข้อมูลที่ช่วยประเมินราคา ไม่ได้หมายความว่าสินค้ารุ่นหรือสภาพเดียวกันจะได้ราคาเท่ากัน</p>
+    </div>
+  </section>
+)}
+
+<style>
+  .real-product-gallery-section {
+    padding: clamp(3rem, 6vw, 5.5rem) 0;
+    background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+  }
+
+  .real-gallery-heading {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .real-gallery-heading .section-main-h2 {
+    margin: 0;
+    color: var(--navy-950);
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    font-weight: 850;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .real-gallery-heading > p:last-child {
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-top: 0.75rem;
+  }
+
+  .real-gallery-eyebrow {
+    margin: 0 0 0.55rem;
+    color: #c2410c;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .real-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .real-product-card {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 10px 30px rgb(15 23 42 / 8%);
+  }
+
+  .real-product-card picture {
+    display: block;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #e2e8f0;
+  }
+
+  .real-product-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 250ms ease;
+  }
+
+  .real-product-card:hover img { transform: scale(1.025); }
+  .real-product-card.is-portrait img { object-position: center 42%; }
+
+  .real-product-card figcaption {
+    padding: 0.9rem 1rem 1rem;
+    color: var(--text-primary);
+    font-size: 0.92rem;
+    font-weight: 650;
+    line-height: 1.45;
+  }
+
+  .real-gallery-note {
+    max-width: 850px;
+    margin: 1.4rem auto 0;
+    color: var(--text-muted);
+    font-size: 0.83rem;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .real-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 560px) {
+    .real-product-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .real-product-card img { transition: none; }
+  }
+</style>

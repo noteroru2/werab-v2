@@ -14,7 +14,7 @@ const rootDir = path.resolve(__dirname, '..');
 const FORBIDDEN_PATTERNS = [
   { pattern: /\b10200\b/, name: 'Bangkok fallback postal code 10200' },
   { pattern: /24\s*ชั่วโมง|ตลอด\s*24\s*ชม|เปิด\s*24/i, name: 'Fake 24/7 opening hours claim' },
-  { pattern: /latitude|longitude/i, name: 'Unverified GeoCoordinates schema' },
+  { pattern: /(?:GeoCoordinates|['"]?(?:latitude|longitude)['"]?\s*:)/i, name: 'Unverified GeoCoordinates schema' },
   { pattern: /สาขาทั่วประเทศ\s*77\s*จังหวัด|มีสาขาทุกจังหวัด/i, name: 'Exaggerated physical branch claim' },
   { pattern: /official\s+(JBL|Marshall|Bose|Sony|Dell|HPE|Lenovo|Cisco|Supermicro)\s+partner/i, name: 'Fake official brand partner claim' },
   { pattern: /official\s+brand\s+authorization|official\s+service\s+center|authorized\s+service\s+center/i, name: 'Fake official brand authorization claim' },

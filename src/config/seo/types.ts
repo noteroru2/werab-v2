@@ -34,7 +34,9 @@ export type ContentCluster =
   | 'pc'
   | 'gaming'
   | 'b2b'
-  | 'android';
+  | 'android'
+  | 'condition'
+  | 'valuation';
 
 export type PrimaryIntent =
   | 'buyback'

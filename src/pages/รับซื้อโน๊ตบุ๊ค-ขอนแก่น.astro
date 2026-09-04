@@ -27,8 +27,8 @@ const breadcrumbs = [
 
 const faqs = [
   {
-    "question": "หน้า Notebook ขอนแก่นต่างจากหน้าระดับอำเภออย่างไร?",
-    "answer": "หน้านี้รักษา Intent ระดับจังหวัดขอนแก่น ส่วน Historical URL ที่ระบุอำเภอเฉพาะจะรักษา Search Intent ของพื้นที่ย่อยนั้นหากได้รับการอนุมัติแยก"
+    "question": "อยู่ขอนแก่น ส่งข้อมูลประเมินราคาโน๊ตบุ๊คก่อนได้ไหม?",
+    "answer": "ได้ ส่งรุ่น สเปก รูปสภาพ แบตเตอรี่ และอุปกรณ์ก่อน เพื่อเช็กราคาเบื้องต้นและเลือกวิธีส่งมอบที่เหมาะสม"
   },
   {
     "question": "Gaming Notebook ต้องแจ้ง GPU ไหม?",
@@ -65,9 +65,9 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
         <div class="local-hero-left">
           <Breadcrumb items={breadcrumbs} />
           <h1 class="hero-h1">รับซื้อโน๊ตบุ๊คขอนแก่น เช็กรุ่น สเปก และสภาพก่อนขาย</h1>
-        <p>หน้า <code>/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/</code> เป็น Historical Local URL ระดับจังหวัดสำหรับ:</p>
-        <p><strong>Notebook + Khon Kaen</strong></p>
-        <p>และเป็น Local Intent ระดับจังหวัดที่แยกออกจาก Historical URL ระดับอำเภอที่อาจมี Search Equity ของตนเอง</p>
+        
+        
+        
         <div class="hero-intake-card">
           <p style="font-weight: 600; margin-bottom: 0.35rem;">จุดเริ่มต้นคือ:</p>
           <p style="font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem;">
@@ -117,12 +117,6 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
   <section class="commercial-section section-white">
     <div class="container">
       <div class="grid-2">
-        <div class="comm-card">
-          <h2>หน้าขอนแก่นนี้เป็น Intent ระดับจังหวัด</h2>
-        <p>หน้า Local นี้ครอบคลุมคำค้นที่ระบุขอนแก่นในระดับจังหวัด</p>
-        <p>หาก Historical URL อื่นระบุพื้นที่ย่อยเฉพาะ เช่น อำเภอหนึ่งภายในขอนแก่น URL นั้นอาจมี Intent ของตัวเองและไม่ควรถูกรวมโดยอัตโนมัติ</p>
-        <p>ดังนั้นหน้านี้จะไม่ใส่รายชื่ออำเภอจำนวนมากเพียงเพื่อขยาย Keyword</p>
-        </div>
         <div class="comm-card">
           <h2>Model และ Generation เป็นข้อมูลแรกที่ควรตรวจ</h2>
         <p>ควรส่งชื่อรุ่นเต็มจาก:</p>
@@ -331,18 +325,6 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
 
   <section class="commercial-section section-white">
     <div class="container">
-      <div class="comm-card">
-        <h2>ความสัมพันธ์กับหน้ารับซื้อ Notebook หลัก</h2>
-        <p>หน้า:</p>
-        <p><code>/รับซื้อโน๊ตบุ๊ค/</code></p>
-        <p>เป็น Broad Notebook Money Hub</p>
-        <p>ส่วน:</p>
-        <p><code>/รับซื้อโน๊ตบุ๊ค-ขอนแก่น/</code></p>
-        <p>เป็น:</p>
-        <p><strong>Notebook + Khon Kaen province intent</strong></p>
-        <p>จึงไม่ควรขยายเป็นหน้า Notebook ทั่วประเทศ</p>
-        <p>และไม่ควรแย่ง Intent เฉพาะอำเภอจาก Historical URL ที่ถูกอนุมัติแยกต่างหาก</p>
-      </div>
     </div>
   </section>
 
@@ -449,12 +431,12 @@ import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../con
     <div class="container">
       <div class="comm-card">
         <h2>หน้าข้อมูล Notebook ในพื้นที่ย่อยของขอนแก่น</h2>
-        <p>สำหรับ Historical URL ที่มี Search Intent ระดับอำเภอ สามารถดูข้อมูลเฉพาะพื้นที่ได้ที่:</p>
+        
         <ul>
         <li><a href="/รับซื้อ-notebook-อำเภอพล-ขอนแก่น/">รับซื้อโน๊ตบุ๊คอำเภอพล ขอนแก่น</a></li>
         <li><a href="/รับซื้อ-notebook-ชุมแพ-ขอนแก่น/">รับซื้อโน๊ตบุ๊คชุมแพ ขอนแก่น</a></li>
         </ul>
-        <p>หน้าเหล่านี้รักษา Search Intent ระดับพื้นที่ย่อยของ URL เดิม ไม่ได้หมายความว่ามีสาขาหรือจุดรับซื้อประจำอยู่ในอำเภอดังกล่าว</p>
+        
       </div>
     </div>
   </section>

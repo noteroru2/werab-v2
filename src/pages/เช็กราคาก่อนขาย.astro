@@ -1,86 +1,68 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import TrustBar from '../components/TrustBar.astro';
 import FAQ from '../components/FAQ.astro';
 import CTA from '../components/CTA.astro';
 import { resolveSeo } from '../lib/seo/resolve';
 
 const seo = resolveSeo('/เช็กราคาก่อนขาย/');
 const breadcrumbs = [
+  { name: 'หน้าแรก', url: '/' },
   { name: 'เช็กราคาก่อนขาย', url: '/เช็กราคาก่อนขาย/' }
 ];
-
 const faqs = [
-  {
-    question: 'ทำไมควรเช็กราคาก่อนขาย?',
-    answer: 'การเช็กราคาและเข้าใจสภาพของอุปกรณ์ตนเองจะช่วยให้คุณทราบมูลค่าตลาดที่แท้จริง ป้องกันการถูกกดราคาเกินจริง และวางแผนการขายได้อย่างมั่นใจ'
-  },
-  {
-    question: 'ปัจจัยใดส่งผลต่อราคาขายต่อมากที่สุด?',
-    answer: 'ปัจจัยหลักได้แก่ ความนิยมและอายุของรุ่น, สภาพภายนอกและริ้วรอย, ความสมบูรณ์ของฟังก์ชันการใช้งาน, สุขภาพแบตเตอรี่, ประกันศูนย์คงเหลือ และความครบถ้วนของอุปกรณ์เสริมแท้'
-  }
+  { question: 'ต้องส่ง Serial Number หรือ IMEI เพื่อเช็กราคาเลยไหม?', answer: 'ส่วนใหญ่เริ่มจากรุ่น สเปก ความจุ รูปและสภาพก่อนได้ ข้อมูลระบุตัวเครื่องควรส่งเฉพาะเมื่อจำเป็นต่อการยืนยันรุ่นหรือขั้นตอนตรวจ และไม่ควรโพสต์ข้อมูลสำคัญสู่สาธารณะ' },
+  { question: 'เครื่องมีตำหนิควรถ่ายเฉพาะมุมสวยหรือไม่?', answer: 'ควรถ่ายทั้งภาพรวมและจุดตำหนิ เพราะรอยแตก จอมีเส้น บานพับเสีย Battery เสื่อม หรือประวัติซ่อมมีผลต่อราคา การแจ้งตั้งแต่ต้นทำให้ช่วงราคาที่ได้ใกล้สภาพจริงกว่า' },
+  { question: 'ราคาประเมินเบื้องต้นเป็นราคาสุดท้ายหรือไม่?', answer: 'ราคาจากข้อมูลและรูปเป็นการประเมินเบื้องต้น ราคาสุดท้ายควรยืนยันหลังตรวจรุ่น สเปก สภาพ การทำงาน อุปกรณ์และรายละเอียดที่ตกลงว่ารวมขาย' },
+  { question: 'ต้อง Reset เครื่องก่อนส่งรูปหรือไม่?', answer: 'ไม่จำเป็นสำหรับการเช็กราคาเบื้องต้น ควรสำรองและล้างข้อมูลเมื่อพร้อมส่งมอบจริง โดยเจ้าของเป็นผู้จัดการบัญชี รหัสผ่าน Find My หรือระบบล็อกด้วยตนเอง' }
 ];
 ---
-
-<BaseLayout
-  title={seo.title}
-  description={seo.description}
-  breadcrumbs={breadcrumbs}
-  faqs={faqs}
->
-  <Breadcrumb items={breadcrumbs} />
-
-  <section class="section" style="padding-top: 3rem; padding-bottom: 2rem; text-align: center;">
-    <div class="container container-narrow">
-      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">PRE-SALE GUIDE</span>
-      <h1 style="font-size: 2.25rem; margin-bottom: 1rem;">{seo.h1}</h1>
-      <p style="font-size: 1.1rem; color: var(--color-text-muted);">
-        คู่มือทำความเข้าใจสภาพและปัจจัยที่มีผลต่อมูลค่าสินค้าไอทีมือสอง เพื่อให้คุณตัดสินใจได้อย่างรอบคอบ
-      </p>
-    </div>
-  </section>
-
-  <TrustBar />
-
-  <section class="section">
-    <div class="container container-narrow">
-      <div class="card" style="padding: 2.5rem 2rem; margin-bottom: 2rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">5 ปัจจัยหลักที่กำหนดราคาประเมินสินค้าไอที</h2>
-        
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
-          <div>
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">1. รุ่น สเปก และความต้องการในตลาด</h3>
-            <p>ชิปประมวลผล ความจุ และซีรีส์ของอุปกรณ์ อุปกรณ์ที่เป็นรุ่นยอดนิยมและยังรองรับการอัปเดตระบบปฏิบัติการใหม่ๆ จะมีสภาพคล่องและมูลค่าคงเหลือสูงกว่า</p>
-          </div>
-
-          <div>
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">2. สภาพความสมบูรณ์ทางกายภาพ (Cosmetic Condition)</h3>
-            <p>รอยบุบ รอยตกกระแทก รอยขีดข่วนบนหน้าจอหรือบอดี้ การไม่มีตำหนิหนักช่วยรักษาราคาให้อยู่ในเกรด A / เกรดสวยงาม</p>
-          </div>
-
-          <div>
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">3. การทำงานของระบบและฟังก์ชันฮาร์ดแวร์</h3>
-            <p>หน้าจอสัมผัส กล้อง ไมค์ ลำโพง แป้นพิมพ์ พอร์ตเชื่อมต่อ และเซนเซอร์ต่างๆ ต้องทำงานได้ 100%</p>
-          </div>
-
-          <div>
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">4. ประสิทธิภาพของแบตเตอรี่ (Battery Health)</h3>
-            <p>สำหรับสมาร์ทโฟน โน๊ตบุ๊ค และแท็บเล็ต สุขภาพแบตเตอรี่ที่มากกว่า 80-85% จะช่วยให้ได้ราคาประเมินที่ดีขึ้น</p>
-          </div>
-
-          <div>
-            <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.4rem;">5. อุปกรณ์เสริม กล่อง และหลักฐานการซื้อ</h3>
-            <p>การมีอุปกรณ์ชาร์จแท้ กล่องบรรจุภัณฑ์ และใบเสร็จประกันศูนย์คงเหลือ จะช่วยเพิ่มความน่าเชื่อถือและมูลค่าสินค้า</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top: 3rem;">
-        <FAQ items={faqs} />
+<BaseLayout title={seo.title} description={seo.description} breadcrumbs={breadcrumbs} faqs={faqs}>
+  <section class="commercial-hero">
+    <div class="container">
+      <Breadcrumb items={breadcrumbs} />
+      <div class="commercial-hero-content" style="max-width: 850px; margin: 0 auto; text-align:center;">
+        <h1 class="hero-h1">เช็กราคาก่อนขายสินค้าไอที ต้องส่งข้อมูลอะไรบ้าง</h1>
+        <p class="hero-lead-text">เช็กราคาจากรุ่น สเปก สภาพ การทำงาน อุปกรณ์ และตำหนิจริงก่อนตัดสินใจขาย ไม่ต้องรีบเดินทางหรือจัดส่งสินค้าเพียงเพื่อถามราคาเบื้องต้น</p>
       </div>
     </div>
   </section>
 
+  <section class="commercial-section section-white"><div class="container"><div class="grid-2">
+    <div class="comm-card">
+      <h2>1. เริ่มจากระบุรุ่นให้ชัด</h2>
+      <p>ชื่อประเภทอย่าง “โน๊ตบุ๊ค”, “iPhone”, “MacBook” หรือ “กล้อง” กว้างเกินไป ควรส่งชื่อรุ่น รุ่นย่อย ปีหรือ Generation และความจุ/สเปกที่เกี่ยวข้อง</p>
+      <p>ถ้าไม่รู้รุ่น ให้ถ่าย Label ใต้เครื่อง หน้า About, System Information หรือหน้าที่แสดง Model โดยหลีกเลี่ยงข้อมูลส่วนตัวที่ไม่จำเป็น</p>
+    </div>
+    <div class="comm-card">
+      <h2>2. ส่งสเปกหรือ Configuration ปัจจุบัน</h2>
+      <p>คอมและโน๊ตบุ๊คอาจถูกอัปเกรดภายหลัง ส่วนมือถือและแท็บเล็ตมีความจุ/รุ่นเชื่อมต่อต่างกัน จึงควรใช้ข้อมูลของเครื่องปัจจุบัน ไม่ใช้เพียงสเปกตอนซื้อ</p>
+      <p>สำหรับคอมประกอบ ให้เน้น CPU, GPU, RAM, SSD, Mainboard และ PSU</p>
+    </div>
+  </div></div></section>
+
+  <section class="commercial-section section-surface"><div class="container"><div class="grid-2">
+    <div class="comm-card"><h2>3. ถ่ายรูปที่ใช้ประเมินได้จริง</h2><ul><li>ภาพด้านหน้าและด้านหลัง</li><li>ขอบและมุมที่มักมีรอย</li><li>หน้าจอเปิดใช้งาน</li><li>จุดตำหนิแบบใกล้และภาพรวม</li><li>อุปกรณ์ที่รวมขาย</li></ul><p>รูปที่ชัดช่วยลดการเดาสภาพและทำให้เห็นว่าตำหนิอยู่ส่วนใดของสินค้า</p></div>
+    <div class="comm-card"><h2>4. แจ้งอาการและประวัติซ่อมตามจริง</h2><p>จอแตก, เส้น, Battery เสื่อม, บานพับแตก, กล้องหรือ Face ID มีปัญหา, เครื่องเคยโดนน้ำ, การ์ดจอเคยซ่อม หรือเลนส์มีรา ควรแจ้งก่อนสรุปราคา</p><p>การประเมินเครื่องมีตำหนิควรเทียบกับสภาพมีตำหนิ ไม่ใช่ราคาเครื่องสมบูรณ์แล้วหักทีหลังแบบไม่มีข้อมูล</p></div>
+  </div></div></section>
+
+  <section class="commercial-section section-white"><div class="container"><div class="comm-card">
+    <h2>ข้อมูลที่ควรส่ง แยกตามประเภทสินค้า</h2>
+    <div class="local-links-container">
+      <a href="/รับซื้อโน๊ตบุ๊ค/" class="local-link-chip">โน๊ตบุ๊ค: รุ่น CPU RAM SSD GPU Battery</a>
+      <a href="/รับซื้อคอม/" class="local-link-chip">คอม: CPU GPU RAM SSD Mainboard PSU</a>
+      <a href="/รับซื้อแมคบุ๊ค/" class="local-link-chip">MacBook: ชิป Memory SSD Cycle สภาพ</a>
+      <a href="/รับซื้อไอโฟน/" class="local-link-chip">iPhone: รุ่น ความจุ Battery Face ID จอ</a>
+      <a href="/รับซื้อไอแพด/" class="local-link-chip">iPad: รุ่น ความจุ Wi-Fi/Cellular จอ</a>
+      <a href="/รับซื้อกล้อง/" class="local-link-chip">กล้อง: Body เลนส์ Shutter Sensor อุปกรณ์</a>
+    </div>
+  </div></div></section>
+
+  <section class="commercial-section section-surface"><div class="container"><div class="grid-2">
+    <div class="comm-card"><h2>5. แยก “ราคาประเมินเบื้องต้น” กับ “ราคาหลังตรวจจริง”</h2><p>การส่งรูปและข้อมูลใช้เพื่อหาช่วงราคาเบื้องต้น แต่ราคาสุดท้ายต้องยืนยันว่ารุ่น สเปก สภาพ การทำงาน และอุปกรณ์ตรงกับข้อมูลที่ส่งหรือไม่</p><p>หากสินค้ามีหลายชิ้น ควรทำรายการแยกเพื่อให้ตรวจได้ว่าแต่ละชิ้นรวมอยู่ในยอดใด</p></div>
+    <div class="comm-card"><h2>6. ข้อมูลส่วนตัวควรจัดการเมื่อพร้อมส่งมอบ</h2><p>ไม่ควรส่ง Password, PIN, Recovery Key หรือรหัสบัญชีเพื่อขอราคา เจ้าของควรเป็นผู้สำรองข้อมูล ออกจากบัญชี ปิด Find My/Activation Lock และล้างข้อมูลด้วยตนเองเมื่อพร้อมส่งมอบจริง</p></div>
+  </div></div></section>
+
+  <section class="commercial-section section-white"><div class="container"><FAQ items={faqs} title="คำถามที่พบบ่อยเกี่ยวกับการเช็กราคาก่อนขาย" subtitle="" /></div></section>
   <CTA />
 </BaseLayout>

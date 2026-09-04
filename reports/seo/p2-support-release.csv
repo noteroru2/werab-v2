@@ -1,0 +1,22 @@
+﻿path,supportType,parent,cluster,priority,historicalClicks90d,historicalImpressions90d,finalState,note
+/รับซื้อกล้อง-sony/,BRAND_SERIES,/รับซื้อกล้อง/,camera,high,2,19,INDEX,"P2 topical support owner released with unique content, INDEX/READY and curated parent/related links."
+/รับซื้อกล้อง-canon/,BRAND_SERIES,/รับซื้อกล้อง/,camera,high,,,INDEX,"P2 topical support owner released with unique content, INDEX/READY and curated parent/related links."
+/รับซื้อกล้อง-nikon/,BRAND_SERIES,/รับซื้อกล้อง/,camera,medium,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/รับซื้อกล้อง-sony-a7/,BRAND_SERIES,/รับซื้อกล้อง-sony/,camera,medium,,,INDEX,"P2 topical support owner released with unique content, INDEX/READY and curated parent/related links."
+/รับซื้อโน๊ตบุ๊ค-asus/,BRAND_SERIES,/รับซื้อโน๊ตบุ๊ค/,notebook,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/รับซื้อโน๊ตบุ๊ค-lenovo/,BRAND_SERIES,/รับซื้อโน๊ตบุ๊ค/,notebook,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/รับซื้อโน๊ตบุ๊ค-acer/,BRAND_SERIES,/รับซื้อโน๊ตบุ๊ค/,notebook,medium,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/รับซื้อโน๊ตบุ๊ค-dell/,BRAND_SERIES,/รับซื้อโน๊ตบุ๊ค/,notebook,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/รับซื้อ-macbook-air/,BRAND_SERIES,/รับซื้อแมคบุ๊ค/,macbook,high,,,INDEX,"P2 topical support owner released with unique content, INDEX/READY and curated parent/related links."
+/รับซื้อ-macbook-pro/,BRAND_SERIES,/รับซื้อแมคบุ๊ค/,macbook,high,,,INDEX,"P2 topical support owner released with unique content, INDEX/READY and curated parent/related links."
+/รับซื้อ-iphone-13/,BRAND_SERIES,/รับซื้อไอโฟน/,iphone,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/รับซื้อ-iphone-14/,BRAND_SERIES,/รับซื้อไอโฟน/,iphone,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/รับซื้อ-iphone-15/,BRAND_SERIES,/รับซื้อไอโฟน/,iphone,high,,,INDEX,"P2 topical support owner released with unique content, INDEX/READY and curated parent/related links."
+/รับซื้อ-ipad-pro/,BRAND_SERIES,/รับซื้อไอแพด/,ipad,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/รับซื้อ-ipad-air/,BRAND_SERIES,/รับซื้อไอแพด/,ipad,medium,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/รับซื้อ-samsung-galaxy/,BRAND_SERIES,/รับซื้อสมาร์ทโฟน-android/,android,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/สภาพสินค้า/จอแตก/,CONDITION,/เช็กราคาก่อนขาย/,condition,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/สภาพสินค้า/เปิดไม่ติด/,CONDITION,/เช็กราคาก่อนขาย/,condition,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/สภาพสินค้า/แบตเสื่อม/,CONDITION,/เช็กราคาก่อนขาย/,condition,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/สภาพสินค้า/ไม่มีอุปกรณ์/,VALUATION,/เช็กราคาก่อนขาย/,valuation,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
+/สภาพสินค้า/ควรซ่อมก่อนขายไหม/,VALUATION,/เช็กราคาก่อนขาย/,valuation,high,,,INDEX,Strategic brand/series/condition support node released to strengthen a core money owner.
