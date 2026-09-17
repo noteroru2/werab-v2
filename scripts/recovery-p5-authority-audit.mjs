@@ -77,17 +77,50 @@ for (const [cluster, hubPath] of Object.entries(RECOVERY_V3_CORE_HUBS)) {
   }
 }
 
+// P5.1 route-shadowing guard: all static core routes render through BaseLayout,
+// so the recovery surface must be selected by resolved SEO state inside BaseLayout
+// rather than relying only on [...slug].astro / RelatedLinks.
 const layoutPath = path.join(root, 'src', 'layouts', 'BaseLayout.astro');
 const layoutSource = fs.readFileSync(layoutPath, 'utf8');
-if (!layoutSource.includes('RecoveryAuthorityLinks')) {
-  failures.push('Homepage layout is missing RecoveryAuthorityLinks import/render');
-}
-if (!layoutSource.includes("showHomepageRecoveryNetwork = seo.normalizedPath === '/'")) {
-  failures.push('Homepage recovery network guard missing');
+const requiredLayoutSignals = [
+  "isRecoveryCoreHub",
+  "showHomepageRecoveryNetwork = seo.normalizedPath === '/'",
+  "showBuybackRecoveryNetwork = seo.normalizedPath === '/รับซื้อ/'",
+  'showCoreHubRecoveryNetwork = isRecoveryCoreHub(seo)',
+  'showRecoveryNetwork = showHomepageRecoveryNetwork || showBuybackRecoveryNetwork || showCoreHubRecoveryNetwork',
+  'cluster={recoveryCluster}',
+  'limit={recoveryLimit}',
+  '<RecoveryAuthorityLinks',
+];
+for (const signal of requiredLayoutSignals) {
+  if (!layoutSource.includes(signal)) failures.push(`BaseLayout static-hub recovery signal missing: ${signal}`);
 }
 
 const componentPath = path.join(root, 'src', 'components', 'RecoveryAuthorityLinks.astro');
-if (!fs.existsSync(componentPath)) failures.push('RecoveryAuthorityLinks component missing');
+if (!fs.existsSync(componentPath)) {
+  failures.push('RecoveryAuthorityLinks component missing');
+} else {
+  const componentSource = fs.readFileSync(componentPath, 'utf8');
+  if (!componentSource.includes('getRecoveryWinnersForCluster')) failures.push('RecoveryAuthorityLinks is not cluster-aware');
+  if (!componentSource.includes("seo.state === 'INDEX' && seo.indexable")) failures.push('RecoveryAuthorityLinks lacks INDEX/indexable guard');
+  if (!componentSource.includes('seo.canonical === seo.normalizedPath')) failures.push('RecoveryAuthorityLinks lacks self-canonical guard');
+}
+
+// Confirm the seven direct Astro routes that shadow [...slug].astro still exist and
+// therefore are covered by the BaseLayout-level recovery rendering guard.
+const staticCoreFiles = [
+  'src/pages/รับซื้อ.astro',
+  'src/pages/รับซื้อโน๊ตบุ๊ค.astro',
+  'src/pages/รับซื้อคอม.astro',
+  'src/pages/รับซื้อแมคบุ๊ค.astro',
+  'src/pages/รับซื้อไอโฟน.astro',
+  'src/pages/รับซื้อไอแพด.astro',
+  'src/pages/รับซื้อกล้อง.astro',
+];
+for (const file of staticCoreFiles) {
+  if (!fs.existsSync(path.join(root, file))) failures.push(`Static core route missing: ${file}`);
+  else if (!fs.readFileSync(path.join(root, file), 'utf8').includes('BaseLayout')) failures.push(`Static core route bypasses BaseLayout: ${file}`);
+}
 
 const summary = {
   protectedWinners: RECOVERY_V3_WINNERS.length,
@@ -97,10 +130,11 @@ const summary = {
   historicalImpressions90d: RECOVERY_V3_WINNERS.reduce((sum, item) => sum + item.historicalImpressions90d, 0),
   buybackHubWinnerLinks: buybackHubLinks.filter((path) => topCrossClusterWinners.includes(path)).length,
   coreHubs: Object.keys(RECOVERY_V3_CORE_HUBS).length,
+  staticCoreRoutesCovered: staticCoreFiles.length,
   warnings,
 };
 
-console.log('WERAB RECOVERY V3 — P5 AUTHORITY GATE');
+console.log('WERAB RECOVERY V3.1 — P5 AUTHORITY GATE');
 console.log(JSON.stringify(summary, null, 2));
 
 if (failures.length > 0) {
