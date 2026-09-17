@@ -37,6 +37,19 @@ for (const winner of RECOVERY_V3_WINNERS) {
   if (!seo.sitemapEligible) failures.push(`${winner.path}: missing sitemap eligibility`);
 }
 
+const buybackHubSeo = resolveSeo('/รับซื้อ/');
+const buybackHubLinks = getInternalLinks(buybackHubSeo).clusterLinks.map((item) => item.path);
+const topCrossClusterWinners = [...RECOVERY_V3_WINNERS]
+  .sort((a, b) => {
+    if (a.priority !== b.priority) return a.priority === 'tier1' ? -1 : 1;
+    return b.historicalClicks90d - a.historicalClicks90d;
+  })
+  .slice(0, 6)
+  .map((winner) => winner.path);
+for (const winnerPath of topCrossClusterWinners) {
+  if (!buybackHubLinks.includes(winnerPath)) failures.push(`/รับซื้อ/: priority winner link missing: ${winnerPath}`);
+}
+
 for (const [cluster, hubPath] of Object.entries(RECOVERY_V3_CORE_HUBS)) {
   const hubSeo = resolveSeo(hubPath);
   if (hubSeo.state !== 'INDEX' || !hubSeo.indexable) {
@@ -82,6 +95,7 @@ const summary = {
   tier2: RECOVERY_V3_WINNERS.filter((item) => item.priority === 'tier2').length,
   historicalClicks90d: RECOVERY_V3_WINNERS.reduce((sum, item) => sum + item.historicalClicks90d, 0),
   historicalImpressions90d: RECOVERY_V3_WINNERS.reduce((sum, item) => sum + item.historicalImpressions90d, 0),
+  buybackHubWinnerLinks: buybackHubLinks.filter((path) => topCrossClusterWinners.includes(path)).length,
   coreHubs: Object.keys(RECOVERY_V3_CORE_HUBS).length,
   warnings,
 };
