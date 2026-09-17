@@ -6,7 +6,7 @@
  */
 
 import { SEO_MANIFEST_MAP } from '../../config/seo/manifest';
-import { getRecoveryWinnersForCluster, isRecoveryCoreHub } from '../../config/seo/recovery-v3';
+import { RECOVERY_V3_WINNERS, getRecoveryWinnersForCluster, isRecoveryCoreHub } from '../../config/seo/recovery-v3';
 import { resolveSeo } from './resolve';
 import type { ResolvedSeo } from '../../config/seo/types';
 
@@ -66,10 +66,33 @@ export function getInternalLinks(currentSeo: ResolvedSeo): {
     }
   }
 
-  // 3. Recovery V3: on the six core category hubs, restore direct crawl and
-  // internal-authority paths to URLs that demonstrably earned search traffic
-  // before the 2026-07-04 collapse. We insert these before generic siblings so
-  // the six-link RelatedLinks cap cannot crowd historical winners out.
+  // 3. Recovery V3: the general /รับซื้อ/ hub routes directly to the strongest
+  // pre-collapse IT winners across clusters. This recreates a shallow crawl path
+  // from homepage -> buyback hub -> proven local/service pages.
+  if (currentPath === '/รับซื้อ/') {
+    const topWinners = [...RECOVERY_V3_WINNERS]
+      .sort((a, b) => {
+        if (a.priority !== b.priority) return a.priority === 'tier1' ? -1 : 1;
+        return b.historicalClicks90d - a.historicalClicks90d;
+      })
+      .slice(0, 6);
+
+    for (const winner of topWinners) {
+      const related = resolveSeo(winner.path);
+      if (!related.indexable || related.state !== 'INDEX' || seen.has(related.normalizedPath)) continue;
+      seen.add(related.normalizedPath);
+      clusterLinks.push({
+        path: related.normalizedPath,
+        title: related.h1 || related.title || related.normalizedPath,
+        badge: 'หน้าพื้นที่หลัก'
+      });
+    }
+  }
+
+  // 4. On the six core category hubs, restore direct crawl and internal-authority
+  // paths to URLs that demonstrably earned search traffic before the 2026-07-04
+  // collapse. Insert these before generic sibling fallback so the six-link cap
+  // cannot crowd historical winners out.
   if (isRecoveryCoreHub(currentSeo)) {
     for (const winner of getRecoveryWinnersForCluster(currentCluster, 4)) {
       const related = resolveSeo(winner.path);
@@ -84,7 +107,7 @@ export function getInternalLinks(currentSeo: ResolvedSeo): {
     }
   }
 
-  // 4. Fill remaining capacity from same-cluster INDEX pages.
+  // 5. Fill remaining capacity from same-cluster INDEX pages.
   for (const [path, record] of SEO_MANIFEST_MAP.entries()) {
     if (path === currentPath || seen.has(path)) continue;
     if (record.state !== 'INDEX') continue;
