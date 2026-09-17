@@ -2,6 +2,7 @@
 import { resolveSeo } from '../lib/seo/resolve';
 import { generateSchemaGraph, type BreadcrumbItem, type FaqItem } from '../lib/seo/schema';
 import { BUSINESS_FACTS } from '../config/business';
+import { isRecoveryCoreHub } from '../config/seo/recovery-v3';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileContactBar from '../components/MobileContactBar.astro';
@@ -42,6 +43,11 @@ const {
 const currentPath = Astro.url.pathname;
 const seo = resolveSeo(currentPath);
 const showHomepageRecoveryNetwork = seo.normalizedPath === '/';
+const showBuybackRecoveryNetwork = seo.normalizedPath === '/รับซื้อ/';
+const showCoreHubRecoveryNetwork = isRecoveryCoreHub(seo);
+const showRecoveryNetwork = showHomepageRecoveryNetwork || showBuybackRecoveryNetwork || showCoreHubRecoveryNetwork;
+const recoveryCluster = showCoreHubRecoveryNetwork ? seo.contentCluster : undefined;
+const recoveryLimit = showHomepageRecoveryNetwork ? 12 : showBuybackRecoveryNetwork ? 6 : 4;
 
 const siteUrl = BUSINESS_FACTS.VERIFIED.siteUrl;
 const fullPageTitle = propTitle || seo.title || `${BUSINESS_FACTS.VERIFIED.brandName} | ${BUSINESS_FACTS.VERIFIED.tagline}`;
@@ -118,9 +124,15 @@ const schemaJson = generateSchemaGraph({
 
   <main id="main-content">
     <slot />
+    {showRecoveryNetwork && (
+      <RecoveryAuthorityLinks
+        cluster={recoveryCluster}
+        limit={recoveryLimit}
+        compact={!showHomepageRecoveryNetwork}
+      />
+    )}
   </main>
 
-  {showHomepageRecoveryNetwork && <RecoveryAuthorityLinks />}
   <Footer />
   <MobileContactBar />
 </body>
