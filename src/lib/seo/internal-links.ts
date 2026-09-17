@@ -42,33 +42,13 @@ export function getInternalLinks(currentSeo: ResolvedSeo): {
     };
   }
 
-  // 2. Resolve explicitly curated related pages first.
   const clusterLinks: InternalLinkItem[] = [];
   const guideLinks: InternalLinkItem[] = [];
   const seen = new Set<string>();
 
-  for (const relatedPath of currentSeo.relatedPages || []) {
-    const related = resolveSeo(relatedPath);
-    if (!related.indexable || related.state !== 'INDEX' || related.normalizedPath === currentPath) continue;
-    if (related.primaryIntent === 'price_check' || related.primaryIntent === 'guide' || related.pageType === 'guide' || related.pageType === 'condition') {
-      if (!guideLinks.some(item => item.path === related.normalizedPath)) {
-        guideLinks.push({ path: related.normalizedPath, title: related.h1 || related.title || related.normalizedPath });
-      }
-      continue;
-    }
-    if (!seen.has(related.normalizedPath)) {
-      seen.add(related.normalizedPath);
-      clusterLinks.push({
-        path: related.normalizedPath,
-        title: related.h1 || related.title || related.normalizedPath,
-        badge: related.pageType === 'location' ? 'พื้นที่ให้บริการ' : undefined
-      });
-    }
-  }
-
-  // 3. Recovery V3: the general /รับซื้อ/ hub routes directly to the strongest
-  // pre-collapse IT winners across clusters. This recreates a shallow crawl path
-  // from homepage -> buyback hub -> proven local/service pages.
+  // 2. Recovery V3: the general /รับซื้อ/ hub routes directly to the strongest
+  // pre-collapse IT winners across clusters. Put these first so the six-link
+  // surface cannot be consumed by generic siblings before proven URLs appear.
   if (currentPath === '/รับซื้อ/') {
     const topWinners = [...RECOVERY_V3_WINNERS]
       .sort((a, b) => {
@@ -89,10 +69,9 @@ export function getInternalLinks(currentSeo: ResolvedSeo): {
     }
   }
 
-  // 4. On the six core category hubs, restore direct crawl and internal-authority
+  // 3. On the six core category hubs, restore direct crawl and internal-authority
   // paths to URLs that demonstrably earned search traffic before the 2026-07-04
-  // collapse. Insert these before generic sibling fallback so the six-link cap
-  // cannot crowd historical winners out.
+  // collapse. Historical winners intentionally precede curated siblings.
   if (isRecoveryCoreHub(currentSeo)) {
     for (const winner of getRecoveryWinnersForCluster(currentCluster, 4)) {
       const related = resolveSeo(winner.path);
@@ -103,6 +82,28 @@ export function getInternalLinks(currentSeo: ResolvedSeo): {
         path: related.normalizedPath,
         title: related.h1 || related.title || related.normalizedPath,
         badge: 'พื้นที่หลัก'
+      });
+    }
+  }
+
+  // 4. Add explicitly curated related pages after the protected recovery winners.
+  // Guide/condition links are kept on their dedicated surface and do not consume
+  // the six cluster slots.
+  for (const relatedPath of currentSeo.relatedPages || []) {
+    const related = resolveSeo(relatedPath);
+    if (!related.indexable || related.state !== 'INDEX' || related.normalizedPath === currentPath) continue;
+    if (related.primaryIntent === 'price_check' || related.primaryIntent === 'guide' || related.pageType === 'guide' || related.pageType === 'condition') {
+      if (!guideLinks.some(item => item.path === related.normalizedPath)) {
+        guideLinks.push({ path: related.normalizedPath, title: related.h1 || related.title || related.normalizedPath });
+      }
+      continue;
+    }
+    if (!seen.has(related.normalizedPath)) {
+      seen.add(related.normalizedPath);
+      clusterLinks.push({
+        path: related.normalizedPath,
+        title: related.h1 || related.title || related.normalizedPath,
+        badge: related.pageType === 'location' ? 'พื้นที่ให้บริการ' : undefined
       });
     }
   }
