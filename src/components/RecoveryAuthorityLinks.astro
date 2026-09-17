@@ -1,0 +1,118 @@
+---
+import { RECOVERY_V3_WINNERS, getRecoveryWinnersForCluster } from '../config/seo/recovery-v3';
+import { resolveSeo } from '../lib/seo/resolve';
+
+interface Props {
+  cluster?: string;
+  limit?: number;
+  compact?: boolean;
+}
+
+const { cluster, limit = cluster ? 6 : 12, compact = false } = Astro.props;
+const candidates = cluster
+  ? getRecoveryWinnersForCluster(cluster, limit)
+  : [...RECOVERY_V3_WINNERS]
+      .sort((a, b) => {
+        if (a.priority !== b.priority) return a.priority === 'tier1' ? -1 : 1;
+        return b.historicalClicks90d - a.historicalClicks90d;
+      })
+      .slice(0, limit);
+
+const links = candidates
+  .map((winner) => ({ winner, seo: resolveSeo(winner.path) }))
+  .filter(({ seo }) => seo.state === 'INDEX' && seo.indexable && seo.canonical === seo.normalizedPath)
+  .map(({ winner, seo }) => ({
+    path: seo.normalizedPath,
+    title: seo.h1 || seo.title || seo.normalizedPath,
+    cluster: winner.cluster,
+  }));
+
+const clusterLabel: Record<string, string> = {
+  notebook: 'โน๊ตบุ๊ค',
+  pc: 'คอมพิวเตอร์',
+  iphone: 'มือถือ / iPhone',
+  camera: 'กล้อง',
+  ipad: 'iPad',
+  macbook: 'MacBook',
+};
+---
+
+{links.length > 0 && (
+  <section class:list={['recovery-authority', compact && 'is-compact']} aria-labelledby="recovery-authority-heading">
+    <div class="container">
+      <div class="recovery-authority-head">
+        <h2 id="recovery-authority-heading">
+          {cluster ? `หน้ารับซื้อ${clusterLabel[cluster] || 'สินค้า'}ตามพื้นที่` : 'หน้ารับซื้อสินค้าไอทีตามพื้นที่'}
+        </h2>
+        <p>เลือกดูข้อมูลการประเมินตามประเภทสินค้าและพื้นที่ ก่อนส่งรุ่น สเปก รูป และสภาพเพื่อเช็กราคา</p>
+      </div>
+      <div class="recovery-authority-grid">
+        {links.map((link) => (
+          <a href={link.path} class="recovery-authority-link">
+            <span class="recovery-authority-label">{clusterLabel[link.cluster] || 'สินค้าไอที'}</span>
+            <strong>{link.title}</strong>
+            <span class="recovery-authority-arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .recovery-authority {
+    padding: 2.5rem 0;
+    background: #f7f9fc;
+    border-top: 1px solid #e5eaf1;
+    border-bottom: 1px solid #e5eaf1;
+  }
+  .recovery-authority.is-compact { padding: 2rem 0; }
+  .recovery-authority-head { margin-bottom: 1.25rem; }
+  .recovery-authority-head h2 {
+    margin: 0 0 .45rem;
+    color: #061b35;
+    font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  }
+  .recovery-authority-head p { margin: 0; color: #56657a; }
+  .recovery-authority-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .75rem;
+  }
+  .recovery-authority-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    min-height: 92px;
+    padding: .9rem 2.1rem .9rem 1rem;
+    border: 1px solid #dfe5ed;
+    border-radius: 12px;
+    background: #fff;
+    color: #10233d;
+    text-decoration: none;
+  }
+  .recovery-authority-link:hover { border-color: #ff6412; }
+  .recovery-authority-label {
+    color: #d94e00;
+    font-size: .78rem;
+    font-weight: 700;
+  }
+  .recovery-authority-link strong { line-height: 1.45; }
+  .recovery-authority-arrow {
+    position: absolute;
+    right: .85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6412;
+    font-size: 1.25rem;
+  }
+  @media (max-width: 900px) {
+    .recovery-authority-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    .recovery-authority { padding: 1.75rem 0; }
+    .recovery-authority-grid { grid-template-columns: 1fr; }
+    .recovery-authority-link { min-height: 0; }
+  }
+</style>

@@ -6,6 +6,7 @@
  */
 
 import { SEO_MANIFEST_MAP } from '../../config/seo/manifest';
+import { RECOVERY_V3_WINNERS, getRecoveryWinnersForCluster, isRecoveryCoreHub } from '../../config/seo/recovery-v3';
 import { resolveSeo } from './resolve';
 import type { ResolvedSeo } from '../../config/seo/types';
 
@@ -41,11 +42,53 @@ export function getInternalLinks(currentSeo: ResolvedSeo): {
     };
   }
 
-  // 2. Resolve explicitly curated related pages first, then fill from same cluster.
   const clusterLinks: InternalLinkItem[] = [];
   const guideLinks: InternalLinkItem[] = [];
   const seen = new Set<string>();
 
+  // 2. Recovery V3: the general /รับซื้อ/ hub routes directly to the strongest
+  // pre-collapse IT winners across clusters. Put these first so the six-link
+  // surface cannot be consumed by generic siblings before proven URLs appear.
+  if (currentPath === '/รับซื้อ/') {
+    const topWinners = [...RECOVERY_V3_WINNERS]
+      .sort((a, b) => {
+        if (a.priority !== b.priority) return a.priority === 'tier1' ? -1 : 1;
+        return b.historicalClicks90d - a.historicalClicks90d;
+      })
+      .slice(0, 6);
+
+    for (const winner of topWinners) {
+      const related = resolveSeo(winner.path);
+      if (!related.indexable || related.state !== 'INDEX' || seen.has(related.normalizedPath)) continue;
+      seen.add(related.normalizedPath);
+      clusterLinks.push({
+        path: related.normalizedPath,
+        title: related.h1 || related.title || related.normalizedPath,
+        badge: 'หน้าพื้นที่หลัก'
+      });
+    }
+  }
+
+  // 3. On the six core category hubs, restore direct crawl and internal-authority
+  // paths to URLs that demonstrably earned search traffic before the 2026-07-04
+  // collapse. Historical winners intentionally precede curated siblings.
+  if (isRecoveryCoreHub(currentSeo)) {
+    for (const winner of getRecoveryWinnersForCluster(currentCluster, 4)) {
+      const related = resolveSeo(winner.path);
+      if (!related.indexable || related.state !== 'INDEX' || related.normalizedPath === currentPath) continue;
+      if (seen.has(related.normalizedPath)) continue;
+      seen.add(related.normalizedPath);
+      clusterLinks.push({
+        path: related.normalizedPath,
+        title: related.h1 || related.title || related.normalizedPath,
+        badge: 'พื้นที่หลัก'
+      });
+    }
+  }
+
+  // 4. Add explicitly curated related pages after the protected recovery winners.
+  // Guide/condition links are kept on their dedicated surface and do not consume
+  // the six cluster slots.
   for (const relatedPath of currentSeo.relatedPages || []) {
     const related = resolveSeo(relatedPath);
     if (!related.indexable || related.state !== 'INDEX' || related.normalizedPath === currentPath) continue;
@@ -65,6 +108,7 @@ export function getInternalLinks(currentSeo: ResolvedSeo): {
     }
   }
 
+  // 5. Fill remaining capacity from same-cluster INDEX pages.
   for (const [path, record] of SEO_MANIFEST_MAP.entries()) {
     if (path === currentPath || seen.has(path)) continue;
     if (record.state !== 'INDEX') continue;
