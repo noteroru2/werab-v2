@@ -5,6 +5,7 @@ import { BUSINESS_FACTS } from '../config/business';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileContactBar from '../components/MobileContactBar.astro';
+import RecoveryAuthorityLinks from '../components/RecoveryAuthorityLinks.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -40,6 +41,7 @@ const {
 
 const currentPath = Astro.url.pathname;
 const seo = resolveSeo(currentPath);
+const showHomepageRecoveryNetwork = seo.normalizedPath === '/';
 
 const siteUrl = BUSINESS_FACTS.VERIFIED.siteUrl;
 const fullPageTitle = propTitle || seo.title || `${BUSINESS_FACTS.VERIFIED.brandName} | ${BUSINESS_FACTS.VERIFIED.tagline}`;
@@ -118,6 +120,7 @@ const schemaJson = generateSchemaGraph({
     <slot />
   </main>
 
+  {showHomepageRecoveryNetwork && <RecoveryAuthorityLinks />}
   <Footer />
   <MobileContactBar />
 </body>
