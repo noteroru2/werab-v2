@@ -36,7 +36,7 @@
     "audit:p4:live:full": "node scripts/recovery-p4-live-audit.mjs --full",
     "audit:p4.1": "node scripts/recovery-p4-1-audit.mjs",
     "audit:p4.2": "node scripts/recovery-p4-2-audit.mjs",
-    "audit:p5": "node scripts/recovery-p5-authority-audit.mjs",
+    "audit:p5": "tsx scripts/recovery-p5-authority-audit.mjs",
     "gate:predeploy": "npm run audit:content-hygiene && npm run audit:p0 && npm run audit:p1 && npm run audit:p2 && npm run audit:p3 && npm run audit:p4 && npm run audit:p4.1 && npm run audit:p4.2 && npm run audit:p5 && npm run audit:redirects && npm run audit:sitemap && npm run audit:links && npm run audit:content-copy && npm run audit:survivors && npm run audit:cutover && npm run build && npm run check"
   },
   "dependencies": {
