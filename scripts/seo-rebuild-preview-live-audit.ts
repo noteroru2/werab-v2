@@ -18,7 +18,11 @@ const results: Result[] = [];
 const timeout = 12000;
 const accessId = process.env.CF_ACCESS_CLIENT_ID || '';
 const accessSecret = process.env.CF_ACCESS_CLIENT_SECRET || '';
-const accessHeaders = accessId && accessSecret ? { 'CF-Access-Client-Id': accessId, 'CF-Access-Client-Secret': accessSecret } : {};
+const accessHeaders: Record<string,string> = {};
+if (accessId && accessSecret) {
+  accessHeaders['CF-Access-Client-Id'] = accessId;
+  accessHeaders['CF-Access-Client-Secret'] = accessSecret;
+}
 
 
 function pathFrom(url: string): string { return normalizePath(decodeURI(new URL(url).pathname)); }
@@ -60,7 +64,7 @@ async function batch(items: Array<{path:string; type:string; target?:string}>, l
 const publicProbe = await fetch(preview+'/', {redirect:'manual',signal:AbortSignal.timeout(timeout)});
 const accessLocation = publicProbe.headers.get('location') || '';
 const hasAccessGate = [401,403].includes(publicProbe.status) ||
-  ([301,302,303,307,308].includes(publicProbe.status) && /cloudflareaccess\\.com|\\/cdn-cgi\\/access/i.test(accessLocation));
+  ([301,302,303,307,308].includes(publicProbe.status) && (accessLocation.includes('cloudflareaccess.com') || accessLocation.includes('/cdn-cgi/access')));
 if(hasAccessGate && !(accessId && accessSecret)) {
   const summary={preview,checkedAt:new Date().toISOString(),mode:'ACCESS_PROTECTED_UNAUTHENTICATED',status:publicProbe.status,authenticatedRouteChecks:'NOT_RUN',productionTouched:false};
   fs.mkdirSync('artifacts/seo-rebuild',{recursive:true});
