@@ -21,7 +21,7 @@ for(const [topic, path] of Object.entries(pages)) {
  assert.ok(html.includes("import FieldInspectionCases from '../components/FieldInspectionCases.astro';"), 'Missing import '+path);
  assert.ok(html.includes('<FieldInspectionCases topic="'+topic+'" />'), 'Missing content block '+path);
  assert.equal(html.split('<FieldInspectionCases topic="'+topic+'" />').length-1,1,'Duplicate component '+path);
- assert.ok(src.includes('  '+topic+': {'), 'No content config for '+topic);
+ assert.ok(new RegExp('(?:^|\\n)\\s*'+topic+':\\s*\\{').test(src), 'No content config for '+topic);
  checked++;
 }
 assert.ok(src.includes('getLineUrl()'),'No first-party LINE CTA');
