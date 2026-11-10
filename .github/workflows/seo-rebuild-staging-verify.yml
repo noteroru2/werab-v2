@@ -64,6 +64,8 @@ jobs:
 
       - name: Full predeploy SEO gates
         id: seo
+        env:
+          SEO_REBUILD_STAGING: '1'
         run: npm run gate:predeploy
 
       - name: Public content and privacy regression (7 key pages)
