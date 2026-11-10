@@ -1,5 +1,7 @@
 ---
 import { REAL_PRODUCT_IMAGES, type RealProductCategory } from '../data/real-product-images';
+import { PHOTO_INSPECTION_EXAMPLES } from '../data/photo-inspection-examples';
+import { getLineUrl } from '../config/business';
 
 interface Props {
   category?: RealProductCategory;
@@ -11,153 +13,127 @@ interface Props {
 const {
   category,
   featuredOnly = false,
-  title = 'ตัวอย่างสินค้าจริงที่ใช้ประกอบการประเมิน',
-  description = 'ภาพถ่ายสินค้าจริงช่วยให้เห็นรุ่น สภาพภายนอก หน้าจอ อุปกรณ์ และจุดที่ควรแจ้งก่อนขอราคาประเมิน',
+  title = 'ภาพสินค้าจริง พร้อมตัวอย่างจุดตรวจก่อนประเมิน',
+  description = 'จับคู่ภาพสินค้าแต่ละเครื่องกับสิ่งที่มองเห็นจากภาพ และสิ่งที่ยังต้องตรวจเครื่องจริง ไม่ใช่การประกาศรับซื้อสำเร็จหรือราคาต่อรายการ',
 } = Astro.props;
 
-const images = REAL_PRODUCT_IMAGES.filter((image) =>
-  (!category || image.category === category) && (!featuredOnly || image.featured)
+const imageBySlug = new Map(REAL_PRODUCT_IMAGES.map(image => [image.slug, image]));
+const examples = PHOTO_INSPECTION_EXAMPLES.filter(item =>
+  (!category || item.category === category) &&
+  (!featuredOnly || item.photoSlugs.some(slug => imageBySlug.get(slug)?.featured))
 );
+const sectionId = `real-product-gallery-${category || 'featured'}`;
 ---
-
-{images.length > 0 && (
-  <section class="real-product-gallery-section" aria-labelledby={`real-product-gallery-${category || 'featured'}`}>
+{examples.length > 0 && (
+  <section class="real-product-gallery-section" aria-labelledby={sectionId}>
     <div class="container">
       <div class="section-title-wrap real-gallery-heading">
-        <p class="real-gallery-eyebrow">ภาพถ่ายจากสินค้าจริง</p>
-        <h2 id={`real-product-gallery-${category || 'featured'}`} class="section-main-h2">{title}</h2>
+        <p class="real-gallery-eyebrow">ภาพอ้างอิงจากสินค้าจริง · PHOTO EVIDENCE</p>
+        <h2 id={sectionId} class="section-main-h2">{title}</h2>
         <p>{description}</p>
       </div>
 
       <div class="real-product-grid">
-        {images.map((image) => (
-          <figure class:list={['real-product-card', { 'is-portrait': image.portrait }] }>
-            <picture>
-              <source
-                type="image/avif"
-                srcset={`/images/real-products/${image.slug}-600.avif 600w, /images/real-products/${image.slug}-1200.avif 1200w`}
-                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
-              />
-              <source
-                type="image/webp"
-                srcset={`/images/real-products/${image.slug}-600.webp 600w, /images/real-products/${image.slug}-1200.webp 1200w`}
-                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 31vw"
-              />
-              <img
-                src={`/images/real-products/${image.slug}-1200.webp`}
-                alt={image.alt}
-                width={image.portrait ? 904 : 1200}
-                height={image.portrait ? 1200 : 900}
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-            <figcaption>{image.caption}</figcaption>
-          </figure>
-        ))}
+        {examples.map((item) => {
+          const photos = item.photoSlugs.map(slug => imageBySlug.get(slug)).filter(image => image !== undefined);
+          const cover = photos[0];
+          if (!cover) return null;
+          const extras = featuredOnly ? [] : photos.slice(1);
+          return (
+            <article class="real-product-card" aria-label={item.title}>
+              <div class="real-product-visual">
+                <picture>
+                  <source type="image/avif"
+                    srcset={`/images/real-products/${cover.slug}-600.avif 600w, /images/real-products/${cover.slug}-1200.avif 1200w`}
+                    sizes="(max-width: 640px) 94vw, (max-width: 1024px) 45vw, 31vw" />
+                  <source type="image/webp"
+                    srcset={`/images/real-products/${cover.slug}-600.webp 600w, /images/real-products/${cover.slug}-1200.webp 1200w`}
+                    sizes="(max-width: 640px) 94vw, (max-width: 1024px) 45vw, 31vw" />
+                  <img src={`/images/real-products/${cover.slug}-1200.webp`}
+                    alt={cover.alt}
+                    width={cover.portrait ? 904 : 1200}
+                    height={cover.portrait ? 1200 : 900}
+                    loading="lazy" decoding="async" />
+                </picture>
+                <span class="real-product-badge">ภาพสินค้าจริง</span>
+              </div>
+              <div class="real-product-body">
+                <h3>{item.title}</h3>
+                <div class="real-product-fact">
+                  <strong>สิ่งที่ภาพแสดงได้</strong>
+                  <p>{item.observed}</p>
+                </div>
+                <div class="real-product-fact">
+                  <strong>สิ่งที่ต้องตรวจเพิ่มก่อนเสนอราคา</strong>
+                  <p>{item.toCheck}</p>
+                </div>
+                <div class="real-product-fact">
+                  <strong>เหตุผลที่ใช้พิจารณาราคา</strong>
+                  <p>{item.priceFactors}</p>
+                </div>
+                {extras.length > 0 && (
+                  <details class="real-product-more">
+                    <summary>ดูภาพเพิ่มเติมของรุ่นนี้ ({extras.length} ภาพ)</summary>
+                    <div class="real-product-extra-grid">
+                      {extras.map(image => (
+                        <figure class="real-product-extra">
+                          <picture>
+                            <source type="image/avif" srcset={`/images/real-products/${image.slug}-600.avif 600w, /images/real-products/${image.slug}-1200.avif 1200w`} sizes="(max-width:640px) 92vw, 220px" />
+                            <source type="image/webp" srcset={`/images/real-products/${image.slug}-600.webp 600w, /images/real-products/${image.slug}-1200.webp 1200w`} sizes="(max-width:640px) 92vw, 220px" />
+                            <img src={`/images/real-products/${image.slug}-600.webp`}
+                              width={image.portrait ? 904 : 1200} height={image.portrait ? 1200 : 900}
+                              alt={image.alt} loading="lazy" decoding="async" />
+                          </picture>
+                          <figcaption>{image.caption}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  </details>
+                )}
+              </div>
+            </article>
+          );
+        })}
       </div>
 
-      <p class="real-gallery-note">รูปใช้เพื่อแสดงลักษณะสินค้าและข้อมูลที่ช่วยประเมินราคา ไม่ได้หมายความว่าสินค้ารุ่นหรือสภาพเดียวกันจะได้ราคาเท่ากัน</p>
+      <div class="real-gallery-foot">
+        <p class="real-gallery-note">ข้อมูลประกอบภาพเป็นแนวทางการตรวจประเมิน ไม่ใช่หลักฐานว่าได้ซื้อเครื่องในภาพแล้ว ไม่ได้ยืนยันผลทดสอบ ราคา หรือสภาพภายใน ข้อมูลจริงต้องตรวจอีกครั้งก่อนเสนอราคา</p>
+        <a class="real-gallery-cta" href={getLineUrl()} target="_blank" rel="noopener noreferrer" aria-label="ส่งรายละเอียดสินค้าเพื่อเช็กราคาผ่าน LINE @webuy">ส่งรุ่น สเปก และรูปทาง LINE</a>
+      </div>
     </div>
   </section>
 )}
 
 <style>
-  .real-product-gallery-section {
-    padding: clamp(3rem, 6vw, 5.5rem) 0;
-    background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
-  }
-
-  .real-gallery-heading {
-    max-width: 760px;
-    margin-inline: auto;
-    text-align: center;
-  }
-
-  .real-gallery-heading .section-main-h2 {
-    margin: 0;
-    color: var(--navy-950);
-    font-size: clamp(1.65rem, 3vw, 2.35rem);
-    font-weight: 850;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-  }
-
-  .real-gallery-heading > p:last-child {
-    color: var(--text-muted);
-    line-height: 1.75;
-    margin-top: 0.75rem;
-  }
-
-  .real-gallery-eyebrow {
-    margin: 0 0 0.55rem;
-    color: #c2410c;
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .real-product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .real-product-card {
-    margin: 0;
-    overflow: hidden;
-    border: 1px solid #e2e8f0;
-    border-radius: 1rem;
-    background: #fff;
-    box-shadow: 0 10px 30px rgb(15 23 42 / 8%);
-  }
-
-  .real-product-card picture {
-    display: block;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: #e2e8f0;
-  }
-
-  .real-product-card img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform 250ms ease;
-  }
-
-  .real-product-card:hover img { transform: scale(1.025); }
-  .real-product-card.is-portrait img { object-position: center 42%; }
-
-  .real-product-card figcaption {
-    padding: 0.9rem 1rem 1rem;
-    color: var(--text-primary);
-    font-size: 0.92rem;
-    font-weight: 650;
-    line-height: 1.45;
-  }
-
-  .real-gallery-note {
-    max-width: 850px;
-    margin: 1.4rem auto 0;
-    color: var(--text-muted);
-    font-size: 0.83rem;
-    line-height: 1.65;
-    text-align: center;
-  }
-
-  @media (max-width: 900px) {
-    .real-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  }
-
-  @media (max-width: 560px) {
-    .real-product-grid { grid-template-columns: 1fr; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .real-product-card img { transition: none; }
-  }
+  .real-product-gallery-section { padding: clamp(3rem, 6vw, 5rem) 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
+  .real-gallery-heading { max-width: 830px; margin-inline: auto; text-align: center; }
+  .real-gallery-heading .section-main-h2 { margin: 0; color: var(--navy-950); font-size: clamp(1.55rem, 3vw, 2.25rem); font-weight: 850; line-height: 1.28; letter-spacing: -.02em; }
+  .real-gallery-heading > p:last-child { color: var(--text-muted); line-height: 1.8; margin-top: .7rem; }
+  .real-gallery-eyebrow { margin: 0 0 .55rem; color: #9a3412; font-size: .78rem; font-weight: 800; letter-spacing: .08em; }
+  .real-product-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; margin-top: 1.75rem; }
+  .real-product-card { min-width: 0; border: 1px solid #dbe5f1; border-radius: 1rem; background: #fff; overflow: hidden; box-shadow: 0 7px 24px rgb(15 23 42 / 6%); }
+  .real-product-visual { position: relative; overflow: hidden; background: #e2e8f0; }
+  .real-product-visual picture { display: block; aspect-ratio: 4/3; }
+  .real-product-visual img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 240ms ease; }
+  .real-product-card:hover .real-product-visual img { transform: scale(1.025); }
+  .real-product-badge { position: absolute; left: .8rem; bottom: .75rem; border-radius: 100px; padding: .3rem .65rem; font-size: .75rem; font-weight: 800; color: #fff; background: rgb(6 27 53 / 90%); }
+  .real-product-body { padding: 1.15rem 1.15rem 1.35rem; }
+  .real-product-body h3 { margin: 0 0 1rem; font-size: 1.13rem; color: #0b2545; line-height: 1.48; }
+  .real-product-fact { padding-top: .7rem; margin-top: .65rem; border-top: 1px solid #e2e8f0; }
+  .real-product-fact strong { color: #0b315f; display: block; font-size: .84rem; margin-bottom: .25rem; }
+  .real-product-fact p { margin: 0; line-height: 1.7; font-size: .88rem; color: #334155; overflow-wrap: anywhere; }
+  .real-product-more { margin-top: 1rem; border-top: 1px solid #e2e8f0; padding-top: .75rem; }
+  .real-product-more summary { cursor: pointer; color: #9a3412; font-weight: 800; font-size: .87rem; padding: .2rem 0; }
+  .real-product-more summary:focus-visible { outline: 2px solid #f97316; outline-offset: 4px; }
+  .real-product-extra-grid { margin-top: .8rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,125px),1fr)); gap: .7rem; }
+  .real-product-extra { margin: 0; min-width: 0; }
+  .real-product-extra img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: .6rem; display: block; }
+  .real-product-extra figcaption { color: #475569; line-height: 1.5; font-size: .76rem; margin-top: .4rem; }
+  .real-gallery-foot { margin-top: 1.4rem; padding: 1.15rem; border: 1px solid #dbe5f1; border-radius: 1rem; background: #f1f5f9; display: flex; gap: 1.2rem; justify-content: space-between; align-items: center; }
+  .real-gallery-note { color: #475569; font-size: .82rem; line-height: 1.75; margin: 0; max-width: 850px; }
+  .real-gallery-cta { padding: .83rem 1rem; flex: 0 0 auto; text-align: center; border-radius: .75rem; min-height: 48px; display: inline-flex; justify-content: center; align-items: center; color: #fff; background: #047857; text-decoration: none; font-weight: 800; font-size: .87rem; }
+  .real-gallery-cta:hover, .real-gallery-cta:focus-visible { background: #065f46; color: #fff; }
+  @media(max-width: 980px) { .real-product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media(max-width: 650px) { .real-product-grid { grid-template-columns: 1fr; } .real-product-body { padding: 1rem; } .real-gallery-foot { flex-direction: column; align-items: stretch; } .real-gallery-cta { width: 100%; } }
+  @media(prefers-reduced-motion: reduce) { .real-product-visual img { transition: none; } }
 </style>
