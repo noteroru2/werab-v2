@@ -85,6 +85,10 @@ jobs:
           test "$READY" -eq 1 || { echo "Worker did not start"; exit 1; }
           node scripts/seo-rebuild-runtime-smoke.mjs http://127.0.0.1:8787
 
+      - name: Read-only LIVE Preview SEO HTTP audit (86 pages / 53 redirects / 206 gone)
+        id: live
+        run: npx tsx scripts/seo-rebuild-preview-live-audit.ts
+
       - name: Upload isolated QA evidence (no site content exports)
         if: always()
         uses: actions/upload-artifact@v4
@@ -93,6 +97,7 @@ jobs:
           path: |
             package-lock.json
             .wrangler-seo-dry-run/
+            artifacts/seo-rebuild/preview-live-audit.json
           if-no-files-found: warn
           retention-days: 7
 
@@ -107,6 +112,7 @@ jobs:
           SEO_STATUS: ${{ steps.seo.outcome }}
           WRANGLER_STATUS: ${{ steps.wrangler.outcome }}
           RUNTIME_STATUS: ${{ steps.runtime.outcome }}
+          LIVE_STATUS: ${{ steps.live.outcome }}
         run: |
           test "$GITHUB_REF" = "refs/heads/seo-rebuild/staging-2026-11-10"
           mkdir -p docs/seo-rebuild/ci
@@ -126,6 +132,7 @@ jobs:
             echo "| SEO gate:predeploy | $SEO_STATUS |"
             echo "| wrangler deploy --dry-run | $WRANGLER_STATUS |"
             echo "| local Worker SSR + Preview noindex smoke | $RUNTIME_STATUS |"
+            echo "| live Preview raw HTTP audit (86/53/206) | $LIVE_STATUS |"
             echo
             echo "**No production deployment executed by this workflow.**"
           } > docs/seo-rebuild/ci/LATEST_RESULT.md
