@@ -66,6 +66,10 @@ jobs:
         id: seo
         run: npm run gate:predeploy
 
+      - name: Public content and privacy regression (7 key pages)
+        id: public_content
+        run: node scripts/seo-rebuild-content-batch1-audit.mjs
+
       - name: Verify Wrangler bundle WITHOUT deployment
         id: wrangler
         run: npx wrangler deploy --dry-run --outdir .wrangler-seo-dry-run
@@ -113,6 +117,7 @@ jobs:
           WRANGLER_STATUS: ${{ steps.wrangler.outcome }}
           RUNTIME_STATUS: ${{ steps.runtime.outcome }}
           LIVE_STATUS: ${{ steps.live.outcome }}
+          PUBLIC_CONTENT_STATUS: ${{ steps.public_content.outcome }}
         run: |
           test "$GITHUB_REF" = "refs/heads/seo-rebuild/staging-2026-11-10"
           mkdir -p docs/seo-rebuild/ci
@@ -133,6 +138,7 @@ jobs:
             echo "| wrangler deploy --dry-run | $WRANGLER_STATUS |"
             echo "| local Worker SSR + Preview noindex smoke | $RUNTIME_STATUS |"
             echo "| live Preview raw HTTP audit (86/53/206) | $LIVE_STATUS |"
+            echo "| 7 page public-content/privacy guard | $PUBLIC_CONTENT_STATUS |"
             echo
             echo "**No production deployment executed by this workflow.**"
           } > docs/seo-rebuild/ci/LATEST_RESULT.md
