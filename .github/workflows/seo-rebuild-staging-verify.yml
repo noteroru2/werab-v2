@@ -94,6 +94,8 @@ jobs:
           done
           test "$READY" -eq 1 || { echo "Worker did not start"; exit 1; }
           node scripts/seo-rebuild-runtime-smoke.mjs http://127.0.0.1:8787
+          npx tsx scripts/seo-rebuild-preview-live-audit.ts http://127.0.0.1:8787
+          mv artifacts/seo-rebuild/preview-live-audit.json artifacts/seo-rebuild/local-worker-349-audit.json
 
       - name: Read-only LIVE Preview SEO HTTP audit (86 pages / 53 redirects / 206 gone)
         id: live
@@ -111,6 +113,7 @@ jobs:
             package-lock.json
             .wrangler-seo-dry-run/
             artifacts/seo-rebuild/preview-live-audit.json
+            artifacts/seo-rebuild/local-worker-349-audit.json
           if-no-files-found: warn
           retention-days: 7
 
