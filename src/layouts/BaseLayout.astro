@@ -68,9 +68,14 @@ const canonicalUrl = propCanonical
   : `${siteUrl}${seo.canonical}`;
 
 // Robots calculation: if explicitly noindex prop is set or resolver states non-indexable
-const robotsDirective = propNoindex
-  ? 'noindex,follow'
-  : seo.robots;
+// Only enabled for an isolated, access-controlled preview environment.
+// Must NEVER be configured on the production environment.
+const seoPreviewMode = import.meta.env.SEO_PREVIEW === '1';
+const robotsDirective = seoPreviewMode
+  ? 'noindex,nofollow,noarchive'
+  : propNoindex
+    ? 'noindex,follow'
+    : seo.robots;
 
 // Generate Schema JSON-LD Graph
 const schemaJson = generateSchemaGraph({
