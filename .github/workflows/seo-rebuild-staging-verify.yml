@@ -1,0 +1,75 @@
+name: SEO Rebuild - Isolated Build and Validation
+
+on:
+  push:
+    branches:
+      - seo-rebuild/staging-2026-11-10
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: werab-seo-rebuild-staging
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/seo-rebuild/staging-2026-11-10'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout staging branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Node.js 24 (matches Cloudflare build)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Regenerate lockfile for Cloudflare adapter (branch only)
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+
+      - name: Commit refreshed lockfile to staging branch
+        run: |
+          if ! git diff --quiet -- package-lock.json; then
+            test "$GITHUB_REF" = "refs/heads/seo-rebuild/staging-2026-11-10"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add package-lock.json
+            git commit -m "chore(staging): sync lockfile for Astro Cloudflare adapter"
+            git push origin HEAD:refs/heads/seo-rebuild/staging-2026-11-10
+          else
+            echo "package-lock.json already up to date"
+          fi
+
+      - name: Clean install, same as Cloudflare Builds
+        run: npm ci --no-audit --no-fund
+
+      - name: Build Astro Worker
+        run: npm run build
+
+      - name: Assert generated Worker entry exists
+        run: test -s dist/_worker.js/index.js
+
+      - name: Type and Astro check
+        run: npm run check
+
+      - name: Full predeploy SEO gates
+        run: npm run gate:predeploy
+
+      - name: Verify Wrangler bundle WITHOUT deployment
+        run: npx wrangler deploy --dry-run --outdir .wrangler-seo-dry-run
+
+      - name: Upload isolated QA evidence (no site content exports)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: werab-staging-qa-report
+          path: |
+            package-lock.json
+            .wrangler-seo-dry-run/
+          if-no-files-found: warn
+          retention-days: 7
