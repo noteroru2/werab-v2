@@ -13,7 +13,8 @@ function safeRedirectUrl(target: string, base: URL): string {
 
 export const onRequest = defineMiddleware(async (context, next) => {
   // Explicit opt-in only; never infer preview status from an unverified proxy host.
-  const seoPreviewMode = import.meta.env.SEO_PREVIEW === '1';
+  const runtime = (context.locals as Record<string, unknown>).runtime as { env?: { SEO_PREVIEW?: string } } | undefined;
+  const seoPreviewMode = import.meta.env.SEO_PREVIEW === '1' || runtime?.env?.SEO_PREVIEW === '1';
   const url = context.url;
   const rawPathname = url.pathname;
 
