@@ -84,6 +84,12 @@ jobs:
         id: wrangler
         run: npx wrangler deploy --dry-run --outdir .wrangler-seo-dry-run
 
+      - name: Install isolated Chromium for Phase 3 mobile browser QA
+        id: mobile_setup
+        run: |
+          npm install --no-save --package-lock=false --no-audit --no-fund playwright@^1.56.0
+          npx playwright install chromium --with-deps
+
       - name: Run local Worker SSR and preview indexing smoke tests
         id: runtime
         shell: bash
@@ -98,6 +104,7 @@ jobs:
           done
           test "$READY" -eq 1 || { echo "Worker did not start"; exit 1; }
           node scripts/seo-rebuild-runtime-smoke.mjs http://127.0.0.1:8787
+          node scripts/seo-phase3-mobile-browser.mjs
           npx tsx scripts/seo-rebuild-preview-live-audit.ts http://127.0.0.1:8787
           mv artifacts/seo-rebuild/preview-live-audit.json artifacts/seo-rebuild/local-worker-349-audit.json
 
@@ -118,6 +125,7 @@ jobs:
             .wrangler-seo-dry-run/
             artifacts/seo-rebuild/preview-live-audit.json
             artifacts/seo-rebuild/local-worker-349-audit.json
+            artifacts/seo-rebuild/phase3-mobile/
           if-no-files-found: warn
           retention-days: 7
 
@@ -136,6 +144,7 @@ jobs:
           PUBLIC_CONTENT_STATUS: ${{ steps.public_content.outcome }}
           PHOTO_EVIDENCE_STATUS: ${{ steps.photo_evidence.outcome }}
           PHASE3_STATUS: ${{ steps.phase3.outcome }}
+          MOBILE_SETUP_STATUS: ${{ steps.mobile_setup.outcome }}
         run: |
           test "$GITHUB_REF" = "refs/heads/seo-rebuild/staging-2026-11-10"
           mkdir -p docs/seo-rebuild/ci
@@ -159,6 +168,8 @@ jobs:
             echo "| 7 page public-content/privacy guard | $PUBLIC_CONTENT_STATUS |"
             echo "| Batch 2 public photo casebook & privacy | $PHOTO_EVIDENCE_STATUS |"
             echo "| Phase 3 intent, link graph, mobile LINE QA | $PHASE3_STATUS |"
+            echo "| Phase 3 Chromium setup | $MOBILE_SETUP_STATUS |"
+            echo "| Phase 3 mobile visual/browser tests (within local Worker runtime) | $RUNTIME_STATUS |"
             echo
             echo "**No production deployment executed by this workflow.**"
           } > docs/seo-rebuild/ci/LATEST_RESULT.md
