@@ -52,6 +52,24 @@ for (const [path, expectedTitle] of [
 const iphone = await get('/รับซื้อไอโฟน/');
 check(iphone.res.status===200 && iphone.body.includes('ตัวอย่างจุดตรวจ iPhone'), 'iPhone keeps useful inspection copy without fabricated purchase photos');
 
+// Phase 3: the actual rendered pages expose SEO intent ownership and model/guide
+// paths. This is a local Cloudflare Worker runtime test, not a live mobile visual test.
+const phase3Paths = [
+  ['/', 'เลือกเส้นทางเช็กราคาที่ตรงกับสินค้าของคุณ', '/รับซื้อโน๊ตบุ๊ค/'],
+  ['/รับซื้อโน๊ตบุ๊ค/', 'เลือกหน้ารับซื้อโน๊ตบุ๊คตามยี่ห้อ', '/รับซื้อโน๊ตบุ๊ค-asus/'],
+  ['/รับซื้อคอม/', 'คอมประกอบ คอมเสีย และวิธีตรวจชิ้นส่วนก่อนขาย', '/รับซื้อคอมประกอบ/'],
+  ['/รับซื้อแมคบุ๊ค/', 'รับซื้อ MacBook ตามตระกูลชิป', '/รับซื้อ-macbook-air/'],
+  ['/รับซื้อไอโฟน/', 'แยกการประเมิน iPhone ตาม Series', '/รับซื้อ-iphone-13/'],
+  ['/รับซื้อไอแพด/', 'แยกรุ่น iPad Air และ iPad Pro', '/รับซื้อ-ipad-air/'],
+  ['/รับซื้อกล้อง/', 'เลือกรุ่นกล้องและเลนส์ที่ต้องการประเมิน', '/รับซื้อกล้อง-sony/'],
+];
+for (const [path, heading, internal] of phase3Paths) {
+  const html = (await get(path)).body;
+  check(html.includes(heading), 'Phase 3 intent heading appears on ' + path);
+  check(html.includes(internal), 'Phase 3 indexable internal link appears on ' + path);
+  check(html.includes('ส่งรูปเช็กราคา'), 'LINE photo quote label appears on ' + path);
+}
+
 const legacy = await get('/รับซื้อ-macbook/');
 check(legacy.res.status === 301, 'Legacy MacBook route returns HTTP 301');
 const loc = legacy.res.headers.get('location') || '';
