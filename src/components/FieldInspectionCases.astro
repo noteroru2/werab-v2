@@ -1,5 +1,6 @@
 ---
 import { getLineUrl } from '../config/business';
+import Phase3IntentBridge from './Phase3IntentBridge.astro';
 
 type Topic = 'home' | 'notebook' | 'pc' | 'macbook' | 'iphone' | 'ipad' | 'camera';
 interface Props { topic: Topic }
@@ -116,6 +117,8 @@ const data=content[topic];
     </div>
   </div>
 </section>
+
+<Phase3IntentBridge topic={topic} />
 
 <style>
   .field-notes { padding: clamp(2.8rem, 5vw, 4.5rem) 0; background: #f1f5f9; border-block: 1px solid #e2e8f0; }
