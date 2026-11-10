@@ -76,6 +76,10 @@ jobs:
         id: photo_evidence
         run: npx tsx scripts/seo-rebuild-photo-evidence-audit.ts
 
+      - name: Phase 3 intent ownership / internal linking / mobile CTA gate
+        id: phase3
+        run: npx tsx scripts/seo-phase3-intent-audit.ts
+
       - name: Verify Wrangler bundle WITHOUT deployment
         id: wrangler
         run: npx wrangler deploy --dry-run --outdir .wrangler-seo-dry-run
@@ -131,6 +135,7 @@ jobs:
           LIVE_STATUS: ${{ steps.live.outcome }}
           PUBLIC_CONTENT_STATUS: ${{ steps.public_content.outcome }}
           PHOTO_EVIDENCE_STATUS: ${{ steps.photo_evidence.outcome }}
+          PHASE3_STATUS: ${{ steps.phase3.outcome }}
         run: |
           test "$GITHUB_REF" = "refs/heads/seo-rebuild/staging-2026-11-10"
           mkdir -p docs/seo-rebuild/ci
@@ -153,6 +158,7 @@ jobs:
             echo "| live Preview raw HTTP audit (86/53/206) | $LIVE_STATUS |"
             echo "| 7 page public-content/privacy guard | $PUBLIC_CONTENT_STATUS |"
             echo "| Batch 2 public photo casebook & privacy | $PHOTO_EVIDENCE_STATUS |"
+            echo "| Phase 3 intent, link graph, mobile LINE QA | $PHASE3_STATUS |"
             echo
             echo "**No production deployment executed by this workflow.**"
           } > docs/seo-rebuild/ci/LATEST_RESULT.md
