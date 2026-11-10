@@ -1,7 +1,7 @@
 # SEO Rebuild staging CI (no deployment)
 
-Run: https://github.com/noteroru2/werab-v2/actions/runs/42793441916
-Source commit: edf8c564a46d642a0b98760309c180915c208b28
+Run: https://github.com/noteroru2/werab-v2/actions/runs/42793907334
+Source commit: e0ceeb05ec220ef09ad1cc08be2936a814742a43
 
 | Gate | Result |
 |---|---|
@@ -12,5 +12,6 @@ Source commit: edf8c564a46d642a0b98760309c180915c208b28
 | astro check | success |
 | SEO gate:predeploy | success |
 | wrangler deploy --dry-run | success |
+| local Worker SSR + Preview noindex smoke | success |
 
 **No production deployment executed by this workflow.**
