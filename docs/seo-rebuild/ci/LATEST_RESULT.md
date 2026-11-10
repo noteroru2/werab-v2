@@ -1,7 +1,7 @@
 # SEO Rebuild staging CI (no deployment)
 
-Run: https://github.com/noteroru2/werab-v2/actions/runs/42841167633
-Source commit: 50e83689263d0ffaa2fb33f3527e945d28f8efe1
+Run: https://github.com/noteroru2/werab-v2/actions/runs/42841592054
+Source commit: d064726b2da119e7ea3567c80bb04a4cebc41dd2
 
 | Gate | Result |
 |---|---|
@@ -16,5 +16,6 @@ Source commit: 50e83689263d0ffaa2fb33f3527e945d28f8efe1
 | live Preview raw HTTP audit (86/53/206) | skipped |
 | 7 page public-content/privacy guard | skipped |
 | Batch 2 public photo casebook & privacy | skipped |
+| Phase 3 intent, link graph, mobile LINE QA | skipped |
 
 **No production deployment executed by this workflow.**
