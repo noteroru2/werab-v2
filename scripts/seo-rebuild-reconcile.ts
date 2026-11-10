@@ -41,13 +41,20 @@ const reasonCol = head.findIndex(h => ['gsc reason','reason','status'].includes(
 if (urlCol < 0) throw new Error('Input CSV needs URL column');
 const gone = new Set(GONE_PATHS_RAW.map(normalizePath));
 const count: Record<string,number> = {};
-const output = [['URL','GSC reason','Path','Current registry state','Registry target','Manifest state','Provisional action','Google live index status','Traffic/backlink check']];
+const output = [['URL','GSC reason','Path','Current registry state','Registry target','Manifest state','Provisional action','Google live index status','Traffic/backlink check','Live HTTP status','Reviewer decision','Notes']];
+const seenPaths = new Set<string>();
+let duplicates = 0;
 for (const row of rows) {
   const raw = row[urlCol] ?? '';
   let path = '', state = '', target = '', manifestState = '';
   try {
     const u = new URL(raw);
+    if (!['https:', 'http:'].includes(u.protocol)) throw new Error('invalid_protocol');
+    const allowedHosts = new Set(['xn--c3c3a0aa6cvaf8b9dze.com','www.xn--c3c3a0aa6cvaf8b9dze.com']);
+    if (!allowedHosts.has(u.hostname.toLowerCase())) throw new Error('foreign_host');
     path = normalizePath(decodeURI(u.pathname));
+    if (seenPaths.has(path)) duplicates++;
+    seenPaths.add(path);
     const red = REDIRECT_MAP.get(path);
     const man = SEO_MANIFEST_MAP.get(path);
     manifestState = man?.state ?? '';
@@ -63,7 +70,8 @@ for (const row of rows) {
     state.startsWith('410') ? 'REVIEW_HISTORIC_EQUITY_BEFORE_CHANGE' :
     state === 'MALFORMED_URL' ? 'MANUAL_REVIEW' : 'REVIEW_OLD_URL_SEARCH_EQUITY';
   count[state] = (count[state] || 0) + 1;
-  output.push([raw, reasonCol>=0?row[reasonCol]:'',path,state,target,manifestState,action,'NOT_VERIFIED','NOT_VERIFIED']);
+  const notes = state === 'MALFORMED_URL' ? 'Inspect input host, protocol and path' : 'GSC exclusion reason is historical; no live HTTP or current Google index verification';
+  output.push([raw, reasonCol>=0?row[reasonCol]:'',path,state,target,manifestState,action,'NOT_VERIFIED','NOT_VERIFIED','NOT_VERIFIED','PENDING_OWNER_REVIEW',notes]);
 }
 fs.writeFileSync(outFile, output.map(row=>row.map(esc).join(',')).join('\n')+'\n','utf8');
-console.log(JSON.stringify({inputRows:rows.length,outputRows:output.length-1,states:count,output:outFile},null,2));
+console.log(JSON.stringify({inputRows:rows.length,distinctPaths:seenPaths.size,duplicatePathRows:duplicates,outputRows:output.length-1,states:count,productionChanged:false,output:outFile},null,2));
