@@ -64,12 +64,37 @@ if (!linkAudit.includes('ALLOWED_NOINDEX_UTILITY_LINKS')) blockers.push('Interna
 // Exact-hash approval for the 17 intentional P1/P3 recovery rewrites.
 const recoveryBaseline = JSON.parse(read('reports/content/recovery-approved-copy-baseline.json'));
 const pages = recoveryBaseline.pages || {};
+// Staging-only allowlist: permit *only* a single imported public inspection component
+// while preserving every original approved P1/P3 recovery page byte-for-byte.
+// Production remains pinned to the original hashes until explicit copy release approval.
+const stagingBatch1 = process.env.SEO_REBUILD_STAGING === '1';
+const approvedInsertions = new Map([
+  ['/รับซื้อโน๊ตบุ๊ค/','notebook'],
+  ['/รับซื้อคอม/','pc'],
+  ['/รับซื้อแมคบุ๊ค/','macbook'],
+  ['/รับซื้อไอโฟน/','iphone'],
+  ['/รับซื้อไอแพด/','ipad'],
+  ['/รับซื้อกล้อง/','camera']
+]);
+const componentImport = "import FieldInspectionCases from '../components/FieldInspectionCases.astro';\\n".replace('\\n','\n');
 if (Object.keys(pages).length !== 17) blockers.push(`Recovery copy baseline rows ${Object.keys(pages).length} != 17`);
 for (const [p,rec] of Object.entries(pages)) {
   const file = path.join(root, rec.astroFile || '');
   if (!fs.existsSync(file)) { blockers.push(`Recovery baseline source missing: ${p} -> ${rec.astroFile}`); continue; }
-  const hash = sha256(fs.readFileSync(file, 'utf8'));
-  if (hash !== rec.astroFileSha256) blockers.push(`Recovery baseline hash mismatch: ${p}`);
+  const actual = fs.readFileSync(file, 'utf8');
+  const hash = sha256(actual);
+  if (hash !== rec.astroFileSha256) {
+    const topic = approvedInsertions.get(p);
+    let approved = false;
+    if (stagingBatch1 && topic) {
+      const insertion = '  <FieldInspectionCases topic="' + topic + '" />\\n\\n'.replaceAll('\\n','\n');
+      const removeExactlyOnce = (text, needle) => text.split(needle).length === 2 ? text.replace(needle,'') : null;
+      const withoutImport = removeExactlyOnce(actual, componentImport);
+      const restored = withoutImport === null ? null : removeExactlyOnce(withoutImport, insertion);
+      approved = restored !== null && sha256(restored) === rec.astroFileSha256;
+    }
+    if (!approved) blockers.push(`Recovery baseline hash mismatch: ${p}`);
+  }
 }
 const copyAudit = read('scripts/content-copy-audit.mjs');
 if (!copyAudit.includes('RECOVERY_APPROVED_BASELINE') || !copyAudit.includes('PASS_RECOVERY_BASELINE')) blockers.push('Content-copy audit does not enforce recovery-approved exact-hash baseline');
