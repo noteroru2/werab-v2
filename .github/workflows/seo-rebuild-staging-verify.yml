@@ -30,6 +30,7 @@ jobs:
           node-version: '24'
 
       - name: Regenerate lockfile for Cloudflare adapter (branch only)
+        id: lock
         run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
 
       - name: Commit refreshed lockfile to staging branch
@@ -46,21 +47,27 @@ jobs:
           fi
 
       - name: Clean install, same as Cloudflare Builds
+        id: install
         run: npm ci --no-audit --no-fund
 
       - name: Build Astro Worker
+        id: build
         run: npm run build
 
       - name: Assert generated Worker entry exists
+        id: entry
         run: test -s dist/_worker.js/index.js
 
       - name: Type and Astro check
+        id: types
         run: npm run check
 
       - name: Full predeploy SEO gates
+        id: seo
         run: npm run gate:predeploy
 
       - name: Verify Wrangler bundle WITHOUT deployment
+        id: wrangler
         run: npx wrangler deploy --dry-run --outdir .wrangler-seo-dry-run
 
       - name: Upload isolated QA evidence (no site content exports)
@@ -73,3 +80,42 @@ jobs:
             .wrangler-seo-dry-run/
           if-no-files-found: warn
           retention-days: 7
+
+      - name: Record truthful CI outcomes on staging branch
+        if: always()
+        env:
+          LOCK_STATUS: ${{ steps.lock.outcome }}
+          INSTALL_STATUS: ${{ steps.install.outcome }}
+          BUILD_STATUS: ${{ steps.build.outcome }}
+          ENTRY_STATUS: ${{ steps.entry.outcome }}
+          TYPES_STATUS: ${{ steps.types.outcome }}
+          SEO_STATUS: ${{ steps.seo.outcome }}
+          WRANGLER_STATUS: ${{ steps.wrangler.outcome }}
+        run: |
+          test "$GITHUB_REF" = "refs/heads/seo-rebuild/staging-2026-11-10"
+          mkdir -p docs/seo-rebuild/ci
+          {
+            echo "# SEO Rebuild staging CI (no deployment)"
+            echo
+            echo "Run: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            echo "Source commit: $GITHUB_SHA"
+            echo
+            echo "| Gate | Result |"
+            echo "|---|---|"
+            echo "| Refresh lockfile | $LOCK_STATUS |"
+            echo "| npm ci | $INSTALL_STATUS |"
+            echo "| astro build | $BUILD_STATUS |"
+            echo "| Worker entrypoint | $ENTRY_STATUS |"
+            echo "| astro check | $TYPES_STATUS |"
+            echo "| SEO gate:predeploy | $SEO_STATUS |"
+            echo "| wrangler deploy --dry-run | $WRANGLER_STATUS |"
+            echo
+            echo "**No production deployment executed by this workflow.**"
+          } > docs/seo-rebuild/ci/LATEST_RESULT.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/seo-rebuild/ci/LATEST_RESULT.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(staging): publish latest isolated CI gate results"
+            git push origin HEAD:refs/heads/seo-rebuild/staging-2026-11-10
+          fi
