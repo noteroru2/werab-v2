@@ -93,6 +93,9 @@ jobs:
 
       - name: Read-only LIVE Preview SEO HTTP audit (86 pages / 53 redirects / 206 gone)
         id: live
+        env:
+          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
+          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
         run: npx tsx scripts/seo-rebuild-preview-live-audit.ts
 
       - name: Upload isolated QA evidence (no site content exports)
