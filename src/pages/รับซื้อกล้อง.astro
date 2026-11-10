@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FieldInspectionCases from '../components/FieldInspectionCases.astro';
 import CoreMoneyAuthority from '../components/CoreMoneyAuthority.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
@@ -111,6 +112,8 @@ const faqs = [
     title="ภาพกล้อง Insta360 X5 พร้อมกล่องและอุปกรณ์จริง"
     description="ภาพตัวกล้องภายในกล่องและสภาพกล่องด้านนอก ช่วยตรวจรุ่น อุปกรณ์ที่มี และสภาพก่อนขอราคาประเมิน"
   />
+
+  <FieldInspectionCases topic="camera" />
 
   <CoreMoneyAuthority
     categoryName='กล้องและเลนส์มือสอง'
