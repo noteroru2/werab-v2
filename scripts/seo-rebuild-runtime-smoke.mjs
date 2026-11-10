@@ -35,6 +35,23 @@ for (const path of ['/รับซื้อโน๊ตบุ๊ค/', '/รั�
   check((page.res.headers.get('x-robots-tag') || '').includes('noindex'), path + ' has preview noindex header');
 }
 
+// Batch 2 must render PHOTO-BACKED inspection evidence, not just data files.
+check(home.body.includes('Acer Swift SF314-42'), 'Homepage renders a real photo-backed notebook example');
+check(home.body.includes('Insta360 X5'), 'Homepage renders a real photo-backed camera example');
+check(home.body.includes('ไม่ใช่หลักฐานว่าได้ซื้อเครื่องในภาพแล้ว'), 'Photo evidence does not claim a completed buyback');
+for (const [path, expectedTitle] of [
+  ['/รับซื้อโน๊ตบุ๊ค/', 'MSI Thin A15'],
+  ['/รับซื้อคอม/', 'คอมประกอบเคสสีขาว'],
+  ['/รับซื้อแมคบุ๊ค/', 'MacBook Air M3'],
+  ['/รับซื้อไอแพด/', 'iPad Pro ชิป M1'],
+  ['/รับซื้อกล้อง/', 'Insta360 X5'],
+]) {
+  const page = await get(path);
+  check(page.res.status===200 && page.body.includes(expectedTitle), path + ' renders photo-evidence example ' + expectedTitle);
+}
+const iphone = await get('/รับซื้อไอโฟน/');
+check(iphone.res.status===200 && iphone.body.includes('ตัวอย่างจุดตรวจ iPhone'), 'iPhone keeps useful inspection copy without fabricated purchase photos');
+
 const legacy = await get('/รับซื้อ-macbook/');
 check(legacy.res.status === 301, 'Legacy MacBook route returns HTTP 301');
 const loc = legacy.res.headers.get('location') || '';
