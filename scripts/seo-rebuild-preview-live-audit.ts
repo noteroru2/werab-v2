@@ -9,9 +9,12 @@ import { RAW_REDIRECT_RULES } from '../src/config/seo/redirects';
 import { GONE_PATHS_RAW } from '../src/config/seo/gone';
 import { normalizePath } from '../src/lib/seo/normalize';
 
-const preview = 'https://seo-rebuild-staging-2026-11-10-werab-v2.noteroru2.workers.dev';
+const officialPreview = 'https://seo-rebuild-staging-2026-11-10-werab-v2.noteroru2.workers.dev';
+const preview = process.argv[2] || officialPreview;
 const production = 'https://xn--c3c3a0aa6cvaf8b9dze.com';
-if (!preview.includes('staging-2026-11-10-werab-v2.') || !preview.endsWith('.workers.dev')) throw new Error('Unsafe preview origin');
+// Only allow explicit staging host or a locally-running isolated Worker.
+const validOrigins = new Set([officialPreview,'http://127.0.0.1:8787','http://localhost:8787']);
+if (!validOrigins.has(preview)) throw new Error('Unsafe preview origin');
 
 interface Result { path: string; type: string; status: number|string; ok: boolean; detail: string; }
 const results: Result[] = [];
