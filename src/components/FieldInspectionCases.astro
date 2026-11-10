@@ -1,0 +1,142 @@
+---
+import { getLineUrl } from '../config/business';
+
+type Topic = 'home' | 'notebook' | 'pc' | 'macbook' | 'iphone' | 'ipad' | 'camera';
+interface Props { topic: Topic }
+interface Case { label: string; example: string; check: string; why: string; href?: string }
+const { topic } = Astro.props;
+
+const content: Record<Topic,{ heading:string; intro:string; cases:Case[]; request:string }> = {
+  home: {
+    heading: 'ตัวอย่างการประเมินที่ต้องดูให้ลึกกว่าแค่รุ่น',
+    intro: 'สินค้าไอทีต่างประเภทมีจุดเสี่ยงต่างกัน นี่คือตัวอย่างวิธีตรวจสเปกและสภาพที่ใช้ประกอบการประเมิน ไม่ใช่ใบเสนอราคาหรือหลักฐานซื้อขายรายรายการ',
+    cases: [
+      { label:'Gaming Notebook', example:'GTX 1650 กับ RTX 3050 ชื่อรุ่นใกล้กันก็ไม่ควรเทียบราคาเหมือนกัน', check:'ขอรหัส CPU, GPU และ VRAM ที่แน่นอน พร้อมภาพหน้าจอข้อมูลสเปก', why:'ประสิทธิภาพ อายุเครื่อง และมูลค่าขายต่อแตกต่างกัน',href:'/รับซื้อโน๊ตบุ๊ค/' },
+      { label:'Gaming PC', example:'เครื่องที่ใส่ RX 6600 ไม่ควรตีราคาจากคำว่า Core i3 เพียงอย่างเดียว',check:'ประเมิน CPU, GPU, เมนบอร์ด, RAM, SSD และ PSU แยกก่อน',why:'สัดส่วนมูลค่าอาจอยู่ที่การ์ดจอและอะไหล่แต่ละชิ้น',href:'/รับซื้อคอม/' },
+      { label:'MacBook',example:'MacBook M1 ขาดหัวชาร์จ กับเครื่องครบชุด มีต้นทุนเตรียมขายต่างกัน',check:'ตรวจชิป/ปี รุ่น, RAM/SSD, Cycle Count, จอ, พอร์ต และสถานะบัญชี',why:'อุปกรณ์และความพร้อมใช้งานกระทบต้นทุนหลังรับซื้อ',href:'/รับซื้อแมคบุ๊ค/' },
+      { label:'กล้องและเลนส์',example:'ชุด Sony A7C II พร้อมเลนส์ 2 ตัว ควรแยกคุณค่า Body และเลนส์',check:'ดูรุ่นเลนส์เต็ม Shutter Count เซนเซอร์ เชื้อรา/ฝุ่น และชุดชาร์จ',why:'เลนส์แต่ละตัวมีสภาพและความต้องการตลาดไม่เท่ากัน',href:'/รับซื้อกล้อง/' }
+    ],
+    request: 'เริ่มต้นด้วยรุ่น สเปก ภาพทุกด้าน และรายการอุปกรณ์ ไม่ต้องส่งรหัสผ่านหรือเลขเครื่องเต็ม'
+  },
+  notebook: {
+    heading: 'ตัวอย่างเคสประเมิน Notebook ที่ทำให้ราคาแตกต่าง',
+    intro:'ตัวอย่างเชิงเทคนิคจากรูปแบบการประเมินจริง ไม่ใช่ราคาประกาศรับซื้อหรือการยืนยันว่ามีการทำธุรกรรมในเครื่องตัวอย่าง',
+    cases:[
+      {label:'GTX 1650 / Core i5 Gen 10',example:'Notebook RAM 8GB หรือ 16GB และ SSD 512GB แม้ใช้ GPU เดียวกันก็ต้องดูรุ่นเต็มและสภาพ',check:'ภาพหน้า System Information, GPU-Z/ข้อมูล GPU, Battery Report, จอ, บานพับ และ Adapter',why:'รุ่นย่อย ความร้อน สภาพจอ และแบตมีผลต่อค่าเตรียมขาย'},
+      {label:'RTX 3050 4GB เทียบ 6GB',example:'คำว่า RTX 3050 อย่างเดียวไม่พอ ต้องระบุ VRAM ให้ครบก่อนออกช่วงราคา',check:'ส่งหน้าข้อมูล VRAM, รหัส CPU, RAM, SSD และผลทดสอบการทำงาน',why:'VRAM ต่างกันทำให้ความต้องการของตลาดมือสองต่างกัน'},
+      {label:'เครื่องมีตำหนิ',example:'Battery เสื่อมหรือไม่มี Adapter ไม่จำเป็นต้องซ่อมหรือซื้ออุปกรณ์ใหม่ก่อนเช็กราคา',check:'แจ้งความจุแบตหรืออาการชาร์จ และถ่ายรูปพอร์ต/หัวชาร์จที่ต้องใช้',why:'ต้องเทียบต้นทุนซ่อมกับส่วนต่างราคาขายต่อ ไม่ใช่หักราคาเท่ากันทุกรุ่น'}
+    ],
+    request:'ส่งรุ่นเต็ม + CPU/GPU/VRAM + RAM/SSD + Battery/หน้าจอ + Adapter และภาพตำหนิ'
+  },
+  pc: {
+    heading:'ตัวอย่างวิธีประเมินคอมประกอบจากอะไหล่จริง',
+    intro:'เคสจำลองจากสเปกที่พบในงานประเมิน การตีราคารวมควรเริ่มจากมูลค่าและสภาพของชิ้นส่วน ไม่ใช่ราคาประกอบใหม่',
+    cases:[
+      {label:'i5-12400 + RX 6500 XT',example:'CPU ใช้ได้ดีแต่การ์ดจอเป็นรุ่นเริ่มต้น จึงควรประเมินสมดุลทั้งเครื่อง',check:'ขอรุ่นเมนบอร์ด, RAM 16GB, SSD 512GB, PSU และอายุประกันแต่ละชิ้น',why:'สินค้าขายยกชุดอาจมีตลาดต่างจากการขายแยกชิ้น'},
+      {label:'i3-13100F + RX 6600',example:'ไม่ควรมองข้าม GPU เมื่อเครื่องใช้ Core i3 เพราะ GPU อาจเป็นชิ้นหลักของมูลค่า',check:'ถ่ายภาพป้ายการ์ดจอ, PSU, ความจุ SSD, RAM และผลทดสอบเล่นเกม',why:'ประสิทธิภาพ GPU, คุณภาพ PSU และความเสี่ยงอาการดับมีผลต่อราคา'},
+      {label:'เครื่องเคยดับหลังเปิดใช้นาน',example:'กรณีคอมดับระหว่างไลฟ์หรือเรนเดอร์ ต้องตรวจฮาร์ดแวร์ก่อนประเมินเป็นเครื่องสมบูรณ์',check:'ทดสอบอุณหภูมิ CPU/GPU, PSU, RAM และบันทึกอาการที่เกิดขึ้น',why:'อาการเสถียรภาพส่งผลต่อการรับประกันหลังขาย'}
+    ],
+    request:'ส่งภาพภายในเคส + รายการ CPU/GPU/RAM/SSD/Mainboard/PSU + ประกันและอาการ'
+  },
+  macbook:{
+    heading:'กรณีประเมิน MacBook ที่ไม่ควรใช้ราคาเดียวกัน',
+    intro:'แยก Air/Pro ชิปและความจุให้ถูกต้องก่อนเสมอ พร้อมตรวจการทำงานและสิทธิ์จัดการเครื่อง',
+    cases:[
+      {label:'MacBook Pro 13 นิ้ว M1 8/256',example:'เครื่องไม่มีชุดชาร์จต้องนับต้นทุนอุปกรณ์ที่ขาด ไม่ใช่ประเมินเท่ากับเครื่องครบชุด',check:'ดู About This Mac, Battery Cycle, พอร์ต, สภาพจอ/คีย์บอร์ด และอุปกรณ์',why:'ปีรุ่น ความจุ และอุปกรณ์เปลี่ยนความสะดวกในการขายต่อ'},
+      {label:'MacBook Air M1 เทียบ Air M3',example:'ชื่อ Air เหมือนกันแต่ชิปและ Generation ต่างกันมาก และ RAM/SSD อาจต่างกันอีก',check:'ภาพรุ่นชิป, Memory, Storage, Cycle Count และความพร้อมในการลงชื่อออก',why:'ต้องแยกเจเนอเรชันและสภาพก่อนเทียบตลาด'},
+      {label:'Activation Lock และ MDM',example:'เครื่องที่ยังผูก Find My/Activation Lock หรือการจัดการองค์กร ไม่ควรตีราคาเป็นเครื่องปลดล็อกพร้อมขาย',check:'ให้เจ้าของตรวจสถานะและนำบัญชีออกด้วยตนเองก่อนส่งมอบ ห้ามส่งรหัสผ่าน',why:'ข้อจำกัดสิทธิ์การใช้งานอาจทำให้ไม่สามารถรับซื้อเป็นเครื่องปกติ'}
+    ],
+    request:'ส่งรูป About This Mac + Battery Cycle + ภาพรอบเครื่อง + อุปกรณ์ + สถานะ Find My/MDM'
+  },
+  iphone:{
+    heading:'ตัวอย่างจุดตรวจ iPhone ที่กระทบราคามากกว่ารอยภายนอก',
+    intro:'รุ่นและความจุเป็นเพียงจุดเริ่มต้น ต้องตรวจฟังก์ชันสำคัญก่อนสรุปราคาเครื่องมือสอง',
+    cases:[
+      {label:'iPhone 13 / 13 Pro',example:'ความจุและ Battery Health ต่างกัน ราคาประเมินก็ไม่ควรเท่ากัน',check:'ภาพหน้า About, Battery Health, จอ, เลนส์กล้อง และการใช้งาน Face ID',why:'ต้นทุนแบต/จอและความต้องการรุ่นย่อยต่างกัน'},
+      {label:'iPhone SE รุ่นที่ 2',example:'เครื่องไม่มีกล่องหรือหัวชาร์จ ประเมินจากสภาพจริงและความพร้อมใช้งาน',check:'ความจุ, Touch ID, สภาพจอ, ชาร์จ, สัญญาณและประวัติซ่อมที่แจ้งได้',why:'รุ่นเก่ามักต้องดูต้นทุนซ่อมเทียบกับราคาขายต่ออย่างระมัดระวัง'},
+      {label:'หน้าจอเปลี่ยนหรือเครื่องติดล็อก',example:'จอและชิ้นส่วนที่เคยเปลี่ยนต้องแยกจากเครื่องเดิมทั้งหมด',check:'ตรวจ Parts and Service History ถ้ามี และให้เจ้าของจัดการ Activation Lock เอง',why:'ความน่าเชื่อถือของอะไหล่และการปลดล็อกมีผลต่อการรับซื้อ'}
+    ],
+    request:'ส่งรุ่น/ความจุ + Battery Health + รูปจอ/ขอบ/หลัง + Face ID และสถานะ Activation Lock'
+  },
+  ipad:{
+    heading:'เคส iPad ที่ต้องแยกรุ่นและการใช้งานก่อนเทียบราคา',
+    intro:'iPad Pro, Air และรุ่นธรรมดาแตกต่างกันทั้งชิป ขนาด ความจุ และอุปกรณ์เสริม',
+    cases:[
+      {label:'iPad Pro 12.9 นิ้ว ปี 2017',example:'อย่าเทียบกับ iPad Pro ชิป M1 เพียงเพราะชื่อรุ่นและขนาดหน้าจอใกล้กัน',check:'ตรวจ Model Number, Storage, Wi-Fi/Cellular, สภาพทัชและหน้าจอ',why:'อายุผลิตภัณฑ์ การรองรับซอฟต์แวร์ และแบตส่งผลต่อมูลค่า'},
+      {label:'iPad Pro M1',example:'อุปกรณ์พร้อมกล่องอาจช่วยให้ขายต่อสะดวก แต่ต้องยืนยันความจุและรุ่นชิปก่อน',check:'ภาพ About, การทำงาน Face ID/Touch, USB-C, ลำโพง และ Apple Pencil ถ้ามี',why:'อุปกรณ์เสริมและอาการทัชกระทบต้นทุนหลังรับซื้อ'},
+      {label:'iPad Cellular และเครื่ององค์กร',example:'ต้องแยก Cellular จาก Wi-Fi และตรวจว่ามีการควบคุมเครื่องจากองค์กรหรือไม่',check:'ตรวจสถานะ SIM/eSIM, Find My และ Remote Management โดยไม่ขอรหัสผ่าน',why:'เครื่องที่มีข้อจำกัดสิทธิ์ใช้งานไม่ควรถูกตีราคาเท่าเครื่องปกติ'}
+    ],
+    request:'ส่ง Model Number + ความจุ + Wi-Fi/Cellular + รูปจอและขอบ + อุปกรณ์ + สถานะบัญชี'
+  },
+  camera:{
+    heading:'วิธีประเมินชุดกล้องและเลนส์แบบแยกรายการ',
+    intro:'มูลค่าของชุดกล้องอาจอยู่ที่ Body และเลนส์คนละส่วน การตรวจสภาพเชิงภาพช่วยลดความผิดพลาดในการประเมิน',
+    cases:[
+      {label:'Sony A7C II + FE 28–60mm + FE 50mm f/1.8',example:'Shutter ประมาณ 7,000 ครั้งเป็นเพียงข้อมูลหนึ่ง ต้องตรวจแยก Body กับเลนส์ทั้งสองตัว',check:'ภาพรุ่นเลนส์จริง, เซนเซอร์, ชัตเตอร์, ระบบโฟกัส, เชื้อรา/ฝ้า และชุดชาร์จ',why:'เลนส์ต่างชนิดมีตลาดและสภาพที่กระทบราคาคนละแบบ'},
+      {label:'Leica Q Type 116 ไม่มีชุดชาร์จ',example:'กรณีไม่มี Charger หรือกล่อง ต้องประเมินความเสี่ยงการทดสอบและอุปกรณ์ที่ขาด',check:'ทดสอบด้วยแบตที่ใช้ได้ ตรวจระบบโฟกัส แหวนเลนส์ ช่องมองภาพ เซนเซอร์ และจอ',why:'กล้องเลนส์ติดเครื่องราคาสูงต้องตรวจความสมบูรณ์ทั้งระบบ'},
+      {label:'กล้อง Canon/Nikon/Fujifilm มือสอง',example:'คำว่าใช้งานปกติไม่พอสำหรับเลนส์เก่าที่อาจมีฝ้า เชื้อรา หรือรูรับแสงค้าง',check:'ตรวจเลนส์ย้อนแสง โฟกัส รูรับแสง และภาพทดสอบที่หลายค่า f',why:'ค่าซ่อมเลนส์และความเสี่ยงระบบภาพทำให้ราคาเปลี่ยนได้มาก'}
+    ],
+    request:'ส่งชื่อ Body + ชื่อเลนส์ทุกตัว + Shutter/อาการ + รูปหน้าเลนส์/ท้ายเลนส์ + แบต/ชาร์จ'
+  }
+};
+
+const data=content[topic];
+---
+<section class="field-notes" aria-labelledby={`field-notes-${topic}`}>
+  <div class="container">
+    <div class="field-heading">
+      <div class="field-kicker">INSPECTION NOTES · AMPHON TRADING</div>
+      <h2 id={`field-notes-${topic}`}>{data.heading}</h2>
+      <p>{data.intro}</p>
+    </div>
+    <div class="field-grid">
+      {data.cases.map((item)=>(
+        <article class="field-card">
+          <div class="field-pill">{item.label}</div>
+          <h3>{item.example}</h3>
+          <div class="field-detail">
+            <strong>ข้อมูลที่ตรวจเพิ่ม</strong>
+            <p>{item.check}</p>
+          </div>
+          <div class="field-detail">
+            <strong>เหตุผลที่มีผลต่อราคา</strong>
+            <p>{item.why}</p>
+          </div>
+          {item.href && <a class="field-link" href={item.href}>ดูวิธีประเมินหมวดนี้ →</a>}
+        </article>
+      ))}
+    </div>
+    <div class="field-foot">
+      <div>
+        <strong>เช็กราคาให้แม่นขึ้น ต้องส่งอะไร?</strong>
+        <p>{data.request}</p>
+        <small>ตัวอย่างทั้งหมดเป็นสถานการณ์อธิบายเกณฑ์ประเมิน ไม่ใช่ผลการซื้อขายที่ยืนยันแล้วหรือการรับประกันราคา โปรดอย่าส่ง IMEI, Serial Number เต็ม, รหัสผ่าน หรือข้อมูลลูกค้า</small>
+      </div>
+      <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="field-cta" aria-label="เปิด LINE @webuy เพื่อส่งรายละเอียดและเช็กราคา">ส่งข้อมูลทาง LINE @webuy</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .field-notes { padding: clamp(2.8rem, 5vw, 4.5rem) 0; background: #f1f5f9; border-block: 1px solid #e2e8f0; }
+  .field-heading { max-width: 870px; margin: 0 auto 1.7rem; text-align: center; }
+  .field-kicker { font-size: .75rem; color: #9a3412; font-weight: 800; letter-spacing: .09em; }
+  .field-heading h2 { margin: .5rem 0 .7rem; font-size: clamp(1.5rem, 3vw, 2rem); }
+  .field-heading p { line-height: 1.75; }
+  .field-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr)); gap: 1rem; }
+  .field-card { min-width: 0; padding: 1.35rem; border-radius: 1rem; background: #fff; border: 1px solid #dce5ee; box-shadow: 0 5px 16px rgba(15,23,42,.045); }
+  .field-pill { display: inline-block; color: #9a3412; background: #fff7ed; border: 1px solid #fed7aa; font-size: .76rem; font-weight: 800; padding: .2rem .6rem; border-radius: 30px; }
+  .field-card h3 { font-size: 1.07rem; line-height: 1.5; margin: .85rem 0 1.1rem; }
+  .field-detail { padding-top: .75rem; margin-top: .75rem; border-top: 1px solid #e2e8f0; }
+  .field-detail strong { display: block; font-size: .85rem; color: #0b315f; font-weight: 800; margin-bottom: .3rem; }
+  .field-detail p { font-size: .88rem; margin-bottom: 0; line-height: 1.68; }
+  .field-link { display: inline-block; margin-top: 1rem; font-weight: 750; font-size: .87rem; text-underline-offset: 3px; text-decoration: underline; color:#9a3412; }
+  .field-foot { margin-top: 1.25rem; background: #08264a; border-radius: 1rem; color: #fff; padding: clamp(1.15rem,3vw,1.8rem); display: flex; gap: 1.2rem; align-items: center; justify-content: space-between; }
+  .field-foot strong { color: #fff; font-size: 1rem; }
+  .field-foot p { color: #e2e8f0; margin: .35rem 0 .35rem; }
+  .field-foot small { display: block; font-size: .75rem; line-height: 1.7; color: #cbd5e1; max-width: 850px; }
+  .field-cta { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; text-align: center; background: #047857; border-radius: .75rem; padding: .85rem 1.2rem; color: #fff; font-weight: 800; min-height: 48px; text-decoration: none; }
+  .field-cta:hover,.field-cta:focus-visible { background:#065f46; color:#fff; }
+  .field-cta:focus-visible { outline: 3px solid #fdba74; outline-offset: 3px; }
+  @media(max-width:650px){ .field-foot {flex-direction: column; align-items: stretch;} .field-cta{width:100%;} .field-card{padding:1.1rem} }
+</style>
