@@ -87,7 +87,7 @@ export const CORE_INTENT_BRIDGES: Record<CoreSeoTopic,IntentBridge> = {
     ],
     related:[
       {label:'แบตเสื่อม',href:'/สภาพสินค้า/แบตเสื่อม/',why:'Battery Health และอาการ'},
-      {label:'จอแตก',href:'/สภาพสินค้า/จอแตก/',why:'ตรวจ Touch/Face ID'},
+      {label:'iPhone จอแตกหรือจอมีเส้น',href:'/สภาพสินค้า/จอแตก/',why:'ตรวจ Touch/Face ID'},
       {label:'ไม่มีอุปกรณ์',href:'/สภาพสินค้า/ไม่มีอุปกรณ์/',why:'อุปกรณ์ไม่ครบควรแจ้งอะไร'}
     ],
     intake:'ส่งรุ่นและความจุ, Battery Health, Parts and Service History หากมี, ภาพตัวเครื่อง, Face ID และสถานะ Activation Lock'
