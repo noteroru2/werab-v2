@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FieldInspectionCases from '../components/FieldInspectionCases.astro';
 import CoreMoneyAuthority from '../components/CoreMoneyAuthority.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import FAQ from '../components/FAQ.astro';
@@ -104,6 +105,8 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  <FieldInspectionCases topic="iphone" />
 
   <CoreMoneyAuthority
     categoryName='iPhone มือสอง'
