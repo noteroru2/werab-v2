@@ -57,6 +57,16 @@ try {
       });
       assert.equal(info.h1,1,'Exactly one H1 '+path+' at '+width+'px');
       assert.ok(info.bridgeLinks>=4,'Intent pathways not visible on '+path);
+      if (info.scrollWidth>info.viewportWidth+2) {
+        const overflowing=await page.evaluate(()=>{
+          return [...document.querySelectorAll('body *')].map(el=>{
+            const r=el.getBoundingClientRect();
+            const style=getComputedStyle(el);
+            return {tag:el.tagName,cls:String(el.className).slice(0,90),right:Math.round(r.right),left:Math.round(r.left),width:Math.round(r.width),scrollWidth:el.scrollWidth,display:style.display,overflowX:style.overflowX,text:(el.textContent||'').trim().slice(0,50)};
+          }).filter(x=>x.right>innerWidth+2 && x.display!=='none').slice(0,30);
+        });
+        console.error('MOBILE_OVERFLOW_DIAGNOSTIC '+JSON.stringify({path,width,documentWidth:info.scrollWidth,overflowing}));
+      }
       assert.ok(info.scrollWidth<=info.viewportWidth+2,'Horizontal overflow on '+path+' at '+width+'px: '+info.scrollWidth);
       assert.ok(info.barVisible && info.barPosition==='fixed','Sticky contact bar missing '+path);
       assert.ok(Math.abs(info.barBottom-844)<=2,'Sticky bar not anchored to bottom '+path);
