@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - seo-rebuild/staging-2026-11-10
+    # A workflow result commit must NOT trigger another copy of itself.
+    paths-ignore:
+      - docs/seo-rebuild/ci/LATEST_RESULT.md
   workflow_dispatch:
 
 permissions:
@@ -11,7 +14,7 @@ permissions:
 
 concurrency:
   group: werab-seo-rebuild-staging
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   verify:
