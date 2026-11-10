@@ -1,7 +1,7 @@
 # SEO Rebuild staging CI (no deployment)
 
-Run: https://github.com/noteroru2/werab-v2/actions/runs/42820158227
-Source commit: 68cdc714c54ff004daa0d3e4a1946c8e3e3c2c08
+Run: https://github.com/noteroru2/werab-v2/actions/runs/42820384131
+Source commit: 775ce161203434c420f05a47f73d6fa91eb700f2
 
 | Gate | Result |
 |---|---|
