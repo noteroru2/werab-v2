@@ -1,0 +1,20 @@
+{
+  // SEO Rebuild: keep production release controlled from main only.
+  // Do not run "wrangler deploy" from this isolated feature branch.
+  "name": "werab-v2",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2026-11-10",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "previews": {
+    "vars": {
+      "SEO_PREVIEW": "1"
+    }
+  }
+}

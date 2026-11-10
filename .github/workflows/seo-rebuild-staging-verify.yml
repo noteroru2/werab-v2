@@ -1,0 +1,196 @@
+name: SEO Rebuild - Isolated Build and Validation
+
+on:
+  push:
+    branches:
+      - seo-rebuild/staging-2026-11-10
+    # A workflow result commit must NOT trigger another copy of itself.
+    paths-ignore:
+      - docs/seo-rebuild/ci/LATEST_RESULT.md
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: werab-seo-rebuild-staging
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/seo-rebuild/staging-2026-11-10'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout staging branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Node.js 24 (matches Cloudflare build)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Regenerate lockfile for Cloudflare adapter (branch only)
+        id: lock
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+
+      - name: Commit refreshed lockfile to staging branch
+        run: |
+          if ! git diff --quiet -- package-lock.json; then
+            test "$GITHUB_REF" = "refs/heads/seo-rebuild/staging-2026-11-10"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add package-lock.json
+            git commit -m "chore(staging): sync lockfile for Astro Cloudflare adapter"
+            git push origin HEAD:refs/heads/seo-rebuild/staging-2026-11-10
+          else
+            echo "package-lock.json already up to date"
+          fi
+
+      - name: Clean install, same as Cloudflare Builds
+        id: install
+        run: npm ci --no-audit --no-fund
+
+      - name: Build Astro Worker
+        id: build
+        run: npm run build
+
+      - name: Assert generated Worker entry exists
+        id: entry
+        run: test -s dist/_worker.js/index.js
+
+      - name: Type and Astro check
+        id: types
+        run: npm run check
+
+      - name: Full predeploy SEO gates
+        id: seo
+        env:
+          SEO_REBUILD_STAGING: '1'
+        run: npm run gate:predeploy
+
+      - name: Public content and privacy regression (7 key pages)
+        id: public_content
+        run: node scripts/seo-rebuild-content-batch1-audit.mjs
+
+      - name: Batch 2 photo-evidence and non-transaction QA
+        id: photo_evidence
+        run: npx tsx scripts/seo-rebuild-photo-evidence-audit.ts
+
+      - name: Phase 3 intent ownership / internal linking / mobile CTA gate
+        id: phase3
+        run: npx tsx scripts/seo-phase3-intent-audit.ts
+
+      - name: Verify Wrangler bundle WITHOUT deployment
+        id: wrangler
+        run: npx wrangler deploy --dry-run --outdir .wrangler-seo-dry-run
+
+      - name: Install isolated Chromium for Phase 3 mobile browser QA
+        id: mobile_setup
+        run: |
+          npm install --no-save --package-lock=false --no-audit --no-fund playwright@^1.56.0
+          npx playwright install chromium --with-deps
+
+      - name: Run local Worker SSR and preview indexing smoke tests
+        id: runtime
+        shell: bash
+        run: |
+          npx wrangler dev --local --ip 127.0.0.1 --port 8787 --var SEO_PREVIEW:1 --show-interactive-dev-session=false > wrangler-local.log 2>&1 &
+          WORKER_PID=$!
+          trap 'STATUS=$?; if [ "$STATUS" -ne 0 ]; then cat wrangler-local.log; fi; kill "$WORKER_PID" 2>/dev/null || true; exit "$STATUS"' EXIT
+          READY=0
+          for N in $(seq 1 40); do
+            if curl --silent --output /dev/null http://127.0.0.1:8787/; then READY=1; break; fi
+            sleep 2
+          done
+          test "$READY" -eq 1 || { echo "Worker did not start"; exit 1; }
+          node scripts/seo-rebuild-runtime-smoke.mjs http://127.0.0.1:8787
+          node scripts/seo-phase3-mobile-browser.mjs
+          npx tsx scripts/seo-rebuild-preview-live-audit.ts http://127.0.0.1:8787
+          mv artifacts/seo-rebuild/preview-live-audit.json artifacts/seo-rebuild/local-worker-349-audit.json
+          # Release gate: production-mode worker runs WITHOUT the SEO_PREVIEW override.
+          npx wrangler dev --local --ip 127.0.0.1 --port 8789 --show-interactive-dev-session=false > wrangler-production.log 2>&1 &
+          PROD_WORKER_PID=$!
+          PROD_READY=0
+          for N in $(seq 1 30); do
+            if curl --silent --output /dev/null http://127.0.0.1:8789/; then PROD_READY=1; break; fi
+            sleep 2
+          done
+          test "$PROD_READY" -eq 1 || { echo "Production-mode Worker did not start"; cat wrangler-production.log; exit 1; }
+          node scripts/seo-release-production-index-audit.mjs http://127.0.0.1:8789
+          kill "$PROD_WORKER_PID" 2>/dev/null || true
+
+      - name: Read-only LIVE Preview SEO HTTP audit (86 pages / 53 redirects / 206 gone)
+        id: live
+        env:
+          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
+          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+        run: npx tsx scripts/seo-rebuild-preview-live-audit.ts
+
+      - name: Upload isolated QA evidence (no site content exports)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: werab-staging-qa-report
+          path: |
+            package-lock.json
+            .wrangler-seo-dry-run/
+            artifacts/seo-rebuild/preview-live-audit.json
+            artifacts/seo-rebuild/local-worker-349-audit.json
+            artifacts/seo-rebuild/phase3-mobile/
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Record truthful CI outcomes on staging branch
+        if: always()
+        env:
+          LOCK_STATUS: ${{ steps.lock.outcome }}
+          INSTALL_STATUS: ${{ steps.install.outcome }}
+          BUILD_STATUS: ${{ steps.build.outcome }}
+          ENTRY_STATUS: ${{ steps.entry.outcome }}
+          TYPES_STATUS: ${{ steps.types.outcome }}
+          SEO_STATUS: ${{ steps.seo.outcome }}
+          WRANGLER_STATUS: ${{ steps.wrangler.outcome }}
+          RUNTIME_STATUS: ${{ steps.runtime.outcome }}
+          LIVE_STATUS: ${{ steps.live.outcome }}
+          PUBLIC_CONTENT_STATUS: ${{ steps.public_content.outcome }}
+          PHOTO_EVIDENCE_STATUS: ${{ steps.photo_evidence.outcome }}
+          PHASE3_STATUS: ${{ steps.phase3.outcome }}
+          MOBILE_SETUP_STATUS: ${{ steps.mobile_setup.outcome }}
+        run: |
+          test "$GITHUB_REF" = "refs/heads/seo-rebuild/staging-2026-11-10"
+          mkdir -p docs/seo-rebuild/ci
+          {
+            echo "# SEO Rebuild staging CI (no deployment)"
+            echo
+            echo "Run: https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            echo "Source commit: $GITHUB_SHA"
+            echo
+            echo "| Gate | Result |"
+            echo "|---|---|"
+            echo "| Refresh lockfile | $LOCK_STATUS |"
+            echo "| npm ci | $INSTALL_STATUS |"
+            echo "| astro build | $BUILD_STATUS |"
+            echo "| Worker entrypoint | $ENTRY_STATUS |"
+            echo "| astro check | $TYPES_STATUS |"
+            echo "| SEO gate:predeploy | $SEO_STATUS |"
+            echo "| wrangler deploy --dry-run | $WRANGLER_STATUS |"
+            echo "| local Worker SSR + Preview noindex smoke | $RUNTIME_STATUS |"
+            echo "| live Preview raw HTTP audit (86/53/206) | $LIVE_STATUS |"
+            echo "| 7 page public-content/privacy guard | $PUBLIC_CONTENT_STATUS |"
+            echo "| Batch 2 public photo casebook & privacy | $PHOTO_EVIDENCE_STATUS |"
+            echo "| Phase 3 intent, link graph, mobile LINE QA | $PHASE3_STATUS |"
+            echo "| Phase 3 Chromium setup | $MOBILE_SETUP_STATUS |"
+            echo "| Phase 3 mobile visual/browser tests (within local Worker runtime) | $RUNTIME_STATUS |"
+            echo
+            echo "**No production deployment executed by this workflow.**"
+          } > docs/seo-rebuild/ci/LATEST_RESULT.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/seo-rebuild/ci/LATEST_RESULT.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(staging): publish latest isolated CI gate results"
+            git push origin HEAD:refs/heads/seo-rebuild/staging-2026-11-10
+          fi

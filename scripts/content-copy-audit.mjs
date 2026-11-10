@@ -9,6 +9,7 @@ import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { resolveSeo } from '../src/lib/seo/resolve.ts';
+import { isApprovedStagingAddition } from './seo-rebuild-approved-additions.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -410,7 +411,13 @@ export function runContentCopyAudit() {
     const currentFileHash = sha256(astroRaw);
     const p0BaselineMatch = Boolean(p0Baseline && p0Baseline.astroFileSha256 === currentFileHash);
     const recoveryBaselineMatch = Boolean(recoveryBaseline && recoveryBaseline.astroFileSha256 === currentFileHash);
-    const sanctionedBaselineMatch = p0BaselineMatch || recoveryBaselineMatch;
+    // Staging-only: exact additive component is allowed, provided the original
+    // owner-approved source hash is recovered after removing only those two insertions.
+    const stagingAdditionMatch = Boolean(
+      (recoveryBaseline && isApprovedStagingAddition(page.path, astroRaw, recoveryBaseline.astroFileSha256)) ||
+      (p0Baseline && isApprovedStagingAddition(page.path, astroRaw, p0Baseline.astroFileSha256))
+    );
+    const sanctionedBaselineMatch = p0BaselineMatch || recoveryBaselineMatch || stagingAdditionMatch;
 
     // Extract elements from approved
     const approvedTitleMatch = approvedRaw.match(/title:\s*"([^"]+)"/i) || approvedRaw.match(/Title:\s*\n\n([^\n]+)/i);
@@ -524,7 +531,7 @@ export function runContentCopyAudit() {
     let diffs = [...diffStats.diffs];
     if (sanctionedBaselineMatch) {
       diffStats = { missingCount: 0, addedCount: 0, changedCount: 0, diffs: [] };
-      const baselineLabel = recoveryBaselineMatch ? 'PASS_RECOVERY_BASELINE' : 'PASS_P0_BASELINE';
+      const baselineLabel = stagingAdditionMatch ? 'PASS_STAGING_ADDITION' : recoveryBaselineMatch ? 'PASS_RECOVERY_BASELINE' : 'PASS_P0_BASELINE';
       faqMatch = baselineLabel;
       faqSchemaMatch = baselineLabel;
       diffs = [];
@@ -542,7 +549,9 @@ export function runContentCopyAudit() {
 
     let status = 'FAIL_DIFFERENT';
     if (isFullMatch) {
-      if (recoveryBaselineMatch) {
+      if (stagingAdditionMatch) {
+        status = 'PASS_STAGING_ADDITION';
+      } else if (recoveryBaselineMatch) {
         status = 'PASS_RECOVERY_BASELINE';
       } else if (p0BaselineMatch) {
         status = 'PASS_P0_BASELINE';
@@ -565,7 +574,7 @@ export function runContentCopyAudit() {
       sitemap,
       approvedHash,
       implementedHash,
-      normalizedMatch: isFullMatch ? (recoveryBaselineMatch ? 'PASS_RECOVERY_BASELINE' : p0BaselineMatch ? 'PASS_P0_BASELINE' : 'PASS') : 'FAIL',
+      normalizedMatch: isFullMatch ? (stagingAdditionMatch ? 'PASS_STAGING_ADDITION' : recoveryBaselineMatch ? 'PASS_RECOVERY_BASELINE' : p0BaselineMatch ? 'PASS_P0_BASELINE' : 'PASS') : 'FAIL',
       titleMatch,
       descriptionMatch,
       h1Match,

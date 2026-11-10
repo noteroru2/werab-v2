@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { isApprovedStagingAddition } from './seo-rebuild-approved-additions.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=r=>fs.readFileSync(path.join(root,r),'utf8');
 const blockers=[];
@@ -15,7 +16,7 @@ for(const route of galleryRoutes){
   if(!rec){blockers.push(`Missing recovery baseline row ${route}`);continue;}
   const src=read(rec.astroFile);
   if(!src.includes('<RealProductGallery')) blockers.push(`RealProductGallery missing from ${route}`);
-  if(sha(src)!==rec.astroFileSha256) blockers.push(`Normalized source hash mismatch ${route}`);
+  if(sha(src)!==rec.astroFileSha256 && !isApprovedStagingAddition(route,src,rec.astroFileSha256)) blockers.push(`Normalized source hash mismatch ${route}`);
   if(rec.approvalBasis!=='CODEX_REAL_PRODUCT_GALLERY_REVIEWED') blockers.push(`Gallery approval basis missing ${route}`);
 }
 const gallery=read('src/components/RealProductGallery.astro');

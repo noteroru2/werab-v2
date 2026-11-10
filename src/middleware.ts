@@ -12,6 +12,9 @@ function safeRedirectUrl(target: string, base: URL): string {
 }
 
 export const onRequest = defineMiddleware(async (context, next) => {
+  // Explicit opt-in only; never infer preview status from an unverified proxy host.
+  const runtime = (context.locals as Record<string, unknown>).runtime as { env?: { SEO_PREVIEW?: string } } | undefined;
+  const seoPreviewMode = import.meta.env.SEO_PREVIEW === '1' || runtime?.env?.SEO_PREVIEW === '1';
   const url = context.url;
   const rawPathname = url.pathname;
 
@@ -38,6 +41,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     response.headers.set('X-Content-Type-Options', 'nosniff');
     response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
     response.headers.set('X-Werab-Release', RELEASE_VERSION);
+    if (seoPreviewMode) response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
     if (rawPathname.startsWith('/_astro/')) {
       response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
     } else if (/\.(?:avif|webp|png|jpe?g|svg|woff2)$/.test(rawPathname)) {
@@ -133,6 +137,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   response.headers.set('X-Werab-Release', RELEASE_VERSION);
+  if (seoPreviewMode) response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
   response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=()');
   response.headers.set('X-Frame-Options', 'DENY');
   response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');

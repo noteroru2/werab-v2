@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FieldInspectionCases from '../components/FieldInspectionCases.astro';
 import TrustBar from '../components/TrustBar.astro';
 import RealProductGallery from '../components/RealProductGallery.astro';
 import { getLineUrl, getDisplayLine, getPhoneUrl, getDisplayPhone } from '../config/business';
@@ -249,6 +250,8 @@ const breadcrumbs = [
       </div>
     </div>
   </section>
+
+  <FieldInspectionCases topic="home" />
 
   <RealProductGallery
     featuredOnly={true}
