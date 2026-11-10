@@ -41,13 +41,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/node": "^9.0.2",
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource/ibm-plex-sans-thai": "^5.1.0",
     "astro": "^5.4.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "@astrojs/cloudflare": "^12.6.12"
   },
   "devDependencies": {
-    "tsx": "^4.23.12"
+    "tsx": "^4.23.12",
+    "wrangler": "^4.159.0"
   }
 }
