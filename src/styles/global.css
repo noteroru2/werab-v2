@@ -958,20 +958,27 @@ tr:nth-child(even) td {
 /* Local Related Link Chips */
 .local-links-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* Long Thai regional names must not force a column wider than a phone. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .local-links-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 640px) {
   .local-links-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
   .local-links-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.15rem;
   }
 }
@@ -980,6 +987,8 @@ tr:nth-child(even) td {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 0.85rem 1rem;
   background-color: #ffffff;
   border: 1px solid var(--border);
@@ -1001,6 +1010,7 @@ tr:nth-child(even) td {
 
 .local-link-chip::after {
   content: "→";
+  flex-shrink: 0;
   color: #c2410c;
   font-size: 1.1rem;
   font-weight: 800;
