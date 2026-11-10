@@ -4,52 +4,52 @@ import { getLineUrl } from '../config/business';
 interface Props { topic: CoreSeoTopic }
 const { topic } = Astro.props;
 const item = CORE_INTENT_BRIDGES[topic];
-const sectionId = `phase3-intent-${topic}`;
+const sectionId = `phase3-path-${topic}`;
 ---
-<section class="seo-intent-bridge" aria-labelledby={sectionId}>
+<section class="seo-path-bridge" aria-labelledby={sectionId}>
   <div class="container">
-    <div class="seo-intent-heading">
-      <p class="seo-intent-overline">เลือกหน้าให้ตรงกับสินค้า · ไม่ต้องเดาราคา</p>
+    <div class="seo-path-heading">
+      <p class="seo-path-overline">เลือกหน้าให้ตรงกับสินค้า · ไม่ต้องเดาราคา</p>
       <h2 id={sectionId}>{item.heading}</h2>
       <p>{item.intro}</p>
     </div>
-    <div class="seo-intent-columns">
-      <div class="seo-intent-column">
+    <div class="seo-path-columns">
+      <div class="seo-path-column">
         <h3>{topic === 'home' ? 'เริ่มจากสิ่งที่ต้องการทำ' : 'หน้ารุ่นและประเภทสินค้า'}</h3>
-        <ul class="seo-intent-grid">
+        <ul class="seo-path-grid">
           {item.links.map(link=>(
             <li>
               <a href={link.href} aria-label={`${link.label}: ${link.why}`}>
                 <strong>{link.label}</strong>
                 <span>{link.why}</span>
-                <span class="seo-intent-arrow" aria-hidden="true">อ่านต่อ →</span>
+                <span class="seo-path-arrow" aria-hidden="true">อ่านต่อ →</span>
               </a>
             </li>
           ))}
         </ul>
       </div>
-      <div class="seo-intent-column">
+      <div class="seo-path-column">
         <h3>{topic === 'home' ? 'หมวดที่ลูกค้าเลือกบ่อย' : 'คู่มือสภาพและคำถามก่อนขาย'}</h3>
-        <ul class="seo-intent-grid">
+        <ul class="seo-path-grid">
           {item.related.map(link=>(
             <li>
               <a href={link.href} aria-label={`${link.label}: ${link.why}`}>
                 <strong>{link.label}</strong>
                 <span>{link.why}</span>
-                <span class="seo-intent-arrow" aria-hidden="true">อ่านต่อ →</span>
+                <span class="seo-path-arrow" aria-hidden="true">อ่านต่อ →</span>
               </a>
             </li>
           ))}
         </ul>
       </div>
     </div>
-    <div class="seo-intent-action">
+    <div class="seo-path-action">
       <div>
         <strong>ส่งข้อมูลเพื่อเช็กราคาเบื้องต้น</strong>
         <p>{item.intake}</p>
         <small>หน้าร้านหลักอยู่ที่อุบลราชธานี ต่างจังหวัดเริ่มประเมินออนไลน์ และตกลงนัดหมายหรือจัดส่งเป็นรายกรณี · ไม่ต้องส่งรหัสผ่าน IMEI หรือ Serial Number เต็ม</small>
       </div>
-      <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="seo-intent-line" aria-label="ทัก LINE @webuy ส่งรูป สเปก และสภาพสินค้าเพื่อประเมินราคา">
+      <a href={getLineUrl()} target="_blank" rel="noopener noreferrer" class="seo-path-line" aria-label="ทัก LINE @webuy ส่งรูป สเปก และสภาพสินค้าเพื่อประเมินราคา">
         ส่งรูปเช็กราคา LINE
       </a>
     </div>
@@ -57,37 +57,37 @@ const sectionId = `phase3-intent-${topic}`;
 </section>
 
 <style>
-  .seo-intent-bridge { padding: clamp(2.8rem, 5vw, 4.25rem) 0; background: #fff; border-block: 1px solid #e2e8f0; }
-  .seo-intent-heading { max-width: 880px; margin: 0 auto 1.5rem; text-align: center; }
-  .seo-intent-overline { color:#9a3412; font-size:.78rem; font-weight:850; letter-spacing:.04em; margin-bottom:.35rem; }
-  .seo-intent-heading h2 { color:#08264a; font-size:clamp(1.4rem, 3vw, 2rem); line-height:1.35; margin:.35rem 0 .65rem; }
-  .seo-intent-heading > p:last-child { color:#475569; font-size:.96rem; line-height:1.75; }
-  .seo-intent-columns { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1.2rem; align-items:start; }
-  .seo-intent-column { min-width:0; }
-  .seo-intent-column h3 { font-size:1rem; color:#08264a; margin:0 0 .8rem; font-weight:850; }
-  .seo-intent-grid { list-style:none; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
-  .seo-intent-grid li { min-width:0; }
-  .seo-intent-grid a { display:flex; flex-direction:column; align-items:flex-start; gap:.25rem; min-height:100%; padding:.95rem; border:1px solid #dbe3ee; background:#f8fafc; border-radius:.8rem; text-decoration:none; transition:border-color .15s ease,background .15s ease; }
-  .seo-intent-grid a:hover { border-color:#ea580c; background:#fff7ed; }
-  .seo-intent-grid a:focus-visible { outline:3px solid #ea580c; outline-offset:2px; }
-  .seo-intent-grid strong { color:#08264a; font-size:.92rem; line-height:1.45; overflow-wrap:anywhere; }
-  .seo-intent-grid span { color:#475569; line-height:1.5; font-size:.81rem; overflow-wrap:anywhere; }
-  .seo-intent-grid .seo-intent-arrow { margin-top:auto; padding-top:.35rem; color:#9a3412; font-weight:750; font-size:.8rem; }
-  .seo-intent-action { margin-top:1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; background:#08264a; border-radius:1rem; padding:1.3rem 1.4rem; color:#fff; }
-  .seo-intent-action > div { min-width:0; }
-  .seo-intent-action strong { color:#fff; font-size:1rem; }
-  .seo-intent-action p { color:#e2e8f0; line-height:1.65; margin:.35rem 0; font-size:.92rem; }
-  .seo-intent-action small { display:block; color:#cbd5e1; font-size:.78rem; line-height:1.65; }
-  .seo-intent-line { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; min-height:48px; background:#047857; color:#fff; padding:.8rem 1.05rem; border-radius:.7rem; text-align:center; font-size:.91rem; font-weight:850; text-decoration:none; }
-  .seo-intent-line:hover { background:#065f46; color:#fff; }
-  .seo-intent-line:focus-visible { outline:3px solid #fdba74; outline-offset:3px; }
-  @media(max-width:990px) { .seo-intent-grid { grid-template-columns:1fr; } }
+  .seo-path-bridge { padding: clamp(2.8rem, 5vw, 4.25rem) 0; background: #fff; border-block: 1px solid #e2e8f0; }
+  .seo-path-heading { max-width: 880px; margin: 0 auto 1.5rem; text-align: center; }
+  .seo-path-overline { color:#9a3412; font-size:.78rem; font-weight:850; letter-spacing:.04em; margin-bottom:.35rem; }
+  .seo-path-heading h2 { color:#08264a; font-size:clamp(1.4rem, 3vw, 2rem); line-height:1.35; margin:.35rem 0 .65rem; }
+  .seo-path-heading > p:last-child { color:#475569; font-size:.96rem; line-height:1.75; }
+  .seo-path-columns { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1.2rem; align-items:start; }
+  .seo-path-column { min-width:0; }
+  .seo-path-column h3 { font-size:1rem; color:#08264a; margin:0 0 .8rem; font-weight:850; }
+  .seo-path-grid { list-style:none; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
+  .seo-path-grid li { min-width:0; }
+  .seo-path-grid a { display:flex; flex-direction:column; align-items:flex-start; gap:.25rem; min-height:100%; padding:.95rem; border:1px solid #dbe3ee; background:#f8fafc; border-radius:.8rem; text-decoration:none; transition:border-color .15s ease,background .15s ease; }
+  .seo-path-grid a:hover { border-color:#ea580c; background:#fff7ed; }
+  .seo-path-grid a:focus-visible { outline:3px solid #ea580c; outline-offset:2px; }
+  .seo-path-grid strong { color:#08264a; font-size:.92rem; line-height:1.45; overflow-wrap:anywhere; }
+  .seo-path-grid span { color:#475569; line-height:1.5; font-size:.81rem; overflow-wrap:anywhere; }
+  .seo-path-grid .seo-path-arrow { margin-top:auto; padding-top:.35rem; color:#9a3412; font-weight:750; font-size:.8rem; }
+  .seo-path-action { margin-top:1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; background:#08264a; border-radius:1rem; padding:1.3rem 1.4rem; color:#fff; }
+  .seo-path-action > div { min-width:0; }
+  .seo-path-action strong { color:#fff; font-size:1rem; }
+  .seo-path-action p { color:#e2e8f0; line-height:1.65; margin:.35rem 0; font-size:.92rem; }
+  .seo-path-action small { display:block; color:#cbd5e1; font-size:.78rem; line-height:1.65; }
+  .seo-path-line { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; min-height:48px; background:#047857; color:#fff; padding:.8rem 1.05rem; border-radius:.7rem; text-align:center; font-size:.91rem; font-weight:850; text-decoration:none; }
+  .seo-path-line:hover { background:#065f46; color:#fff; }
+  .seo-path-line:focus-visible { outline:3px solid #fdba74; outline-offset:3px; }
+  @media(max-width:990px) { .seo-path-grid { grid-template-columns:1fr; } }
   @media(max-width:650px) {
-    .seo-intent-columns { grid-template-columns:1fr; }
-    .seo-intent-grid { grid-template-columns:1fr 1fr; }
-    .seo-intent-action { flex-direction:column; align-items:stretch; padding:1.05rem; }
-    .seo-intent-line { width:100%; }
+    .seo-path-columns { grid-template-columns:1fr; }
+    .seo-path-grid { grid-template-columns:1fr 1fr; }
+    .seo-path-action { flex-direction:column; align-items:stretch; padding:1.05rem; }
+    .seo-path-line { width:100%; }
   }
-  @media(max-width:390px) { .seo-intent-grid { grid-template-columns:1fr; } .seo-intent-grid a { padding:.85rem; } }
-  @media(prefers-reduced-motion:reduce) { .seo-intent-grid a { transition:none; } }
+  @media(max-width:390px) { .seo-path-grid { grid-template-columns:1fr; } .seo-path-grid a { padding:.85rem; } }
+  @media(prefers-reduced-motion:reduce) { .seo-path-grid a { transition:none; } }
 </style>
