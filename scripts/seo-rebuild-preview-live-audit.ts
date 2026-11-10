@@ -16,12 +16,16 @@ if (!preview.includes('staging-2026-11-10-werab-v2.') || !preview.endsWith('.wor
 interface Result { path: string; type: string; status: number|string; ok: boolean; detail: string; }
 const results: Result[] = [];
 const timeout = 12000;
+const accessId = process.env.CF_ACCESS_CLIENT_ID || '';
+const accessSecret = process.env.CF_ACCESS_CLIENT_SECRET || '';
+const accessHeaders = accessId && accessSecret ? { 'CF-Access-Client-Id': accessId, 'CF-Access-Client-Secret': accessSecret } : {};
+
 
 function pathFrom(url: string): string { return normalizePath(decodeURI(new URL(url).pathname)); }
 async function get(path: string): Promise<{status:number; headers:Headers; body:string}> {
   const u = new URL(path, preview);
   if (u.origin !== preview) throw new Error('Refusing off-staging request');
-  const res = await fetch(u, {redirect:'manual', signal:AbortSignal.timeout(timeout)});
+  const res = await fetch(u, {redirect:'manual', headers:accessHeaders, signal:AbortSignal.timeout(timeout)});
   return {status:res.status, headers:res.headers, body:await res.text()};
 }
 function add(path:string,type:string,status:number|string,ok:boolean,detail:string) {
@@ -49,6 +53,24 @@ async function batch(items: Array<{path:string; type:string; target?:string}>, l
       } catch(e) {add(item.path,item.type,'ERROR',false,String(e));}
     }));
   }
+}
+// Cloudflare Access may intentionally block public crawls after owner enables Preview-only sign-in.
+// Without an Access service token, verify that the public preview is protected and
+// leave complete live 349-route verification to the authenticated run or local CI.
+const publicProbe = await fetch(preview+'/', {redirect:'manual',signal:AbortSignal.timeout(timeout)});
+const accessLocation = publicProbe.headers.get('location') || '';
+const hasAccessGate = [401,403].includes(publicProbe.status) ||
+  ([301,302,303,307,308].includes(publicProbe.status) && /cloudflareaccess\\.com|\\/cdn-cgi\\/access/i.test(accessLocation));
+if(hasAccessGate && !(accessId && accessSecret)) {
+  const summary={preview,checkedAt:new Date().toISOString(),mode:'ACCESS_PROTECTED_UNAUTHENTICATED',status:publicProbe.status,authenticatedRouteChecks:'NOT_RUN',productionTouched:false};
+  fs.mkdirSync('artifacts/seo-rebuild',{recursive:true});
+  fs.writeFileSync('artifacts/seo-rebuild/preview-live-audit.json',JSON.stringify({summary,results:[]},null,2));
+  console.log(JSON.stringify(summary,null,2));
+  process.exit(0);
+}
+if(hasAccessGate && accessId && accessSecret) {
+  const authProbe=await get('/');
+  if(authProbe.status!==200) throw new Error('Cloudflare Access service token not authorized for Preview');
 }
 const robots=await get('/robots.txt');
 add('/robots.txt','robots',robots.status,robots.status===200 && (robots.headers.get('content-type')??'').includes('text/plain') &&
