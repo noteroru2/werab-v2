@@ -70,6 +70,21 @@ jobs:
         id: wrangler
         run: npx wrangler deploy --dry-run --outdir .wrangler-seo-dry-run
 
+      - name: Run local Worker SSR and preview indexing smoke tests
+        id: runtime
+        shell: bash
+        run: |
+          npx wrangler dev --local --ip 127.0.0.1 --port 8787 --var SEO_PREVIEW:1 --show-interactive-dev-session=false > wrangler-local.log 2>&1 &
+          WORKER_PID=$!
+          trap 'STATUS=$?; if [ "$STATUS" -ne 0 ]; then cat wrangler-local.log; fi; kill "$WORKER_PID" 2>/dev/null || true; exit "$STATUS"' EXIT
+          READY=0
+          for N in $(seq 1 40); do
+            if curl --silent --output /dev/null http://127.0.0.1:8787/; then READY=1; break; fi
+            sleep 2
+          done
+          test "$READY" -eq 1 || { echo "Worker did not start"; exit 1; }
+          node scripts/seo-rebuild-runtime-smoke.mjs http://127.0.0.1:8787
+
       - name: Upload isolated QA evidence (no site content exports)
         if: always()
         uses: actions/upload-artifact@v4
@@ -91,6 +106,7 @@ jobs:
           TYPES_STATUS: ${{ steps.types.outcome }}
           SEO_STATUS: ${{ steps.seo.outcome }}
           WRANGLER_STATUS: ${{ steps.wrangler.outcome }}
+          RUNTIME_STATUS: ${{ steps.runtime.outcome }}
         run: |
           test "$GITHUB_REF" = "refs/heads/seo-rebuild/staging-2026-11-10"
           mkdir -p docs/seo-rebuild/ci
@@ -109,6 +125,7 @@ jobs:
             echo "| astro check | $TYPES_STATUS |"
             echo "| SEO gate:predeploy | $SEO_STATUS |"
             echo "| wrangler deploy --dry-run | $WRANGLER_STATUS |"
+            echo "| local Worker SSR + Preview noindex smoke | $RUNTIME_STATUS |"
             echo
             echo "**No production deployment executed by this workflow.**"
           } > docs/seo-rebuild/ci/LATEST_RESULT.md
